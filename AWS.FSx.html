@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.FSx — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.FSx
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon FSx is a fully managed service that makes it easy for storage and application
+administrators to launch and use shared file storage.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_data_repository_task/3">cancel_data_repository_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the
+<code class="inline">PENDING</code> or <code class="inline">EXECUTING</code> state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_backup/3">create_backup(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a backup of an existing Amazon FSx file system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_data_repository_task/3">create_data_repository_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon FSx for Lustre data repository task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_file_system/3">create_file_system(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new, empty Amazon FSx file system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_file_system_from_backup/3">create_file_system_from_backup(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup/3">delete_backup(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon FSx backup, deleting its contents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_file_system/3">delete_file_system(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a file system, deleting its contents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_backups/3">describe_backups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the description of specific Amazon FSx backups, if a <code class="inline">BackupIds</code> value is provided for
+that backup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_data_repository_tasks/3">describe_data_repository_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more
+<code class="inline">TaskIds</code> values are provided in the request, or if filters are used in the request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_file_systems/3">describe_file_systems(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the description of specific Amazon FSx file systems, if a <code class="inline">FileSystemIds</code> value is
+provided for that file system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for Windows File
+Server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tags an Amazon FSx resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action removes a tag from an Amazon FSx resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_file_system/3">update_file_system(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this operation to update the configuration of an existing Amazon FSx file system.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_data_repository_task/3">
+
+    <span id="cancel_data_repository_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_data_repository_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_data_repository_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the
+<code class="inline">PENDING</code> or <code class="inline">EXECUTING</code> state.</p>
+<p>When you cancel a task, Amazon FSx does the following.</p>
+<ul>
+<li><p>Any files that FSx has already exported are not reverted.</p>
+</li>
+<li><p>FSx continues to export any files that are &quot;in-flight&quot; when the cancel operation is
+received.</p>
+</li>
+<li><p>FSx does not export any files that have not yet been exported.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_backup/3">
+
+    <span id="create_backup/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_backup/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_backup(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a backup of an existing Amazon FSx file system.</p>
+<p>Creating regular backups for your file system is a best practice, enabling you to restore a file
+system from a backup if an issue arises with the original file system.</p>
+<p>For Amazon FSx for Lustre file systems, you can create a backup only for file systems with the
+following configuration:</p>
+<ul>
+<li><p>a Persistent deployment type</p>
+</li>
+<li><p>is <em>not</em> linked to a data respository.</p>
+</li>
+</ul>
+<p>For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with FSx for Lustre backups</a>.</p>
+<p>For more information about backing up Amazon FSx for Lustre file systems, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows backups</a>.</p>
+<p>If a backup with the specified client request token exists, and the parameters match, this
+operation returns the description of the existing backup. If a backup specified client request
+token exists, and the parameters don&#39;t match, this operation returns <code class="inline">IncompatibleParameterError</code>.
+If a backup with the specified client request token doesn&#39;t exist, <code class="inline">CreateBackup</code> does the
+following:</p>
+<ul>
+<li><p>Creates a new Amazon FSx backup with an assigned ID, and an initial lifecycle state
+of <code class="inline">CREATING</code>.</p>
+</li>
+<li><p>Returns the description of the backup.</p>
+</li>
+</ul>
+<p>By using the idempotent operation, you can retry a <code class="inline">CreateBackup</code> operation without the risk of
+creating an extra backup. This approach can be useful when an initial call fails in a way that
+makes it unclear whether a backup was created. If you use the same client request token and the
+initial call created a backup, the operation returns a successful result because all the
+parameters are the same.</p>
+<p>The <code class="inline">CreateBackup</code> operation returns while the backup&#39;s lifecycle state is still <code class="inline">CREATING</code>. You
+can check the backup creation status by calling the <code class="inline">DescribeBackups</code> operation, which returns the
+backup state along with other information.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_data_repository_task/3">
+
+    <span id="create_data_repository_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_data_repository_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_data_repository_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon FSx for Lustre data repository task.</p>
+<p>You use data repository tasks to perform bulk operations between your Amazon FSx file system and
+its linked data repository. An example of a data repository task is exporting any data and
+metadata changes, including POSIX metadata, to files, directories, and symbolic links (symlinks)
+from your FSx file system to its linked data repository. A <code class="inline">CreateDataRepositoryTask</code> operation
+will fail if a data repository is not linked to the FSx file system. To learn more about data
+repository tasks, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository Tasks</a>. To learn
+more about linking a data repository to your file system, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting the Export Prefix</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_file_system/3">
+
+    <span id="create_file_system/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_file_system/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_file_system(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new, empty Amazon FSx file system.</p>
+<p>If a file system with the specified client request token exists and the parameters match,
+<code class="inline">CreateFileSystem</code> returns the description of the existing file system. If a file system specified
+client request token exists and the parameters don&#39;t match, this call returns
+<code class="inline">IncompatibleParameterError</code>. If a file system with the specified client request token doesn&#39;t
+exist, <code class="inline">CreateFileSystem</code> does the following:</p>
+<ul>
+<li><p>Creates a new, empty Amazon FSx file system with an assigned ID, and an initial
+lifecycle state of <code class="inline">CREATING</code>.</p>
+</li>
+<li><p>Returns the description of the file system.</p>
+</li>
+</ul>
+<p>This operation requires a client request token in the request that Amazon FSx uses to ensure
+idempotent creation. This means that calling the operation multiple times with the same client
+request token has no effect. By using the idempotent operation, you can retry a <code class="inline">CreateFileSystem</code>
+operation without the risk of creating an extra file system. This approach can be useful when an
+initial call fails in a way that makes it unclear whether a file system was created. Examples are
+if a transport level timeout occurred, or your connection was reset. If you use the same client
+request token and the initial call created a file system, the client receives success as long as
+the parameters are the same.</p>
+<p>The <code class="inline">CreateFileSystem</code> call returns while the file system&#39;s lifecycle state is still <code class="inline">CREATING</code>.
+You can check the file-system creation status by calling the <code class="inline">DescribeFileSystems</code> operation,
+which returns the file system state along with other information.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_file_system_from_backup/3">
+
+    <span id="create_file_system_from_backup/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_file_system_from_backup/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_file_system_from_backup(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Amazon FSx file system from an existing Amazon FSx backup.</p>
+<p>If a file system with the specified client request token exists and the parameters match, this
+operation returns the description of the file system. If a client request token specified by the
+file system exists and the parameters don&#39;t match, this call returns <code class="inline">IncompatibleParameterError</code>.
+If a file system with the specified client request token doesn&#39;t exist, this operation does the
+following:</p>
+<ul>
+<li><p>Creates a new Amazon FSx file system from backup with an assigned ID, and an initial
+lifecycle state of <code class="inline">CREATING</code>.</p>
+</li>
+<li><p>Returns the description of the file system.</p>
+</li>
+</ul>
+<p>Parameters like Active Directory, default share name, automatic backup, and backup settings
+default to the parameters of the file system that was backed up, unless overridden. You can
+explicitly supply other settings.</p>
+<p>By using the idempotent operation, you can retry a <code class="inline">CreateFileSystemFromBackup</code> call without the
+risk of creating an extra file system. This approach can be useful when an initial call fails in a
+way that makes it unclear whether a file system was created. Examples are if a transport level
+timeout occurred, or your connection was reset. If you use the same client request token and the
+initial call created a file system, the client receives success as long as the parameters are the
+same.</p>
+<p>The <code class="inline">CreateFileSystemFromBackup</code> call returns while the file system&#39;s lifecycle state is still
+<code class="inline">CREATING</code>. You can check the file-system creation status by calling the <code class="inline">DescribeFileSystems</code>
+operation, which returns the file system state along with other information.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup/3">
+
+    <span id="delete_backup/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon FSx backup, deleting its contents.</p>
+<p>After deletion, the backup no longer exists, and its data is gone.</p>
+<p>The <code class="inline">DeleteBackup</code> call returns instantly. The backup will not show up in later <code class="inline">DescribeBackups</code>
+calls.</p>
+<p>The data in a deleted backup is also deleted and can&#39;t be recovered by any means.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_file_system/3">
+
+    <span id="delete_file_system/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_file_system/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_file_system(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a file system, deleting its contents.</p>
+<p>After deletion, the file system no longer exists, and its data is gone. Any existing automatic
+backups will also be deleted.</p>
+<p>By default, when you delete an Amazon FSx for Windows File Server file system, a final backup is
+created upon deletion. This final backup is not subject to the file system&#39;s retention policy, and
+must be manually deleted.</p>
+<p>The <code class="inline">DeleteFileSystem</code> action returns while the file system has the <code class="inline">DELETING</code> status. You can
+check the file system deletion status by calling the <code class="inline">DescribeFileSystems</code> action, which returns a
+list of file systems in your account. If you pass the file system ID for a deleted file system,
+the <code class="inline">DescribeFileSystems</code> returns a <code class="inline">FileSystemNotFound</code> error.</p>
+<p>Deleting an Amazon FSx for Lustre file system will fail with a 400 BadRequest if a data repository
+task is in a <code class="inline">PENDING</code> or <code class="inline">EXECUTING</code> state.</p>
+<p>The data in a deleted file system is also deleted and can&#39;t be recovered by any means.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_backups/3">
+
+    <span id="describe_backups/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_backups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_backups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the description of specific Amazon FSx backups, if a <code class="inline">BackupIds</code> value is provided for
+that backup.</p>
+<p>Otherwise, it returns all backups owned by your AWS account in the AWS Region of the endpoint that
+you&#39;re calling.</p>
+<p>When retrieving all backups, you can optionally specify the <code class="inline">MaxResults</code> parameter to limit the
+number of backups in a response. If more backups remain, Amazon FSx returns a <code class="inline">NextToken</code> value in
+the response. In this case, send a later request with the <code class="inline">NextToken</code> request parameter set to the
+value of <code class="inline">NextToken</code> from the last response.</p>
+<p>This action is used in an iterative process to retrieve a list of your backups. <code class="inline">DescribeBackups</code>
+is called first without a <code class="inline">NextToken</code>value. Then the action continues to be called with the
+<code class="inline">NextToken</code> parameter set to the value of the last <code class="inline">NextToken</code> value until a response has no
+<code class="inline">NextToken</code>.</p>
+<p>When using this action, keep the following in mind:</p>
+<ul>
+<li><p>The implementation might return fewer than <code class="inline">MaxResults</code> file system descriptions
+while still including a <code class="inline">NextToken</code> value.</p>
+</li>
+<li><p>The order of backups returned in the response of one <code class="inline">DescribeBackups</code> call and the
+order of backups returned across the responses of a multi-call iteration is unspecified.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_data_repository_tasks/3">
+
+    <span id="describe_data_repository_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_data_repository_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_data_repository_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L228" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the description of specific Amazon FSx for Lustre data repository tasks, if one or more
+<code class="inline">TaskIds</code> values are provided in the request, or if filters are used in the request.</p>
+<p>You can use filters to narrow the response to include just tasks for specific file systems, or
+tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned by your
+AWS account in the AWS Region of the endpoint that you&#39;re calling.</p>
+<p>When retrieving all tasks, you can paginate the response by using the optional <code class="inline">MaxResults</code>
+parameter to limit the number of tasks returned in a response. If more tasks remain, Amazon FSx
+returns a <code class="inline">NextToken</code> value in the response. In this case, send a later request with the
+<code class="inline">NextToken</code> request parameter set to the value of <code class="inline">NextToken</code> from the last response.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_file_systems/3">
+
+    <span id="describe_file_systems/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_file_systems/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_file_systems(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the description of specific Amazon FSx file systems, if a <code class="inline">FileSystemIds</code> value is
+provided for that file system.</p>
+<p>Otherwise, it returns descriptions of all file systems owned by your AWS account in the AWS Region
+of the endpoint that you&#39;re calling.</p>
+<p>When retrieving all file system descriptions, you can optionally specify the <code class="inline">MaxResults</code>
+parameter to limit the number of descriptions in a response. If more file system descriptions
+remain, Amazon FSx returns a <code class="inline">NextToken</code> value in the response. In this case, send a later request
+with the <code class="inline">NextToken</code> request parameter set to the value of <code class="inline">NextToken</code> from the last response.</p>
+<p>This action is used in an iterative process to retrieve a list of your file system descriptions.
+<code class="inline">DescribeFileSystems</code> is called first without a <code class="inline">NextToken</code>value. Then the action continues to be
+called with the <code class="inline">NextToken</code> parameter set to the value of the last <code class="inline">NextToken</code> value until a
+response has no <code class="inline">NextToken</code>.</p>
+<p>When using this action, keep the following in mind:</p>
+<ul>
+<li><p>The implementation might return fewer than <code class="inline">MaxResults</code> file system descriptions
+while still including a <code class="inline">NextToken</code> value.</p>
+</li>
+<li><p>The order of file systems returned in the response of one <code class="inline">DescribeFileSystems</code> call
+and the order of file systems returned across the responses of a multicall iteration is
+unspecified.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L284" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists tags for an Amazon FSx file systems and backups in the case of Amazon FSx for Windows File
+Server.</p>
+<p>When retrieving all tags, you can optionally specify the <code class="inline">MaxResults</code> parameter to limit the
+number of tags in a response. If more tags remain, Amazon FSx returns a <code class="inline">NextToken</code> value in the
+response. In this case, send a later request with the <code class="inline">NextToken</code> request parameter set to the
+value of <code class="inline">NextToken</code> from the last response.</p>
+<p>This action is used in an iterative process to retrieve a list of your tags. <code class="inline">ListTagsForResource</code>
+is called first without a <code class="inline">NextToken</code>value. Then the action continues to be called with the
+<code class="inline">NextToken</code> parameter set to the value of the last <code class="inline">NextToken</code> value until a response has no
+<code class="inline">NextToken</code>.</p>
+<p>When using this action, keep the following in mind:</p>
+<ul>
+<li><p>The implementation might return fewer than <code class="inline">MaxResults</code> file system descriptions
+while still including a <code class="inline">NextToken</code> value.</p>
+</li>
+<li><p>The order of tags returned in the response of one <code class="inline">ListTagsForResource</code> call and the
+order of tags returned across the responses of a multi-call iteration is unspecified.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L291" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tags an Amazon FSx resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action removes a tag from an Amazon FSx resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_file_system/3">
+
+    <span id="update_file_system/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_file_system/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_file_system(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fsx.ex#L331" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this operation to update the configuration of an existing Amazon FSx file system.</p>
+<p>You can update multiple properties in a single request.</p>
+<p>For Amazon FSx for Windows File Server file systems, you can update the following properties:</p>
+<ul>
+<li><p>AutomaticBackupRetentionDays</p>
+</li>
+<li><p>DailyAutomaticBackupStartTime</p>
+</li>
+<li><p>SelfManagedActiveDirectoryConfiguration</p>
+</li>
+<li><p>StorageCapacity</p>
+</li>
+<li><p>ThroughputCapacity</p>
+</li>
+<li><p>WeeklyMaintenanceStartTime</p>
+</li>
+</ul>
+<p>For Amazon FSx for Lustre file systems, you can update the following properties:</p>
+<ul>
+<li><p>AutoImportPolicy</p>
+</li>
+<li><p>AutomaticBackupRetentionDays</p>
+</li>
+<li><p>DailyAutomaticBackupStartTime</p>
+</li>
+<li><p>WeeklyMaintenanceStartTime</p>
+</li>
+</ul>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

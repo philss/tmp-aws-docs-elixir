@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CloudSearch — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CloudSearch
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon CloudSearch Configuration Service</p>
+<p>You use the Amazon CloudSearch configuration service to create, configure, and manage search
+domains.</p>
+<p>Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are
+HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action.</p>
+<p>The endpoint for configuration service requests is region-specific:
+cloudsearch.<em>region</em>.amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a
+current list of supported regions and endpoints, see <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region">Regions and Endpoints</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#build_suggesters/3">build_suggesters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Indexes the search suggestions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_domain/3">create_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#define_analysis_scheme/3">define_analysis_scheme(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures an analysis scheme that can be applied to a <code class="inline">text</code> or <code class="inline">text-array</code> field to define
+language-specific text processing options.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#define_expression/3">define_expression(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures an <code class="inline">Expression</code> for the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#define_index_field/3">define_index_field(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures an <code class="inline">IndexField</code> for the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#define_suggester/3">define_suggester(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures a suggester for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_analysis_scheme/3">delete_analysis_scheme(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an analysis scheme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_domain/3">delete_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes a search domain and all of its data.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_expression/3">delete_expression(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes an <code class="inline">Expression</code> from the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_index_field/3">delete_index_field(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes an <code class="inline">IndexField</code> from the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_suggester/3">delete_suggester(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a suggester.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_analysis_schemes/3">describe_analysis_schemes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the analysis schemes configured for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_availability_options/3">describe_availability_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the availability options configured for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_domain_endpoint_options/3">describe_domain_endpoint_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the domain&#39;s endpoint options, specifically whether all requests to the domain must arrive
+over HTTPS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_domains/3">describe_domains(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the search domains owned by this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_expressions/3">describe_expressions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the expressions configured for the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_index_fields/3">describe_index_fields(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the index fields configured for the search domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_scaling_parameters/3">describe_scaling_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the scaling parameters configured for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_service_access_policies/3">describe_service_access_policies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the access policies that control access to the domain&#39;s document and search
+endpoints.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_suggesters/3">describe_suggesters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the suggesters configured for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#index_documents/3">index_documents(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tells the search domain to start indexing its documents using the latest indexing options.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_domain_names/3">list_domain_names(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all search domains owned by an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_availability_options/3">update_availability_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures the availability options for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_domain_endpoint_options/3">update_domain_endpoint_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the domain&#39;s endpoint options, specifically whether all requests to the domain must arrive
+over HTTPS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_scaling_parameters/3">update_scaling_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures scaling parameters for a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_service_access_policies/3">update_service_access_policies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures the access rules that control access to the domain&#39;s document and search endpoints.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="build_suggesters/3">
+
+    <span id="build_suggesters/2"></span>
+
+  <div class="detail-header">
+    <a href="#build_suggesters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">build_suggesters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Indexes the search suggestions.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_domain/3">
+
+    <span id="create_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L35" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new search domain.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html">Creating a Search Domain</a> in the
+<em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="define_analysis_scheme/3">
+
+    <span id="define_analysis_scheme/2"></span>
+
+  <div class="detail-header">
+    <a href="#define_analysis_scheme/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">define_analysis_scheme(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures an analysis scheme that can be applied to a <code class="inline">text</code> or <code class="inline">text-array</code> field to define
+language-specific text processing options.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html">Configuring Analysis Schemes</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="define_expression/3">
+
+    <span id="define_expression/2"></span>
+
+  <div class="detail-header">
+    <a href="#define_expression/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">define_expression(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures an <code class="inline">Expression</code> for the search domain.</p>
+<p>Used to create new expressions and modify existing ones. If the expression exists, the new
+configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="define_index_field/3">
+
+    <span id="define_index_field/2"></span>
+
+  <div class="detail-header">
+    <a href="#define_index_field/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">define_index_field(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures an <code class="inline">IndexField</code> for the search domain.</p>
+<p>Used to create new fields and modify existing ones. You must specify the name of the domain you
+are configuring and an index field configuration. The index field configuration specifies a unique
+name, the index field type, and the options you want to configure for the field. The options you
+can specify depend on the <code class="inline">IndexFieldType</code>. If the field exists, the new configuration replaces
+the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="define_suggester/3">
+
+    <span id="define_suggester/2"></span>
+
+  <div class="detail-header">
+    <a href="#define_suggester/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">define_suggester(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures a suggester for a domain.</p>
+<p>A suggester enables you to display possible matches before users finish typing their queries. When
+you configure a suggester, you must specify the name of the text field you want to search for
+possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting Search Suggestions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_analysis_scheme/3">
+
+    <span id="delete_analysis_scheme/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_analysis_scheme/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_analysis_scheme(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an analysis scheme.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html">Configuring Analysis Schemes</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_domain/3">
+
+    <span id="delete_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes a search domain and all of its data.</p>
+<p>Once a domain has been deleted, it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html">Deleting a Search Domain</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_expression/3">
+
+    <span id="delete_expression/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_expression/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_expression(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L113" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes an <code class="inline">Expression</code> from the search domain.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_index_field/3">
+
+    <span id="delete_index_field/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_index_field/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_index_field(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes an <code class="inline">IndexField</code> from the search domain.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html">Configuring Index Fields</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_suggester/3">
+
+    <span id="delete_suggester/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_suggester/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_suggester(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a suggester.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting Search Suggestions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_analysis_schemes/3">
+
+    <span id="describe_analysis_schemes/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_analysis_schemes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_analysis_schemes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the analysis schemes configured for a domain.</p>
+<p>An analysis scheme defines language-specific text processing options for a <code class="inline">text</code> field. Can be
+limited to specific analysis schemes by name. By default, shows all analysis schemes and includes
+any pending changes to the configuration. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code> to show the active
+configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html">Configuring Analysis Schemes</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_availability_options/3">
+
+    <span id="describe_availability_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_availability_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_availability_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the availability options configured for a domain.</p>
+<p>By default, shows the configuration with any pending changes. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code>
+to show the active configuration and exclude pending changes. For more information, see
+<a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html">Configuring Availability Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_domain_endpoint_options/3">
+
+    <span id="describe_domain_endpoint_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_domain_endpoint_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_domain_endpoint_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L169" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the domain&#39;s endpoint options, specifically whether all requests to the domain must arrive
+over HTTPS.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html">Configuring Domain Endpoint Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_domains/3">
+
+    <span id="describe_domains/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_domains/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_domains(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the search domains owned by this account.</p>
+<p>Can be limited to specific domains. Shows all domains by default. To get the number of searchable
+documents in a domain, use the console or submit a <code class="inline">matchall</code> request to your domain&#39;s search
+endpoint: <code class="inline">q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html">Getting Information about a Search
+Domain</a> in
+the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_expressions/3">
+
+    <span id="describe_expressions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_expressions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_expressions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the expressions configured for the search domain.</p>
+<p>Can be limited to specific expressions by name. By default, shows all expressions and includes any
+pending changes to the configuration. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code> to show the active
+configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html">Configuring Expressions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_index_fields/3">
+
+    <span id="describe_index_fields/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_index_fields/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_index_fields(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L206" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the index fields configured for the search domain.</p>
+<p>Can be limited to specific fields by name. By default, shows all fields and includes any pending
+changes to the configuration. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code> to show the active configuration
+and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html">Getting Domain Information</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_scaling_parameters/3">
+
+    <span id="describe_scaling_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_scaling_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_scaling_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the scaling parameters configured for a domain.</p>
+<p>A domain&#39;s scaling parameters specify the desired search instance type and replication count. For
+more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html">Configuring Scaling Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_service_access_policies/3">
+
+    <span id="describe_service_access_policies/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_service_access_policies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_service_access_policies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the access policies that control access to the domain&#39;s document and search
+endpoints.</p>
+<p>By default, shows the configuration with any pending changes. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code>
+to show the active configuration and exclude pending changes. For more information, see
+<a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html">Configuring Access for a Search Domain</a> in
+the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_suggesters/3">
+
+    <span id="describe_suggesters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_suggesters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_suggesters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L243" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the suggesters configured for a domain.</p>
+<p>A suggester enables you to display possible matches before users finish typing their queries. Can
+be limited to specific suggesters by name. By default, shows all suggesters and includes any
+pending changes to the configuration. Set the <code class="inline">Deployed</code> option to <code class="inline">true</code> to show the active
+configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html">Getting Search Suggestions</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="index_documents/3">
+
+    <span id="index_documents/2"></span>
+
+  <div class="detail-header">
+    <a href="#index_documents/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">index_documents(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tells the search domain to start indexing its documents using the latest indexing options.</p>
+<p>This operation must be invoked to activate options whose <code class="inline">OptionStatus</code> is
+<code class="inline">RequiresIndexDocuments</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_domain_names/3">
+
+    <span id="list_domain_names/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_domain_names/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_domain_names(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L260" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all search domains owned by an account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_availability_options/3">
+
+    <span id="update_availability_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_availability_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_availability_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures the availability options for a domain.</p>
+<p>Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability
+Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes
+to the Multi-AZ option can take about half an hour to become active. For more information, see
+<a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html">Configuring Availability Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_domain_endpoint_options/3">
+
+    <span id="update_domain_endpoint_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_domain_endpoint_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_domain_endpoint_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L284" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the domain&#39;s endpoint options, specifically whether all requests to the domain must arrive
+over HTTPS.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html">Configuring Domain Endpoint Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_scaling_parameters/3">
+
+    <span id="update_scaling_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_scaling_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_scaling_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures scaling parameters for a domain.</p>
+<p>A domain&#39;s scaling parameters specify the desired search instance type and replication count.
+Amazon CloudSearch will still automatically scale your domain based on the volume of data and
+traffic, but not below the desired instance type and replication count. If the Multi-AZ option is
+enabled, these values control the resources used per Availability Zone. For more information, see
+<a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html">Configuring Scaling Options</a>
+in the <em>Amazon CloudSearch Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_service_access_policies/3">
+
+    <span id="update_service_access_policies/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_service_access_policies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_service_access_policies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_search.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures the access rules that control access to the domain&#39;s document and search endpoints.</p>
+<p>For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"> Configuring Access for an Amazon CloudSearch Domain</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

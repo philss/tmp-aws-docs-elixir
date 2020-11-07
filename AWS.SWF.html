@@ -1,0 +1,2283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.SWF — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.SWF
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Simple Workflow Service</p>
+<p>The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use
+Amazon&#39;s cloud to coordinate work across distributed components.</p>
+<p>In Amazon SWF, a <em>task</em> represents a logical unit of work that is performed by a component of your
+workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling,
+and concurrency in accordance with the logical flow of the application.</p>
+<p>Amazon SWF gives you full control over implementing tasks and coordinating them without worrying
+about underlying complexities such as tracking their progress and maintaining their state.</p>
+<p>This documentation serves as reference only. For a broader overview of the Amazon SWF programming
+model, see the <em><a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/">Amazon SWF Developer Guide</a> </em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#count_closed_workflow_executions/3">count_closed_workflow_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of closed workflow executions within the given domain that meet the specified
+filtering criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#count_open_workflow_executions/3">count_open_workflow_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of open workflow executions within the given domain that meet the specified
+filtering criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#count_pending_activity_tasks/3">count_pending_activity_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the estimated number of activity tasks in the specified task list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#count_pending_decision_tasks/3">count_pending_decision_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the estimated number of decision tasks in the specified task list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deprecate_activity_type/3">deprecate_activity_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecates the specified <em>activity type</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deprecate_domain/3">deprecate_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecates the specified domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deprecate_workflow_type/3">deprecate_workflow_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecates the specified <em>workflow type</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_activity_type/3">describe_activity_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified activity type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_domain/3">describe_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified domain, including description and status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workflow_execution/3">describe_workflow_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified workflow execution including its type and some statistics.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workflow_type/3">describe_workflow_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified <em>workflow type</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_workflow_execution_history/3">get_workflow_execution_history(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the history of the specified workflow execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_activity_types/3">list_activity_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all activities registered in the specified domain that match the
+specified name and registration status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_closed_workflow_executions/3">list_closed_workflow_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of closed workflow executions in the specified domain that meet the filtering
+criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_domains/3">list_domains(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of domains registered in the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_open_workflow_executions/3">list_open_workflow_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of open workflow executions in the specified domain that meet the filtering
+criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List tags for a given domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_workflow_types/3">list_workflow_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about workflow types in the specified domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#poll_for_activity_task/3">poll_for_activity_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by workers to get an <code class="inline">ActivityTask</code> from the specified activity <code class="inline">taskList</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#poll_for_decision_task/3">poll_for_decision_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by deciders to get a <code class="inline">DecisionTask</code> from the specified decision <code class="inline">taskList</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#record_activity_task_heartbeat/3">record_activity_task_heartbeat(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by activity workers to report to the service that the <code class="inline">ActivityTask</code> represented by the
+specified <code class="inline">taskToken</code> is still making progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_activity_type/3">register_activity_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a new <em>activity type</em> along with its configuration settings in the specified domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_domain/3">register_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a new domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_workflow_type/3">register_workflow_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a new <em>workflow type</em> and its configuration settings in the specified domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request_cancel_workflow_execution/3">request_cancel_workflow_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Records a <code class="inline">WorkflowExecutionCancelRequested</code> event in the currently running workflow execution
+identified by the given domain, workflowId, and runId.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#respond_activity_task_canceled/3">respond_activity_task_canceled(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code> was
+successfully canceled.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#respond_activity_task_completed/3">respond_activity_task_completed(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code>
+completed successfully with a <code class="inline">result</code> (if provided).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#respond_activity_task_failed/3">respond_activity_task_failed(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code> has
+failed with <code class="inline">reason</code> (if specified).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#respond_decision_task_completed/3">respond_decision_task_completed(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by deciders to tell the service that the <code class="inline">DecisionTask</code> identified by the <code class="inline">taskToken</code> has
+successfully completed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#signal_workflow_execution/3">signal_workflow_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Records a <code class="inline">WorkflowExecutionSignaled</code> event in the workflow execution history and creates a
+decision task for the workflow execution identified by the given domain, workflowId and runId.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_workflow_execution/3">start_workflow_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an execution of the workflow type in the specified domain using the provided <code class="inline">workflowId</code>
+and input data.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add a tag to a Amazon SWF domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#terminate_workflow_execution/3">terminate_workflow_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Records a <code class="inline">WorkflowExecutionTerminated</code> event and forces closure of the workflow execution
+identified by the given domain, runId, and workflowId.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#undeprecate_activity_type/3">undeprecate_activity_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Undeprecates a previously deprecated <em>activity type</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#undeprecate_domain/3">undeprecate_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Undeprecates a previously deprecated domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#undeprecate_workflow_type/3">undeprecate_workflow_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Undeprecates a previously deprecated <em>workflow type</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove a tag from a Amazon SWF domain.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="count_closed_workflow_executions/3">
+
+    <span id="count_closed_workflow_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#count_closed_workflow_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">count_closed_workflow_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of closed workflow executions within the given domain that meet the specified
+filtering criteria.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">tagFilter.tag</code>: String constraint. The key is <code class="inline">swf:tagFilter.tag</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.name</code>: String constraint. The key is <code class="inline">swf:typeFilter.name</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.version</code>: String constraint. The key is
+<code class="inline">swf:typeFilter.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="count_open_workflow_executions/3">
+
+    <span id="count_open_workflow_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#count_open_workflow_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">count_open_workflow_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of open workflow executions within the given domain that meet the specified
+filtering criteria.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">tagFilter.tag</code>: String constraint. The key is <code class="inline">swf:tagFilter.tag</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.name</code>: String constraint. The key is <code class="inline">swf:typeFilter.name</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.version</code>: String constraint. The key is
+<code class="inline">swf:typeFilter.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="count_pending_activity_tasks/3">
+
+    <span id="count_pending_activity_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#count_pending_activity_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">count_pending_activity_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the estimated number of activity tasks in the specified task list.</p>
+<p>The count returned is an approximation and isn&#39;t guaranteed to be exact. If you specify a task
+list that no activity task was ever scheduled in then <code class="inline">0</code> is returned.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the <code class="inline">taskList.name</code> parameter by using a <code class="inline">Condition</code> element with the
+<code class="inline">swf:taskList.name</code> key to allow the action to access only certain task lists.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="count_pending_decision_tasks/3">
+
+    <span id="count_pending_decision_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#count_pending_decision_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">count_pending_decision_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the estimated number of decision tasks in the specified task list.</p>
+<p>The count returned is an approximation and isn&#39;t guaranteed to be exact. If you specify a task
+list that no decision task was ever scheduled in then <code class="inline">0</code> is returned.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the <code class="inline">taskList.name</code> parameter by using a <code class="inline">Condition</code> element with the
+<code class="inline">swf:taskList.name</code> key to allow the action to access only certain task lists.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deprecate_activity_type/3">
+
+    <span id="deprecate_activity_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#deprecate_activity_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deprecate_activity_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecates the specified <em>activity type</em>.</p>
+<p>After an activity type has been deprecated, you cannot create new tasks of that activity type.
+Tasks of this type that were scheduled before the type was deprecated continue to run.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">activityType.name</code>: String constraint. The key is
+<code class="inline">swf:activityType.name</code>.</p>
+</li>
+<li><p><code class="inline">activityType.version</code>: String constraint. The key is
+<code class="inline">swf:activityType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deprecate_domain/3">
+
+    <span id="deprecate_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#deprecate_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deprecate_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L215" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecates the specified domain.</p>
+<p>After a domain has been deprecated it cannot be used to create new workflow executions or register
+new types. However, you can still use visibility actions on this domain. Deprecating a domain also
+deprecates all activity and workflow types registered in the domain. Executions that were started
+before the domain was deprecated continues to run.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deprecate_workflow_type/3">
+
+    <span id="deprecate_workflow_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#deprecate_workflow_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deprecate_workflow_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecates the specified <em>workflow type</em>.</p>
+<p>After a workflow type has been deprecated, you cannot create new executions of that type.
+Executions that were started before the type was deprecated continues to run. A deprecated
+workflow type may still be used when calling visibility actions.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">workflowType.name</code>: String constraint. The key is
+<code class="inline">swf:workflowType.name</code>.</p>
+</li>
+<li><p><code class="inline">workflowType.version</code>: String constraint. The key is
+<code class="inline">swf:workflowType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_activity_type/3">
+
+    <span id="describe_activity_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_activity_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_activity_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified activity type.</p>
+<p>This includes configuration settings provided when the type was registered and other general
+information about the type.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">activityType.name</code>: String constraint. The key is
+<code class="inline">swf:activityType.name</code>.</p>
+</li>
+<li><p><code class="inline">activityType.version</code>: String constraint. The key is
+<code class="inline">swf:activityType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_domain/3">
+
+    <span id="describe_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L311" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified domain, including description and status.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workflow_execution/3">
+
+    <span id="describe_workflow_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workflow_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workflow_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified workflow execution including its type and some statistics.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workflow_type/3">
+
+    <span id="describe_workflow_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workflow_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workflow_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L372" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified <em>workflow type</em>.</p>
+<p>This includes configuration settings specified when the type was registered and other information
+such as creation date, current status, etc.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">workflowType.name</code>: String constraint. The key is
+<code class="inline">swf:workflowType.name</code>.</p>
+</li>
+<li><p><code class="inline">workflowType.version</code>: String constraint. The key is
+<code class="inline">swf:workflowType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_workflow_execution_history/3">
+
+    <span id="get_workflow_execution_history/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_workflow_execution_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_workflow_execution_history(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L402" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the history of the specified workflow execution.</p>
+<p>The results may be split into multiple pages. To retrieve subsequent pages, make the call again
+using the <code class="inline">nextPageToken</code> returned by the initial call.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_activity_types/3">
+
+    <span id="list_activity_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_activity_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_activity_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L431" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all activities registered in the specified domain that match the
+specified name and registration status.</p>
+<p>The result includes information like creation date, current status of the activity, etc. The
+results may be split into multiple pages. To retrieve subsequent pages, make the call again using
+the <code class="inline">nextPageToken</code> returned by the initial call.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_closed_workflow_executions/3">
+
+    <span id="list_closed_workflow_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_closed_workflow_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_closed_workflow_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L470" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of closed workflow executions in the specified domain that meet the filtering
+criteria.</p>
+<p>The results may be split into multiple pages. To retrieve subsequent pages, make the call again
+using the nextPageToken returned by the initial call.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">tagFilter.tag</code>: String constraint. The key is <code class="inline">swf:tagFilter.tag</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.name</code>: String constraint. The key is <code class="inline">swf:typeFilter.name</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.version</code>: String constraint. The key is
+<code class="inline">swf:typeFilter.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_domains/3">
+
+    <span id="list_domains/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_domains/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_domains(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L501" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of domains registered in the account.</p>
+<p>The results may be split into multiple pages. To retrieve subsequent pages, make the call again
+using the nextPageToken returned by the initial call.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains. The element must be set to <code class="inline">arn:aws:swf::AccountID:domain/*</code>, where <em>AccountID</em> is the
+account ID, with no dashes.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_open_workflow_executions/3">
+
+    <span id="list_open_workflow_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_open_workflow_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_open_workflow_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L540" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of open workflow executions in the specified domain that meet the filtering
+criteria.</p>
+<p>The results may be split into multiple pages. To retrieve subsequent pages, make the call again
+using the nextPageToken returned by the initial call.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">tagFilter.tag</code>: String constraint. The key is <code class="inline">swf:tagFilter.tag</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.name</code>: String constraint. The key is <code class="inline">swf:typeFilter.name</code>.</p>
+</li>
+<li><p><code class="inline">typeFilter.version</code>: String constraint. The key is
+<code class="inline">swf:typeFilter.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L547" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List tags for a given domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_workflow_types/3">
+
+    <span id="list_workflow_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_workflow_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_workflow_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L573" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about workflow types in the specified domain.</p>
+<p>The results may be split into multiple pages that can be retrieved by making the call repeatedly.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="poll_for_activity_task/3">
+
+    <span id="poll_for_activity_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#poll_for_activity_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">poll_for_activity_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L608" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by workers to get an <code class="inline">ActivityTask</code> from the specified activity <code class="inline">taskList</code>.</p>
+<p>This initiates a long poll, where the service holds the HTTP connection open and responds as soon
+as a task becomes available. The maximum time the service holds on to the request before
+responding is 60 seconds. If no task is available within 60 seconds, the poll returns an empty
+result. An empty result, in this context, means that an ActivityTask is returned, but that the
+value of taskToken is an empty string. If a task is returned, the worker should use its type to
+identify and process it correctly.</p>
+<p>Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than
+the maximum time service may hold the poll request).</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the <code class="inline">taskList.name</code> parameter by using a <code class="inline">Condition</code> element with the
+<code class="inline">swf:taskList.name</code> key to allow the action to access only certain task lists.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="poll_for_decision_task/3">
+
+    <span id="poll_for_decision_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#poll_for_decision_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">poll_for_decision_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L652" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by deciders to get a <code class="inline">DecisionTask</code> from the specified decision <code class="inline">taskList</code>.</p>
+<p>A decision task may be returned for any open workflow execution that is using the specified task
+list. The task includes a paginated view of the history of the workflow execution. The decider
+should use the workflow type and the history to determine how to properly handle the task.</p>
+<p>This action initiates a long poll, where the service holds the HTTP connection open and responds
+as soon a task becomes available. If no decision task is available in the specified task list
+before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this
+context, means that a DecisionTask is returned, but that the value of taskToken is an empty
+string.</p>
+<p>Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher
+than the timeout).</p>
+<p>Because the number of workflow history events for a single workflow execution might be very large,
+the result returned might be split up across a number of pages. To retrieve subsequent pages, make
+additional calls to <code class="inline">PollForDecisionTask</code> using the <code class="inline">nextPageToken</code> returned by the initial call.
+Note that you do <em>not</em> call <code class="inline">GetWorkflowExecutionHistory</code> with this <code class="inline">nextPageToken</code>. Instead, call
+<code class="inline">PollForDecisionTask</code> again.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the <code class="inline">taskList.name</code> parameter by using a <code class="inline">Condition</code> element with the
+<code class="inline">swf:taskList.name</code> key to allow the action to access only certain task lists.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="record_activity_task_heartbeat/3">
+
+    <span id="record_activity_task_heartbeat/2"></span>
+
+  <div class="detail-header">
+    <a href="#record_activity_task_heartbeat/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">record_activity_task_heartbeat(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L701" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by activity workers to report to the service that the <code class="inline">ActivityTask</code> represented by the
+specified <code class="inline">taskToken</code> is still making progress.</p>
+<p>The worker can also specify details of the progress, for example percent complete, using the
+<code class="inline">details</code> parameter. This action can also be used by the worker as a mechanism to check if
+cancellation is being requested for the activity task. If a cancellation is being attempted for
+the specified task, then the boolean <code class="inline">cancelRequested</code> flag returned by the service is set to
+<code class="inline">true</code>.</p>
+<p>This action resets the <code class="inline">taskHeartbeatTimeout</code> clock. The <code class="inline">taskHeartbeatTimeout</code> is specified in
+<code class="inline">RegisterActivityType</code>.</p>
+<p>This action doesn&#39;t in itself create an event in the workflow execution history. However, if the
+task times out, the workflow execution history contains a <code class="inline">ActivityTaskTimedOut</code> event that
+contains the information from the last heartbeat generated by the activity worker.</p>
+<p>The <code class="inline">taskStartToCloseTimeout</code> of an activity type is the maximum duration of an activity task,
+regardless of the number of <code class="inline">RecordActivityTaskHeartbeat</code> requests received. The
+<code class="inline">taskStartToCloseTimeout</code> is also specified in <code class="inline">RegisterActivityType</code>.</p>
+<p>This operation is only useful for long-lived activities to report liveliness of the task and to
+determine if a cancellation is being attempted.</p>
+<p>If the <code class="inline">cancelRequested</code> flag returns <code class="inline">true</code>, a cancellation is being attempted. If the worker can
+cancel the activity, it should respond with <code class="inline">RespondActivityTaskCanceled</code>. Otherwise, it should
+ignore the cancellation request.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_activity_type/3">
+
+    <span id="register_activity_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_activity_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_activity_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L737" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a new <em>activity type</em> along with its configuration settings in the specified domain.</p>
+<p>A <code class="inline">TypeAlreadyExists</code> fault is returned if the type already exists in the domain. You cannot
+change any configuration settings of the type after its registration, and it must be registered as
+a new version.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">defaultTaskList.name</code>: String constraint. The key is
+<code class="inline">swf:defaultTaskList.name</code>.</p>
+</li>
+<li><p><code class="inline">name</code>: String constraint. The key is <code class="inline">swf:name</code>.</p>
+</li>
+<li><p><code class="inline">version</code>: String constraint. The key is <code class="inline">swf:version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_domain/3">
+
+    <span id="register_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L761" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a new domain.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>You cannot use an IAM policy to control domain access for this action. The name of
+the domain being registered is available as the resource of this action.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_workflow_type/3">
+
+    <span id="register_workflow_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_workflow_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_workflow_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L799" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a new <em>workflow type</em> and its configuration settings in the specified domain.</p>
+<p>The retention period for the workflow history is set by the <code class="inline">RegisterDomain</code> action.</p>
+<p>If the type already exists, then a <code class="inline">TypeAlreadyExists</code> fault is returned. You cannot change the
+configuration settings of a workflow type once it is registered and it must be registered as a new
+version.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">defaultTaskList.name</code>: String constraint. The key is
+<code class="inline">swf:defaultTaskList.name</code>.</p>
+</li>
+<li><p><code class="inline">name</code>: String constraint. The key is <code class="inline">swf:name</code>.</p>
+</li>
+<li><p><code class="inline">version</code>: String constraint. The key is <code class="inline">swf:version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="request_cancel_workflow_execution/3">
+
+    <span id="request_cancel_workflow_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#request_cancel_workflow_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">request_cancel_workflow_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L833" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Records a <code class="inline">WorkflowExecutionCancelRequested</code> event in the currently running workflow execution
+identified by the given domain, workflowId, and runId.</p>
+<p>This logically requests the cancellation of the workflow execution as a whole. It is up to the
+decider to take appropriate actions when it receives an execution history with this event.</p>
+<p>If the runId isn&#39;t specified, the <code class="inline">WorkflowExecutionCancelRequested</code> event is recorded in the
+history of the current open workflow execution with the specified workflowId in the domain.</p>
+<p>Because this action allows the workflow to properly clean up and gracefully close, it should be
+used instead of <code class="inline">TerminateWorkflowExecution</code> when possible.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="respond_activity_task_canceled/3">
+
+    <span id="respond_activity_task_canceled/2"></span>
+
+  <div class="detail-header">
+    <a href="#respond_activity_task_canceled/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">respond_activity_task_canceled(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L871" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code> was
+successfully canceled.</p>
+<p>Additional <code class="inline">details</code> can be provided using the <code class="inline">details</code> argument.</p>
+<p>These <code class="inline">details</code> (if provided) appear in the <code class="inline">ActivityTaskCanceled</code> event added to the workflow
+history.</p>
+<p>Only use this operation if the <code class="inline">canceled</code> flag of a <code class="inline">RecordActivityTaskHeartbeat</code> request returns
+<code class="inline">true</code> and if the activity can be safely undone or abandoned.</p>
+<p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task
+is reported as open while a worker is processing it. A task is closed after it has been specified
+in a call to <code class="inline">RespondActivityTaskCompleted</code>, RespondActivityTaskCanceled,
+<code class="inline">RespondActivityTaskFailed</code>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="respond_activity_task_completed/3">
+
+    <span id="respond_activity_task_completed/2"></span>
+
+  <div class="detail-header">
+    <a href="#respond_activity_task_completed/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">respond_activity_task_completed(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L908" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code>
+completed successfully with a <code class="inline">result</code> (if provided).</p>
+<p>The <code class="inline">result</code> appears in the <code class="inline">ActivityTaskCompleted</code> event in the workflow history.</p>
+<p>If the requested task doesn&#39;t complete successfully, use <code class="inline">RespondActivityTaskFailed</code> instead. If
+the worker finds that the task is canceled through the <code class="inline">canceled</code> flag returned by
+<code class="inline">RecordActivityTaskHeartbeat</code>, it should cancel the task, clean up and then call
+<code class="inline">RespondActivityTaskCanceled</code>.</p>
+<p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task
+is reported as open while a worker is processing it. A task is closed after it has been specified
+in a call to RespondActivityTaskCompleted, <code class="inline">RespondActivityTaskCanceled</code>,
+<code class="inline">RespondActivityTaskFailed</code>, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="respond_activity_task_failed/3">
+
+    <span id="respond_activity_task_failed/2"></span>
+
+  <div class="detail-header">
+    <a href="#respond_activity_task_failed/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">respond_activity_task_failed(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L940" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by workers to tell the service that the <code class="inline">ActivityTask</code> identified by the <code class="inline">taskToken</code> has
+failed with <code class="inline">reason</code> (if specified).</p>
+<p>The <code class="inline">reason</code> and <code class="inline">details</code> appear in the <code class="inline">ActivityTaskFailed</code> event added to the workflow history.</p>
+<p>A task is considered open from the time that it is scheduled until it is closed. Therefore a task
+is reported as open while a worker is processing it. A task is closed after it has been specified
+in a call to <code class="inline">RespondActivityTaskCompleted</code>, <code class="inline">RespondActivityTaskCanceled</code>,
+RespondActivityTaskFailed, or the task has <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types">timed out</a>.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="respond_decision_task_completed/3">
+
+    <span id="respond_decision_task_completed/2"></span>
+
+  <div class="detail-header">
+    <a href="#respond_decision_task_completed/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">respond_decision_task_completed(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L963" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by deciders to tell the service that the <code class="inline">DecisionTask</code> identified by the <code class="inline">taskToken</code> has
+successfully completed.</p>
+<p>The <code class="inline">decisions</code> argument specifies the list of decisions made while processing the task.</p>
+<p>A <code class="inline">DecisionTaskCompleted</code> event is added to the workflow history. The <code class="inline">executionContext</code> specified
+is attached to the event in the workflow execution history.</p>
+<p><strong>Access Control</strong></p>
+<p>If an IAM policy grants permission to use <code class="inline">RespondDecisionTaskCompleted</code>, it can express
+permissions for the list of decisions in the <code class="inline">decisions</code> parameter. Each of the decisions has one
+or more parameters, much like a regular API call. To allow for policies to be as readable as
+possible, you can express permissions on decisions as if they were actual API calls, including
+applying conditions to some parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="signal_workflow_execution/3">
+
+    <span id="signal_workflow_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#signal_workflow_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">signal_workflow_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L995" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Records a <code class="inline">WorkflowExecutionSignaled</code> event in the workflow execution history and creates a
+decision task for the workflow execution identified by the given domain, workflowId and runId.</p>
+<p>The event is recorded with the specified user defined signalName and input (if provided).</p>
+<p>If a runId isn&#39;t specified, then the <code class="inline">WorkflowExecutionSignaled</code> event is recorded in the history
+of the current open workflow with the matching workflowId in the domain.</p>
+<p>If the specified workflow execution isn&#39;t open, this method fails with <code class="inline">UnknownResource</code>.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_workflow_execution/3">
+
+    <span id="start_workflow_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_workflow_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_workflow_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1041" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an execution of the workflow type in the specified domain using the provided <code class="inline">workflowId</code>
+and input data.</p>
+<p>This action returns the newly started workflow execution.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">tagList.member.0</code>: The key is <code class="inline">swf:tagList.member.0</code>.</p>
+</li>
+<li><p><code class="inline">tagList.member.1</code>: The key is <code class="inline">swf:tagList.member.1</code>.</p>
+</li>
+<li><p><code class="inline">tagList.member.2</code>: The key is <code class="inline">swf:tagList.member.2</code>.</p>
+</li>
+<li><p><code class="inline">tagList.member.3</code>: The key is <code class="inline">swf:tagList.member.3</code>.</p>
+</li>
+<li><p><code class="inline">tagList.member.4</code>: The key is <code class="inline">swf:tagList.member.4</code>.</p>
+</li>
+<li><p><code class="inline">taskList</code>: String constraint. The key is <code class="inline">swf:taskList.name</code>.</p>
+</li>
+<li><p><code class="inline">workflowType.name</code>: String constraint. The key is
+<code class="inline">swf:workflowType.name</code>.</p>
+</li>
+<li><p><code class="inline">workflowType.version</code>: String constraint. The key is
+<code class="inline">swf:workflowType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1050" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add a tag to a Amazon SWF domain.</p>
+<p>Amazon SWF supports a maximum of 50 tags per resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="terminate_workflow_execution/3">
+
+    <span id="terminate_workflow_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#terminate_workflow_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">terminate_workflow_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1086" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Records a <code class="inline">WorkflowExecutionTerminated</code> event and forces closure of the workflow execution
+identified by the given domain, runId, and workflowId.</p>
+<p>The child policy, registered with the workflow type or specified when starting this execution, is
+applied to any open child workflow executions of this workflow execution.</p>
+<p>If the identified workflow execution was in progress, it is terminated immediately.</p>
+<p>If a runId isn&#39;t specified, then the <code class="inline">WorkflowExecutionTerminated</code> event is recorded in the
+history of the current open workflow with the matching workflowId in the domain.</p>
+<p>You should consider using <code class="inline">RequestCancelWorkflowExecution</code> action instead because it allows the
+workflow to gracefully close while <code class="inline">TerminateWorkflowExecution</code> doesn&#39;t.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="undeprecate_activity_type/3">
+
+    <span id="undeprecate_activity_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#undeprecate_activity_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">undeprecate_activity_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1122" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Undeprecates a previously deprecated <em>activity type</em>.</p>
+<p>After an activity type has been undeprecated, you can create new tasks of that activity type.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">activityType.name</code>: String constraint. The key is
+<code class="inline">swf:activityType.name</code>.</p>
+</li>
+<li><p><code class="inline">activityType.version</code>: String constraint. The key is
+<code class="inline">swf:activityType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="undeprecate_domain/3">
+
+    <span id="undeprecate_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#undeprecate_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">undeprecate_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Undeprecates a previously deprecated domain.</p>
+<p>After a domain has been undeprecated it can be used to create new workflow executions or register
+new types.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>You cannot use an IAM policy to constrain this action&#39;s parameters.</p>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="undeprecate_workflow_type/3">
+
+    <span id="undeprecate_workflow_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#undeprecate_workflow_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">undeprecate_workflow_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Undeprecates a previously deprecated <em>workflow type</em>.</p>
+<p>After a workflow type has been undeprecated, you can create new executions of that type.</p>
+<p>This operation is eventually consistent. The results are best effort and may not exactly reflect
+recent updates and changes.</p>
+<p><strong>Access Control</strong></p>
+<p>You can use IAM policies to control this action&#39;s access to Amazon SWF resources as follows:</p>
+<ul>
+<li><p>Use a <code class="inline">Resource</code> element with the domain name to limit the action to only specified
+domains.</p>
+</li>
+<li><p>Use an <code class="inline">Action</code> element to allow or deny permission to call this action.</p>
+</li>
+<li><p>Constrain the following parameters by using a <code class="inline">Condition</code> element with the
+appropriate keys.</p>
+<ul>
+<li><p><code class="inline">workflowType.name</code>: String constraint. The key is
+<code class="inline">swf:workflowType.name</code>.</p>
+</li>
+<li><p><code class="inline">workflowType.version</code>: String constraint. The key is
+<code class="inline">swf:workflowType.version</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>If the caller doesn&#39;t have sufficient permissions to invoke the action, or the parameter values
+fall outside the specified constraints, the action fails. The associated event attribute&#39;s <code class="inline">cause</code>
+parameter is set to <code class="inline">OPERATION_NOT_PERMITTED</code>. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using IAM to Manage Access to Amazon SWF
+Workflows</a> in the
+<em>Amazon SWF Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/swf.ex#L1195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Remove a tag from a Amazon SWF domain.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

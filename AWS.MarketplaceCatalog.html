@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.MarketplaceCatalog — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.MarketplaceCatalog
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Catalog API actions allow you to manage your entities through list, describe, and update
+capabilities.</p>
+<p>An entity can be a product or an offer on AWS Marketplace.</p>
+<p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with
+your AWS Marketplace product build or deployment pipelines. You can also create your own
+applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_change_set/3">cancel_change_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used to cancel an open change request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_change_set/4">describe_change_set(client, catalog, change_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about a given change set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_entity/4">describe_entity(client, catalog, entity_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the metadata and content of the entity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_change_sets/3">list_change_sets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of change sets owned by the account being used to make the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_entities/3">list_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides the list of entities of a given type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_change_set/3">start_change_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation allows you to request changes for your entities.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_change_set/3">
+
+    <span id="cancel_change_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_change_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_change_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used to cancel an open change request.</p>
+<p>Must be sent before the status of the request changes to <code class="inline">APPLYING</code>, the final stage of completing
+your change request. You can describe a change during the 60-day request history retention period
+for API calls.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_change_set/4">
+
+    <span id="describe_change_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_change_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_change_set(client, catalog, change_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about a given change set.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_entity/4">
+
+    <span id="describe_entity/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_entity/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_entity(client, catalog, entity_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the metadata and content of the entity.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_change_sets/3">
+
+    <span id="list_change_sets/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_change_sets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_change_sets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of change sets owned by the account being used to make the call.</p>
+<p>You can filter this list by providing any combination of <code class="inline">entityId</code>, <code class="inline">ChangeSetName</code>, and status.
+If you provide more than one filter, the API operation applies a logical AND between the filters.</p>
+<p>You can describe a change during the 60-day request history retention period for API calls.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_entities/3">
+
+    <span id="list_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides the list of entities of a given type.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_change_set/3">
+
+    <span id="start_change_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_change_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_change_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_catalog.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation allows you to request changes for your entities.</p>
+<p>Within a single ChangeSet, you cannot start the same change type against the same entity multiple
+times. Additionally, when a ChangeSet is running, all the entities targeted by the different
+changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If
+you try to start a ChangeSet containing a change against an entity that is already locked, you
+will receive a <code class="inline">ResourceInUseException</code>.</p>
+<p>For example, you cannot start the ChangeSet described in the
+<a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a>
+below because it contains two changes to execute the same change type (<code class="inline">AddRevisions</code>) against the
+same entity (<code class="inline">entity-id@1)</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

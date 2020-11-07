@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Appflow — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Appflow
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Welcome to the Amazon AppFlow API reference.</p>
+<p>This guide is for developers who need detailed information about the Amazon AppFlow API
+operations, data types, and errors.</p>
+<p>Amazon AppFlow is a fully managed integration service that enables you to securely transfer data
+between software as a service (SaaS) applications like Salesforce, Marketo, Slack, and ServiceNow,
+and AWS services like Amazon S3 and Amazon Redshift.</p>
+<p>Use the following links to get started on the Amazon AppFlow API:</p>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/appflow/1.0/APIReference/API_Operations.html">Actions</a>: An alphabetical list of all Amazon AppFlow API operations.</p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/appflow/1.0/APIReference/API_Types.html">Data types</a>:
+An alphabetical list of all Amazon AppFlow data types.</p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/appflow/1.0/APIReference/CommonParameters.html">Common parameters</a>:
+Parameters that all Query operations can use.</p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/appflow/1.0/APIReference/CommonErrors.html">Common errors</a>: Client and server
+errors that all operations can return.</p>
+</li>
+</ul>
+<p>If you&#39;re new to Amazon AppFlow, we recommend that you review the <a href="https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html">Amazon AppFlow User Guide</a>.</p>
+<p>Amazon AppFlow API users can use vendor-specific mechanisms for OAuth, and include applicable
+OAuth attributes (such as <code class="inline">auth-code</code> and <code class="inline">redirecturi</code>) with the connector-specific
+<code class="inline">ConnectorProfileProperties</code> when creating a new connector profile using Amazon AppFlow API
+operations. For example, Salesforce users can refer to the <a href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm"> <em>Authorize Apps with OAuth</em>
+</a> documentation.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_connector_profile/3">create_connector_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new connector profile associated with your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_flow/3">create_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables your application to create a new flow using Amazon AppFlow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_connector_profile/3">delete_connector_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables you to delete an existing connector profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_flow/3">delete_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables your application to delete an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_connector_entity/3">describe_connector_entity(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides details regarding the entity used with the connector, with a description of the data
+model for each entity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_connector_profiles/3">describe_connector_profiles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <code class="inline">connector-profile</code> details matching the provided <code class="inline">connector-profile</code> names and
+<code class="inline">connector-types</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_connectors/3">describe_connectors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the connectors vended by Amazon AppFlow for specified connector types.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_flow/3">describe_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a description of the specified flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_flow_execution_records/3">describe_flow_execution_records(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Fetches the execution history of the flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_connector_entities/3">list_connector_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of available connector entities supported by Amazon AppFlow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_flows/3">list_flows(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all of the flows associated with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the tags that are associated with a specified flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_flow/3">start_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_flow/3">stop_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deactivates the existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Applies a tag to the specified flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag from the specified flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_connector_profile/3">update_connector_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a given connector profile associated with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow/3">update_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing flow.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_connector_profile/3">
+
+    <span id="create_connector_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_connector_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_connector_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new connector profile associated with your AWS account.</p>
+<p>There is a soft quota of 100 connector profiles per AWS account. If you need more connector
+profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the
+Amazon AppFlow support channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_flow/3">
+
+    <span id="create_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables your application to create a new flow using Amazon AppFlow.</p>
+<p>You must create a connector profile before calling this API. Please note that the Request Syntax
+below shows syntax for multiple destinations, however, you can only transfer data to one item in
+this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at
+once.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_connector_profile/3">
+
+    <span id="delete_connector_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_connector_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_connector_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L69" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables you to delete an existing connector profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_flow/3">
+
+    <span id="delete_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables your application to delete an existing flow.</p>
+<p>Before deleting the flow, Amazon AppFlow validates the request by checking the flow configuration
+and status. You can delete flows one at a time.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_connector_entity/3">
+
+    <span id="describe_connector_entity/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_connector_entity/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_connector_entity(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides details regarding the entity used with the connector, with a description of the data
+model for each entity.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_connector_profiles/3">
+
+    <span id="describe_connector_profiles/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_connector_profiles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_connector_profiles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <code class="inline">connector-profile</code> details matching the provided <code class="inline">connector-profile</code> names and
+<code class="inline">connector-types</code>.</p>
+<p>Both input lists are optional, and you can use them to filter the result.</p>
+<p>If no names or <code class="inline">connector-types</code> are provided, returns all connector profiles in a paginated form.
+If there is no match, this operation returns an empty list.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_connectors/3">
+
+    <span id="describe_connectors/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_connectors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_connectors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the connectors vended by Amazon AppFlow for specified connector types.</p>
+<p>If you don&#39;t specify a connector type, this operation describes all connectors vended by Amazon
+AppFlow. If there are more connectors than can be returned in one page, the response contains a
+<code class="inline">nextToken</code> object, which can be be passed in to the next call to the <code class="inline">DescribeConnectors</code> API
+operation to retrieve the next page.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_flow/3">
+
+    <span id="describe_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a description of the specified flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_flow_execution_records/3">
+
+    <span id="describe_flow_execution_records/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_flow_execution_records/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_flow_execution_records(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Fetches the execution history of the flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_connector_entities/3">
+
+    <span id="list_connector_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_connector_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_connector_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of available connector entities supported by Amazon AppFlow.</p>
+<p>For example, you can query Salesforce for <em>Account</em> and <em>Opportunity</em> entities, or query
+ServiceNow for the <em>Incident</em> entity.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_flows/3">
+
+    <span id="list_flows/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_flows/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_flows(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all of the flows associated with your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the tags that are associated with a specified flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_flow/3">
+
+    <span id="start_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L190" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates an existing flow.</p>
+<p>For on-demand flows, this operation runs the flow immediately. For schedule and event-triggered
+flows, this operation activates the flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_flow/3">
+
+    <span id="stop_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L203" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deactivates the existing flow.</p>
+<p>For on-demand flows, this operation returns an <code class="inline">unsupportedOperationException</code> error message. For
+schedule and event-triggered flows, this operation deactivates the flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Applies a tag to the specified flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag from the specified flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_connector_profile/3">
+
+    <span id="update_connector_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_connector_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_connector_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a given connector profile associated with your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow/3">
+
+    <span id="update_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/appflow.ex#L247" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing flow.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

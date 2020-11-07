@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ElasticBeanstalk — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ElasticBeanstalk
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Elastic Beanstalk</p>
+<p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant
+applications running on the Amazon Web Services cloud.</p>
+<p>For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details page. The location of the latest AWS
+Elastic Beanstalk WSDL is
+<a href="https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE)
+Toolkits, and command line tools that enable you to access the API, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web
+Services</a>.</p>
+<p><strong>Endpoints</strong></p>
+<p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in
+the <em>Amazon Web Services Glossary</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#abort_environment_update/3">abort_environment_update(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels in-progress environment configuration update or application version deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#apply_environment_managed_action/3">apply_environment_managed_action(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Applies a scheduled managed action immediately.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_environment_operations_role/3">associate_environment_operations_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add or change the operations role used by an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#check_d_n_s_availability/3">check_d_n_s_availability(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Checks if the specified CNAME is available.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#compose_environments/3">compose_environments(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create or update a group of environments that each run a separate component of a single
+application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application/3">create_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application that has one configuration template named <code class="inline">default</code> and no application
+versions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application_version/3">create_application_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application version for the specified application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_configuration_template/3">create_configuration_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS Elastic Beanstalk configuration template, associated with a specific Elastic
+Beanstalk application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_environment/3">create_environment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified
+configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_platform_version/3">create_platform_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a new version of your custom platform.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_storage_location/3">create_storage_location(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic
+Beanstalk environments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_application/3">delete_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified application along with all associated versions and configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_application_version/3">delete_application_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified version from the specified application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_template/3">delete_configuration_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified configuration template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_environment_configuration/3">delete_environment_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the draft configuration associated with the running environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_platform_version/3">delete_platform_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified version of a custom platform.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_account_attributes/3">describe_account_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_application_versions/3">describe_application_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve a list of application versions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_applications/3">describe_applications(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the descriptions of existing applications.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_options/3">describe_configuration_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the configuration options that are used in a particular configuration template or
+environment, or that a specified solution stack defines.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_settings/3">describe_configuration_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a description of the settings for the specified configuration set, that is, either a
+configuration template or the configuration set associated with a running environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_environment_health/3">describe_environment_health(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the overall health of the specified environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_environment_managed_action_history/3">describe_environment_managed_action_history(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists an environment&#39;s completed and failed managed actions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_environment_managed_actions/3">describe_environment_managed_actions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists an environment&#39;s upcoming and in-progress managed actions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_environment_resources/3">describe_environment_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns AWS resources for this environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_environments/3">describe_environments(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns descriptions for existing environments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_events/3">describe_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instances_health/3">describe_instances_health(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_platform_version/3">describe_platform_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a platform version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_environment_operations_role/3">disassociate_environment_operations_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociate the operations role from an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_available_solution_stacks/3">list_available_solution_stacks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the available solution stack names, with the public version first and then in
+reverse chronological order.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_platform_branches/3">list_platform_branches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the platform branches available for your account in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_platform_versions/3">list_platform_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the platform versions available for your account in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Return the tags applied to an AWS Elastic Beanstalk resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#rebuild_environment/3">rebuild_environment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load
+balancer, etc.) for a specified environment and forces a restart.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#request_environment_info/3">request_environment_info(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates a request to compile the specified type of information of the deployed environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#restart_app_server/3">restart_app_server(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Causes the environment to restart the application container server running on each Amazon EC2
+instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#retrieve_environment_info/3">retrieve_environment_info(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the compiled information from a <code class="inline">RequestEnvironmentInfo</code> request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#swap_environment_c_n_a_m_es/3">swap_environment_c_n_a_m_es(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Swaps the CNAMEs of two environments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#terminate_environment/3">terminate_environment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Terminates the specified environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application/3">update_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified application to have the specified properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application_resource_lifecycle/3">update_application_resource_lifecycle(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies lifecycle settings for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application_version/3">update_application_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified application version to have the specified properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_configuration_template/3">update_configuration_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified configuration template to have the specified properties or configuration
+option values.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_environment/3">update_environment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the environment description, deploys a new application version, updates the configuration
+settings to an entirely new configuration template, or updates select configuration option values
+in the running environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_tags_for_resource/3">update_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Update the list of tags applied to an AWS Elastic Beanstalk resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#validate_configuration_settings/3">validate_configuration_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Takes a set of configuration settings and either a configuration template or environment, and
+determines whether those values are valid.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="abort_environment_update/3">
+
+    <span id="abort_environment_update/2"></span>
+
+  <div class="detail-header">
+    <a href="#abort_environment_update/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">abort_environment_update(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels in-progress environment configuration update or application version deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="apply_environment_managed_action/3">
+
+    <span id="apply_environment_managed_action/2"></span>
+
+  <div class="detail-header">
+    <a href="#apply_environment_managed_action/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">apply_environment_managed_action(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L36" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Applies a scheduled managed action immediately.</p>
+<p>A managed action can be applied only if its status is <code class="inline">Scheduled</code>. Get the status and action ID of
+a managed action with <code class="inline">DescribeEnvironmentManagedActions</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_environment_operations_role/3">
+
+    <span id="associate_environment_operations_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_environment_operations_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_environment_operations_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add or change the operations role used by an environment.</p>
+<p>After this call is made, Elastic Beanstalk uses the associated operations role for permissions to
+downstream services during subsequent calls acting on this environment. For more information, see
+<a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+in the <em>AWS Elastic Beanstalk Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="check_d_n_s_availability/3">
+
+    <span id="check_d_n_s_availability/2"></span>
+
+  <div class="detail-header">
+    <a href="#check_d_n_s_availability/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">check_d_n_s_availability(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Checks if the specified CNAME is available.</p>
+
+  </section>
+</section>
+<section class="detail" id="compose_environments/3">
+
+    <span id="compose_environments/2"></span>
+
+  <div class="detail-header">
+    <a href="#compose_environments/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">compose_environments(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L68" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create or update a group of environments that each run a separate component of a single
+application.</p>
+<p>Takes a list of version labels that specify application source bundles for each of the
+environments to create or update. The name of each environment and other required information must
+be included in the source bundles in an environment manifest named <code class="inline">env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose Environments</a>
+for details.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_application/3">
+
+    <span id="create_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application that has one configuration template named <code class="inline">default</code> and no application
+versions.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_application_version/3">
+
+    <span id="create_application_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_application_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L98" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application version for the specified application.</p>
+<p>You can create an application version from a source bundle in Amazon S3, a commit in AWS
+CodeCommit, or the output of an AWS CodeBuild build as follows:</p>
+<p>Specify a commit in an AWS CodeCommit repository with <code class="inline">SourceBuildInformation</code>.</p>
+<p>Specify a build in an AWS CodeBuild with <code class="inline">SourceBuildInformation</code> and <code class="inline">BuildConfiguration</code>.</p>
+<p>Specify a source bundle in S3 with <code class="inline">SourceBundle</code></p>
+<p>Omit both <code class="inline">SourceBuildInformation</code> and <code class="inline">SourceBundle</code> to use the default sample application.</p>
+<p>After you create an application version with a specified Amazon S3 bucket and key location, you
+can&#39;t change that Amazon S3 location. If you change the Amazon S3 location, you receive an
+exception when you attempt to launch an environment from the application version.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_configuration_template/3">
+
+    <span id="create_configuration_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_configuration_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_configuration_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L121" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS Elastic Beanstalk configuration template, associated with a specific Elastic
+Beanstalk application.</p>
+<p>You define application configuration settings in a configuration template. You can then use the
+configuration template to deploy different versions of the application with the same configuration
+settings.</p>
+<p>Templates aren&#39;t associated with any environment. The <code class="inline">EnvironmentName</code> response element is always
+<code class="inline">null</code>.</p>
+<p>Related Topics</p>
+<ul>
+<li><p><code class="inline">DescribeConfigurationOptions</code></p>
+</li>
+<li><p><code class="inline">DescribeConfigurationSettings</code></p>
+</li>
+<li><p><code class="inline">ListAvailableSolutionStacks</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_environment/3">
+
+    <span id="create_environment/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_environment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_environment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Launches an AWS Elastic Beanstalk environment for the specified application using the specified
+configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_platform_version/3">
+
+    <span id="create_platform_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_platform_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_platform_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a new version of your custom platform.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_storage_location/3">
+
+    <span id="create_storage_location/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_storage_location/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_storage_location(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic
+Beanstalk environments.</p>
+<p>The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in
+a region. If the storage location already exists, <code class="inline">CreateStorageLocation</code> still returns the bucket
+name but does not create a new bucket.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_application/3">
+
+    <span id="delete_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified application along with all associated versions and configurations.</p>
+<p>The application versions will not be deleted from your Amazon S3 bucket.</p>
+<p>You cannot delete an application that has a running environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_application_version/3">
+
+    <span id="delete_application_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_application_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_application_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified version from the specified application.</p>
+<p>You cannot delete an application version that is associated with a running environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_template/3">
+
+    <span id="delete_configuration_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified configuration template.</p>
+<p>When you launch an environment using a configuration template, the environment gets a copy of the
+template. You can delete or modify the environment&#39;s copy of the template without affecting the
+running environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_environment_configuration/3">
+
+    <span id="delete_environment_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_environment_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_environment_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L192" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the draft configuration associated with the running environment.</p>
+<p>Updating a running environment with any configuration changes creates a draft configuration set.
+You can get the draft configuration using <code class="inline">DescribeConfigurationSettings</code> while the update is in
+progress or if the update fails. The <code class="inline">DeploymentStatus</code> for the draft configuration indicates
+whether the deployment is in process or has failed. The draft configuration remains in existence
+until it is deleted with this action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_platform_version/3">
+
+    <span id="delete_platform_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_platform_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_platform_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L199" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified version of a custom platform.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_account_attributes/3">
+
+    <span id="describe_account_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_account_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_account_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L209" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS
+account.</p>
+<p>The result currently has one set of attributes—resource quotas.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_application_versions/3">
+
+    <span id="describe_application_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_application_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_application_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve a list of application versions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_applications/3">
+
+    <span id="describe_applications/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_applications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_applications(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the descriptions of existing applications.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_options/3">
+
+    <span id="describe_configuration_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the configuration options that are used in a particular configuration template or
+environment, or that a specified solution stack defines.</p>
+<p>The description includes the values the options, their default values, and an indication of the
+required action on a running environment if an option value is changed.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_settings/3">
+
+    <span id="describe_configuration_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L251" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a description of the settings for the specified configuration set, that is, either a
+configuration template or the configuration set associated with a running environment.</p>
+<p>When describing the settings for the configuration set associated with a running environment, it
+is possible to receive two sets of setting descriptions. One is the deployed configuration set,
+and the other is a draft configuration of an environment that is either in the process of
+deployment or that failed to deploy.</p>
+<p>Related Topics</p>
+<ul>
+<li><code class="inline">DeleteEnvironmentConfiguration</code>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_environment_health/3">
+
+    <span id="describe_environment_health/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_environment_health/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_environment_health(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L261" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the overall health of the specified environment.</p>
+<p>The <strong>DescribeEnvironmentHealth</strong> operation is only available with AWS Elastic Beanstalk Enhanced
+Health.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_environment_managed_action_history/3">
+
+    <span id="describe_environment_managed_action_history/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_environment_managed_action_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_environment_managed_action_history(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists an environment&#39;s completed and failed managed actions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_environment_managed_actions/3">
+
+    <span id="describe_environment_managed_actions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_environment_managed_actions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_environment_managed_actions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L275" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists an environment&#39;s upcoming and in-progress managed actions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_environment_resources/3">
+
+    <span id="describe_environment_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_environment_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_environment_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns AWS resources for this environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_environments/3">
+
+    <span id="describe_environments/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_environments/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_environments(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L289" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns descriptions for existing environments.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_events/3">
+
+    <span id="describe_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p>
+<p>This action returns the most recent 1,000 events from the specified <code class="inline">NextToken</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instances_health/3">
+
+    <span id="describe_instances_health/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instances_health/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instances_health(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk.</p>
+<p>This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health reporting</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_platform_version/3">
+
+    <span id="describe_platform_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_platform_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_platform_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L320" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a platform version.</p>
+<p>Provides full details. Compare to <code class="inline">ListPlatformVersions</code>, which provides summary information about
+a list of platform versions.</p>
+<p>For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk Platforms
+Glossary</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_environment_operations_role/3">
+
+    <span id="disassociate_environment_operations_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_environment_operations_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_environment_operations_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociate the operations role from an environment.</p>
+<p>After this call is made, Elastic Beanstalk uses the caller&#39;s permissions for permissions to
+downstream services during subsequent calls acting on this environment. For more information, see
+<a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a>
+in the <em>AWS Elastic Beanstalk Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_available_solution_stacks/3">
+
+    <span id="list_available_solution_stacks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_available_solution_stacks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_available_solution_stacks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the available solution stack names, with the public version first and then in
+reverse chronological order.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_platform_branches/3">
+
+    <span id="list_platform_branches/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_platform_branches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_platform_branches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L352" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the platform branches available for your account in an AWS Region.</p>
+<p>Provides summary information about each platform branch.</p>
+<p>For definitions of platform branch and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk Platforms
+Glossary</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_platform_versions/3">
+
+    <span id="list_platform_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_platform_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_platform_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L365" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the platform versions available for your account in an AWS Region.</p>
+<p>Provides summary information about each platform version. Compare to <code class="inline">DescribePlatformVersion</code>,
+which provides full details about a single platform version.</p>
+<p>For definitions of platform version and other platform-related terms, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html">AWS Elastic Beanstalk Platforms
+Glossary</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Return the tags applied to an AWS Elastic Beanstalk resource.</p>
+<p>The response contains a list of tag key-value pairs.</p>
+<p>Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging,
+see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging Application Resources</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="rebuild_environment/3">
+
+    <span id="rebuild_environment/2"></span>
+
+  <div class="detail-header">
+    <a href="#rebuild_environment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">rebuild_environment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L385" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load
+balancer, etc.) for a specified environment and forces a restart.</p>
+
+  </section>
+</section>
+<section class="detail" id="request_environment_info/3">
+
+    <span id="request_environment_info/2"></span>
+
+  <div class="detail-header">
+    <a href="#request_environment_info/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">request_environment_info(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L404" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates a request to compile the specified type of information of the deployed environment.</p>
+<p>Setting the <code class="inline">InfoType</code> to <code class="inline">tail</code> compiles the last lines from the application server log files of
+every Amazon EC2 instance in your environment.</p>
+<p>Setting the <code class="inline">InfoType</code> to <code class="inline">bundle</code> compresses the application server log files for every Amazon
+EC2 instance into a <code class="inline">.zip</code> file. Legacy and .NET containers do not support bundle logs.</p>
+<p>Use <code class="inline">RetrieveEnvironmentInfo</code> to obtain the set of logs.</p>
+<p>Related Topics</p>
+<ul>
+<li><code class="inline">RetrieveEnvironmentInfo</code>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="restart_app_server/3">
+
+    <span id="restart_app_server/2"></span>
+
+  <div class="detail-header">
+    <a href="#restart_app_server/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">restart_app_server(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Causes the environment to restart the application container server running on each Amazon EC2
+instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="retrieve_environment_info/3">
+
+    <span id="retrieve_environment_info/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_environment_info/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">retrieve_environment_info(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the compiled information from a <code class="inline">RequestEnvironmentInfo</code> request.</p>
+<p>Related Topics</p>
+<ul>
+<li><code class="inline">RequestEnvironmentInfo</code>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="swap_environment_c_n_a_m_es/3">
+
+    <span id="swap_environment_c_n_a_m_es/2"></span>
+
+  <div class="detail-header">
+    <a href="#swap_environment_c_n_a_m_es/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">swap_environment_c_n_a_m_es(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L430" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Swaps the CNAMEs of two environments.</p>
+
+  </section>
+</section>
+<section class="detail" id="terminate_environment/3">
+
+    <span id="terminate_environment/2"></span>
+
+  <div class="detail-header">
+    <a href="#terminate_environment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">terminate_environment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L437" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Terminates the specified environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application/3">
+
+    <span id="update_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L447" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified application to have the specified properties.</p>
+<p>If a property (for example, <code class="inline">description</code>) is not provided, the value remains unchanged. To clear
+these properties, specify an empty string.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application_resource_lifecycle/3">
+
+    <span id="update_application_resource_lifecycle/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_application_resource_lifecycle/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application_resource_lifecycle(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L454" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies lifecycle settings for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application_version/3">
+
+    <span id="update_application_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_application_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified application version to have the specified properties.</p>
+<p>If a property (for example, <code class="inline">description</code>) is not provided, the value remains unchanged. To clear
+properties, specify an empty string.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_configuration_template/3">
+
+    <span id="update_configuration_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_configuration_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_configuration_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L479" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified configuration template to have the specified properties or configuration
+option values.</p>
+<p>If a property (for example, <code class="inline">ApplicationName</code>) is not provided, its value remains unchanged. To
+clear such properties, specify an empty string.</p>
+<p>Related Topics</p>
+<ul>
+<li><code class="inline">DescribeConfigurationOptions</code>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="update_environment/3">
+
+    <span id="update_environment/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_environment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_environment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L495" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the environment description, deploys a new application version, updates the configuration
+settings to an entirely new configuration template, or updates select configuration option values
+in the running environment.</p>
+<p>Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk
+returns an <code class="inline">InvalidParameterCombination</code> error.</p>
+<p>When updating the configuration settings to a new template or individual settings, a draft
+configuration is created and <code class="inline">DescribeConfigurationSettings</code> for this environment returns two
+setting descriptions with different <code class="inline">DeploymentStatus</code> values.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_tags_for_resource/3">
+
+    <span id="update_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L524" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Update the list of tags applied to an AWS Elastic Beanstalk resource.</p>
+<p>Two lists can be passed: <code class="inline">TagsToAdd</code> for tags to add or update, and <code class="inline">TagsToRemove</code>.</p>
+<p>Elastic Beanstalk supports tagging of all of its resources. For details about resource tagging,
+see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications-tagging-resources.html">Tagging Application Resources</a>.</p>
+<p>If you create a custom IAM user policy to control permission to this operation, specify one of the
+following two virtual actions (or both) instead of the API operation name:</p>
+<h2 id="update_tags_for_resource/3-definitions" class="section-heading">
+  <a href="#update_tags_for_resource/3-definitions" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Definitions
+</h2>
+
+<h3 id="update_tags_for_resource/3-elasticbeanstalk-addtags" class="section-heading">
+  <a href="#update_tags_for_resource/3-elasticbeanstalk-addtags" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  elasticbeanstalk:AddTags
+</h3>
+
+<p>Controls permission to call <code class="inline">UpdateTagsForResource</code> and pass a list of tags to add in the
+<code class="inline">TagsToAdd</code> parameter.</p>
+<h3 id="update_tags_for_resource/3-elasticbeanstalk-removetags" class="section-heading">
+  <a href="#update_tags_for_resource/3-elasticbeanstalk-removetags" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  elasticbeanstalk:RemoveTags
+</h3>
+
+<p>Controls permission to call <code class="inline">UpdateTagsForResource</code> and pass a list of tag keys to remove in the
+<code class="inline">TagsToRemove</code> parameter.</p>
+<p>For details about creating a custom user policy, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.iam.managed-policies.html#AWSHowTo.iam.policies">Creating a Custom User Policy</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="validate_configuration_settings/3">
+
+    <span id="validate_configuration_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#validate_configuration_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">validate_configuration_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_beanstalk.ex#L535" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Takes a set of configuration settings and either a configuration template or environment, and
+determines whether those values are valid.</p>
+<p>This action returns a list of messages indicating any errors or warnings associated with the
+selection of option values.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

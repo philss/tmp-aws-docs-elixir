@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.MediaStore — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.MediaStore
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>An AWS Elemental MediaStore container is a namespace that holds folders and objects.</p>
+<p>You use a container endpoint to create, read, and delete objects.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_container/3">create_container(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a storage container to hold objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_container/3">delete_container(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_container_policy/3">delete_container_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the access policy that is associated with the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cors_policy/3">delete_cors_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the cross-origin resource sharing (CORS) configuration information that is set for the
+container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_lifecycle_policy/3">delete_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes an object lifecycle policy from a container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_metric_policy/3">delete_metric_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the metric policy that is associated with the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_container/3">describe_container(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the properties of the requested container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_container_policy/3">get_container_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the access policy for the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cors_policy/3">get_cors_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the
+container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_lifecycle_policy/3">get_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the object lifecycle policy that is assigned to a container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_metric_policy/3">get_metric_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the metric policy for the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_containers/3">list_containers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the properties of all containers in AWS Elemental MediaStore.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the tags assigned to the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_container_policy/3">put_container_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an access policy for the specified container to restrict the users and clients that can
+access it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_cors_policy/3">put_cors_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container
+can service cross-origin requests.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_lifecycle_policy/3">put_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Writes an object lifecycle policy to a container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_metric_policy/3">put_metric_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The metric policy that you want to add to the container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_access_logging/3">start_access_logging(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts access logging on the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_access_logging/3">stop_access_logging(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops access logging on the specified container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tags to the specified AWS Elemental MediaStore container.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from the specified container.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_container/3">
+
+    <span id="create_container/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_container/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_container(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a storage container to hold objects.</p>
+<p>A container is similar to a bucket in the Amazon S3 service.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_container/3">
+
+    <span id="delete_container/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_container/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_container(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified container.</p>
+<p>Before you make a <code class="inline">DeleteContainer</code> request, delete any objects in the container or in any folders
+in the container. You can delete only empty containers.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_container_policy/3">
+
+    <span id="delete_container_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_container_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_container_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the access policy that is associated with the specified container.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cors_policy/3">
+
+    <span id="delete_cors_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cors_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cors_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L45" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the cross-origin resource sharing (CORS) configuration information that is set for the
+container.</p>
+<p>To use this operation, you must have permission to perform the <code class="inline">MediaStore:DeleteCorsPolicy</code>
+action. The container owner has this permission by default and can grant this permission to
+others.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_lifecycle_policy/3">
+
+    <span id="delete_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes an object lifecycle policy from a container.</p>
+<p>It takes up to 20 minutes for the change to take effect.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_metric_policy/3">
+
+    <span id="delete_metric_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_metric_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_metric_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L64" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the metric policy that is associated with the specified container.</p>
+<p>If there is no metric policy associated with the container, MediaStore doesn&#39;t send metrics to
+CloudWatch.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_container/3">
+
+    <span id="describe_container/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_container/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_container(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the properties of the requested container.</p>
+<p>This request is commonly used to retrieve the endpoint of a container. An endpoint is a value
+assigned by the service when a new container is created. A container&#39;s endpoint does not change
+after it has been assigned. The <code class="inline">DescribeContainer</code> request returns a single <code class="inline">Container</code> object
+based on <code class="inline">ContainerName</code>. To return all <code class="inline">Container</code> objects that are associated with a specified
+AWS account, use <code class="inline">ListContainers</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_container_policy/3">
+
+    <span id="get_container_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_container_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_container_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the access policy for the specified container.</p>
+<p>For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cors_policy/3">
+
+    <span id="get_cors_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_cors_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cors_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L97" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the
+container.</p>
+<p>To use this operation, you must have permission to perform the <code class="inline">MediaStore:GetCorsPolicy</code> action.
+By default, the container owner has this permission and can grant it to others.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_lifecycle_policy/3">
+
+    <span id="get_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the object lifecycle policy that is assigned to a container.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_metric_policy/3">
+
+    <span id="get_metric_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_metric_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_metric_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the metric policy for the specified container.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_containers/3">
+
+    <span id="list_containers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_containers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_containers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the properties of all containers in AWS Elemental MediaStore.</p>
+<p>You can query to receive all the containers in one response. Or you can include the <code class="inline">MaxResults</code>
+parameter to receive a limited number of containers in each response. In this case, the response
+includes a token. To get the next set of containers, send the command again, this time with the
+<code class="inline">NextToken</code> parameter (with the returned token as its value). The next set of responses appears,
+with a token if there are still more containers to receive.</p>
+<p>See also <code class="inline">DescribeContainer</code>, which gets the properties of one container.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the tags assigned to the specified container.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_container_policy/3">
+
+    <span id="put_container_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_container_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_container_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an access policy for the specified container to restrict the users and clients that can
+access it.</p>
+<p>For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>
+<p>For this release of the REST API, you can create only one policy for a container. If you enter
+<code class="inline">PutContainerPolicy</code> twice, the second command modifies the existing policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_cors_policy/3">
+
+    <span id="put_cors_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_cors_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_cors_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container
+can service cross-origin requests.</p>
+<p>For example, you might want to enable a request whose origin is <a href="http://www.example.com">http://www.example.com</a> to access
+your AWS Elemental MediaStore container at my.example.container.com by using the browser&#39;s
+XMLHttpRequest capability.</p>
+<p>To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you
+configure rules that identify origins and the HTTP methods that can be executed on your container.
+The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If
+more than one rule applies, the service uses the first applicable rule listed.</p>
+<p>To learn more about CORS, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/cors-policy.html">Cross-Origin Resource Sharing (CORS) in AWS Elemental MediaStore</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_lifecycle_policy/3">
+
+    <span id="put_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L178" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Writes an object lifecycle policy to a container.</p>
+<p>If the container already has an object lifecycle policy, the service replaces the existing policy
+with the new policy. It takes up to 20 minutes for the change to take effect.</p>
+<p>For information about how to construct an object lifecycle policy, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/policies-object-lifecycle-components.html">Components of an Object Lifecycle
+Policy</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_metric_policy/3">
+
+    <span id="put_metric_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_metric_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_metric_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The metric policy that you want to add to the container.</p>
+<p>A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up
+to 20 minutes for the new policy to take effect.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_access_logging/3">
+
+    <span id="start_access_logging/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_access_logging/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_access_logging(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L198" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts access logging on the specified container.</p>
+<p>When you enable access logging on a container, MediaStore delivers access logs for objects stored
+in that container to Amazon CloudWatch Logs.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_access_logging/3">
+
+    <span id="stop_access_logging/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_access_logging/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_access_logging(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops access logging on the specified container.</p>
+<p>When you stop access logging on a container, MediaStore stops sending access logs to Amazon
+CloudWatch Logs. These access logs are not saved and are not retrievable.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L220" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tags to the specified AWS Elemental MediaStore container.</p>
+<p>Tags are key:value pairs that you can associate with AWS resources. For example, the tag key might
+be &quot;customer&quot; and the tag value might be &quot;companyA.&quot; You can specify one or more tags to add to
+each container. You can add up to 50 tags to each container. For more information about tagging,
+including naming and usage conventions, see <a href="https://docs.aws.amazon.com/mediastore/latest/ug/tagging.html">Tagging Resources in MediaStore</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_store.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from the specified container.</p>
+<p>You can specify one or more tags to remove.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

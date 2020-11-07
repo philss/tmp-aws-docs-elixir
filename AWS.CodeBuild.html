@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodeBuild — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodeBuild
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS CodeBuild</p>
+<p>AWS CodeBuild is a fully managed build service in the cloud.</p>
+<p>AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to
+deploy. AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers.
+It provides prepackaged build environments for the most popular programming languages and build
+tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in
+AWS CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build
+requests. You pay only for the build time you consume. For more information about AWS CodeBuild,
+see the <em><a href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>.</em></p>
+<p>AWS CodeBuild supports these operations:</p>
+<ul>
+<li><p><code class="inline">BatchDeleteBuilds</code>: Deletes one or more builds.</p>
+</li>
+<li><p><code class="inline">BatchGetBuilds</code>: Gets information about one or more builds.</p>
+</li>
+<li><p><code class="inline">BatchGetProjects</code>: Gets information about one or more build projects. A <em>build
+project</em> defines how AWS CodeBuild runs a build. This includes information such as where to get
+the source code to build, the build environment to use, the build commands to run, and where to
+store the build output. A <em>build environment</em> is a representation of operating system, programming
+language runtime, and tools that AWS CodeBuild uses to run a build. You can add tags to build
+projects to help manage your resources and costs.</p>
+</li>
+<li><p><code class="inline">BatchGetReportGroups</code>: Returns an array of report groups.</p>
+</li>
+<li><p><code class="inline">BatchGetReports</code>: Returns an array of reports.</p>
+</li>
+<li><p><code class="inline">CreateProject</code>: Creates a build project.</p>
+</li>
+<li><p><code class="inline">CreateReportGroup</code>: Creates a report group. A report group contains a collection of
+reports.</p>
+</li>
+<li><p><code class="inline">CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source
+code stored in a GitHub or Bitbucket repository, enables AWS CodeBuild to start rebuilding the
+source code every time a code change is pushed to the repository.</p>
+</li>
+<li><p><code class="inline">DeleteProject</code>: Deletes a build project.</p>
+</li>
+<li><p><code class="inline">DeleteReport</code>: Deletes a report.</p>
+</li>
+<li><p><code class="inline">DeleteReportGroup</code>: Deletes a report group.</p>
+</li>
+<li><p><code class="inline">DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource
+ARN.</p>
+</li>
+<li><p><code class="inline">DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket
+source credentials.</p>
+</li>
+<li><p><code class="inline">DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source
+code stored in a GitHub or Bitbucket repository, stops AWS CodeBuild from rebuilding the source
+code every time a code change is pushed to the repository.</p>
+</li>
+<li><p><code class="inline">DescribeTestCases</code>: Returns a list of details about test cases for a report.</p>
+</li>
+<li><p><code class="inline">GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.</p>
+</li>
+<li><p><code class="inline">ImportSourceCredentials</code>: Imports the source repository credentials for an AWS
+CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket
+repository.</p>
+</li>
+<li><p><code class="inline">InvalidateProjectCache</code>: Resets the cache for a project.</p>
+</li>
+<li><p><code class="inline">ListBuilds</code>: Gets a list of build IDs, with each build ID representing a single
+build.</p>
+</li>
+<li><p><code class="inline">ListBuildsForProject</code>: Gets a list of build IDs for the specified build project,
+with each build ID representing a single build.</p>
+</li>
+<li><p><code class="inline">ListCuratedEnvironmentImages</code>: Gets information about Docker images that are
+managed by AWS CodeBuild.</p>
+</li>
+<li><p><code class="inline">ListProjects</code>: Gets a list of build project names, with each build project name
+representing a single build project.</p>
+</li>
+<li><p><code class="inline">ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS
+account.</p>
+</li>
+<li><p><code class="inline">ListReports</code>: Gets a list ARNs for the reports in the current AWS account.</p>
+</li>
+<li><p><code class="inline">ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
+<code class="inline">ReportGroup</code>.</p>
+</li>
+<li><p><code class="inline">ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the
+current AWS account or user.</p>
+</li>
+<li><p><code class="inline">ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared
+with the current AWS account or user</p>
+</li>
+<li><p><code class="inline">ListSourceCredentials</code>: Returns a list of <code class="inline">SourceCredentialsInfo</code> objects. Each
+<code class="inline">SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source
+provider for one set of credentials.</p>
+</li>
+<li><p><code class="inline">PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code class="inline">Project</code> or
+<code class="inline">ReportGroup</code> object.</p>
+</li>
+<li><p><code class="inline">StartBuild</code>: Starts running a build.</p>
+</li>
+<li><p><code class="inline">StopBuild</code>: Attempts to stop running a build.</p>
+</li>
+<li><p><code class="inline">UpdateProject</code>: Changes the settings of an existing build project.</p>
+</li>
+<li><p><code class="inline">UpdateReportGroup</code>: Changes a report group.</p>
+</li>
+<li><p><code class="inline">UpdateWebhook</code>: Changes the settings of an existing webhook.</p>
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_delete_builds/3">batch_delete_builds(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes one or more builds.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_build_batches/3">batch_get_build_batches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about one or more batch builds.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_builds/3">batch_get_builds(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more builds.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_projects/3">batch_get_projects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more build projects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_report_groups/3">batch_get_report_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of report groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_reports/3">batch_get_reports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of reports.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_project/3">create_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a build project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_report_group/3">create_report_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a report group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_webhook/3">create_webhook(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or
+Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code
+change is pushed to the repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_build_batch/3">delete_build_batch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a batch build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_project/3">delete_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a build project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_report/3">delete_report(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a report.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_report_group/3">delete_report_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a report group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resource_policy/3">delete_resource_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a resource policy that is identified by its resource ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_source_credentials/3">delete_source_credentials(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_webhook/3">delete_webhook(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or
+Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change
+is pushed to the repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_code_coverages/3">describe_code_coverages(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves one or more code coverage reports.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_test_cases/3">describe_test_cases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of details about test cases for a report.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resource_policy/3">get_resource_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a resource policy that is identified by its resource ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_source_credentials/3">import_source_credentials(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports the source repository credentials for an AWS CodeBuild project that has its source code
+stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#invalidate_project_cache/3">invalidate_project_cache(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resets the cache for a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_build_batches/3">list_build_batches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the identifiers of your build batches in the current region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_build_batches_for_project/3">list_build_batches_for_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the identifiers of the build batches for a specific project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_builds/3">list_builds(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of build IDs, with each build ID representing a single build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_builds_for_project/3">list_builds_for_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of build IDs for the specified build project, with each build ID representing a single
+build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_curated_environment_images/3">list_curated_environment_images(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about Docker images that are managed by AWS CodeBuild.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_projects/3">list_projects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of build project names, with each build project name representing a single build
+project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_report_groups/3">list_report_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list ARNs for the report groups in the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reports/3">list_reports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of ARNs for the reports in the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reports_for_report_group/3">list_reports_for_report_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of ARNs for the reports that belong to a <code class="inline">ReportGroup</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_shared_projects/3">list_shared_projects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of projects that are shared with other AWS accounts or users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_shared_report_groups/3">list_shared_report_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of report groups that are shared with other AWS accounts or users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_source_credentials/3">list_source_credentials(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <code class="inline">SourceCredentialsInfo</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_resource_policy/3">put_resource_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stores a resource policy for the ARN of a <code class="inline">Project</code> or <code class="inline">ReportGroup</code> object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#retry_build/3">retry_build(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restarts a build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#retry_build_batch/3">retry_build_batch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restarts a batch build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_build/3">start_build(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts running a build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_build_batch/3">start_build_batch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a batch build for a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_build/3">stop_build(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to stop running a build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_build_batch/3">stop_build_batch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a running batch build.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_project/3">update_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the settings of a build project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_report_group/3">update_report_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a report group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_webhook/3">update_webhook(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the webhook associated with an AWS CodeBuild build project.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_delete_builds/3">
+
+    <span id="batch_delete_builds/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_delete_builds/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_delete_builds(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes one or more builds.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_build_batches/3">
+
+    <span id="batch_get_build_batches/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_build_batches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_build_batches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about one or more batch builds.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_builds/3">
+
+    <span id="batch_get_builds/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_builds/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_builds(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L131" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more builds.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_projects/3">
+
+    <span id="batch_get_projects/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_projects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_projects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L138" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more build projects.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_report_groups/3">
+
+    <span id="batch_get_report_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_report_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_report_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L145" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of report groups.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_reports/3">
+
+    <span id="batch_get_reports/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_reports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_reports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of reports.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_project/3">
+
+    <span id="create_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a build project.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_report_group/3">
+
+    <span id="create_report_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_report_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_report_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a report group.</p>
+<p>A report group contains a collection of reports.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_webhook/3">
+
+    <span id="create_webhook/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_webhook/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_webhook(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or
+Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code
+change is pushed to the repository.</p>
+<p>If you enable webhooks for an AWS CodeBuild project, and the project is used as a build step in
+AWS CodePipeline, then two identical builds are created for each commit. One build is triggered
+through webhooks, and one through AWS CodePipeline. Because billing is on a per-build basis, you
+are billed for both builds. Therefore, if you are using AWS CodePipeline, we recommend that you
+disable webhooks in AWS CodeBuild. In the AWS CodeBuild console, clear the Webhook box. For more
+information, see step 5 in <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/change-project.html#change-project-console">Change a Build Project&#39;s Settings</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_build_batch/3">
+
+    <span id="delete_build_batch/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_build_batch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_build_batch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a batch build.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_project/3">
+
+    <span id="delete_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L200" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a build project.</p>
+<p>When you delete a project, its builds are not deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_report/3">
+
+    <span id="delete_report/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_report/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_report(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a report.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_report_group/3">
+
+    <span id="delete_report_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_report_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_report_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a report group.</p>
+<p>Before you delete a report group, you must delete its reports.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resource_policy/3">
+
+    <span id="delete_resource_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resource_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resource_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a resource policy that is identified by its resource ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_source_credentials/3">
+
+    <span id="delete_source_credentials/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_source_credentials/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_source_credentials(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_webhook/3">
+
+    <span id="delete_webhook/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_webhook/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_webhook(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L239" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For an existing AWS CodeBuild build project that has its source code stored in a GitHub or
+Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change
+is pushed to the repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_code_coverages/3">
+
+    <span id="describe_code_coverages/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_code_coverages/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_code_coverages(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L246" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves one or more code coverage reports.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_test_cases/3">
+
+    <span id="describe_test_cases/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_test_cases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_test_cases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of details about test cases for a report.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resource_policy/3">
+
+    <span id="get_resource_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resource_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resource_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L260" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a resource policy that is identified by its resource ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_source_credentials/3">
+
+    <span id="import_source_credentials/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_source_credentials/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_source_credentials(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports the source repository credentials for an AWS CodeBuild project that has its source code
+stored in a GitHub, GitHub Enterprise, or Bitbucket repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="invalidate_project_cache/3">
+
+    <span id="invalidate_project_cache/2"></span>
+
+  <div class="detail-header">
+    <a href="#invalidate_project_cache/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">invalidate_project_cache(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L275" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resets the cache for a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_build_batches/3">
+
+    <span id="list_build_batches/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_build_batches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_build_batches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the identifiers of your build batches in the current region.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_build_batches_for_project/3">
+
+    <span id="list_build_batches_for_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_build_batches_for_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_build_batches_for_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L289" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the identifiers of the build batches for a specific project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_builds/3">
+
+    <span id="list_builds/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_builds/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_builds(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L296" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of build IDs, with each build ID representing a single build.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_builds_for_project/3">
+
+    <span id="list_builds_for_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_builds_for_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_builds_for_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of build IDs for the specified build project, with each build ID representing a single
+build.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_curated_environment_images/3">
+
+    <span id="list_curated_environment_images/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_curated_environment_images/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_curated_environment_images(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L311" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about Docker images that are managed by AWS CodeBuild.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_projects/3">
+
+    <span id="list_projects/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_projects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_projects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L319" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of build project names, with each build project name representing a single build
+project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_report_groups/3">
+
+    <span id="list_report_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_report_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_report_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L326" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list ARNs for the report groups in the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_reports/3">
+
+    <span id="list_reports/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_reports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_reports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L333" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of ARNs for the reports in the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_reports_for_report_group/3">
+
+    <span id="list_reports_for_report_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_reports_for_report_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_reports_for_report_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of ARNs for the reports that belong to a <code class="inline">ReportGroup</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_shared_projects/3">
+
+    <span id="list_shared_projects/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_shared_projects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_shared_projects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L347" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of projects that are shared with other AWS accounts or users.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_shared_report_groups/3">
+
+    <span id="list_shared_report_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_shared_report_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_shared_report_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L354" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of report groups that are shared with other AWS accounts or users.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_source_credentials/3">
+
+    <span id="list_source_credentials/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_source_credentials/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_source_credentials(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L361" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <code class="inline">SourceCredentialsInfo</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_resource_policy/3">
+
+    <span id="put_resource_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_resource_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_resource_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L368" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stores a resource policy for the ARN of a <code class="inline">Project</code> or <code class="inline">ReportGroup</code> object.</p>
+
+  </section>
+</section>
+<section class="detail" id="retry_build/3">
+
+    <span id="retry_build/2"></span>
+
+  <div class="detail-header">
+    <a href="#retry_build/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">retry_build(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L375" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restarts a build.</p>
+
+  </section>
+</section>
+<section class="detail" id="retry_build_batch/3">
+
+    <span id="retry_build_batch/2"></span>
+
+  <div class="detail-header">
+    <a href="#retry_build_batch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">retry_build_batch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L382" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restarts a batch build.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_build/3">
+
+    <span id="start_build/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_build/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_build(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L389" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts running a build.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_build_batch/3">
+
+    <span id="start_build_batch/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_build_batch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_build_batch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L396" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a batch build for a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_build/3">
+
+    <span id="stop_build/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_build/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_build(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to stop running a build.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_build_batch/3">
+
+    <span id="stop_build_batch/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_build_batch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_build_batch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L410" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a running batch build.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_project/3">
+
+    <span id="update_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L417" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the settings of a build project.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_report_group/3">
+
+    <span id="update_report_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_report_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_report_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L424" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a report group.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_webhook/3">
+
+    <span id="update_webhook/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_webhook/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_webhook(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_build.ex#L433" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the webhook associated with an AWS CodeBuild build project.</p>
+<p>If you use Bitbucket for your repository, <code class="inline">rotateSecret</code> is ignored.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.MarketplaceMetering — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.MarketplaceMetering
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_metering.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Marketplace Metering Service</p>
+<p>This reference provides descriptions of the low-level AWS Marketplace Metering Service API.</p>
+<p>AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.</p>
+<p>For information on the permissions you need to use this API, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS Marketing metering and entitlement API
+permissions</a>
+in the <em>AWS Marketplace Seller Guide.</em></p>
+<p><strong>Submitting Metering Records</strong></p>
+<ul>
+<li><p><em>MeterUsage</em>- Submits the metering record for a Marketplace product. MeterUsage is
+called from an EC2 instance or a container running on EKS or ECS.</p>
+</li>
+<li><p><em>BatchMeterUsage</em>- Submits the metering record for a set of customers.
+BatchMeterUsage is called from a software-as-a-service (SaaS) application.</p>
+</li>
+</ul>
+<p><strong>Accepting New Customers</strong></p>
+<ul>
+<li><em>ResolveCustomer</em>- Called by a SaaS application during the registration process.
+When a buyer visits your website during the registration process, the buyer submits a Registration
+Token through the browser. The Registration Token is resolved through this API to obtain a
+CustomerIdentifier and Product Code.
+</li>
+</ul>
+<p><strong>Entitlement and Metering for Paid Container Products</strong></p>
+<ul>
+<li>Paid container software products sold through AWS Marketplace must integrate with
+the AWS Marketplace Metering Service and call the RegisterUsage operation for software entitlement
+and metering. Free and BYOL products for Amazon ECS or Amazon EKS aren&#39;t required to call
+RegisterUsage, but you can do so if you want to receive usage data in your seller reports. For
+more information on using the RegisterUsage operation, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html">Container-Based Products</a>.
+</li>
+</ul>
+<p>BatchMeterUsage API calls are captured by AWS CloudTrail. You can use Cloudtrail to verify that
+the SaaS metering records that you sent are accurate by searching for records with the eventName
+of BatchMeterUsage. You can also use CloudTrail to audit records over time. For more information,
+see the <em><a href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">AWS CloudTrail User Guide</a> </em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_meter_usage/3">batch_meter_usage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to post metering
+records for a set of customers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#meter_usage/3">meter_usage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API to emit metering records.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_usage/3">register_usage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Paid container software products sold through AWS Marketplace must integrate with the AWS
+Marketplace Metering Service and call the RegisterUsage operation for software entitlement and
+metering.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#resolve_customer/3">resolve_customer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>ResolveCustomer is called by a SaaS application during the registration process.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_meter_usage/3">
+
+    <span id="batch_meter_usage/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_meter_usage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_meter_usage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_metering.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>BatchMeterUsage is called from a SaaS application listed on the AWS Marketplace to post metering
+records for a set of customers.</p>
+<p>For identical requests, the API is idempotent; requests can be retried with the same records or a
+subset of the input records.</p>
+<p>Every request to BatchMeterUsage is for one product. If you need to meter usage for multiple
+products, you must make multiple calls to BatchMeterUsage.</p>
+<p>BatchMeterUsage can process up to 25 UsageRecords at a time.</p>
+
+  </section>
+</section>
+<section class="detail" id="meter_usage/3">
+
+    <span id="meter_usage/2"></span>
+
+  <div class="detail-header">
+    <a href="#meter_usage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">meter_usage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_metering.ex#L69" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>API to emit metering records.</p>
+<p>For identical requests, the API is idempotent. It simply returns the metering record ID.</p>
+<p>MeterUsage is authenticated on the buyer&#39;s AWS account using credentials from the EC2 instance,
+ECS task, or EKS pod.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_usage/3">
+
+    <span id="register_usage/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_usage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_usage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_metering.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Paid container software products sold through AWS Marketplace must integrate with the AWS
+Marketplace Metering Service and call the RegisterUsage operation for software entitlement and
+metering.</p>
+<p>Free and BYOL products for Amazon ECS or Amazon EKS aren&#39;t required to call RegisterUsage, but you
+may choose to do so if you would like to receive usage data in your seller reports. The sections
+below explain the behavior of RegisterUsage. RegisterUsage performs two primary functions:
+metering and entitlement.</p>
+<ul>
+<li><p><em>Entitlement</em>: RegisterUsage allows you to verify that the customer running your
+paid software is subscribed to your product on AWS Marketplace, enabling you to guard against
+unauthorized use. Your container image that integrates with RegisterUsage is only required to
+guard against unauthorized use at container startup, as such a
+CustomerNotSubscribedException/PlatformNotSupportedException will only be thrown on the initial
+call to RegisterUsage. Subsequent calls from the same Amazon ECS task instance (e.g. task-id) or
+Amazon EKS pod will not throw a CustomerNotSubscribedException, even if the customer unsubscribes
+while the Amazon ECS task or Amazon EKS pod is still running.</p>
+</li>
+<li><p><em>Metering</em>: RegisterUsage meters software use per ECS task, per hour, or per pod for
+Amazon EKS with usage prorated to the second. A minimum of 1 minute of usage applies to tasks that
+are short lived. For example, if a customer has a 10 node Amazon ECS or Amazon EKS cluster and a
+service configured as a Daemon Set, then Amazon ECS or Amazon EKS will launch a task on all 10
+cluster nodes and the customer will be charged: (10 * hourly_rate). Metering for software use is
+automatically handled by the AWS Marketplace Metering Control Plane -- your software is not
+required to perform any metering specific actions, other than call RegisterUsage once for metering
+of software use to commence. The AWS Marketplace Metering Control Plane will also continue to bill
+customers for running ECS tasks and Amazon EKS pods, regardless of the customers subscription
+state, removing the need for your software to perform entitlement checks at runtime.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="resolve_customer/3">
+
+    <span id="resolve_customer/2"></span>
+
+  <div class="detail-header">
+    <a href="#resolve_customer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">resolve_customer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_metering.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>ResolveCustomer is called by a SaaS application during the registration process.</p>
+<p>When a buyer visits your website during the registration process, the buyer submits a registration
+token through their browser. The registration token is resolved through this API to obtain a
+CustomerIdentifier and product code.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

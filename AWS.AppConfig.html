@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.AppConfig — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.AppConfig
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS AppConfig</p>
+<p>Use AWS AppConfig, a capability of AWS Systems Manager, to create, manage, and quickly deploy
+application configurations.</p>
+<p>AppConfig supports controlled deployments to applications of any size and includes built-in
+validation checks and monitoring. You can use AppConfig with applications hosted on Amazon EC2
+instances, AWS Lambda, containers, mobile applications, or IoT devices.</p>
+<p>To prevent errors when deploying application configurations, especially for production systems
+where a simple typo could cause an unexpected outage, AppConfig includes validators. A validator
+provides a syntactic or semantic check to ensure that the configuration you want to deploy works
+as intended. To validate your application configuration data, you provide a schema or a Lambda
+function that runs against the configuration. The configuration deployment or update can only
+proceed when the configuration data is valid.</p>
+<p>During a configuration deployment, AppConfig monitors the application to ensure that the
+deployment is successful. If the system encounters an error, AppConfig rolls back the change to
+minimize impact for your application users. You can configure a deployment strategy for each
+application or environment that includes deployment criteria, including velocity, bake time, and
+alarms to monitor. Similar to error monitoring, if a deployment triggers an alarm, AppConfig
+automatically rolls back to the previous version.</p>
+<p>AppConfig supports multiple use cases. Here are some examples.</p>
+<ul>
+<li><p><strong>Application tuning</strong>: Use AppConfig to carefully introduce changes to your
+application that can only be tested with production traffic.</p>
+</li>
+<li><p><strong>Feature toggle</strong>: Use AppConfig to turn on new features that require a timely
+deployment, such as a product launch or announcement.</p>
+</li>
+<li><p><strong>Allow list</strong>: Use AppConfig to allow premium subscribers to access paid content.</p>
+</li>
+<li><p><strong>Operational issues</strong>: Use AppConfig to reduce stress on your application when a
+dependency or other external factor impacts the system.</p>
+</li>
+</ul>
+<p>This reference is intended to be used with the <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application/3">create_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An application in AppConfig is a logical unit of code that provides capabilities for your
+customers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_configuration_profile/4">create_configuration_profile(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Information that enables AppConfig to access the configuration source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_deployment_strategy/3">create_deployment_strategy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A deployment strategy defines important criteria for rolling out your configuration to the
+designated targets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_environment/4">create_environment(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For each application, you define one or more environments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_hosted_configuration_version/5">create_hosted_configuration_version(client, application_id, configuration_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a new configuration in the AppConfig configuration store.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_application/4">delete_application(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_profile/5">delete_configuration_profile(client, application_id, configuration_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a configuration profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_deployment_strategy/4">delete_deployment_strategy(client, deployment_strategy_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a deployment strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_environment/5">delete_environment(client, application_id, environment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_hosted_configuration_version/6">delete_hosted_configuration_version(client, application_id, configuration_profile_id, version_number, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a version of a configuration from the AppConfig configuration store.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_application/3">get_application(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_configuration/7">get_configuration(client, application, configuration, environment, client_configuration_version \\ nil, client_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Receive information about a configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_configuration_profile/4">get_configuration_profile(client, application_id, configuration_profile_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about a configuration profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployment/5">get_deployment(client, application_id, deployment_number, environment_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about a configuration deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployment_strategy/3">get_deployment_strategy(client, deployment_strategy_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about a deployment strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_environment/4">get_environment(client, application_id, environment_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_hosted_configuration_version/5">get_hosted_configuration_version(client, application_id, configuration_profile_id, version_number, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get information about a specific configuration version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_applications/4">list_applications(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all applications in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_configuration_profiles/5">list_configuration_profiles(client, application_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the configuration profiles for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_deployment_strategies/4">list_deployment_strategies(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List deployment strategies.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_deployments/6">list_deployments(client, application_id, environment_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the deployments for an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_environments/5">list_environments(client, application_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the environments for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_hosted_configuration_versions/6">list_hosted_configuration_versions(client, application_id, configuration_profile_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>View a list of configurations stored in the AppConfig configuration store by version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the list of key-value tags assigned to the resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_deployment/5">start_deployment(client, application_id, environment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_deployment/6">stop_deployment(client, application_id, deployment_number, environment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Metadata to assign to an AppConfig resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a tag key and value from an AppConfig resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application/4">update_application(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_configuration_profile/5">update_configuration_profile(client, application_id, configuration_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a configuration profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_deployment_strategy/4">update_deployment_strategy(client, deployment_strategy_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a deployment strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_environment/5">update_environment(client, application_id, environment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an environment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#validate_configuration/5">validate_configuration(client, application_id, configuration_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Uses the validators in a configuration profile to validate a configuration.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_application/3">
+
+    <span id="create_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L53" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An application in AppConfig is a logical unit of code that provides capabilities for your
+customers.</p>
+<p>For example, an application can be a microservice that runs on Amazon EC2 instances, a mobile
+application installed by your users, a serverless application using Amazon API Gateway and AWS
+Lambda, or any system you run on behalf of others.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_configuration_profile/4">
+
+    <span id="create_configuration_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_configuration_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_configuration_profile(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Information that enables AppConfig to access the configuration source.</p>
+<p>Valid configuration sources include Systems Manager (SSM) documents, SSM Parameter Store
+parameters, and Amazon S3 objects. A configuration profile includes the following information.</p>
+<ul>
+<li><p>The Uri location of the configuration data.</p>
+</li>
+<li><p>The AWS Identity and Access Management (IAM) role that provides access to the
+configuration data.</p>
+</li>
+<li><p>A validator for the configuration data. Available validators include either a JSON
+Schema or an AWS Lambda function.</p>
+</li>
+</ul>
+<p>For more information, see <a href="http://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig-creating-configuration-and-profile.html">Create a Configuration and a Configuration Profile</a>
+in the <em>AWS AppConfig User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_deployment_strategy/3">
+
+    <span id="create_deployment_strategy/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_deployment_strategy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_deployment_strategy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L92" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A deployment strategy defines important criteria for rolling out your configuration to the
+designated targets.</p>
+<p>A deployment strategy includes: the overall duration required, a percentage of targets to receive
+the deployment during each interval, an algorithm that defines how percentage grows, and bake
+time.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_environment/4">
+
+    <span id="create_environment/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_environment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_environment(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L108" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For each application, you define one or more environments.</p>
+<p>An environment is a logical deployment group of AppConfig targets, such as applications in a
+<code class="inline">Beta</code> or <code class="inline">Production</code> environment. You can also define environments for application subcomponents
+such as the <code class="inline">Web</code>, <code class="inline">Mobile</code> and <code class="inline">Back-end</code> components for your application. You can configure
+Amazon CloudWatch alarms for each environment. The system monitors alarms during a configuration
+deployment. If an alarm is triggered, the system rolls back the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_hosted_configuration_version/5">
+
+    <span id="create_hosted_configuration_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_hosted_configuration_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_hosted_configuration_version(client, application_id, configuration_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a new configuration in the AppConfig configuration store.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_application/4">
+
+    <span id="delete_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_application(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete an application.</p>
+<p>Deleting an application does not delete a configuration from a host.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_profile/5">
+
+    <span id="delete_configuration_profile/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_profile/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_profile(client, application_id, configuration_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L169" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a configuration profile.</p>
+<p>Deleting a configuration profile does not delete a configuration from a host.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_deployment_strategy/4">
+
+    <span id="delete_deployment_strategy/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_deployment_strategy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_deployment_strategy(client, deployment_strategy_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L181" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a deployment strategy.</p>
+<p>Deleting a deployment strategy does not delete a configuration from a host.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_environment/5">
+
+    <span id="delete_environment/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_environment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_environment(client, application_id, environment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete an environment.</p>
+<p>Deleting an environment does not delete a configuration from a host.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_hosted_configuration_version/6">
+
+    <span id="delete_hosted_configuration_version/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_hosted_configuration_version/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_hosted_configuration_version(client, application_id, configuration_profile_id, version_number, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L203" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a version of a configuration from the AppConfig configuration store.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_application/3">
+
+    <span id="get_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_application(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_configuration/7">
+
+    <span id="get_configuration/5"></span>
+
+    <span id="get_configuration/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_configuration/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_configuration(client, application, configuration, environment, client_configuration_version \\ nil, client_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Receive information about a configuration.</p>
+<p>AWS AppConfig uses the value of the <code class="inline">ClientConfigurationVersion</code> parameter to identify the
+configuration version on your clients. If you don’t send <code class="inline">ClientConfigurationVersion</code> with each
+call to <code class="inline">GetConfiguration</code>, your clients receive the current configuration. You are charged each
+time your clients receive a configuration.</p>
+<p>To avoid excess charges, we recommend that you include the <code class="inline">ClientConfigurationVersion</code> value with
+every call to <code class="inline">GetConfiguration</code>. This value must be saved on your client. Subsequent calls to
+<code class="inline">GetConfiguration</code> must pass this value by using the <code class="inline">ClientConfigurationVersion</code> parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_configuration_profile/4">
+
+    <span id="get_configuration_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_configuration_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_configuration_profile(client, application_id, configuration_profile_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L270" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about a configuration profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployment/5">
+
+    <span id="get_deployment/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployment(client, application_id, deployment_number, environment_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L280" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about a configuration deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployment_strategy/3">
+
+    <span id="get_deployment_strategy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployment_strategy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployment_strategy(client, deployment_strategy_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L295" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about a deployment strategy.</p>
+<p>A deployment strategy defines important criteria for rolling out your configuration to the
+designated targets. A deployment strategy includes: the overall duration required, a percentage of
+targets to receive the deployment during each interval, an algorithm that defines how percentage
+grows, and bake time.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_environment/4">
+
+    <span id="get_environment/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_environment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_environment(client, application_id, environment_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L310" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about an environment.</p>
+<p>An environment is a logical deployment group of AppConfig applications, such as applications in a
+<code class="inline">Production</code> environment or in an <code class="inline">EU_Region</code> environment. Each configuration deployment targets
+an environment. You can enable one or more Amazon CloudWatch alarms for an environment. If an
+alarm is triggered during a deployment, AppConfig roles back the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_hosted_configuration_version/5">
+
+    <span id="get_hosted_configuration_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_hosted_configuration_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_hosted_configuration_version(client, application_id, configuration_profile_id, version_number, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L320" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get information about a specific configuration version.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_applications/4">
+
+    <span id="list_applications/1"></span>
+
+    <span id="list_applications/2"></span>
+
+    <span id="list_applications/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_applications/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_applications(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L351" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all applications in your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_configuration_profiles/5">
+
+    <span id="list_configuration_profiles/2"></span>
+
+    <span id="list_configuration_profiles/3"></span>
+
+    <span id="list_configuration_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_configuration_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_configuration_profiles(client, application_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L371" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the configuration profiles for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_deployment_strategies/4">
+
+    <span id="list_deployment_strategies/1"></span>
+
+    <span id="list_deployment_strategies/2"></span>
+
+    <span id="list_deployment_strategies/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_deployment_strategies/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_deployment_strategies(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L391" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List deployment strategies.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_deployments/6">
+
+    <span id="list_deployments/3"></span>
+
+    <span id="list_deployments/4"></span>
+
+    <span id="list_deployments/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_deployments/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_deployments(client, application_id, environment_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L411" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the deployments for an environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_environments/5">
+
+    <span id="list_environments/2"></span>
+
+    <span id="list_environments/3"></span>
+
+    <span id="list_environments/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_environments/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_environments(client, application_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L431" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the environments for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_hosted_configuration_versions/6">
+
+    <span id="list_hosted_configuration_versions/3"></span>
+
+    <span id="list_hosted_configuration_versions/4"></span>
+
+    <span id="list_hosted_configuration_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_hosted_configuration_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_hosted_configuration_versions(client, application_id, configuration_profile_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L451" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>View a list of configurations stored in the AppConfig configuration store by version.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L471" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the list of key-value tags assigned to the resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_deployment/5">
+
+    <span id="start_deployment/4"></span>
+
+  <div class="detail-header">
+    <a href="#start_deployment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_deployment(client, application_id, environment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L481" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_deployment/6">
+
+    <span id="stop_deployment/5"></span>
+
+  <div class="detail-header">
+    <a href="#stop_deployment/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_deployment(client, application_id, deployment_number, environment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L494" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a deployment.</p>
+<p>This API action works only on deployments that have a status of <code class="inline">DEPLOYING</code>. This action moves the
+deployment to a status of <code class="inline">ROLLED_BACK</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L507" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Metadata to assign to an AppConfig resource.</p>
+<p>Tags help organize and categorize your AppConfig resources. Each tag consists of a key and an
+optional value, both of which you define. You can specify a maximum of 50 tags for a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L517" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a tag key and value from an AppConfig resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application/4">
+
+    <span id="update_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L531" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_configuration_profile/5">
+
+    <span id="update_configuration_profile/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_configuration_profile/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_configuration_profile(client, application_id, configuration_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L541" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a configuration profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_deployment_strategy/4">
+
+    <span id="update_deployment_strategy/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_deployment_strategy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_deployment_strategy(client, deployment_strategy_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L551" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a deployment strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_environment/5">
+
+    <span id="update_environment/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_environment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_environment(client, application_id, environment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L561" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="validate_configuration/5">
+
+    <span id="validate_configuration/4"></span>
+
+  <div class="detail-header">
+    <a href="#validate_configuration/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">validate_configuration(client, application_id, configuration_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_config.ex#L571" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Uses the validators in a configuration profile to validate a configuration.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

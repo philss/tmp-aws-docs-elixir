@@ -1,0 +1,4160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Pinpoint — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Pinpoint
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Doc Engage API - Amazon Pinpoint API</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_app/3">create_app(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_campaign/4">create_campaign(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new campaign for an application or updates the settings of an existing campaign for an
+application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_email_template/4">create_email_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a message template for messages that are sent through the email channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_export_job/4">create_export_job(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an export job for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_import_job/4">create_import_job(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an import job for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_journey/4">create_journey(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a journey for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_push_template/4">create_push_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a message template for messages that are sent through a push notification channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_recommender_configuration/3">create_recommender_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Pinpoint configuration for a recommender model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_segment/4">create_segment(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new segment for an application or updates the configuration, dimension, and other
+settings for an existing segment that&#39;s associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_sms_template/4">create_sms_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a message template for messages that are sent through the SMS channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_voice_template/4">create_voice_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a message template for messages that are sent through the voice channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_adm_channel/4">delete_adm_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the ADM channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_apns_channel/4">delete_apns_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the APNs channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_apns_sandbox_channel/4">delete_apns_sandbox_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the APNs sandbox channel for an application and deletes any existing settings for the
+channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_apns_voip_channel/4">delete_apns_voip_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the APNs VoIP channel for an application and deletes any existing settings for the
+channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_apns_voip_sandbox_channel/4">delete_apns_voip_sandbox_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for
+the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_app/4">delete_app(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_baidu_channel/4">delete_baidu_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_campaign/5">delete_campaign(client, application_id, campaign_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a campaign from an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_email_channel/4">delete_email_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the email channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_email_template/4">delete_email_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a message template for messages that were sent through the email channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_endpoint/5">delete_endpoint(client, application_id, endpoint_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an endpoint from an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_event_stream/4">delete_event_stream(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the event stream for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_gcm_channel/4">delete_gcm_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the GCM channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_journey/5">delete_journey(client, application_id, journey_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a journey from an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_push_template/4">delete_push_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a message template for messages that were sent through a push notification channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_recommender_configuration/4">delete_recommender_configuration(client, recommender_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon Pinpoint configuration for a recommender model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_segment/5">delete_segment(client, application_id, segment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a segment from an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_sms_channel/4">delete_sms_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_sms_template/4">delete_sms_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a message template for messages that were sent through the SMS channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_endpoints/5">delete_user_endpoints(client, application_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes all the endpoints that are associated with a specific user ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_voice_channel/4">delete_voice_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the voice channel for an application and deletes any existing settings for the channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_voice_template/4">delete_voice_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a message template for messages that were sent through the voice channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_adm_channel/3">get_adm_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the ADM channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apns_channel/3">get_apns_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the APNs channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apns_sandbox_channel/3">get_apns_sandbox_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the APNs sandbox channel for an
+application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apns_voip_channel/3">get_apns_voip_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the APNs VoIP channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apns_voip_sandbox_channel/3">get_apns_voip_sandbox_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the APNs VoIP sandbox channel for an
+application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_app/3">get_app(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_application_date_range_kpi/8">get_application_date_range_kpi(client, application_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_application_settings/3">get_application_settings(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the settings for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apps/4">get_apps(client, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the applications that are associated with your Amazon Pinpoint
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_baidu_channel/3">get_baidu_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the Baidu channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaign/4">get_campaign(client, application_id, campaign_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for a campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaign_activities/6">get_campaign_activities(client, application_id, campaign_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the activities for a campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaign_date_range_kpi/9">get_campaign_date_range_kpi(client, application_id, campaign_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaign_version/5">get_campaign_version(client, application_id, campaign_id, version, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for a specific version
+of a campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaign_versions/6">get_campaign_versions(client, application_id, campaign_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for all versions of a
+campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_campaigns/5">get_campaigns(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for all the campaigns
+that are associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_channels/3">get_channels(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the history and status of each channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_email_channel/3">get_email_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the email channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_email_template/4">get_email_template(client, template_name, version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the content and settings of a message template for messages that are sent through the
+email channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_endpoint/4">get_endpoint(client, application_id, endpoint_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the settings and attributes of a specific endpoint for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_event_stream/3">get_event_stream(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the event stream settings for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_export_job/4">get_export_job(client, application_id, job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of a specific export job for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_export_jobs/5">get_export_jobs(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of all the export jobs for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_gcm_channel/3">get_gcm_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the GCM channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_import_job/4">get_import_job(client, application_id, job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of a specific import job for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_import_jobs/5">get_import_jobs(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of all the import jobs for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_journey/4">get_journey(client, application_id, journey_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for a journey.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_journey_date_range_kpi/9">get_journey_date_range_kpi(client, application_id, journey_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a
+journey.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_journey_execution_activity_metrics/7">get_journey_execution_activity_metrics(client, application_id, journey_activity_id, journey_id, next_token \\ nil, page_size \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey
+activity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_journey_execution_metrics/6">get_journey_execution_metrics(client, application_id, journey_id, next_token \\ nil, page_size \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_push_template/4">get_push_template(client, template_name, version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the content and settings of a message template for messages that are sent through a push
+notification channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_recommender_configuration/3">get_recommender_configuration(client, recommender_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_recommender_configurations/4">get_recommender_configurations(client, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the recommender model configurations that are associated with your
+Amazon Pinpoint account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment/4">get_segment(client, application_id, segment_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the configuration, dimension, and other settings for a specific
+segment that&#39;s associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment_export_jobs/6">get_segment_export_jobs(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the export jobs for a segment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment_import_jobs/6">get_segment_import_jobs(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the import jobs for a segment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment_version/5">get_segment_version(client, application_id, segment_id, version, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the configuration, dimension, and other settings for a specific
+version of a segment that&#39;s associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment_versions/6">get_segment_versions(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the configuration, dimension, and other settings for all the versions
+of a specific segment that&#39;s associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segments/5">get_segments(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the configuration, dimension, and other settings for all the segments
+that are associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_sms_channel/3">get_sms_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the SMS channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_sms_template/4">get_sms_template(client, template_name, version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the content and settings of a message template for messages that are sent through the
+SMS channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_user_endpoints/4">get_user_endpoints(client, application_id, user_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the endpoints that are associated with a specific user ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_voice_channel/3">get_voice_channel(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status and settings of the voice channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_voice_template/4">get_voice_template(client, template_name, version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the content and settings of a message template for messages that are sent through the
+voice channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_journeys/5">list_journeys(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the status, configuration, and other settings for all the journeys
+that are associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves all the tags (keys and values) that are associated with an application, campaign,
+message template, or segment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_template_versions/6">list_template_versions(client, template_name, template_type, next_token \\ nil, page_size \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the versions of a specific message template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_templates/6">list_templates(client, next_token \\ nil, page_size \\ nil, prefix \\ nil, template_type \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about all the message templates that are associated with your Amazon
+Pinpoint account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#phone_number_validate/3">phone_number_validate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a phone number.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_event_stream/4">put_event_stream(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new event stream for an application or updates the settings of an existing event stream
+for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_events/4">put_events(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new event to record for endpoints, or creates or updates endpoint data that existing
+events are associated with.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_attributes/5">remove_attributes(client, application_id, attribute_type, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more attributes, of the same attribute type, from all the endpoints that are
+associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_messages/4">send_messages(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates and sends a direct message.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_users_messages/4">send_users_messages(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates and sends a message to a list of users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags (keys and values) to an application, campaign, message template, or segment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags (keys and values) from an application, campaign, message template, or
+segment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_adm_channel/4">update_adm_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the ADM channel for an application or updates the status and settings of the ADM channel
+for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_apns_channel/4">update_apns_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the APNs channel for an application or updates the status and settings of the APNs channel
+for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_apns_sandbox_channel/4">update_apns_sandbox_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the APNs sandbox channel for an application or updates the status and settings of the APNs
+sandbox channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_apns_voip_channel/4">update_apns_voip_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the APNs VoIP channel for an application or updates the status and settings of the APNs
+VoIP channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_apns_voip_sandbox_channel/4">update_apns_voip_sandbox_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the
+APNs VoIP sandbox channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application_settings/4">update_application_settings(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the settings for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_baidu_channel/4">update_baidu_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the Baidu channel for an application or updates the status and settings of the Baidu
+channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_campaign/5">update_campaign(client, application_id, campaign_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the configuration and other settings for a campaign.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_email_channel/4">update_email_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the email channel for an application or updates the status and settings of the email
+channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_email_template/4">update_email_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing message template for messages that are sent through the email channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_endpoint/5">update_endpoint(client, application_id, endpoint_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new endpoint for an application or updates the settings and attributes of an existing
+endpoint for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_endpoints_batch/4">update_endpoints_batch(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new batch of endpoints for an application or updates the settings and attributes of a
+batch of existing endpoints for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_gcm_channel/4">update_gcm_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the GCM channel for an application or updates the status and settings of the GCM channel
+for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_journey/5">update_journey(client, application_id, journey_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the configuration and other settings for a journey.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_journey_state/5">update_journey_state(client, application_id, journey_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels (stops) an active journey.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_push_template/4">update_push_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing message template for messages that are sent through a push notification
+channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_recommender_configuration/4">update_recommender_configuration(client, recommender_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon Pinpoint configuration for a recommender model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_segment/5">update_segment(client, application_id, segment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new segment for an application or updates the configuration, dimension, and other
+settings for an existing segment that&#39;s associated with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_sms_channel/4">update_sms_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the SMS channel for an application or updates the status and settings of the SMS channel
+for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_sms_template/4">update_sms_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing message template for messages that are sent through the SMS channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_template_active_version/5">update_template_active_version(client, template_name, template_type, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the status of a specific version of a message template to <em>active</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_voice_channel/4">update_voice_channel(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the voice channel for an application or updates the status and settings of the voice
+channel for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_voice_template/4">update_voice_template(client, template_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing message template for messages that are sent through the voice channel.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_app/3">
+
+    <span id="create_app/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_app/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_app(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L12" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_campaign/4">
+
+    <span id="create_campaign/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_campaign/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_campaign(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new campaign for an application or updates the settings of an existing campaign for an
+application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_email_template/4">
+
+    <span id="create_email_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_email_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_email_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a message template for messages that are sent through the email channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_export_job/4">
+
+    <span id="create_export_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_export_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_export_job(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L43" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an export job for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_import_job/4">
+
+    <span id="create_import_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_import_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_import_job(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L53" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an import job for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_journey/4">
+
+    <span id="create_journey/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_journey/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_journey(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L63" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a journey for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_push_template/4">
+
+    <span id="create_push_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_push_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_push_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a message template for messages that are sent through a push notification channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_recommender_configuration/3">
+
+    <span id="create_recommender_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_recommender_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_recommender_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Pinpoint configuration for a recommender model.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_segment/4">
+
+    <span id="create_segment/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_segment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_segment(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new segment for an application or updates the configuration, dimension, and other
+settings for an existing segment that&#39;s associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_sms_template/4">
+
+    <span id="create_sms_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_sms_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_sms_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a message template for messages that are sent through the SMS channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_voice_template/4">
+
+    <span id="create_voice_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_voice_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_voice_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a message template for messages that are sent through the voice channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_adm_channel/4">
+
+    <span id="delete_adm_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_adm_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_adm_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the ADM channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_apns_channel/4">
+
+    <span id="delete_apns_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_apns_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_apns_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the APNs channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_apns_sandbox_channel/4">
+
+    <span id="delete_apns_sandbox_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_apns_sandbox_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_apns_sandbox_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L145" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the APNs sandbox channel for an application and deletes any existing settings for the
+channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_apns_voip_channel/4">
+
+    <span id="delete_apns_voip_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_apns_voip_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_apns_voip_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the APNs VoIP channel for an application and deletes any existing settings for the
+channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_apns_voip_sandbox_channel/4">
+
+    <span id="delete_apns_voip_sandbox_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_apns_voip_sandbox_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_apns_voip_sandbox_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the APNs VoIP sandbox channel for an application and deletes any existing settings for
+the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_app/4">
+
+    <span id="delete_app/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_app/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_app(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_baidu_channel/4">
+
+    <span id="delete_baidu_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_baidu_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_baidu_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L187" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_campaign/5">
+
+    <span id="delete_campaign/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_campaign/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_campaign(client, application_id, campaign_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a campaign from an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_email_channel/4">
+
+    <span id="delete_email_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_email_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_email_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the email channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_email_template/4">
+
+    <span id="delete_email_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_email_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_email_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a message template for messages that were sent through the email channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_endpoint/5">
+
+    <span id="delete_endpoint/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_endpoint/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_endpoint(client, application_id, endpoint_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an endpoint from an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_event_stream/4">
+
+    <span id="delete_event_stream/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_event_stream/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_event_stream(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L241" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the event stream for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_gcm_channel/4">
+
+    <span id="delete_gcm_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_gcm_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_gcm_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L251" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the GCM channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_journey/5">
+
+    <span id="delete_journey/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_journey/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_journey(client, application_id, journey_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L261" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a journey from an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_push_template/4">
+
+    <span id="delete_push_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_push_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_push_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L271" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a message template for messages that were sent through a push notification channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_recommender_configuration/4">
+
+    <span id="delete_recommender_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_recommender_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_recommender_configuration(client, recommender_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L285" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon Pinpoint configuration for a recommender model.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_segment/5">
+
+    <span id="delete_segment/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_segment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_segment(client, application_id, segment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L295" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a segment from an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_sms_channel/4">
+
+    <span id="delete_sms_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_sms_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_sms_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L305" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_sms_template/4">
+
+    <span id="delete_sms_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_sms_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_sms_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L315" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a message template for messages that were sent through the SMS channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_endpoints/5">
+
+    <span id="delete_user_endpoints/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_endpoints/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_endpoints(client, application_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes all the endpoints that are associated with a specific user ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_voice_channel/4">
+
+    <span id="delete_voice_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_voice_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_voice_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the voice channel for an application and deletes any existing settings for the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_voice_template/4">
+
+    <span id="delete_voice_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_voice_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_voice_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L349" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a message template for messages that were sent through the voice channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_adm_channel/3">
+
+    <span id="get_adm_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_adm_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_adm_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L363" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the ADM channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apns_channel/3">
+
+    <span id="get_apns_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_apns_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apns_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L373" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the APNs channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apns_sandbox_channel/3">
+
+    <span id="get_apns_sandbox_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_apns_sandbox_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apns_sandbox_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the APNs sandbox channel for an
+application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apns_voip_channel/3">
+
+    <span id="get_apns_voip_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_apns_voip_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apns_voip_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L394" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the APNs VoIP channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apns_voip_sandbox_channel/3">
+
+    <span id="get_apns_voip_sandbox_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_apns_voip_sandbox_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apns_voip_sandbox_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L405" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the APNs VoIP sandbox channel for an
+application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_app/3">
+
+    <span id="get_app/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_app/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_app(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L415" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_application_date_range_kpi/8">
+
+    <span id="get_application_date_range_kpi/3"></span>
+
+    <span id="get_application_date_range_kpi/4"></span>
+
+    <span id="get_application_date_range_kpi/5"></span>
+
+    <span id="get_application_date_range_kpi/6"></span>
+
+    <span id="get_application_date_range_kpi/7"></span>
+
+  <div class="detail-header">
+    <a href="#get_application_date_range_kpi/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_application_date_range_kpi(client, application_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L425" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves (queries) pre-aggregated data for a standard metric that applies to an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_application_settings/3">
+
+    <span id="get_application_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_application_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_application_settings(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L455" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the settings for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apps/4">
+
+    <span id="get_apps/1"></span>
+
+    <span id="get_apps/2"></span>
+
+    <span id="get_apps/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_apps/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apps(client, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L466" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the applications that are associated with your Amazon Pinpoint
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_baidu_channel/3">
+
+    <span id="get_baidu_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_baidu_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_baidu_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the Baidu channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaign/4">
+
+    <span id="get_campaign/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaign/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaign(client, application_id, campaign_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L496" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for a campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaign_activities/6">
+
+    <span id="get_campaign_activities/3"></span>
+
+    <span id="get_campaign_activities/4"></span>
+
+    <span id="get_campaign_activities/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaign_activities/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaign_activities(client, application_id, campaign_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L506" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the activities for a campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaign_date_range_kpi/9">
+
+    <span id="get_campaign_date_range_kpi/4"></span>
+
+    <span id="get_campaign_date_range_kpi/5"></span>
+
+    <span id="get_campaign_date_range_kpi/6"></span>
+
+    <span id="get_campaign_date_range_kpi/7"></span>
+
+    <span id="get_campaign_date_range_kpi/8"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaign_date_range_kpi/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaign_date_range_kpi(client, application_id, campaign_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L526" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves (queries) pre-aggregated data for a standard metric that applies to a campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaign_version/5">
+
+    <span id="get_campaign_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaign_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaign_version(client, application_id, campaign_id, version, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L557" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for a specific version
+of a campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaign_versions/6">
+
+    <span id="get_campaign_versions/3"></span>
+
+    <span id="get_campaign_versions/4"></span>
+
+    <span id="get_campaign_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaign_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaign_versions(client, application_id, campaign_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L568" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for all versions of a
+campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_campaigns/5">
+
+    <span id="get_campaigns/2"></span>
+
+    <span id="get_campaigns/3"></span>
+
+    <span id="get_campaigns/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_campaigns/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_campaigns(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L589" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for all the campaigns
+that are associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_channels/3">
+
+    <span id="get_channels/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_channels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_channels(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L609" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the history and status of each channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_email_channel/3">
+
+    <span id="get_email_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_email_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_email_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L619" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the email channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_email_template/4">
+
+    <span id="get_email_template/2"></span>
+
+    <span id="get_email_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_email_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_email_template(client, template_name, version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L630" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the content and settings of a message template for messages that are sent through the
+email channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_endpoint/4">
+
+    <span id="get_endpoint/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_endpoint/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_endpoint(client, application_id, endpoint_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L645" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the settings and attributes of a specific endpoint for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_event_stream/3">
+
+    <span id="get_event_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_event_stream/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_event_stream(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L655" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the event stream settings for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_export_job/4">
+
+    <span id="get_export_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_export_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_export_job(client, application_id, job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L665" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of a specific export job for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_export_jobs/5">
+
+    <span id="get_export_jobs/2"></span>
+
+    <span id="get_export_jobs/3"></span>
+
+    <span id="get_export_jobs/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_export_jobs/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_export_jobs(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L675" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of all the export jobs for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_gcm_channel/3">
+
+    <span id="get_gcm_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_gcm_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_gcm_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L695" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the GCM channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_import_job/4">
+
+    <span id="get_import_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_import_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_import_job(client, application_id, job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L705" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of a specific import job for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_import_jobs/5">
+
+    <span id="get_import_jobs/2"></span>
+
+    <span id="get_import_jobs/3"></span>
+
+    <span id="get_import_jobs/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_import_jobs/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_import_jobs(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L715" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of all the import jobs for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_journey/4">
+
+    <span id="get_journey/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_journey/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_journey(client, application_id, journey_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L735" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for a journey.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_journey_date_range_kpi/9">
+
+    <span id="get_journey_date_range_kpi/4"></span>
+
+    <span id="get_journey_date_range_kpi/5"></span>
+
+    <span id="get_journey_date_range_kpi/6"></span>
+
+    <span id="get_journey_date_range_kpi/7"></span>
+
+    <span id="get_journey_date_range_kpi/8"></span>
+
+  <div class="detail-header">
+    <a href="#get_journey_date_range_kpi/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_journey_date_range_kpi(client, application_id, journey_id, kpi_name, end_time \\ nil, next_token \\ nil, page_size \\ nil, start_time \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves (queries) pre-aggregated data for a standard engagement metric that applies to a
+journey.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_journey_execution_activity_metrics/7">
+
+    <span id="get_journey_execution_activity_metrics/4"></span>
+
+    <span id="get_journey_execution_activity_metrics/5"></span>
+
+    <span id="get_journey_execution_activity_metrics/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_journey_execution_activity_metrics/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_journey_execution_activity_metrics(client, application_id, journey_activity_id, journey_id, next_token \\ nil, page_size \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L777" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey
+activity.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_journey_execution_metrics/6">
+
+    <span id="get_journey_execution_metrics/3"></span>
+
+    <span id="get_journey_execution_metrics/4"></span>
+
+    <span id="get_journey_execution_metrics/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_journey_execution_metrics/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_journey_execution_metrics(client, application_id, journey_id, next_token \\ nil, page_size \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L797" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_push_template/4">
+
+    <span id="get_push_template/2"></span>
+
+    <span id="get_push_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_push_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_push_template(client, template_name, version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L818" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the content and settings of a message template for messages that are sent through a push
+notification channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_recommender_configuration/3">
+
+    <span id="get_recommender_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_recommender_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_recommender_configuration(client, recommender_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L833" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_recommender_configurations/4">
+
+    <span id="get_recommender_configurations/1"></span>
+
+    <span id="get_recommender_configurations/2"></span>
+
+    <span id="get_recommender_configurations/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_recommender_configurations/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_recommender_configurations(client, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L844" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the recommender model configurations that are associated with your
+Amazon Pinpoint account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment/4">
+
+    <span id="get_segment/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment(client, application_id, segment_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L865" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the configuration, dimension, and other settings for a specific
+segment that&#39;s associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment_export_jobs/6">
+
+    <span id="get_segment_export_jobs/3"></span>
+
+    <span id="get_segment_export_jobs/4"></span>
+
+    <span id="get_segment_export_jobs/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment_export_jobs/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment_export_jobs(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L875" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the export jobs for a segment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment_import_jobs/6">
+
+    <span id="get_segment_import_jobs/3"></span>
+
+    <span id="get_segment_import_jobs/4"></span>
+
+    <span id="get_segment_import_jobs/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment_import_jobs/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment_import_jobs(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L895" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the import jobs for a segment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment_version/5">
+
+    <span id="get_segment_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment_version(client, application_id, segment_id, version, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L916" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the configuration, dimension, and other settings for a specific
+version of a segment that&#39;s associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment_versions/6">
+
+    <span id="get_segment_versions/3"></span>
+
+    <span id="get_segment_versions/4"></span>
+
+    <span id="get_segment_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment_versions(client, application_id, segment_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L927" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the configuration, dimension, and other settings for all the versions
+of a specific segment that&#39;s associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segments/5">
+
+    <span id="get_segments/2"></span>
+
+    <span id="get_segments/3"></span>
+
+    <span id="get_segments/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_segments/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segments(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L948" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the configuration, dimension, and other settings for all the segments
+that are associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_sms_channel/3">
+
+    <span id="get_sms_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_sms_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_sms_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L968" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the SMS channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_sms_template/4">
+
+    <span id="get_sms_template/2"></span>
+
+    <span id="get_sms_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_sms_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_sms_template(client, template_name, version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L979" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the content and settings of a message template for messages that are sent through the
+SMS channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_user_endpoints/4">
+
+    <span id="get_user_endpoints/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_user_endpoints/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_user_endpoints(client, application_id, user_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L994" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the endpoints that are associated with a specific user ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_voice_channel/3">
+
+    <span id="get_voice_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_voice_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_voice_channel(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1004" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status and settings of the voice channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_voice_template/4">
+
+    <span id="get_voice_template/2"></span>
+
+    <span id="get_voice_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_voice_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_voice_template(client, template_name, version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1015" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the content and settings of a message template for messages that are sent through the
+voice channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_journeys/5">
+
+    <span id="list_journeys/2"></span>
+
+    <span id="list_journeys/3"></span>
+
+    <span id="list_journeys/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_journeys/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_journeys(client, application_id, page_size \\ nil, token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1031" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the status, configuration, and other settings for all the journeys
+that are associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1052" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves all the tags (keys and values) that are associated with an application, campaign,
+message template, or segment.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_template_versions/6">
+
+    <span id="list_template_versions/3"></span>
+
+    <span id="list_template_versions/4"></span>
+
+    <span id="list_template_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_template_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_template_versions(client, template_name, template_type, next_token \\ nil, page_size \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1062" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the versions of a specific message template.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_templates/6">
+
+    <span id="list_templates/1"></span>
+
+    <span id="list_templates/2"></span>
+
+    <span id="list_templates/3"></span>
+
+    <span id="list_templates/4"></span>
+
+    <span id="list_templates/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_templates/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_templates(client, next_token \\ nil, page_size \\ nil, prefix \\ nil, template_type \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1083" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about all the message templates that are associated with your Amazon
+Pinpoint account.</p>
+
+  </section>
+</section>
+<section class="detail" id="phone_number_validate/3">
+
+    <span id="phone_number_validate/2"></span>
+
+  <div class="detail-header">
+    <a href="#phone_number_validate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">phone_number_validate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1113" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a phone number.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_event_stream/4">
+
+    <span id="put_event_stream/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_event_stream/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_event_stream(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new event stream for an application or updates the settings of an existing event stream
+for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_events/4">
+
+    <span id="put_events/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_events/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_events(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1135" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new event to record for endpoints, or creates or updates endpoint data that existing
+events are associated with.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_attributes/5">
+
+    <span id="remove_attributes/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_attributes/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_attributes(client, application_id, attribute_type, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more attributes, of the same attribute type, from all the endpoints that are
+associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_messages/4">
+
+    <span id="send_messages/3"></span>
+
+  <div class="detail-header">
+    <a href="#send_messages/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_messages(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates and sends a direct message.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_users_messages/4">
+
+    <span id="send_users_messages/3"></span>
+
+  <div class="detail-header">
+    <a href="#send_users_messages/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_users_messages(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates and sends a message to a list of users.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1176" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags (keys and values) to an application, campaign, message template, or segment.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1187" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags (keys and values) from an application, campaign, message template, or
+segment.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_adm_channel/4">
+
+    <span id="update_adm_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_adm_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_adm_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1202" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the ADM channel for an application or updates the status and settings of the ADM channel
+for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_apns_channel/4">
+
+    <span id="update_apns_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_apns_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_apns_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the APNs channel for an application or updates the status and settings of the APNs channel
+for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_apns_sandbox_channel/4">
+
+    <span id="update_apns_sandbox_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_apns_sandbox_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_apns_sandbox_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the APNs sandbox channel for an application or updates the status and settings of the APNs
+sandbox channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_apns_voip_channel/4">
+
+    <span id="update_apns_voip_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_apns_voip_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_apns_voip_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1235" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the APNs VoIP channel for an application or updates the status and settings of the APNs
+VoIP channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_apns_voip_sandbox_channel/4">
+
+    <span id="update_apns_voip_sandbox_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_apns_voip_sandbox_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_apns_voip_sandbox_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1246" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the APNs VoIP sandbox channel for an application or updates the status and settings of the
+APNs VoIP sandbox channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application_settings/4">
+
+    <span id="update_application_settings/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_application_settings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application_settings(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the settings for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_baidu_channel/4">
+
+    <span id="update_baidu_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_baidu_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_baidu_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1267" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the Baidu channel for an application or updates the status and settings of the Baidu
+channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_campaign/5">
+
+    <span id="update_campaign/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_campaign/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_campaign(client, application_id, campaign_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1277" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the configuration and other settings for a campaign.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_email_channel/4">
+
+    <span id="update_email_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_email_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_email_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1288" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the email channel for an application or updates the status and settings of the email
+channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_email_template/4">
+
+    <span id="update_email_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_email_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_email_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing message template for messages that are sent through the email channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_endpoint/5">
+
+    <span id="update_endpoint/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_endpoint/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_endpoint(client, application_id, endpoint_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1318" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new endpoint for an application or updates the settings and attributes of an existing
+endpoint for an application.</p>
+<p>You can also use this operation to define custom attributes for an endpoint. If an update includes
+one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing
+values with the new values.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_endpoints_batch/4">
+
+    <span id="update_endpoints_batch/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_endpoints_batch/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_endpoints_batch(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1333" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new batch of endpoints for an application or updates the settings and attributes of a
+batch of existing endpoints for an application.</p>
+<p>You can also use this operation to define custom attributes for a batch of endpoints. If an update
+includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any
+existing values with the new values.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_gcm_channel/4">
+
+    <span id="update_gcm_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_gcm_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_gcm_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the GCM channel for an application or updates the status and settings of the GCM channel
+for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_journey/5">
+
+    <span id="update_journey/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_journey/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_journey(client, application_id, journey_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1354" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the configuration and other settings for a journey.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_journey_state/5">
+
+    <span id="update_journey_state/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_journey_state/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_journey_state(client, application_id, journey_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels (stops) an active journey.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_push_template/4">
+
+    <span id="update_push_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_push_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_push_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1375" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing message template for messages that are sent through a push notification
+channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_recommender_configuration/4">
+
+    <span id="update_recommender_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_recommender_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_recommender_configuration(client, recommender_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1390" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon Pinpoint configuration for a recommender model.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_segment/5">
+
+    <span id="update_segment/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_segment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_segment(client, application_id, segment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new segment for an application or updates the configuration, dimension, and other
+settings for an existing segment that&#39;s associated with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_sms_channel/4">
+
+    <span id="update_sms_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_sms_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_sms_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the SMS channel for an application or updates the status and settings of the SMS channel
+for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_sms_template/4">
+
+    <span id="update_sms_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_sms_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_sms_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1422" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing message template for messages that are sent through the SMS channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_template_active_version/5">
+
+    <span id="update_template_active_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_template_active_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_template_active_version(client, template_name, template_type, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1437" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the status of a specific version of a message template to <em>active</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_voice_channel/4">
+
+    <span id="update_voice_channel/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_voice_channel/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_voice_channel(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1448" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the voice channel for an application or updates the status and settings of the voice
+channel for an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_voice_template/4">
+
+    <span id="update_voice_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_voice_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_voice_template(client, template_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint.ex#L1458" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing message template for messages that are sent through the voice channel.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

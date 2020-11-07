@@ -1,0 +1,2232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.GuardDuty — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.GuardDuty
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the
+following data sources: VPC Flow Logs, AWS CloudTrail event logs, and DNS logs.</p>
+<p>It uses threat intelligence feeds (such as lists of malicious IPs and domains) and machine
+learning to identify unexpected, potentially unauthorized, and malicious activity within your AWS
+environment. This can include issues like escalations of privileges, uses of exposed credentials,
+or communication with malicious IPs, URLs, or domains. For example, GuardDuty can detect
+compromised EC2 instances that serve malware or mine bitcoin.</p>
+<p>GuardDuty also monitors AWS account access behavior for signs of compromise. Some examples of this
+are unauthorized infrastructure deployments such as EC2 instances deployed in a Region that has
+never been used, or unusual API calls like a password policy change to reduce password strength.</p>
+<p>GuardDuty informs you of the status of your AWS environment by producing security findings that
+you can view in the GuardDuty console or through Amazon CloudWatch events. For more information,
+see the <em><a href="https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html">Amazon GuardDuty User Guide</a> </em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#accept_invitation/4">accept_invitation(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts the invitation to be monitored by a master GuardDuty account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#archive_findings/4">archive_findings(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Archives GuardDuty findings that are specified by the list of finding IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_detector/3">create_detector(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a single Amazon GuardDuty detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_filter/4">create_filter(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a filter using the specified finding criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_i_p_set/4">create_i_p_set(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new IPSet, which is called a trusted IP list in the console user interface.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_members/4">create_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates member accounts of the current AWS account by specifying a list of AWS account IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_publishing_destination/4">create_publishing_destination(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a publishing destination to export findings to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_sample_findings/4">create_sample_findings(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generates example findings of types specified by the list of finding types.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_threat_intel_set/4">create_threat_intel_set(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new ThreatIntelSet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#decline_invitations/3">decline_invitations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Declines invitations sent to the current member account by AWS accounts specified by their account
+IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_detector/4">delete_detector(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon GuardDuty detector that is specified by the detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_filter/5">delete_filter(client, detector_id, filter_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the filter specified by the filter name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_i_p_set/5">delete_i_p_set(client, detector_id, ip_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the IPSet specified by the <code class="inline">ipSetId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_invitations/3">delete_invitations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes invitations sent to the current member account by AWS accounts specified by their account
+IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_members/4">delete_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_publishing_destination/5">delete_publishing_destination(client, destination_id, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the publishing definition with the specified <code class="inline">destinationId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_threat_intel_set/5">delete_threat_intel_set(client, detector_id, threat_intel_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_organization_configuration/3">describe_organization_configuration(client, detector_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the account selected as the delegated administrator for GuardDuty.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_publishing_destination/4">describe_publishing_destination(client, destination_id, detector_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the publishing destination specified by the provided <code class="inline">destinationId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_organization_admin_account/3">disable_organization_admin_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables an AWS account within the Organization as the GuardDuty delegated administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_from_master_account/4">disassociate_from_master_account(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the current GuardDuty member account from its master account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_members/4">disassociate_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_organization_admin_account/3">enable_organization_admin_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables an AWS account within the organization as the GuardDuty delegated administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_detector/3">get_detector(client, detector_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_filter/4">get_filter(client, detector_id, filter_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of the filter specified by the filter name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_findings/4">get_findings(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes Amazon GuardDuty findings specified by finding IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_findings_statistics/4">get_findings_statistics(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_i_p_set/4">get_i_p_set(client, detector_id, ip_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the IPSet specified by the <code class="inline">ipSetId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_invitations_count/2">get_invitations_count(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the count of all GuardDuty membership invitations that were sent to the current member
+account except the currently accepted invitation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_master_account/3">get_master_account(client, detector_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides the details for the GuardDuty master account associated with the current GuardDuty member
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_member_detectors/4">get_member_detectors(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes which data sources are enabled for the member account&#39;s detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_members/4">get_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_threat_intel_set/4">get_threat_intel_set(client, detector_id, threat_intel_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_usage_statistics/4">get_usage_statistics(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#invite_members/4">invite_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to
+enable GuardDuty, and allow the current AWS account to view and manage these accounts&#39; GuardDuty
+findings on their behalf as the master account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_detectors/4">list_detectors(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists detectorIds of all the existing Amazon GuardDuty detector resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_filters/5">list_filters(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of the current filters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_findings/4">list_findings(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists Amazon GuardDuty findings for the specified detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_i_p_sets/5">list_i_p_sets(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the IPSets of the GuardDuty service specified by the detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_invitations/4">list_invitations(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all GuardDuty membership invitations that were sent to the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_members/6">list_members(client, detector_id, max_results \\ nil, next_token \\ nil, only_associated \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists details about all member accounts for the current GuardDuty master account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_organization_admin_accounts/4">list_organization_admin_accounts(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the accounts configured as GuardDuty delegated administrators.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_publishing_destinations/5">list_publishing_destinations(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of publishing destinations associated with the specified <code class="inline">dectectorId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists tags for a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_threat_intel_sets/5">list_threat_intel_sets(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_monitoring_members/4">start_monitoring_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Turns on GuardDuty monitoring of the specified member accounts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_monitoring_members/4">stop_monitoring_members(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops GuardDuty monitoring for the specified member accounts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tags to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unarchive_findings/4">unarchive_findings(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Unarchives GuardDuty findings specified by the <code class="inline">findingIds</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_detector/4">update_detector(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Amazon GuardDuty detector specified by the detectorId.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_filter/5">update_filter(client, detector_id, filter_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the filter specified by the filter name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_findings_feedback/4">update_findings_feedback(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Marks the specified GuardDuty findings as useful or not useful.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_i_p_set/5">update_i_p_set(client, detector_id, ip_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the IPSet specified by the IPSet ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_member_detectors/4">update_member_detectors(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Contains information on member accounts to be updated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_organization_configuration/4">update_organization_configuration(client, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the delegated administrator account with the values provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_publishing_destination/5">update_publishing_destination(client, destination_id, detector_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates information about the publishing destination specified by the <code class="inline">destinationId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_threat_intel_set/5">update_threat_intel_set(client, detector_id, threat_intel_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="accept_invitation/4">
+
+    <span id="accept_invitation/3"></span>
+
+  <div class="detail-header">
+    <a href="#accept_invitation/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">accept_invitation(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L27" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts the invitation to be monitored by a master GuardDuty account.</p>
+
+  </section>
+</section>
+<section class="detail" id="archive_findings/4">
+
+    <span id="archive_findings/3"></span>
+
+  <div class="detail-header">
+    <a href="#archive_findings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">archive_findings(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L40" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Archives GuardDuty findings that are specified by the list of finding IDs.</p>
+<p>Only the master account can archive findings. Member accounts don&#39;t have permission to archive
+findings from their accounts.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_detector/3">
+
+    <span id="create_detector/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_detector/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_detector(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a single Amazon GuardDuty detector.</p>
+<p>A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must
+create a detector in each Region where you enable the service. You can have only one detector per
+account per Region. All data sources are enabled in a new detector by default.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_filter/4">
+
+    <span id="create_filter/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_filter/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_filter(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L64" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a filter using the specified finding criteria.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_i_p_set/4">
+
+    <span id="create_i_p_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_i_p_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_i_p_set(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new IPSet, which is called a trusted IP list in the console user interface.</p>
+<p>An IPSet is a list of IP addresses that are trusted for secure communication with AWS
+infrastructure and applications. GuardDuty doesn&#39;t generate findings for IP addresses that are
+included in IPSets. Only users from the master account can use this operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_members/4">
+
+    <span id="create_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L99" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates member accounts of the current AWS account by specifying a list of AWS account IDs.</p>
+<p>This step is a prerequisite for managing the associated member accounts either by invitation or
+through an organization.</p>
+<p>When using <code class="inline">Create Members</code> as an organizations delegated administrator this action will enable
+GuardDuty in the added member accounts, with the exception of the organization master account,
+which must enable GuardDuty prior to being added as a member.</p>
+<p>If you are adding accounts by invitation use this action after GuardDuty has been enabled in
+potential member accounts and before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html"> <code class="inline">Invite Members</code>
+</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_publishing_destination/4">
+
+    <span id="create_publishing_destination/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_publishing_destination/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_publishing_destination(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a publishing destination to export findings to.</p>
+<p>The resource to export findings to must exist before you use this operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_sample_findings/4">
+
+    <span id="create_sample_findings/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_sample_findings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_sample_findings(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generates example findings of types specified by the list of finding types.</p>
+<p>If &#39;NULL&#39; is specified for <code class="inline">findingTypes</code>, the API generates example findings of all supported
+finding types.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_threat_intel_set/4">
+
+    <span id="create_threat_intel_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_threat_intel_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_threat_intel_set(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L137" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new ThreatIntelSet.</p>
+<p>ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on
+ThreatIntelSets. Only users of the master account can use this operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="decline_invitations/3">
+
+    <span id="decline_invitations/2"></span>
+
+  <div class="detail-header">
+    <a href="#decline_invitations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">decline_invitations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Declines invitations sent to the current member account by AWS accounts specified by their account
+IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_detector/4">
+
+    <span id="delete_detector/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_detector/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_detector(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon GuardDuty detector that is specified by the detector ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_filter/5">
+
+    <span id="delete_filter/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_filter/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_filter(client, detector_id, filter_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the filter specified by the filter name.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_i_p_set/5">
+
+    <span id="delete_i_p_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_i_p_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_i_p_set(client, detector_id, ip_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L180" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the IPSet specified by the <code class="inline">ipSetId</code>.</p>
+<p>IPSets are called trusted IP lists in the console user interface.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_invitations/3">
+
+    <span id="delete_invitations/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_invitations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_invitations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes invitations sent to the current member account by AWS accounts specified by their account
+IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_members/4">
+
+    <span id="delete_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L202" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_publishing_destination/5">
+
+    <span id="delete_publishing_destination/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_publishing_destination/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_publishing_destination(client, destination_id, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the publishing definition with the specified <code class="inline">destinationId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_threat_intel_set/5">
+
+    <span id="delete_threat_intel_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_threat_intel_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_threat_intel_set(client, detector_id, threat_intel_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_organization_configuration/3">
+
+    <span id="describe_organization_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_organization_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_organization_configuration(client, detector_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the account selected as the delegated administrator for GuardDuty.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_publishing_destination/4">
+
+    <span id="describe_publishing_destination/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_publishing_destination/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_publishing_destination(client, destination_id, detector_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the publishing destination specified by the provided <code class="inline">destinationId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_organization_admin_account/3">
+
+    <span id="disable_organization_admin_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_organization_admin_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_organization_admin_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables an AWS account within the Organization as the GuardDuty delegated administrator.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_from_master_account/4">
+
+    <span id="disassociate_from_master_account/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_from_master_account/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_from_master_account(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the current GuardDuty member account from its master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_members/4">
+
+    <span id="disassociate_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_organization_admin_account/3">
+
+    <span id="enable_organization_admin_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_organization_admin_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_organization_admin_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L283" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables an AWS account within the organization as the GuardDuty delegated administrator.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_detector/3">
+
+    <span id="get_detector/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_detector/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_detector(client, detector_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L293" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_filter/4">
+
+    <span id="get_filter/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_filter/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_filter(client, detector_id, filter_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of the filter specified by the filter name.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_findings/4">
+
+    <span id="get_findings/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_findings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_findings(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L313" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes Amazon GuardDuty findings specified by finding IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_findings_statistics/4">
+
+    <span id="get_findings_statistics/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_findings_statistics/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_findings_statistics(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L323" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_i_p_set/4">
+
+    <span id="get_i_p_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_i_p_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_i_p_set(client, detector_id, ip_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L333" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the IPSet specified by the <code class="inline">ipSetId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_invitations_count/2">
+
+    <span id="get_invitations_count/1"></span>
+
+  <div class="detail-header">
+    <a href="#get_invitations_count/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_invitations_count(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the count of all GuardDuty membership invitations that were sent to the current member
+account except the currently accepted invitation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_master_account/3">
+
+    <span id="get_master_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_master_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_master_account(client, detector_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L355" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides the details for the GuardDuty master account associated with the current GuardDuty member
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_member_detectors/4">
+
+    <span id="get_member_detectors/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_member_detectors/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_member_detectors(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L365" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes which data sources are enabled for the member account&#39;s detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_members/4">
+
+    <span id="get_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L376" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves GuardDuty member accounts (to the current GuardDuty master account) specified by the
+account IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_threat_intel_set/4">
+
+    <span id="get_threat_intel_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_threat_intel_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_threat_intel_set(client, detector_id, threat_intel_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the ThreatIntelSet that is specified by the ThreatIntelSet ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_usage_statistics/4">
+
+    <span id="get_usage_statistics/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_usage_statistics/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_usage_statistics(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID.</p>
+<p>For newly enabled detectors or data sources the cost returned will include only the usage so far
+under 30 days, this may differ from the cost metrics in the console, which projects usage over 30
+days to provide a monthly cost estimate. For more information see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are
+Calculated</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="invite_members/4">
+
+    <span id="invite_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#invite_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">invite_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L413" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Invites other AWS accounts (created as members of the current AWS account by CreateMembers) to
+enable GuardDuty, and allow the current AWS account to view and manage these accounts&#39; GuardDuty
+findings on their behalf as the master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_detectors/4">
+
+    <span id="list_detectors/1"></span>
+
+    <span id="list_detectors/2"></span>
+
+    <span id="list_detectors/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_detectors/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_detectors(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists detectorIds of all the existing Amazon GuardDuty detector resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_filters/5">
+
+    <span id="list_filters/2"></span>
+
+    <span id="list_filters/3"></span>
+
+    <span id="list_filters/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_filters/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_filters(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L443" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of the current filters.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_findings/4">
+
+    <span id="list_findings/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_findings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_findings(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L463" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists Amazon GuardDuty findings for the specified detector ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_i_p_sets/5">
+
+    <span id="list_i_p_sets/2"></span>
+
+    <span id="list_i_p_sets/3"></span>
+
+    <span id="list_i_p_sets/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_i_p_sets/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_i_p_sets(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L476" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the IPSets of the GuardDuty service specified by the detector ID.</p>
+<p>If you use this operation from a member account, the IPSets returned are the IPSets from the
+associated master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_invitations/4">
+
+    <span id="list_invitations/1"></span>
+
+    <span id="list_invitations/2"></span>
+
+    <span id="list_invitations/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_invitations/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_invitations(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L496" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all GuardDuty membership invitations that were sent to the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_members/6">
+
+    <span id="list_members/2"></span>
+
+    <span id="list_members/3"></span>
+
+    <span id="list_members/4"></span>
+
+    <span id="list_members/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_members/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_members(client, detector_id, max_results \\ nil, next_token \\ nil, only_associated \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L516" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists details about all member accounts for the current GuardDuty master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_organization_admin_accounts/4">
+
+    <span id="list_organization_admin_accounts/1"></span>
+
+    <span id="list_organization_admin_accounts/2"></span>
+
+    <span id="list_organization_admin_accounts/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_organization_admin_accounts/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_organization_admin_accounts(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L541" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the accounts configured as GuardDuty delegated administrators.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_publishing_destinations/5">
+
+    <span id="list_publishing_destinations/2"></span>
+
+    <span id="list_publishing_destinations/3"></span>
+
+    <span id="list_publishing_destinations/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_publishing_destinations/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_publishing_destinations(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L561" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of publishing destinations associated with the specified <code class="inline">dectectorId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L585" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists tags for a resource.</p>
+<p>Tagging is currently supported for detectors, finding filters, IP sets, and threat intel sets,
+with a limit of 50 tags per resource. When invoked, this operation returns all assigned tags for a
+given resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_threat_intel_sets/5">
+
+    <span id="list_threat_intel_sets/2"></span>
+
+    <span id="list_threat_intel_sets/3"></span>
+
+    <span id="list_threat_intel_sets/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_threat_intel_sets/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_threat_intel_sets(client, detector_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L598" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID.</p>
+<p>If you use this operation from a member account, the ThreatIntelSets associated with the master
+account are returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_monitoring_members/4">
+
+    <span id="start_monitoring_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#start_monitoring_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_monitoring_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L621" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Turns on GuardDuty monitoring of the specified member accounts.</p>
+<p>Use this operation to restart monitoring of accounts that you stopped monitoring with the
+<code class="inline">StopMonitoringMembers</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_monitoring_members/4">
+
+    <span id="stop_monitoring_members/3"></span>
+
+  <div class="detail-header">
+    <a href="#stop_monitoring_members/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_monitoring_members(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L633" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops GuardDuty monitoring for the specified member accounts.</p>
+<p>Use the <code class="inline">StartMonitoringMembers</code> operation to restart monitoring for those accounts.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L643" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tags to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="unarchive_findings/4">
+
+    <span id="unarchive_findings/3"></span>
+
+  <div class="detail-header">
+    <a href="#unarchive_findings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unarchive_findings(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L653" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Unarchives GuardDuty findings specified by the <code class="inline">findingIds</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L663" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_detector/4">
+
+    <span id="update_detector/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_detector/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_detector(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L677" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_filter/5">
+
+    <span id="update_filter/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_filter/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_filter(client, detector_id, filter_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L687" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the filter specified by the filter name.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_findings_feedback/4">
+
+    <span id="update_findings_feedback/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_findings_feedback/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_findings_feedback(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L697" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Marks the specified GuardDuty findings as useful or not useful.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_i_p_set/5">
+
+    <span id="update_i_p_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_i_p_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_i_p_set(client, detector_id, ip_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L707" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the IPSet specified by the IPSet ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_member_detectors/4">
+
+    <span id="update_member_detectors/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_member_detectors/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_member_detectors(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L717" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Contains information on member accounts to be updated.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_organization_configuration/4">
+
+    <span id="update_organization_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_organization_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_organization_configuration(client, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L727" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the delegated administrator account with the values provided.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_publishing_destination/5">
+
+    <span id="update_publishing_destination/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_publishing_destination/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_publishing_destination(client, destination_id, detector_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L737" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates information about the publishing destination specified by the <code class="inline">destinationId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_threat_intel_set/5">
+
+    <span id="update_threat_intel_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_threat_intel_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_threat_intel_set(client, detector_id, threat_intel_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/guard_duty.ex#L747" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the ThreatIntelSet specified by the ThreatIntelSet ID.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

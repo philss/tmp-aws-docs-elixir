@@ -1,0 +1,1844 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.AppStream — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.AppStream
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon AppStream 2.0</p>
+<p>This is the <em>Amazon AppStream 2.0 API Reference</em>.</p>
+<p>This documentation provides descriptions and syntax for each of the actions and data types in
+AppStream 2.0. AppStream 2.0 is a fully managed, secure application streaming service that lets
+you stream desktop applications to users without rewriting applications. AppStream 2.0 manages the
+AWS resources that are required to host and run your applications, scales automatically, and
+provides access to your users on demand.</p>
+<p>You can call the AppStream 2.0 API operations by using an interface VPC endpoint (interface
+endpoint). For more information, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html">Access AppStream 2.0 API Operations and CLI Commands Through an Interface VPC
+Endpoint</a>
+in the <em>Amazon AppStream 2.0 Administration Guide</em>.</p>
+<p>To learn more about AppStream 2.0, see the following resources:</p>
+<ul>
+<li><a href="http://aws.amazon.com/appstream2">Amazon AppStream 2.0 product page</a>     * <a href="http://aws.amazon.com/documentation/appstream2">Amazon AppStream 2.0 documentation</a>
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_fleet/3">associate_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified fleet with the specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_associate_user_stack/3">batch_associate_user_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified users with the specified stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_disassociate_user_stack/3">batch_disassociate_user_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the specified users from the specified stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#copy_image/3">copy_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Copies the image within the same region or to a new region within the same AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_directory_config/3">create_directory_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Directory Config object in AppStream 2.0.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_fleet/3">create_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_image_builder/3">create_image_builder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an image builder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_image_builder_streaming_u_r_l/3">create_image_builder_streaming_u_r_l(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a URL to start an image builder streaming session.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_stack/3">create_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a stack to start streaming applications to users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_streaming_u_r_l/3">create_streaming_u_r_l(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_usage_report_subscription/3">create_usage_report_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a usage report subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user/3">create_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new user in the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_directory_config/3">delete_directory_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified Directory Config object from AppStream 2.0.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_fleet/3">delete_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_image/3">delete_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_image_builder/3">delete_image_builder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified image builder and releases the capacity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_image_permissions/3">delete_image_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes permissions for the specified private image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_stack/3">delete_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_usage_report_subscription/3">delete_usage_report_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables usage report generation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user/3">delete_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user from the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_directory_configs/3">describe_directory_configs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0,
+if the names for these objects are provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_fleets/3">describe_fleets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_image_builders/3">describe_image_builders(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified image builders, if the image builder names
+are provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_image_permissions/3">describe_image_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that
+you own.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_images/3">describe_images(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are
+provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_sessions/3">describe_sessions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the streaming sessions for a specified stack and fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_stacks/3">describe_stacks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified stacks, if the stack names are provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_usage_report_subscriptions/3">describe_usage_report_subscriptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more usage report subscriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_stack_associations/3">describe_user_stack_associations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the UserStackAssociation objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_users/3">describe_users(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified users in the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_user/3">disable_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the specified user in the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_fleet/3">disassociate_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the specified fleet from the specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_user/3">enable_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables a user in the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#expire_session/3">expire_session(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Immediately stops the specified streaming session.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_associated_fleets/3">list_associated_fleets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the name of the fleet that is associated with the specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_associated_stacks/3">list_associated_stacks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the name of the stack with which the specified fleet is associated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of all tags for the specified AppStream 2.0 resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_fleet/3">start_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the specified fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_image_builder/3">start_image_builder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the specified image builder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_fleet/3">stop_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the specified fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_image_builder/3">stop_image_builder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the specified image builder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_directory_config/3">update_directory_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified Directory Config object in AppStream 2.0.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_fleet/3">update_fleet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified fleet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_image_permissions/3">update_image_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates permissions for the specified private image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_stack/3">update_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified fields for the specified stack.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_fleet/3">
+
+    <span id="associate_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified fleet with the specified stack.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_associate_user_stack/3">
+
+    <span id="batch_associate_user_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_associate_user_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_associate_user_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified users with the specified stacks.</p>
+<p>Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active
+Directory domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_disassociate_user_stack/3">
+
+    <span id="batch_disassociate_user_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_disassociate_user_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_disassociate_user_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the specified users from the specified stacks.</p>
+
+  </section>
+</section>
+<section class="detail" id="copy_image/3">
+
+    <span id="copy_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#copy_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">copy_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Copies the image within the same region or to a new region within the same AWS account.</p>
+<p>Note that any tags you added to the image will not be copied.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_directory_config/3">
+
+    <span id="create_directory_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_directory_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_directory_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Directory Config object in AppStream 2.0.</p>
+<p>This object includes the configuration information required to join fleets and image builders to
+Microsoft Active Directory domains.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_fleet/3">
+
+    <span id="create_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L74" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a fleet.</p>
+<p>A fleet consists of streaming instances that run a specified image.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_image_builder/3">
+
+    <span id="create_image_builder/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_image_builder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_image_builder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an image builder.</p>
+<p>An image builder is a virtual machine that is used to create an image.</p>
+<p>The initial state of the builder is <code class="inline">PENDING</code>. When it is ready, the state is <code class="inline">RUNNING</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_image_builder_streaming_u_r_l/3">
+
+    <span id="create_image_builder_streaming_u_r_l/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_image_builder_streaming_u_r_l/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_image_builder_streaming_u_r_l(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L92" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a URL to start an image builder streaming session.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_stack/3">
+
+    <span id="create_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a stack to start streaming applications to users.</p>
+<p>A stack consists of an associated fleet, user access policies, and storage configurations.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_streaming_u_r_l/3">
+
+    <span id="create_streaming_u_r_l/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_streaming_u_r_l/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_streaming_u_r_l(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user.</p>
+<p>A streaming URL enables application streaming to be tested without user setup.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_usage_report_subscription/3">
+
+    <span id="create_usage_report_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_usage_report_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_usage_report_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L119" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a usage report subscription.</p>
+<p>Usage reports are generated daily.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user/3">
+
+    <span id="create_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new user in the user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_directory_config/3">
+
+    <span id="delete_directory_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_directory_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_directory_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified Directory Config object from AppStream 2.0.</p>
+<p>This object includes the information required to join streaming instances to an Active Directory
+domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_fleet/3">
+
+    <span id="delete_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified fleet.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_image/3">
+
+    <span id="delete_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L153" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified image.</p>
+<p>You cannot delete an image when it is in use. After you delete an image, you cannot provision new
+capacity using the image.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_image_builder/3">
+
+    <span id="delete_image_builder/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_image_builder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_image_builder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L160" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified image builder and releases the capacity.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_image_permissions/3">
+
+    <span id="delete_image_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_image_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_image_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes permissions for the specified private image.</p>
+<p>After you delete permissions for an image, AWS accounts to which you previously granted these
+permissions can no longer use the image.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_stack/3">
+
+    <span id="delete_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L181" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified stack.</p>
+<p>After the stack is deleted, the application streaming environment provided by the stack is no
+longer available to users. Also, any reservations made for application streaming sessions for the
+stack are released.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_usage_report_subscription/3">
+
+    <span id="delete_usage_report_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_usage_report_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_usage_report_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables usage report generation.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user/3">
+
+    <span id="delete_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user from the user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_directory_configs/3">
+
+    <span id="describe_directory_configs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_directory_configs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_directory_configs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L210" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0,
+if the names for these objects are provided.</p>
+<p>Otherwise, all Directory Config objects in the account are described. These objects include the
+configuration information required to join fleets and image builders to Microsoft Active Directory
+domains.</p>
+<p>Although the response syntax in this topic includes the account password, this password is not
+returned in the actual response.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_fleets/3">
+
+    <span id="describe_fleets/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_fleets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_fleets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided.</p>
+<p>Otherwise, all fleets in the account are described.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_image_builders/3">
+
+    <span id="describe_image_builders/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_image_builders/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_image_builders(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified image builders, if the image builder names
+are provided.</p>
+<p>Otherwise, all image builders in the account are described.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_image_permissions/3">
+
+    <span id="describe_image_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_image_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_image_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that
+you own.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_images/3">
+
+    <span id="describe_images/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_images/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_images(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L247" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified images, if the image names or image ARNs are
+provided.</p>
+<p>Otherwise, all images in the account are described.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_sessions/3">
+
+    <span id="describe_sessions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_sessions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_sessions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the streaming sessions for a specified stack and fleet.</p>
+<p>If a UserId is provided for the stack and fleet, only streaming sessions for that user are
+described. If an authentication type is not provided, the default is to authenticate users using a
+streaming URL.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_stacks/3">
+
+    <span id="describe_stacks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_stacks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_stacks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L267" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified stacks, if the stack names are provided.</p>
+<p>Otherwise, all stacks in the account are described.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_usage_report_subscriptions/3">
+
+    <span id="describe_usage_report_subscriptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_usage_report_subscriptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_usage_report_subscriptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more usage report subscriptions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_stack_associations/3">
+
+    <span id="describe_user_stack_associations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_stack_associations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_stack_associations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L288" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the UserStackAssociation objects.</p>
+<p>You must specify either or both of the following:</p>
+<ul>
+<li><p>The stack name</p>
+</li>
+<li><p>The user name (email address of the user associated with the stack) and the
+authentication type for the user</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_users/3">
+
+    <span id="describe_users/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_users/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_users(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L295" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified users in the user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_user/3">
+
+    <span id="disable_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L305" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the specified user in the user pool.</p>
+<p>Users can&#39;t sign in to AppStream 2.0 until they are re-enabled. This action does not delete the
+user.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_fleet/3">
+
+    <span id="disassociate_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L312" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the specified fleet from the specified stack.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_user/3">
+
+    <span id="enable_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L322" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables a user in the user pool.</p>
+<p>After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to
+which they are assigned.</p>
+
+  </section>
+</section>
+<section class="detail" id="expire_session/3">
+
+    <span id="expire_session/2"></span>
+
+  <div class="detail-header">
+    <a href="#expire_session/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">expire_session(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Immediately stops the specified streaming session.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_associated_fleets/3">
+
+    <span id="list_associated_fleets/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_associated_fleets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_associated_fleets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L336" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the name of the fleet that is associated with the specified stack.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_associated_stacks/3">
+
+    <span id="list_associated_stacks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_associated_stacks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_associated_stacks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L343" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the name of the stack with which the specified fleet is associated.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L355" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of all tags for the specified AppStream 2.0 resource.</p>
+<p>You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
+<p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the
+<em>Amazon AppStream 2.0 Administration Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_fleet/3">
+
+    <span id="start_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L362" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the specified fleet.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_image_builder/3">
+
+    <span id="start_image_builder/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_image_builder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_image_builder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L369" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the specified image builder.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_fleet/3">
+
+    <span id="stop_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L376" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the specified fleet.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_image_builder/3">
+
+    <span id="stop_image_builder/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_image_builder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_image_builder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L383" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the specified image builder.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or overwrites one or more tags for the specified AppStream 2.0 resource.</p>
+<p>You can tag AppStream 2.0 image builders, images, fleets, and stacks.</p>
+<p>Each tag consists of a key and an optional value. If a resource already has a tag with the same
+key, this operation updates its value.</p>
+<p>To list the current tags for your resources, use <code class="inline">ListTagsForResource</code>. To disassociate tags from
+your resources, use <code class="inline">UntagResource</code>.</p>
+<p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the
+<em>Amazon AppStream 2.0 Administration Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L413" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates one or more specified tags from the specified AppStream 2.0 resource.</p>
+<p>To list the current tags for your resources, use <code class="inline">ListTagsForResource</code>.</p>
+<p>For more information about tags, see <a href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a> in the
+<em>Amazon AppStream 2.0 Administration Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_directory_config/3">
+
+    <span id="update_directory_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_directory_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_directory_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified Directory Config object in AppStream 2.0.</p>
+<p>This object includes the configuration information required to join fleets and image builders to
+Microsoft Active Directory domains.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_fleet/3">
+
+    <span id="update_fleet/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_fleet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_fleet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L435" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified fleet.</p>
+<p>If the fleet is in the <code class="inline">STOPPED</code> state, you can update any attribute except the fleet name. If the
+fleet is in the <code class="inline">RUNNING</code> state, you can update the <code class="inline">DisplayName</code>, <code class="inline">ComputeCapacity</code>, <code class="inline">ImageARN</code>,
+<code class="inline">ImageName</code>, <code class="inline">IdleDisconnectTimeoutInSeconds</code>, and <code class="inline">DisconnectTimeoutInSeconds</code> attributes. If the
+fleet is in the <code class="inline">STARTING</code> or <code class="inline">STOPPING</code> state, you can&#39;t update it.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_image_permissions/3">
+
+    <span id="update_image_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_image_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_image_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L442" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates permissions for the specified private image.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_stack/3">
+
+    <span id="update_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/app_stream.ex#L449" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified fields for the specified stack.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

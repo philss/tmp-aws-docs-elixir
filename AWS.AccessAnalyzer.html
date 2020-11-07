@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.AccessAnalyzer — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.AccessAnalyzer
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify
+any policies that grant access to an external principal.</p>
+<p>It does this by using logic-based reasoning to analyze resource-based policies in your AWS
+environment. An external principal can be another AWS account, a root user, an IAM user or role, a
+federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access
+Analyzer operations that you can call programmatically. For general information about Access
+Analyzer, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer section of the IAM User Guide</a>.</p>
+<p>To start using Access Analyzer, you first need to create an analyzer.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_analyzer/3">create_analyzer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an analyzer for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_archive_rule/4">create_archive_rule(client, analyzer_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an archive rule for the specified analyzer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_analyzer/4">delete_analyzer(client, analyzer_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified analyzer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_archive_rule/5">delete_archive_rule(client, analyzer_name, rule_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified archive rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_analyzed_resource/4">get_analyzed_resource(client, analyzer_arn, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a resource that was analyzed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_analyzer/3">get_analyzer(client, analyzer_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the specified analyzer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_archive_rule/4">get_archive_rule(client, analyzer_name, rule_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an archive rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_finding/4">get_finding(client, id, analyzer_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the specified finding.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_analyzed_resources/3">list_analyzed_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of resources of the specified type that have been analyzed by the specified
+analyzer..</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_analyzers/5">list_analyzers(client, max_results \\ nil, next_token \\ nil, type \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of analyzers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_archive_rules/5">list_archive_rules(client, analyzer_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of archive rules created for the specified analyzer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_findings/3">list_findings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of findings generated by the specified analyzer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of tags applied to the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_resource_scan/3">start_resource_scan(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Immediately starts a scan of the policies applied to the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a tag to the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_archive_rule/5">update_archive_rule(client, analyzer_name, rule_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the criteria and values for the specified archive rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_findings/3">update_findings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the status for the specified findings.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_analyzer/3">
+
+    <span id="create_analyzer/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_analyzer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_analyzer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L21" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an analyzer for your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_archive_rule/4">
+
+    <span id="create_archive_rule/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_archive_rule/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_archive_rule(client, analyzer_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an archive rule for the specified analyzer.</p>
+<p>Archive rules automatically archive findings that meet the criteria you define when you create the
+rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_analyzer/4">
+
+    <span id="delete_analyzer/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_analyzer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_analyzer(client, analyzer_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified analyzer.</p>
+<p>When you delete an analyzer, Access Analyzer is disabled for the account in the current or
+specific Region. All findings that were generated by the analyzer are deleted. You cannot undo
+this action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_archive_rule/5">
+
+    <span id="delete_archive_rule/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_archive_rule/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_archive_rule(client, analyzer_name, rule_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L62" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified archive rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_analyzed_resource/4">
+
+    <span id="get_analyzed_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_analyzed_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_analyzed_resource(client, analyzer_arn, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a resource that was analyzed.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_analyzer/3">
+
+    <span id="get_analyzer/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_analyzer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_analyzer(client, analyzer_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L96" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the specified analyzer.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_archive_rule/4">
+
+    <span id="get_archive_rule/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_archive_rule/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_archive_rule(client, analyzer_name, rule_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an archive rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_finding/4">
+
+    <span id="get_finding/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_finding/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_finding(client, id, analyzer_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the specified finding.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_analyzed_resources/3">
+
+    <span id="list_analyzed_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_analyzed_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_analyzed_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of resources of the specified type that have been analyzed by the specified
+analyzer..</p>
+
+  </section>
+</section>
+<section class="detail" id="list_analyzers/5">
+
+    <span id="list_analyzers/1"></span>
+
+    <span id="list_analyzers/2"></span>
+
+    <span id="list_analyzers/3"></span>
+
+    <span id="list_analyzers/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_analyzers/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_analyzers(client, max_results \\ nil, next_token \\ nil, type \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L142" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of analyzers.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_archive_rules/5">
+
+    <span id="list_archive_rules/2"></span>
+
+    <span id="list_archive_rules/3"></span>
+
+    <span id="list_archive_rules/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_archive_rules/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_archive_rules(client, analyzer_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of archive rules created for the specified analyzer.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_findings/3">
+
+    <span id="list_findings/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_findings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_findings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L187" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of findings generated by the specified analyzer.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of tags applied to the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_resource_scan/3">
+
+    <span id="start_resource_scan/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_resource_scan/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_resource_scan(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Immediately starts a scan of the policies applied to the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a tag to the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_archive_rule/5">
+
+    <span id="update_archive_rule/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_archive_rule/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_archive_rule(client, analyzer_name, rule_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L241" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the criteria and values for the specified archive rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_findings/3">
+
+    <span id="update_findings/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_findings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_findings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/access_analyzer.ex#L251" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the status for the specified findings.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

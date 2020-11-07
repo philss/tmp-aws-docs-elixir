@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.DAX — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.DAX
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>DAX is a managed caching service engineered for Amazon DynamoDB.</p>
+<p>DAX dramatically speeds up database reads by caching frequently-accessed data from DynamoDB, so
+applications can access that data with sub-millisecond latency. You can create a DAX cluster
+easily, using the AWS Management Console. With a few simple modifications to your code, your
+application can begin taking advantage of the DAX cluster and realize significant improvements in
+read performance.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cluster/3">create_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_parameter_group/3">create_parameter_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new parameter group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_subnet_group/3">create_subnet_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new subnet group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#decrease_replication_factor/3">decrease_replication_factor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more nodes from a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cluster/3">delete_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a previously provisioned DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_parameter_group/3">delete_parameter_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified parameter group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_subnet_group/3">delete_subnet_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a subnet group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_clusters/3">describe_clusters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or
+about a specific DAX cluster if a cluster identifier is supplied.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_default_parameters/3">describe_default_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the default system parameter information for the DAX caching software.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_events/3">describe_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns events related to DAX clusters and parameter groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_parameter_groups/3">describe_parameter_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of parameter group descriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_parameters/3">describe_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the detailed parameter list for a particular parameter group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_subnet_groups/3">describe_subnet_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of subnet group descriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#increase_replication_factor/3">increase_replication_factor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more nodes to a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags/3">list_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all of the tags for a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reboot_node/3">reboot_node(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reboots a single node of a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a set of tags with a DAX resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the association of tags from a DAX resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_cluster/3">update_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the settings for a DAX cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_parameter_group/3">update_parameter_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the parameters of a parameter group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_subnet_group/3">update_subnet_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies an existing subnet group.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_cluster/3">
+
+    <span id="create_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L20" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a DAX cluster.</p>
+<p>All nodes in the cluster run the same DAX caching software.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_parameter_group/3">
+
+    <span id="create_parameter_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_parameter_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_parameter_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L30" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new parameter group.</p>
+<p>A parameter group is a collection of parameters that you apply to all of the nodes in a DAX
+cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_subnet_group/3">
+
+    <span id="create_subnet_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_subnet_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_subnet_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L37" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new subnet group.</p>
+
+  </section>
+</section>
+<section class="detail" id="decrease_replication_factor/3">
+
+    <span id="decrease_replication_factor/2"></span>
+
+  <div class="detail-header">
+    <a href="#decrease_replication_factor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">decrease_replication_factor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L47" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more nodes from a DAX cluster.</p>
+<p>You cannot use <code class="inline">DecreaseReplicationFactor</code> to remove the last node in a DAX cluster. If you need
+to do this, use <code class="inline">DeleteCluster</code> instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cluster/3">
+
+    <span id="delete_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a previously provisioned DAX cluster.</p>
+<p><em>DeleteCluster</em> deletes all associated nodes, node endpoints and the DAX cluster itself. When you
+receive a successful response from this action, DAX immediately begins deleting the cluster; you
+cannot cancel or revert this action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_parameter_group/3">
+
+    <span id="delete_parameter_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_parameter_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_parameter_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L67" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified parameter group.</p>
+<p>You cannot delete a parameter group if it is associated with any DAX clusters.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_subnet_group/3">
+
+    <span id="delete_subnet_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_subnet_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_subnet_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a subnet group.</p>
+<p>You cannot delete a subnet group if it is associated with any DAX clusters.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_clusters/3">
+
+    <span id="describe_clusters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_clusters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_clusters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L96" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all provisioned DAX clusters if no cluster identifier is specified, or
+about a specific DAX cluster if a cluster identifier is supplied.</p>
+<p>If the cluster is in the CREATING state, only cluster level information will be displayed until
+all of the nodes are successfully provisioned.</p>
+<p>If the cluster is in the DELETING state, only cluster level information will be displayed.</p>
+<p>If nodes are currently being added to the DAX cluster, node endpoint information and creation time
+for the additional nodes will not be displayed until they are completely provisioned. When the DAX
+cluster state is <em>available</em>, the cluster is ready for use.</p>
+<p>If nodes are currently being removed from the DAX cluster, no endpoint information for the removed
+nodes is displayed.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_default_parameters/3">
+
+    <span id="describe_default_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_default_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_default_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the default system parameter information for the DAX caching software.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_events/3">
+
+    <span id="describe_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns events related to DAX clusters and parameter groups.</p>
+<p>You can obtain events specific to a particular DAX cluster or parameter group by providing the
+name as a parameter.</p>
+<p>By default, only the events occurring within the last 24 hours are returned; however, you can
+retrieve up to 14 days&#39; worth of events if necessary.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_parameter_groups/3">
+
+    <span id="describe_parameter_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_parameter_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_parameter_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of parameter group descriptions.</p>
+<p>If a parameter group name is specified, the list will contain only the descriptions for that
+group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_parameters/3">
+
+    <span id="describe_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the detailed parameter list for a particular parameter group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_subnet_groups/3">
+
+    <span id="describe_subnet_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_subnet_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_subnet_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L142" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of subnet group descriptions.</p>
+<p>If a subnet group name is specified, the list will contain only the description of that group.</p>
+
+  </section>
+</section>
+<section class="detail" id="increase_replication_factor/3">
+
+    <span id="increase_replication_factor/2"></span>
+
+  <div class="detail-header">
+    <a href="#increase_replication_factor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">increase_replication_factor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L149" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more nodes to a DAX cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags/3">
+
+    <span id="list_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all of the tags for a DAX cluster.</p>
+<p>You can call <code class="inline">ListTags</code> up to 10 times per second, per account.</p>
+
+  </section>
+</section>
+<section class="detail" id="reboot_node/3">
+
+    <span id="reboot_node/2"></span>
+
+  <div class="detail-header">
+    <a href="#reboot_node/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reboot_node(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Reboots a single node of a DAX cluster.</p>
+<p>The reboot action takes place as soon as possible. During the reboot, the node status is set to
+REBOOTING.</p>
+<p><code class="inline">RebootNode</code> restarts the DAX engine process and does not remove the contents of the cache.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a set of tags with a DAX resource.</p>
+<p>You can call <code class="inline">TagResource</code> up to 5 times per second, per account.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the association of tags from a DAX resource.</p>
+<p>You can call <code class="inline">UntagResource</code> up to 5 times per second, per account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_cluster/3">
+
+    <span id="update_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L198" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the settings for a DAX cluster.</p>
+<p>You can use this action to change one or more cluster configuration parameters by specifying the
+parameters and the new values.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_parameter_group/3">
+
+    <span id="update_parameter_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_parameter_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_parameter_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the parameters of a parameter group.</p>
+<p>You can modify up to 20 parameters in a single request by submitting a list parameter name and
+value pairs.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_subnet_group/3">
+
+    <span id="update_subnet_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_subnet_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_subnet_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dax.ex#L215" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies an existing subnet group.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

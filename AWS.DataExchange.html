@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.DataExchange — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.DataExchange
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>This is the API reference for AWS Data Exchange.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_job/4">cancel_job(client, job_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation cancels a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_data_set/3">create_data_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation creates a data set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_job/3">create_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation creates a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_revision/4">create_revision(client, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation creates a revision for a data set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_asset/6">delete_asset(client, asset_id, data_set_id, revision_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation deletes an asset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_data_set/4">delete_data_set(client, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation deletes a data set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_revision/5">delete_revision(client, data_set_id, revision_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation deletes a revision.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_asset/5">get_asset(client, asset_id, data_set_id, revision_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation returns information about an asset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_data_set/3">get_data_set(client, data_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation returns information about a data set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_job/3">get_job(client, job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation returns information about a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_revision/4">get_revision(client, data_set_id, revision_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation returns information about a revision.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_data_set_revisions/5">list_data_set_revisions(client, data_set_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists a data set&#39;s revisions sorted by CreatedAt in descending order.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_data_sets/5">list_data_sets(client, max_results \\ nil, next_token \\ nil, origin \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists your data sets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_jobs/6">list_jobs(client, data_set_id \\ nil, max_results \\ nil, next_token \\ nil, revision_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists your jobs sorted by CreatedAt in descending order.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_revision_assets/6">list_revision_assets(client, data_set_id, revision_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists a revision&#39;s assets sorted alphabetically in descending order.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists the tags on the resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_job/4">start_job(client, job_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation starts a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation tags a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation removes one or more tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_asset/6">update_asset(client, asset_id, data_set_id, revision_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation updates an asset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_set/4">update_data_set(client, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation updates a data set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_revision/5">update_revision(client, data_set_id, revision_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation updates a revision.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_job/4">
+
+    <span id="cancel_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_job(client, job_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L14" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation cancels a job.</p>
+<p>Jobs can be cancelled only when they are in the WAITING state.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_data_set/3">
+
+    <span id="create_data_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_data_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_data_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation creates a data set.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_job/3">
+
+    <span id="create_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation creates a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_revision/4">
+
+    <span id="create_revision/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_revision/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_revision(client, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation creates a revision for a data set.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_asset/6">
+
+    <span id="delete_asset/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_asset/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_asset(client, asset_id, data_set_id, revision_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation deletes an asset.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_data_set/4">
+
+    <span id="delete_data_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_data_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_data_set(client, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L64" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation deletes a data set.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_revision/5">
+
+    <span id="delete_revision/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_revision/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_revision(client, data_set_id, revision_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L74" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation deletes a revision.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_asset/5">
+
+    <span id="get_asset/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_asset/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_asset(client, asset_id, data_set_id, revision_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation returns information about an asset.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_data_set/3">
+
+    <span id="get_data_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_data_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_data_set(client, data_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation returns information about a data set.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_job/3">
+
+    <span id="get_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_job(client, job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation returns information about a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_revision/4">
+
+    <span id="get_revision/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_revision/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_revision(client, data_set_id, revision_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation returns information about a revision.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_data_set_revisions/5">
+
+    <span id="list_data_set_revisions/2"></span>
+
+    <span id="list_data_set_revisions/3"></span>
+
+    <span id="list_data_set_revisions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_data_set_revisions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_data_set_revisions(client, data_set_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists a data set&#39;s revisions sorted by CreatedAt in descending order.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_data_sets/5">
+
+    <span id="list_data_sets/1"></span>
+
+    <span id="list_data_sets/2"></span>
+
+    <span id="list_data_sets/3"></span>
+
+    <span id="list_data_sets/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_data_sets/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_data_sets(client, max_results \\ nil, next_token \\ nil, origin \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists your data sets.</p>
+<p>When listing by origin OWNED, results are sorted by CreatedAt in descending order. When listing by
+origin ENTITLED, there is no order and the maxResults parameter is ignored.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_jobs/6">
+
+    <span id="list_jobs/1"></span>
+
+    <span id="list_jobs/2"></span>
+
+    <span id="list_jobs/3"></span>
+
+    <span id="list_jobs/4"></span>
+
+    <span id="list_jobs/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_jobs/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_jobs(client, data_set_id \\ nil, max_results \\ nil, next_token \\ nil, revision_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists your jobs sorted by CreatedAt in descending order.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_revision_assets/6">
+
+    <span id="list_revision_assets/3"></span>
+
+    <span id="list_revision_assets/4"></span>
+
+    <span id="list_revision_assets/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_revision_assets/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_revision_assets(client, data_set_id, revision_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L202" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists a revision&#39;s assets sorted alphabetically in descending order.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists the tags on the resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_job/4">
+
+    <span id="start_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#start_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_job(client, job_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation starts a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation tags a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation removes one or more tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_asset/6">
+
+    <span id="update_asset/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_asset/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_asset(client, asset_id, data_set_id, revision_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation updates an asset.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_set/4">
+
+    <span id="update_data_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_set(client, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation updates a data set.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_revision/5">
+
+    <span id="update_revision/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_revision/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_revision(client, data_set_id, revision_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_exchange.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation updates a revision.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

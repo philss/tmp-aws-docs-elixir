@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ElasticTranscoder — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ElasticTranscoder
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Elastic Transcoder Service</p>
+<p>The AWS Elastic Transcoder Service.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_job/4">cancel_job(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The CancelJob operation cancels an unfinished job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_job/3">create_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>When you create a job, Elastic Transcoder returns JSON data that includes the values that you
+specified plus information about the job that is created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_pipeline/3">create_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The CreatePipeline operation creates a pipeline with settings that you specify.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_preset/3">create_preset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The CreatePreset operation creates a preset with settings that you specify.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_pipeline/4">delete_pipeline(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The DeletePipeline operation removes a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_preset/4">delete_preset(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The DeletePreset operation removes a preset that you&#39;ve added in an AWS region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_jobs_by_pipeline/5">list_jobs_by_pipeline(client, pipeline_id, ascending \\ nil, page_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_jobs_by_status/5">list_jobs_by_status(client, status, ascending \\ nil, page_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ListJobsByStatus operation gets a list of jobs that have a specified status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pipelines/4">list_pipelines(client, ascending \\ nil, page_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_presets/4">list_presets(client, ascending \\ nil, page_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and
+the presets that you&#39;ve added in an AWS region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_job/3">read_job(client, id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ReadJob operation returns detailed information about a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_pipeline/3">read_pipeline(client, id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ReadPipeline operation gets detailed information about a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#read_preset/3">read_preset(client, id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The ReadPreset operation gets detailed information about a preset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test_role/3">test_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The TestRole operation tests the IAM role used to create the pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pipeline/4">update_pipeline(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use the <code class="inline">UpdatePipeline</code> operation to update settings for a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pipeline_notifications/4">update_pipeline_notifications(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service
+(Amazon SNS) notifications for a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pipeline_status/4">update_pipeline_status(client, id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or
+restarts the processing of jobs.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_job/4">
+
+    <span id="cancel_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_job(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L18" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The CancelJob operation cancels an unfinished job.</p>
+<p>You can only cancel a job that has a status of <code class="inline">Submitted</code>. To prevent a pipeline from starting to
+process a job while you&#39;re getting the job identifier, use <code class="inline">UpdatePipelineStatus</code> to temporarily
+pause the pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_job/3">
+
+    <span id="create_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>When you create a job, Elastic Transcoder returns JSON data that includes the values that you
+specified plus information about the job that is created.</p>
+<p>If you have specified more than one output for your jobs (for example, one output for the Kindle
+Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder
+API to list the jobs (as opposed to the AWS Console).</p>
+
+  </section>
+</section>
+<section class="detail" id="create_pipeline/3">
+
+    <span id="create_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L43" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The CreatePipeline operation creates a pipeline with settings that you specify.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_preset/3">
+
+    <span id="create_preset/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_preset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_preset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L66" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The CreatePreset operation creates a preset with settings that you specify.</p>
+<p>Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic Transcoder
+requirements and to determine whether they comply with H.264 standards. If your settings are not
+valid for Elastic Transcoder, Elastic Transcoder returns an HTTP 400 response
+(<code class="inline">ValidationException</code>) and does not create the preset. If the settings are valid for Elastic
+Transcoder but aren&#39;t strictly compliant with the H.264 standard, Elastic Transcoder creates the
+preset and returns a warning message in the response. This helps you determine whether your
+settings comply with the H.264 standard while giving you greater flexibility with respect to the
+video that Elastic Transcoder produces.</p>
+<p>Elastic Transcoder uses the H.264 video-compression format. For more information, see the
+International Telecommunication Union publication <em>Recommendation ITU-T H.264: Advanced video
+coding for generic audiovisual services</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_pipeline/4">
+
+    <span id="delete_pipeline/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_pipeline/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_pipeline(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L79" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The DeletePipeline operation removes a pipeline.</p>
+<p>You can only delete a pipeline that has never been used or that is not currently in use (doesn&#39;t
+contain any active jobs). If the pipeline is currently in use, <code class="inline">DeletePipeline</code> returns an error.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_preset/4">
+
+    <span id="delete_preset/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_preset/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_preset(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The DeletePreset operation removes a preset that you&#39;ve added in an AWS region.</p>
+<p>You can&#39;t delete the default presets that are included with Elastic Transcoder.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_jobs_by_pipeline/5">
+
+    <span id="list_jobs_by_pipeline/2"></span>
+
+    <span id="list_jobs_by_pipeline/3"></span>
+
+    <span id="list_jobs_by_pipeline/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_jobs_by_pipeline/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_jobs_by_pipeline(client, pipeline_id, ascending \\ nil, page_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p>
+<p>Elastic Transcoder returns all of the jobs currently in the specified pipeline. The response body
+contains one element for each job that satisfies the search criteria.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_jobs_by_status/5">
+
+    <span id="list_jobs_by_status/2"></span>
+
+    <span id="list_jobs_by_status/3"></span>
+
+    <span id="list_jobs_by_status/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_jobs_by_status/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_jobs_by_status(client, status, ascending \\ nil, page_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ListJobsByStatus operation gets a list of jobs that have a specified status.</p>
+<p>The response body contains one element for each job that satisfies the search criteria.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pipelines/4">
+
+    <span id="list_pipelines/1"></span>
+
+    <span id="list_pipelines/2"></span>
+
+    <span id="list_pipelines/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_pipelines/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pipelines(client, ascending \\ nil, page_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L146" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ListPipelines operation gets a list of the pipelines associated with the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_presets/4">
+
+    <span id="list_presets/1"></span>
+
+    <span id="list_presets/2"></span>
+
+    <span id="list_presets/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_presets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_presets(client, ascending \\ nil, page_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and
+the presets that you&#39;ve added in an AWS region.</p>
+
+  </section>
+</section>
+<section class="detail" id="read_job/3">
+
+    <span id="read_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#read_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_job(client, id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L187" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ReadJob operation returns detailed information about a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="read_pipeline/3">
+
+    <span id="read_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#read_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_pipeline(client, id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ReadPipeline operation gets detailed information about a pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="read_preset/3">
+
+    <span id="read_preset/2"></span>
+
+  <div class="detail-header">
+    <a href="#read_preset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">read_preset(client, id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The ReadPreset operation gets detailed information about a preset.</p>
+
+  </section>
+</section>
+<section class="detail" id="test_role/3">
+
+    <span id="test_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#test_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The TestRole operation tests the IAM role used to create the pipeline.</p>
+<p>The <code class="inline">TestRole</code> action lets you determine whether the IAM role you are using has sufficient
+permissions to let Elastic Transcoder perform tasks associated with the transcoding process. The
+action attempts to assume the specified IAM role, checks read access to the input and output
+buckets, and tries to send a test notification to Amazon SNS topics that you specify.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pipeline/4">
+
+    <span id="update_pipeline/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_pipeline/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pipeline(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L236" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use the <code class="inline">UpdatePipeline</code> operation to update settings for a pipeline.</p>
+<p>When you change pipeline settings, your changes take effect immediately. Jobs that you have
+already submitted and that Elastic Transcoder has not started to process are affected in addition
+to jobs that you submit after you change settings.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pipeline_notifications/4">
+
+    <span id="update_pipeline_notifications/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_pipeline_notifications/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pipeline_notifications(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L250" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service
+(Amazon SNS) notifications for a pipeline.</p>
+<p>When you update notifications for a pipeline, Elastic Transcoder returns the values that you
+specified in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pipeline_status/4">
+
+    <span id="update_pipeline_status/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_pipeline_status/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pipeline_status(client, id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/elastic_transcoder.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or
+restarts the processing of jobs.</p>
+<p>Changing the pipeline status is useful if you want to cancel one or more jobs. You can&#39;t cancel
+jobs after Elastic Transcoder has started processing them; if you pause the pipeline to which you
+submitted the jobs, you have more time to get the job IDs for the jobs that you want to cancel,
+and to send a <code class="inline">CancelJob</code> request.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

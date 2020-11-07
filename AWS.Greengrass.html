@@ -1,0 +1,3440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Greengrass — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Greengrass
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS IoT Greengrass seamlessly extends AWS onto physical devices so they can act locally on the
+data they generate, while still using the cloud for management, analytics, and durable storage.</p>
+<p>AWS IoT Greengrass ensures your devices can respond quickly to local events and operate with
+intermittent connectivity. AWS IoT Greengrass minimizes the cost of transmitting data to the cloud
+by allowing you to author AWS Lambda functions that execute locally.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_role_to_group/4">associate_role_to_group(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a role with a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_service_role_to_account/3">associate_service_role_to_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a role with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_connector_definition/3">create_connector_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a connector definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_connector_definition_version/4">create_connector_definition_version(client, connector_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a connector definition which has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_core_definition/3">create_core_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a core definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_core_definition_version/4">create_core_definition_version(client, core_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a core definition that has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_deployment/4">create_deployment(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_device_definition/3">create_device_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a device definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_device_definition_version/4">create_device_definition_version(client, device_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a device definition that has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_function_definition/3">create_function_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Lambda function definition which contains a list of Lambda functions and their
+configurations to be used in a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_function_definition_version/4">create_function_definition_version(client, function_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a Lambda function definition that has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group/3">create_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group_certificate_authority/4">create_group_certificate_authority(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a CA for the group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group_version/4">create_group_version(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a group which has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_logger_definition/3">create_logger_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a logger definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_logger_definition_version/4">create_logger_definition_version(client, logger_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a logger definition that has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resource_definition/3">create_resource_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a resource definition which contains a list of resources to be used in a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resource_definition_version/4">create_resource_definition_version(client, resource_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a resource definition that has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_software_update_job/3">create_software_update_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this
+to update the OTA Agent as well as the Greengrass core software.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_subscription_definition/3">create_subscription_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a subscription definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_subscription_definition_version/4">create_subscription_definition_version(client, subscription_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of a subscription definition which has already been defined.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_connector_definition/4">delete_connector_definition(client, connector_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a connector definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_core_definition/4">delete_core_definition(client, core_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a core definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_device_definition/4">delete_device_definition(client, device_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a device definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_function_definition/4">delete_function_definition(client, function_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Lambda function definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_group/4">delete_group(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_logger_definition/4">delete_logger_definition(client, logger_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a logger definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resource_definition/4">delete_resource_definition(client, resource_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a resource definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_subscription_definition/4">delete_subscription_definition(client, subscription_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a subscription definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_role_from_group/4">disassociate_role_from_group(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the role from a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_service_role_from_account/3">disassociate_service_role_from_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the service role from your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_associated_role/3">get_associated_role(client, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the role associated with a particular group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_bulk_deployment_status/3">get_bulk_deployment_status(client, bulk_deployment_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the status of a bulk deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_connectivity_info/3">get_connectivity_info(client, thing_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the connectivity information for a core.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_connector_definition/3">get_connector_definition(client, connector_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a connector definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_connector_definition_version/5">get_connector_definition_version(client, connector_definition_id, connector_definition_version_id, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a connector definition version, including the connectors that the
+version contains.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_core_definition/3">get_core_definition(client, core_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a core definition version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_core_definition_version/4">get_core_definition_version(client, core_definition_id, core_definition_version_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a core definition version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployment_status/4">get_deployment_status(client, deployment_id, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the status of a deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_device_definition/3">get_device_definition(client, device_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a device definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_device_definition_version/5">get_device_definition_version(client, device_definition_id, device_definition_version_id, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a device definition version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function_definition/3">get_function_definition(client, function_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a Lambda function definition, including its creation time and latest
+version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function_definition_version/5">get_function_definition_version(client, function_definition_id, function_definition_version_id, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a Lambda function definition version, including which Lambda functions
+are included in the version and their configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_group/3">get_group(client, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_group_certificate_authority/4">get_group_certificate_authority(client, certificate_authority_id, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retreives the CA associated with a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_group_certificate_configuration/3">get_group_certificate_configuration(client, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current configuration for the CA used by the group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_group_version/4">get_group_version(client, group_id, group_version_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a group version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_logger_definition/3">get_logger_definition(client, logger_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a logger definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_logger_definition_version/5">get_logger_definition_version(client, logger_definition_id, logger_definition_version_id, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a logger definition version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resource_definition/3">get_resource_definition(client, resource_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a resource definition, including its creation time and latest version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resource_definition_version/4">get_resource_definition_version(client, resource_definition_id, resource_definition_version_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a resource definition version, including which resources are included
+in the version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_service_role_for_account/2">get_service_role_for_account(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the service role that is attached to your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_subscription_definition/3">get_subscription_definition(client, subscription_definition_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a subscription definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_subscription_definition_version/5">get_subscription_definition_version(client, subscription_definition_id, subscription_definition_version_id, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a subscription definition version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_thing_runtime_configuration/3">get_thing_runtime_configuration(client, thing_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get the runtime configuration of a thing.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_bulk_deployment_detailed_reports/5">list_bulk_deployment_detailed_reports(client, bulk_deployment_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a paginated list of the deployments that have been started in a bulk deployment operation,
+and their current deployment status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_bulk_deployments/4">list_bulk_deployments(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of bulk deployments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_connector_definition_versions/5">list_connector_definition_versions(client, connector_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a connector definition, which are containers for connectors.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_connector_definitions/4">list_connector_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of connector definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_core_definition_versions/5">list_core_definition_versions(client, core_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a core definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_core_definitions/4">list_core_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of core definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_deployments/5">list_deployments(client, group_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a history of deployments for the group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_device_definition_versions/5">list_device_definition_versions(client, device_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a device definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_device_definitions/4">list_device_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of device definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_function_definition_versions/5">list_function_definition_versions(client, function_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a Lambda function definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_function_definitions/4">list_function_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of Lambda function definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_group_certificate_authorities/3">list_group_certificate_authorities(client, group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current CAs for a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_group_versions/5">list_group_versions(client, group_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_groups/4">list_groups(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_logger_definition_versions/5">list_logger_definition_versions(client, logger_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a logger definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_logger_definitions/4">list_logger_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of logger definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resource_definition_versions/5">list_resource_definition_versions(client, resource_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a resource definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resource_definitions/4">list_resource_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of resource definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_subscription_definition_versions/5">list_subscription_definition_versions(client, subscription_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of a subscription definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_subscription_definitions/4">list_subscription_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of subscription definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of resource tags for a resource arn.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset_deployments/4">reset_deployments(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resets a group&#39;s deployments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_bulk_deployment/3">start_bulk_deployment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deploys multiple groups in one operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_bulk_deployment/4">stop_bulk_deployment(client, bulk_deployment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the execution of a bulk deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tags to a Greengrass resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove resource tags from a Greengrass Resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_connectivity_info/4">update_connectivity_info(client, thing_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the connectivity information for the core.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_connector_definition/4">update_connector_definition(client, connector_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a connector definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_core_definition/4">update_core_definition(client, core_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a core definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_device_definition/4">update_device_definition(client, device_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a device definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_function_definition/4">update_function_definition(client, function_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Lambda function definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_group/4">update_group(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_group_certificate_configuration/4">update_group_certificate_configuration(client, group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Certificate expiry time for a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_logger_definition/4">update_logger_definition(client, logger_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a logger definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resource_definition/4">update_resource_definition(client, resource_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a resource definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_subscription_definition/4">update_subscription_definition(client, subscription_definition_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a subscription definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_thing_runtime_configuration/4">update_thing_runtime_configuration(client, thing_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the runtime configuration of a thing.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_role_to_group/4">
+
+    <span id="associate_role_to_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#associate_role_to_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_role_to_group(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L20" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a role with a group.</p>
+<p>Your Greengrass core will use the role to access AWS cloud services. The role&#39;s permissions should
+allow Greengrass core Lambda functions to perform actions against the cloud.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_service_role_to_account/3">
+
+    <span id="associate_service_role_to_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_service_role_to_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_service_role_to_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a role with your account.</p>
+<p>AWS IoT Greengrass will use the role to access your Lambda functions and AWS IoT resources. This
+is necessary for deployments to succeed. The role must have at least minimum permissions in the
+policy &#39;&#39;AWSGreengrassResourceAccessRolePolicy&#39;&#39;.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_connector_definition/3">
+
+    <span id="create_connector_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_connector_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_connector_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L47" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a connector definition.</p>
+<p>You may provide the initial version of the connector definition now or use
+&#39;&#39;CreateConnectorDefinitionVersion&#39;&#39; at a later time.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_connector_definition_version/4">
+
+    <span id="create_connector_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_connector_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_connector_definition_version(client, connector_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a connector definition which has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_core_definition/3">
+
+    <span id="create_core_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_core_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_core_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L79" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a core definition.</p>
+<p>You may provide the initial version of the core definition now or use
+&#39;&#39;CreateCoreDefinitionVersion&#39;&#39; at a later time. Greengrass groups must each contain exactly one
+Greengrass core.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_core_definition_version/4">
+
+    <span id="create_core_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_core_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_core_definition_version(client, core_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a core definition that has already been defined.</p>
+<p>Greengrass groups must each contain exactly one Greengrass core.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_deployment/4">
+
+    <span id="create_deployment/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_deployment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_deployment(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L112" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a deployment.</p>
+<p>&#39;&#39;CreateDeployment&#39;&#39; requests are idempotent with respect to the &#39;&#39;X-Amzn-Client-Token&#39;&#39; token and
+the request parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_device_definition/3">
+
+    <span id="create_device_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_device_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_device_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a device definition.</p>
+<p>You may provide the initial version of the device definition now or use
+&#39;&#39;CreateDeviceDefinitionVersion&#39;&#39; at a later time.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_device_definition_version/4">
+
+    <span id="create_device_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_device_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_device_definition_version(client, device_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a device definition that has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_function_definition/3">
+
+    <span id="create_function_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_function_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_function_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Lambda function definition which contains a list of Lambda functions and their
+configurations to be used in a group.</p>
+<p>You can create an initial version of the definition by providing a list of Lambda functions and
+their configurations now, or use &#39;&#39;CreateFunctionDefinitionVersion&#39;&#39; later.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_function_definition_version/4">
+
+    <span id="create_function_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_function_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_function_definition_version(client, function_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a Lambda function definition that has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group/3">
+
+    <span id="create_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a group.</p>
+<p>You may provide the initial version of the group or use &#39;&#39;CreateGroupVersion&#39;&#39; at a later time.
+Tip: You can use the &#39;&#39;gg_group_setup&#39;&#39; package
+(<a href="https://github.com/awslabs/aws-greengrass-group-setup">https://github.com/awslabs/aws-greengrass-group-setup</a>) as a library or command-line application
+to create and deploy Greengrass groups.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group_certificate_authority/4">
+
+    <span id="create_group_certificate_authority/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_group_certificate_authority/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group_certificate_authority(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L210" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a CA for the group.</p>
+<p>If a CA already exists, it will rotate the existing CA.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group_version/4">
+
+    <span id="create_group_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_group_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group_version(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a group which has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_logger_definition/3">
+
+    <span id="create_logger_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_logger_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_logger_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L241" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a logger definition.</p>
+<p>You may provide the initial version of the logger definition now or use
+&#39;&#39;CreateLoggerDefinitionVersion&#39;&#39; at a later time.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_logger_definition_version/4">
+
+    <span id="create_logger_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_logger_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_logger_definition_version(client, logger_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a logger definition that has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resource_definition/3">
+
+    <span id="create_resource_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resource_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resource_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L272" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a resource definition which contains a list of resources to be used in a group.</p>
+<p>You can create an initial version of the definition by providing a list of resources now, or use
+&#39;&#39;CreateResourceDefinitionVersion&#39;&#39; later.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resource_definition_version/4">
+
+    <span id="create_resource_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_resource_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resource_definition_version(client, resource_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a resource definition that has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_software_update_job/3">
+
+    <span id="create_software_update_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_software_update_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_software_update_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this
+to update the OTA Agent as well as the Greengrass core software.</p>
+<p>It makes use of the IoT Jobs feature which provides additional commands to manage a Greengrass
+core software update job.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_subscription_definition/3">
+
+    <span id="create_subscription_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_subscription_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_subscription_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L321" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a subscription definition.</p>
+<p>You may provide the initial version of the subscription definition now or use
+&#39;&#39;CreateSubscriptionDefinitionVersion&#39;&#39; at a later time.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_subscription_definition_version/4">
+
+    <span id="create_subscription_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_subscription_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_subscription_definition_version(client, subscription_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L335" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of a subscription definition which has already been defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_connector_definition/4">
+
+    <span id="delete_connector_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_connector_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_connector_definition(client, connector_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L349" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a connector definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_core_definition/4">
+
+    <span id="delete_core_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_core_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_core_definition(client, core_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L359" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a core definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_device_definition/4">
+
+    <span id="delete_device_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_device_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_device_definition(client, device_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L369" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a device definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_function_definition/4">
+
+    <span id="delete_function_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_function_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_function_definition(client, function_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L379" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Lambda function definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_group/4">
+
+    <span id="delete_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_group(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L389" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_logger_definition/4">
+
+    <span id="delete_logger_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_logger_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_logger_definition(client, logger_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L399" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a logger definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resource_definition/4">
+
+    <span id="delete_resource_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resource_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resource_definition(client, resource_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L409" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a resource definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_subscription_definition/4">
+
+    <span id="delete_subscription_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_subscription_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_subscription_definition(client, subscription_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L419" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a subscription definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_role_from_group/4">
+
+    <span id="disassociate_role_from_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_role_from_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_role_from_group(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L429" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the role from a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_service_role_from_account/3">
+
+    <span id="disassociate_service_role_from_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_service_role_from_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_service_role_from_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L441" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the service role from your account.</p>
+<p>Without a service role, deployments will not work.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_associated_role/3">
+
+    <span id="get_associated_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_associated_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_associated_role(client, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L451" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the role associated with a particular group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_bulk_deployment_status/3">
+
+    <span id="get_bulk_deployment_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_bulk_deployment_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_bulk_deployment_status(client, bulk_deployment_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L461" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the status of a bulk deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_connectivity_info/3">
+
+    <span id="get_connectivity_info/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_connectivity_info/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_connectivity_info(client, thing_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L471" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the connectivity information for a core.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_connector_definition/3">
+
+    <span id="get_connector_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_connector_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_connector_definition(client, connector_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L481" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a connector definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_connector_definition_version/5">
+
+    <span id="get_connector_definition_version/3"></span>
+
+    <span id="get_connector_definition_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_connector_definition_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_connector_definition_version(client, connector_definition_id, connector_definition_version_id, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L495" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a connector definition version, including the connectors that the
+version contains.</p>
+<p>Connectors are prebuilt modules that interact with local infrastructure, device protocols, AWS,
+and other cloud services.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_core_definition/3">
+
+    <span id="get_core_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_core_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_core_definition(client, core_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L510" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a core definition version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_core_definition_version/4">
+
+    <span id="get_core_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_core_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_core_definition_version(client, core_definition_id, core_definition_version_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L520" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a core definition version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployment_status/4">
+
+    <span id="get_deployment_status/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployment_status/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployment_status(client, deployment_id, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L530" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the status of a deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_device_definition/3">
+
+    <span id="get_device_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_device_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_device_definition(client, device_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L540" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a device definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_device_definition_version/5">
+
+    <span id="get_device_definition_version/3"></span>
+
+    <span id="get_device_definition_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_device_definition_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_device_definition_version(client, device_definition_id, device_definition_version_id, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L550" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a device definition version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function_definition/3">
+
+    <span id="get_function_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_function_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function_definition(client, function_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L566" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a Lambda function definition, including its creation time and latest
+version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function_definition_version/5">
+
+    <span id="get_function_definition_version/3"></span>
+
+    <span id="get_function_definition_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_function_definition_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function_definition_version(client, function_definition_id, function_definition_version_id, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L577" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a Lambda function definition version, including which Lambda functions
+are included in the version and their configurations.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_group/3">
+
+    <span id="get_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_group(client, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L592" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_group_certificate_authority/4">
+
+    <span id="get_group_certificate_authority/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_group_certificate_authority/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_group_certificate_authority(client, certificate_authority_id, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L604" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retreives the CA associated with a group.</p>
+<p>Returns the public key of the CA.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_group_certificate_configuration/3">
+
+    <span id="get_group_certificate_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_group_certificate_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_group_certificate_configuration(client, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L614" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current configuration for the CA used by the group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_group_version/4">
+
+    <span id="get_group_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_group_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_group_version(client, group_id, group_version_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L624" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a group version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_logger_definition/3">
+
+    <span id="get_logger_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_logger_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_logger_definition(client, logger_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L634" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a logger definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_logger_definition_version/5">
+
+    <span id="get_logger_definition_version/3"></span>
+
+    <span id="get_logger_definition_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_logger_definition_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_logger_definition_version(client, logger_definition_id, logger_definition_version_id, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L644" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a logger definition version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resource_definition/3">
+
+    <span id="get_resource_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resource_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resource_definition(client, resource_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L659" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a resource definition, including its creation time and latest version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resource_definition_version/4">
+
+    <span id="get_resource_definition_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_resource_definition_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resource_definition_version(client, resource_definition_id, resource_definition_version_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L670" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a resource definition version, including which resources are included
+in the version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_service_role_for_account/2">
+
+    <span id="get_service_role_for_account/1"></span>
+
+  <div class="detail-header">
+    <a href="#get_service_role_for_account/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_service_role_for_account(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L680" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the service role that is attached to your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_subscription_definition/3">
+
+    <span id="get_subscription_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_subscription_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_subscription_definition(client, subscription_definition_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L690" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a subscription definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_subscription_definition_version/5">
+
+    <span id="get_subscription_definition_version/3"></span>
+
+    <span id="get_subscription_definition_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_subscription_definition_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_subscription_definition_version(client, subscription_definition_id, subscription_definition_version_id, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L700" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a subscription definition version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_thing_runtime_configuration/3">
+
+    <span id="get_thing_runtime_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_thing_runtime_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_thing_runtime_configuration(client, thing_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L715" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get the runtime configuration of a thing.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_bulk_deployment_detailed_reports/5">
+
+    <span id="list_bulk_deployment_detailed_reports/2"></span>
+
+    <span id="list_bulk_deployment_detailed_reports/3"></span>
+
+    <span id="list_bulk_deployment_detailed_reports/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_bulk_deployment_detailed_reports/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_bulk_deployment_detailed_reports(client, bulk_deployment_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L726" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a paginated list of the deployments that have been started in a bulk deployment operation,
+and their current deployment status.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_bulk_deployments/4">
+
+    <span id="list_bulk_deployments/1"></span>
+
+    <span id="list_bulk_deployments/2"></span>
+
+    <span id="list_bulk_deployments/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_bulk_deployments/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_bulk_deployments(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of bulk deployments.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_connector_definition_versions/5">
+
+    <span id="list_connector_definition_versions/2"></span>
+
+    <span id="list_connector_definition_versions/3"></span>
+
+    <span id="list_connector_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_connector_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_connector_definition_versions(client, connector_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L769" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a connector definition, which are containers for connectors.</p>
+<p>Connectors run on the Greengrass core and contain built-in integration with local infrastructure,
+device protocols, AWS, and other cloud services.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_connector_definitions/4">
+
+    <span id="list_connector_definitions/1"></span>
+
+    <span id="list_connector_definitions/2"></span>
+
+    <span id="list_connector_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_connector_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_connector_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L789" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of connector definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_core_definition_versions/5">
+
+    <span id="list_core_definition_versions/2"></span>
+
+    <span id="list_core_definition_versions/3"></span>
+
+    <span id="list_core_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_core_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_core_definition_versions(client, core_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L809" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a core definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_core_definitions/4">
+
+    <span id="list_core_definitions/1"></span>
+
+    <span id="list_core_definitions/2"></span>
+
+    <span id="list_core_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_core_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_core_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L829" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of core definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_deployments/5">
+
+    <span id="list_deployments/2"></span>
+
+    <span id="list_deployments/3"></span>
+
+    <span id="list_deployments/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_deployments/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_deployments(client, group_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L849" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a history of deployments for the group.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_device_definition_versions/5">
+
+    <span id="list_device_definition_versions/2"></span>
+
+    <span id="list_device_definition_versions/3"></span>
+
+    <span id="list_device_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_device_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_device_definition_versions(client, device_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L869" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a device definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_device_definitions/4">
+
+    <span id="list_device_definitions/1"></span>
+
+    <span id="list_device_definitions/2"></span>
+
+    <span id="list_device_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_device_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_device_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L889" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of device definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_function_definition_versions/5">
+
+    <span id="list_function_definition_versions/2"></span>
+
+    <span id="list_function_definition_versions/3"></span>
+
+    <span id="list_function_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_function_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_function_definition_versions(client, function_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L909" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a Lambda function definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_function_definitions/4">
+
+    <span id="list_function_definitions/1"></span>
+
+    <span id="list_function_definitions/2"></span>
+
+    <span id="list_function_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_function_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_function_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L929" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of Lambda function definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_group_certificate_authorities/3">
+
+    <span id="list_group_certificate_authorities/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_group_certificate_authorities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_group_certificate_authorities(client, group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L949" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current CAs for a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_group_versions/5">
+
+    <span id="list_group_versions/2"></span>
+
+    <span id="list_group_versions/3"></span>
+
+    <span id="list_group_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_group_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_group_versions(client, group_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L959" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_groups/4">
+
+    <span id="list_groups/1"></span>
+
+    <span id="list_groups/2"></span>
+
+    <span id="list_groups/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_groups/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_groups(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L979" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of groups.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_logger_definition_versions/5">
+
+    <span id="list_logger_definition_versions/2"></span>
+
+    <span id="list_logger_definition_versions/3"></span>
+
+    <span id="list_logger_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_logger_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_logger_definition_versions(client, logger_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L999" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a logger definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_logger_definitions/4">
+
+    <span id="list_logger_definitions/1"></span>
+
+    <span id="list_logger_definitions/2"></span>
+
+    <span id="list_logger_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_logger_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_logger_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1019" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of logger definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resource_definition_versions/5">
+
+    <span id="list_resource_definition_versions/2"></span>
+
+    <span id="list_resource_definition_versions/3"></span>
+
+    <span id="list_resource_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_resource_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resource_definition_versions(client, resource_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1039" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a resource definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resource_definitions/4">
+
+    <span id="list_resource_definitions/1"></span>
+
+    <span id="list_resource_definitions/2"></span>
+
+    <span id="list_resource_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_resource_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resource_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1059" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of resource definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_subscription_definition_versions/5">
+
+    <span id="list_subscription_definition_versions/2"></span>
+
+    <span id="list_subscription_definition_versions/3"></span>
+
+    <span id="list_subscription_definition_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_subscription_definition_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_subscription_definition_versions(client, subscription_definition_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1079" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of a subscription definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_subscription_definitions/4">
+
+    <span id="list_subscription_definitions/1"></span>
+
+    <span id="list_subscription_definitions/2"></span>
+
+    <span id="list_subscription_definitions/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_subscription_definitions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_subscription_definitions(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1099" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of subscription definitions.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1119" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of resource tags for a resource arn.</p>
+
+  </section>
+</section>
+<section class="detail" id="reset_deployments/4">
+
+    <span id="reset_deployments/3"></span>
+
+  <div class="detail-header">
+    <a href="#reset_deployments/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset_deployments(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resets a group&#39;s deployments.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_bulk_deployment/3">
+
+    <span id="start_bulk_deployment/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_bulk_deployment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_bulk_deployment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deploys multiple groups in one operation.</p>
+<p>This action starts the bulk deployment of a specified set of group versions. Each group version
+deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that
+you include an &#39;&#39;X-Amzn-Client-Token&#39;&#39; token in every &#39;&#39;StartBulkDeployment&#39;&#39; request. These
+requests are idempotent with respect to the token and the request parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_bulk_deployment/4">
+
+    <span id="stop_bulk_deployment/3"></span>
+
+  <div class="detail-header">
+    <a href="#stop_bulk_deployment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_bulk_deployment(client, bulk_deployment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the execution of a bulk deployment.</p>
+<p>This action returns a status of &#39;&#39;Stopping&#39;&#39; until the deployment is stopped. You cannot start a
+new bulk deployment while a previous deployment is in the &#39;&#39;Stopping&#39;&#39; state. This action doesn&#39;t
+rollback completed deployments or cancel pending deployments.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1180" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tags to a Greengrass resource.</p>
+<p>Valid resources are &#39;Group&#39;, &#39;ConnectorDefinition&#39;, &#39;CoreDefinition&#39;, &#39;DeviceDefinition&#39;,
+&#39;FunctionDefinition&#39;, &#39;LoggerDefinition&#39;, &#39;SubscriptionDefinition&#39;, &#39;ResourceDefinition&#39;, and
+&#39;BulkDeployment&#39;.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1190" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Remove resource tags from a Greengrass Resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_connectivity_info/4">
+
+    <span id="update_connectivity_info/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_connectivity_info/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_connectivity_info(client, thing_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the connectivity information for the core.</p>
+<p>Any devices that belong to the group which has this core will receive this information in order to
+find the location of the core and connect to it.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_connector_definition/4">
+
+    <span id="update_connector_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_connector_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_connector_definition(client, connector_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a connector definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_core_definition/4">
+
+    <span id="update_core_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_core_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_core_definition(client, core_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a core definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_device_definition/4">
+
+    <span id="update_device_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_device_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_device_definition(client, device_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a device definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_function_definition/4">
+
+    <span id="update_function_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_function_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_function_definition(client, function_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1247" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Lambda function definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_group/4">
+
+    <span id="update_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_group(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1257" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_group_certificate_configuration/4">
+
+    <span id="update_group_certificate_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_group_certificate_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_group_certificate_configuration(client, group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1267" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Certificate expiry time for a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_logger_definition/4">
+
+    <span id="update_logger_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_logger_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_logger_definition(client, logger_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1277" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a logger definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resource_definition/4">
+
+    <span id="update_resource_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_resource_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resource_definition(client, resource_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a resource definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_subscription_definition/4">
+
+    <span id="update_subscription_definition/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_subscription_definition/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_subscription_definition(client, subscription_definition_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a subscription definition.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_thing_runtime_configuration/4">
+
+    <span id="update_thing_runtime_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_thing_runtime_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_thing_runtime_configuration(client, thing_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/greengrass.ex#L1307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the runtime configuration of a thing.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

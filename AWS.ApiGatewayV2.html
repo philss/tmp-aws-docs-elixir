@@ -1,0 +1,2664 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ApiGatewayV2 — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ApiGatewayV2
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon API Gateway V2</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_api/3">create_api(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Api resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_api_mapping/4">create_api_mapping(client, domain_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an API mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_authorizer/4">create_authorizer(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Authorizer for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_deployment/4">create_deployment(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Deployment for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_domain_name/3">create_domain_name(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a domain name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_integration/4">create_integration(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Integration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_integration_response/5">create_integration_response(client, api_id, integration_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an IntegrationResponses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_model/4">create_model(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Model for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_route/4">create_route(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Route for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_route_response/5">create_route_response(client, api_id, route_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a RouteResponse for a Route.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_stage/4">create_stage(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Stage for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_vpc_link/3">create_vpc_link(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a VPC link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_access_log_settings/5">delete_access_log_settings(client, api_id, stage_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the AccessLogSettings for a Stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_api/4">delete_api(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Api resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_api_mapping/5">delete_api_mapping(client, api_mapping_id, domain_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an API mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_authorizer/5">delete_authorizer(client, api_id, authorizer_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Authorizer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cors_configuration/4">delete_cors_configuration(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a CORS configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_deployment/5">delete_deployment(client, api_id, deployment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_domain_name/4">delete_domain_name(client, domain_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a domain name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_integration/5">delete_integration(client, api_id, integration_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Integration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_integration_response/6">delete_integration_response(client, api_id, integration_id, integration_response_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an IntegrationResponses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_model/5">delete_model(client, api_id, model_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_route/5">delete_route(client, api_id, route_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Route.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_route_request_parameter/6">delete_route_request_parameter(client, api_id, request_parameter_key, route_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a route request parameter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_route_response/6">delete_route_response(client, api_id, route_id, route_response_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a RouteResponse.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_route_settings/6">delete_route_settings(client, api_id, route_key, stage_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the RouteSettings for a stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_stage/5">delete_stage(client, api_id, stage_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_vpc_link/4">delete_vpc_link(client, vpc_link_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a VPC link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_api/8">export_api(client, api_id, specification, export_version \\ nil, include_extensions \\ nil, output_type, stage_name \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Exports a definition of an API in a particular output format and specification.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_api/3">get_api(client, api_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an Api resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_api_mapping/4">get_api_mapping(client, api_mapping_id, domain_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an API mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_api_mappings/5">get_api_mappings(client, domain_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets API mappings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apis/4">get_apis(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a collection of Api resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_authorizer/4">get_authorizer(client, api_id, authorizer_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an Authorizer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_authorizers/5">get_authorizers(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Authorizers for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployment/4">get_deployment(client, api_id, deployment_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a Deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployments/5">get_deployments(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Deployments for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_domain_name/3">get_domain_name(client, domain_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a domain name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_domain_names/4">get_domain_names(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the domain names for an AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_integration/4">get_integration(client, api_id, integration_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an Integration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_integration_response/5">get_integration_response(client, api_id, integration_id, integration_response_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an IntegrationResponses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_integration_responses/6">get_integration_responses(client, api_id, integration_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the IntegrationResponses for an Integration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_integrations/5">get_integrations(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Integrations for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_model/4">get_model(client, api_id, model_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a Model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_model_template/4">get_model_template(client, api_id, model_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a model template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_models/5">get_models(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Models for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_route/4">get_route(client, api_id, route_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a Route.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_route_response/5">get_route_response(client, api_id, route_id, route_response_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a RouteResponse.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_route_responses/6">get_route_responses(client, api_id, route_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the RouteResponses for a Route.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_routes/5">get_routes(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Routes for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_stage/4">get_stage(client, api_id, stage_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a Stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_stages/5">get_stages(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the Stages for an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_tags/3">get_tags(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a collection of Tag resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_vpc_link/3">get_vpc_link(client, vpc_link_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a VPC link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_vpc_links/4">get_vpc_links(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a collection of VPC links.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_api/3">import_api(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports an API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reimport_api/4">reimport_api(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Puts an Api resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset_authorizers_cache/5">reset_authorizers_cache(client, api_id, stage_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resets all authorizer cache entries for the specified stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Tag resource to represent a tag.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Tag.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_api/4">update_api(client, api_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Api resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_api_mapping/5">update_api_mapping(client, api_mapping_id, domain_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The API mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_authorizer/5">update_authorizer(client, api_id, authorizer_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Authorizer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_deployment/5">update_deployment(client, api_id, deployment_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_domain_name/4">update_domain_name(client, domain_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a domain name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_integration/5">update_integration(client, api_id, integration_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Integration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_integration_response/6">update_integration_response(client, api_id, integration_id, integration_response_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an IntegrationResponses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_model/5">update_model(client, api_id, model_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_route/5">update_route(client, api_id, route_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Route.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_route_response/6">update_route_response(client, api_id, route_id, route_response_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a RouteResponse.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_stage/5">update_stage(client, api_id, stage_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_vpc_link/4">update_vpc_link(client, vpc_link_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a VPC link.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_api/3">
+
+    <span id="create_api/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_api/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_api(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L12" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Api resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_api_mapping/4">
+
+    <span id="create_api_mapping/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_api_mapping/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_api_mapping(client, domain_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an API mapping.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_authorizer/4">
+
+    <span id="create_authorizer/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_authorizer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_authorizer(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L32" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Authorizer for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_deployment/4">
+
+    <span id="create_deployment/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_deployment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_deployment(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L42" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Deployment for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_domain_name/3">
+
+    <span id="create_domain_name/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_domain_name/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_domain_name(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L52" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a domain name.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_integration/4">
+
+    <span id="create_integration/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_integration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_integration(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L62" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Integration.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_integration_response/5">
+
+    <span id="create_integration_response/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_integration_response/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_integration_response(client, api_id, integration_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an IntegrationResponses.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_model/4">
+
+    <span id="create_model/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_model/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_model(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Model for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_route/4">
+
+    <span id="create_route/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_route/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_route(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L92" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Route for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_route_response/5">
+
+    <span id="create_route_response/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_route_response/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_route_response(client, api_id, route_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a RouteResponse for a Route.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_stage/4">
+
+    <span id="create_stage/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_stage/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_stage(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L112" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Stage for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_vpc_link/3">
+
+    <span id="create_vpc_link/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_vpc_link/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_vpc_link(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L122" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a VPC link.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_access_log_settings/5">
+
+    <span id="delete_access_log_settings/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_access_log_settings/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_access_log_settings(client, api_id, stage_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the AccessLogSettings for a Stage.</p>
+<p>To disable access logging for a Stage, delete its AccessLogSettings.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_api/4">
+
+    <span id="delete_api/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_api/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_api(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Api resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_api_mapping/5">
+
+    <span id="delete_api_mapping/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_api_mapping/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_api_mapping(client, api_mapping_id, domain_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an API mapping.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_authorizer/5">
+
+    <span id="delete_authorizer/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_authorizer/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_authorizer(client, api_id, authorizer_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L164" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Authorizer.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cors_configuration/4">
+
+    <span id="delete_cors_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cors_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cors_configuration(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L174" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a CORS configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_deployment/5">
+
+    <span id="delete_deployment/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_deployment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_deployment(client, api_id, deployment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_domain_name/4">
+
+    <span id="delete_domain_name/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_domain_name/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_domain_name(client, domain_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a domain name.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_integration/5">
+
+    <span id="delete_integration/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_integration/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_integration(client, api_id, integration_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L204" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Integration.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_integration_response/6">
+
+    <span id="delete_integration_response/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_integration_response/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_integration_response(client, api_id, integration_id, integration_response_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L214" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an IntegrationResponses.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_model/5">
+
+    <span id="delete_model/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_model/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_model(client, api_id, model_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Model.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_route/5">
+
+    <span id="delete_route/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_route/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_route(client, api_id, route_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Route.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_route_request_parameter/6">
+
+    <span id="delete_route_request_parameter/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_route_request_parameter/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_route_request_parameter(client, api_id, request_parameter_key, route_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L244" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a route request parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_route_response/6">
+
+    <span id="delete_route_response/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_route_response/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_route_response(client, api_id, route_id, route_response_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L254" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a RouteResponse.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_route_settings/6">
+
+    <span id="delete_route_settings/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_route_settings/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_route_settings(client, api_id, route_key, stage_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L264" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the RouteSettings for a stage.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_stage/5">
+
+    <span id="delete_stage/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_stage/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_stage(client, api_id, stage_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Stage.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_vpc_link/4">
+
+    <span id="delete_vpc_link/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_vpc_link/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_vpc_link(client, vpc_link_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L284" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a VPC link.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_api/8">
+
+    <span id="export_api/4"></span>
+
+    <span id="export_api/5"></span>
+
+    <span id="export_api/6"></span>
+
+    <span id="export_api/7"></span>
+
+  <div class="detail-header">
+    <a href="#export_api/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_api(client, api_id, specification, export_version \\ nil, include_extensions \\ nil, output_type, stage_name \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Exports a definition of an API in a particular output format and specification.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_api/3">
+
+    <span id="get_api/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_api/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_api(client, api_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L324" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an Api resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_api_mapping/4">
+
+    <span id="get_api_mapping/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_api_mapping/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_api_mapping(client, api_mapping_id, domain_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L334" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an API mapping.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_api_mappings/5">
+
+    <span id="get_api_mappings/2"></span>
+
+    <span id="get_api_mappings/3"></span>
+
+    <span id="get_api_mappings/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_api_mappings/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_api_mappings(client, domain_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets API mappings.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apis/4">
+
+    <span id="get_apis/1"></span>
+
+    <span id="get_apis/2"></span>
+
+    <span id="get_apis/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_apis/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apis(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a collection of Api resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_authorizer/4">
+
+    <span id="get_authorizer/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_authorizer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_authorizer(client, api_id, authorizer_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an Authorizer.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_authorizers/5">
+
+    <span id="get_authorizers/2"></span>
+
+    <span id="get_authorizers/3"></span>
+
+    <span id="get_authorizers/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_authorizers/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_authorizers(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L394" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Authorizers for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployment/4">
+
+    <span id="get_deployment/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployment/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployment(client, api_id, deployment_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L414" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a Deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployments/5">
+
+    <span id="get_deployments/2"></span>
+
+    <span id="get_deployments/3"></span>
+
+    <span id="get_deployments/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployments/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployments(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L424" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Deployments for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_domain_name/3">
+
+    <span id="get_domain_name/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_domain_name/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_domain_name(client, domain_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L444" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a domain name.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_domain_names/4">
+
+    <span id="get_domain_names/1"></span>
+
+    <span id="get_domain_names/2"></span>
+
+    <span id="get_domain_names/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_domain_names/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_domain_names(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L454" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the domain names for an AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_integration/4">
+
+    <span id="get_integration/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_integration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_integration(client, api_id, integration_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L474" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an Integration.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_integration_response/5">
+
+    <span id="get_integration_response/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_integration_response/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_integration_response(client, api_id, integration_id, integration_response_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L484" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an IntegrationResponses.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_integration_responses/6">
+
+    <span id="get_integration_responses/3"></span>
+
+    <span id="get_integration_responses/4"></span>
+
+    <span id="get_integration_responses/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_integration_responses/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_integration_responses(client, api_id, integration_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L494" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the IntegrationResponses for an Integration.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_integrations/5">
+
+    <span id="get_integrations/2"></span>
+
+    <span id="get_integrations/3"></span>
+
+    <span id="get_integrations/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_integrations/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_integrations(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L514" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Integrations for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_model/4">
+
+    <span id="get_model/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_model/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_model(client, api_id, model_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L534" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a Model.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_model_template/4">
+
+    <span id="get_model_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_model_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_model_template(client, api_id, model_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L544" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a model template.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_models/5">
+
+    <span id="get_models/2"></span>
+
+    <span id="get_models/3"></span>
+
+    <span id="get_models/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_models/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_models(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L554" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Models for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_route/4">
+
+    <span id="get_route/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_route/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_route(client, api_id, route_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L574" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a Route.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_route_response/5">
+
+    <span id="get_route_response/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_route_response/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_route_response(client, api_id, route_id, route_response_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L584" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a RouteResponse.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_route_responses/6">
+
+    <span id="get_route_responses/3"></span>
+
+    <span id="get_route_responses/4"></span>
+
+    <span id="get_route_responses/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_route_responses/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_route_responses(client, api_id, route_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L594" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the RouteResponses for a Route.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_routes/5">
+
+    <span id="get_routes/2"></span>
+
+    <span id="get_routes/3"></span>
+
+    <span id="get_routes/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_routes/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_routes(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L614" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Routes for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_stage/4">
+
+    <span id="get_stage/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_stage/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_stage(client, api_id, stage_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L634" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a Stage.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_stages/5">
+
+    <span id="get_stages/2"></span>
+
+    <span id="get_stages/3"></span>
+
+    <span id="get_stages/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_stages/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_stages(client, api_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L644" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the Stages for an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_tags/3">
+
+    <span id="get_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_tags(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L664" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a collection of Tag resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_vpc_link/3">
+
+    <span id="get_vpc_link/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_vpc_link/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_vpc_link(client, vpc_link_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L674" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a VPC link.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_vpc_links/4">
+
+    <span id="get_vpc_links/1"></span>
+
+    <span id="get_vpc_links/2"></span>
+
+    <span id="get_vpc_links/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_vpc_links/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_vpc_links(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L684" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a collection of VPC links.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_api/3">
+
+    <span id="import_api/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_api/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_api(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L704" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports an API.</p>
+
+  </section>
+</section>
+<section class="detail" id="reimport_api/4">
+
+    <span id="reimport_api/3"></span>
+
+  <div class="detail-header">
+    <a href="#reimport_api/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reimport_api(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L719" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Puts an Api resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="reset_authorizers_cache/5">
+
+    <span id="reset_authorizers_cache/4"></span>
+
+  <div class="detail-header">
+    <a href="#reset_authorizers_cache/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset_authorizers_cache(client, api_id, stage_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L736" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resets all authorizer cache entries for the specified stage.</p>
+<p>Supported only for HTTP API Lambda authorizers.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Tag resource to represent a tag.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L756" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Tag.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_api/4">
+
+    <span id="update_api/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_api/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_api(client, api_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L770" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Api resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_api_mapping/5">
+
+    <span id="update_api_mapping/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_api_mapping/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_api_mapping(client, api_mapping_id, domain_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L780" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The API mapping.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_authorizer/5">
+
+    <span id="update_authorizer/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_authorizer/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_authorizer(client, api_id, authorizer_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L790" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Authorizer.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_deployment/5">
+
+    <span id="update_deployment/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_deployment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_deployment(client, api_id, deployment_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L800" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Deployment.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_domain_name/4">
+
+    <span id="update_domain_name/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_domain_name/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_domain_name(client, domain_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L810" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a domain name.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_integration/5">
+
+    <span id="update_integration/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_integration/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_integration(client, api_id, integration_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L820" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Integration.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_integration_response/6">
+
+    <span id="update_integration_response/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_integration_response/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_integration_response(client, api_id, integration_id, integration_response_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L830" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an IntegrationResponses.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_model/5">
+
+    <span id="update_model/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_model/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_model(client, api_id, model_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L840" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Model.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_route/5">
+
+    <span id="update_route/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_route/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_route(client, api_id, route_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L850" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Route.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_route_response/6">
+
+    <span id="update_route_response/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_route_response/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_route_response(client, api_id, route_id, route_response_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L860" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a RouteResponse.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_stage/5">
+
+    <span id="update_stage/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_stage/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_stage(client, api_id, stage_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L870" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Stage.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_vpc_link/4">
+
+    <span id="update_vpc_link/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_vpc_link/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_vpc_link(client, vpc_link_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/api_gateway_v2.ex#L880" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a VPC link.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Athena — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Athena
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Athena is an interactive query service that lets you use standard SQL to analyze data
+directly in Amazon S3.</p>
+<p>You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds.
+Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the
+queries you run. Athena scales automatically—executing queries in parallel—so results are fast,
+even with large datasets and complex queries. For more information, see <a href="http://docs.aws.amazon.com/athena/latest/ug/what-is.html">What is Amazon Athena</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+<p>If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the
+Amazon Athena API. Earlier version drivers do not support the API. For more information and to
+download the driver, see <a href="https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html">Accessing Amazon Athena with JDBC</a>.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="https://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena
+User Guide</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_named_query/3">batch_get_named_query(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an
+array of query ID strings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_query_execution/3">batch_get_query_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of a single query execution or a list of up to 50 query executions, which you
+provide as an array of query execution ID strings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_data_catalog/3">create_data_catalog(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates (registers) a data catalog with the specified name and properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_named_query/3">create_named_query(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a named query in the specified workgroup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_work_group/3">create_work_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a workgroup with the specified name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_data_catalog/3">delete_data_catalog(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a data catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_named_query/3">delete_named_query(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the named query if you have access to the workgroup in which the query was saved.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_work_group/3">delete_work_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the workgroup with the specified name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_data_catalog/3">get_data_catalog(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the specified data catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_database/3">get_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a database object for the specfied database and data catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_named_query/3">get_named_query(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a single query.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_query_execution/3">get_query_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a single execution of a query if you have access to the workgroup in
+which the query ran.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_query_results/3">get_query_results(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Streams the results of a single query execution specified by <code class="inline">QueryExecutionId</code> from the Athena
+query results location in Amazon S3.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_table_metadata/3">get_table_metadata(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns table metadata for the specified catalog, database, and table.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_work_group/3">get_work_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the workgroup with the specified name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_data_catalogs/3">list_data_catalogs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the data catalogs in the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_databases/3">list_databases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the databases in the specified data catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_named_queries/3">list_named_queries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a list of available query IDs only for queries saved in the specified workgroup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_query_executions/3">list_query_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a list of available query execution IDs for the queries in the specified workgroup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_table_metadata/3">list_table_metadata(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the metadata for the tables in the specified data catalog database.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags associated with an Athena workgroup or data catalog resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_work_groups/3">list_work_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists available workgroups for the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_query_execution/3">start_query_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs the SQL query statements contained in the <code class="inline">Query</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_query_execution/3">stop_query_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a query execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags to an Athena resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from a data catalog or workgroup resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_catalog/3">update_data_catalog(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the data catalog that has the specified name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_work_group/3">update_work_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the workgroup with the specified name.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_get_named_query/3">
+
+    <span id="batch_get_named_query/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_named_query/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_named_query(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an
+array of query ID strings.</p>
+<p>Requires you to have access to the workgroup in which the queries were saved. Use
+<code class="inline">ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If
+information could not be retrieved for a submitted query ID, information about the query ID
+submitted is listed under <code class="inline">UnprocessedNamedQueryId</code>. Named queries differ from executed queries.
+Use <code class="inline">BatchGetQueryExecutionInput</code> to get details about each unique query execution, and
+<code class="inline">ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_query_execution/3">
+
+    <span id="batch_get_query_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_query_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_query_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of a single query execution or a list of up to 50 query executions, which you
+provide as an array of query execution ID strings.</p>
+<p>Requires you to have access to the workgroup in which the queries ran. To get a list of query
+execution IDs, use <code class="inline">ListQueryExecutionsInput$WorkGroup</code>. Query executions differ from named
+(saved) queries. Use <code class="inline">BatchGetNamedQueryInput</code> to get details about named queries.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_data_catalog/3">
+
+    <span id="create_data_catalog/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_data_catalog/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_data_catalog(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates (registers) a data catalog with the specified name and properties.</p>
+<p>Catalogs created are visible to all users of the same AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_named_query/3">
+
+    <span id="create_named_query/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_named_query/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_named_query(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L67" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a named query in the specified workgroup.</p>
+<p>Requires that you have access to the workgroup.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_work_group/3">
+
+    <span id="create_work_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_work_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_work_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L74" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a workgroup with the specified name.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_data_catalog/3">
+
+    <span id="delete_data_catalog/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_data_catalog/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_data_catalog(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L81" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a data catalog.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_named_query/3">
+
+    <span id="delete_named_query/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_named_query/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_named_query(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the named query if you have access to the workgroup in which the query was saved.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_work_group/3">
+
+    <span id="delete_work_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_work_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_work_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the workgroup with the specified name.</p>
+<p>The primary workgroup cannot be deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_data_catalog/3">
+
+    <span id="get_data_catalog/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_data_catalog/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_data_catalog(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the specified data catalog.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_database/3">
+
+    <span id="get_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a database object for the specfied database and data catalog.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_named_query/3">
+
+    <span id="get_named_query/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_named_query/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_named_query(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a single query.</p>
+<p>Requires that you have access to the workgroup in which the query was saved.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_query_execution/3">
+
+    <span id="get_query_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_query_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_query_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a single execution of a query if you have access to the workgroup in
+which the query ran.</p>
+<p>Each time a query executes, information about the query execution is saved with a unique ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_query_results/3">
+
+    <span id="get_query_results/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_query_results/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_query_results(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Streams the results of a single query execution specified by <code class="inline">QueryExecutionId</code> from the Athena
+query results location in Amazon S3.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> in the <em>Amazon Athena User
+Guide</em>. This request does not execute the query but returns results. Use <code class="inline">StartQueryExecution</code> to
+run a query.</p>
+<p>To stream query results successfully, the IAM principal with permission to call <code class="inline">GetQueryResults</code>
+also must have permissions to the Amazon S3 <code class="inline">GetObject</code> action for the Athena query results
+location.</p>
+<p>IAM principals with permission to the Amazon S3 <code class="inline">GetObject</code> action for the query results location
+are able to retrieve query results from Amazon S3 even if permission to the <code class="inline">GetQueryResults</code>
+action is denied. To restrict user or role access, ensure that Amazon S3 permissions to the Athena
+query location are denied.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_table_metadata/3">
+
+    <span id="get_table_metadata/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_table_metadata/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_table_metadata(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns table metadata for the specified catalog, database, and table.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_work_group/3">
+
+    <span id="get_work_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_work_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_work_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the workgroup with the specified name.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_data_catalogs/3">
+
+    <span id="list_data_catalogs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_data_catalogs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_data_catalogs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the data catalogs in the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_databases/3">
+
+    <span id="list_databases/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_databases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_databases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the databases in the specified data catalog.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_named_queries/3">
+
+    <span id="list_named_queries/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_named_queries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_named_queries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a list of available query IDs only for queries saved in the specified workgroup.</p>
+<p>Requires that you have access to the specified workgroup. If a workgroup is not specified, lists
+the saved queries for the primary workgroup.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_query_executions/3">
+
+    <span id="list_query_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_query_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_query_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a list of available query execution IDs for the queries in the specified workgroup.</p>
+<p>If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup.
+Requires you to have access to the workgroup in which the queries ran.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_table_metadata/3">
+
+    <span id="list_table_metadata/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_table_metadata/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_table_metadata(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L215" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the metadata for the tables in the specified data catalog database.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags associated with an Athena workgroup or data catalog resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_work_groups/3">
+
+    <span id="list_work_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_work_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_work_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists available workgroups for the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_query_execution/3">
+
+    <span id="start_query_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_query_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_query_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L241" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs the SQL query statements contained in the <code class="inline">Query</code>.</p>
+<p>Requires you to have access to the workgroup in which the query ran. Running queries against an
+external catalog requires <code class="inline">GetDataCatalog</code> permission to the catalog. For code samples using the
+AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_query_execution/3">
+
+    <span id="stop_query_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_query_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_query_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a query execution.</p>
+<p>Requires you to have access to the workgroup in which the query ran.</p>
+<p>For code samples using the AWS SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <em>Amazon Athena User
+Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L270" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags to an Athena resource.</p>
+<p>A tag is a label that you assign to a resource. In Athena, a resource can be a workgroup or data
+catalog. Each tag consists of a key and an optional value, both of which you define. For example,
+you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
+environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or
+data catalogs in your account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys
+can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode
+characters. Tags can use letters and numbers representable in UTF-8, and the following characters:</p>
+<ul>
+<li><ul>
+<li>= . _ : / @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If
+you specify more than one tag, separate them by commas.
+</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L277" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from a data catalog or workgroup resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_catalog/3">
+
+    <span id="update_data_catalog/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_catalog/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_catalog(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L284" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the data catalog that has the specified name.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_work_group/3">
+
+    <span id="update_work_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_work_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_work_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/athena.ex#L293" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the workgroup with the specified name.</p>
+<p>The workgroup&#39;s name cannot be changed.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

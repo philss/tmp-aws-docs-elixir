@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.MigrationHub — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.MigrationHub
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The AWS Migration Hub API methods help to obtain server and application migration status and
+integrate your resource-specific migration tool by providing a programmatic interface to Migration
+Hub.</p>
+<p>Remember that you must set your AWS Migration Hub home region before you call any of these APIs,
+or a <code class="inline">HomeRegionNotSetException</code> error will be returned. Also, you must make the API calls while
+in your home region.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_created_artifact/3">associate_created_artifact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with
+the migration task performed by a migration tool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_discovered_resource/3">associate_discovered_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a discovered resource ID from Application Discovery Service with a migration task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_progress_update_stream/3">create_progress_update_stream(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a progress update stream which is an AWS resource used for access control as well as a
+namespace for migration task names that is implicitly linked to your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_progress_update_stream/3">delete_progress_update_stream(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a progress update stream, including all of its tasks, which was previously created as an
+AWS resource used for access control.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_application_state/3">describe_application_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the migration status of an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_migration_task/3">describe_migration_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of all attributes associated with a specific migration task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_created_artifact/3">disassociate_created_artifact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a created artifact of an AWS resource with a migration task performed by a migration
+tool that was previously associated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_discovered_resource/3">disassociate_discovered_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociate an Application Discovery Service discovered resource from a migration task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_migration_task/3">import_migration_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a new migration task which represents a server, database, etc., being migrated to AWS by
+a migration tool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_application_states/3">list_application_states(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the migration statuses for your applications.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_created_artifacts/3">list_created_artifacts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the created artifacts attached to a given migration task in an update stream.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_discovered_resources/3">list_discovered_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists discovered resources associated with the given <code class="inline">MigrationTask</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_migration_tasks/3">list_migration_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all, or filtered by resource name, migration tasks associated with the user account making
+this call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_progress_update_streams/3">list_progress_update_streams(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists progress update streams associated with the user account making this call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#notify_application_state/3">notify_application_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the migration state of an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#notify_migration_task_state/3">notify_migration_task_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration
+task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_resource_attributes/3">put_resource_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides identifying details of the resource being migrated so that it can be associated in the
+Application Discovery Service repository.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_created_artifact/3">
+
+    <span id="associate_created_artifact/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_created_artifact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_created_artifact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with
+the migration task performed by a migration tool.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>Migration tools can call the <code class="inline">AssociateCreatedArtifact</code> operation to indicate which
+AWS artifact is associated with a migration task.</p>
+</li>
+<li><p>The created artifact name must be provided in ARN (Amazon Resource Name) format
+which will contain information about type and region; for example:
+<code class="inline">arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p>
+</li>
+<li><p>Examples of the AWS resource behind the created artifact are, AMI&#39;s, EC2 instance,
+or DMS endpoint, etc.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="associate_discovered_resource/3">
+
+    <span id="associate_discovered_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_discovered_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_discovered_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a discovered resource ID from Application Discovery Service with a migration task.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_progress_update_stream/3">
+
+    <span id="create_progress_update_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_progress_update_stream/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_progress_update_stream(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a progress update stream which is an AWS resource used for access control as well as a
+namespace for migration task names that is implicitly linked to your AWS account.</p>
+<p>It must uniquely identify the migration tool as it is used for all updates made by the tool;
+however, it does not need to be unique for each AWS account because it is scoped to the AWS
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_progress_update_stream/3">
+
+    <span id="delete_progress_update_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_progress_update_stream/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_progress_update_stream(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a progress update stream, including all of its tasks, which was previously created as an
+AWS resource used for access control.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>The only parameter needed for <code class="inline">DeleteProgressUpdateStream</code> is the stream name (same
+as a <code class="inline">CreateProgressUpdateStream</code> call).</p>
+</li>
+<li><p>The call will return, and a background process will asynchronously delete the stream
+and all of its resources (tasks, associated resources, resource attributes, created artifacts).</p>
+</li>
+<li><p>If the stream takes time to be deleted, it might still show up on a
+<code class="inline">ListProgressUpdateStreams</code> call.</p>
+</li>
+<li><p><code class="inline">CreateProgressUpdateStream</code>, <code class="inline">ImportMigrationTask</code>, <code class="inline">NotifyMigrationTaskState</code>, and
+all Associate[*] APIs related to the tasks belonging to the stream will throw
+&quot;InvalidInputException&quot; if the stream of the same name is in the process of being deleted.</p>
+</li>
+<li><p>Once the stream and all of its resources are deleted, <code class="inline">CreateProgressUpdateStream</code>
+for a stream of the same name will succeed, and that stream will be an entirely new logical
+resource (without any resources associated with the old stream).</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_application_state/3">
+
+    <span id="describe_application_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_application_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_application_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the migration status of an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_migration_task/3">
+
+    <span id="describe_migration_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_migration_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_migration_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of all attributes associated with a specific migration task.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_created_artifact/3">
+
+    <span id="disassociate_created_artifact/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_created_artifact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_created_artifact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a created artifact of an AWS resource with a migration task performed by a migration
+tool that was previously associated.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>A migration user can call the <code class="inline">DisassociateCreatedArtifacts</code> operation to
+disassociate a created AWS Artifact from a migration task.</p>
+</li>
+<li><p>The created artifact name must be provided in ARN (Amazon Resource Name) format
+which will contain information about type and region; for example:
+<code class="inline">arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.</p>
+</li>
+<li><p>Examples of the AWS resource behind the created artifact are, AMI&#39;s, EC2 instance,
+or RDS instance, etc.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_discovered_resource/3">
+
+    <span id="disassociate_discovered_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_discovered_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_discovered_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociate an Application Discovery Service discovered resource from a migration task.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_migration_task/3">
+
+    <span id="import_migration_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_migration_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_migration_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a new migration task which represents a server, database, etc., being migrated to AWS by
+a migration tool.</p>
+<p>This API is a prerequisite to calling the <code class="inline">NotifyMigrationTaskState</code> API as the migration tool
+must first register the migration task with Migration Hub.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_application_states/3">
+
+    <span id="list_application_states/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_application_states/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_application_states(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the migration statuses for your applications.</p>
+<p>If you use the optional <code class="inline">ApplicationIds</code> parameter, only the migration statuses for those
+applications will be returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_created_artifacts/3">
+
+    <span id="list_created_artifacts/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_created_artifacts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_created_artifacts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L155" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the created artifacts attached to a given migration task in an update stream.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>Gets the list of the created artifacts while migration is taking place.</p>
+</li>
+<li><p>Shows the artifacts created by the migration tool that was associated by the
+<code class="inline">AssociateCreatedArtifact</code> API.</p>
+</li>
+<li><p>Lists created artifacts in a paginated interface.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_discovered_resources/3">
+
+    <span id="list_discovered_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_discovered_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_discovered_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L162" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists discovered resources associated with the given <code class="inline">MigrationTask</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_migration_tasks/3">
+
+    <span id="list_migration_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_migration_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_migration_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all, or filtered by resource name, migration tasks associated with the user account making
+this call.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>Can show a summary list of the most recent migration tasks.</p>
+</li>
+<li><p>Can show a summary list of migration tasks associated with a given discovered
+resource.</p>
+</li>
+<li><p>Lists migration tasks in a paginated interface.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_progress_update_streams/3">
+
+    <span id="list_progress_update_streams/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_progress_update_streams/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_progress_update_streams(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L186" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists progress update streams associated with the user account making this call.</p>
+
+  </section>
+</section>
+<section class="detail" id="notify_application_state/3">
+
+    <span id="notify_application_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#notify_application_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">notify_application_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the migration state of an application.</p>
+<p>For a given application identified by the value passed to <code class="inline">ApplicationId</code>, its status is set or
+updated by passing one of three values to <code class="inline">Status</code>: <code class="inline">NOT_STARTED | IN_PROGRESS | COMPLETED</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="notify_migration_task_state/3">
+
+    <span id="notify_migration_task_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#notify_migration_task_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">notify_migration_task_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L214" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration
+task.</p>
+<p>This API has the following traits:</p>
+<ul>
+<li><p>Migration tools will call the <code class="inline">NotifyMigrationTaskState</code> API to share the latest
+progress and status.</p>
+</li>
+<li><p><code class="inline">MigrationTaskName</code> is used for addressing updates to the correct target.</p>
+</li>
+<li><p><code class="inline">ProgressUpdateStream</code> is used for access control and to provide a namespace for
+each migration tool.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="put_resource_attributes/3">
+
+    <span id="put_resource_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_resource_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_resource_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/migration_hub.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides identifying details of the resource being migrated so that it can be associated in the
+Application Discovery Service repository.</p>
+<p>This association occurs asynchronously after <code class="inline">PutResourceAttributes</code> returns.</p>
+<p>   Keep in mind that subsequent calls to PutResourceAttributes will override previously
+stored attributes. For example, if it is first called with a MAC address, but later, it is desired
+to <em>add</em> an IP address, it will then be required to call it with <em>both</em> the IP and MAC addresses
+to prevent overriding the MAC address.</p>
+<p>   Note the instructions regarding the special use case of the <a href="https://docs.aws.amazon.com/migrationhub/latest/ug/API_PutResourceAttributes.html#migrationhub-PutResourceAttributes-request-ResourceAttributeList"> <code class="inline">ResourceAttributeList</code>
+</a>
+parameter when specifying any &quot;VM&quot; related value.</p>
+<p>Because this is an asynchronous call, it will always return 200, whether an association occurs or
+not. To confirm if an association was found based on the provided details, call
+<code class="inline">ListDiscoveredResources</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

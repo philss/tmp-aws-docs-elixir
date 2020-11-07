@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ServerlessApplicationRepository — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ServerlessApplicationRepository
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The AWS Serverless Application Repository makes it easy for developers and enterprises to quickly
+find
+and deploy serverless applications in the AWS Cloud.</p>
+<p>For more information about serverless applications,
+see Serverless Computing and Applications on the AWS website.</p>
+<p>The AWS Serverless Application Repository is deeply integrated with the AWS Lambda console, so
+that developers of
+all levels can get started with serverless computing without needing to learn anything new. You
+can use category
+keywords to browse for applications such as web and mobile backends, data processing applications,
+or chatbots.
+You can also search for applications by name, publisher, or event source. To use an application,
+you simply choose it,
+configure any required fields, and deploy it with a few clicks.</p>
+<p>You can also easily publish applications, sharing them publicly with the community at large, or
+privately
+within your team or across your organization. To publish a serverless application (or app), you
+can use the
+AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS SDKs to upload the code.
+Along with the
+code, you upload a simple manifest file, also known as the AWS Serverless Application Model (AWS
+SAM) template.
+For more information about AWS SAM, see AWS Serverless Application Model (AWS SAM) on the AWS Labs
+GitHub repository.</p>
+<p>The AWS Serverless Application Repository Developer Guide contains more information about the two
+developer
+experiences available:</p>
+<p>  *
+Consuming Applications – Browse for applications and view information about them, including
+source code and readme files. Also install, configure, and deploy applications of your choosing.</p>
+<p>Publishing Applications – Configure and upload applications to make them available to other
+developers, and publish new versions of applications.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application/3">create_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application, optionally including an AWS SAM file to create the first application
+version in the same call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application_version/5">create_application_version(client, application_id, semantic_version, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cloud_formation_change_set/4">create_cloud_formation_change_set(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS CloudFormation change set for the given application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cloud_formation_template/4">create_cloud_formation_template(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS CloudFormation template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_application/4">delete_application(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_application/4">get_application(client, application_id, semantic_version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the specified application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_application_policy/3">get_application_policy(client, application_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the policy for the application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cloud_formation_template/4">get_cloud_formation_template(client, application_id, template_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the specified AWS CloudFormation template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_application_dependencies/6">list_application_dependencies(client, application_id, max_items \\ nil, next_token \\ nil, semantic_version \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the list of applications nested in the containing application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_application_versions/5">list_application_versions(client, application_id, max_items \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists versions for the specified application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_applications/4">list_applications(client, max_items \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists applications owned by the requester.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_application_policy/4">put_application_policy(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the permission policy for an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unshare_application/4">unshare_application(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Unshares an application from an AWS Organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application/4">update_application(client, application_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified application.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_application/3">
+
+    <span id="create_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application, optionally including an AWS SAM file to create the first application
+version in the same call.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_application_version/5">
+
+    <span id="create_application_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_application_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application_version(client, application_id, semantic_version, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application version.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_cloud_formation_change_set/4">
+
+    <span id="create_cloud_formation_change_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_cloud_formation_change_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cloud_formation_change_set(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS CloudFormation change set for the given application.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_cloud_formation_template/4">
+
+    <span id="create_cloud_formation_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_cloud_formation_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cloud_formation_template(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS CloudFormation template.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_application/4">
+
+    <span id="delete_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_application(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_application/4">
+
+    <span id="get_application/2"></span>
+
+    <span id="get_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_application(client, application_id, semantic_version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the specified application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_application_policy/3">
+
+    <span id="get_application_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_application_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_application_policy(client, application_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the policy for the application.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cloud_formation_template/4">
+
+    <span id="get_cloud_formation_template/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_cloud_formation_template/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cloud_formation_template(client, application_id, template_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the specified AWS CloudFormation template.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_application_dependencies/6">
+
+    <span id="list_application_dependencies/2"></span>
+
+    <span id="list_application_dependencies/3"></span>
+
+    <span id="list_application_dependencies/4"></span>
+
+    <span id="list_application_dependencies/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_application_dependencies/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_application_dependencies(client, application_id, max_items \\ nil, next_token \\ nil, semantic_version \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L135" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the list of applications nested in the containing application.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_application_versions/5">
+
+    <span id="list_application_versions/2"></span>
+
+    <span id="list_application_versions/3"></span>
+
+    <span id="list_application_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_application_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_application_versions(client, application_id, max_items \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L160" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists versions for the specified application.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_applications/4">
+
+    <span id="list_applications/1"></span>
+
+    <span id="list_applications/2"></span>
+
+    <span id="list_applications/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_applications/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_applications(client, max_items \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L180" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists applications owned by the requester.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_application_policy/4">
+
+    <span id="put_application_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_application_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_application_policy(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the permission policy for an application.</p>
+<p>For the list of actions supported for this operation, see
+<a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a></p>
+<p>.</p>
+
+  </section>
+</section>
+<section class="detail" id="unshare_application/4">
+
+    <span id="unshare_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#unshare_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unshare_application(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Unshares an application from an AWS Organization.</p>
+<p>This operation can be called only from the organization&#39;s master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application/4">
+
+    <span id="update_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application(client, application_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/serverless_application_repository.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified application.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

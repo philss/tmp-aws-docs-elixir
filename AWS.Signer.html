@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Signer — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Signer
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>With code signing for IoT, you can sign code that you create for any IoT device that is supported
+by Amazon Web Services (AWS).</p>
+<p>Code signing is available through <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign
+code, you import a third-party code signing certificate with ACM that is used to sign updates in
+Amazon FreeRTOS and AWS IoT Device Management. For general information about using code signing,
+see the <a href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_signing_profile/4">cancel_signing_profile(client, profile_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the state of an <code class="inline">ACTIVE</code> signing profile to <code class="inline">CANCELED</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_signing_job/3">describe_signing_job(client, job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific code signing job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_signing_platform/3">get_signing_platform(client, platform_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information on a specific signing platform.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_signing_profile/3">get_signing_profile(client, profile_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information on a specific signing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_signing_jobs/7">list_signing_jobs(client, max_results \\ nil, next_token \\ nil, platform_id \\ nil, requested_by \\ nil, status \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all your signing jobs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_signing_platforms/7">list_signing_platforms(client, category \\ nil, max_results \\ nil, next_token \\ nil, partner \\ nil, target \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all signing platforms available in code signing that match the request parameters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_signing_profiles/5">list_signing_profiles(client, include_canceled \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all available signing profiles in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the tags associated with a signing profile resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_signing_profile/4">put_signing_profile(client, profile_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a signing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_signing_job/3">start_signing_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates a signing job to be performed on the code provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags to a signing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from a signing profile.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_signing_profile/4">
+
+    <span id="cancel_signing_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_signing_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_signing_profile(client, profile_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L21" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the state of an <code class="inline">ACTIVE</code> signing profile to <code class="inline">CANCELED</code>.</p>
+<p>A canceled profile is still viewable with the <code class="inline">ListSigningProfiles</code> operation, but it cannot
+perform new signing jobs, and is deleted two years after cancelation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_signing_job/3">
+
+    <span id="describe_signing_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_signing_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_signing_job(client, job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific code signing job.</p>
+<p>You specify the job by using the <code class="inline">jobId</code> value that is returned by the <code class="inline">StartSigningJob</code>
+operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_signing_platform/3">
+
+    <span id="get_signing_platform/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_signing_platform/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_signing_platform(client, platform_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information on a specific signing platform.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_signing_profile/3">
+
+    <span id="get_signing_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_signing_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_signing_profile(client, profile_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information on a specific signing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_signing_jobs/7">
+
+    <span id="list_signing_jobs/1"></span>
+
+    <span id="list_signing_jobs/2"></span>
+
+    <span id="list_signing_jobs/3"></span>
+
+    <span id="list_signing_jobs/4"></span>
+
+    <span id="list_signing_jobs/5"></span>
+
+    <span id="list_signing_jobs/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_signing_jobs/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_signing_jobs(client, max_results \\ nil, next_token \\ nil, platform_id \\ nil, requested_by \\ nil, status \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all your signing jobs.</p>
+<p>You can use the <code class="inline">maxResults</code> parameter to limit the number of signing jobs that are returned in
+the response. If additional jobs remain to be listed, code signing returns a <code class="inline">nextToken</code> value.
+Use this value in subsequent calls to <code class="inline">ListSigningJobs</code> to fetch the remaining values. You can
+continue calling <code class="inline">ListSigningJobs</code> with your <code class="inline">maxResults</code> parameter and with new values that code
+signing returns in the <code class="inline">nextToken</code> parameter until all of your signing jobs have been returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_signing_platforms/7">
+
+    <span id="list_signing_platforms/1"></span>
+
+    <span id="list_signing_platforms/2"></span>
+
+    <span id="list_signing_platforms/3"></span>
+
+    <span id="list_signing_platforms/4"></span>
+
+    <span id="list_signing_platforms/5"></span>
+
+    <span id="list_signing_platforms/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_signing_platforms/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_signing_platforms(client, category \\ nil, max_results \\ nil, next_token \\ nil, partner \\ nil, target \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all signing platforms available in code signing that match the request parameters.</p>
+<p>If additional jobs remain to be listed, code signing returns a <code class="inline">nextToken</code> value. Use this value
+in subsequent calls to <code class="inline">ListSigningJobs</code> to fetch the remaining values. You can continue calling
+<code class="inline">ListSigningJobs</code> with your <code class="inline">maxResults</code> parameter and with new values that code signing returns
+in the <code class="inline">nextToken</code> parameter until all of your signing jobs have been returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_signing_profiles/5">
+
+    <span id="list_signing_profiles/1"></span>
+
+    <span id="list_signing_profiles/2"></span>
+
+    <span id="list_signing_profiles/3"></span>
+
+    <span id="list_signing_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_signing_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_signing_profiles(client, include_canceled \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L151" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all available signing profiles in your AWS account.</p>
+<p>Returns only profiles with an <code class="inline">ACTIVE</code> status unless the <code class="inline">includeCanceled</code> request field is set to
+<code class="inline">true</code>. If additional jobs remain to be listed, code signing returns a <code class="inline">nextToken</code> value. Use this
+value in subsequent calls to <code class="inline">ListSigningJobs</code> to fetch the remaining values. You can continue
+calling <code class="inline">ListSigningJobs</code> with your <code class="inline">maxResults</code> parameter and with new values that code signing
+returns in the <code class="inline">nextToken</code> parameter until all of your signing jobs have been returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L176" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the tags associated with a signing profile resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_signing_profile/4">
+
+    <span id="put_signing_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_signing_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_signing_profile(client, profile_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L190" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a signing profile.</p>
+<p>A signing profile is a code signing template that can be used to carry out a pre-defined signing
+job. For more information, see
+<a href="http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html">http://docs.aws.amazon.com/signer/latest/developerguide/gs-profile.html</a></p>
+
+  </section>
+</section>
+<section class="detail" id="start_signing_job/3">
+
+    <span id="start_signing_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_signing_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_signing_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates a signing job to be performed on the code provided.</p>
+<p>Signing jobs are viewable by the <code class="inline">ListSigningJobs</code> operation for two years after they are
+performed. Note the following requirements:</p>
+<ul>
+<li><p>You must create an Amazon S3 source bucket. For more information, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html">Create a Bucket</a> in the <em>Amazon S3
+Getting Started Guide</em>.</p>
+</li>
+<li><p>Your S3 source bucket must be version enabled.</p>
+</li>
+<li><p>You must create an S3 destination bucket. Code signing uses your S3 destination
+bucket to write your signed code.</p>
+</li>
+<li><p>You specify the name of the source and destination buckets when calling the
+<code class="inline">StartSigningJob</code> operation.</p>
+</li>
+<li><p>You must also specify a request token that identifies your request to code signing.</p>
+</li>
+</ul>
+<p>You can call the <code class="inline">DescribeSigningJob</code> and the <code class="inline">ListSigningJobs</code> actions after you call
+<code class="inline">StartSigningJob</code>.</p>
+<p>For a Java example that shows how to use this action, see
+<a href="http://docs.aws.amazon.com/acm/latest/userguide/">http://docs.aws.amazon.com/acm/latest/userguide/</a></p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L236" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags to a signing profile.</p>
+<p>Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of
+a key and an optional value. To specify the signing profile, use its Amazon Resource Name (ARN).
+To specify the tag, use a key-value pair.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/signer.ex#L248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from a signing profile.</p>
+<p>To remove the tags, specify a list of tag keys.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

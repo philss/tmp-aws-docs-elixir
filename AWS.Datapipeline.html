@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Datapipeline — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Datapipeline
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Data Pipeline configures and manages a data-driven workflow called a pipeline.</p>
+<p>AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies are met so
+that your application can focus on processing the data.</p>
+<p>AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data Pipeline Task
+Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as
+performing database queries and running data analysis using Amazon Elastic MapReduce (Amazon EMR).
+You can use AWS Data Pipeline Task Runner as your task runner, or you can write your own task
+runner to provide custom data management.</p>
+<p>AWS Data Pipeline implements two main sets of functionality. Use the first set to create a
+pipeline and define data sources, schedules, dependencies, and the transforms to be performed on
+the data. Use the second set in your task runner application to receive the next task ready for
+processing. The logic for performing the task, such as querying the data, running data analysis,
+or converting the data from one format to another, is contained within the task runner. The task
+runner performs the task assigned to it by the web service, reporting progress to the web service
+as it does so. When the task is done, the task runner reports the final success or failure of the
+task to the web service.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#activate_pipeline/3">activate_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Validates the specified pipeline and starts processing pipeline tasks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_tags/3">add_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or modifies tags for the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_pipeline/3">create_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new, empty pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deactivate_pipeline/3">deactivate_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deactivates the specified running pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_pipeline/3">delete_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a pipeline, its pipeline definition, and its run history.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_objects/3">describe_objects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the object definitions for a set of objects associated with the pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_pipelines/3">describe_pipelines(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves metadata about one or more pipelines.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#evaluate_expression/3">evaluate_expression(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Task runners call <code class="inline">EvaluateExpression</code> to evaluate a string in the context of the specified
+object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pipeline_definition/3">get_pipeline_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the definition of the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pipelines/3">list_pipelines(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#poll_for_task/3">poll_for_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Task runners call <code class="inline">PollForTask</code> to receive a task to perform from AWS Data Pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_pipeline_definition/3">put_pipeline_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tasks, schedules, and preconditions to the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#query_objects/3">query_objects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Queries the specified pipeline for the names of objects that match the specified set of
+conditions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_tags/3">remove_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes existing tags from the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#report_task_progress/3">report_task_progress(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Task runners call <code class="inline">ReportTaskProgress</code> when assigned a task to acknowledge that it has the task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#report_task_runner_heartbeat/3">report_task_runner_heartbeat(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Task runners call <code class="inline">ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are
+operational.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_status/3">set_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests that the status of the specified physical or logical pipeline objects be updated in the
+specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_task_status/3">set_task_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Task runners call <code class="inline">SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide
+information about the final status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#validate_pipeline_definition/3">validate_pipeline_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Validates the specified pipeline definition to ensure that it is well formed and can be run
+without error.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="activate_pipeline/3">
+
+    <span id="activate_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#activate_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">activate_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L37" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Validates the specified pipeline and starts processing pipeline tasks.</p>
+<p>If the pipeline does not pass validation, activation fails.</p>
+<p>If you need to pause the pipeline to investigate an issue with a component, such as a data source
+or script, call <code class="inline">DeactivatePipeline</code>.</p>
+<p>To activate a finished pipeline, modify the end date for the pipeline and then activate it.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_tags/3">
+
+    <span id="add_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or modifies tags for the specified pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_pipeline/3">
+
+    <span id="create_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L53" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new, empty pipeline.</p>
+<p>Use <code class="inline">PutPipelineDefinition</code> to populate the pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="deactivate_pipeline/3">
+
+    <span id="deactivate_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#deactivate_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deactivate_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L66" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deactivates the specified running pipeline.</p>
+<p>The pipeline is set to the <code class="inline">DEACTIVATING</code> state until the deactivation process completes.</p>
+<p>To resume a deactivated pipeline, use <code class="inline">ActivatePipeline</code>. By default, the pipeline resumes from
+the last completed execution. Optionally, you can specify the date and time to resume the
+pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_pipeline/3">
+
+    <span id="delete_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a pipeline, its pipeline definition, and its run history.</p>
+<p>AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently
+being processed by task runners.</p>
+<p>Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline. To
+temporarily pause a pipeline instead of deleting it, call <code class="inline">SetStatus</code> with the status set to
+<code class="inline">PAUSE</code> on individual components. Components that are paused by <code class="inline">SetStatus</code> can be resumed.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_objects/3">
+
+    <span id="describe_objects/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_objects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_objects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L89" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the object definitions for a set of objects associated with the pipeline.</p>
+<p>Object definitions are composed of a set of fields that define the properties of the object.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_pipelines/3">
+
+    <span id="describe_pipelines/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_pipelines/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_pipelines(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves metadata about one or more pipelines.</p>
+<p>The information retrieved includes the name of the pipeline, the pipeline identifier, its current
+state, and the user account that owns the pipeline. Using account credentials, you can retrieve
+metadata about pipelines that you or your IAM users have created. If you are using an IAM user
+account, you can retrieve metadata about only those pipelines for which you have read permissions.</p>
+<p>To retrieve the full pipeline definition instead of metadata about the pipeline, call
+<code class="inline">GetPipelineDefinition</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="evaluate_expression/3">
+
+    <span id="evaluate_expression/2"></span>
+
+  <div class="detail-header">
+    <a href="#evaluate_expression/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">evaluate_expression(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Task runners call <code class="inline">EvaluateExpression</code> to evaluate a string in the context of the specified
+object.</p>
+<p>For example, a task runner can evaluate SQL queries stored in Amazon S3.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pipeline_definition/3">
+
+    <span id="get_pipeline_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pipeline_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pipeline_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the definition of the specified pipeline.</p>
+<p>You can call <code class="inline">GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using
+<code class="inline">PutPipelineDefinition</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pipelines/3">
+
+    <span id="list_pipelines/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_pipelines/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pipelines(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L131" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the pipeline identifiers for all active pipelines that you have permission to access.</p>
+
+  </section>
+</section>
+<section class="detail" id="poll_for_task/3">
+
+    <span id="poll_for_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#poll_for_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">poll_for_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Task runners call <code class="inline">PollForTask</code> to receive a task to perform from AWS Data Pipeline.</p>
+<p>The task runner specifies which tasks it can perform by setting a value for the <code class="inline">workerGroup</code>
+parameter. The task returned can come from any of the pipelines that match the <code class="inline">workerGroup</code> value
+passed in by the task runner and that was launched using the IAM user credentials specified by the
+task runner.</p>
+<p>If tasks are ready in the work queue, <code class="inline">PollForTask</code> returns a response immediately. If no tasks
+are available in the queue, <code class="inline">PollForTask</code> uses long-polling and holds on to a poll connection for
+up to a 90 seconds, during which time the first newly scheduled task is handed to the task runner.
+To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner
+should not call <code class="inline">PollForTask</code> again on the same <code class="inline">workerGroup</code> until it receives a response, and
+this can take up to 90 seconds.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_pipeline_definition/3">
+
+    <span id="put_pipeline_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_pipeline_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_pipeline_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tasks, schedules, and preconditions to the specified pipeline.</p>
+<p>You can use <code class="inline">PutPipelineDefinition</code> to populate a new pipeline.</p>
+<p><code class="inline">PutPipelineDefinition</code> also validates the configuration as it adds it to the pipeline. Changes to
+the pipeline are saved unless one of the following three validation errors exists in the pipeline.</p>
+<ol>
+<li>An object is missing a name or identifier field.
+</li>
+<li>A string or reference field is empty.
+</li>
+<li>The number of objects in the pipeline exceeds the maximum allowed objects.
+</li>
+<li>The pipeline is in a FINISHED state.
+</li>
+</ol>
+<p>Pipeline object definitions are passed to the <code class="inline">PutPipelineDefinition</code> action and returned by the
+<code class="inline">GetPipelineDefinition</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="query_objects/3">
+
+    <span id="query_objects/2"></span>
+
+  <div class="detail-header">
+    <a href="#query_objects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">query_objects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L178" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Queries the specified pipeline for the names of objects that match the specified set of
+conditions.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_tags/3">
+
+    <span id="remove_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes existing tags from the specified pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="report_task_progress/3">
+
+    <span id="report_task_progress/2"></span>
+
+  <div class="detail-header">
+    <a href="#report_task_progress/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">report_task_progress(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Task runners call <code class="inline">ReportTaskProgress</code> when assigned a task to acknowledge that it has the task.</p>
+<p>If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in
+a subsequent <code class="inline">PollForTask</code> call. After this initial acknowledgement, the task runner only needs to
+report progress every 15 minutes to maintain its ownership of the task. You can change this
+reporting time from 15 minutes by specifying a <code class="inline">reportProgressTimeout</code> field in your pipeline.</p>
+<p>If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes that the
+task runner is unable to process the task and reassigns the task in a subsequent response to
+<code class="inline">PollForTask</code>. Task runners should call <code class="inline">ReportTaskProgress</code> every 60 seconds.</p>
+
+  </section>
+</section>
+<section class="detail" id="report_task_runner_heartbeat/3">
+
+    <span id="report_task_runner_heartbeat/2"></span>
+
+  <div class="detail-header">
+    <a href="#report_task_runner_heartbeat/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">report_task_runner_heartbeat(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Task runners call <code class="inline">ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are
+operational.</p>
+<p>If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the
+web service can use this call to detect when the task runner application has failed and restart a
+new instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_status/3">
+
+    <span id="set_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L225" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests that the status of the specified physical or logical pipeline objects be updated in the
+specified pipeline.</p>
+<p>This update might not occur immediately, but is eventually consistent. The status that can be set
+depends on the type of object (for example, DataNode or Activity). You cannot perform this
+operation on <code class="inline">FINISHED</code> pipelines and attempting to do so returns <code class="inline">InvalidRequestException</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_task_status/3">
+
+    <span id="set_task_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_task_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_task_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Task runners call <code class="inline">SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide
+information about the final status.</p>
+<p>A task runner makes this call regardless of whether the task was sucessful. A task runner does not
+need to call <code class="inline">SetTaskStatus</code> for tasks that are canceled by the web service during a call to
+<code class="inline">ReportTaskProgress</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="validate_pipeline_definition/3">
+
+    <span id="validate_pipeline_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#validate_pipeline_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">validate_pipeline_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/datapipeline.ex#L245" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Validates the specified pipeline definition to ensure that it is well formed and can be run
+without error.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

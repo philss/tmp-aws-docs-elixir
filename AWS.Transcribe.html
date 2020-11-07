@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Transcribe — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Transcribe
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Operations and objects for transcribing speech to text.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_language_model/3">create_language_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new custom language model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_medical_vocabulary/3">create_medical_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+transcribes your audio file.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_vocabulary/3">create_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles
+transcription of an audio file.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_vocabulary_filter/3">create_vocabulary_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new vocabulary filter that you can use to filter words, such as profane words, from the
+output of a transcription job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_language_model/3">delete_language_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a custom language model using its name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_medical_transcription_job/3">delete_medical_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a transcription job generated by Amazon Transcribe Medical and any related information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_medical_vocabulary/3">delete_medical_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a vocabulary from Amazon Transcribe Medical.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_transcription_job/3">delete_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a previously submitted transcription job along with any other generated results such as
+the transcription, models, and so on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_vocabulary/3">delete_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a vocabulary from Amazon Transcribe.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_vocabulary_filter/3">delete_vocabulary_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a vocabulary filter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_language_model/3">describe_language_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a single custom language model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_medical_transcription_job/3">get_medical_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a transcription job from Amazon Transcribe Medical.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_medical_vocabulary/3">get_medical_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a medical vocabulary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_transcription_job/3">get_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a transcription job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_vocabulary/3">get_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a vocabulary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_vocabulary_filter/3">get_vocabulary_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a vocabulary filter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_language_models/3">list_language_models(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides more information about the custom language models you&#39;ve created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_medical_transcription_jobs/3">list_medical_transcription_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists medical transcription jobs with a specified status or substring that matches their names.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_medical_vocabularies/3">list_medical_vocabularies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of vocabularies that match the specified criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_transcription_jobs/3">list_transcription_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists transcription jobs with the specified status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_vocabularies/3">list_vocabularies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of vocabularies that match the specified criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_vocabulary_filters/3">list_vocabulary_filters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about vocabulary filters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_medical_transcription_job/3">start_medical_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a batch job to transcribe medical speech to text.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_transcription_job/3">start_transcription_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous job to transcribe speech to text.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_medical_vocabulary/3">update_medical_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a vocabulary with new values that you provide in a different text file from the one you
+used to create the vocabulary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_vocabulary/3">update_vocabulary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing vocabulary with new values.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_vocabulary_filter/3">update_vocabulary_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a vocabulary filter with a new list of filtered words.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_language_model/3">
+
+    <span id="create_language_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_language_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_language_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L15" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new custom language model.</p>
+<p>Use Amazon S3 prefixes to provide the location of your input files. The time it takes to create
+your model depends on the size of your training data.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_medical_vocabulary/3">
+
+    <span id="create_medical_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_medical_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_medical_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical
+transcribes your audio file.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_vocabulary/3">
+
+    <span id="create_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new custom vocabulary that you can use to change the way Amazon Transcribe handles
+transcription of an audio file.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_vocabulary_filter/3">
+
+    <span id="create_vocabulary_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_vocabulary_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_vocabulary_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new vocabulary filter that you can use to filter words, such as profane words, from the
+output of a transcription job.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_language_model/3">
+
+    <span id="delete_language_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_language_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_language_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a custom language model using its name.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_medical_transcription_job/3">
+
+    <span id="delete_medical_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_medical_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_medical_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L53" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a transcription job generated by Amazon Transcribe Medical and any related information.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_medical_vocabulary/3">
+
+    <span id="delete_medical_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_medical_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_medical_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a vocabulary from Amazon Transcribe Medical.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_transcription_job/3">
+
+    <span id="delete_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L68" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a previously submitted transcription job along with any other generated results such as
+the transcription, models, and so on.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_vocabulary/3">
+
+    <span id="delete_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a vocabulary from Amazon Transcribe.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_vocabulary_filter/3">
+
+    <span id="delete_vocabulary_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_vocabulary_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_vocabulary_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a vocabulary filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_language_model/3">
+
+    <span id="describe_language_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_language_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_language_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a single custom language model.</p>
+<p>Use this information to see details about the language model in your AWS account. You can also see
+whether the base language model used to create your custom language model has been updated. If
+Amazon Transcribe has updated the base model, you can create a new custom language model using the
+updated base model. If the language model wasn&#39;t created, you can use this operation to understand
+why Amazon Transcribe couldn&#39;t create it.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_medical_transcription_job/3">
+
+    <span id="get_medical_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_medical_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_medical_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a transcription job from Amazon Transcribe Medical.</p>
+<p>To see the status of the job, check the <code class="inline">TranscriptionJobStatus</code> field. If the status is
+<code class="inline">COMPLETED</code>, the job is finished. You find the results of the completed job in the
+<code class="inline">TranscriptFileUri</code> field.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_medical_vocabulary/3">
+
+    <span id="get_medical_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_medical_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_medical_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L113" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a medical vocabulary.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_transcription_job/3">
+
+    <span id="get_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a transcription job.</p>
+<p>To see the status of the job, check the <code class="inline">TranscriptionJobStatus</code> field. If the status is
+<code class="inline">COMPLETED</code>, the job is finished and you can find the results at the location specified in the
+<code class="inline">TranscriptFileUri</code> field. If you enable content redaction, the redacted transcript appears in
+<code class="inline">RedactedTranscriptFileUri</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_vocabulary/3">
+
+    <span id="get_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a vocabulary.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_vocabulary_filter/3">
+
+    <span id="get_vocabulary_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_vocabulary_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_vocabulary_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a vocabulary filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_language_models/3">
+
+    <span id="list_language_models/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_language_models/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_language_models(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L149" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides more information about the custom language models you&#39;ve created.</p>
+<p>You can use the information in this list to find a specific custom language model. You can then
+use the operation to get more information about it.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_medical_transcription_jobs/3">
+
+    <span id="list_medical_transcription_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_medical_transcription_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_medical_transcription_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists medical transcription jobs with a specified status or substring that matches their names.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_medical_vocabularies/3">
+
+    <span id="list_medical_vocabularies/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_medical_vocabularies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_medical_vocabularies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of vocabularies that match the specified criteria.</p>
+<p>If you don&#39;t enter a value in any of the request parameters, returns the entire list of
+vocabularies.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_transcription_jobs/3">
+
+    <span id="list_transcription_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_transcription_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_transcription_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L173" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists transcription jobs with the specified status.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_vocabularies/3">
+
+    <span id="list_vocabularies/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_vocabularies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_vocabularies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of vocabularies that match the specified criteria.</p>
+<p>If no criteria are specified, returns the entire list of vocabularies.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_vocabulary_filters/3">
+
+    <span id="list_vocabulary_filters/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_vocabulary_filters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_vocabulary_filters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L189" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about vocabulary filters.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_medical_transcription_job/3">
+
+    <span id="start_medical_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_medical_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_medical_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a batch job to transcribe medical speech to text.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_transcription_job/3">
+
+    <span id="start_transcription_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_transcription_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_transcription_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L203" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous job to transcribe speech to text.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_medical_vocabulary/3">
+
+    <span id="update_medical_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_medical_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_medical_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L214" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a vocabulary with new values that you provide in a different text file from the one you
+used to create the vocabulary.</p>
+<p>The <code class="inline">UpdateMedicalVocabulary</code> operation overwrites all of the existing information with the values
+that you provide in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_vocabulary/3">
+
+    <span id="update_vocabulary/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_vocabulary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_vocabulary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing vocabulary with new values.</p>
+<p>The <code class="inline">UpdateVocabulary</code> operation overwrites all of the existing information with the values that
+you provide in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_vocabulary_filter/3">
+
+    <span id="update_vocabulary_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_vocabulary_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_vocabulary_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/transcribe.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a vocabulary filter with a new list of filtered words.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

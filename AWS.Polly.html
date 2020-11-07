@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Polly — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Polly
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Polly is a web service that makes it easy to synthesize speech from text.</p>
+<p>The Amazon Polly service provides API operations for synthesizing high-quality speech from plain
+text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that
+enable you to get the best results for your application domain.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_lexicon/4">delete_lexicon(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified pronunciation lexicon stored in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_voices/6">describe_voices(client, engine \\ nil, include_additional_language_codes \\ nil, language_code \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of voices that are available for use when requesting speech synthesis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_lexicon/3">get_lexicon(client, name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the content of the specified pronunciation lexicon stored in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_speech_synthesis_task/3">get_speech_synthesis_task(client, task_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a specific SpeechSynthesisTask object based on its TaskID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_lexicons/3">list_lexicons(client, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of pronunciation lexicons stored in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_speech_synthesis_tasks/5">list_speech_synthesis_tasks(client, max_results \\ nil, next_token \\ nil, status \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_lexicon/4">put_lexicon(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stores a pronunciation lexicon in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_speech_synthesis_task/3">start_speech_synthesis_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows the creation of an asynchronous synthesis task, by starting a new <code class="inline">SpeechSynthesisTask</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#synthesize_speech/3">synthesize_speech(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="delete_lexicon/4">
+
+    <span id="delete_lexicon/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_lexicon/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_lexicon(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L21" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified pronunciation lexicon stored in an AWS Region.</p>
+<p>A lexicon which has been deleted is not available for speech synthesis, nor is it possible to
+retrieve it using either the <code class="inline">GetLexicon</code> or <code class="inline">ListLexicon</code> APIs.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_voices/6">
+
+    <span id="describe_voices/1"></span>
+
+    <span id="describe_voices/2"></span>
+
+    <span id="describe_voices/3"></span>
+
+    <span id="describe_voices/4"></span>
+
+    <span id="describe_voices/5"></span>
+
+  <div class="detail-header">
+    <a href="#describe_voices/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_voices(client, engine \\ nil, include_additional_language_codes \\ nil, language_code \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of voices that are available for use when requesting speech synthesis.</p>
+<p>Each voice speaks a specified language, is either male or female, and is identified by an ID,
+which is the ASCII version of the voice name.</p>
+<p>When synthesizing speech ( <code class="inline">SynthesizeSpeech</code> ), you provide the voice ID for the voice you want
+from the list of voices returned by <code class="inline">DescribeVoices</code>.</p>
+<p>For example, you want your news reader application to read news in a specific language, but giving
+a user the option to choose the voice. Using the <code class="inline">DescribeVoices</code> operation you can provide the
+user with a list of available voices to select from.</p>
+<p>You can optionally specify a language code to filter the available voices. For example, if you
+specify <code class="inline">en-US</code>, the operation returns a list of all available US English voices.</p>
+<p>This operation requires permissions to perform the <code class="inline">polly:DescribeVoices</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_lexicon/3">
+
+    <span id="get_lexicon/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_lexicon/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_lexicon(client, name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the content of the specified pronunciation lexicon stored in an AWS Region.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_speech_synthesis_task/3">
+
+    <span id="get_speech_synthesis_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_speech_synthesis_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_speech_synthesis_task(client, task_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a specific SpeechSynthesisTask object based on its TaskID.</p>
+<p>This object contains information about the given speech synthesis task, including the status of
+the task, and a link to the S3 bucket containing the output of the task.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_lexicons/3">
+
+    <span id="list_lexicons/1"></span>
+
+    <span id="list_lexicons/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_lexicons/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_lexicons(client, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of pronunciation lexicons stored in an AWS Region.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_speech_synthesis_tasks/5">
+
+    <span id="list_speech_synthesis_tasks/1"></span>
+
+    <span id="list_speech_synthesis_tasks/2"></span>
+
+    <span id="list_speech_synthesis_tasks/3"></span>
+
+    <span id="list_speech_synthesis_tasks/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_speech_synthesis_tasks/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_speech_synthesis_tasks(client, max_results \\ nil, next_token \\ nil, status \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L121" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.</p>
+<p>This operation can filter the tasks by their status, for example, allowing users to list only
+tasks that are completed.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_lexicon/4">
+
+    <span id="put_lexicon/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_lexicon/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_lexicon(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stores a pronunciation lexicon in an AWS Region.</p>
+<p>If a lexicon with the same name already exists in the region, it is overwritten by the new
+lexicon. Lexicon operations have eventual consistency, therefore, it might take some time before
+the lexicon is available to the SynthesizeSpeech operation.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_speech_synthesis_task/3">
+
+    <span id="start_speech_synthesis_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_speech_synthesis_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_speech_synthesis_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows the creation of an asynchronous synthesis task, by starting a new <code class="inline">SpeechSynthesisTask</code>.</p>
+<p>This operation requires all the standard information needed for speech synthesis, plus the name of
+an Amazon S3 bucket for the service to store the output of the synthesis task and two optional
+parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is created, this operation
+will return a SpeechSynthesisTask object, which will include an identifier of this task as well as
+the current status.</p>
+
+  </section>
+</section>
+<section class="detail" id="synthesize_speech/3">
+
+    <span id="synthesize_speech/2"></span>
+
+  <div class="detail-header">
+    <a href="#synthesize_speech/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">synthesize_speech(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.</p>
+<p>SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the
+voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping
+is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.EKS — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.EKS
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to
+run Kubernetes on AWS without needing to stand up or maintain your own Kubernetes control plane.</p>
+<p>Kubernetes is an open-source system for automating the deployment, scaling, and management of
+containerized applications.</p>
+<p>Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the
+existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are
+fully compatible with applications running on any standard Kubernetes environment, whether running
+in on-premises data centers or public clouds. This means that you can easily migrate any standard
+Kubernetes application to Amazon EKS without any code modification required.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cluster/3">create_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon EKS control plane.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_fargate_profile/4">create_fargate_profile(client, cluster_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS Fargate profile for your Amazon EKS cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_nodegroup/4">create_nodegroup(client, cluster_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a managed worker node group for an Amazon EKS cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cluster/4">delete_cluster(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the Amazon EKS cluster control plane.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_fargate_profile/5">delete_fargate_profile(client, cluster_name, fargate_profile_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an AWS Fargate profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_nodegroup/5">delete_nodegroup(client, cluster_name, nodegroup_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon EKS node group for a cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_cluster/3">describe_cluster(client, name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns descriptive information about an Amazon EKS cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_fargate_profile/4">describe_fargate_profile(client, cluster_name, fargate_profile_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns descriptive information about an AWS Fargate profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_nodegroup/4">describe_nodegroup(client, cluster_name, nodegroup_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns descriptive information about an Amazon EKS node group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_update/5">describe_update(client, name, update_id, nodegroup_name \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns descriptive information about an update against your Amazon EKS cluster or associated
+managed node group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_clusters/4">list_clusters(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the Amazon EKS clusters in your AWS account in the specified Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_fargate_profiles/5">list_fargate_profiles(client, cluster_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the
+specified Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_nodegroups/5">list_nodegroups(client, cluster_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account
+in the specified Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the tags for an Amazon EKS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_updates/6">list_updates(client, name, max_results \\ nil, next_token \\ nil, nodegroup_name \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account,
+in the specified Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes specified tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_cluster_config/4">update_cluster_config(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon EKS cluster configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_cluster_version/4">update_cluster_version(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon EKS cluster to the specified Kubernetes version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_nodegroup_config/5">update_nodegroup_config(client, cluster_name, nodegroup_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon EKS managed node group configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_nodegroup_version/5">update_nodegroup_version(client, cluster_name, nodegroup_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_cluster/3">
+
+    <span id="create_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon EKS control plane.</p>
+<p>The Amazon EKS control plane consists of control plane instances that run the Kubernetes software,
+such as <code class="inline">etcd</code> and the API server. The control plane runs in an account managed by AWS, and the
+Kubernetes API is exposed via the Amazon EKS API server endpoint. Each Amazon EKS cluster control
+plane is single-tenant and unique and runs on its own set of Amazon EC2 instances.</p>
+<p>The cluster control plane is provisioned across multiple Availability Zones and fronted by an
+Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic network
+interfaces in your VPC subnets to provide connectivity from the control plane instances to the
+worker nodes (for example, to support <code class="inline">kubectl exec</code>, <code class="inline">logs</code>, and <code class="inline">proxy</code> data flows).</p>
+<p>Amazon EKS worker nodes run in your AWS account and connect to your cluster&#39;s control plane via
+the Kubernetes API server endpoint and a certificate file that is created for your cluster.</p>
+<p>You can use the <code class="inline">endpointPublicAccess</code> and <code class="inline">endpointPrivateAccess</code> parameters to enable or disable
+public and private access to your cluster&#39;s Kubernetes API server endpoint. By default, public
+access is enabled, and private access is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access Control</a>
+in the <em> </em>Amazon EKS User Guide<em> </em>.</p>
+<p>You can use the <code class="inline">logging</code> parameter to enable or disable exporting the Kubernetes control plane
+logs for your cluster to CloudWatch Logs. By default, cluster control plane logs aren&#39;t exported
+to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the <em> </em>Amazon
+EKS User Guide<em> </em>.</p>
+<p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control
+plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+<p>Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon EKS
+cluster, you must configure your Kubernetes tooling to communicate with the API server and launch
+worker nodes into your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a> and
+<a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker Nodes</a> in the <em>Amazon EKS
+User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_fargate_profile/4">
+
+    <span id="create_fargate_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_fargate_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_fargate_profile(client, cluster_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS Fargate profile for your Amazon EKS cluster.</p>
+<p>You must have at least one Fargate profile in a cluster to be able to run pods on Fargate.</p>
+<p>The Fargate profile allows an administrator to declare which pods run on Fargate and specify which
+pods run on which Fargate profile. This declaration is done through the profile’s selectors. Each
+profile can have up to five selectors that contain a namespace and labels. A namespace is required
+for every selector. The label field consists of multiple optional key-value pairs. Pods that match
+the selectors are scheduled on Fargate. If a to-be-scheduled pod matches any of the selectors in
+the Fargate profile, then that pod is run on Fargate.</p>
+<p>When you create a Fargate profile, you must specify a pod execution role to use with the pods that
+are scheduled with the profile. This role is added to the cluster&#39;s Kubernetes <a href="https://kubernetes.io/docs/admin/authorization/rbac/">Role Based Access Control</a> (RBAC) for authorization so that
+the <code class="inline">kubelet</code> that is running on the Fargate infrastructure can register with your Amazon EKS
+cluster so that it can appear in your cluster as a node. The pod execution role also provides IAM
+permissions to the Fargate infrastructure to allow read access to Amazon ECR image repositories.
+For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod Execution Role</a> in the <em>Amazon EKS
+User Guide</em>.</p>
+<p>Fargate profiles are immutable. However, you can create a new updated profile to replace an
+existing profile and then delete the original after the updated profile has finished creating.</p>
+<p>If any Fargate profiles in a cluster are in the <code class="inline">DELETING</code> status, you must wait for that Fargate
+profile to finish deleting before you can create any other profiles in that cluster.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/fargate-profile.html">AWS Fargate Profile</a> in the <em>Amazon EKS
+User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_nodegroup/4">
+
+    <span id="create_nodegroup/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_nodegroup/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_nodegroup(client, cluster_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a managed worker node group for an Amazon EKS cluster.</p>
+<p>You can only create a node group for your cluster that is equal to the current Kubernetes version
+for the cluster. All node groups are created with the latest AMI release version for the
+respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch
+template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.</p>
+<p>An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2
+instances that are managed by AWS for an Amazon EKS cluster. Each node group uses a version of the
+Amazon EKS-optimized Amazon Linux 2 AMI. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the <em>Amazon
+EKS User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cluster/4">
+
+    <span id="delete_cluster/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cluster/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cluster(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the Amazon EKS cluster control plane.</p>
+<p>If you have active services in your cluster that are associated with a load balancer, you must
+delete those services before deleting the cluster so that the load balancers are deleted properly.
+Otherwise, you can have orphaned resources in your VPC that prevent you from being able to delete
+the VPC. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting a Cluster</a> in the <em>Amazon EKS
+User Guide</em>.</p>
+<p>If you have managed node groups or Fargate profiles attached to the cluster, you must delete them
+first. For more information, see <code class="inline">DeleteNodegroup</code> and <code class="inline">DeleteFargateProfile</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_fargate_profile/5">
+
+    <span id="delete_fargate_profile/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_fargate_profile/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_fargate_profile(client, cluster_name, fargate_profile_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an AWS Fargate profile.</p>
+<p>When you delete a Fargate profile, any pods running on Fargate that were created with the profile
+are deleted. If those pods match another Fargate profile, then they are scheduled on Fargate with
+that profile. If they no longer match any Fargate profiles, then they are not scheduled on Fargate
+and they may remain in a pending state.</p>
+<p>Only one Fargate profile in a cluster can be in the <code class="inline">DELETING</code> status at a time. You must wait for
+a Fargate profile to finish deleting before you can delete any other profiles in that cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_nodegroup/5">
+
+    <span id="delete_nodegroup/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_nodegroup/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_nodegroup(client, cluster_name, nodegroup_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon EKS node group for a cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_cluster/3">
+
+    <span id="describe_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_cluster(client, name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L174" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns descriptive information about an Amazon EKS cluster.</p>
+<p>The API server endpoint and certificate authority data returned by this operation are required for
+<code class="inline">kubelet</code> and <code class="inline">kubectl</code> to communicate with your Kubernetes API server. For more information, see
+<a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Create a kubeconfig for Amazon EKS</a>.</p>
+<p>The API server endpoint and certificate authority data aren&#39;t available until the cluster reaches
+the <code class="inline">ACTIVE</code> state.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_fargate_profile/4">
+
+    <span id="describe_fargate_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_fargate_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_fargate_profile(client, cluster_name, fargate_profile_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns descriptive information about an AWS Fargate profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_nodegroup/4">
+
+    <span id="describe_nodegroup/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_nodegroup/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_nodegroup(client, cluster_name, nodegroup_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns descriptive information about an Amazon EKS node group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_update/5">
+
+    <span id="describe_update/3"></span>
+
+    <span id="describe_update/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_update/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_update(client, name, update_id, nodegroup_name \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns descriptive information about an update against your Amazon EKS cluster or associated
+managed node group.</p>
+<p>When the status of the update is <code class="inline">Succeeded</code>, the update is complete. If an update fails, the
+status is <code class="inline">Failed</code>, and an error detail explains the reason for the failure.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_clusters/4">
+
+    <span id="list_clusters/1"></span>
+
+    <span id="list_clusters/2"></span>
+
+    <span id="list_clusters/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_clusters/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_clusters(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the Amazon EKS clusters in your AWS account in the specified Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_fargate_profiles/5">
+
+    <span id="list_fargate_profiles/2"></span>
+
+    <span id="list_fargate_profiles/3"></span>
+
+    <span id="list_fargate_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_fargate_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_fargate_profiles(client, cluster_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L244" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the AWS Fargate profiles associated with the specified cluster in your AWS account in the
+specified Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_nodegroups/5">
+
+    <span id="list_nodegroups/2"></span>
+
+    <span id="list_nodegroups/3"></span>
+
+    <span id="list_nodegroups/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_nodegroups/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_nodegroups(client, cluster_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L267" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the Amazon EKS managed node groups associated with the specified cluster in your AWS account
+in the specified Region.</p>
+<p>Self-managed node groups are not listed.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the tags for an Amazon EKS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_updates/6">
+
+    <span id="list_updates/2"></span>
+
+    <span id="list_updates/3"></span>
+
+    <span id="list_updates/4"></span>
+
+    <span id="list_updates/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_updates/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_updates(client, name, max_results \\ nil, next_token \\ nil, nodegroup_name \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the updates associated with an Amazon EKS cluster or managed node group in your AWS account,
+in the specified Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
+When a resource is deleted, the tags associated with that resource are deleted as well. Tags that
+you create for Amazon EKS resources do not propagate to any other resources associated with the
+cluster. For example, if you tag a cluster with this operation, that tag does not automatically
+propagate to the subnets and worker nodes associated with the cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes specified tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_cluster_config/4">
+
+    <span id="update_cluster_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_cluster_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_cluster_config(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L376" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon EKS cluster configuration.</p>
+<p>Your cluster continues to function during the update. The response output includes an update ID
+that you can use to track the status of your cluster update with the <code class="inline">DescribeUpdate</code> API
+operation.</p>
+<p>You can use this API operation to enable or disable exporting the Kubernetes control plane logs
+for your cluster to CloudWatch Logs. By default, cluster control plane logs aren&#39;t exported to
+CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the <em> </em>Amazon
+EKS User Guide<em> </em>.</p>
+<p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control
+plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+<p>You can also use this API operation to enable or disable public and private access to your
+cluster&#39;s Kubernetes API server endpoint. By default, public access is enabled, and private access
+is disabled. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access Control</a> in the <em> </em>Amazon
+EKS User Guide<em> </em>.</p>
+<p>At this time, you can not update the subnets or security group IDs for an existing cluster.</p>
+<p>Cluster updates are asynchronous, and they should finish within a few minutes. During an update,
+the cluster status moves to <code class="inline">UPDATING</code> (this status transition is eventually consistent). When the
+update is complete (either <code class="inline">Failed</code> or <code class="inline">Successful</code>), the cluster status moves to <code class="inline">Active</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_cluster_version/4">
+
+    <span id="update_cluster_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_cluster_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_cluster_version(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L398" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon EKS cluster to the specified Kubernetes version.</p>
+<p>Your cluster continues to function during the update. The response output includes an update ID
+that you can use to track the status of your cluster update with the <code class="inline">DescribeUpdate</code> API
+operation.</p>
+<p>Cluster updates are asynchronous, and they should finish within a few minutes. During an update,
+the cluster status moves to <code class="inline">UPDATING</code> (this status transition is eventually consistent). When the
+update is complete (either <code class="inline">Failed</code> or <code class="inline">Successful</code>), the cluster status moves to <code class="inline">Active</code>.</p>
+<p>If your cluster has managed node groups attached to it, all of your node groups’ Kubernetes
+versions must match the cluster’s Kubernetes version in order to update the cluster to a new
+Kubernetes version.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_nodegroup_config/5">
+
+    <span id="update_nodegroup_config/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_nodegroup_config/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_nodegroup_config(client, cluster_name, nodegroup_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L413" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon EKS managed node group configuration.</p>
+<p>Your node group continues to function during the update. The response output includes an update ID
+that you can use to track the status of your node group update with the <code class="inline">DescribeUpdate</code> API
+operation. Currently you can update the Kubernetes labels for a node group or the scaling
+configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_nodegroup_version/5">
+
+    <span id="update_nodegroup_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_nodegroup_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_nodegroup_version(client, cluster_name, nodegroup_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/eks.ex#L442" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.</p>
+<p>You can update a node group using a launch template only if the node group was originally deployed
+with a launch template. If you need to update a custom AMI in a node group that was deployed with
+a launch template, then update your custom AMI, specify the new ID in a new version of the launch
+template, and then update the node group to the new version of the launch template.</p>
+<p>If you update without a launch template, then you can update to the latest available AMI version
+of a node group&#39;s current Kubernetes version by not specifying a Kubernetes version in the
+request. You can update to the latest AMI version of your cluster&#39;s current Kubernetes version by
+specifying your cluster&#39;s Kubernetes version in the request. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux AMI
+Versions</a> in the
+<em>Amazon EKS User Guide</em>.</p>
+<p>You cannot roll back a node group to an earlier Kubernetes version or AMI version.</p>
+<p>When a node in a managed node group is terminated due to a scaling action or update, the pods in
+that node are drained first. Amazon EKS attempts to drain the nodes gracefully and will fail if it
+is unable to do so. You can <code class="inline">force</code> the update if Amazon EKS is unable to drain the nodes as a
+result of a pod disruption budget issue.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

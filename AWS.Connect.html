@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Connect — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Connect
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a
+customer contact center and provide reliable customer engagement at any scale.</p>
+<p>Amazon Connect provides rich metrics and real-time reporting that allow you to optimize contact
+routing. You can also resolve customer issues more efficiently by putting customers in touch with
+the right agents.</p>
+<p>There are limits to the number of Amazon Connect resources that you can create and limits to the
+number of requests that you can make per second. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service Quotas</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+<p>To connect programmatically to an AWS service, you use an endpoint. For a list of Amazon Connect
+endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/connect_region.html">Amazon Connect Endpoints</a>.</p>
+<p>Working with contact flows? Check out the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_routing_profile_queues/5">associate_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a set of queues with a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_contact_flow/4">create_contact_flow(client, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a contact flow for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_routing_profile/4">create_routing_profile(client, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user/4">create_user(client, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a user account for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user/5">delete_user(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user account from the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_contact_flow/4">describe_contact_flow(client, contact_flow_id, instance_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified contact flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_routing_profile/4">describe_routing_profile(client, instance_id, routing_profile_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user/4">describe_user(client, instance_id, user_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified user account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_hierarchy_group/4">describe_user_hierarchy_group(client, hierarchy_group_id, instance_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified hierarchy group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_hierarchy_structure/3">describe_user_hierarchy_structure(client, instance_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the hierarchy structure of the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_routing_profile_queues/5">disassociate_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a set of queues from a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_contact_attributes/4">get_contact_attributes(client, initial_contact_id, instance_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the contact attributes for the specified contact.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_current_metric_data/4">get_current_metric_data(client, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the real-time metric data from the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_federation_token/3">get_federation_token(client, instance_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a token for federation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_metric_data/4">get_metric_data(client, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets historical metric data from the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_contact_flows/6">list_contact_flows(client, instance_id, contact_flow_types \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about the contact flows for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_hours_of_operations/5">list_hours_of_operations(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about the hours of operation for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_phone_numbers/7">list_phone_numbers(client, instance_id, max_results \\ nil, next_token \\ nil, phone_number_country_codes \\ nil, phone_number_types \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about the phone numbers for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_prompts/5">list_prompts(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about the prompts for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_queues/6">list_queues(client, instance_id, max_results \\ nil, next_token \\ nil, queue_types \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about the queues for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_routing_profile_queues/6">list_routing_profile_queues(client, instance_id, routing_profile_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the queues associated with a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_routing_profiles/5">list_routing_profiles(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides summary information about the routing profiles for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_security_profiles/5">list_security_profiles(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides summary information about the security profiles for the specified Amazon Connect
+instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags for the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_hierarchy_groups/5">list_user_hierarchy_groups(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides summary information about the hierarchy groups for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_users/5">list_users(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides summary information about the users for the specified Amazon Connect instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#resume_contact_recording/3">resume_contact_recording(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>When a contact is being recorded, and the recording has been suspended using
+SuspendContactRecording, this API resumes recording the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_chat_contact/3">start_chat_contact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates a contact flow to start a new chat for the customer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_contact_recording/3">start_contact_recording(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This API starts recording the contact when the agent joins the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_outbound_voice_contact/3">start_outbound_voice_contact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This API places an outbound call to a contact, and then initiates the contact flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_contact/3">stop_contact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Ends the specified contact.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_contact_recording/3">stop_contact_recording(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>When a contact is being recorded, this API stops recording the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#suspend_contact_recording/3">suspend_contact_recording(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>When a contact is being recorded, this API suspends recording the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds the specified tags to the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified tags from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_contact_attributes/3">update_contact_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates the contact attributes associated with the specified contact.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_contact_flow_content/5">update_contact_flow_content(client, contact_flow_id, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified contact flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_contact_flow_name/5">update_contact_flow_name(client, contact_flow_id, instance_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The name of the contact flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_routing_profile_concurrency/5">update_routing_profile_concurrency(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing
+profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_routing_profile_default_outbound_queue/5">update_routing_profile_default_outbound_queue(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the default outbound queue of a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_routing_profile_name/5">update_routing_profile_name(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the name and description of a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_routing_profile_queues/5">update_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the properties associated with a set of queues for a routing profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_hierarchy/5">update_user_hierarchy(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns the specified hierarchy group to the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_identity_info/5">update_user_identity_info(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the identity information for the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_phone_config/5">update_user_phone_config(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the phone configuration settings for the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_routing_profile/5">update_user_routing_profile(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns the specified routing profile to the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_security_profiles/5">update_user_security_profiles(client, instance_id, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns the specified security profiles to the specified user.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_routing_profile_queues/5">
+
+    <span id="associate_routing_profile_queues/4"></span>
+
+  <div class="detail-header">
+    <a href="#associate_routing_profile_queues/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a set of queues with a routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_contact_flow/4">
+
+    <span id="create_contact_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_contact_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_contact_flow(client, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a contact flow for the specified Amazon Connect instance.</p>
+<p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_routing_profile/4">
+
+    <span id="create_routing_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_routing_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_routing_profile(client, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user/4">
+
+    <span id="create_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user(client, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a user account for the specified Amazon Connect instance.</p>
+<p>For information about how to create user accounts using the Amazon Connect console, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <em>Amazon
+Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user/5">
+
+    <span id="delete_user/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user account from the specified Amazon Connect instance.</p>
+<p>For information about what happens to a user&#39;s data when their account is deleted, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon Connect
+Instance</a> in the <em>Amazon
+Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_contact_flow/4">
+
+    <span id="describe_contact_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_contact_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_contact_flow(client, contact_flow_id, instance_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified contact flow.</p>
+<p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_routing_profile/4">
+
+    <span id="describe_routing_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_routing_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_routing_profile(client, instance_id, routing_profile_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L97" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user/4">
+
+    <span id="describe_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user(client, instance_id, user_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified user account.</p>
+<p>You can find the instance ID in the console (it’s the final part of the ARN). The console does not
+display the user IDs. Instead, list the users and note the IDs provided in the output.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_hierarchy_group/4">
+
+    <span id="describe_user_hierarchy_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_hierarchy_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_hierarchy_group(client, hierarchy_group_id, instance_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified hierarchy group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_hierarchy_structure/3">
+
+    <span id="describe_user_hierarchy_structure/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_hierarchy_structure/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_hierarchy_structure(client, instance_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L130" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the hierarchy structure of the specified Amazon Connect instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_routing_profile_queues/5">
+
+    <span id="disassociate_routing_profile_queues/4"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_routing_profile_queues/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a set of queues from a routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_contact_attributes/4">
+
+    <span id="get_contact_attributes/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_contact_attributes/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_contact_attributes(client, initial_contact_id, instance_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the contact attributes for the specified contact.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_current_metric_data/4">
+
+    <span id="get_current_metric_data/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_current_metric_data/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_current_metric_data(client, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L163" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the real-time metric data from the specified Amazon Connect instance.</p>
+<p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_federation_token/3">
+
+    <span id="get_federation_token/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_federation_token/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_federation_token(client, instance_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L173" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a token for federation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_metric_data/4">
+
+    <span id="get_metric_data/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_metric_data/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_metric_data(client, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L186" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets historical metric data from the specified Amazon Connect instance.</p>
+<p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_contact_flows/6">
+
+    <span id="list_contact_flows/2"></span>
+
+    <span id="list_contact_flows/3"></span>
+
+    <span id="list_contact_flows/4"></span>
+
+    <span id="list_contact_flows/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_contact_flows/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_contact_flows(client, instance_id, contact_flow_types \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about the contact flows for the specified Amazon Connect instance.</p>
+<p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+<p>For more information about contact flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Contact Flows</a> in the
+<em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_hours_of_operations/5">
+
+    <span id="list_hours_of_operations/2"></span>
+
+    <span id="list_hours_of_operations/3"></span>
+
+    <span id="list_hours_of_operations/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_hours_of_operations/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_hours_of_operations(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about the hours of operation for the specified Amazon Connect instance.</p>
+<p>For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation for a Queue</a> in the
+<em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_phone_numbers/7">
+
+    <span id="list_phone_numbers/2"></span>
+
+    <span id="list_phone_numbers/3"></span>
+
+    <span id="list_phone_numbers/4"></span>
+
+    <span id="list_phone_numbers/5"></span>
+
+    <span id="list_phone_numbers/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_phone_numbers/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_phone_numbers(client, instance_id, max_results \\ nil, next_token \\ nil, phone_number_country_codes \\ nil, phone_number_types \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about the phone numbers for the specified Amazon Connect instance.</p>
+<p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in
+the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_prompts/5">
+
+    <span id="list_prompts/2"></span>
+
+    <span id="list_prompts/3"></span>
+
+    <span id="list_prompts/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_prompts/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_prompts(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about the prompts for the specified Amazon Connect instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_queues/6">
+
+    <span id="list_queues/2"></span>
+
+    <span id="list_queues/3"></span>
+
+    <span id="list_queues/4"></span>
+
+    <span id="list_queues/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_queues/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_queues(client, instance_id, max_results \\ nil, next_token \\ nil, queue_types \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L305" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about the queues for the specified Amazon Connect instance.</p>
+<p>For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues: Standard and Agent</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_routing_profile_queues/6">
+
+    <span id="list_routing_profile_queues/3"></span>
+
+    <span id="list_routing_profile_queues/4"></span>
+
+    <span id="list_routing_profile_queues/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_routing_profile_queues/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_routing_profile_queues(client, instance_id, routing_profile_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L330" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the queues associated with a routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_routing_profiles/5">
+
+    <span id="list_routing_profiles/2"></span>
+
+    <span id="list_routing_profiles/3"></span>
+
+    <span id="list_routing_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_routing_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_routing_profiles(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L353" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides summary information about the routing profiles for the specified Amazon Connect instance.</p>
+<p>For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing Profile</a> in
+the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_security_profiles/5">
+
+    <span id="list_security_profiles/2"></span>
+
+    <span id="list_security_profiles/3"></span>
+
+    <span id="list_security_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_security_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_security_profiles(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides summary information about the security profiles for the specified Amazon Connect
+instance.</p>
+<p>For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in
+the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L400" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags for the specified resource.</p>
+<p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_hierarchy_groups/5">
+
+    <span id="list_user_hierarchy_groups/2"></span>
+
+    <span id="list_user_hierarchy_groups/3"></span>
+
+    <span id="list_user_hierarchy_groups/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_hierarchy_groups/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_hierarchy_groups(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L413" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides summary information about the hierarchy groups for the specified Amazon Connect instance.</p>
+<p>For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the
+<em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_users/5">
+
+    <span id="list_users/2"></span>
+
+    <span id="list_users/3"></span>
+
+    <span id="list_users/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_users/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_users(client, instance_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L433" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides summary information about the users for the specified Amazon Connect instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="resume_contact_recording/3">
+
+    <span id="resume_contact_recording/2"></span>
+
+  <div class="detail-header">
+    <a href="#resume_contact_recording/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">resume_contact_recording(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L456" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>When a contact is being recorded, and the recording has been suspended using
+SuspendContactRecording, this API resumes recording the call.</p>
+<p>Only voice recordings are supported at this time.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_chat_contact/3">
+
+    <span id="start_chat_contact/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_chat_contact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_chat_contact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates a contact flow to start a new chat for the customer.</p>
+<p>Response of this API provides a token required to obtain credentials from the
+<a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>
+<p>When a new chat contact is successfully created, clients need to subscribe to the participant’s
+connection for the created chat within 5 minutes. This is achieved by invoking
+<a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+with WEBSOCKET and CONNECTION_CREDENTIALS.</p>
+<p>A 429 error occurs in two situations:</p>
+<ul>
+<li><p>API rate limit is exceeded. API TPS throttling returns a <code class="inline">TooManyRequests</code> exception
+from the API Gateway.</p>
+</li>
+<li><p>The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota for concurrent active chats</a>
+is exceeded. Active chat throttling returns a <code class="inline">LimitExceededException</code>.</p>
+</li>
+</ul>
+<p>For more information about how chat works, see
+<a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat.html">Chat</a> in the <em>Amazon Connect
+Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_contact_recording/3">
+
+    <span id="start_contact_recording/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_contact_recording/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_contact_recording(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L507" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This API starts recording the contact when the agent joins the call.</p>
+<p>StartContactRecording is a one-time action. For example, if you use StopContactRecording to stop
+recording an ongoing call, you can&#39;t use StartContactRecording to restart it. For scenarios where
+the recording has started and you want to suspend and resume it, such as when collecting sensitive
+information (for example, a credit card number), use SuspendContactRecording and
+ResumeContactRecording.</p>
+<p>You can use this API to override the recording behavior configured in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-recording-behavior.html">Set recording behavior</a>
+block.</p>
+<p>Only voice recordings are supported at this time.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_outbound_voice_contact/3">
+
+    <span id="start_outbound_voice_contact/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_outbound_voice_contact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_outbound_voice_contact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L531" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This API places an outbound call to a contact, and then initiates the contact flow.</p>
+<p>It performs the actions in the contact flow that&#39;s specified (in <code class="inline">ContactFlowId</code>).</p>
+<p>Agents are not involved in initiating the outbound API (that is, dialing the contact). If the
+contact flow places an outbound call to a contact, and then puts the contact in queue, that&#39;s when
+the call is routed to the agent, like any other inbound case.</p>
+<p>There is a 60 second dialing timeout for this operation. If the call is not connected after 60
+seconds, it fails.</p>
+<p>UK numbers with a 447 prefix are not allowed by default. Before you can dial these UK mobile
+numbers, you must submit a service quota increase request. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon Connect Service
+Quotas</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_contact/3">
+
+    <span id="stop_contact/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_contact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_contact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L541" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Ends the specified contact.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_contact_recording/3">
+
+    <span id="stop_contact_recording/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_contact_recording/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_contact_recording(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L558" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>When a contact is being recorded, this API stops recording the call.</p>
+<p>StopContactRecording is a one-time action. If you use StopContactRecording to stop recording an
+ongoing call, you can&#39;t use StartContactRecording to restart it. For scenarios where the recording
+has started and you want to suspend it for sensitive information (for example, to collect a credit
+card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.</p>
+<p>Only voice recordings are supported at this time.</p>
+
+  </section>
+</section>
+<section class="detail" id="suspend_contact_recording/3">
+
+    <span id="suspend_contact_recording/2"></span>
+
+  <div class="detail-header">
+    <a href="#suspend_contact_recording/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">suspend_contact_recording(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L575" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>When a contact is being recorded, this API suspends recording the call.</p>
+<p>For example, you might suspend the call recording while collecting sensitive information, such as
+a credit card number. Then use ResumeContactRecording to restart recording.</p>
+<p>The period of time that the recording is suspended is filled with silence in the final recording.</p>
+<p>Only voice recordings are supported at this time.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L590" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds the specified tags to the specified resource.</p>
+<p>The supported resource types are users, routing profiles, and contact flows.</p>
+<p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based Policy Examples</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L600" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified tags from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_contact_attributes/3">
+
+    <span id="update_contact_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_contact_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_contact_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L633" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates the contact attributes associated with the specified contact.</p>
+<p>You can add or update attributes for both ongoing and completed contacts. For example, you can
+update the customer&#39;s name or the reason the customer called while the call is active, or add
+notes about steps that the agent took during the call that are displayed to the next agent that
+takes the call. You can also update attributes for a contact using data from your CRM application
+and save the data with the contact in Amazon Connect. You could also flag calls for additional
+analysis, such as legal review or identifying abusive callers.</p>
+<p>Contact attributes are available in Amazon Connect for 24 months, and are then deleted.</p>
+<p>This operation is also available in the Amazon Connect Flow language. See
+<a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-actions-updatecontactattributes.html">UpdateContactAttributes</a>.</p>
+<p><strong>Important:</strong> You cannot use the operation to update attributes for contacts that occurred prior
+to the release of the API, September 12, 2018. You can update attributes only for contacts that
+started after the release of the API. If you attempt to update attributes for a contact that
+occurred prior to the release of the API, a 400 error is returned. This applies also to queued
+callbacks that were initiated prior to the release of the API but are still active in your
+instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_contact_flow_content/5">
+
+    <span id="update_contact_flow_content/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_contact_flow_content/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_contact_flow_content(client, contact_flow_id, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L645" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified contact flow.</p>
+<p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect Flow language</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_contact_flow_name/5">
+
+    <span id="update_contact_flow_name/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_contact_flow_name/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_contact_flow_name(client, contact_flow_id, instance_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L655" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The name of the contact flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_routing_profile_concurrency/5">
+
+    <span id="update_routing_profile_concurrency/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_routing_profile_concurrency/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_routing_profile_concurrency(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L666" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing
+profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_routing_profile_default_outbound_queue/5">
+
+    <span id="update_routing_profile_default_outbound_queue/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_routing_profile_default_outbound_queue/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_routing_profile_default_outbound_queue(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L676" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the default outbound queue of a routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_routing_profile_name/5">
+
+    <span id="update_routing_profile_name/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_routing_profile_name/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_routing_profile_name(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L689" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the name and description of a routing profile.</p>
+<p>The request accepts the following data in JSON format. At least <code class="inline">Name</code> or <code class="inline">Description</code> must be
+provided.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_routing_profile_queues/5">
+
+    <span id="update_routing_profile_queues/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_routing_profile_queues/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_routing_profile_queues(client, instance_id, routing_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L699" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the properties associated with a set of queues for a routing profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_hierarchy/5">
+
+    <span id="update_user_hierarchy/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_hierarchy/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_hierarchy(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L709" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns the specified hierarchy group to the specified user.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_identity_info/5">
+
+    <span id="update_user_identity_info/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_identity_info/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_identity_info(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L726" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the identity information for the specified user.</p>
+<p>Someone with the ability to invoke <code class="inline">UpdateUserIndentityInfo</code> can change the login credentials of
+other users by changing their email address. This poses a security risk to your organization. They
+can change the email address of a user to the attacker&#39;s email address, and then reset the
+password through email. We strongly recommend limiting who has the ability to invoke
+<code class="inline">UpdateUserIndentityInfo</code>. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-profile-best-practices.html">Best Practices for Security Profiles</a>
+in the <em>Amazon Connect Administrator Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_phone_config/5">
+
+    <span id="update_user_phone_config/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_phone_config/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_phone_config(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L736" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the phone configuration settings for the specified user.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_routing_profile/5">
+
+    <span id="update_user_routing_profile/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_routing_profile/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_routing_profile(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns the specified routing profile to the specified user.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_security_profiles/5">
+
+    <span id="update_user_security_profiles/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_security_profiles/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_security_profiles(client, instance_id, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/connect.ex#L756" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns the specified security profiles to the specified user.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

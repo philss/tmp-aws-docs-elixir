@@ -1,0 +1,3040 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.OpsWorks — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.OpsWorks
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS OpsWorks</p>
+<p>Welcome to the <em>AWS OpsWorks Stacks API Reference</em>.</p>
+<p>This guide provides descriptions, syntax, and usage examples for AWS OpsWorks Stacks actions and
+data types, including common parameters and error codes.</p>
+<p>AWS OpsWorks Stacks is an application management service that provides an integrated experience
+for overseeing the complete application lifecycle. For information about this product, go to the
+<a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.  <strong>SDKs and CLI</strong></p>
+<p>The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command Line Interface
+(CLI) or by using one of the AWS SDKs to implement applications in your preferred language. For
+more information, see:</p>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS CLI</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/opsworks/AWSOpsWorksClient.html">AWS SDK for Java</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/sdkfornet/latest/apidocs/html/N_Amazon_OpsWorks.htm">AWS SDK for .NET</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS SDK for PHP 2</a></p>
+</li>
+<li><p><a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a>     * <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a></p>
+</li>
+<li><p><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a> </p>
+</li>
+</ul>
+<p><strong>Endpoints</strong></p>
+<p>AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one of the
+following endpoints. Stacks can only be accessed or managed within the endpoint in which they are
+created.</p>
+<ul>
+<li><p>opsworks.us-east-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.us-east-2.amazonaws.com</p>
+</li>
+<li><p>opsworks.us-west-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.us-west-2.amazonaws.com</p>
+</li>
+<li><p>opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)</p>
+</li>
+<li><p>opsworks.eu-west-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.eu-west-2.amazonaws.com</p>
+</li>
+<li><p>opsworks.eu-west-3.amazonaws.com</p>
+</li>
+<li><p>opsworks.eu-central-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.ap-northeast-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.ap-northeast-2.amazonaws.com</p>
+</li>
+<li><p>opsworks.ap-south-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.ap-southeast-1.amazonaws.com</p>
+</li>
+<li><p>opsworks.ap-southeast-2.amazonaws.com</p>
+</li>
+<li><p>opsworks.sa-east-1.amazonaws.com</p>
+</li>
+</ul>
+<p><strong>Chef Versions</strong></p>
+<p>When you call <code class="inline">CreateStack</code>, <code class="inline">CloneStack</code>, or <code class="inline">UpdateStack</code> we recommend you use the
+<code class="inline">ConfigurationManager</code> parameter to specify the Chef version. The recommended and default value
+for Linux stacks is currently 12. Windows stacks use Chef 12.2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+Versions</a>.</p>
+<p>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend migrating your existing
+Linux stacks to Chef 12 as soon as possible.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#assign_instance/3">assign_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assign a registered instance to a layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#assign_volume/3">assign_volume(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_elastic_ip/3">associate_elastic_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_elastic_load_balancer/3">attach_elastic_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches an Elastic Load Balancing load balancer to a specified layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#clone_stack/3">clone_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a clone of a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_app/3">create_app(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an app for a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_deployment/3">create_deployment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs deployment or stack commands.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_instance/3">create_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an instance in a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_layer/3">create_layer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_stack/3">create_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_profile/3">create_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new user profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_app/3">delete_app(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified app.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_instance/3">delete_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified instance, which terminates the associated Amazon EC2 instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_layer/3">delete_layer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_stack/3">delete_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_profile/3">delete_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_ecs_cluster/3">deregister_ecs_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters a specified Amazon ECS cluster from a stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_elastic_ip/3">deregister_elastic_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters a specified Elastic IP address.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_instance/3">deregister_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregister a registered Amazon EC2 or on-premises instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_rds_db_instance/3">deregister_rds_db_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters an Amazon RDS instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_volume/3">deregister_volume(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters an Amazon EBS volume.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_agent_versions/3">describe_agent_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the available AWS OpsWorks Stacks agent versions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_apps/3">describe_apps(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of a specified set of apps.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_commands/3">describe_commands(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the results of specified commands.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_deployments/3">describe_deployments(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of a specified set of deployments.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_ecs_clusters/3">describe_ecs_clusters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes Amazon ECS clusters that are registered with a stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_elastic_ips/3">describe_elastic_ips(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_elastic_load_balancers/3">describe_elastic_load_balancers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a stack&#39;s Elastic Load Balancing instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instances/3">describe_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of a set of instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_layers/3">describe_layers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of one or more layers in a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_load_based_auto_scaling/3">describe_load_based_auto_scaling(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes load-based auto scaling configurations for specified layers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_my_user_profile/3">describe_my_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a user&#39;s SSH information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_operating_systems/3">describe_operating_systems(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_permissions/3">describe_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions for a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_raid_arrays/3">describe_raid_arrays(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describe an instance&#39;s RAID arrays.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_rds_db_instances/3">describe_rds_db_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes Amazon RDS instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_service_errors/3">describe_service_errors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes AWS OpsWorks Stacks service errors.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_stack_provisioning_parameters/3">describe_stack_provisioning_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of a stack&#39;s provisioning parameters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_stack_summary/3">describe_stack_summary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the number of layers and apps in a specified stack, and the number of instances in each
+state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_stacks/3">describe_stacks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests a description of one or more stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_time_based_auto_scaling/3">describe_time_based_auto_scaling(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes time-based auto scaling configurations for specified instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_profiles/3">describe_user_profiles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describe specified users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_volumes/3">describe_volumes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an instance&#39;s Amazon EBS volumes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_elastic_load_balancer/3">detach_elastic_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a specified Elastic Load Balancing instance from its layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_elastic_ip/3">disassociate_elastic_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates an Elastic IP address from its instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_hostname_suggestion/3">get_hostname_suggestion(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a generated host name for the specified layer, based on the current host name theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#grant_access/3">grant_access(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action can be used only with Windows stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags/3">list_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of tags that are applied to the specified stack or layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reboot_instance/3">reboot_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reboots a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_ecs_cluster/3">register_ecs_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a specified Amazon ECS cluster with a stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_elastic_ip/3">register_elastic_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers an Elastic IP address with a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_instance/3">register_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_rds_db_instance/3">register_rds_db_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers an Amazon RDS instance with a stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_volume/3">register_volume(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers an Amazon EBS volume with a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_load_based_auto_scaling/3">set_load_based_auto_scaling(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specify the load-based auto scaling configuration for a specified layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_permission/3">set_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specifies a user&#39;s permissions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_time_based_auto_scaling/3">set_time_based_auto_scaling(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specify the time-based auto scaling configuration for a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_instance/3">start_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_stack/3">start_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a stack&#39;s instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_instance/3">stop_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_stack/3">stop_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unassign_instance/3">unassign_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Unassigns a registered instance from all layers that are using the instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unassign_volume/3">unassign_volume(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Unassigns an assigned Amazon EBS volume.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a specified stack or layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_app/3">update_app(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified app.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_elastic_ip/3">update_elastic_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a registered Elastic IP address&#39;s name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_instance/3">update_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_layer/3">update_layer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_my_user_profile/3">update_my_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a user&#39;s SSH public key.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_rds_db_instance/3">update_rds_db_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon RDS instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_stack/3">update_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified stack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_profile/3">update_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified user profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_volume/3">update_volume(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon EBS volume&#39;s name or mount point.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="assign_instance/3">
+
+    <span id="assign_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#assign_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">assign_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assign a registered instance to a layer.</p>
+<ul>
+<li><p>You can assign registered on-premises instances to any layer type.</p>
+</li>
+<li><p>You can assign registered Amazon EC2 instances only to custom layers.</p>
+</li>
+<li><p>You cannot use this action with instances that were created with AWS OpsWorks
+Stacks.</p>
+</li>
+</ul>
+<p><strong>Required Permissions</strong>: To use this action, an AWS Identity and Access Management (IAM) user
+must have a Manage permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="assign_volume/3">
+
+    <span id="assign_volume/2"></span>
+
+  <div class="detail-header">
+    <a href="#assign_volume/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">assign_volume(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified instance.</p>
+<p>The volume must first be registered with the stack by calling <code class="inline">RegisterVolume</code>. After you register
+the volume, you must call <code class="inline">UpdateVolume</code> to specify a mount point before calling <code class="inline">AssignVolume</code>.
+For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_elastic_ip/3">
+
+    <span id="associate_elastic_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_elastic_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_elastic_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified instance.</p>
+<p>The address must first be registered with the stack by calling <code class="inline">RegisterElasticIp</code>. For more
+information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_elastic_load_balancer/3">
+
+    <span id="attach_elastic_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_elastic_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_elastic_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches an Elastic Load Balancing load balancer to a specified layer.</p>
+<p>AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load
+Balancer with AWS OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p>
+<p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load
+Balancing console, API, or CLI. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="clone_stack/3">
+
+    <span id="clone_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#clone_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">clone_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L153" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a clone of a specified stack.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By
+default, all parameters are set to the values used by the parent stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_app/3">
+
+    <span id="create_app/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_app/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_app(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an app for a specified stack.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_deployment/3">
+
+    <span id="create_deployment/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_deployment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_deployment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L180" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs deployment or stack commands.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack
+Commands</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or Manage permissions
+level for the stack, or an attached policy that explicitly grants permissions. For more
+information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_instance/3">
+
+    <span id="create_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an instance in a specified stack.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_layer/3">
+
+    <span id="create_layer/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_layer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_layer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a layer.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p>
+<p>You should use <strong>CreateLayer</strong> for noncustom layer types such as PHP App Server only if the stack
+does not have an existing layer of that type. A stack can have at most one instance of each
+noncustom layer; if you attempt to create a second instance, <strong>CreateLayer</strong> fails. A stack can
+have an arbitrary number of custom layers, so you can call <strong>CreateLayer</strong> as many times as you
+like for that layer type.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_stack/3">
+
+    <span id="create_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new stack.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create a New Stack</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_profile/3">
+
+    <span id="create_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new user profile.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_app/3">
+
+    <span id="delete_app/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_app/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_app(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L245" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified app.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_instance/3">
+
+    <span id="delete_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L260" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified instance, which terminates the associated Amazon EC2 instance.</p>
+<p>You must stop an instance before you can delete it.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_layer/3">
+
+    <span id="delete_layer/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_layer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_layer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified layer.</p>
+<p>You must first stop and then delete all associated instances or unassign registered instances. For
+more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_stack/3">
+
+    <span id="delete_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L288" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified stack.</p>
+<p>You must first delete all instances, layers, and apps or deregister registered instances. For more
+information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_profile/3">
+
+    <span id="delete_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user profile.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_ecs_cluster/3">
+
+    <span id="deregister_ecs_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_ecs_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_ecs_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L312" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters a specified Amazon ECS cluster from a stack.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack or an attached policy that explicitly grants permissions. For more information on user
+permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_elastic_ip/3">
+
+    <span id="deregister_elastic_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_elastic_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_elastic_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters a specified Elastic IP address.</p>
+<p>The address can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_instance/3">
+
+    <span id="deregister_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregister a registered Amazon EC2 or on-premises instance.</p>
+<p>This action removes the instance from the stack and returns it to your control. This action cannot
+be used with instances that were created with AWS OpsWorks Stacks.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_rds_db_instance/3">
+
+    <span id="deregister_rds_db_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_rds_db_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_rds_db_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L350" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters an Amazon RDS instance.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_volume/3">
+
+    <span id="deregister_volume/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_volume/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_volume(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L363" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters an Amazon EBS volume.</p>
+<p>The volume can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_agent_versions/3">
+
+    <span id="describe_agent_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_agent_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_agent_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L373" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the available AWS OpsWorks Stacks agent versions.</p>
+<p>You must specify a stack ID or a configuration manager. <code class="inline">DescribeAgentVersions</code> returns a list of
+available agent versions for the specified stack or configuration manager.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_apps/3">
+
+    <span id="describe_apps/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_apps/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_apps(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of a specified set of apps.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_commands/3">
+
+    <span id="describe_commands/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_commands/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_commands(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L399" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the results of specified commands.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_deployments/3">
+
+    <span id="describe_deployments/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_deployments/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_deployments(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of a specified set of deployments.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_ecs_clusters/3">
+
+    <span id="describe_ecs_clusters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_ecs_clusters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_ecs_clusters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L429" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes Amazon ECS clusters that are registered with a stack.</p>
+<p>If you specify only a stack ID, you can use the <code class="inline">MaxResults</code> and <code class="inline">NextToken</code> parameters to
+paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer,
+so the result set has a maximum of one element.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack or an attached policy that explicitly grants permission. For more
+information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_elastic_ips/3">
+
+    <span id="describe_elastic_ips/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_elastic_ips/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_elastic_ips(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L442" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_elastic_load_balancers/3">
+
+    <span id="describe_elastic_load_balancers/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_elastic_load_balancers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_elastic_load_balancers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L455" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a stack&#39;s Elastic Load Balancing instances.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instances/3">
+
+    <span id="describe_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L468" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of a set of instances.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_layers/3">
+
+    <span id="describe_layers/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_layers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_layers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L481" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of one or more layers in a specified stack.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_load_based_auto_scaling/3">
+
+    <span id="describe_load_based_auto_scaling/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_load_based_auto_scaling/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_load_based_auto_scaling(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L494" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes load-based auto scaling configurations for specified layers.</p>
+<p>You must specify at least one of the parameters.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_my_user_profile/3">
+
+    <span id="describe_my_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_my_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_my_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L505" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a user&#39;s SSH information.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have self-management enabled or an
+attached policy that explicitly grants permissions. For more information about user permissions,
+see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_operating_systems/3">
+
+    <span id="describe_operating_systems/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_operating_systems/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_operating_systems(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L512" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_permissions/3">
+
+    <span id="describe_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L523" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions for a specified stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_raid_arrays/3">
+
+    <span id="describe_raid_arrays/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_raid_arrays/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_raid_arrays(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L536" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describe an instance&#39;s RAID arrays.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_rds_db_instances/3">
+
+    <span id="describe_rds_db_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_rds_db_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_rds_db_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L549" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes Amazon RDS instances.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_service_errors/3">
+
+    <span id="describe_service_errors/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_service_errors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_service_errors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L562" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes AWS OpsWorks Stacks service errors.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_stack_provisioning_parameters/3">
+
+    <span id="describe_stack_provisioning_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_stack_provisioning_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_stack_provisioning_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L573" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of a stack&#39;s provisioning parameters.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack or an attached policy that explicitly grants permissions. For more
+information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_stack_summary/3">
+
+    <span id="describe_stack_summary/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_stack_summary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_stack_summary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L585" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the number of layers and apps in a specified stack, and the number of instances in each
+state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_stacks/3">
+
+    <span id="describe_stacks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_stacks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_stacks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L596" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests a description of one or more stacks.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_time_based_auto_scaling/3">
+
+    <span id="describe_time_based_auto_scaling/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_time_based_auto_scaling/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_time_based_auto_scaling(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L609" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes time-based auto scaling configurations for specified instances.</p>
+<p>You must specify at least one of the parameters.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_profiles/3">
+
+    <span id="describe_user_profiles/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_profiles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_profiles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L619" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describe specified users.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_volumes/3">
+
+    <span id="describe_volumes/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_volumes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_volumes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L632" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an instance&#39;s Amazon EBS volumes.</p>
+<p>This call accepts only one resource-identifying parameter.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
+permissions level for the stack, or an attached policy that explicitly grants permissions. For
+more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_elastic_load_balancer/3">
+
+    <span id="detach_elastic_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_elastic_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_elastic_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L643" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a specified Elastic Load Balancing instance from its layer.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_elastic_ip/3">
+
+    <span id="disassociate_elastic_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_elastic_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_elastic_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L656" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates an Elastic IP address from its instance.</p>
+<p>The address remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_hostname_suggestion/3">
+
+    <span id="get_hostname_suggestion/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_hostname_suggestion/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_hostname_suggestion(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L667" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a generated host name for the specified layer, based on the current host name theme.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="grant_access/3">
+
+    <span id="grant_access/2"></span>
+
+  <div class="detail-header">
+    <a href="#grant_access/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">grant_access(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L676" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action can be used only with Windows stacks.</p>
+<p>Grants RDP access to a Windows instance for a specified time period.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags/3">
+
+    <span id="list_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L683" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of tags that are applied to the specified stack or layer.</p>
+
+  </section>
+</section>
+<section class="detail" id="reboot_instance/3">
+
+    <span id="reboot_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#reboot_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reboot_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L696" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Reboots a specified instance.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_ecs_cluster/3">
+
+    <span id="register_ecs_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_ecs_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_ecs_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L710" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a specified Amazon ECS cluster with a stack.</p>
+<p>You can register only one cluster with a stack. A cluster can be registered with only one stack.
+For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_elastic_ip/3">
+
+    <span id="register_elastic_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_elastic_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_elastic_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L724" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers an Elastic IP address with a specified stack.</p>
+<p>An address can be registered with only one stack at a time. If the address is already registered,
+you must first deregister it by calling <code class="inline">DeregisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_instance/3">
+
+    <span id="register_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p>
+<p>We do not recommend using this action to register instances. The complete registration operation
+includes two tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the
+instance with the stack. <code class="inline">RegisterInstance</code> handles only the second step. You should instead use
+the AWS CLI <code class="inline">register</code> command, which performs the entire registration operation. For more
+information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
+<p>Registered instances have the same requirements as instances that are created by using the
+<code class="inline">CreateInstance</code> API. For example, registered instances must be running a supported Linux-based
+operating system, and they must have a supported instance type. For more information about
+requirements for instances that you want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html"> Preparing the Instance</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_rds_db_instance/3">
+
+    <span id="register_rds_db_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_rds_db_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_rds_db_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L757" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers an Amazon RDS instance with a stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_volume/3">
+
+    <span id="register_volume/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_volume/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_volume(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L771" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers an Amazon EBS volume with a specified stack.</p>
+<p>A volume can be registered with only one stack at a time. If the volume is already registered, you
+must first deregister it by calling <code class="inline">DeregisterVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_load_based_auto_scaling/3">
+
+    <span id="set_load_based_auto_scaling/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_load_based_auto_scaling/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_load_based_auto_scaling(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L788" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specify the load-based auto scaling configuration for a specified layer.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>
+<p>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
+Load-based auto scaling operates only on the instances from that set, so you must ensure that you
+have created enough instances to handle the maximum anticipated load.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_permission/3">
+
+    <span id="set_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L801" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specifies a user&#39;s permissions.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_time_based_auto_scaling/3">
+
+    <span id="set_time_based_auto_scaling/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_time_based_auto_scaling/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_time_based_auto_scaling(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L814" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specify the time-based auto scaling configuration for a specified instance.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_instance/3">
+
+    <span id="start_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L827" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a specified instance.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_stack/3">
+
+    <span id="start_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L838" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a stack&#39;s instances.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_instance/3">
+
+    <span id="stop_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L853" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a specified instance.</p>
+<p>When you stop a standard instance, the data disappears and must be reinstalled when you restart
+the instance. You can stop an Amazon EBS-backed instance without losing data. For more
+information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_stack/3">
+
+    <span id="stop_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L864" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a specified stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L875" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks.</p>
+<p>For more information about how tagging works, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the AWS OpsWorks
+User Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="unassign_instance/3">
+
+    <span id="unassign_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#unassign_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unassign_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L889" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Unassigns a registered instance from all layers that are using the instance.</p>
+<p>The instance remains in the stack as an unassigned instance, and can be assigned to another layer
+as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack or an attached policy that explicitly grants permissions. For more information about
+user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="unassign_volume/3">
+
+    <span id="unassign_volume/2"></span>
+
+  <div class="detail-header">
+    <a href="#unassign_volume/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unassign_volume(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L902" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Unassigns an assigned Amazon EBS volume.</p>
+<p>The volume remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L909" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a specified stack or layer.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_app/3">
+
+    <span id="update_app/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_app/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_app(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L920" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified app.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or Manage permissions
+level for the stack, or an attached policy that explicitly grants permissions. For more
+information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_elastic_ip/3">
+
+    <span id="update_elastic_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_elastic_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_elastic_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L933" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a registered Elastic IP address&#39;s name.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_instance/3">
+
+    <span id="update_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L944" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified instance.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_layer/3">
+
+    <span id="update_layer/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_layer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_layer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L955" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified layer.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_my_user_profile/3">
+
+    <span id="update_my_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_my_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_my_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L966" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a user&#39;s SSH public key.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have self-management enabled or an
+attached policy that explicitly grants permissions. For more information about user permissions,
+see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_rds_db_instance/3">
+
+    <span id="update_rds_db_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_rds_db_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_rds_db_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L977" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon RDS instance.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_stack/3">
+
+    <span id="update_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L988" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_profile/3">
+
+    <span id="update_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L998" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified user profile.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
+explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_volume/3">
+
+    <span id="update_volume/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_volume/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_volume(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1011" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon EBS volume&#39;s name or mount point.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
+the stack, or an attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

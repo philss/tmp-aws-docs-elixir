@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Lambda — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Lambda
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Lambda</p>
+<p><strong>Overview</strong></p>
+<p>This is the <em>AWS Lambda API Reference</em>.</p>
+<p>The AWS Lambda Developer Guide provides additional information. For the service overview, see
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">What is AWS Lambda</a>, and for information about how the service works, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-introduction.html">AWS Lambda: How it
+Works</a> in the <strong>AWS Lambda
+Developer Guide</strong>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_layer_version_permission/5">add_layer_version_permission(client, layer_name, version_number, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_permission/4">add_permission(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Grants an AWS service or another account permission to use a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_alias/4">create_alias(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a
+Lambda function version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_event_source_mapping/3">create_event_source_mapping(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a mapping between an event source and an AWS Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_function/3">create_function(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_alias/5">delete_alias(client, function_name, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_event_source_mapping/4">delete_event_source_mapping(client, uuid, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source mapping</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_function/4">delete_function(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_function_concurrency/4">delete_function_concurrency(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a concurrent execution limit from a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_function_event_invoke_config/4">delete_function_event_invoke_config(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_layer_version/5">delete_layer_version(client, layer_name, version_number, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_provisioned_concurrency_config/4">delete_provisioned_concurrency_config(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the provisioned concurrency configuration for a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_account_settings/2">get_account_settings(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves details about your account&#39;s
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_alias/4">get_alias(client, function_name, name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns details about a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_event_source_mapping/3">get_event_source_mapping(client, uuid, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns details about an event source mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function/4">get_function(client, function_name, qualifier \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the function or function version, with a link to download the deployment
+package that&#39;s valid for 10 minutes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function_concurrency/3">get_function_concurrency(client, function_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns details about the reserved concurrency configuration for a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function_configuration/4">get_function_configuration(client, function_name, qualifier \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the version-specific settings of a Lambda function or version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_function_event_invoke_config/4">get_function_event_invoke_config(client, function_name, qualifier \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_layer_version/4">get_layer_version(client, layer_name, version_number, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link to
+download the layer archive that&#39;s valid for 10 minutes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_layer_version_by_arn/3">get_layer_version_by_arn(client, arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link to
+download the layer archive that&#39;s valid for 10 minutes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_layer_version_policy/4">get_layer_version_policy(client, layer_name, version_number, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_policy/4">get_policy(client, function_name, qualifier \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM policy</a> for a
+function, version, or alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_provisioned_concurrency_config/4">get_provisioned_concurrency_config(client, function_name, qualifier, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the provisioned concurrency configuration for a function&#39;s alias or version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#invoke/4">invoke(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Invokes a Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#invoke_async/4">invoke_async(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For asynchronous function invocation, use <code class="inline">Invoke</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_aliases/6">list_aliases(client, function_name, function_version \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+for a Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_event_source_mappings/6">list_event_source_mappings(client, event_source_arn \\ nil, function_name \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists event source mappings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_function_event_invoke_configs/5">list_function_event_invoke_configs(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of configurations for asynchronous invocation for a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_functions/6">list_functions(client, function_version \\ nil, marker \\ nil, master_region \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of Lambda functions, with the version-specific configuration of each.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_layer_versions/6">list_layer_versions(client, layer_name, compatible_runtime \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_layers/5">list_layers(client, compatible_runtime \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layers</a> and shows information about the latest version of each.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_provisioned_concurrency_configs/5">list_provisioned_concurrency_configs(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of provisioned concurrency configurations for a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags/3">list_tags(client, resource, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a function&#39;s <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_versions_by_function/5">list_versions_by_function(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>, with the
+version-specific configuration of each.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#publish_layer_version/4">publish_layer_version(client, layer_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a> from a ZIP archive.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#publish_version/4">publish_version(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the
+current code and configuration of a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_function_concurrency/4">put_function_concurrency(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the maximum number of simultaneous executions for a function, and reserves capacity for that
+concurrency level.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_function_event_invoke_config/4">put_function_event_invoke_config(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a> on a function,
+version, or alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_provisioned_concurrency_config/4">put_provisioned_concurrency_config(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a provisioned concurrency configuration to a function&#39;s alias or version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_layer_version_permission/6">remove_layer_version_permission(client, layer_name, statement_id, version_number, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_permission/5">remove_permission(client, function_name, statement_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Revokes function-use permission from an AWS service or another account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_alias/5">update_alias(client, function_name, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the configuration of a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_event_source_mapping/4">update_event_source_mapping(client, uuid, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an event source mapping.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_function_code/4">update_function_code(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a Lambda function&#39;s code.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_function_configuration/4">update_function_configuration(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modify the version-specific settings of a Lambda function.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_function_event_invoke_config/4">update_function_event_invoke_config(client, function_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_layer_version_permission/5">
+
+    <span id="add_layer_version_permission/4"></span>
+
+  <div class="detail-header">
+    <a href="#add_layer_version_permission/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_layer_version_permission(client, layer_name, version_number, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L27" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p>
+<p>Use this action to grant layer usage permission to other accounts. You can grant permission to a
+single account, all AWS accounts, or all accounts in an organization.</p>
+<p>To revoke permission, call <code class="inline">RemoveLayerVersionPermission</code> with the statement ID that you specified
+when you added it.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_permission/4">
+
+    <span id="add_permission/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_permission/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_permission(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Grants an AWS service or another account permission to use a function.</p>
+<p>You can apply the policy at the function level, or specify a qualifier to restrict access to a
+single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource
+Name (ARN) of that version or alias to invoke the function.</p>
+<p>To grant permission to another account, specify the account ID as the <code class="inline">Principal</code>. For AWS
+services, the principal is a domain-style identifier defined by the service, like
+<code class="inline">s3.amazonaws.com</code> or <code class="inline">sns.amazonaws.com</code>. For AWS services, you can also specify the ARN of the
+associated resource as the <code class="inline">SourceArn</code>. If you grant permission to a service principal without
+specifying the source, other accounts could potentially configure resources in their account to
+invoke your Lambda function.</p>
+<p>This action adds a statement to a resource-based permissions policy for the function. For more
+information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Lambda Function Policies</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_alias/4">
+
+    <span id="create_alias/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_alias/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_alias(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a> for a
+Lambda function version.</p>
+<p>Use aliases to provide clients with a function identifier that you can update to invoke a
+different version.</p>
+<p>You can also map an alias to split invocation requests between two versions. Use the
+<code class="inline">RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests
+that it receives.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_event_source_mapping/3">
+
+    <span id="create_event_source_mapping/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_event_source_mapping/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_event_source_mapping(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a mapping between an event source and an AWS Lambda function.</p>
+<p>Lambda reads items from the event source and triggers the function.</p>
+<p>For details about each event source type, see the following topics.</p>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-ddb.html">Using AWS Lambda with Amazon DynamoDB</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html">Using AWS Lambda with Amazon Kinesis</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a></p>
+</li>
+</ul>
+<p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p>
+<ul>
+<li><p><code class="inline">BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in
+two and retry.</p>
+</li>
+<li><p><code class="inline">DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS
+topic.</p>
+</li>
+<li><p><code class="inline">MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default
+-1 (infinite). Minimum 60. Maximum 604800.</p>
+</li>
+<li><p><code class="inline">MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records will be retried
+until the record expires.</p>
+</li>
+<li><p><code class="inline">ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_function/3">
+
+    <span id="create_function/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_function/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_function(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Lambda function.</p>
+<p>To create a function, you need a <a href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">execution role</a>.
+The deployment package contains your function code. The execution role grants the function
+permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for
+request tracing.</p>
+<p>When you create a function, Lambda provisions an instance of the function and its supporting
+resources. If your function connects to a VPC, this process can take a minute or so. During this
+time, you can&#39;t invoke or modify the function. The <code class="inline">State</code>, <code class="inline">StateReason</code>, and <code class="inline">StateReasonCode</code>
+fields in the response from <code class="inline">GetFunctionConfiguration</code> indicate when the function is ready to
+invoke. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function States</a>.</p>
+<p>A function has an unpublished version, and can have published versions and aliases. The
+unpublished version changes when you update your function&#39;s code and configuration. A published
+version is a snapshot of your function code and configuration that can&#39;t be changed. An alias is a
+named resource that maps to a version, and can be changed to map to a different version. Use the
+<code class="inline">Publish</code> parameter to create version <code class="inline">1</code> of your function from its initial configuration.</p>
+<p>The other parameters let you configure version-specific and function-level settings. You can
+modify version-specific settings later with <code class="inline">UpdateFunctionConfiguration</code>. Function-level settings
+apply to both the unpublished and published versions of the function, and include tags
+(<code class="inline">TagResource</code>) and per-function concurrency limits (<code class="inline">PutFunctionConcurrency</code>).</p>
+<p>If another account or an AWS service invokes your function, use <code class="inline">AddPermission</code> to grant
+permission by creating a resource-based IAM policy. You can grant permissions at the function
+level, on a version, or on an alias.</p>
+<p>To invoke your function directly, use <code class="inline">Invoke</code>. To invoke your function in response to events in
+other AWS services, create an event source mapping (<code class="inline">CreateEventSourceMapping</code>), or configure a
+function trigger in the other service. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-invocation.html">Invoking Functions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_alias/5">
+
+    <span id="delete_alias/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_alias/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_alias(client, function_name, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_event_source_mapping/4">
+
+    <span id="delete_event_source_mapping/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_event_source_mapping/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_event_source_mapping(client, uuid, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source mapping</a>.</p>
+<p>You can get the identifier of a mapping from the output of <code class="inline">ListEventSourceMappings</code>.</p>
+<p>When you delete an event source mapping, it enters a <code class="inline">Deleting</code> state and might not be completely
+deleted for several seconds.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_function/4">
+
+    <span id="delete_function/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_function/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_function(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L200" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Lambda function.</p>
+<p>To delete a specific function version, use the <code class="inline">Qualifier</code> parameter. Otherwise, all versions and
+aliases are deleted.</p>
+<p>To delete Lambda event source mappings that invoke a function, use <code class="inline">DeleteEventSourceMapping</code>. For
+AWS services and resources that invoke your function directly, delete the trigger in the service
+where you originally configured it.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_function_concurrency/4">
+
+    <span id="delete_function_concurrency/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_function_concurrency/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_function_concurrency(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L214" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a concurrent execution limit from a function.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_function_event_invoke_config/4">
+
+    <span id="delete_function_event_invoke_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_function_event_invoke_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_function_event_invoke_config(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p>
+<p>To configure options for asynchronous invocation, use <code class="inline">PutFunctionEventInvokeConfig</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_layer_version/5">
+
+    <span id="delete_layer_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_layer_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_layer_version(client, layer_name, version_number, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L243" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p>
+<p>Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a
+copy of the version remains in Lambda until no functions refer to it.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_provisioned_concurrency_config/4">
+
+    <span id="delete_provisioned_concurrency_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_provisioned_concurrency_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_provisioned_concurrency_config(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the provisioned concurrency configuration for a function.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_account_settings/2">
+
+    <span id="get_account_settings/1"></span>
+
+  <div class="detail-header">
+    <a href="#get_account_settings/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_account_settings(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves details about your account&#39;s
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limits</a> and usage in an AWS Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_alias/4">
+
+    <span id="get_alias/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_alias/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_alias(client, function_name, name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L279" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns details about a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_event_source_mapping/3">
+
+    <span id="get_event_source_mapping/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_event_source_mapping/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_event_source_mapping(client, uuid, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L291" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns details about an event source mapping.</p>
+<p>You can get the identifier of a mapping from the output of <code class="inline">ListEventSourceMappings</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function/4">
+
+    <span id="get_function/2"></span>
+
+    <span id="get_function/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_function/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function(client, function_name, qualifier \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the function or function version, with a link to download the deployment
+package that&#39;s valid for 10 minutes.</p>
+<p>If you specify a function version, only details that are specific to that version are returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function_concurrency/3">
+
+    <span id="get_function_concurrency/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_function_concurrency/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function_concurrency(client, function_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L321" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns details about the reserved concurrency configuration for a function.</p>
+<p>To set a concurrency limit for a function, use <code class="inline">PutFunctionConcurrency</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function_configuration/4">
+
+    <span id="get_function_configuration/2"></span>
+
+    <span id="get_function_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_function_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function_configuration(client, function_name, qualifier \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L336" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the version-specific settings of a Lambda function or version.</p>
+<p>The output includes only options that can vary between versions of a function. To modify these
+settings, use <code class="inline">UpdateFunctionConfiguration</code>.</p>
+<p>To get all of a function&#39;s details, including function-level settings, use <code class="inline">GetFunction</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_function_event_invoke_config/4">
+
+    <span id="get_function_event_invoke_config/2"></span>
+
+    <span id="get_function_event_invoke_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_function_event_invoke_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_function_event_invoke_config(client, function_name, qualifier \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L353" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p>
+<p>To configure options for asynchronous invocation, use <code class="inline">PutFunctionEventInvokeConfig</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_layer_version/4">
+
+    <span id="get_layer_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_layer_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_layer_version(client, layer_name, version_number, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L369" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link to
+download the layer archive that&#39;s valid for 10 minutes.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_layer_version_by_arn/3">
+
+    <span id="get_layer_version_by_arn/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_layer_version_by_arn/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_layer_version_by_arn(client, arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L380" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>, with a link to
+download the layer archive that&#39;s valid for 10 minutes.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_layer_version_policy/4">
+
+    <span id="get_layer_version_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_layer_version_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_layer_version_policy(client, layer_name, version_number, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L397" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p>
+<p>For more information, see <code class="inline">AddLayerVersionPermission</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_policy/4">
+
+    <span id="get_policy/2"></span>
+
+    <span id="get_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_policy(client, function_name, qualifier \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L408" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM policy</a> for a
+function, version, or alias.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_provisioned_concurrency_config/4">
+
+    <span id="get_provisioned_concurrency_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_provisioned_concurrency_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_provisioned_concurrency_config(client, function_name, qualifier, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the provisioned concurrency configuration for a function&#39;s alias or version.</p>
+
+  </section>
+</section>
+<section class="detail" id="invoke/4">
+
+    <span id="invoke/3"></span>
+
+  <div class="detail-header">
+    <a href="#invoke/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">invoke(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L471" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Invokes a Lambda function.</p>
+<p>You can invoke a function synchronously (and wait for the response), or asynchronously. To invoke
+a function asynchronously, set <code class="inline">InvocationType</code> to <code class="inline">Event</code>.</p>
+<p>For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous invocation</a>, details about the function response, including errors, are included in the response body and
+headers. For either invocation type, you can find more information in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution
+log</a> and
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.  When an error occurs, your function may be invoked multiple times. Retry behavior varies by error
+type, client, event source, and invocation type. For example, if you invoke a function
+asynchronously and it returns an error, Lambda executes the function up to two more times. For
+more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/retries-on-errors.html">Retry
+Behavior</a>.</p>
+<p>For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a>, Lambda adds events to a queue before sending them to your function. If your function does not have
+enough capacity to keep up with the queue, events may be lost. Occasionally, your function may
+receive the same event multiple times, even if no error occurs. To retain events that were not
+processed, configure your function with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#dlq">dead-letter
+queue</a>.</p>
+<p>The status code in the API response doesn&#39;t reflect function errors. Error codes are reserved for
+errors that prevent your function from executing, such as permissions errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">limit errors</a>, or issues with your function&#39;s
+code and configuration. For example, Lambda returns <code class="inline">TooManyRequestsException</code> if executing the
+function would cause you to exceed a concurrency limit at either the account level
+(<code class="inline">ConcurrentInvocationLimitExceeded</code>) or function level
+(<code class="inline">ReservedFunctionConcurrentInvocationLimitExceeded</code>).</p>
+<p>For functions with a long timeout, your client might be disconnected during synchronous invocation
+while it waits for a response. Configure your HTTP client, SDK, firewall, proxy, or operating
+system to allow for long connections with timeout or keep-alive settings.</p>
+<p>This operation requires permission for the
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a>
+action.</p>
+
+  </section>
+</section>
+<section class="detail" id="invoke_async/4">
+
+    <span id="invoke_async/3"></span>
+
+  <div class="detail-header">
+    <a href="#invoke_async/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">invoke_async(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L512" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For asynchronous function invocation, use <code class="inline">Invoke</code>.</p>
+<p>Invokes a function asynchronously.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_aliases/6">
+
+    <span id="list_aliases/2"></span>
+
+    <span id="list_aliases/3"></span>
+
+    <span id="list_aliases/4"></span>
+
+    <span id="list_aliases/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_aliases/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_aliases(client, function_name, function_version \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L523" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">aliases</a>
+for a Lambda function.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_event_source_mappings/6">
+
+    <span id="list_event_source_mappings/1"></span>
+
+    <span id="list_event_source_mappings/2"></span>
+
+    <span id="list_event_source_mappings/3"></span>
+
+    <span id="list_event_source_mappings/4"></span>
+
+    <span id="list_event_source_mappings/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_event_source_mappings/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_event_source_mappings(client, event_source_arn \\ nil, function_name \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L550" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists event source mappings.</p>
+<p>Specify an <code class="inline">EventSourceArn</code> to only show event source mappings for a single event source.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_function_event_invoke_configs/5">
+
+    <span id="list_function_event_invoke_configs/2"></span>
+
+    <span id="list_function_event_invoke_configs/3"></span>
+
+    <span id="list_function_event_invoke_configs/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_function_event_invoke_configs/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_function_event_invoke_configs(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L582" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of configurations for asynchronous invocation for a function.</p>
+<p>To configure options for asynchronous invocation, use <code class="inline">PutFunctionEventInvokeConfig</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_functions/6">
+
+    <span id="list_functions/1"></span>
+
+    <span id="list_functions/2"></span>
+
+    <span id="list_functions/3"></span>
+
+    <span id="list_functions/4"></span>
+
+    <span id="list_functions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_functions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_functions(client, function_version \\ nil, marker \\ nil, master_region \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L607" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of Lambda functions, with the version-specific configuration of each.</p>
+<p>Lambda returns up to 50 functions per call.</p>
+<p>Set <code class="inline">FunctionVersion</code> to <code class="inline">ALL</code> to include all published versions of each function in addition to
+the unpublished version. To get more information about a function or version, use <code class="inline">GetFunction</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_layer_versions/6">
+
+    <span id="list_layer_versions/2"></span>
+
+    <span id="list_layer_versions/3"></span>
+
+    <span id="list_layer_versions/4"></span>
+
+    <span id="list_layer_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_layer_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_layer_versions(client, layer_name, compatible_runtime \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L640" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p>
+<p>Versions that have been deleted aren&#39;t listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only
+versions that indicate that they&#39;re compatible with that runtime.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_layers/5">
+
+    <span id="list_layers/1"></span>
+
+    <span id="list_layers/2"></span>
+
+    <span id="list_layers/3"></span>
+
+    <span id="list_layers/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_layers/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_layers(client, compatible_runtime \\ nil, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L668" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layers</a> and shows information about the latest version of each.</p>
+<p>Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a>
+to list only layers that indicate that they&#39;re compatible with that runtime.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_provisioned_concurrency_configs/5">
+
+    <span id="list_provisioned_concurrency_configs/2"></span>
+
+    <span id="list_provisioned_concurrency_configs/3"></span>
+
+    <span id="list_provisioned_concurrency_configs/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_provisioned_concurrency_configs/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_provisioned_concurrency_configs(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L693" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of provisioned concurrency configurations for a function.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags/3">
+
+    <span id="list_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags(client, resource, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L715" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a function&#39;s <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
+<p>You can also view tags with <code class="inline">GetFunction</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_versions_by_function/5">
+
+    <span id="list_versions_by_function/2"></span>
+
+    <span id="list_versions_by_function/3"></span>
+
+    <span id="list_versions_by_function/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_versions_by_function/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_versions_by_function(client, function_name, marker \\ nil, max_items \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L729" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>, with the
+version-specific configuration of each.</p>
+<p>Lambda returns up to 50 versions per call.</p>
+
+  </section>
+</section>
+<section class="detail" id="publish_layer_version/4">
+
+    <span id="publish_layer_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#publish_layer_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">publish_layer_version(client, layer_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L753" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a> from a ZIP archive.</p>
+<p>Each time you call <code class="inline">PublishLayerVersion</code> with the same layer name, a new version is created.</p>
+<p>Add layers to your function with <code class="inline">CreateFunction</code> or <code class="inline">UpdateFunctionConfiguration</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="publish_version/4">
+
+    <span id="publish_version/3"></span>
+
+  <div class="detail-header">
+    <a href="#publish_version/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">publish_version(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L772" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the
+current code and configuration of a function.</p>
+<p>Use versions to create a snapshot of your function code and configuration that doesn&#39;t change.</p>
+<p>AWS Lambda doesn&#39;t publish a version if the function&#39;s configuration and code haven&#39;t changed
+since the last version. Use <code class="inline">UpdateFunctionCode</code> or <code class="inline">UpdateFunctionConfiguration</code> to update the
+function before publishing a version.</p>
+<p>Clients can invoke versions directly or with an alias. To create an alias, use <code class="inline">CreateAlias</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_function_concurrency/4">
+
+    <span id="put_function_concurrency/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_function_concurrency/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_function_concurrency(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L793" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the maximum number of simultaneous executions for a function, and reserves capacity for that
+concurrency level.</p>
+<p>Concurrency settings apply to the function as a whole, including all published versions and the
+unpublished version. Reserving concurrency both ensures that your function has capacity to process
+the specified number of events simultaneously, and prevents it from scaling beyond that level. Use
+<code class="inline">GetFunction</code> to see the current setting for a function.</p>
+<p>Use <code class="inline">GetAccountSettings</code> to see your Regional concurrency limit. You can reserve concurrency for
+as many functions as you like, as long as you leave at least 100 simultaneous executions
+unreserved for functions that aren&#39;t configured with a per-function limit. For more information,
+see <a href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing Concurrency</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_function_event_invoke_config/4">
+
+    <span id="put_function_event_invoke_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_function_event_invoke_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_function_event_invoke_config(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L819" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a> on a function,
+version, or alias.</p>
+<p>If a configuration already exists for a function, version, or alias, this operation overwrites it.
+If you exclude any settings, they are removed. To set one option without affecting existing
+settings for other options, use <code class="inline">UpdateFunctionEventInvokeConfig</code>.</p>
+<p>By default, Lambda retries an asynchronous invocation twice if the function returns an error. It
+retains events in a queue for up to six hours. When an event fails all processing attempts or
+stays in the asynchronous invocation queue for too long, Lambda discards it. To retain discarded
+events, configure a dead-letter queue with <code class="inline">UpdateFunctionConfiguration</code>.</p>
+<p>To send an invocation record to a queue, topic, function, or event bus, specify a
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>.
+You can configure separate destinations for successful invocations (on-success) and events that
+fail all processing attempts (on-failure). You can configure destinations in addition to or
+instead of a dead-letter queue.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_provisioned_concurrency_config/4">
+
+    <span id="put_provisioned_concurrency_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_provisioned_concurrency_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_provisioned_concurrency_config(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L833" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a provisioned concurrency configuration to a function&#39;s alias or version.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_layer_version_permission/6">
+
+    <span id="remove_layer_version_permission/5"></span>
+
+  <div class="detail-header">
+    <a href="#remove_layer_version_permission/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_layer_version_permission(client, layer_name, statement_id, version_number, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L849" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">AWS Lambda layer</a>.</p>
+<p>For more information, see <code class="inline">AddLayerVersionPermission</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_permission/5">
+
+    <span id="remove_permission/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_permission/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_permission(client, function_name, statement_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L865" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Revokes function-use permission from an AWS service or another account.</p>
+<p>You can get the ID of the statement from the output of <code class="inline">GetPolicy</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L880" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> to a function.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L890" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes <a href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a> from a function.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_alias/5">
+
+    <span id="update_alias/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_alias/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_alias(client, function_name, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L905" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the configuration of a Lambda function
+<a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">alias</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_event_source_mapping/4">
+
+    <span id="update_event_source_mapping/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_event_source_mapping/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_event_source_mapping(client, uuid, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L935" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an event source mapping.</p>
+<p>You can change the function that AWS Lambda invokes, or pause invocation and resume later from the
+same location.</p>
+<p>The following error handling options are only available for stream sources (DynamoDB and Kinesis):</p>
+<ul>
+<li><p><code class="inline">BisectBatchOnFunctionError</code> - If the function returns an error, split the batch in
+two and retry.</p>
+</li>
+<li><p><code class="inline">DestinationConfig</code> - Send discarded records to an Amazon SQS queue or Amazon SNS
+topic.</p>
+</li>
+<li><p><code class="inline">MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. Default
+-1 (infinite). Minimum 60. Maximum 604800.</p>
+</li>
+<li><p><code class="inline">MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+Default -1 (infinite). Minimum 0. Maximum 10000. When infinite, failed records will be retried
+until the record expires.</p>
+</li>
+<li><p><code class="inline">ParallelizationFactor</code> - Process multiple batches from each shard concurrently.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="update_function_code/4">
+
+    <span id="update_function_code/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_function_code/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_function_code(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L948" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a Lambda function&#39;s code.</p>
+<p>The function&#39;s code is locked when you publish a version. You can&#39;t modify the code of a published
+version, only the unpublished version.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_function_configuration/4">
+
+    <span id="update_function_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_function_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_function_configuration(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L971" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modify the version-specific settings of a Lambda function.</p>
+<p>When you update a function, Lambda provisions an instance of the function and its supporting
+resources. If your function connects to a VPC, this process can take a minute. During this time,
+you can&#39;t modify the function, but you can still invoke it. The <code class="inline">LastUpdateStatus</code>,
+<code class="inline">LastUpdateStatusReason</code>, and <code class="inline">LastUpdateStatusReasonCode</code> fields in the response from
+<code class="inline">GetFunctionConfiguration</code> indicate when the update is complete and the function is processing
+events with the new configuration. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Function States</a>.</p>
+<p>These settings can vary between versions of a function and are locked when you publish a version.
+You can&#39;t modify the configuration of a published version, only the unpublished version.</p>
+<p>To configure function concurrency, use <code class="inline">PutFunctionConcurrency</code>. To grant invoke permissions to an
+account or AWS service, use <code class="inline">AddPermission</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_function_event_invoke_config/4">
+
+    <span id="update_function_event_invoke_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_function_event_invoke_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_function_event_invoke_config(client, function_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lambda.ex#L983" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p>
+<p>To configure options for asynchronous invocation, use <code class="inline">PutFunctionEventInvokeConfig</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Forecast — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Forecast
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Provides APIs for creating and managing Amazon Forecast resources.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset/3">create_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Forecast dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset_group/3">create_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a dataset group, which holds a collection of related datasets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset_import_job/3">create_dataset_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports your training data to an Amazon Forecast dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_forecast/3">create_forecast(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a forecast for each item in the <code class="inline">TARGET_TIME_SERIES</code> dataset that was used to train the
+predictor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_forecast_export_job/3">create_forecast_export_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Exports a forecast created by the <code class="inline">CreateForecast</code> operation to your Amazon Simple Storage Service
+(Amazon S3) bucket.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_predictor/3">create_predictor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Forecast predictor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataset/3">delete_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon Forecast dataset that was created using the <code class="inline">CreateDataset</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataset_group/3">delete_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataset group created using the <code class="inline">CreateDatasetGroup</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataset_import_job/3">delete_dataset_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataset import job created using the <code class="inline">CreateDatasetImportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_forecast/3">delete_forecast(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a forecast created using the <code class="inline">CreateForecast</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_forecast_export_job/3">delete_forecast_export_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a forecast export job created using the <code class="inline">CreateForecastExportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_predictor/3">delete_predictor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a predictor created using the <code class="inline">CreatePredictor</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset/3">describe_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an Amazon Forecast dataset created using the <code class="inline">CreateDataset</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset_group/3">describe_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a dataset group created using the <code class="inline">CreateDatasetGroup</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset_import_job/3">describe_dataset_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a dataset import job created using the <code class="inline">CreateDatasetImportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_forecast/3">describe_forecast(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a forecast created using the <code class="inline">CreateForecast</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_forecast_export_job/3">describe_forecast_export_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a forecast export job created using the <code class="inline">CreateForecastExportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_predictor/3">describe_predictor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a predictor created using the <code class="inline">CreatePredictor</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_accuracy_metrics/3">get_accuracy_metrics(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides metrics on the accuracy of the models that were trained by the <code class="inline">CreatePredictor</code>
+operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dataset_groups/3">list_dataset_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of dataset groups created using the <code class="inline">CreateDatasetGroup</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dataset_import_jobs/3">list_dataset_import_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of dataset import jobs created using the <code class="inline">CreateDatasetImportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_datasets/3">list_datasets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of datasets created using the <code class="inline">CreateDataset</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_forecast_export_jobs/3">list_forecast_export_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of forecast export jobs created using the <code class="inline">CreateForecastExportJob</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_forecasts/3">list_forecasts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of forecasts created using the <code class="inline">CreateForecast</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_predictors/3">list_predictors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of predictors created using the <code class="inline">CreatePredictor</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags for an Amazon Forecast resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_dataset_group/3">update_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces the datasets in a dataset group with the specified datasets.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_dataset/3">
+
+    <span id="create_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L36" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Forecast dataset.</p>
+<p>The information about the dataset that you provide helps Forecast understand how to consume the
+data for model training. This includes the following:</p>
+<ul>
+<li><ul>
+<li><code class="inline">DataFrequency</code> * - How frequently your historical time-series data is collected.
+</li>
+</ul>
+</li>
+<li><ul>
+<li><code class="inline">Domain</code> <em> and </em> <code class="inline">DatasetType</code> * - Each dataset has an associated dataset domain
+and a type within the domain. Amazon Forecast provides a list of predefined domains and types
+within each domain. For each unique dataset domain and type within the domain, Amazon Forecast
+requires your data to include a minimum set of predefined fields.
+</li>
+</ul>
+</li>
+<li><ul>
+<li><code class="inline">Schema</code> * - A schema specifies the fields in the dataset, including the field
+name and data type.
+</li>
+</ul>
+</li>
+</ul>
+<p>After creating a dataset, you import your training data into it and add the dataset to a dataset
+group. You use the dataset group to create a predictor. For more information, see
+<code class="inline">howitworks-datasets-groups</code>.</p>
+<p>To get a list of all your datasets, use the <code class="inline">ListDatasets</code> operation.</p>
+<p>For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon Forecast Sample GitHub repository</a>.</p>
+<p>The <code class="inline">Status</code> of a dataset must be <code class="inline">ACTIVE</code> before you can import training data. Use the
+<code class="inline">DescribeDataset</code> operation to get the status.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_dataset_group/3">
+
+    <span id="create_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a dataset group, which holds a collection of related datasets.</p>
+<p>You can add datasets to the dataset group when you create the dataset group, or later by using the
+<code class="inline">UpdateDatasetGroup</code> operation.</p>
+<p>After creating a dataset group and adding datasets, you use the dataset group when you create a
+predictor. For more information, see <code class="inline">howitworks-datasets-groups</code>.</p>
+<p>To get a list of all your datasets groups, use the <code class="inline">ListDatasetGroups</code> operation.</p>
+<p>The <code class="inline">Status</code> of a dataset group must be <code class="inline">ACTIVE</code> before you can create use the dataset group to
+create a predictor. To get the status, use the <code class="inline">DescribeDatasetGroup</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_dataset_import_job/3">
+
+    <span id="create_dataset_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports your training data to an Amazon Forecast dataset.</p>
+<p>You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3)
+bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.</p>
+<p>You must specify a <code class="inline">DataSource</code> object that includes an AWS Identity and Access Management (IAM)
+role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your
+data and processes it in an internal AWS system. For more information, see
+<code class="inline">aws-forecast-iam-roles</code>.</p>
+<p>The training data must be in CSV format. The delimiter must be a comma (,).</p>
+<p>You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket.
+For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.</p>
+<p>Because dataset imports are not aggregated, your most recent dataset import is the one that is
+used when training a predictor or generating a forecast. Make sure that your most recent dataset
+import contains all of the data you want to model off of, and not just the new data collected
+since the previous import.</p>
+<p>To get a list of all your dataset import jobs, filtered by specified criteria, use the
+<code class="inline">ListDatasetImportJobs</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_forecast/3">
+
+    <span id="create_forecast/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_forecast/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_forecast(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L108" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a forecast for each item in the <code class="inline">TARGET_TIME_SERIES</code> dataset that was used to train the
+predictor.</p>
+<p>This is known as inference. To retrieve the forecast for a single item at low latency, use the
+operation. To export the complete forecast into your Amazon Simple Storage Service (Amazon S3)
+bucket, use the <code class="inline">CreateForecastExportJob</code> operation.</p>
+<p>The range of the forecast is determined by the <code class="inline">ForecastHorizon</code> value, which you specify in the
+<code class="inline">CreatePredictor</code> request. When you query a forecast, you can request a specific date range within
+the forecast.</p>
+<p>To get a list of all your forecasts, use the <code class="inline">ListForecasts</code> operation.</p>
+<p>The forecasts generated by Amazon Forecast are in the same time zone as the dataset that was used
+to create the predictor.</p>
+<p>For more information, see <code class="inline">howitworks-forecast</code>.</p>
+<p>The <code class="inline">Status</code> of the forecast must be <code class="inline">ACTIVE</code> before you can query or export the forecast. Use the
+<code class="inline">DescribeForecast</code> operation to get the status.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_forecast_export_job/3">
+
+    <span id="create_forecast_export_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_forecast_export_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_forecast_export_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Exports a forecast created by the <code class="inline">CreateForecast</code> operation to your Amazon Simple Storage Service
+(Amazon S3) bucket.</p>
+<p>The forecast file name will match the following conventions:</p>
+<ForecastExportJobName>_<ExportTimestamp>_<PartNumber>
+
+where the <ExportTimestamp> component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
+
+You must specify a `DataDestination` object that includes an AWS Identity and Access Management
+(IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information,
+see `aws-forecast-iam-roles`.
+
+For more information, see `howitworks-forecast`.
+
+To get a list of all your forecast export jobs, use the `ListForecastExportJobs` operation.
+
+The `Status` of the forecast export job must be `ACTIVE` before you can access the forecast in
+your Amazon S3 bucket. To get the status, use the `DescribeForecastExportJob` operation.
+  </section>
+</section>
+<section class="detail" id="create_predictor/3">
+
+    <span id="create_predictor/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_predictor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_predictor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Forecast predictor.</p>
+<p>In the request, you provide a dataset group and either specify an algorithm or let Amazon Forecast
+choose the algorithm for you using AutoML. If you specify an algorithm, you also can override
+algorithm-specific hyperparameters.</p>
+<p>Amazon Forecast uses the chosen algorithm to train a model using the latest version of the
+datasets in the specified dataset group. The result is called a predictor. You then generate a
+forecast using the <code class="inline">CreateForecast</code> operation.</p>
+<p>After training a model, the <code class="inline">CreatePredictor</code> operation also evaluates it. To see the evaluation
+metrics, use the <code class="inline">GetAccuracyMetrics</code> operation. Always review the evaluation metrics before
+deciding to use the predictor to generate a forecast.</p>
+<p>Optionally, you can specify a featurization configuration to fill and aggregate the data fields in
+the <code class="inline">TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see
+<code class="inline">FeaturizationConfig</code>.</p>
+<p>For RELATED_TIME_SERIES datasets, <code class="inline">CreatePredictor</code> verifies that the <code class="inline">DataFrequency</code> specified
+when the dataset was created matches the <code class="inline">ForecastFrequency</code>. TARGET_TIME_SERIES datasets don&#39;t
+have this restriction. Amazon Forecast also verifies the delimiter and timestamp format. For more
+information, see <code class="inline">howitworks-datasets-groups</code>.</p>
+<p><strong>AutoML</strong></p>
+<p>If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the
+<code class="inline">objective function</code>, set <code class="inline">PerformAutoML</code> to <code class="inline">true</code>. The <code class="inline">objective function</code> is defined as the
+mean of the weighted p10, p50, and p90 quantile losses. For more information, see
+<code class="inline">EvaluationResult</code>.</p>
+<p>When AutoML is enabled, the following properties are disallowed:</p>
+<ul>
+<li><p><code class="inline">AlgorithmArn</code></p>
+</li>
+<li><p><code class="inline">HPOConfig</code></p>
+</li>
+<li><p><code class="inline">PerformHPO</code></p>
+</li>
+<li><p><code class="inline">TrainingParameters</code></p>
+</li>
+</ul>
+<p>To get a list of all of your predictors, use the <code class="inline">ListPredictors</code> operation.</p>
+<p>Before you can use the predictor to create a forecast, the <code class="inline">Status</code> of the predictor must be
+<code class="inline">ACTIVE</code>, signifying that training has completed. To get the status, use the <code class="inline">DescribePredictor</code>
+operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataset/3">
+
+    <span id="delete_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon Forecast dataset that was created using the <code class="inline">CreateDataset</code> operation.</p>
+<p>You can only delete datasets that have a status of <code class="inline">ACTIVE</code> or <code class="inline">CREATE_FAILED</code>. To get the status
+use the <code class="inline">DescribeDataset</code> operation.</p>
+<p>Forecast does not automatically update any dataset groups that contain the deleted dataset. In
+order to update the dataset group, use the operation, omitting the deleted dataset&#39;s ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataset_group/3">
+
+    <span id="delete_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L209" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataset group created using the <code class="inline">CreateDatasetGroup</code> operation.</p>
+<p>You can only delete dataset groups that have a status of <code class="inline">ACTIVE</code>, <code class="inline">CREATE_FAILED</code>, or
+<code class="inline">UPDATE_FAILED</code>. To get the status, use the <code class="inline">DescribeDatasetGroup</code> operation.</p>
+<p>This operation deletes only the dataset group, not the datasets in the group.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataset_import_job/3">
+
+    <span id="delete_dataset_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataset_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataset_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataset import job created using the <code class="inline">CreateDatasetImportJob</code> operation.</p>
+<p>You can delete only dataset import jobs that have a status of <code class="inline">ACTIVE</code> or <code class="inline">CREATE_FAILED</code>. To get
+the status, use the <code class="inline">DescribeDatasetImportJob</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_forecast/3">
+
+    <span id="delete_forecast/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_forecast/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_forecast(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a forecast created using the <code class="inline">CreateForecast</code> operation.</p>
+<p>You can delete only forecasts that have a status of <code class="inline">ACTIVE</code> or <code class="inline">CREATE_FAILED</code>. To get the
+status, use the <code class="inline">DescribeForecast</code> operation.</p>
+<p>You can&#39;t delete a forecast while it is being exported. After a forecast is deleted, you can no
+longer query the forecast.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_forecast_export_job/3">
+
+    <span id="delete_forecast_export_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_forecast_export_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_forecast_export_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a forecast export job created using the <code class="inline">CreateForecastExportJob</code> operation.</p>
+<p>You can delete only export jobs that have a status of <code class="inline">ACTIVE</code> or <code class="inline">CREATE_FAILED</code>. To get the
+status, use the <code class="inline">DescribeForecastExportJob</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_predictor/3">
+
+    <span id="delete_predictor/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_predictor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_predictor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a predictor created using the <code class="inline">CreatePredictor</code> operation.</p>
+<p>You can delete only predictor that have a status of <code class="inline">ACTIVE</code> or <code class="inline">CREATE_FAILED</code>. To get the
+status, use the <code class="inline">DescribePredictor</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset/3">
+
+    <span id="describe_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an Amazon Forecast dataset created using the <code class="inline">CreateDataset</code> operation.</p>
+<p>In addition to listing the parameters specified in the <code class="inline">CreateDataset</code> request, this operation
+includes the following dataset properties:</p>
+<ul>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset_group/3">
+
+    <span id="describe_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a dataset group created using the <code class="inline">CreateDatasetGroup</code> operation.</p>
+<p>In addition to listing the parameters provided in the <code class="inline">CreateDatasetGroup</code> request, this operation
+includes the following properties:</p>
+<ul>
+<li><p><code class="inline">DatasetArns</code> - The datasets belonging to the group.</p>
+</li>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset_import_job/3">
+
+    <span id="describe_dataset_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a dataset import job created using the <code class="inline">CreateDatasetImportJob</code> operation.</p>
+<p>In addition to listing the parameters provided in the <code class="inline">CreateDatasetImportJob</code> request, this
+operation includes the following properties:</p>
+<ul>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">DataSize</code></p>
+</li>
+<li><p><code class="inline">FieldStatistics</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+<li><p><code class="inline">Message</code> - If an error occurred, information about the error.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_forecast/3">
+
+    <span id="describe_forecast/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_forecast/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_forecast(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L328" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a forecast created using the <code class="inline">CreateForecast</code> operation.</p>
+<p>In addition to listing the properties provided in the <code class="inline">CreateForecast</code> request, this operation
+lists the following properties:</p>
+<ul>
+<li><p><code class="inline">DatasetGroupArn</code> - The dataset group that provided the training data.</p>
+</li>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+<li><p><code class="inline">Message</code> - If an error occurred, information about the error.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_forecast_export_job/3">
+
+    <span id="describe_forecast_export_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_forecast_export_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_forecast_export_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L346" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a forecast export job created using the <code class="inline">CreateForecastExportJob</code> operation.</p>
+<p>In addition to listing the properties provided by the user in the <code class="inline">CreateForecastExportJob</code>
+request, this operation lists the following properties:</p>
+<ul>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+<li><p><code class="inline">Message</code> - If an error occurred, information about the error.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_predictor/3">
+
+    <span id="describe_predictor/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_predictor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_predictor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L368" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a predictor created using the <code class="inline">CreatePredictor</code> operation.</p>
+<p>In addition to listing the properties provided in the <code class="inline">CreatePredictor</code> request, this operation
+lists the following properties:</p>
+<ul>
+<li><p><code class="inline">DatasetImportJobArns</code> - The dataset import jobs used to import training data.</p>
+</li>
+<li><p><code class="inline">AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were evaluated.</p>
+</li>
+<li><p><code class="inline">CreationTime</code></p>
+</li>
+<li><p><code class="inline">LastModificationTime</code></p>
+</li>
+<li><p><code class="inline">Status</code></p>
+</li>
+<li><p><code class="inline">Message</code> - If an error occurred, information about the error.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="get_accuracy_metrics/3">
+
+    <span id="get_accuracy_metrics/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_accuracy_metrics/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_accuracy_metrics(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L392" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides metrics on the accuracy of the models that were trained by the <code class="inline">CreatePredictor</code>
+operation.</p>
+<p>Use metrics to see how well the model performed and to decide whether to use the predictor to
+generate a forecast. For more information, see <code class="inline">metrics</code>.</p>
+<p>This operation generates metrics for each backtest window that was evaluated. The number of
+backtest windows (<code class="inline">NumberOfBacktestWindows</code>) is specified using the <code class="inline">EvaluationParameters</code> object,
+which is optionally included in the <code class="inline">CreatePredictor</code> request. If <code class="inline">NumberOfBacktestWindows</code> isn&#39;t
+specified, the number defaults to one.</p>
+<p>The parameters of the <code class="inline">filling</code> method determine which items contribute to the metrics. If you
+want all items to contribute, specify <code class="inline">zero</code>. If you want only those items that have complete data
+in the range being evaluated to contribute, specify <code class="inline">nan</code>. For more information, see
+<code class="inline">FeaturizationMethod</code>.</p>
+<p>Before you can get accuracy metrics, the <code class="inline">Status</code> of the predictor must be <code class="inline">ACTIVE</code>, signifying
+that training has completed. To get the status, use the <code class="inline">DescribePredictor</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dataset_groups/3">
+
+    <span id="list_dataset_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_dataset_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dataset_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of dataset groups created using the <code class="inline">CreateDatasetGroup</code> operation.</p>
+<p>For each dataset group, this operation returns a summary of its properties, including its Amazon
+Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group
+ARN with the <code class="inline">DescribeDatasetGroup</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dataset_import_jobs/3">
+
+    <span id="list_dataset_import_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_dataset_import_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dataset_import_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L415" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of dataset import jobs created using the <code class="inline">CreateDatasetImportJob</code> operation.</p>
+<p>For each import job, this operation returns a summary of its properties, including its Amazon
+Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the
+<code class="inline">DescribeDatasetImportJob</code> operation. You can filter the list by providing an array of <code class="inline">Filter</code>
+objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_datasets/3">
+
+    <span id="list_datasets/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_datasets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_datasets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L426" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of datasets created using the <code class="inline">CreateDataset</code> operation.</p>
+<p>For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is
+returned. To retrieve the complete set of properties, use the ARN with the <code class="inline">DescribeDataset</code>
+operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_forecast_export_jobs/3">
+
+    <span id="list_forecast_export_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_forecast_export_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_forecast_export_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L437" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of forecast export jobs created using the <code class="inline">CreateForecastExportJob</code> operation.</p>
+<p>For each forecast export job, this operation returns a summary of its properties, including its
+Amazon Resource Name (ARN). To retrieve the complete set of properties, use the ARN with the
+<code class="inline">DescribeForecastExportJob</code> operation. You can filter the list using an array of <code class="inline">Filter</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_forecasts/3">
+
+    <span id="list_forecasts/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_forecasts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_forecasts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L448" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of forecasts created using the <code class="inline">CreateForecast</code> operation.</p>
+<p>For each forecast, this operation returns a summary of its properties, including its Amazon
+Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the
+<code class="inline">DescribeForecast</code> operation. You can filter the list using an array of <code class="inline">Filter</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_predictors/3">
+
+    <span id="list_predictors/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_predictors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_predictors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L459" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of predictors created using the <code class="inline">CreatePredictor</code> operation.</p>
+<p>For each predictor, this operation returns a summary of its properties, including its Amazon
+Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the
+<code class="inline">DescribePredictor</code> operation. You can filter the list using an array of <code class="inline">Filter</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L466" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags for an Amazon Forecast resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L476" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
+When a resource is deleted, the tags associated with that resource are also deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L483" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_dataset_group/3">
+
+    <span id="update_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/forecast.ex#L493" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces the datasets in a dataset group with the specified datasets.</p>
+<p>The <code class="inline">Status</code> of the dataset group must be <code class="inline">ACTIVE</code> before you can use the dataset group to create
+a predictor. Use the <code class="inline">DescribeDatasetGroup</code> operation to get the status.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

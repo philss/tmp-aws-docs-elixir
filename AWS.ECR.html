@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ECR — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ECR
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Elastic Container Registry</p>
+<p>Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service.</p>
+<p>Customers can use the familiar Docker CLI, or their preferred client, to push, pull, and manage
+images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open
+Container Initiative (OCI) images. Amazon ECR supports private repositories with resource-based
+permissions using IAM so that specific users or Amazon EC2 instances can access repositories and
+images.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_check_layer_availability/3">batch_check_layer_availability(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Checks the availability of one or more image layers in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_delete_image/3">batch_delete_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a list of specified images within a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_image/3">batch_get_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets detailed information for an image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#complete_layer_upload/3">complete_layer_upload(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Informs Amazon ECR that the image layer upload has completed for a specified registry, repository
+name, and upload ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_repository/3">create_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_lifecycle_policy/3">delete_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the lifecycle policy associated with the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_repository/3">delete_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_repository_policy/3">delete_repository_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the repository policy associated with the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_image_scan_findings/3">describe_image_scan_findings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the scan findings for the specified image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_images/3">describe_images(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata about the images in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_repositories/3">describe_repositories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes image repositories in a registry.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_authorization_token/3">get_authorization_token(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves an authorization token.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_download_url_for_layer/3">get_download_url_for_layer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_lifecycle_policy/3">get_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the lifecycle policy for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_lifecycle_policy_preview/3">get_lifecycle_policy_preview(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_repository_policy/3">get_repository_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the repository policy for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#initiate_layer_upload/3">initiate_layer_upload(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Notifies Amazon ECR that you intend to upload an image layer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_images/3">list_images(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the image IDs for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the tags for an Amazon ECR resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_image/3">put_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates the image manifest and tags associated with an image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_image_scanning_configuration/3">put_image_scanning_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the image scanning configuration for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_image_tag_mutability/3">put_image_tag_mutability(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the image tag mutability settings for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_lifecycle_policy/3">put_lifecycle_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates the lifecycle policy for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_repository_policy/3">set_repository_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Applies a repository policy to the specified repository to control access permissions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_image_scan/3">start_image_scan(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an image vulnerability scan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_lifecycle_policy_preview/3">start_lifecycle_policy_preview(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a preview of a lifecycle policy for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds specified tags to a resource with the specified ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes specified tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#upload_layer_part/3">upload_layer_part(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Uploads an image layer part to Amazon ECR.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_check_layer_availability/3">
+
+    <span id="batch_check_layer_availability/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_check_layer_availability/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_check_layer_availability(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Checks the availability of one or more image layers in a repository.</p>
+<p>When an image is pushed to a repository, each image layer is checked to verify if it has been
+uploaded before. If it has been uploaded, then the image layer is skipped.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_delete_image/3">
+
+    <span id="batch_delete_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_delete_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_delete_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L41" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a list of specified images within a repository.</p>
+<p>Images are specified with either an <code class="inline">imageTag</code> or <code class="inline">imageDigest</code>.</p>
+<p>You can remove a tag from an image by specifying the image&#39;s tag in your request. When you remove
+the last tag from an image, the image is deleted from your repository.</p>
+<p>You can completely delete an image (and all of its tags) by specifying the image&#39;s digest in your
+request.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_image/3">
+
+    <span id="batch_get_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L52" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets detailed information for an image.</p>
+<p>Images are specified with either an <code class="inline">imageTag</code> or <code class="inline">imageDigest</code>.</p>
+<p>When an image is pulled, the BatchGetImage API is called once to retrieve the image manifest.</p>
+
+  </section>
+</section>
+<section class="detail" id="complete_layer_upload/3">
+
+    <span id="complete_layer_upload/2"></span>
+
+  <div class="detail-header">
+    <a href="#complete_layer_upload/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">complete_layer_upload(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L68" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Informs Amazon ECR that the image layer upload has completed for a specified registry, repository
+name, and upload ID.</p>
+<p>You can optionally provide a <code class="inline">sha256</code> digest of the image layer for data validation purposes.</p>
+<p>When an image is pushed, the CompleteLayerUpload API is called once per each new image layer to
+verify that the upload has completed.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_repository/3">
+
+    <span id="create_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a repository.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Repositories.html">Amazon ECR Repositories</a> in the
+<em>Amazon Elastic Container Registry User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_lifecycle_policy/3">
+
+    <span id="delete_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the lifecycle policy associated with the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_repository/3">
+
+    <span id="delete_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a repository.</p>
+<p>If the repository contains images, you must either delete all images in the repository or use the
+<code class="inline">force</code> option to delete the repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_repository_policy/3">
+
+    <span id="delete_repository_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_repository_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_repository_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the repository policy associated with the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_image_scan_findings/3">
+
+    <span id="describe_image_scan_findings/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_image_scan_findings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_image_scan_findings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the scan findings for the specified image.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_images/3">
+
+    <span id="describe_images/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_images/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_images(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata about the images in a repository.</p>
+<p>Beginning with Docker version 1.9, the Docker client compresses image layers before pushing them
+to a V2 Docker registry. The output of the <code class="inline">docker images</code> command shows the uncompressed image
+size, so it may return a larger image size than the image sizes returned by <code class="inline">DescribeImages</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_repositories/3">
+
+    <span id="describe_repositories/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_repositories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_repositories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L127" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes image repositories in a registry.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_authorization_token/3">
+
+    <span id="get_authorization_token/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_authorization_token/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_authorization_token(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves an authorization token.</p>
+<p>An authorization token represents your IAM authentication credentials and can be used to access
+any Amazon ECR registry that your IAM principal has access to. The authorization token is valid
+for 12 hours.</p>
+<p>The <code class="inline">authorizationToken</code> returned is a base64 encoded string that can be decoded and used in a
+<code class="inline">docker login</code> command to authenticate to a registry. The AWS CLI offers an <code class="inline">get-login-password</code>
+command that simplifies the login process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry Authentication</a>
+in the <em>Amazon Elastic Container Registry User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_download_url_for_layer/3">
+
+    <span id="get_download_url_for_layer/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_download_url_for_layer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_download_url_for_layer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the pre-signed Amazon S3 download URL corresponding to an image layer.</p>
+<p>You can only get URLs for image layers that are referenced in an image.</p>
+<p>When an image is pulled, the GetDownloadUrlForLayer API is called once per image layer that is not
+already cached.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_lifecycle_policy/3">
+
+    <span id="get_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the lifecycle policy for the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_lifecycle_policy_preview/3">
+
+    <span id="get_lifecycle_policy_preview/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_lifecycle_policy_preview/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_lifecycle_policy_preview(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_repository_policy/3">
+
+    <span id="get_repository_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_repository_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_repository_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the repository policy for the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="initiate_layer_upload/3">
+
+    <span id="initiate_layer_upload/2"></span>
+
+  <div class="detail-header">
+    <a href="#initiate_layer_upload/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">initiate_layer_upload(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Notifies Amazon ECR that you intend to upload an image layer.</p>
+<p>When an image is pushed, the InitiateLayerUpload API is called once per image layer that has not
+already been uploaded. Whether or not an image layer has been uploaded is determined by the
+BatchCheckLayerAvailability API action.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_images/3">
+
+    <span id="list_images/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_images/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_images(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L206" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the image IDs for the specified repository.</p>
+<p>You can filter images based on whether or not they are tagged by using the <code class="inline">tagStatus</code> filter and
+specifying either <code class="inline">TAGGED</code>, <code class="inline">UNTAGGED</code> or <code class="inline">ANY</code>. For example, you can filter your results to
+return only <code class="inline">UNTAGGED</code> images and then pipe that result to a <code class="inline">BatchDeleteImage</code> operation to
+delete them. Or, you can filter your results to return only <code class="inline">TAGGED</code> images to list all of the
+tags in your repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the tags for an Amazon ECR resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_image/3">
+
+    <span id="put_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates the image manifest and tags associated with an image.</p>
+<p>When an image is pushed and all new image layers have been uploaded, the PutImage API is called
+once to create or update the image manifest and the tags associated with the image.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_image_scanning_configuration/3">
+
+    <span id="put_image_scanning_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_image_scanning_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_image_scanning_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L233" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the image scanning configuration for the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_image_tag_mutability/3">
+
+    <span id="put_image_tag_mutability/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_image_tag_mutability/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_image_tag_mutability(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L243" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the image tag mutability settings for the specified repository.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image Tag Mutability</a> in
+the <em>Amazon Elastic Container Registry User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_lifecycle_policy/3">
+
+    <span id="put_lifecycle_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_lifecycle_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_lifecycle_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates the lifecycle policy for the specified repository.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html">Lifecycle Policy Template</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_repository_policy/3">
+
+    <span id="set_repository_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_repository_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_repository_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Applies a repository policy to the specified repository to control access permissions.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository Policies</a> in the
+<em>Amazon Elastic Container Registry User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_image_scan/3">
+
+    <span id="start_image_scan/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_image_scan/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_image_scan(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an image vulnerability scan.</p>
+<p>An image scan can only be started once per day on an individual image. This limit includes if an
+image was scanned on initial push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image Scanning</a> in the
+<em>Amazon Elastic Container Registry User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_lifecycle_policy_preview/3">
+
+    <span id="start_lifecycle_policy_preview/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_lifecycle_policy_preview/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_lifecycle_policy_preview(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a preview of a lifecycle policy for the specified repository.</p>
+<p>This allows you to see the results before associating the lifecycle policy with the repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L291" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds specified tags to a resource with the specified ARN.</p>
+<p>Existing tags on a resource are not changed if they are not specified in the request parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes specified tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="upload_layer_part/3">
+
+    <span id="upload_layer_part/2"></span>
+
+  <div class="detail-header">
+    <a href="#upload_layer_part/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">upload_layer_part(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecr.ex#L312" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Uploads an image layer part to Amazon ECR.</p>
+<p>When an image is pushed, each new image layer is uploaded in parts. The maximum size of each image
+layer part can be 20971520 bytes (or about 20MB). The UploadLayerPart API is called once per each
+new image layer part.</p>
+<p>This operation is used by the Amazon ECR proxy and is not generally used by customers for pulling
+and pushing images. In most cases, you should use the <code class="inline">docker</code> CLI to pull, tag, and push images.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

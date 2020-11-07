@@ -1,0 +1,2348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Rekognition — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Rekognition
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>This is the Amazon Rekognition API reference.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#compare_faces/3">compare_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Compares a face in the <em>source</em> input image with each of the 100 largest faces detected in the
+<em>target</em> input image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_collection/3">create_collection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a collection in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_project/3">create_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Amazon Rekognition Custom Labels project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_project_version/3">create_project_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new version of a model and begins training.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_stream_processor/3">create_stream_processor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a
+streaming video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_collection/3">delete_collection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified collection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_faces/3">delete_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes faces from a collection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_project/3">delete_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon Rekognition Custom Labels project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_project_version/3">delete_project_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon Rekognition Custom Labels model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_stream_processor/3">delete_stream_processor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the stream processor identified by <code class="inline">Name</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_collection/3">describe_collection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified collection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_project_versions/3">describe_project_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists and describes the models in an Amazon Rekognition Custom Labels project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_projects/3">describe_projects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists and gets information about your Amazon Rekognition Custom Labels projects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_stream_processor/3">describe_stream_processor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about a stream processor created by <code class="inline">CreateStreamProcessor</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_custom_labels/3">detect_custom_labels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_faces/3">detect_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects faces within an image that is provided as input.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_labels/3">detect_labels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects instances of real-world entities within an image (JPEG or PNG) provided as input.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_moderation_labels/3">detect_moderation_labels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects unsafe content in a specified JPEG or PNG format image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_text/3">detect_text(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects text in the input image and converts it into machine-readable text.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_celebrity_info/3">get_celebrity_info(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the name and additional information about a celebrity based on his or her Amazon Rekognition
+ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_celebrity_recognition/3">get_celebrity_recognition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartCelebrityRecognition</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_content_moderation/3">get_content_moderation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the unsafe content analysis results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartContentModeration</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_face_detection/3">get_face_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets face detection results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartFaceDetection</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_face_search/3">get_face_search(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the face search results for Amazon Rekognition Video face search started by
+<code class="inline">StartFaceSearch</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_label_detection/3">get_label_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the label detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartLabelDetection</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_person_tracking/3">get_person_tracking(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the path tracking results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartPersonTracking</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_segment_detection/3">get_segment_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the segment detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartSegmentDetection</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_text_detection/3">get_text_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the text detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartTextDetection</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#index_faces/3">index_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects faces in the input image and adds them to the specified collection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_collections/3">list_collections(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns list of collection IDs in your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_faces/3">list_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata for faces in the specified collection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_stream_processors/3">list_stream_processors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of stream processors that you have created with <code class="inline">CreateStreamProcessor</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#recognize_celebrities/3">recognize_celebrities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of celebrities recognized in the input image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_faces/3">search_faces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For a given input face ID, searches for matching faces in the collection the face belongs to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_faces_by_image/3">search_faces_by_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For a given input image, first detects the largest face in the image, and then searches the
+specified collection for matching faces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_celebrity_recognition/3">start_celebrity_recognition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous recognition of celebrities in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_content_moderation/3">start_content_moderation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous detection of unsafe content in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_face_detection/3">start_face_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous detection of faces in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_face_search/3">start_face_search(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the asynchronous search for faces in a collection that match the faces of persons detected
+in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_label_detection/3">start_label_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous detection of labels in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_person_tracking/3">start_person_tracking(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the asynchronous tracking of a person&#39;s path in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_project_version/3">start_project_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the running of the version of a model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_segment_detection/3">start_segment_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous detection of segment detection in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_stream_processor/3">start_stream_processor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts processing a stream processor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_text_detection/3">start_text_detection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts asynchronous detection of text in a stored video.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_project_version/3">stop_project_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a running model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_stream_processor/3">stop_stream_processor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a running stream processor that was created by <code class="inline">CreateStreamProcessor</code>.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="compare_faces/3">
+
+    <span id="compare_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#compare_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">compare_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L52" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Compares a face in the <em>source</em> input image with each of the 100 largest faces detected in the
+<em>target</em> input image.</p>
+<p>If the source image contains multiple faces, the service detects the largest face and compares it
+with each face detected in the target image.</p>
+<p>You pass the input and target images either as base64-encoded image bytes or as references to
+images in an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations,
+passing image bytes isn&#39;t supported. The image must be formatted as a PNG or JPEG file.</p>
+<p>In response, the operation returns an array of face matches ordered by similarity score in
+descending order. For each face match, the response provides a bounding box of the face, facial
+landmarks, pose details (pitch, role, and yaw), quality (brightness and sharpness), and confidence
+value (indicating the level of confidence that the bounding box contains a face). The response
+also provides a similarity score, which indicates how closely the faces match.</p>
+<p>By default, only faces with a similarity score of greater than or equal to 80% are returned in the
+response. You can change this value by specifying the <code class="inline">SimilarityThreshold</code> parameter.</p>
+<p><code class="inline">CompareFaces</code> also returns an array of faces that don&#39;t match the source image. For each face, it
+returns a bounding box, confidence value, landmarks, pose details, and quality. The response also
+returns information about the face in the source image, including the bounding box of the face and
+confidence value.</p>
+<p>The <code class="inline">QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a
+required quality bar. The quality bar is based on a variety of common use cases. Use
+<code class="inline">QualityFilter</code> to set the quality bar by specifying <code class="inline">LOW</code>, <code class="inline">MEDIUM</code>, or <code class="inline">HIGH</code>. If you do not
+want to filter detected faces, specify <code class="inline">NONE</code>. The default value is <code class="inline">NONE</code>.</p>
+<p>If the image doesn&#39;t contain Exif metadata, <code class="inline">CompareFaces</code> returns orientation information for the
+source and target images. Use these values to display the images with the correct image
+orientation.</p>
+<p>If no faces are detected in the source or target images, <code class="inline">CompareFaces</code> returns an
+<code class="inline">InvalidParameterException</code> error.</p>
+<p>This is a stateless API operation. That is, data returned by this operation doesn&#39;t persist.</p>
+<p>For an example, see Comparing Faces in Images in the Amazon Rekognition Developer Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:CompareFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_collection/3">
+
+    <span id="create_collection/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_collection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_collection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a collection in an AWS Region.</p>
+<p>You can add faces to the collection using the <code class="inline">IndexFaces</code> operation.</p>
+<p>For example, you might create collections, one for each of your application users. A user can then
+index faces using the <code class="inline">IndexFaces</code> operation and persist results in a specific collection. Then, a
+user can search the collection for faces in the user-specific container.</p>
+<p>When you create a collection, it is associated with the latest version of the face model version.</p>
+<p>Collection names are case-sensitive.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:CreateCollection</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_project/3">
+
+    <span id="create_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Amazon Rekognition Custom Labels project.</p>
+<p>A project is a logical grouping of resources (images, Labels, models) and operations (training,
+evaluation and detection).</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:CreateProject</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_project_version/3">
+
+    <span id="create_project_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_project_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_project_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new version of a model and begins training.</p>
+<p>Models are managed as part of an Amazon Rekognition Custom Labels project. You can specify one
+training dataset and one testing dataset. The response from <code class="inline">CreateProjectVersion</code> is an Amazon
+Resource Name (ARN) for the version of the model.</p>
+<p>Training takes a while to complete. You can get the current status by calling
+<code class="inline">DescribeProjectVersions</code>.</p>
+<p>Once training has successfully completed, call <code class="inline">DescribeProjectVersions</code> to get the training
+results and evaluate the model.</p>
+<p>After evaluating the model, you start the model by calling <code class="inline">StartProjectVersion</code>.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:CreateProjectVersion</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_stream_processor/3">
+
+    <span id="create_stream_processor/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_stream_processor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_stream_processor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces in a
+streaming video.</p>
+<p>Amazon Rekognition Video is a consumer of live video from Amazon Kinesis Video Streams. Amazon
+Rekognition Video sends analysis results to Amazon Kinesis Data Streams.</p>
+<p>You provide as input a Kinesis video stream (<code class="inline">Input</code>) and a Kinesis data stream (<code class="inline">Output</code>) stream.
+You also specify the face recognition criteria in <code class="inline">Settings</code>. For example, the collection
+containing faces that you want to recognize. Use <code class="inline">Name</code> to assign an identifier for the stream
+processor. You use <code class="inline">Name</code> to manage the stream processor. For example, you can start processing
+the source video by calling <code class="inline">StartStreamProcessor</code> with the <code class="inline">Name</code> field.</p>
+<p>After you have finished analyzing a streaming video, use <code class="inline">StopStreamProcessor</code> to stop processing.
+You can delete the stream processor by calling <code class="inline">DeleteStreamProcessor</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_collection/3">
+
+    <span id="delete_collection/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_collection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_collection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified collection.</p>
+<p>Note that this operation removes all faces in the collection. For an example, see
+<code class="inline">delete-collection-procedure</code>.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DeleteCollection</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_faces/3">
+
+    <span id="delete_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes faces from a collection.</p>
+<p>You specify a collection ID and an array of face IDs to remove from the collection.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DeleteFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_project/3">
+
+    <span id="delete_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon Rekognition Custom Labels project.</p>
+<p>To delete a project you must first delete all models associated with the project. To delete a
+model, see <code class="inline">DeleteProjectVersion</code>.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DeleteProject</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_project_version/3">
+
+    <span id="delete_project_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_project_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_project_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon Rekognition Custom Labels model.</p>
+<p>You can&#39;t delete a model if it is running or if it is training. To check the status of a model,
+use the <code class="inline">Status</code> field returned from <code class="inline">DescribeProjectVersions</code>. To stop a running model call
+<code class="inline">StopProjectVersion</code>. If the model is training, wait until it finishes.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DeleteProjectVersion</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_stream_processor/3">
+
+    <span id="delete_stream_processor/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_stream_processor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_stream_processor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the stream processor identified by <code class="inline">Name</code>.</p>
+<p>You assign the value for <code class="inline">Name</code> when you create the stream processor with <code class="inline">CreateStreamProcessor</code>.
+You might not be able to use the same name for a stream processor for a few seconds after calling
+<code class="inline">DeleteStreamProcessor</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_collection/3">
+
+    <span id="describe_collection/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_collection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_collection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified collection.</p>
+<p>You can use <code class="inline">DescribeCollection</code> to get information, such as the number of faces indexed into a
+collection and the version of the model used by the collection for face detection.</p>
+<p>For more information, see Describing a Collection in the Amazon Rekognition Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_project_versions/3">
+
+    <span id="describe_project_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_project_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_project_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists and describes the models in an Amazon Rekognition Custom Labels project.</p>
+<p>You can specify up to 10 model versions in <code class="inline">ProjectVersionArns</code>. If you don&#39;t specify a value,
+descriptions for all models are returned.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DescribeProjectVersions</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_projects/3">
+
+    <span id="describe_projects/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_projects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_projects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists and gets information about your Amazon Rekognition Custom Labels projects.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DescribeProjects</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_stream_processor/3">
+
+    <span id="describe_stream_processor/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_stream_processor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_stream_processor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about a stream processor created by <code class="inline">CreateStreamProcessor</code>.</p>
+<p>You can get information about the input and output streams, the input parameters for the face
+recognition being performed, and the current status of the stream processor.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_custom_labels/3">
+
+    <span id="detect_custom_labels/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_custom_labels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_custom_labels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model.</p>
+<p>You specify which version of a model version to use by using the <code class="inline">ProjectVersionArn</code> input
+parameter.</p>
+<p>You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon
+S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is
+not supported. The image must be either a PNG or JPEG formatted file.</p>
+<p>For each object that the model version detects on an image, the API returns a (<code class="inline">CustomLabel</code>)
+object in an array (<code class="inline">CustomLabels</code>). Each <code class="inline">CustomLabel</code> object provides the label name (<code class="inline">Name</code>),
+the level of confidence that the image contains the object (<code class="inline">Confidence</code>), and object location
+information, if it exists, for the label on the image (<code class="inline">Geometry</code>).</p>
+<p>During training model calculates a threshold value that determines if a prediction for a label is
+true. By default, <code class="inline">DetectCustomLabels</code> doesn&#39;t return labels whose confidence value is below the
+model&#39;s calculated threshold value. To filter labels that are returned, specify a value for
+<code class="inline">MinConfidence</code> that is higher than the model&#39;s calculated threshold. You can get the model&#39;s
+calculated threshold from the model&#39;s training results shown in the Amazon Rekognition Custom
+Labels console. To get all labels, regardless of confidence, specify a <code class="inline">MinConfidence</code> value of 0.</p>
+<p>You can also add the <code class="inline">MaxResults</code> parameter to limit the number of labels returned.</p>
+<p>This is a stateless API operation. That is, the operation does not persist any data.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DetectCustomLabels</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_faces/3">
+
+    <span id="detect_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L281" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects faces within an image that is provided as input.</p>
+<p><code class="inline">DetectFaces</code> detects the 100 largest faces in the image. For each face detected, the operation
+returns face details. These details include a bounding box of the face, a confidence value (that
+the bounding box contains a face), and a fixed set of attributes such as facial landmarks (for
+example, coordinates of eye and mouth), presence of beard, sunglasses, and so on.</p>
+<p>The face-detection algorithm is most effective on frontal faces. For non-frontal or obscured
+faces, the algorithm might not detect the faces or might detect faces with lower confidence.</p>
+<p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an
+Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image
+bytes is not supported. The image must be either a PNG or JPEG formatted file.</p>
+<p>This is a stateless API operation. That is, the operation does not persist any data.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DetectFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_labels/3">
+
+    <span id="detect_labels/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_labels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_labels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L348" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects instances of real-world entities within an image (JPEG or PNG) provided as input.</p>
+<p>This includes objects like flower, tree, and table; events like wedding, graduation, and birthday
+party; and concepts like landscape, evening, and nature.</p>
+<p>For an example, see Analyzing Images Stored in an Amazon S3 Bucket in the Amazon Rekognition
+Developer Guide.</p>
+<p><code class="inline">DetectLabels</code> does not support the detection of activities. However, activity detection is
+supported for label detection in videos. For more information, see StartLabelDetection in the
+Amazon Rekognition Developer Guide.</p>
+<p>You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon
+S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is
+not supported. The image must be either a PNG or JPEG formatted file.</p>
+<p>For each object, scene, and concept the API returns one or more labels. Each label provides the
+object name, and the level of confidence that the image contains the object. For example, suppose
+the input image has a lighthouse, the sea, and a rock. The response includes all three labels, one
+for each object.</p>
+<p><code class="inline">{Name: lighthouse, Confidence: 98.4629}</code></p>
+<p><code class="inline">{Name: rock,Confidence: 79.2097}</code></p>
+<p><code class="inline">{Name: sea,Confidence: 75.061}</code></p>
+<p>In the preceding example, the operation returns one label for each of the three objects. The
+operation can also return multiple labels for the same object in the image. For example, if the
+input image shows a flower (for example, a tulip), the operation might return the following three
+labels.</p>
+<p><code class="inline">{Name: flower,Confidence: 99.0562}</code></p>
+<p><code class="inline">{Name: plant,Confidence: 99.0562}</code></p>
+<p><code class="inline">{Name: tulip,Confidence: 99.0562}</code></p>
+<p>In this example, the detection algorithm more precisely identifies the flower as a tulip.</p>
+<p>In response, the API returns an array of labels. In addition, the response also includes the
+orientation correction. Optionally, you can specify <code class="inline">MinConfidence</code> to control the confidence
+threshold for the labels returned. The default is 55%. You can also add the <code class="inline">MaxLabels</code> parameter
+to limit the number of labels returned.</p>
+<p>If the object detected is a person, the operation doesn&#39;t provide the same facial details that the
+<code class="inline">DetectFaces</code> operation provides.</p>
+<p><code class="inline">DetectLabels</code> returns bounding boxes for instances of common object labels in an array of
+<code class="inline">Instance</code> objects. An <code class="inline">Instance</code> object contains a <code class="inline">BoundingBox</code> object, for the location of the
+label on the image. It also includes the confidence by which the bounding box was detected.</p>
+<p><code class="inline">DetectLabels</code> also returns a hierarchical taxonomy of detected labels. For example, a detected
+car might be assigned the label <em>car</em>. The label <em>car</em> has two parent labels: <em>Vehicle</em> (its
+parent) and <em>Transportation</em> (its grandparent). The response returns the entire list of ancestors
+for a label. Each ancestor is a unique label in the response. In the previous example, <em>Car</em>,
+<em>Vehicle</em>, and <em>Transportation</em> are returned as unique labels in the response.</p>
+<p>This is a stateless API operation. That is, the operation does not persist any data.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:DetectLabels</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_moderation_labels/3">
+
+    <span id="detect_moderation_labels/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_moderation_labels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_moderation_labels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L368" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects unsafe content in a specified JPEG or PNG format image.</p>
+<p>Use <code class="inline">DetectModerationLabels</code> to moderate images depending on your requirements. For example, you
+might want to filter images that contain nudity, but not images containing suggestive content.</p>
+<p>To filter images, use the labels returned by <code class="inline">DetectModerationLabels</code> to determine which types of
+content are appropriate.</p>
+<p>For information about moderation labels, see Detecting Unsafe Content in the Amazon Rekognition
+Developer Guide.</p>
+<p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an
+Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image
+bytes is not supported. The image must be either a PNG or JPEG formatted file.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_text/3">
+
+    <span id="detect_text/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_text/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_text(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects text in the input image and converts it into machine-readable text.</p>
+<p>Pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3
+bucket. If you use the AWS CLI to call Amazon Rekognition operations, you must pass it as a
+reference to an image in an Amazon S3 bucket. For the AWS CLI, passing image bytes is not
+supported. The image must be either a .png or .jpeg formatted file.</p>
+<p>The <code class="inline">DetectText</code> operation returns text in an array of <code class="inline">TextDetection</code> elements, <code class="inline">TextDetections</code>.
+Each <code class="inline">TextDetection</code> element provides information about a single word or line of text that was
+detected in the image.</p>
+<p>A word is one or more ISO basic latin script characters that are not separated by spaces.
+<code class="inline">DetectText</code> can detect up to 50 words in an image.</p>
+<p>A line is a string of equally spaced words. A line isn&#39;t necessarily a complete sentence. For
+example, a driver&#39;s license number is detected as a line. A line ends when there is no aligned
+text after it. Also, a line ends when there is a large gap between words, relative to the length
+of the words. This means, depending on the gap between words, Amazon Rekognition may detect
+multiple lines in text aligned in the same direction. Periods don&#39;t represent the end of a line.
+If a sentence spans multiple lines, the <code class="inline">DetectText</code> operation returns multiple lines.</p>
+<p>To determine whether a <code class="inline">TextDetection</code> element is a line of text or a word, use the
+<code class="inline">TextDetection</code> object <code class="inline">Type</code> field.</p>
+<p>To be detected, text must be within +/- 90 degrees orientation of the horizontal axis.</p>
+<p>For more information, see DetectText in the Amazon Rekognition Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_celebrity_info/3">
+
+    <span id="get_celebrity_info/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_celebrity_info/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_celebrity_info(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L417" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the name and additional information about a celebrity based on his or her Amazon Rekognition
+ID.</p>
+<p>The additional information is returned as an array of URLs. If there is no additional information
+about the celebrity, this list is empty.</p>
+<p>For more information, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer
+Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:GetCelebrityInfo</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_celebrity_recognition/3">
+
+    <span id="get_celebrity_recognition/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_celebrity_recognition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_celebrity_recognition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L462" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the celebrity recognition results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartCelebrityRecognition</code>.</p>
+<p>Celebrity recognition in a video is an asynchronous operation. Analysis is started by a call to
+<code class="inline">StartCelebrityRecognition</code> which returns a job identifier (<code class="inline">JobId</code>). When the celebrity
+recognition operation finishes, Amazon Rekognition Video publishes a completion status to the
+Amazon Simple Notification Service topic registered in the initial call to
+<code class="inline">StartCelebrityRecognition</code>. To get the results of the celebrity recognition analysis, first check
+that the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call
+<code class="inline">GetCelebrityDetection</code> and pass the job identifier (<code class="inline">JobId</code>) from the initial call to
+<code class="inline">StartCelebrityDetection</code>.</p>
+<p>For more information, see Working With Stored Videos in the Amazon Rekognition Developer Guide.</p>
+<p><code class="inline">GetCelebrityRecognition</code> returns detected celebrities and the time(s) they are detected in an
+array (<code class="inline">Celebrities</code>) of <code class="inline">CelebrityRecognition</code> objects. Each <code class="inline">CelebrityRecognition</code> contains
+information about the celebrity in a <code class="inline">CelebrityDetail</code> object and the time, <code class="inline">Timestamp</code>, the
+celebrity was detected.</p>
+<p><code class="inline">GetCelebrityRecognition</code> only returns the default facial attributes (<code class="inline">BoundingBox</code>, <code class="inline">Confidence</code>,
+<code class="inline">Landmarks</code>, <code class="inline">Pose</code>, and <code class="inline">Quality</code>). The other facial attributes listed in the <code class="inline">Face</code> object of
+the following response syntax are not returned. For more information, see FaceDetail in the Amazon
+Rekognition Developer Guide.</p>
+<p>By default, the <code class="inline">Celebrities</code> array is sorted by time (milliseconds from the start of the video).
+You can also sort the array by celebrity by specifying the value <code class="inline">ID</code> in the <code class="inline">SortBy</code> input
+parameter.</p>
+<p>The <code class="inline">CelebrityDetail</code> object includes the celebrity identifer and additional information urls. If
+you don&#39;t store the additional information urls, you can get them later by calling
+<code class="inline">GetCelebrityInfo</code> with the celebrity identifer.</p>
+<p>No information is returned for faces not recognized as celebrities.</p>
+<p>Use MaxResults parameter to limit the number of labels returned. If there are more results than
+specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response contains a
+pagination token for getting the next set of results. To get the next page of results, call
+<code class="inline">GetCelebrityDetection</code> and populate the <code class="inline">NextToken</code> request parameter with the token value
+returned from the previous call to <code class="inline">GetCelebrityRecognition</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_content_moderation/3">
+
+    <span id="get_content_moderation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_content_moderation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_content_moderation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L496" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the unsafe content analysis results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartContentModeration</code>.</p>
+<p>Unsafe content analysis of a video is an asynchronous operation. You start analysis by calling
+<code class="inline">StartContentModeration</code> which returns a job identifier (<code class="inline">JobId</code>). When analysis finishes, Amazon
+Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+registered in the initial call to <code class="inline">StartContentModeration</code>. To get the results of the unsafe
+content analysis, first check that the status value published to the Amazon SNS topic is
+<code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetContentModeration</code> and pass the job identifier (<code class="inline">JobId</code>) from the
+initial call to <code class="inline">StartContentModeration</code>.</p>
+<p>For more information, see Working with Stored Videos in the Amazon Rekognition Devlopers Guide.</p>
+<p><code class="inline">GetContentModeration</code> returns detected unsafe content labels, and the time they are detected, in
+an array, <code class="inline">ModerationLabels</code>, of <code class="inline">ContentModerationDetection</code> objects.</p>
+<p>By default, the moderated labels are returned sorted by time, in milliseconds from the start of
+the video. You can also sort them by moderated label by specifying <code class="inline">NAME</code> for the <code class="inline">SortBy</code> input
+parameter.</p>
+<p>Since video analysis can return a large number of results, use the <code class="inline">MaxResults</code> parameter to limit
+the number of labels returned in a single call to <code class="inline">GetContentModeration</code>. If there are more
+results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response
+contains a pagination token for getting the next set of results. To get the next page of results,
+call <code class="inline">GetContentModeration</code> and populate the <code class="inline">NextToken</code> request parameter with the value of
+<code class="inline">NextToken</code> returned from the previous call to <code class="inline">GetContentModeration</code>.</p>
+<p>For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_face_detection/3">
+
+    <span id="get_face_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_face_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_face_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L521" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets face detection results for a Amazon Rekognition Video analysis started by
+<code class="inline">StartFaceDetection</code>.</p>
+<p>Face detection with Amazon Rekognition Video is an asynchronous operation. You start face
+detection by calling <code class="inline">StartFaceDetection</code> which returns a job identifier (<code class="inline">JobId</code>). When the face
+detection operation finishes, Amazon Rekognition Video publishes a completion status to the Amazon
+Simple Notification Service topic registered in the initial call to <code class="inline">StartFaceDetection</code>. To get
+the results of the face detection operation, first check that the status value published to the
+Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetFaceDetection</code> and pass the job identifier
+(<code class="inline">JobId</code>) from the initial call to <code class="inline">StartFaceDetection</code>.</p>
+<p><code class="inline">GetFaceDetection</code> returns an array of detected faces (<code class="inline">Faces</code>) sorted by the time the faces were
+detected.</p>
+<p>Use MaxResults parameter to limit the number of labels returned. If there are more results than
+specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response contains a
+pagination token for getting the next set of results. To get the next page of results, call
+<code class="inline">GetFaceDetection</code> and populate the <code class="inline">NextToken</code> request parameter with the token value returned
+from the previous call to <code class="inline">GetFaceDetection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_face_search/3">
+
+    <span id="get_face_search/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_face_search/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_face_search(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L556" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the face search results for Amazon Rekognition Video face search started by
+<code class="inline">StartFaceSearch</code>.</p>
+<p>The search returns faces in a collection that match the faces of persons detected in a video. It
+also includes the time(s) that faces are matched in the video.</p>
+<p>Face search in a video is an asynchronous operation. You start face search by calling to
+<code class="inline">StartFaceSearch</code> which returns a job identifier (<code class="inline">JobId</code>). When the search operation finishes,
+Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service
+topic registered in the initial call to <code class="inline">StartFaceSearch</code>. To get the search results, first check
+that the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call
+<code class="inline">GetFaceSearch</code> and pass the job identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartFaceSearch</code>.</p>
+<p>For more information, see Searching Faces in a Collection in the Amazon Rekognition Developer
+Guide.</p>
+<p>The search results are retured in an array, <code class="inline">Persons</code>, of <code class="inline">PersonMatch</code> objects. Each<code class="inline">PersonMatch</code>
+element contains details about the matching faces in the input collection, person information
+(facial attributes, bounding boxes, and person identifer) for the matched person, and the time the
+person was matched in the video.</p>
+<p><code class="inline">GetFaceSearch</code> only returns the default facial attributes (<code class="inline">BoundingBox</code>, <code class="inline">Confidence</code>,
+<code class="inline">Landmarks</code>, <code class="inline">Pose</code>, and <code class="inline">Quality</code>). The other facial attributes listed in the <code class="inline">Face</code> object of
+the following response syntax are not returned. For more information, see FaceDetail in the Amazon
+Rekognition Developer Guide.</p>
+<p>By default, the <code class="inline">Persons</code> array is sorted by the time, in milliseconds from the start of the
+video, persons are matched. You can also sort by persons by specifying <code class="inline">INDEX</code> for the <code class="inline">SORTBY</code>
+input parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_label_detection/3">
+
+    <span id="get_label_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_label_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_label_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L587" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the label detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartLabelDetection</code>.</p>
+<p>The label detection operation is started by a call to <code class="inline">StartLabelDetection</code> which returns a job
+identifier (<code class="inline">JobId</code>). When the label detection operation finishes, Amazon Rekognition publishes a
+completion status to the Amazon Simple Notification Service topic registered in the initial call
+to <code class="inline">StartlabelDetection</code>. To get the results of the label detection operation, first check that
+the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetLabelDetection</code>
+and pass the job identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartLabelDetection</code>.</p>
+<p><code class="inline">GetLabelDetection</code> returns an array of detected labels (<code class="inline">Labels</code>) sorted by the time the labels
+were detected. You can also sort by the label name by specifying <code class="inline">NAME</code> for the <code class="inline">SortBy</code> input
+parameter.</p>
+<p>The labels returned include the label name, the percentage confidence in the accuracy of the
+detected label, and the time the label was detected in the video.</p>
+<p>The returned labels also include bounding box information for common objects, a hierarchical
+taxonomy of detected labels, and the version of the label model used for detection.</p>
+<p>Use MaxResults parameter to limit the number of labels returned. If there are more results than
+specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response contains a
+pagination token for getting the next set of results. To get the next page of results, call
+<code class="inline">GetlabelDetection</code> and populate the <code class="inline">NextToken</code> request parameter with the token value returned
+from the previous call to <code class="inline">GetLabelDetection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_person_tracking/3">
+
+    <span id="get_person_tracking/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_person_tracking/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_person_tracking(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L622" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the path tracking results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartPersonTracking</code>.</p>
+<p>The person path tracking operation is started by a call to <code class="inline">StartPersonTracking</code> which returns a
+job identifier (<code class="inline">JobId</code>). When the operation finishes, Amazon Rekognition Video publishes a
+completion status to the Amazon Simple Notification Service topic registered in the initial call
+to <code class="inline">StartPersonTracking</code>.</p>
+<p>To get the results of the person path tracking operation, first check that the status value
+published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetPersonTracking</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartPersonTracking</code>.</p>
+<p><code class="inline">GetPersonTracking</code> returns an array, <code class="inline">Persons</code>, of tracked persons and the time(s) their paths
+were tracked in the video.</p>
+<p><code class="inline">GetPersonTracking</code> only returns the default facial attributes (<code class="inline">BoundingBox</code>, <code class="inline">Confidence</code>,
+<code class="inline">Landmarks</code>, <code class="inline">Pose</code>, and <code class="inline">Quality</code>). The other facial attributes listed in the <code class="inline">Face</code> object of
+the following response syntax are not returned.</p>
+<p>For more information, see FaceDetail in the Amazon Rekognition Developer Guide.</p>
+<p>By default, the array is sorted by the time(s) a person&#39;s path is tracked in the video. You can
+sort by tracked persons by specifying <code class="inline">INDEX</code> for the <code class="inline">SortBy</code> input parameter.</p>
+<p>Use the <code class="inline">MaxResults</code> parameter to limit the number of items returned. If there are more results
+than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response contains a
+pagination token for getting the next set of results. To get the next page of results, call
+<code class="inline">GetPersonTracking</code> and populate the <code class="inline">NextToken</code> request parameter with the token value returned
+from the previous call to <code class="inline">GetPersonTracking</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_segment_detection/3">
+
+    <span id="get_segment_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_segment_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_segment_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L657" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the segment detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartSegmentDetection</code>.</p>
+<p>Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment
+detection by calling <code class="inline">StartSegmentDetection</code> which returns a job identifier (<code class="inline">JobId</code>). When the
+segment detection operation finishes, Amazon Rekognition publishes a completion status to the
+Amazon Simple Notification Service topic registered in the initial call to
+<code class="inline">StartSegmentDetection</code>. To get the results of the segment detection operation, first check that
+the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. if so, call
+<code class="inline">GetSegmentDetection</code> and pass the job identifier (<code class="inline">JobId</code>) from the initial call of
+<code class="inline">StartSegmentDetection</code>.</p>
+<p><code class="inline">GetSegmentDetection</code> returns detected segments in an array (<code class="inline">Segments</code>) of <code class="inline">SegmentDetection</code>
+objects. <code class="inline">Segments</code> is sorted by the segment types specified in the <code class="inline">SegmentTypes</code> input parameter
+of <code class="inline">StartSegmentDetection</code>. Each element of the array includes the detected segment, the
+precentage confidence in the acuracy of the detected segment, the type of the segment, and the
+frame in which the segment was detected.</p>
+<p>Use <code class="inline">SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+<code class="inline">StartSegmentDetection</code>.</p>
+<p>Use the <code class="inline">MaxResults</code> parameter to limit the number of segment detections returned. If there are
+more results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response
+contains a pagination token for getting the next set of results. To get the next page of results,
+call <code class="inline">GetSegmentDetection</code> and populate the <code class="inline">NextToken</code> request parameter with the token value
+returned from the previous call to <code class="inline">GetSegmentDetection</code>.</p>
+<p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_text_detection/3">
+
+    <span id="get_text_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_text_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_text_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L686" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the text detection results of a Amazon Rekognition Video analysis started by
+<code class="inline">StartTextDetection</code>.</p>
+<p>Text detection with Amazon Rekognition Video is an asynchronous operation. You start text
+detection by calling <code class="inline">StartTextDetection</code> which returns a job identifier (<code class="inline">JobId</code>) When the text
+detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon
+Simple Notification Service topic registered in the initial call to <code class="inline">StartTextDetection</code>. To get
+the results of the text detection operation, first check that the status value published to the
+Amazon SNS topic is <code class="inline">SUCCEEDED</code>. if so, call <code class="inline">GetTextDetection</code> and pass the job identifier
+(<code class="inline">JobId</code>) from the initial call of <code class="inline">StartLabelDetection</code>.</p>
+<p><code class="inline">GetTextDetection</code> returns an array of detected text (<code class="inline">TextDetections</code>) sorted by the time the
+text was detected, up to 50 words per frame of video.</p>
+<p>Each element of the array includes the detected text, the precentage confidence in the acuracy of
+the detected text, the time the text was detected, bounding box information for where the text was
+located, and unique identifiers for words and their lines.</p>
+<p>Use MaxResults parameter to limit the number of text detections returned. If there are more
+results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response
+contains a pagination token for getting the next set of results. To get the next page of results,
+call <code class="inline">GetTextDetection</code> and populate the <code class="inline">NextToken</code> request parameter with the token value
+returned from the previous call to <code class="inline">GetTextDetection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="index_faces/3">
+
+    <span id="index_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#index_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">index_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L775" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects faces in the input image and adds them to the specified collection.</p>
+<p>Amazon Rekognition doesn&#39;t save the actual faces that are detected. Instead, the underlying
+detection algorithm first detects the faces in the input image. For each face, the algorithm
+extracts facial features into a feature vector, and stores it in the backend database. Amazon
+Rekognition uses feature vectors when it performs face match and search operations using the
+<code class="inline">SearchFaces</code> and <code class="inline">SearchFacesByImage</code> operations.</p>
+<p>For more information, see Adding Faces to a Collection in the Amazon Rekognition Developer Guide.</p>
+<p>To get the number of faces in a collection, call <code class="inline">DescribeCollection</code>.</p>
+<p>If you&#39;re using version 1.0 of the face detection model, <code class="inline">IndexFaces</code> indexes the 15 largest faces
+in the input image. Later versions of the face detection model index the 100 largest faces in the
+input image.</p>
+<p>If you&#39;re using version 4 or later of the face model, image orientation information is not
+returned in the <code class="inline">OrientationCorrection</code> field.</p>
+<p>To determine which version of the model you&#39;re using, call <code class="inline">DescribeCollection</code> and supply the
+collection ID. You can also get the model version from the value of <code class="inline">FaceModelVersion</code> in the
+response from <code class="inline">IndexFaces</code></p>
+<p>For more information, see Model Versioning in the Amazon Rekognition Developer Guide.</p>
+<p>If you provide the optional <code class="inline">ExternalImageId</code> for the input image you provided, Amazon Rekognition
+associates this ID with all faces that it detects. When you call the <code class="inline">ListFaces</code> operation, the
+response returns the external ID. You can use this external image ID to create a client-side index
+to associate the faces with each image. You can then use the index to find all faces in an image.</p>
+<p>You can specify the maximum number of faces to index with the <code class="inline">MaxFaces</code> input parameter. This is
+useful when you want to index the largest faces in an image and don&#39;t want to index smaller faces,
+such as those belonging to people standing in the background.</p>
+<p>The <code class="inline">QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a
+required quality bar. The quality bar is based on a variety of common use cases. By default,
+<code class="inline">IndexFaces</code> chooses the quality bar that&#39;s used to filter faces. You can also explicitly choose
+the quality bar. Use <code class="inline">QualityFilter</code>, to set the quality bar by specifying <code class="inline">LOW</code>, <code class="inline">MEDIUM</code>, or
+<code class="inline">HIGH</code>. If you do not want to filter detected faces, specify <code class="inline">NONE</code>.</p>
+<p>To use quality filtering, you need a collection associated with version 3 of the face model or
+higher. To get the version of the face model associated with a collection, call
+<code class="inline">DescribeCollection</code>.</p>
+<p>Information about faces detected in an image, but not indexed, is returned in an array of
+<code class="inline">UnindexedFace</code> objects, <code class="inline">UnindexedFaces</code>. Faces aren&#39;t indexed for reasons such as:</p>
+<ul>
+<li><p>The number of faces detected exceeds the value of the <code class="inline">MaxFaces</code> request parameter.</p>
+</li>
+<li><p>The face is too small compared to the image dimensions.</p>
+</li>
+<li><p>The face is too blurry.</p>
+</li>
+<li><p>The image is too dark.</p>
+</li>
+<li><p>The face has an extreme pose.</p>
+</li>
+<li><p>The face doesn’t have enough detail to be suitable for face search.</p>
+</li>
+</ul>
+<p>In response, the <code class="inline">IndexFaces</code> operation returns an array of metadata for all detected faces,
+<code class="inline">FaceRecords</code>. This includes:</p>
+<ul>
+<li><p>The bounding box, <code class="inline">BoundingBox</code>, of the detected face.</p>
+</li>
+<li><p>A confidence value, <code class="inline">Confidence</code>, which indicates the confidence that the bounding
+box contains a face.</p>
+</li>
+<li><p>A face ID, <code class="inline">FaceId</code>, assigned by the service for each face that&#39;s detected and
+stored.</p>
+</li>
+<li><p>An image ID, <code class="inline">ImageId</code>, assigned by the service for the input image.</p>
+</li>
+</ul>
+<p>If you request all facial attributes (by using the <code class="inline">detectionAttributes</code> parameter), Amazon
+Rekognition returns detailed facial attributes, such as facial landmarks (for example, location of
+eye and mouth) and other facial attributes. If you provide the same image, specify the same
+collection, and use the same external ID in the <code class="inline">IndexFaces</code> operation, Amazon Rekognition doesn&#39;t
+save duplicate face metadata.</p>
+<p>The input image is passed either as base64-encoded image bytes, or as a reference to an image in
+an Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image
+bytes isn&#39;t supported. The image must be formatted as a PNG or JPEG file.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:IndexFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_collections/3">
+
+    <span id="list_collections/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_collections/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_collections(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L789" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns list of collection IDs in your account.</p>
+<p>If the result is truncated, the response also provides a <code class="inline">NextToken</code> that you can use in the
+subsequent request to fetch the next set of collection IDs.</p>
+<p>For an example, see Listing Collections in the Amazon Rekognition Developer Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:ListCollections</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_faces/3">
+
+    <span id="list_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L802" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata for faces in the specified collection.</p>
+<p>This metadata includes information such as the bounding box coordinates, the confidence (that the
+bounding box contains a face), and face ID. For an example, see Listing Faces in a Collection in
+the Amazon Rekognition Developer Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:ListFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_stream_processors/3">
+
+    <span id="list_stream_processors/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_stream_processors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_stream_processors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L809" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of stream processors that you have created with <code class="inline">CreateStreamProcessor</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="recognize_celebrities/3">
+
+    <span id="recognize_celebrities/2"></span>
+
+  <div class="detail-header">
+    <a href="#recognize_celebrities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">recognize_celebrities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L842" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of celebrities recognized in the input image.</p>
+<p>For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.</p>
+<p><code class="inline">RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists recognized celebrities
+in the <code class="inline">CelebrityFaces</code> array and unrecognized faces in the <code class="inline">UnrecognizedFaces</code> array.
+<code class="inline">RecognizeCelebrities</code> doesn&#39;t return celebrities whose faces aren&#39;t among the largest 64 faces in
+the image.</p>
+<p>For each celebrity recognized, <code class="inline">RecognizeCelebrities</code> returns a <code class="inline">Celebrity</code> object. The
+<code class="inline">Celebrity</code> object contains the celebrity name, ID, URL links to additional information, match
+confidence, and a <code class="inline">ComparedFace</code> object that you can use to locate the celebrity&#39;s face on the
+image.</p>
+<p>Amazon Rekognition doesn&#39;t retain information about which images a celebrity has been recognized
+in. Your application must store this information and use the <code class="inline">Celebrity</code> ID property as a unique
+identifier for the celebrity. If you don&#39;t store the celebrity name or additional information URLs
+returned by <code class="inline">RecognizeCelebrities</code>, you will need the ID to identify the celebrity in a call to
+the <code class="inline">GetCelebrityInfo</code> operation.</p>
+<p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an
+Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image
+bytes is not supported. The image must be either a PNG or JPEG formatted file.</p>
+<p>For an example, see Recognizing Celebrities in an Image in the Amazon Rekognition Developer Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:RecognizeCelebrities</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_faces/3">
+
+    <span id="search_faces/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_faces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_faces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L864" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For a given input face ID, searches for matching faces in the collection the face belongs to.</p>
+<p>You get a face ID when you add a face to the collection using the <code class="inline">IndexFaces</code> operation. The
+operation compares the features of the input face with faces in the specified collection.</p>
+<p>You can also search faces without indexing faces by using the <code class="inline">SearchFacesByImage</code> operation.</p>
+<p>The operation response returns an array of faces that match, ordered by similarity score with the
+highest similarity first. More specifically, it is an array of metadata for each face match that
+is found. Along with the metadata, the response also includes a <code class="inline">confidence</code> value for each face
+match, indicating the confidence that the specific face matches the input face.</p>
+<p>For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition Developer
+Guide.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:SearchFaces</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_faces_by_image/3">
+
+    <span id="search_faces_by_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_faces_by_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_faces_by_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L904" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For a given input image, first detects the largest face in the image, and then searches the
+specified collection for matching faces.</p>
+<p>The operation compares the features of the input face with faces in the specified collection.</p>
+<p>To search for all faces in an input image, you might first call the <code class="inline">IndexFaces</code> operation, and
+then use the face IDs returned in subsequent calls to the <code class="inline">SearchFaces</code> operation.</p>
+<p>You can also call the <code class="inline">DetectFaces</code> operation and use the bounding boxes in the response to make
+face crops, which then you can pass in to the <code class="inline">SearchFacesByImage</code> operation.</p>
+<p>You pass the input image either as base64-encoded image bytes or as a reference to an image in an
+Amazon S3 bucket. If you use the AWS CLI to call Amazon Rekognition operations, passing image
+bytes is not supported. The image must be either a PNG or JPEG formatted file.</p>
+<p>The response returns an array of faces that match, ordered by similarity score with the highest
+similarity first. More specifically, it is an array of metadata for each face match found. Along
+with the metadata, the response also includes a <code class="inline">similarity</code> indicating how similar the face is to
+the input face. In the response, the operation also returns the bounding box (and a confidence
+level that the bounding box contains a face) of the face that Amazon Rekognition used for the
+input image.</p>
+<p>For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.</p>
+<p>The <code class="inline">QualityFilter</code> input parameter allows you to filter out detected faces that don’t meet a
+required quality bar. The quality bar is based on a variety of common use cases. Use
+<code class="inline">QualityFilter</code> to set the quality bar for filtering by specifying <code class="inline">LOW</code>, <code class="inline">MEDIUM</code>, or <code class="inline">HIGH</code>. If
+you do not want to filter detected faces, specify <code class="inline">NONE</code>. The default value is <code class="inline">NONE</code>.</p>
+<p>To use quality filtering, you need a collection associated with version 3 of the face model or
+higher. To get the version of the face model associated with a collection, call
+<code class="inline">DescribeCollection</code>.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:SearchFacesByImage</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_celebrity_recognition/3">
+
+    <span id="start_celebrity_recognition/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_celebrity_recognition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_celebrity_recognition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L922" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous recognition of celebrities in a stored video.</p>
+<p>Amazon Rekognition Video can detect celebrities in a video must be stored in an Amazon S3 bucket.
+Use <code class="inline">Video</code> to specify the bucket name and the filename of the video. <code class="inline">StartCelebrityRecognition</code>
+returns a job identifier (<code class="inline">JobId</code>) which you use to get the results of the analysis. When
+celebrity recognition analysis is finished, Amazon Rekognition Video publishes a completion status
+to the Amazon Simple Notification Service topic that you specify in <code class="inline">NotificationChannel</code>. To get
+the results of the celebrity recognition analysis, first check that the status value published to
+the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetCelebrityRecognition</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartCelebrityRecognition</code>.</p>
+<p>For more information, see Recognizing Celebrities in the Amazon Rekognition Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_content_moderation/3">
+
+    <span id="start_content_moderation/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_content_moderation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_content_moderation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L941" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous detection of unsafe content in a stored video.</p>
+<p>Amazon Rekognition Video can moderate content in a video stored in an Amazon S3 bucket. Use
+<code class="inline">Video</code> to specify the bucket name and the filename of the video. <code class="inline">StartContentModeration</code> returns
+a job identifier (<code class="inline">JobId</code>) which you use to get the results of the analysis. When unsafe content
+analysis is finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple
+Notification Service topic that you specify in <code class="inline">NotificationChannel</code>.</p>
+<p>To get the results of the unsafe content analysis, first check that the status value published to
+the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetContentModeration</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartContentModeration</code>.</p>
+<p>For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_face_detection/3">
+
+    <span id="start_face_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_face_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_face_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L960" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous detection of faces in a stored video.</p>
+<p>Amazon Rekognition Video can detect faces in a video stored in an Amazon S3 bucket. Use <code class="inline">Video</code> to
+specify the bucket name and the filename of the video. <code class="inline">StartFaceDetection</code> returns a job
+identifier (<code class="inline">JobId</code>) that you use to get the results of the operation. When face detection is
+finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
+Service topic that you specify in <code class="inline">NotificationChannel</code>. To get the results of the face detection
+operation, first check that the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If
+so, call <code class="inline">GetFaceDetection</code> and pass the job identifier (<code class="inline">JobId</code>) from the initial call to
+<code class="inline">StartFaceDetection</code>.</p>
+<p>For more information, see Detecting Faces in a Stored Video in the Amazon Rekognition Developer
+Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_face_search/3">
+
+    <span id="start_face_search/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_face_search/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_face_search(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L977" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the asynchronous search for faces in a collection that match the faces of persons detected
+in a stored video.</p>
+<p>The video must be stored in an Amazon S3 bucket. Use <code class="inline">Video</code> to specify the bucket name and the
+filename of the video. <code class="inline">StartFaceSearch</code> returns a job identifier (<code class="inline">JobId</code>) which you use to get
+the search results once the search has completed. When searching is finished, Amazon Rekognition
+Video publishes a completion status to the Amazon Simple Notification Service topic that you
+specify in <code class="inline">NotificationChannel</code>. To get the search results, first check that the status value
+published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetFaceSearch</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartFaceSearch</code>. For more information, see
+<code class="inline">procedure-person-search-videos</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_label_detection/3">
+
+    <span id="start_label_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_label_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_label_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L999" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous detection of labels in a stored video.</p>
+<p>Amazon Rekognition Video can detect labels in a video. Labels are instances of real-world
+entities. This includes objects like flower, tree, and table; events like wedding, graduation, and
+birthday party; concepts like landscape, evening, and nature; and activities like a person getting
+out of a car or a person skiing.</p>
+<p>The video must be stored in an Amazon S3 bucket. Use <code class="inline">Video</code> to specify the bucket name and the
+filename of the video. <code class="inline">StartLabelDetection</code> returns a job identifier (<code class="inline">JobId</code>) which you use to
+get the results of the operation. When label detection is finished, Amazon Rekognition Video
+publishes a completion status to the Amazon Simple Notification Service topic that you specify in
+<code class="inline">NotificationChannel</code>.</p>
+<p>To get the results of the label detection operation, first check that the status value published
+to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetLabelDetection</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartLabelDetection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_person_tracking/3">
+
+    <span id="start_person_tracking/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_person_tracking/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_person_tracking(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1016" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the asynchronous tracking of a person&#39;s path in a stored video.</p>
+<p>Amazon Rekognition Video can track the path of people in a video stored in an Amazon S3 bucket.
+Use <code class="inline">Video</code> to specify the bucket name and the filename of the video. <code class="inline">StartPersonTracking</code>
+returns a job identifier (<code class="inline">JobId</code>) which you use to get the results of the operation. When label
+detection is finished, Amazon Rekognition publishes a completion status to the Amazon Simple
+Notification Service topic that you specify in <code class="inline">NotificationChannel</code>.</p>
+<p>To get the results of the person detection operation, first check that the status value published
+to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetPersonTracking</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartPersonTracking</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_project_version/3">
+
+    <span id="start_project_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_project_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_project_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1034" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the running of the version of a model.</p>
+<p>Starting a model takes a while to complete. To check the current state of the model, use
+<code class="inline">DescribeProjectVersions</code>.</p>
+<p>Once the model is running, you can detect custom labels in new images by calling
+<code class="inline">DetectCustomLabels</code>.</p>
+<p>You are charged for the amount of time that the model is running. To stop a running model, call
+<code class="inline">StopProjectVersion</code>.</p>
+<p>This operation requires permissions to perform the <code class="inline">rekognition:StartProjectVersion</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_segment_detection/3">
+
+    <span id="start_segment_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_segment_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_segment_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1059" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous detection of segment detection in a stored video.</p>
+<p>Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <code class="inline">Video</code>
+to specify the bucket name and the filename of the video. <code class="inline">StartSegmentDetection</code> returns a job
+identifier (<code class="inline">JobId</code>) which you use to get the results of the operation. When segment detection is
+finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
+Service topic that you specify in <code class="inline">NotificationChannel</code>.</p>
+<p>You can use the <code class="inline">Filters</code> (<code class="inline">StartSegmentDetectionFilters</code>) input parameter to specify the minimum
+detection confidence returned in the response. Within <code class="inline">Filters</code>, use <code class="inline">ShotFilter</code>
+(<code class="inline">StartShotDetectionFilter</code>) to filter detected shots. Use <code class="inline">TechnicalCueFilter</code>
+(<code class="inline">StartTechnicalCueDetectionFilter</code>) to filter technical cues.</p>
+<p>To get the results of the segment detection operation, first check that the status value published
+to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. if so, call <code class="inline">GetSegmentDetection</code> and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartSegmentDetection</code>.</p>
+<p>For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition
+Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_stream_processor/3">
+
+    <span id="start_stream_processor/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_stream_processor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_stream_processor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1070" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts processing a stream processor.</p>
+<p>You create a stream processor by calling <code class="inline">CreateStreamProcessor</code>. To tell <code class="inline">StartStreamProcessor</code>
+which stream processor to start, use the value of the <code class="inline">Name</code> field specified in the call to
+<code class="inline">CreateStreamProcessor</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_text_detection/3">
+
+    <span id="start_text_detection/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_text_detection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_text_detection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1087" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts asynchronous detection of text in a stored video.</p>
+<p>Amazon Rekognition Video can detect text in a video stored in an Amazon S3 bucket. Use <code class="inline">Video</code> to
+specify the bucket name and the filename of the video. <code class="inline">StartTextDetection</code> returns a job
+identifier (<code class="inline">JobId</code>) which you use to get the results of the operation. When text detection is
+finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
+Service topic that you specify in <code class="inline">NotificationChannel</code>.</p>
+<p>To get the results of the text detection operation, first check that the status value published to
+the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. if so, call <code class="inline">GetTextDetection</code> and pass the job identifier
+(<code class="inline">JobId</code>) from the initial call to <code class="inline">StartTextDetection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_project_version/3">
+
+    <span id="stop_project_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_project_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_project_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1097" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a running model.</p>
+<p>The operation might take a while to complete. To check the current status, call
+<code class="inline">DescribeProjectVersions</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_stream_processor/3">
+
+    <span id="stop_stream_processor/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_stream_processor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_stream_processor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/rekognition.ex#L1104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a running stream processor that was created by <code class="inline">CreateStreamProcessor</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

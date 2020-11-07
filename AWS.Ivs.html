@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Ivs — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Ivs
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p><strong>Introduction</strong></p>
+<p>The Amazon Interactive Video Service (IVS) API is REST compatible, using a standard HTTP API and
+an <a href="http://aws.amazon.com/sns">AWS SNS</a> event stream for responses.  JSON is used for both requests and responses, including errors.</p>
+<p>The API is an AWS regional service, currently in these regions: us-west-2, us-east-1, and
+eu-west-1.</p>
+<ul>
+<li><strong>All API request parameters and URLs are case sensitive. </strong> *
+</li>
+</ul>
+<p>For a summary of notable documentation changes in each release, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/doc-history.html"> Document
+History</a>.</p>
+<p><strong>Service Endpoints</strong></p>
+<p>The following are the Amazon IVS service endpoints (all HTTPS):</p>
+<p>Region name: US West (Oregon)</p>
+<ul>
+<li><p>Region: <code class="inline">us-west-2</code></p>
+</li>
+<li><p>Endpoint: <code class="inline">ivs.us-west-2.amazonaws.com</code></p>
+</li>
+</ul>
+<p>Region name: US East (Virginia)</p>
+<ul>
+<li><p>Region: <code class="inline">us-east-1</code></p>
+</li>
+<li><p>Endpoint: <code class="inline">ivs.us-east-1.amazonaws.com</code></p>
+</li>
+</ul>
+<p>Region name: EU West (Dublin)</p>
+<ul>
+<li><p>Region: <code class="inline">eu-west-1</code></p>
+</li>
+<li><p>Endpoint: <code class="inline">ivs.eu-west-1.amazonaws.com</code></p>
+</li>
+</ul>
+<p><strong>Allowed Header Values</strong></p>
+<ul>
+<li><p><code class="inline">**Accept:**</code> application/json</p>
+</li>
+<li><p><code class="inline">**Accept-Encoding:**</code> gzip, deflate</p>
+</li>
+<li><p><code class="inline">**Content-Type:**</code>application/json</p>
+</li>
+</ul>
+<p><strong>Resources</strong></p>
+<p>The following resources contain information about your IVS live stream (see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/GSIVS.html"> Getting Started with Amazon IVS</a>):</p>
+<ul>
+<li><p>Channel — Stores configuration data related to your live stream. You first create a
+channel and then use the channel’s stream key to start your live stream. See the Channel endpoints
+for more information.</p>
+</li>
+<li><p>Stream key — An identifier assigned by Amazon IVS when you create a channel, which
+is then used to authorize streaming. See the StreamKey endpoints for more information. <em> <strong>Treat
+the stream key like a secret, since it allows anyone to stream to the channel.</strong> </em></p>
+</li>
+<li><p>Playback key pair — Video playback may be restricted using playback-authorization
+tokens, which use public-key encryption. A playback key pair is the public-private pair of keys
+used to sign and validate the playback-authorization token. See the PlaybackKeyPair endpoints for
+more information.</p>
+</li>
+</ul>
+<p><strong>Tagging</strong></p>
+<p>A <em>tag</em> is a metadata label that you assign to an AWS resource. A tag comprises a <em>key</em> and a
+<em>value</em>, both set by you. For example, you might set a tag as <code class="inline">topic:nature</code> to label a particular
+video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for more information,
+including restrictions that apply to tags.</p>
+<p>Tags can help you identify and organize your AWS resources. For example, you can use the same tag
+for different resources to indicate that they are related. You can also use tags to manage access
+(see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html"> Access Tags</a>).</p>
+<p>The Amazon IVS API has these tag-related endpoints: <code class="inline">TagResource</code>, <code class="inline">UntagResource</code>, and
+<code class="inline">ListTagsForResource</code>. The following resources support tagging: Channels, Stream Keys, and
+Playback Key Pairs.</p>
+<p><strong>Channel Endpoints</strong></p>
+<ul>
+<li><p><code class="inline">CreateChannel</code> — Creates a new channel and an associated stream key to start
+streaming.</p>
+</li>
+<li><p><code class="inline">GetChannel</code> — Gets the channel configuration for the specified channel ARN (Amazon
+Resource Name).</p>
+</li>
+<li><p><code class="inline">BatchGetChannel</code> — Performs <code class="inline">GetChannel</code> on multiple ARNs simultaneously.</p>
+</li>
+<li><p><code class="inline">ListChannels</code> — Gets summary information about all channels in your account, in the
+AWS region where the API request is processed. This list can be filtered to match a specified
+string.</p>
+</li>
+<li><p><code class="inline">UpdateChannel</code> — Updates a channel&#39;s configuration. This does not affect an ongoing
+stream of this channel. You must stop and restart the stream for the changes to take effect.</p>
+</li>
+<li><p><code class="inline">DeleteChannel</code> — Deletes the specified channel.</p>
+</li>
+</ul>
+<p><strong>StreamKey Endpoints</strong></p>
+<ul>
+<li><p><code class="inline">CreateStreamKey</code> — Creates a stream key, used to initiate a stream, for the
+specified channel ARN.</p>
+</li>
+<li><p><code class="inline">GetStreamKey</code> — Gets stream key information for the specified ARN.</p>
+</li>
+<li><p><code class="inline">BatchGetStreamKey</code> — Performs <code class="inline">GetStreamKey</code> on multiple ARNs simultaneously.</p>
+</li>
+<li><p><code class="inline">ListStreamKeys</code> — Gets summary information about stream keys for the specified
+channel.</p>
+</li>
+<li><p><code class="inline">DeleteStreamKey</code> — Deletes the stream key for the specified ARN, so it can no
+longer be used to stream.</p>
+</li>
+</ul>
+<p><strong>Stream Endpoints</strong></p>
+<ul>
+<li><p><code class="inline">GetStream</code> — Gets information about the active (live) stream on a specified
+channel.</p>
+</li>
+<li><p><code class="inline">ListStreams</code> — Gets summary information about live streams in your account, in the
+AWS region where the API request is processed.</p>
+</li>
+<li><p><code class="inline">StopStream</code> — Disconnects the incoming RTMPS stream for the specified channel. Can
+be used in conjunction with <code class="inline">DeleteStreamKey</code> to prevent further streaming to a channel.</p>
+</li>
+<li><p><code class="inline">PutMetadata</code> — Inserts metadata into an RTMPS stream for the specified channel. A
+maximum of 5 requests per second per channel is allowed, each with a maximum 1KB payload.</p>
+</li>
+</ul>
+<p><strong>PlaybackKeyPair Endpoints</strong></p>
+<ul>
+<li><p><code class="inline">ImportPlaybackKeyPair</code> — Imports the public portion of a new key pair and returns
+its <code class="inline">arn</code> and <code class="inline">fingerprint</code>. The <code class="inline">privateKey</code> can then be used to generate viewer authorization
+tokens, to grant viewers access to authorized channels.</p>
+</li>
+<li><p><code class="inline">GetPlaybackKeyPair</code> — Gets a specified playback authorization key pair and returns
+the <code class="inline">arn</code> and <code class="inline">fingerprint</code>. The <code class="inline">privateKey</code> held by the caller can be used to generate viewer
+authorization tokens, to grant viewers access to authorized channels.</p>
+</li>
+<li><p><code class="inline">ListPlaybackKeyPairs</code> — Gets summary information about playback key pairs.</p>
+</li>
+<li><p><code class="inline">DeletePlaybackKeyPair</code> — Deletes a specified authorization key pair. This
+invalidates future viewer tokens generated using the key pair’s <code class="inline">privateKey</code>.</p>
+</li>
+</ul>
+<p><strong>AWS Tags Endpoints</strong></p>
+<ul>
+<li><p><code class="inline">TagResource</code> — Adds or updates tags for the AWS resource with the specified ARN.</p>
+</li>
+<li><p><code class="inline">UntagResource</code> — Removes tags from the resource with the specified ARN.</p>
+</li>
+<li><p><code class="inline">ListTagsForResource</code> — Gets information about AWS tags for the specified ARN.</p>
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_channel/3">batch_get_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Performs <code class="inline">GetChannel</code> on multiple ARNs simultaneously.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_stream_key/3">batch_get_stream_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Performs <code class="inline">GetStreamKey</code> on multiple ARNs simultaneously.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_channel/3">create_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new channel and an associated stream key to start streaming.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_stream_key/3">create_stream_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a stream key, used to initiate a stream, for the specified channel ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_channel/3">delete_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified channel and its associated stream keys.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_playback_key_pair/3">delete_playback_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified authorization key pair.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_stream_key/3">delete_stream_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the stream key for the specified ARN, so it can no longer be used to stream.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_channel/3">get_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the channel configuration for the specified channel ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_playback_key_pair/3">get_playback_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a specified playback authorization key pair and returns the <code class="inline">arn</code> and <code class="inline">fingerprint</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_stream/3">get_stream(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the active (live) stream on a specified channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_stream_key/3">get_stream_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets stream-key information for a specified ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_playback_key_pair/3">import_playback_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports the public portion of a new key pair and returns its <code class="inline">arn</code> and <code class="inline">fingerprint</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_channels/3">list_channels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets summary information about all channels in your account, in the AWS region where the API
+request is processed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_playback_key_pairs/3">list_playback_key_pairs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets summary information about playback key pairs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_stream_keys/3">list_stream_keys(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets summary information about stream keys for the specified channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_streams/3">list_streams(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets summary information about live streams in your account, in the AWS region where the API
+request is processed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about AWS tags for the specified ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_metadata/3">put_metadata(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inserts metadata into an RTMPS stream for the specified channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_stream/3">stop_stream(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disconnects the incoming RTMPS stream for the specified channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates tags for the AWS resource with the specified ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from the resource with the specified ARN.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_channel/3">update_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a channel&#39;s configuration.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_get_channel/3">
+
+    <span id="batch_get_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Performs <code class="inline">GetChannel</code> on multiple ARNs simultaneously.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_stream_key/3">
+
+    <span id="batch_get_stream_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_stream_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_stream_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Performs <code class="inline">GetStreamKey</code> on multiple ARNs simultaneously.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_channel/3">
+
+    <span id="create_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L176" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new channel and an associated stream key to start streaming.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_stream_key/3">
+
+    <span id="create_stream_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_stream_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_stream_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a stream key, used to initiate a stream, for the specified channel ARN.</p>
+<p>Note that <code class="inline">CreateChannel</code> creates a stream key. If you subsequently use CreateStreamKey on the
+same channel, it will fail because a stream key already exists and there is a limit of 1 stream
+key per channel. To reset the stream key on a channel, use <code class="inline">DeleteStreamKey</code> and then
+CreateStreamKey.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_channel/3">
+
+    <span id="delete_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified channel and its associated stream keys.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_playback_key_pair/3">
+
+    <span id="delete_playback_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_playback_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_playback_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified authorization key pair.</p>
+<p>This invalidates future viewer tokens generated using the key pair’s <code class="inline">privateKey</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_stream_key/3">
+
+    <span id="delete_stream_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_stream_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_stream_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the stream key for the specified ARN, so it can no longer be used to stream.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_channel/3">
+
+    <span id="get_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L235" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the channel configuration for the specified channel ARN.</p>
+<p>See also <code class="inline">BatchGetChannel</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_playback_key_pair/3">
+
+    <span id="get_playback_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_playback_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_playback_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a specified playback authorization key pair and returns the <code class="inline">arn</code> and <code class="inline">fingerprint</code>.</p>
+<p>The <code class="inline">privateKey</code> held by the caller can be used to generate viewer authorization tokens, to grant
+viewers access to authorized channels.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_stream/3">
+
+    <span id="get_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_stream/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_stream(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the active (live) stream on a specified channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_stream_key/3">
+
+    <span id="get_stream_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_stream_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_stream_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets stream-key information for a specified ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_playback_key_pair/3">
+
+    <span id="import_playback_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_playback_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_playback_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L281" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports the public portion of a new key pair and returns its <code class="inline">arn</code> and <code class="inline">fingerprint</code>.</p>
+<p>The <code class="inline">privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access
+to authorized channels.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_channels/3">
+
+    <span id="list_channels/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_channels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_channels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets summary information about all channels in your account, in the AWS region where the API
+request is processed.</p>
+<p>This list can be filtered to match a specified string.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_playback_key_pairs/3">
+
+    <span id="list_playback_key_pairs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_playback_key_pairs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_playback_key_pairs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets summary information about playback key pairs.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_stream_keys/3">
+
+    <span id="list_stream_keys/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_stream_keys/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_stream_keys(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L314" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets summary information about stream keys for the specified channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_streams/3">
+
+    <span id="list_streams/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_streams/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_streams(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets summary information about live streams in your account, in the AWS region where the API
+request is processed.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L335" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about AWS tags for the specified ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_metadata/3">
+
+    <span id="put_metadata/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_metadata/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_metadata(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L347" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inserts metadata into an RTMPS stream for the specified channel.</p>
+<p>A maximum of 5 requests per second per channel is allowed, each with a maximum 1KB payload.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_stream/3">
+
+    <span id="stop_stream/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_stream/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_stream(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L362" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disconnects the incoming RTMPS stream for the specified channel.</p>
+<p>Can be used in conjunction with <code class="inline">DeleteStreamKey</code> to prevent further streaming to a channel.</p>
+<p>Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to
+stop the stream permanently, you may want to first revoke the <code class="inline">streamKey</code> attached to the channel.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L372" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates tags for the AWS resource with the specified ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L382" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from the resource with the specified ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_channel/3">
+
+    <span id="update_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ivs.ex#L399" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a channel&#39;s configuration.</p>
+<p>This does not affect an ongoing stream of this channel. You must stop and restart the stream for
+the changes to take effect.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

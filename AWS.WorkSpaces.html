@@ -1,0 +1,1985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.WorkSpaces — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.WorkSpaces
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon WorkSpaces Service</p>
+<p>Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows and Amazon Linux
+desktops for your users.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_connection_alias/3">associate_connection_alias(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified connection alias with the specified directory to enable cross-Region
+redirection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_ip_groups/3">associate_ip_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified IP access control group with the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#authorize_ip_rules/3">authorize_ip_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more rules to the specified IP access control group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#copy_workspace_image/3">copy_workspace_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Copies the specified image from the specified Region to the current Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_connection_alias/3">create_connection_alias(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates the specified connection alias for use with cross-Region redirection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_ip_group/3">create_ip_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an IP access control group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_tags/3">create_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates the specified tags for the specified WorkSpaces resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_workspaces/3">create_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates one or more WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_connection_alias/3">delete_connection_alias(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified connection alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_ip_group/3">delete_ip_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified IP access control group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_tags/3">delete_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified tags from the specified WorkSpaces resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_workspace_image/3">delete_workspace_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified image from your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_workspace_directory/3">deregister_workspace_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_account/3">describe_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the
+specified account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_account_modifications/3">describe_account_modifications(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes modifications to the configuration of Bring Your Own License
+(BYOL) for the specified account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_client_properties/3">describe_client_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_connection_alias_permissions/3">describe_connection_alias_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions that the owner of a connection alias has granted to another AWS account
+for the specified connection alias.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_connection_aliases/3">describe_connection_aliases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the connection aliases used for cross-Region redirection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_ip_groups/3">describe_ip_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes one or more of your IP access control groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_tags/3">describe_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified tags for the specified WorkSpaces resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspace_bundles/3">describe_workspace_bundles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes the available WorkSpace bundles.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspace_directories/3">describe_workspace_directories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the available directories that are registered with Amazon WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspace_image_permissions/3">describe_workspace_image_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions that the owner of an image has granted to other AWS accounts for an
+image.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspace_images/3">describe_workspace_images(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list that describes one or more specified images, if the image identifiers are
+provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspace_snapshots/3">describe_workspace_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the snapshots for the specified WorkSpace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspaces/3">describe_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_workspaces_connection_status/3">describe_workspaces_connection_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the connection status of the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_connection_alias/3">disassociate_connection_alias(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a connection alias from a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_ip_groups/3">disassociate_ip_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the specified IP access control group from the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_workspace_image/3">import_workspace_image(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_available_management_cidr_ranges/3">list_available_management_cidr_ranges(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the
+network management interface when you enable Bring Your Own License (BYOL).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#migrate_workspace/3">migrate_workspace(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data
+on the user volume.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_account/3">modify_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the configuration of Bring Your Own License (BYOL) for the specified account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_client_properties/3">modify_client_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the properties of the specified Amazon WorkSpaces clients.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_selfservice_permissions/3">modify_selfservice_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the self-service WorkSpace management capabilities for your users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_workspace_access_properties/3">modify_workspace_access_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specifies which devices and operating systems users can use to access their WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_workspace_creation_properties/3">modify_workspace_creation_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modify the default properties used to create WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_workspace_properties/3">modify_workspace_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the specified WorkSpace properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_workspace_state/3">modify_workspace_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the state of the specified WorkSpace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reboot_workspaces/3">reboot_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reboots the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#rebuild_workspaces/3">rebuild_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Rebuilds the specified WorkSpace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_workspace_directory/3">register_workspace_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#restore_workspace/3">restore_workspace(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restores the specified WorkSpace to its last known healthy state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#revoke_ip_rules/3">revoke_ip_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more rules from the specified IP access control group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_workspaces/3">start_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_workspaces/3">stop_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#terminate_workspaces/3">terminate_workspaces(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Terminates the specified WorkSpaces.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_connection_alias_permission/3">update_connection_alias_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shares or unshares a connection alias with one account by specifying whether that account has
+permission to associate the connection alias with a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_rules_of_ip_group/3">update_rules_of_ip_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces the current rules of the specified IP access control group with the specified rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_workspace_image_permission/3">update_workspace_image_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shares or unshares an image with one account by specifying whether that account has permission to
+copy the image.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_connection_alias/3">
+
+    <span id="associate_connection_alias/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_connection_alias/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_connection_alias(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified connection alias with the specified directory to enable cross-Region
+redirection.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+<p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+DescribeConnectionAliases</a>
+to make sure that the current state of the connection alias is <code class="inline">CREATED</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_ip_groups/3">
+
+    <span id="associate_ip_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_ip_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_ip_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified IP access control group with the specified directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="authorize_ip_rules/3">
+
+    <span id="authorize_ip_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#authorize_ip_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">authorize_ip_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more rules to the specified IP access control group.</p>
+<p>This action gives users permission to access their WorkSpaces from the CIDR address ranges
+specified in the rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="copy_workspace_image/3">
+
+    <span id="copy_workspace_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#copy_workspace_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">copy_workspace_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Copies the specified image from the specified Region to the current Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_connection_alias/3">
+
+    <span id="create_connection_alias/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_connection_alias/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_connection_alias(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates the specified connection alias for use with cross-Region redirection.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_ip_group/3">
+
+    <span id="create_ip_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_ip_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_ip_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an IP access control group.</p>
+<p>An IP access control group provides you with the ability to control the IP addresses from which
+users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to
+your IP access control group and then associate the group with your directory. You can add rules
+when you create the group or at any time using <code class="inline">AuthorizeIpRules</code>.</p>
+<p>There is a default IP access control group associated with your directory. If you don&#39;t associate
+an IP access control group with your directory, the default group is used. The default group
+includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot
+modify the default IP access control group for your directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_tags/3">
+
+    <span id="create_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L79" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates the specified tags for the specified WorkSpaces resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_workspaces/3">
+
+    <span id="create_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L88" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates one or more WorkSpaces.</p>
+<p>This operation is asynchronous and returns before the WorkSpaces are created.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_connection_alias/3">
+
+    <span id="delete_connection_alias/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_connection_alias/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_connection_alias(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified connection alias.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+<p><strong>If you will no longer be using a fully qualified domain name (FQDN) as the registration code for
+your WorkSpaces users, you must take certain precautions to prevent potential security issues.</strong>
+For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations"> Security Considerations if You Stop Using Cross-Region Redirection</a>.</p>
+<p>To delete a connection alias that has been shared, the shared account must first disassociate the
+connection alias from any directories it has been associated with. Then you must unshare the
+connection alias from the account it has been shared with. You can delete a connection alias only
+after it is no longer shared with any accounts or associated with any directories.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_ip_group/3">
+
+    <span id="delete_ip_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_ip_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_ip_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified IP access control group.</p>
+<p>You cannot delete an IP access control group that is associated with a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_tags/3">
+
+    <span id="delete_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L122" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified tags from the specified WorkSpaces resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_workspace_image/3">
+
+    <span id="delete_workspace_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_workspace_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_workspace_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified image from your account.</p>
+<p>To delete an image, you must first delete any bundles that are associated with the image and
+unshare the image if it is shared with other accounts.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_workspace_directory/3">
+
+    <span id="deregister_workspace_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_workspace_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_workspace_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters the specified directory.</p>
+<p>This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any
+WorkSpaces are registered to this directory, you must remove them before you can deregister the
+directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_account/3">
+
+    <span id="describe_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L151" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the
+specified account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_account_modifications/3">
+
+    <span id="describe_account_modifications/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_account_modifications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_account_modifications(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes modifications to the configuration of Bring Your Own License
+(BYOL) for the specified account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_client_properties/3">
+
+    <span id="describe_client_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_client_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_client_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_connection_alias_permissions/3">
+
+    <span id="describe_connection_alias_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_connection_alias_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_connection_alias_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L176" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions that the owner of a connection alias has granted to another AWS account
+for the specified connection alias.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_connection_aliases/3">
+
+    <span id="describe_connection_aliases/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_connection_aliases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_connection_aliases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the connection aliases used for cross-Region redirection.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_ip_groups/3">
+
+    <span id="describe_ip_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_ip_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_ip_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L192" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes one or more of your IP access control groups.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_tags/3">
+
+    <span id="describe_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L199" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified tags for the specified WorkSpaces resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspace_bundles/3">
+
+    <span id="describe_workspace_bundles/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspace_bundles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspace_bundles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes the available WorkSpace bundles.</p>
+<p>You can filter the results using either bundle ID or owner, but not both.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspace_directories/3">
+
+    <span id="describe_workspace_directories/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspace_directories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspace_directories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L215" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the available directories that are registered with Amazon WorkSpaces.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspace_image_permissions/3">
+
+    <span id="describe_workspace_image_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspace_image_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspace_image_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions that the owner of an image has granted to other AWS accounts for an
+image.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspace_images/3">
+
+    <span id="describe_workspace_images/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspace_images/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspace_images(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L233" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list that describes one or more specified images, if the image identifiers are
+provided.</p>
+<p>Otherwise, all images in the account are described.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspace_snapshots/3">
+
+    <span id="describe_workspace_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspace_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspace_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L240" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the snapshots for the specified WorkSpace.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspaces/3">
+
+    <span id="describe_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L250" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified WorkSpaces.</p>
+<p>You can filter the results by using the bundle identifier, directory identifier, or owner, but you
+can specify only one filter at a time.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_workspaces_connection_status/3">
+
+    <span id="describe_workspaces_connection_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_workspaces_connection_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_workspaces_connection_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L257" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the connection status of the specified WorkSpaces.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_connection_alias/3">
+
+    <span id="disassociate_connection_alias/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_connection_alias/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_connection_alias(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L271" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a connection alias from a directory.</p>
+<p>Disassociating a connection alias disables cross-Region redirection between two directories in
+different AWS Regions. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+<p>Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+DescribeConnectionAliases</a>
+to make sure that the current state of the connection alias is <code class="inline">CREATED</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_ip_groups/3">
+
+    <span id="disassociate_ip_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_ip_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_ip_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the specified IP access control group from the specified directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_workspace_image/3">
+
+    <span id="import_workspace_image/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_workspace_image/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_workspace_image(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L289" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports the specified Windows 10 Bring Your Own License (BYOL) image into Amazon WorkSpaces.</p>
+<p>The image must be an already licensed Amazon EC2 image that is in your AWS account, and you must
+own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop
+Licenses</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_available_management_cidr_ranges/3">
+
+    <span id="list_available_management_cidr_ranges/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_available_management_cidr_ranges/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_available_management_cidr_ranges(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L301" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the
+network management interface when you enable Bring Your Own License (BYOL).</p>
+<p>The management network interface is connected to a secure Amazon WorkSpaces management network. It
+is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to
+allow Amazon WorkSpaces to manage the WorkSpace.</p>
+
+  </section>
+</section>
+<section class="detail" id="migrate_workspace/3">
+
+    <span id="migrate_workspace/2"></span>
+
+  <div class="detail-header">
+    <a href="#migrate_workspace/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">migrate_workspace(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L318" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data
+on the user volume.</p>
+<p>The migration process recreates the WorkSpace by using a new root volume from the target bundle
+image and the user volume from the last available snapshot of the original WorkSpace. During
+migration, the original <code class="inline">D:Users%USERNAME%</code> user profile folder is renamed to
+<code class="inline">D:Users%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A new <code class="inline">D:Users%USERNAME%</code> folder is generated
+by the new OS. Certain files in the old user profile are moved to the new user profile.</p>
+<p>For available migration scenarios, details about what happens during migration, and best
+practices, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate a WorkSpace</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_account/3">
+
+    <span id="modify_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the configuration of Bring Your Own License (BYOL) for the specified account.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_client_properties/3">
+
+    <span id="modify_client_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_client_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_client_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the properties of the specified Amazon WorkSpaces clients.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_selfservice_permissions/3">
+
+    <span id="modify_selfservice_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_selfservice_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_selfservice_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L341" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the self-service WorkSpace management capabilities for your users.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_workspace_access_properties/3">
+
+    <span id="modify_workspace_access_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_workspace_access_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_workspace_access_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L350" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specifies which devices and operating systems users can use to access their WorkSpaces.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-directory-details.html#control-device-access"> Control Device Access</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_workspace_creation_properties/3">
+
+    <span id="modify_workspace_creation_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_workspace_creation_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_workspace_creation_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L357" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modify the default properties used to create WorkSpaces.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_workspace_properties/3">
+
+    <span id="modify_workspace_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_workspace_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_workspace_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L366" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the specified WorkSpace properties.</p>
+<p>For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html"> Modify a WorkSpace</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_workspace_state/3">
+
+    <span id="modify_workspace_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_workspace_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_workspace_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L378" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the state of the specified WorkSpace.</p>
+<p>To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code class="inline">ADMIN_MAINTENANCE</code>.
+WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore.
+An AutoStop WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the
+<code class="inline">ADMIN_MAINTENANCE</code> state.</p>
+
+  </section>
+</section>
+<section class="detail" id="reboot_workspaces/3">
+
+    <span id="reboot_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#reboot_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reboot_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L389" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Reboots the specified WorkSpaces.</p>
+<p>You cannot reboot a WorkSpace unless its state is <code class="inline">AVAILABLE</code> or <code class="inline">UNHEALTHY</code>.</p>
+<p>This operation is asynchronous and returns before the WorkSpaces have rebooted.</p>
+
+  </section>
+</section>
+<section class="detail" id="rebuild_workspaces/3">
+
+    <span id="rebuild_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#rebuild_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">rebuild_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L404" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Rebuilds the specified WorkSpace.</p>
+<p>You cannot rebuild a WorkSpace unless its state is <code class="inline">AVAILABLE</code>, <code class="inline">ERROR</code>, <code class="inline">UNHEALTHY</code>, <code class="inline">STOPPED</code>,
+or <code class="inline">REBOOTING</code>.</p>
+<p>Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data.
+For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html">Rebuild a WorkSpace</a>.</p>
+<p>This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_workspace_directory/3">
+
+    <span id="register_workspace_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_workspace_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_workspace_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L417" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers the specified directory.</p>
+<p>This operation is asynchronous and returns before the WorkSpace directory is registered. If this
+is the first time you are registering a directory, you will need to create the
+workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role">
+Creating the workspaces_DefaultRole
+Role</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="restore_workspace/3">
+
+    <span id="restore_workspace/2"></span>
+
+  <div class="detail-header">
+    <a href="#restore_workspace/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">restore_workspace(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L432" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restores the specified WorkSpace to its last known healthy state.</p>
+<p>You cannot restore a WorkSpace unless its state is <code class="inline">AVAILABLE</code>, <code class="inline">ERROR</code>, <code class="inline">UNHEALTHY</code>, or
+<code class="inline">STOPPED</code>.</p>
+<p>Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For
+more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html">Restore a WorkSpace</a>.</p>
+<p>This operation is asynchronous and returns before the WorkSpace is completely restored.</p>
+
+  </section>
+</section>
+<section class="detail" id="revoke_ip_rules/3">
+
+    <span id="revoke_ip_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#revoke_ip_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">revoke_ip_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L439" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more rules from the specified IP access control group.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_workspaces/3">
+
+    <span id="start_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L448" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the specified WorkSpaces.</p>
+<p>You cannot start a WorkSpace unless it has a running mode of <code class="inline">AutoStop</code> and a state of <code class="inline">STOPPED</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_workspaces/3">
+
+    <span id="stop_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L458" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the specified WorkSpaces.</p>
+<p>You cannot stop a WorkSpace unless it has a running mode of <code class="inline">AutoStop</code> and a state of <code class="inline">AVAILABLE</code>,
+<code class="inline">IMPAIRED</code>, <code class="inline">UNHEALTHY</code>, or <code class="inline">ERROR</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="terminate_workspaces/3">
+
+    <span id="terminate_workspaces/2"></span>
+
+  <div class="detail-header">
+    <a href="#terminate_workspaces/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">terminate_workspaces(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L473" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Terminates the specified WorkSpaces.</p>
+<p>Terminating a WorkSpace is a permanent action and cannot be undone. The user&#39;s data is destroyed.
+If you need to archive any user data, contact Amazon Web Services before terminating the
+WorkSpace.</p>
+<p>You can terminate a WorkSpace that is in any state except <code class="inline">SUSPENDED</code>.</p>
+<p>This operation is asynchronous and returns before the WorkSpaces have been completely terminated.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_connection_alias_permission/3">
+
+    <span id="update_connection_alias_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_connection_alias_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_connection_alias_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L494" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Shares or unshares a connection alias with one account by specifying whether that account has
+permission to associate the connection alias with a directory.</p>
+<p>If the association permission is granted, the connection alias is shared with that account. If the
+association permission is revoked, the connection alias is unshared with the account. For more
+information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>
+<p>   Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
+DescribeConnectionAliases</a>
+to make sure that the current state of the connection alias is <code class="inline">CREATED</code>.</p>
+<p>   To delete a connection alias that has been shared, the shared account must first
+disassociate the connection alias from any directories it has been associated with. Then you must
+unshare the connection alias from the account it has been shared with. You can delete a connection
+alias only after it is no longer shared with any accounts or associated with any directories.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_rules_of_ip_group/3">
+
+    <span id="update_rules_of_ip_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_rules_of_ip_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_rules_of_ip_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L501" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces the current rules of the specified IP access control group with the specified rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_workspace_image_permission/3">
+
+    <span id="update_workspace_image_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_workspace_image_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_workspace_image_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_spaces.ex#L519" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Shares or unshares an image with one account by specifying whether that account has permission to
+copy the image.</p>
+<p>If the copy image permission is granted, the image is shared with that account. If the copy image
+permission is revoked, the image is unshared with the account.</p>
+<p>   To delete an image that has been shared, you must unshare the image before you delete
+it.</p>
+<p>   Sharing Bring Your Own License (BYOL) images across AWS accounts isn&#39;t supported at
+this time in the AWS GovCloud (US-West) Region. To share BYOL images across accounts in the AWS
+GovCloud (US-West) Region, contact AWS Support.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

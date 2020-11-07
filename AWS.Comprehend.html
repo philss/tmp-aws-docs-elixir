@@ -1,0 +1,2162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Comprehend — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Comprehend
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Comprehend is an AWS service for gaining insight into the content of documents.</p>
+<p>Use these actions to determine the topics contained in your documents, the topics they discuss,
+the predominant sentiment expressed in them, the predominant language used, and more.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_detect_dominant_language/3">batch_detect_dominant_language(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Determines the dominant language of the input text for a batch of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_detect_entities/3">batch_detect_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects the text of a batch of documents for named entities and returns information about them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_detect_key_phrases/3">batch_detect_key_phrases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects the key noun phrases found in a batch of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_detect_sentiment/3">batch_detect_sentiment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects a batch of documents and returns an inference of the prevailing sentiment, <code class="inline">POSITIVE</code>,
+<code class="inline">NEUTRAL</code>, <code class="inline">MIXED</code>, or <code class="inline">NEGATIVE</code>, in each one.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_detect_syntax/3">batch_detect_syntax(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the
+document and returns information about them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#classify_document/3">classify_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new document classification request to analyze a single document in real-time, using a
+previously created and trained custom model and an endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_document_classifier/3">create_document_classifier(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new document classifier that you can use to categorize documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_endpoint/3">create_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a model-specific endpoint for synchronous inference for a previously trained custom model</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_entity_recognizer/3">create_entity_recognizer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an entity recognizer using submitted files.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_document_classifier/3">delete_document_classifier(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a previously created document classifier</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_endpoint/3">delete_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a model-specific endpoint for a previously-trained custom model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_entity_recognizer/3">delete_entity_recognizer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an entity recognizer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_document_classification_job/3">describe_document_classification_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a document classification job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_document_classifier/3">describe_document_classifier(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a document classifier.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dominant_language_detection_job/3">describe_dominant_language_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a dominant language detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_endpoint/3">describe_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a specific endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_entities_detection_job/3">describe_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with an entities detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_entity_recognizer/3">describe_entity_recognizer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides details about an entity recognizer including status, S3 buckets containing training data,
+recognizer metadata, metrics, and so on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_key_phrases_detection_job/3">describe_key_phrases_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a key phrases detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_pii_entities_detection_job/3">describe_pii_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a PII entities detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_sentiment_detection_job/3">describe_sentiment_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a sentiment detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_topics_detection_job/3">describe_topics_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a topic detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_dominant_language/3">detect_dominant_language(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Determines the dominant language of the input text.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_entities/3">detect_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects text for named entities, and returns information about them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_key_phrases/3">detect_key_phrases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detects the key noun phrases found in the text.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_pii_entities/3">detect_pii_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects the input text for entities that contain personally identifiable information (PII) and
+returns information about them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_sentiment/3">detect_sentiment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects text and returns an inference of the prevailing sentiment (<code class="inline">POSITIVE</code>, <code class="inline">NEUTRAL</code>,
+<code class="inline">MIXED</code>, or <code class="inline">NEGATIVE</code>).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_syntax/3">detect_syntax(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects text for syntax and the part of speech of words in the document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_document_classification_jobs/3">list_document_classification_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the documentation classification jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_document_classifiers/3">list_document_classifiers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the document classifiers that you have created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dominant_language_detection_jobs/3">list_dominant_language_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the dominant language detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_endpoints/3">list_endpoints(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of all existing endpoints that you&#39;ve created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_entities_detection_jobs/3">list_entities_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the entity detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_entity_recognizers/3">list_entity_recognizers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the properties of all entity recognizers that you created, including recognizers
+currently in training.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_key_phrases_detection_jobs/3">list_key_phrases_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get a list of key phrase detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pii_entities_detection_jobs/3">list_pii_entities_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the PII entity detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_sentiment_detection_jobs/3">list_sentiment_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of sentiment detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all tags associated with a given Amazon Comprehend resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_topics_detection_jobs/3">list_topics_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the topic detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_document_classification_job/3">start_document_classification_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous document classification job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_dominant_language_detection_job/3">start_dominant_language_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous dominant language detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_entities_detection_job/3">start_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous entity detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_key_phrases_detection_job/3">start_key_phrases_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous key phrase detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_pii_entities_detection_job/3">start_pii_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous PII entity detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_sentiment_detection_job/3">start_sentiment_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous sentiment detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_topics_detection_job/3">start_topics_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous topic detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_dominant_language_detection_job/3">stop_dominant_language_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a dominant language detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_entities_detection_job/3">stop_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops an entities detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_key_phrases_detection_job/3">stop_key_phrases_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a key phrases detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_pii_entities_detection_job/3">stop_pii_entities_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a PII entities detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_sentiment_detection_job/3">stop_sentiment_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a sentiment detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_training_document_classifier/3">stop_training_document_classifier(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a document classifier training job while in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_training_entity_recognizer/3">stop_training_entity_recognizer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops an entity recognizer training job while in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a specific tag with an Amazon Comprehend resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a specific tag associated with an Amazon Comprehend resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_endpoint/3">update_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates information about the specified endpoint.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_detect_dominant_language/3">
+
+    <span id="batch_detect_dominant_language/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_detect_dominant_language/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_detect_dominant_language(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L17" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Determines the dominant language of the input text for a batch of documents.</p>
+<p>For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_detect_entities/3">
+
+    <span id="batch_detect_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_detect_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_detect_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects the text of a batch of documents for named entities and returns information about them.</p>
+<p>For more information about named entities, see <code class="inline">how-entities</code></p>
+
+  </section>
+</section>
+<section class="detail" id="batch_detect_key_phrases/3">
+
+    <span id="batch_detect_key_phrases/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_detect_key_phrases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_detect_key_phrases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects the key noun phrases found in a batch of documents.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_detect_sentiment/3">
+
+    <span id="batch_detect_sentiment/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_detect_sentiment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_detect_sentiment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L41" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects a batch of documents and returns an inference of the prevailing sentiment, <code class="inline">POSITIVE</code>,
+<code class="inline">NEUTRAL</code>, <code class="inline">MIXED</code>, or <code class="inline">NEGATIVE</code>, in each one.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_detect_syntax/3">
+
+    <span id="batch_detect_syntax/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_detect_syntax/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_detect_syntax(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L51" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the
+document and returns information about them.</p>
+<p>For more information, see <code class="inline">how-syntax</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="classify_document/3">
+
+    <span id="classify_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#classify_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">classify_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new document classification request to analyze a single document in real-time, using a
+previously created and trained custom model and an endpoint.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_document_classifier/3">
+
+    <span id="create_document_classifier/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_document_classifier/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_document_classifier(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new document classifier that you can use to categorize documents.</p>
+<p>To create a classifier, you provide a set of training documents that labeled with the categories
+that you want to use. After the classifier is trained you can use it to categorize a set of
+labeled documents into the categories. For more information, see <code class="inline">how-document-classification</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_endpoint/3">
+
+    <span id="create_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a model-specific endpoint for synchronous inference for a previously trained custom model</p>
+
+  </section>
+</section>
+<section class="detail" id="create_entity_recognizer/3">
+
+    <span id="create_entity_recognizer/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_entity_recognizer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_entity_recognizer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an entity recognizer using submitted files.</p>
+<p>After your <code class="inline">CreateEntityRecognizer</code> request is submitted, you can check job status using the API.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_document_classifier/3">
+
+    <span id="delete_document_classifier/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_document_classifier/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_document_classifier(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a previously created document classifier</p>
+<p>Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted.</p>
+<p>If an active inference job is using the model, a <code class="inline">ResourceInUseException</code> will be returned.</p>
+<p>This is an asynchronous action that puts the classifier into a DELETING state, and it is then
+removed by a background job. Once removed, the classifier disappears from your account and is no
+longer available for use.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_endpoint/3">
+
+    <span id="delete_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a model-specific endpoint for a previously-trained custom model.</p>
+<p>All endpoints must be deleted in order for the model to be deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_entity_recognizer/3">
+
+    <span id="delete_entity_recognizer/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_entity_recognizer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_entity_recognizer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an entity recognizer.</p>
+<p>Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted. If an
+active inference job is using the model, a <code class="inline">ResourceInUseException</code> will be returned.</p>
+<p>This is an asynchronous action that puts the recognizer into a DELETING state, and it is then
+removed by a background job. Once removed, the recognizer disappears from your account and is no
+longer available for use.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_document_classification_job/3">
+
+    <span id="describe_document_classification_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_document_classification_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_document_classification_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a document classification job.</p>
+<p>Use this operation to get the status of a classification job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_document_classifier/3">
+
+    <span id="describe_document_classifier/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_document_classifier/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_document_classifier(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a document classifier.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dominant_language_detection_job/3">
+
+    <span id="describe_dominant_language_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dominant_language_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dominant_language_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L149" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a dominant language detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_endpoint/3">
+
+    <span id="describe_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a specific endpoint.</p>
+<p>Use this operation to get the status of an endpoint.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_entities_detection_job/3">
+
+    <span id="describe_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with an entities detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_entity_recognizer/3">
+
+    <span id="describe_entity_recognizer/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_entity_recognizer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_entity_recognizer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides details about an entity recognizer including status, S3 buckets containing training data,
+recognizer metadata, metrics, and so on.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_key_phrases_detection_job/3">
+
+    <span id="describe_key_phrases_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_key_phrases_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_key_phrases_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a key phrases detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_pii_entities_detection_job/3">
+
+    <span id="describe_pii_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_pii_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_pii_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a PII entities detection job.</p>
+<p>For example, you can use this operation to get the job status.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_sentiment_detection_job/3">
+
+    <span id="describe_sentiment_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_sentiment_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_sentiment_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L202" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a sentiment detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_topics_detection_job/3">
+
+    <span id="describe_topics_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_topics_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_topics_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a topic detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_dominant_language/3">
+
+    <span id="detect_dominant_language/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_dominant_language/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_dominant_language(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L220" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Determines the dominant language of the input text.</p>
+<p>For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_entities/3">
+
+    <span id="detect_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects text for named entities, and returns information about them.</p>
+<p>For more information, about named entities, see <code class="inline">how-entities</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_key_phrases/3">
+
+    <span id="detect_key_phrases/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_key_phrases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_key_phrases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L236" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detects the key noun phrases found in the text.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_pii_entities/3">
+
+    <span id="detect_pii_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_pii_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_pii_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L244" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects the input text for entities that contain personally identifiable information (PII) and
+returns information about them.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_sentiment/3">
+
+    <span id="detect_sentiment/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_sentiment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_sentiment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects text and returns an inference of the prevailing sentiment (<code class="inline">POSITIVE</code>, <code class="inline">NEUTRAL</code>,
+<code class="inline">MIXED</code>, or <code class="inline">NEGATIVE</code>).</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_syntax/3">
+
+    <span id="detect_syntax/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_syntax/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_syntax(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L261" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects text for syntax and the part of speech of words in the document.</p>
+<p>For more information, <code class="inline">how-syntax</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_document_classification_jobs/3">
+
+    <span id="list_document_classification_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_document_classification_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_document_classification_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the documentation classification jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_document_classifiers/3">
+
+    <span id="list_document_classifiers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_document_classifiers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_document_classifiers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L275" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the document classifiers that you have created.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dominant_language_detection_jobs/3">
+
+    <span id="list_dominant_language_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_dominant_language_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dominant_language_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the dominant language detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_endpoints/3">
+
+    <span id="list_endpoints/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_endpoints/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_endpoints(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L289" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of all existing endpoints that you&#39;ve created.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_entities_detection_jobs/3">
+
+    <span id="list_entities_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_entities_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_entities_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L296" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the entity detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_entity_recognizers/3">
+
+    <span id="list_entity_recognizers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_entity_recognizers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_entity_recognizers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L311" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the properties of all entity recognizers that you created, including recognizers
+currently in training.</p>
+<p>Allows you to filter the list of recognizers based on criteria such as status and submission time.
+This call returns up to 500 entity recognizers in the list, with a default number of 100
+recognizers in the list.</p>
+<p>The results of this list are not in any particular order. Please get the list and sort locally if
+needed.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_key_phrases_detection_jobs/3">
+
+    <span id="list_key_phrases_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_key_phrases_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_key_phrases_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L318" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get a list of key phrase detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pii_entities_detection_jobs/3">
+
+    <span id="list_pii_entities_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_pii_entities_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pii_entities_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the PII entity detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_sentiment_detection_jobs/3">
+
+    <span id="list_sentiment_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_sentiment_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_sentiment_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of sentiment detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all tags associated with a given Amazon Comprehend resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_topics_detection_jobs/3">
+
+    <span id="list_topics_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_topics_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_topics_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L346" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the topic detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_document_classification_job/3">
+
+    <span id="start_document_classification_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_document_classification_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_document_classification_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L355" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous document classification job.</p>
+<p>Use the operation to track the progress of the job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_dominant_language_detection_job/3">
+
+    <span id="start_dominant_language_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_dominant_language_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_dominant_language_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous dominant language detection job for a collection of documents.</p>
+<p>Use the operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_entities_detection_job/3">
+
+    <span id="start_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous entity detection job for a collection of documents.</p>
+<p>Use the operation to track the status of a job.</p>
+<p>This API can be used for either standard entity detection or custom entity recognition. In order
+to be used for custom entity recognition, the optional <code class="inline">EntityRecognizerArn</code> must be used in order
+to provide access to the recognizer being used to detect the custom entity.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_key_phrases_detection_job/3">
+
+    <span id="start_key_phrases_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_key_phrases_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_key_phrases_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous key phrase detection job for a collection of documents.</p>
+<p>Use the operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_pii_entities_detection_job/3">
+
+    <span id="start_pii_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_pii_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_pii_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L393" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous PII entity detection job for a collection of documents.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_sentiment_detection_job/3">
+
+    <span id="start_sentiment_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_sentiment_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_sentiment_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L402" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous sentiment detection job for a collection of documents.</p>
+<p>use the operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_topics_detection_job/3">
+
+    <span id="start_topics_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_topics_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_topics_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L411" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous topic detection job.</p>
+<p>Use the <code class="inline">DescribeTopicDetectionJob</code> operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_dominant_language_detection_job/3">
+
+    <span id="stop_dominant_language_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_dominant_language_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_dominant_language_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L428" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a dominant language detection job in progress.</p>
+<p>If the job state is <code class="inline">IN_PROGRESS</code> the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+<code class="inline">COMPLETED</code> state; otherwise the job is stopped and put into the <code class="inline">STOPPED</code> state.</p>
+<p>If the job is in the <code class="inline">COMPLETED</code> or <code class="inline">FAILED</code> state when you call the
+<code class="inline">StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request
+Exception.</p>
+<p>When a job is stopped, any documents already processed are written to the output location.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_entities_detection_job/3">
+
+    <span id="stop_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L445" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops an entities detection job in progress.</p>
+<p>If the job state is <code class="inline">IN_PROGRESS</code> the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+<code class="inline">COMPLETED</code> state; otherwise the job is stopped and put into the <code class="inline">STOPPED</code> state.</p>
+<p>If the job is in the <code class="inline">COMPLETED</code> or <code class="inline">FAILED</code> state when you call the
+<code class="inline">StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request
+Exception.</p>
+<p>When a job is stopped, any documents already processed are written to the output location.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_key_phrases_detection_job/3">
+
+    <span id="stop_key_phrases_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_key_phrases_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_key_phrases_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L462" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a key phrases detection job in progress.</p>
+<p>If the job state is <code class="inline">IN_PROGRESS</code> the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+<code class="inline">COMPLETED</code> state; otherwise the job is stopped and put into the <code class="inline">STOPPED</code> state.</p>
+<p>If the job is in the <code class="inline">COMPLETED</code> or <code class="inline">FAILED</code> state when you call the
+<code class="inline">StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request
+Exception.</p>
+<p>When a job is stopped, any documents already processed are written to the output location.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_pii_entities_detection_job/3">
+
+    <span id="stop_pii_entities_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_pii_entities_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_pii_entities_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L469" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a PII entities detection job in progress.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_sentiment_detection_job/3">
+
+    <span id="stop_sentiment_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_sentiment_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_sentiment_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a sentiment detection job in progress.</p>
+<p>If the job state is <code class="inline">IN_PROGRESS</code> the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the job completes before it can be stopped, it is put into the
+<code class="inline">COMPLETED</code> state; otherwise the job is be stopped and put into the <code class="inline">STOPPED</code> state.</p>
+<p>If the job is in the <code class="inline">COMPLETED</code> or <code class="inline">FAILED</code> state when you call the
+<code class="inline">StopDominantLanguageDetectionJob</code> operation, the operation returns a 400 Internal Request
+Exception.</p>
+<p>When a job is stopped, any documents already processed are written to the output location.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_training_document_classifier/3">
+
+    <span id="stop_training_document_classifier/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_training_document_classifier/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_training_document_classifier(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L498" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a document classifier training job while in progress.</p>
+<p>If the training job state is <code class="inline">TRAINING</code>, the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+<code class="inline">TRAINED</code>; otherwise the training job is stopped and put into the <code class="inline">STOPPED</code> state and the service
+sends back an HTTP 200 response with an empty HTTP body.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_training_entity_recognizer/3">
+
+    <span id="stop_training_entity_recognizer/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_training_entity_recognizer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_training_entity_recognizer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L510" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops an entity recognizer training job while in progress.</p>
+<p>If the training job state is <code class="inline">TRAINING</code>, the job is marked for termination and put into the
+<code class="inline">STOP_REQUESTED</code> state. If the training job completes before it can be stopped, it is put into the
+<code class="inline">TRAINED</code>; otherwise the training job is stopped and putted into the <code class="inline">STOPPED</code> state and the
+service sends back an HTTP 200 response with an empty HTTP body.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L521" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a specific tag with an Amazon Comprehend resource.</p>
+<p>A tag is a key-value pair that adds as a metadata to a resource used by Amazon Comprehend. For
+example, a tag with &quot;Sales&quot; as the key might be added to a resource to indicate its use by the
+sales department.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L528" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a specific tag associated with an Amazon Comprehend resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_endpoint/3">
+
+    <span id="update_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend.ex#L535" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates information about the specified endpoint.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

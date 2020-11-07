@@ -1,0 +1,3139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodeCommit — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodeCommit
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS CodeCommit</p>
+<p>This is the <em>AWS CodeCommit API Reference</em>.</p>
+<p>This reference provides descriptions of the operations and data types for AWS CodeCommit API along
+with usage examples.</p>
+<p>You can use the AWS CodeCommit API to work with the following objects:</p>
+<p>Repositories, by calling the following:</p>
+<ul>
+<li><p><code class="inline">BatchGetRepositories</code>, which returns information about one or more repositories
+associated with your AWS account.</p>
+</li>
+<li><p><code class="inline">CreateRepository</code>, which creates an AWS CodeCommit repository.</p>
+</li>
+<li><p><code class="inline">DeleteRepository</code>, which deletes an AWS CodeCommit repository.</p>
+</li>
+<li><p><code class="inline">GetRepository</code>, which returns information about a specified repository.</p>
+</li>
+<li><p><code class="inline">ListRepositories</code>, which lists all AWS CodeCommit repositories associated with your
+AWS account.</p>
+</li>
+<li><p><code class="inline">UpdateRepositoryDescription</code>, which sets or updates the description of the
+repository.</p>
+</li>
+<li><p><code class="inline">UpdateRepositoryName</code>, which changes the name of the repository. If you change the
+name of a repository, no other users of that repository can access it until you send them the new
+HTTPS or SSH URL to use.</p>
+</li>
+</ul>
+<p>Branches, by calling the following:</p>
+<ul>
+<li><p><code class="inline">CreateBranch</code>, which creates a branch in a specified repository.</p>
+</li>
+<li><p><code class="inline">DeleteBranch</code>, which deletes the specified branch in a repository unless it is the
+default branch.</p>
+</li>
+<li><p><code class="inline">GetBranch</code>, which returns information about a specified branch.</p>
+</li>
+<li><p><code class="inline">ListBranches</code>, which lists all branches for a specified repository.</p>
+</li>
+<li><p><code class="inline">UpdateDefaultBranch</code>, which changes the default branch for a repository.</p>
+</li>
+</ul>
+<p>Files, by calling the following:</p>
+<ul>
+<li><p><code class="inline">DeleteFile</code>, which deletes the content of a specified file from a specified branch.</p>
+</li>
+<li><p><code class="inline">GetBlob</code>, which returns the base-64 encoded content of an individual Git blob
+object in a repository.</p>
+</li>
+<li><p><code class="inline">GetFile</code>, which returns the base-64 encoded content of a specified file.</p>
+</li>
+<li><p><code class="inline">GetFolder</code>, which returns the contents of a specified folder or directory.</p>
+</li>
+<li><p><code class="inline">PutFile</code>, which adds or modifies a single file in a specified repository and
+branch.</p>
+</li>
+</ul>
+<p>Commits, by calling the following:</p>
+<ul>
+<li><p><code class="inline">BatchGetCommits</code>, which returns information about one or more commits in a
+repository.</p>
+</li>
+<li><p><code class="inline">CreateCommit</code>, which creates a commit for changes to a repository.</p>
+</li>
+<li><p><code class="inline">GetCommit</code>, which returns information about a commit, including commit messages and
+author and committer information.</p>
+</li>
+<li><p><code class="inline">GetDifferences</code>, which returns information about the differences in a valid commit
+specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference).</p>
+</li>
+</ul>
+<p>Merges, by calling the following:</p>
+<ul>
+<li><p><code class="inline">BatchDescribeMergeConflicts</code>, which returns information about conflicts in a merge
+between commits in a repository.</p>
+</li>
+<li><p><code class="inline">CreateUnreferencedMergeCommit</code>, which creates an unreferenced commit between two
+branches or commits for the purpose of comparing them and identifying any potential conflicts.</p>
+</li>
+<li><p><code class="inline">DescribeMergeConflicts</code>, which returns information about merge conflicts between
+the base, source, and destination versions of a file in a potential merge.</p>
+</li>
+<li><p><code class="inline">GetMergeCommit</code>, which returns information about the merge between a source and
+destination commit.</p>
+</li>
+<li><p><code class="inline">GetMergeConflicts</code>, which returns information about merge conflicts between the
+source and destination branch in a pull request.</p>
+</li>
+<li><p><code class="inline">GetMergeOptions</code>, which returns information about the available merge options
+between two branches or commit specifiers.</p>
+</li>
+<li><p><code class="inline">MergeBranchesByFastForward</code>, which merges two branches using the fast-forward merge
+option.</p>
+</li>
+<li><p><code class="inline">MergeBranchesBySquash</code>, which merges two branches using the squash merge option.</p>
+</li>
+<li><p><code class="inline">MergeBranchesByThreeWay</code>, which merges two branches using the three-way merge
+option.</p>
+</li>
+</ul>
+<p>Pull requests, by calling the following:</p>
+<ul>
+<li><p><code class="inline">CreatePullRequest</code>, which creates a pull request in a specified repository.</p>
+</li>
+<li><p><code class="inline">CreatePullRequestApprovalRule</code>, which creates an approval rule for a specified pull
+request.</p>
+</li>
+<li><p><code class="inline">DeletePullRequestApprovalRule</code>, which deletes an approval rule for a specified pull
+request.</p>
+</li>
+<li><p><code class="inline">DescribePullRequestEvents</code>, which returns information about one or more pull
+request events.</p>
+</li>
+<li><p><code class="inline">EvaluatePullRequestApprovalRules</code>, which evaluates whether a pull request has met
+all the conditions specified in its associated approval rules.</p>
+</li>
+<li><p><code class="inline">GetCommentsForPullRequest</code>, which returns information about comments on a specified
+pull request.</p>
+</li>
+<li><p><code class="inline">GetPullRequest</code>, which returns information about a specified pull request.</p>
+</li>
+<li><p><code class="inline">GetPullRequestApprovalStates</code>, which returns information about the approval states
+for a specified pull request.</p>
+</li>
+<li><p><code class="inline">GetPullRequestOverrideState</code>, which returns information about whether approval
+rules have been set aside (overriden) for a pull request, and if so, the Amazon Resource Name
+(ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
+</li>
+<li><p><code class="inline">ListPullRequests</code>, which lists all pull requests for a repository.</p>
+</li>
+<li><p><code class="inline">MergePullRequestByFastForward</code>, which merges the source destination branch of a
+pull request into the specified destination branch for that pull request using the fast-forward
+merge option.</p>
+</li>
+<li><p><code class="inline">MergePullRequestBySquash</code>, which merges the source destination branch of a pull
+request into the specified destination branch for that pull request using the squash merge option.</p>
+</li>
+<li><p><code class="inline">MergePullRequestByThreeWay</code>. which merges the source destination branch of a pull
+request into the specified destination branch for that pull request using the three-way merge
+option.</p>
+</li>
+<li><p><code class="inline">OverridePullRequestApprovalRules</code>, which sets aside all approval rule requirements
+for a pull request.</p>
+</li>
+<li><p><code class="inline">PostCommentForPullRequest</code>, which posts a comment to a pull request at the
+specified line, file, or request.</p>
+</li>
+<li><p><code class="inline">UpdatePullRequestApprovalRuleContent</code>, which updates the structure of an approval
+rule for a pull request.</p>
+</li>
+<li><p><code class="inline">UpdatePullRequestApprovalState</code>, which updates the state of an approval on a pull
+request.</p>
+</li>
+<li><p><code class="inline">UpdatePullRequestDescription</code>, which updates the description of a pull request.</p>
+</li>
+<li><p><code class="inline">UpdatePullRequestStatus</code>, which updates the status of a pull request.</p>
+</li>
+<li><p><code class="inline">UpdatePullRequestTitle</code>, which updates the title of a pull request.</p>
+</li>
+</ul>
+<p>Approval rule templates, by calling the following:</p>
+<ul>
+<li><p><code class="inline">AssociateApprovalRuleTemplateWithRepository</code>, which associates a template with a
+specified repository. After the template is associated with a repository, AWS CodeCommit creates
+approval rules that match the template conditions on every pull request created in the specified
+repository.</p>
+</li>
+<li><p><code class="inline">BatchAssociateApprovalRuleTemplateWithRepositories</code>, which associates a template
+with one or more specified repositories. After the template is associated with a repository, AWS
+CodeCommit creates approval rules that match the template conditions on every pull request created
+in the specified repositories.</p>
+</li>
+<li><p><code class="inline">BatchDisassociateApprovalRuleTemplateFromRepositories</code>, which removes the
+association between a template and specified repositories so that approval rules based on the
+template are not automatically created when pull requests are created in those repositories.</p>
+</li>
+<li><p><code class="inline">CreateApprovalRuleTemplate</code>, which creates a template for approval rules that can
+then be associated with one or more repositories in your AWS account.</p>
+</li>
+<li><p><code class="inline">DeleteApprovalRuleTemplate</code>, which deletes the specified template. It does not
+remove approval rules on pull requests already created with the template.</p>
+</li>
+<li><p><code class="inline">DisassociateApprovalRuleTemplateFromRepository</code>, which removes the association
+between a template and a repository so that approval rules based on the template are not
+automatically created when pull requests are created in the specified repository.</p>
+</li>
+<li><p><code class="inline">GetApprovalRuleTemplate</code>, which returns information about an approval rule
+template.</p>
+</li>
+<li><p><code class="inline">ListApprovalRuleTemplates</code>, which lists all approval rule templates in the AWS
+Region in your AWS account.</p>
+</li>
+<li><p><code class="inline">ListAssociatedApprovalRuleTemplatesForRepository</code>, which lists all approval rule
+templates that are associated with a specified repository.</p>
+</li>
+<li><p><code class="inline">ListRepositoriesForApprovalRuleTemplate</code>, which lists all repositories associated
+with the specified approval rule template.</p>
+</li>
+<li><p><code class="inline">UpdateApprovalRuleTemplateDescription</code>, which updates the description of an
+approval rule template.</p>
+</li>
+<li><p><code class="inline">UpdateApprovalRuleTemplateName</code>, which updates the name of an approval rule
+template.</p>
+</li>
+<li><p><code class="inline">UpdateApprovalRuleTemplateContent</code>, which updates the content of an approval rule
+template.</p>
+</li>
+</ul>
+<p>Comments in a repository, by calling the following:</p>
+<ul>
+<li><p><code class="inline">DeleteCommentContent</code>, which deletes the content of a comment on a commit in a
+repository.</p>
+</li>
+<li><p><code class="inline">GetComment</code>, which returns information about a comment on a commit.</p>
+</li>
+<li><p><code class="inline">GetCommentReactions</code>, which returns information about emoji reactions to comments.</p>
+</li>
+<li><p><code class="inline">GetCommentsForComparedCommit</code>, which returns information about comments on the
+comparison between two commit specifiers in a repository.</p>
+</li>
+<li><p><code class="inline">PostCommentForComparedCommit</code>, which creates a comment on the comparison between
+two commit specifiers in a repository.</p>
+</li>
+<li><p><code class="inline">PostCommentReply</code>, which creates a reply to a comment.</p>
+</li>
+<li><p><code class="inline">PutCommentReaction</code>, which creates or updates an emoji reaction to a comment.</p>
+</li>
+<li><p><code class="inline">UpdateComment</code>, which updates the content of a comment on a commit in a repository.</p>
+</li>
+</ul>
+<p>Tags used to tag resources in AWS CodeCommit (not Git tags), by calling the following:</p>
+<ul>
+<li><p><code class="inline">ListTagsForResource</code>, which gets information about AWS tags for a specified Amazon
+Resource Name (ARN) in AWS CodeCommit.</p>
+</li>
+<li><p><code class="inline">TagResource</code>, which adds or updates tags for a resource in AWS CodeCommit.</p>
+</li>
+<li><p><code class="inline">UntagResource</code>, which removes tags for a resource in AWS CodeCommit.</p>
+</li>
+</ul>
+<p>Triggers, by calling the following:</p>
+<ul>
+<li><p><code class="inline">GetRepositoryTriggers</code>, which returns information about triggers configured for a
+repository.</p>
+</li>
+<li><p><code class="inline">PutRepositoryTriggers</code>, which replaces all triggers for a repository and can be
+used to create or delete triggers.</p>
+</li>
+<li><p><code class="inline">TestRepositoryTriggers</code>, which tests the functionality of a repository trigger by
+sending data to the trigger target.</p>
+</li>
+</ul>
+<p>For information about how to use AWS CodeCommit, see the <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_approval_rule_template_with_repository/3">associate_approval_rule_template_with_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an association between an approval rule template and a specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_associate_approval_rule_template_with_repositories/3">batch_associate_approval_rule_template_with_repositories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an association between an approval rule template and one or more specified repositories.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_describe_merge_conflicts/3">batch_describe_merge_conflicts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more merge conflicts in the attempted merge of two commit
+specifiers using the squash or three-way merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_disassociate_approval_rule_template_from_repositories/3">batch_disassociate_approval_rule_template_from_repositories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the association between an approval rule template and one or more specified repositories.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_commits/3">batch_get_commits(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the contents of one or more commits in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_repositories/3">batch_get_repositories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more repositories.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_approval_rule_template/3">create_approval_rule_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a template for approval rules that can then be associated with one or more repositories in
+your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_branch/3">create_branch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a branch in a repository and points the branch to a commit.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_commit/3">create_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a commit for a repository on the tip of a specified branch.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_pull_request/3">create_pull_request(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a pull request in the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_pull_request_approval_rule/3">create_pull_request_approval_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an approval rule for a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_repository/3">create_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new, empty repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_unreferenced_merge_commit/3">create_unreferenced_merge_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an unreferenced commit that represents the result of merging two branches using a
+specified merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_approval_rule_template/3">delete_approval_rule_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_branch/3">delete_branch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a branch from a repository, unless that branch is the default branch for the repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_comment_content/3">delete_comment_content(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the content of a comment made on a change, file, or commit in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_file/3">delete_file(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified file from a specified branch.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_pull_request_approval_rule/3">delete_pull_request_approval_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an approval rule from a specified pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_repository/3">delete_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_merge_conflicts/3">describe_merge_conflicts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more merge conflicts in the attempted merge of two commit
+specifiers using the squash or three-way merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_pull_request_events/3">describe_pull_request_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more pull request events.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_approval_rule_template_from_repository/3">disassociate_approval_rule_template_from_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the association between a template and a repository so that approval rules based on the
+template are not automatically created when pull requests are created in the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#evaluate_pull_request_approval_rules/3">evaluate_pull_request_approval_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Evaluates whether a pull request has met all the conditions specified in its associated approval
+rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_approval_rule_template/3">get_approval_rule_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specified approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_blob/3">get_blob(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the base-64 encoded content of an individual blob in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_branch/3">get_branch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a repository branch, including its name and the last commit ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_comment/3">get_comment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the content of a comment made on a change, file, or commit in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_comment_reactions/3">get_comment_reactions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about reactions to a specified comment ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_comments_for_compared_commit/3">get_comments_for_compared_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about comments made on the comparison between two commits.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_comments_for_pull_request/3">get_comments_for_pull_request(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns comments made on a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_commit/3">get_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a commit, including commit message and committer information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_differences/3">get_differences(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the differences in a valid commit specifier (such as a branch, tag,
+HEAD, commit ID, or other fully qualified reference).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_file/3">get_file(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the base-64 encoded contents of a specified file and its metadata.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_folder/3">get_folder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the contents of a specified folder in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_merge_commit/3">get_merge_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specified merge commit.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_merge_conflicts/3">get_merge_conflicts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about merge conflicts between the before and after commit IDs for a pull
+request in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_merge_options/3">get_merge_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the merge options available for merging two specified branches.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pull_request/3">get_pull_request(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a pull request in a specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pull_request_approval_states/3">get_pull_request_approval_states(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the approval states for a specified pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pull_request_override_state/3">get_pull_request_override_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about whether approval rules have been set aside (overridden) for a pull
+request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules
+and their requirements for the pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_repository/3">get_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_repository_triggers/3">get_repository_triggers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about triggers configured for a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_approval_rule_templates/3">list_approval_rule_templates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all approval rule templates in the specified AWS Region in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_associated_approval_rule_templates_for_repository/3">list_associated_approval_rule_templates_for_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all approval rule templates that are associated with a specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_branches/3">list_branches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more branches in a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pull_requests/3">list_pull_requests(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of pull requests for a specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_repositories/3">list_repositories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more repositories.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_repositories_for_approval_rule_template/3">list_repositories_for_approval_rule_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all repositories associated with the specified approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_branches_by_fast_forward/3">merge_branches_by_fast_forward(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Merges two branches using the fast-forward merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_branches_by_squash/3">merge_branches_by_squash(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Merges two branches using the squash merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_branches_by_three_way/3">merge_branches_by_three_way(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Merges two specified branches using the three-way merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_pull_request_by_fast_forward/3">merge_pull_request_by_fast_forward(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the fast-forward merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_pull_request_by_squash/3">merge_pull_request_by_squash(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the squash merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#merge_pull_request_by_three_way/3">merge_pull_request_by_three_way(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the three-way merge strategy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#override_pull_request_approval_rules/3">override_pull_request_approval_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets aside (overrides) all approval rule requirements for a specified pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post_comment_for_compared_commit/3">post_comment_for_compared_commit(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Posts a comment on the comparison between two commits.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post_comment_for_pull_request/3">post_comment_for_pull_request(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Posts a comment on a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post_comment_reply/3">post_comment_reply(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_comment_reaction/3">put_comment_reaction(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the
+request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_file/3">put_file(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the
+addition in the specified branch.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_repository_triggers/3">put_repository_triggers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces all triggers for a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates tags for a resource in AWS CodeCommit.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test_repository_triggers/3">test_repository_triggers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tests the functionality of repository triggers by sending information to the trigger target.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags for a resource in AWS CodeCommit.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_approval_rule_template_content/3">update_approval_rule_template_content(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the content of an approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_approval_rule_template_description/3">update_approval_rule_template_description(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the description for a specified approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_approval_rule_template_name/3">update_approval_rule_template_name(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the name of a specified approval rule template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_comment/3">update_comment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces the contents of a comment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_default_branch/3">update_default_branch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets or changes the default branch name for the specified repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pull_request_approval_rule_content/3">update_pull_request_approval_rule_content(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the structure of an approval rule created specifically for a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pull_request_approval_state/3">update_pull_request_approval_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the state of a user&#39;s approval on a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pull_request_description/3">update_pull_request_description(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces the contents of the description of a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pull_request_status/3">update_pull_request_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the status of a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pull_request_title/3">update_pull_request_title(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Replaces the title of a pull request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_repository_description/3">update_repository_description(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets or changes the comment or description for a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_repository_name/3">update_repository_name(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Renames a repository.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_approval_rule_template_with_repository/3">
+
+    <span id="associate_approval_rule_template_with_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_approval_rule_template_with_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_approval_rule_template_with_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L263" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an association between an approval rule template and a specified repository.</p>
+<p>Then, the next time a pull request is created in the repository where the destination reference
+(if specified) matches the destination reference (branch) for the pull request, an approval rule
+that matches the template conditions is automatically created for that pull request. If no
+destination references are specified in the template, an approval rule that matches the template
+contents is created for all pull requests in that repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_associate_approval_rule_template_with_repositories/3">
+
+    <span id="batch_associate_approval_rule_template_with_repositories/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_associate_approval_rule_template_with_repositories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_associate_approval_rule_template_with_repositories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L270" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an association between an approval rule template and one or more specified repositories.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_describe_merge_conflicts/3">
+
+    <span id="batch_describe_merge_conflicts/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_describe_merge_conflicts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_describe_merge_conflicts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more merge conflicts in the attempted merge of two commit
+specifiers using the squash or three-way merge strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_disassociate_approval_rule_template_from_repositories/3">
+
+    <span id="batch_disassociate_approval_rule_template_from_repositories/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_disassociate_approval_rule_template_from_repositories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_disassociate_approval_rule_template_from_repositories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L285" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the association between an approval rule template and one or more specified repositories.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_commits/3">
+
+    <span id="batch_get_commits/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_commits/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_commits(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L292" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the contents of one or more commits in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_repositories/3">
+
+    <span id="batch_get_repositories/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_repositories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_repositories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more repositories.</p>
+<p>The description field for a repository accepts all HTML characters and all valid Unicode
+characters. Applications that do not HTML-encode the description and display it in a webpage can
+expose users to potentially malicious code. Make sure that you HTML-encode the description field
+in any application that uses this API to display the repository description on a webpage.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_approval_rule_template/3">
+
+    <span id="create_approval_rule_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_approval_rule_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_approval_rule_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L316" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a template for approval rules that can then be associated with one or more repositories in
+your AWS account.</p>
+<p>When you associate a template with a repository, AWS CodeCommit creates an approval rule that
+matches the conditions of the template for all pull requests that meet the conditions of the
+template. For more information, see <code class="inline">AssociateApprovalRuleTemplateWithRepository</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_branch/3">
+
+    <span id="create_branch/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_branch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_branch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L326" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a branch in a repository and points the branch to a commit.</p>
+<p>Calling the create branch operation does not set a repository&#39;s default branch. To do this, call
+the update default branch operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_commit/3">
+
+    <span id="create_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L333" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a commit for a repository on the tip of a specified branch.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_pull_request/3">
+
+    <span id="create_pull_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_pull_request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_pull_request(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a pull request in the specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_pull_request_approval_rule/3">
+
+    <span id="create_pull_request_approval_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_pull_request_approval_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_pull_request_approval_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L347" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an approval rule for a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_repository/3">
+
+    <span id="create_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L354" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new, empty repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_unreferenced_merge_commit/3">
+
+    <span id="create_unreferenced_merge_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_unreferenced_merge_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_unreferenced_merge_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L369" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an unreferenced commit that represents the result of merging two branches using a
+specified merge strategy.</p>
+<p>This can help you determine the outcome of a potential merge. This API cannot be used with the
+fast-forward merge strategy because that strategy does not create a merge commit.</p>
+<p>This unreferenced merge commit can only be accessed using the GetCommit API or through git
+commands such as git fetch. To retrieve this commit, you must specify its commit ID or otherwise
+reference it.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_approval_rule_template/3">
+
+    <span id="delete_approval_rule_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_approval_rule_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_approval_rule_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L379" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified approval rule template.</p>
+<p>Deleting a template does not remove approval rules on pull requests already created with the
+template.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_branch/3">
+
+    <span id="delete_branch/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_branch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_branch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a branch from a repository, unless that branch is the default branch for the repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_comment_content/3">
+
+    <span id="delete_comment_content/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_comment_content/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_comment_content(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L393" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the content of a comment made on a change, file, or commit in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_file/3">
+
+    <span id="delete_file/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_file/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_file(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified file from a specified branch.</p>
+<p>A commit is created on the branch that contains the revision. The file still exists in the commits
+earlier to the commit that contains the deletion.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_pull_request_approval_rule/3">
+
+    <span id="delete_pull_request_approval_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_pull_request_approval_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_pull_request_approval_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L415" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an approval rule from a specified pull request.</p>
+<p>Approval rules can be deleted from a pull request only if the pull request is open, and if the
+approval rule was created specifically for a pull request and not generated from an approval rule
+template associated with the repository where the pull request was created. You cannot delete an
+approval rule from a merged or closed pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_repository/3">
+
+    <span id="delete_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L427" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a repository.</p>
+<p>If a specified repository was already deleted, a null repository ID is returned.</p>
+<p>Deleting a repository also deletes all associated objects and metadata. After a repository is
+deleted, all future push calls to the deleted repository fail.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_merge_conflicts/3">
+
+    <span id="describe_merge_conflicts/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_merge_conflicts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_merge_conflicts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L438" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more merge conflicts in the attempted merge of two commit
+specifiers using the squash or three-way merge strategy.</p>
+<p>If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is
+thrown.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_pull_request_events/3">
+
+    <span id="describe_pull_request_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_pull_request_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_pull_request_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L445" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more pull request events.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_approval_rule_template_from_repository/3">
+
+    <span id="disassociate_approval_rule_template_from_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_approval_rule_template_from_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_approval_rule_template_from_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L456" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the association between a template and a repository so that approval rules based on the
+template are not automatically created when pull requests are created in the specified repository.</p>
+<p>This does not delete any approval rules previously created for pull requests through the template
+association.</p>
+
+  </section>
+</section>
+<section class="detail" id="evaluate_pull_request_approval_rules/3">
+
+    <span id="evaluate_pull_request_approval_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#evaluate_pull_request_approval_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">evaluate_pull_request_approval_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Evaluates whether a pull request has met all the conditions specified in its associated approval
+rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_approval_rule_template/3">
+
+    <span id="get_approval_rule_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_approval_rule_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_approval_rule_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L471" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specified approval rule template.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_blob/3">
+
+    <span id="get_blob/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_blob/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_blob(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L478" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the base-64 encoded content of an individual blob in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_branch/3">
+
+    <span id="get_branch/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_branch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_branch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L485" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a repository branch, including its name and the last commit ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_comment/3">
+
+    <span id="get_comment/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_comment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_comment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L495" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the content of a comment made on a change, file, or commit in a repository.</p>
+<p>Reaction counts might include numbers from user identities who were deleted after the reaction was
+made. For a count of reactions from active identities, use GetCommentReactions.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_comment_reactions/3">
+
+    <span id="get_comment_reactions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_comment_reactions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_comment_reactions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L504" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about reactions to a specified comment ID.</p>
+<p>Reactions from users who have been deleted will not be included in the count.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_comments_for_compared_commit/3">
+
+    <span id="get_comments_for_compared_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_comments_for_compared_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_comments_for_compared_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L514" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about comments made on the comparison between two commits.</p>
+<p>Reaction counts might include numbers from user identities who were deleted after the reaction was
+made. For a count of reactions from active identities, use GetCommentReactions.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_comments_for_pull_request/3">
+
+    <span id="get_comments_for_pull_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_comments_for_pull_request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_comments_for_pull_request(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L524" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns comments made on a pull request.</p>
+<p>Reaction counts might include numbers from user identities who were deleted after the reaction was
+made. For a count of reactions from active identities, use GetCommentReactions.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_commit/3">
+
+    <span id="get_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L531" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a commit, including commit message and committer information.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_differences/3">
+
+    <span id="get_differences/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_differences/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_differences(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L541" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the differences in a valid commit specifier (such as a branch, tag,
+HEAD, commit ID, or other fully qualified reference).</p>
+<p>Results can be limited to a specified path.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_file/3">
+
+    <span id="get_file/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_file/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_file(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L548" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the base-64 encoded contents of a specified file and its metadata.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_folder/3">
+
+    <span id="get_folder/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_folder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_folder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L555" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the contents of a specified folder in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_merge_commit/3">
+
+    <span id="get_merge_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_merge_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_merge_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L562" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specified merge commit.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_merge_conflicts/3">
+
+    <span id="get_merge_conflicts/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_merge_conflicts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_merge_conflicts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L570" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about merge conflicts between the before and after commit IDs for a pull
+request in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_merge_options/3">
+
+    <span id="get_merge_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_merge_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_merge_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L580" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the merge options available for merging two specified branches.</p>
+<p>For details about why a merge option is not available, use GetMergeConflicts or
+DescribeMergeConflicts.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pull_request/3">
+
+    <span id="get_pull_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pull_request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pull_request(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L587" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a pull request in a specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pull_request_approval_states/3">
+
+    <span id="get_pull_request_approval_states/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pull_request_approval_states/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pull_request_approval_states(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L596" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the approval states for a specified pull request.</p>
+<p>Approval states only apply to pull requests that have one or more approval rules applied to them.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pull_request_override_state/3">
+
+    <span id="get_pull_request_override_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pull_request_override_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pull_request_override_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L605" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about whether approval rules have been set aside (overridden) for a pull
+request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules
+and their requirements for the pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_repository/3">
+
+    <span id="get_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L617" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a repository.</p>
+<p>The description field for a repository accepts all HTML characters and all valid Unicode
+characters. Applications that do not HTML-encode the description and display it in a webpage can
+expose users to potentially malicious code. Make sure that you HTML-encode the description field
+in any application that uses this API to display the repository description on a webpage.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_repository_triggers/3">
+
+    <span id="get_repository_triggers/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_repository_triggers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_repository_triggers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L624" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about triggers configured for a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_approval_rule_templates/3">
+
+    <span id="list_approval_rule_templates/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_approval_rule_templates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_approval_rule_templates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L633" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all approval rule templates in the specified AWS Region in your AWS account.</p>
+<p>If an AWS Region is not specified, the AWS Region where you are signed in is used.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_associated_approval_rule_templates_for_repository/3">
+
+    <span id="list_associated_approval_rule_templates_for_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_associated_approval_rule_templates_for_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_associated_approval_rule_templates_for_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L640" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all approval rule templates that are associated with a specified repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_branches/3">
+
+    <span id="list_branches/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_branches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_branches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L647" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more branches in a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pull_requests/3">
+
+    <span id="list_pull_requests/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_pull_requests/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pull_requests(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L656" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of pull requests for a specified repository.</p>
+<p>The return list can be refined by pull request status or pull request author ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_repositories/3">
+
+    <span id="list_repositories/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_repositories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_repositories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L663" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more repositories.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_repositories_for_approval_rule_template/3">
+
+    <span id="list_repositories_for_approval_rule_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_repositories_for_approval_rule_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_repositories_for_approval_rule_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L670" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all repositories associated with the specified approval rule template.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L680" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS CodeCommit.</p>
+<p>For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
+in the<em> AWS CodeCommit User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_branches_by_fast_forward/3">
+
+    <span id="merge_branches_by_fast_forward/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_branches_by_fast_forward/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_branches_by_fast_forward(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L687" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Merges two branches using the fast-forward merge strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_branches_by_squash/3">
+
+    <span id="merge_branches_by_squash/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_branches_by_squash/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_branches_by_squash(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L694" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Merges two branches using the squash merge strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_branches_by_three_way/3">
+
+    <span id="merge_branches_by_three_way/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_branches_by_three_way/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_branches_by_three_way(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L701" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Merges two specified branches using the three-way merge strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_pull_request_by_fast_forward/3">
+
+    <span id="merge_pull_request_by_fast_forward/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_pull_request_by_fast_forward/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_pull_request_by_fast_forward(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L711" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the fast-forward merge strategy.</p>
+<p>If the merge is successful, it closes the pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_pull_request_by_squash/3">
+
+    <span id="merge_pull_request_by_squash/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_pull_request_by_squash/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_pull_request_by_squash(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L721" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the squash merge strategy.</p>
+<p>If the merge is successful, it closes the pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="merge_pull_request_by_three_way/3">
+
+    <span id="merge_pull_request_by_three_way/2"></span>
+
+  <div class="detail-header">
+    <a href="#merge_pull_request_by_three_way/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">merge_pull_request_by_three_way(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L731" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to merge the source commit of a pull request into the specified destination branch for
+that pull request at the specified commit using the three-way merge strategy.</p>
+<p>If the merge is successful, it closes the pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="override_pull_request_approval_rules/3">
+
+    <span id="override_pull_request_approval_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#override_pull_request_approval_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">override_pull_request_approval_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L738" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets aside (overrides) all approval rule requirements for a specified pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="post_comment_for_compared_commit/3">
+
+    <span id="post_comment_for_compared_commit/2"></span>
+
+  <div class="detail-header">
+    <a href="#post_comment_for_compared_commit/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">post_comment_for_compared_commit(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L745" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Posts a comment on the comparison between two commits.</p>
+
+  </section>
+</section>
+<section class="detail" id="post_comment_for_pull_request/3">
+
+    <span id="post_comment_for_pull_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#post_comment_for_pull_request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">post_comment_for_pull_request(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L752" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Posts a comment on a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="post_comment_reply/3">
+
+    <span id="post_comment_reply/2"></span>
+
+  <div class="detail-header">
+    <a href="#post_comment_reply/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">post_comment_reply(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L759" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_comment_reaction/3">
+
+    <span id="put_comment_reaction/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_comment_reaction/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_comment_reaction(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L770" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the
+request.</p>
+<p>You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction
+for another user.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_file/3">
+
+    <span id="put_file/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_file/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_file(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L778" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the
+addition in the specified branch.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_repository_triggers/3">
+
+    <span id="put_repository_triggers/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_repository_triggers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_repository_triggers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L787" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces all triggers for a repository.</p>
+<p>Used to create or delete triggers.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L797" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates tags for a resource in AWS CodeCommit.</p>
+<p>For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
+in the <em>AWS CodeCommit User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="test_repository_triggers/3">
+
+    <span id="test_repository_triggers/2"></span>
+
+  <div class="detail-header">
+    <a href="#test_repository_triggers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test_repository_triggers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L807" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tests the functionality of repository triggers by sending information to the trigger target.</p>
+<p>If real data is available in the repository, the test sends data from the last commit. If no data
+is available, sample data is generated.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L817" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags for a resource in AWS CodeCommit.</p>
+<p>For a list of valid resources in AWS CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/auth-and-access-control-iam-access-control-identity-based.html#arn-formats">CodeCommit Resources and Operations</a>
+in the <em>AWS CodeCommit User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_approval_rule_template_content/3">
+
+    <span id="update_approval_rule_template_content/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_approval_rule_template_content/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_approval_rule_template_content(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L827" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the content of an approval rule template.</p>
+<p>You can change the number of required approvals, the membership of the approval rule, and whether
+an approval pool is defined.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_approval_rule_template_description/3">
+
+    <span id="update_approval_rule_template_description/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_approval_rule_template_description/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_approval_rule_template_description(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L834" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the description for a specified approval rule template.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_approval_rule_template_name/3">
+
+    <span id="update_approval_rule_template_name/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_approval_rule_template_name/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_approval_rule_template_name(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L841" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the name of a specified approval rule template.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_comment/3">
+
+    <span id="update_comment/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_comment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_comment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L848" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces the contents of a comment.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_default_branch/3">
+
+    <span id="update_default_branch/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_default_branch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_default_branch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L858" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets or changes the default branch name for the specified repository.</p>
+<p>If you use this operation to change the default branch name to the current default branch name, a
+success message is returned even though the default branch did not change.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pull_request_approval_rule_content/3">
+
+    <span id="update_pull_request_approval_rule_content/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pull_request_approval_rule_content/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pull_request_approval_rule_content(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L867" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the structure of an approval rule created specifically for a pull request.</p>
+<p>For example, you can change the number of required approvers and the approval pool for approvers.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pull_request_approval_state/3">
+
+    <span id="update_pull_request_approval_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pull_request_approval_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pull_request_approval_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L876" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the state of a user&#39;s approval on a pull request.</p>
+<p>The user is derived from the signed-in account when the request is made.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pull_request_description/3">
+
+    <span id="update_pull_request_description/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pull_request_description/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pull_request_description(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L883" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces the contents of the description of a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pull_request_status/3">
+
+    <span id="update_pull_request_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pull_request_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pull_request_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L890" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the status of a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pull_request_title/3">
+
+    <span id="update_pull_request_title/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pull_request_title/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pull_request_title(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L897" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Replaces the title of a pull request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_repository_description/3">
+
+    <span id="update_repository_description/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_repository_description/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_repository_description(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L909" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets or changes the comment or description for a repository.</p>
+<p>The description field for a repository accepts all HTML characters and all valid Unicode
+characters. Applications that do not HTML-encode the description and display it in a webpage can
+expose users to potentially malicious code. Make sure that you HTML-encode the description field
+in any application that uses this API to display the repository description on a webpage.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_repository_name/3">
+
+    <span id="update_repository_name/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_repository_name/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_repository_name(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_commit.ex#L922" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Renames a repository.</p>
+<p>The repository name must be unique across the calling AWS account. Repository names are limited to
+100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The
+suffix .git is prohibited. For more information about the limits on repository names, see
+<a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS
+CodeCommit User Guide.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

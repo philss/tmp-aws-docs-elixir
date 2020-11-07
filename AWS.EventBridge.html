@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.EventBridge — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.EventBridge
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon EventBridge helps you to respond to state changes in your AWS resources.</p>
+<p>When your resources change state, they automatically send events into an event stream. You can
+create rules that match selected events in the stream and route them to targets to take action.
+You can also use rules to take action on a predetermined schedule. For example, you can configure
+rules to:</p>
+<ul>
+<li><p>Automatically invoke an AWS Lambda function to update DNS entries when an event
+notifies you that Amazon EC2 instance enters the running state.</p>
+</li>
+<li><p>Direct specific API records from AWS CloudTrail to an Amazon Kinesis data stream for
+detailed analysis of potential security or availability risks.</p>
+</li>
+<li><p>Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.</p>
+</li>
+</ul>
+<p>For more information about the features of Amazon EventBridge, see the <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide">Amazon EventBridge User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#activate_event_source/3">activate_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates a partner event source that has been deactivated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_event_bus/3">create_event_bus(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new event bus within your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_partner_event_source/3">create_partner_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Called by an SaaS partner to create a partner event source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deactivate_event_source/3">deactivate_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>You can use this operation to temporarily stop receiving events from the specified partner event
+source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_event_bus/3">delete_event_bus(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified custom event bus or partner event bus.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_partner_event_source/3">delete_partner_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation is used by SaaS partners to delete a partner event source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_rule/3">delete_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_bus/3">describe_event_bus(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays details about an event bus in your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_source/3">describe_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation lists details about a partner event source that is shared with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_partner_event_source/3">describe_partner_event_source(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An SaaS partner can use this operation to list details about a partner event source that they have
+created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_rule/3">describe_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_rule/3">disable_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_rule/3">enable_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_event_buses/3">list_event_buses(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the event buses in your account, including the default event bus, custom event buses,
+and partner event buses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_event_sources/3">list_event_sources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>You can use this to see all the partner event sources that have been shared with your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_partner_event_source_accounts/3">list_partner_event_source_accounts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An SaaS partner can use this operation to display the AWS account ID that a particular partner
+event source name is associated with.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_partner_event_sources/3">list_partner_event_sources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An SaaS partner can use this operation to list all the partner event source names that they have
+created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_rule_names_by_target/3">list_rule_names_by_target(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the rules for the specified target.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_rules/3">list_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists your Amazon EventBridge rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays the tags associated with an EventBridge resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_targets_by_rule/3">list_targets_by_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the targets assigned to the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_events/3">put_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_partner_events/3">put_partner_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This is used by SaaS partners to write events to a customer&#39;s partner event bus.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_permission/3">put_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Running <code class="inline">PutPermission</code> permits the specified AWS account or AWS organization to put events to the
+specified <em>event bus</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_rule/3">put_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_targets/3">put_targets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds the specified targets to the specified rule, or updates the targets if they are already
+associated with the rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_permission/3">remove_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Revokes the permission of another AWS account to be able to put events to the specified event bus.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_targets/3">remove_targets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified targets from the specified rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns one or more tags (key-value pairs) to the specified EventBridge resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test_event_pattern/3">test_event_pattern(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tests whether the specified event pattern matches the provided event.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from the specified EventBridge resource.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="activate_event_source/3">
+
+    <span id="activate_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#activate_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">activate_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates a partner event source that has been deactivated.</p>
+<p>Once activated, your matching event bus will start receiving events from the event source.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_event_bus/3">
+
+    <span id="create_event_bus/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_event_bus/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_event_bus(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new event bus within your account.</p>
+<p>This can be a custom event bus which you can use to receive events from your custom applications
+and services, or it can be a partner event bus which can be matched to a partner event source.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_partner_event_source/3">
+
+    <span id="create_partner_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_partner_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_partner_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Called by an SaaS partner to create a partner event source.</p>
+<p>This operation is not used by AWS customers.</p>
+<p>Each partner event source can be used by one AWS account to create a matching partner event bus in
+that AWS account. A SaaS partner must create one partner event source for each AWS account that
+wants to receive those event types.</p>
+<p>A partner event source creates events based on resources within the SaaS partner&#39;s service or
+application.</p>
+<p>An AWS account that creates a partner event bus that matches the partner event source can use that
+event bus to receive events from the partner, and then process them using AWS Events rules and
+targets.</p>
+<p>Partner event source names follow this format:</p>
+<p><code class="inline">*partner_name*/*event_namespace*/*event_name*</code></p>
+<p><em>partner_name</em> is determined during partner registration and identifies the partner to AWS
+customers. <em>event_namespace</em> is determined by the partner and is a way for the partner to
+categorize their events. <em>event_name</em> is determined by the partner, and should uniquely identify
+an event-generating resource within the partner system. The combination of <em>event_namespace</em> and
+<em>event_name</em> should help AWS customers decide whether to create an event bus to receive these
+events.</p>
+
+  </section>
+</section>
+<section class="detail" id="deactivate_event_source/3">
+
+    <span id="deactivate_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#deactivate_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deactivate_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>You can use this operation to temporarily stop receiving events from the specified partner event
+source.</p>
+<p>The matching event bus is not deleted.</p>
+<p>When you deactivate a partner event source, the source goes into PENDING state. If it remains in
+PENDING state for more than two weeks, it is deleted.</p>
+<p>To activate a deactivated partner event source, use <code class="inline">ActivateEventSource</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_event_bus/3">
+
+    <span id="delete_event_bus/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_event_bus/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_event_bus(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified custom event bus or partner event bus.</p>
+<p>All rules associated with this event bus need to be deleted. You can&#39;t delete your account&#39;s
+default event bus.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_partner_event_source/3">
+
+    <span id="delete_partner_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_partner_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_partner_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation is used by SaaS partners to delete a partner event source.</p>
+<p>This operation is not used by AWS customers.</p>
+<p>When you delete an event source, the status of the corresponding partner event bus in the AWS
+customer account becomes DELETED.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_rule/3">
+
+    <span id="delete_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified rule.</p>
+<p>Before you can delete the rule, you must remove all targets, using <code class="inline">RemoveTargets</code>.</p>
+<p>When you delete a rule, incoming events might continue to match to the deleted rule. Allow a short
+period of time for changes to take effect.</p>
+<p>Managed rules are rules created and managed by another AWS service on your behalf. These rules are
+created by those other AWS services to support functionality in those services. You can delete
+these rules using the <code class="inline">Force</code> option, but you should do so only if you are sure the other service
+is not still using that rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_bus/3">
+
+    <span id="describe_event_bus/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_bus/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_bus(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays details about an event bus in your account.</p>
+<p>This can include the external AWS accounts that are permitted to write events to your default
+event bus, and the associated policy. For custom event buses and partner event buses, it displays
+the name, ARN, policy, state, and creation time.</p>
+<p>To enable your account to receive events from other accounts on its default event bus, use
+<code class="inline">PutPermission</code>.</p>
+<p>For more information about partner event buses, see <code class="inline">CreateEventBus</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_source/3">
+
+    <span id="describe_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation lists details about a partner event source that is shared with your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_partner_event_source/3">
+
+    <span id="describe_partner_event_source/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_partner_event_source/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_partner_event_source(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An SaaS partner can use this operation to list details about a partner event source that they have
+created.</p>
+<p>AWS customers do not use this operation. Instead, AWS customers can use <code class="inline">DescribeEventSource</code> to
+see details about a partner event source that is shared with them.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_rule/3">
+
+    <span id="describe_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified rule.</p>
+<p>DescribeRule does not list the targets of a rule. To see the targets associated with a rule, use
+<code class="inline">ListTargetsByRule</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_rule/3">
+
+    <span id="disable_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L180" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the specified rule.</p>
+<p>A disabled rule won&#39;t match any events, and won&#39;t self-trigger if it has a schedule expression.</p>
+<p>When you disable a rule, incoming events might continue to match to the disabled rule. Allow a
+short period of time for changes to take effect.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_rule/3">
+
+    <span id="enable_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L192" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the specified rule.</p>
+<p>If the rule does not exist, the operation fails.</p>
+<p>When you enable a rule, incoming events might not immediately start matching to a newly enabled
+rule. Allow a short period of time for changes to take effect.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_event_buses/3">
+
+    <span id="list_event_buses/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_event_buses/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_event_buses(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L200" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the event buses in your account, including the default event bus, custom event buses,
+and partner event buses.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_event_sources/3">
+
+    <span id="list_event_sources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_event_sources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_event_sources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L209" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>You can use this to see all the partner event sources that have been shared with your AWS account.</p>
+<p>For more information about partner event sources, see <code class="inline">CreateEventBus</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_partner_event_source_accounts/3">
+
+    <span id="list_partner_event_source_accounts/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_partner_event_source_accounts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_partner_event_source_accounts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An SaaS partner can use this operation to display the AWS account ID that a particular partner
+event source name is associated with.</p>
+<p>This operation is not used by AWS customers.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_partner_event_sources/3">
+
+    <span id="list_partner_event_sources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_partner_event_sources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_partner_event_sources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An SaaS partner can use this operation to list all the partner event source names that they have
+created.</p>
+<p>This operation is not used by AWS customers.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_rule_names_by_target/3">
+
+    <span id="list_rule_names_by_target/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_rule_names_by_target/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_rule_names_by_target(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the rules for the specified target.</p>
+<p>You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_rules/3">
+
+    <span id="list_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L250" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists your Amazon EventBridge rules.</p>
+<p>You can either list all the rules or you can provide a prefix to match to the rule names.</p>
+<p>ListRules does not list the targets of a rule. To see the targets associated with a rule, use
+<code class="inline">ListTargetsByRule</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L259" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays the tags associated with an EventBridge resource.</p>
+<p>In EventBridge, rules and event buses can be tagged.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_targets_by_rule/3">
+
+    <span id="list_targets_by_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_targets_by_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_targets_by_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the targets assigned to the specified rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_events/3">
+
+    <span id="put_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_partner_events/3">
+
+    <span id="put_partner_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_partner_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_partner_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This is used by SaaS partners to write events to a customer&#39;s partner event bus.</p>
+<p>AWS customers do not use this operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_permission/3">
+
+    <span id="put_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Running <code class="inline">PutPermission</code> permits the specified AWS account or AWS organization to put events to the
+specified <em>event bus</em>.</p>
+<p>Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these events
+arriving to an event bus in your account.</p>
+<p>For another account to send events to your account, that external account must have an EventBridge
+rule with your account&#39;s event bus as a target.</p>
+<p>To enable multiple AWS accounts to put events to your event bus, run <code class="inline">PutPermission</code> once for each
+of these accounts. Or, if all the accounts are members of the same AWS organization, you can run
+<code class="inline">PutPermission</code> once specifying <code class="inline">Principal</code> as &quot;*&quot; and specifying the AWS organization ID in
+<code class="inline">Condition</code>, to grant permissions to all accounts in that organization.</p>
+<p>If you grant permissions using an organization, then accounts in that organization must specify a
+<code class="inline">RoleArn</code> with proper permissions when they use <code class="inline">PutTarget</code> to add your account&#39;s event bus as a
+target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between AWS Accounts</a>
+in the <em>Amazon EventBridge User Guide</em>.</p>
+<p>The permission policy on the default event bus cannot exceed 10 KB in size.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_rule/3">
+
+    <span id="put_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L363" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates the specified rule.</p>
+<p>Rules are enabled by default, or based on value of the state. You can disable a rule using
+<code class="inline">DisableRule</code>.</p>
+<p>A single rule watches for events from a single event bus. Events generated by AWS services go to
+your account&#39;s default event bus. Events generated by SaaS partner services or applications go to
+the matching partner event bus. If you have custom applications or services, you can specify
+whether their events go to your default event bus or a custom event bus that you have created. For
+more information, see <code class="inline">CreateEventBus</code>.</p>
+<p>If you are updating an existing rule, the rule is replaced with what you specify in this <code class="inline">PutRule</code>
+command. If you omit arguments in <code class="inline">PutRule</code>, the old values for those arguments are not kept.
+Instead, they are replaced with null values.</p>
+<p>When you create or update a rule, incoming events might not immediately start matching to new or
+updated rules. Allow a short period of time for changes to take effect.</p>
+<p>A rule must contain at least an EventPattern or ScheduleExpression. Rules with EventPatterns are
+triggered when a matching event is observed. Rules with ScheduleExpressions self-trigger based on
+the given schedule. A rule can have both an EventPattern and a ScheduleExpression, in which case
+the rule triggers on matching events as well as on a schedule.</p>
+<p>When you initially create a rule, you can optionally assign one or more tags to the rule. Tags can
+help you organize and categorize your resources. You can also use them to scope user permissions,
+by granting a user permission to access or change only rules with certain tag values. To use the
+<code class="inline">PutRule</code> operation and assign tags, you must have both the <code class="inline">events:PutRule</code> and
+<code class="inline">events:TagResource</code> permissions.</p>
+<p>If you are updating an existing rule, any tags you specify in the <code class="inline">PutRule</code> operation are ignored.
+To update the tags of an existing rule, use <code class="inline">TagResource</code> and <code class="inline">UntagResource</code>.</p>
+<p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However,
+EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN
+characters when creating event patterns so that they match the ARN syntax in the event you want to
+match.</p>
+<p>In EventBridge, it is possible to create rules that lead to infinite loops, where a rule is fired
+repeatedly. For example, a rule might detect that ACLs have changed on an S3 bucket, and trigger
+software to change them to the desired state. If the rule is not written carefully, the subsequent
+change to the ACLs fires the rule again, creating an infinite loop.</p>
+<p>To prevent this, write the rules so that the triggered actions do not re-fire the same rule. For
+example, your rule could fire only if ACLs are found to be in a bad state, instead of after any
+change.</p>
+<p>An infinite loop can quickly cause higher than expected charges. We recommend that you use
+budgeting, which alerts you when charges exceed your specified limit. For more information, see
+<a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/budgets-managing-costs.html">Managing Your Costs with Budgets</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_targets/3">
+
+    <span id="put_targets/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_targets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_targets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L471" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds the specified targets to the specified rule, or updates the targets if they are already
+associated with the rule.</p>
+<p>Targets are the resources that are invoked when a rule is triggered.</p>
+<p>You can configure the following as targets for Events:</p>
+<ul>
+<li><p>EC2 instances</p>
+</li>
+<li><p>SSM Run Command</p>
+</li>
+<li><p>SSM Automation</p>
+</li>
+<li><p>AWS Lambda functions</p>
+</li>
+<li><p>Data streams in Amazon Kinesis Data Streams</p>
+</li>
+<li><p>Data delivery streams in Amazon Kinesis Data Firehose</p>
+</li>
+<li><p>Amazon ECS tasks</p>
+</li>
+<li><p>AWS Step Functions state machines</p>
+</li>
+<li><p>AWS Batch jobs</p>
+</li>
+<li><p>AWS CodeBuild projects</p>
+</li>
+<li><p>Pipelines in AWS CodePipeline</p>
+</li>
+<li><p>Amazon Inspector assessment templates</p>
+</li>
+<li><p>Amazon SNS topics</p>
+</li>
+<li><p>Amazon SQS queues, including FIFO queues</p>
+</li>
+<li><p>The default event bus of another AWS account</p>
+</li>
+<li><p>Amazon API Gateway REST APIs</p>
+</li>
+<li><p>Redshift Clusters to invoke Data API ExecuteStatement on</p>
+</li>
+</ul>
+<p>Creating rules with built-in targets is supported only in the AWS Management Console. The built-in
+targets are <code class="inline">EC2 CreateSnapshot API call</code>, <code class="inline">EC2 RebootInstances API call</code>, <code class="inline">EC2 StopInstances API call</code>, and <code class="inline">EC2 TerminateInstances API call</code>.</p>
+<p>For some target types, <code class="inline">PutTargets</code> provides target-specific parameters. If the target is a
+Kinesis data stream, you can optionally specify which shard the event goes to by using the
+<code class="inline">KinesisParameters</code> argument. To invoke a command on multiple EC2 instances with one rule, you can
+use the <code class="inline">RunCommandParameters</code> field.</p>
+<p>To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch
+Events) needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge
+relies on resource-based policies. For EC2 instances, Kinesis data streams, AWS Step Functions
+state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you specify in the
+<code class="inline">RoleARN</code> argument in <code class="inline">PutTargets</code>. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication and Access Control</a>
+in the <em>Amazon EventBridge User Guide</em>.</p>
+<p>If another AWS account is in the same region and has granted you permission (using
+<code class="inline">PutPermission</code>), you can send events to that account. Set that account&#39;s event bus as a target of
+the rules in your account. To send the matched events to the other account, specify that account&#39;s
+event bus as the <code class="inline">Arn</code> value when you run <code class="inline">PutTargets</code>. If your account sends events to another
+account, your account is charged for each sent event. Each event sent to another account is
+charged as a custom event. The account receiving the event is not charged. For more information,
+see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge (CloudWatch Events) Pricing</a>.  <code class="inline">Input</code>, <code class="inline">InputPath</code>, and <code class="inline">InputTransformer</code> are not available with <code class="inline">PutTarget</code> if the target is
+an event bus of a different AWS account.</p>
+<p>If you are setting the event bus of another account as the target, and that account granted
+permission to your account through an organization instead of directly by the account ID, then you
+must specify a <code class="inline">RoleArn</code> with proper permissions in the <code class="inline">Target</code> structure. For more information,
+see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and Receiving Events Between AWS
+Accounts</a>
+in the <em>Amazon EventBridge User Guide</em>.</p>
+<p>For more information about enabling cross-account events, see <code class="inline">PutPermission</code>.</p>
+<p><strong>Input</strong>, <strong>InputPath</strong>, and <strong>InputTransformer</strong> are mutually exclusive and optional parameters
+of a target. When a rule is triggered due to a matched event:</p>
+<ul>
+<li><p>If none of the following arguments are specified for a target, then the entire event
+is passed to the target in JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS
+task, in which case nothing from the event is passed to the target).</p>
+</li>
+<li><p>If <strong>Input</strong> is specified in the form of valid JSON, then the matched event is
+overridden with this constant.</p>
+</li>
+<li><p>If <strong>InputPath</strong> is specified in the form of JSONPath (for example, <code class="inline">$.detail</code>),
+then only the part of the event specified in the path is passed to the target (for example, only
+the detail part of the event is passed).</p>
+</li>
+<li><p>If <strong>InputTransformer</strong> is specified, then one or more specified JSONPaths are
+extracted from the event and used as values in a template that you specify as the input to the
+target.</p>
+</li>
+</ul>
+<p>When you specify <code class="inline">InputPath</code> or <code class="inline">InputTransformer</code>, you must use JSON dot notation, not bracket
+notation.</p>
+<p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets
+might not be immediately invoked. Allow a short period of time for changes to take effect.</p>
+<p>This action can partially fail if too many requests are made at the same time. If that happens,
+<code class="inline">FailedEntryCount</code> is non-zero in the response and each entry in <code class="inline">FailedEntries</code> provides the ID
+of the failed target and the error code.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_permission/3">
+
+    <span id="remove_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L482" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Revokes the permission of another AWS account to be able to put events to the specified event bus.</p>
+<p>Specify the account to revoke by the <code class="inline">StatementId</code> value that you associated with the account when
+you granted it permission with <code class="inline">PutPermission</code>. You can find the <code class="inline">StatementId</code> by using
+<code class="inline">DescribeEventBus</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_targets/3">
+
+    <span id="remove_targets/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_targets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_targets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L498" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified targets from the specified rule.</p>
+<p>When the rule is triggered, those targets are no longer be invoked.</p>
+<p>When you remove a target, when the associated rule triggers, removed targets might continue to be
+invoked. Allow a short period of time for changes to take effect.</p>
+<p>This action can partially fail if too many requests are made at the same time. If that happens,
+<code class="inline">FailedEntryCount</code> is non-zero in the response and each entry in <code class="inline">FailedEntries</code> provides the ID
+of the failed target and the error code.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L518" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns one or more tags (key-value pairs) to the specified EventBridge resource.</p>
+<p>Tags can help you organize and categorize your resources. You can also use them to scope user
+permissions by granting a user permission to access or change only resources with certain tag
+values. In EventBridge, rules and event buses can be tagged.</p>
+<p>Tags don&#39;t have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p>
+<p>You can use the <code class="inline">TagResource</code> action with a resource that already has tags. If you specify a new
+tag key, this tag is appended to the list of tags associated with the resource. If you specify a
+tag key that is already associated with the resource, the new tag value that you specify replaces
+the previous value for that tag.</p>
+<p>You can associate as many as 50 tags with a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="test_event_pattern/3">
+
+    <span id="test_event_pattern/2"></span>
+
+  <div class="detail-header">
+    <a href="#test_event_pattern/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test_event_pattern(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L530" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tests whether the specified event pattern matches the provided event.</p>
+<p>Most services in AWS treat : or / as the same character in Amazon Resource Names (ARNs). However,
+EventBridge uses an exact match in event patterns and rules. Be sure to use the correct ARN
+characters when creating event patterns so that they match the ARN syntax in the event you want to
+match.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/event_bridge.ex#L539" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from the specified EventBridge resource.</p>
+<p>In Amazon EventBridge (CloudWatch Events, rules and event buses can be tagged.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

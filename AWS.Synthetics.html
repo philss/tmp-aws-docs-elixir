@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Synthetics — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Synthetics
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon CloudWatch Synthetics</p>
+<p>You can use Amazon CloudWatch Synthetics to continually monitor your services.</p>
+<p>You can create and manage <em>canaries</em>, which are modular, lightweight scripts that monitor your
+endpoints and APIs from the outside-in. You can set up your canaries to run 24 hours a day, once
+per minute. The canaries help you check the availability and latency of your web services and
+troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics.
+The canaries seamlessly integrate with CloudWatch ServiceLens to help you trace the causes of
+impacted nodes in your applications. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ServiceLens.html">Using ServiceLens to Monitor the Health of Your
+Applications</a> in
+the <em>Amazon CloudWatch User Guide</em>.</p>
+<p>Before you create and manage canaries, be aware of the security considerations. For more
+information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_canary/3">create_canary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_canary/4">delete_canary(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes the specified canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_canaries/3">describe_canaries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation returns a list of the canaries in your account, along with full details about each
+canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_canaries_last_run/3">describe_canaries_last_run(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this operation to see information from the most recent run of each canary that you have
+created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_runtime_versions/3">describe_runtime_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of Synthetics canary runtime versions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_canary/3">get_canary(client, name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves complete information about one canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_canary_runs/4">get_canary_runs(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of runs for a specified canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays the tags associated with a canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_canary/4">start_canary(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this operation to run a canary that has already been created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_canary/4">stop_canary(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the canary to prevent all future runs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns one or more tags (key-value pairs) to the specified canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from the specified canary.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_canary/4">update_canary(client, name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this operation to change the settings of a canary that has already been created.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_canary/3">
+
+    <span id="create_canary/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_canary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_canary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L43" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a canary.</p>
+<p>Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you
+check the availability and latency of your web services and troubleshoot anomalies by
+investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to
+run continuously or just once.</p>
+<p>Do not use <code class="inline">CreateCanary</code> to modify an existing canary. Use
+<a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a> instead.</p>
+<p>To create canaries, you must have the <code class="inline">CloudWatchSyntheticsFullAccess</code> policy. If you are creating
+a new IAM role for the canary, you also need the the <code class="inline">iam:CreateRole</code>, <code class="inline">iam:CreatePolicy</code> and
+<code class="inline">iam:AttachRolePolicy</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary Roles and
+Permissions</a>.</p>
+<p>Do not include secrets or proprietary information in your canary names. The canary name makes up
+part of the Amazon Resource Name (ARN) for the canary, and the ARN is included in outbound calls
+over the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html">Security Considerations for Synthetics Canaries</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_canary/4">
+
+    <span id="delete_canary/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_canary/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_canary(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes the specified canary.</p>
+<p>When you delete a canary, resources used and created by the canary are not automatically deleted.
+After you delete a canary that you do not intend to use again, you should also delete the
+following:</p>
+<ul>
+<li><p>The Lambda functions and layers used by this canary. These have the prefix
+<code class="inline">cwsyn-*MyCanaryName*</code>.</p>
+</li>
+<li><p>The CloudWatch alarms created for this canary. These alarms have a name of
+<code class="inline">Synthetics-SharpDrop-Alarm-*MyCanaryName*</code>.</p>
+</li>
+<li><p>Amazon S3 objects and buckets, such as the canary&#39;s artifact location.</p>
+</li>
+<li><p>IAM roles created for the canary. If they were created in the console, these roles
+have the name <code class="inline">role/service-role/CloudWatchSyntheticsRole-*MyCanaryName*</code>.</p>
+</li>
+<li><p>CloudWatch Logs log groups created for the canary. These logs groups have the name
+<code class="inline">/aws/lambda/cwsyn-*MyCanaryName*</code>.</p>
+</li>
+</ul>
+<p>Before you delete a canary, you might want to use <code class="inline">GetCanary</code> to display the information about
+this canary. Make note of the information returned by this operation so that you can delete these
+resources after you delete the canary.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_canaries/3">
+
+    <span id="describe_canaries/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_canaries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_canaries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation returns a list of the canaries in your account, along with full details about each
+canary.</p>
+<p>This operation does not have resource-level authorization, so if a user is able to use
+<code class="inline">DescribeCanaries</code>, the user can see all of the canaries in the account. A deny policy can only be
+used to restrict access to all canaries. It cannot be used on specific resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_canaries_last_run/3">
+
+    <span id="describe_canaries_last_run/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_canaries_last_run/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_canaries_last_run(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this operation to see information from the most recent run of each canary that you have
+created.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_runtime_versions/3">
+
+    <span id="describe_runtime_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_runtime_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_runtime_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L113" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of Synthetics canary runtime versions.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_canary/3">
+
+    <span id="get_canary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_canary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_canary(client, name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L127" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves complete information about one canary.</p>
+<p>You must specify the name of the canary that you want. To get a list of canaries and their names,
+use
+<a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_canary_runs/4">
+
+    <span id="get_canary_runs/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_canary_runs/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_canary_runs(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L137" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of runs for a specified canary.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays the tags associated with a canary.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_canary/4">
+
+    <span id="start_canary/3"></span>
+
+  <div class="detail-header">
+    <a href="#start_canary/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_canary(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this operation to run a canary that has already been created.</p>
+<p>The frequency of the canary runs is determined by the value of the canary&#39;s <code class="inline">Schedule</code>. To see a
+canary&#39;s schedule, use
+<a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_canary/4">
+
+    <span id="stop_canary/3"></span>
+
+  <div class="detail-header">
+    <a href="#stop_canary/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_canary(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L178" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the canary to prevent all future runs.</p>
+<p>If the canary is currently running, Synthetics stops waiting for the current run of the specified
+canary to complete. The run that is in progress completes on its own, publishes metrics, and
+uploads artifacts, but it is not recorded in Synthetics as a completed run.</p>
+<p>You can use <code class="inline">StartCanary</code> to start it running again with the canary’s current schedule at any
+point in the future.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns one or more tags (key-value pairs) to the specified canary.</p>
+<p>Tags can help you organize and categorize your resources. You can also use them to scope user
+permissions, by granting a user permission to access or change only resources with certain tag
+values.</p>
+<p>Tags don&#39;t have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p>
+<p>You can use the <code class="inline">TagResource</code> action with a canary that already has tags. If you specify a new tag
+key for the alarm, this tag is appended to the list of tags associated with the alarm. If you
+specify a tag key that is already associated with the alarm, the new tag value that you specify
+replaces the previous value for that tag.</p>
+<p>You can associate as many as 50 tags with a canary.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from the specified canary.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_canary/4">
+
+    <span id="update_canary/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_canary/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_canary(client, name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/synthetics.ex#L229" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this operation to change the settings of a canary that has already been created.</p>
+<p>You can&#39;t use this operation to update the tags of an existing canary. To change the tags of an
+existing canary, use
+<a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_TagResource.html">TagResource</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Health — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Health
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Health</p>
+<p>The AWS Health API provides programmatic access to the AWS Health information that appears in the
+<a href="https://phd.aws.amazon.com/phd/home#/">AWS Personal Health Dashboard</a>.  You can use the API operations to get information about AWS Health events that affect your AWS
+services and resources.</p>
+<p>You must have a Business or Enterprise support plan from <a href="http://aws.amazon.com/premiumsupport/">AWS
+Support</a> to use the AWS Health API. If you call the AWS
+Health API from an AWS account that doesn&#39;t have a Business or Enterprise support plan, you
+receive a <code class="inline">SubscriptionRequiredException</code> error.</p>
+<p>AWS Health has a single endpoint: health.us-east-1.amazonaws.com (HTTPS). Use this endpoint to
+call the AWS Health API operations.</p>
+<p>For authentication of requests, AWS Health uses the <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
+<p>If your AWS account is part of AWS Organizations, you can use the AWS Health organizational view
+feature. This feature provides a centralized view of AWS Health events across all accounts in your
+organization. You can aggregate AWS Health events in real time to identify accounts in your
+organization that are affected by an operational event or get notified of security
+vulnerabilities. Use the organizational view API operations to enable this feature and return
+event information. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in the <em>AWS Health
+User Guide</em>.</p>
+<p>When you use the AWS Health API operations to return AWS Health events, see the following
+recommendations:</p>
+<p>   Use the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode">eventScopeCode</a>
+parameter to specify whether to return AWS Health events that are public or account-specific.</p>
+<p>   Use pagination to view all events from the response. For example, if you call the
+<code class="inline">DescribeEventsForOrganization</code> operation to get all events in your organization, you might
+receive several page results. Specify the <code class="inline">nextToken</code> in the next request to return more results.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_affected_accounts_for_organization/3">describe_affected_accounts_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of accounts in the organization from AWS Organizations that are affected by the
+provided event.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_affected_entities/3">describe_affected_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of entities that have been affected by the specified events, based on the specified
+filter criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_affected_entities_for_organization/3">describe_affected_entities_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of entities that have been affected by one or more events for one or more accounts
+in your organization in AWS Organizations, based on the filter criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_entity_aggregates/3">describe_entity_aggregates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of entities that are affected by each of the specified events.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_aggregates/3">describe_event_aggregates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of events of each event type (issue, scheduled change, and account
+notification).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_details/3">describe_event_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed information about one or more specified events.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_details_for_organization/3">describe_event_details_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed information about one or more specified events for one or more accounts in your
+organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_types/3">describe_event_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the event types that meet the specified filter criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_events/3">describe_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about events that meet the specified filter criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_events_for_organization/3">describe_events_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about events across your organization in AWS Organizations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_health_service_status_for_organization/3">describe_health_service_status_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This operation provides status information on enabling or disabling AWS Health to work with your
+organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_health_service_access_for_organization/3">disable_health_service_access_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables AWS Health from working with AWS Organizations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_health_service_access_for_organization/3">enable_health_service_access_for_organization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Calling this operation enables AWS Health to work with AWS Organizations.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="describe_affected_accounts_for_organization/3">
+
+    <span id="describe_affected_accounts_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_affected_accounts_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_affected_accounts_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of accounts in the organization from AWS Organizations that are affected by the
+provided event.</p>
+<p>For more information about the different types of AWS Health events, see
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.  Before you can call this operation, you must first enable AWS Health to work with AWS
+Organizations. To do this, call the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+operation from your organization&#39;s master account.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_affected_entities/3">
+
+    <span id="describe_affected_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_affected_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_affected_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of entities that have been affected by the specified events, based on the specified
+filter criteria.</p>
+<p>Entities can refer to individual customer resources, groups of customer resources, or any other
+construct, depending on the AWS service. Events that have impact beyond that of the affected
+entities, or where the extent of impact is unknown, include at least one entity indicating this.</p>
+<p>At least one event ARN is required. Results are sorted by the <code class="inline">lastUpdatedTime</code> of the entity,
+starting with the most recent.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_affected_entities_for_organization/3">
+
+    <span id="describe_affected_entities_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_affected_entities_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_affected_entities_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of entities that have been affected by one or more events for one or more accounts
+in your organization in AWS Organizations, based on the filter criteria.</p>
+<p>Entities can refer to individual customer resources, groups of customer resources, or any other
+construct, depending on the AWS service.</p>
+<p>At least one event Amazon Resource Name (ARN) and account ID are required. Results are sorted by
+the <code class="inline">lastUpdatedTime</code> of the entity, starting with the most recent.</p>
+<p>Before you can call this operation, you must first enable AWS Health to work with AWS
+Organizations. To do this, call the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+operation from your organization&#39;s master account.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_entity_aggregates/3">
+
+    <span id="describe_entity_aggregates/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_entity_aggregates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_entity_aggregates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of entities that are affected by each of the specified events.</p>
+<p>If no events are specified, the counts of all affected entities are returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_aggregates/3">
+
+    <span id="describe_event_aggregates/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_aggregates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_aggregates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of events of each event type (issue, scheduled change, and account
+notification).</p>
+<p>If no filter is specified, the counts of all events in each category are returned.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_details/3">
+
+    <span id="describe_event_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed information about one or more specified events.</p>
+<p>Information includes standard event data (Region, service, and so on, as returned by
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the
+event. Affected entities are not included. To retrieve those, use the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
+operation.</p>
+<p>If a specified event cannot be retrieved, an error message is returned for that event.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_details_for_organization/3">
+
+    <span id="describe_event_details_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_details_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_details_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed information about one or more specified events for one or more accounts in your
+organization.</p>
+<p>Information includes standard event data (Region, service, and so on, as returned by
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html">DescribeEventsForOrganization</a>), a detailed event description, and possible additional metadata that depends upon the nature of the
+event. Affected entities are not included; to retrieve those, use the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a>
+operation.</p>
+<p>Before you can call this operation, you must first enable AWS Health to work with AWS
+Organizations. To do this, call the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a> operation from your organization&#39;s master account.</p>
+<p>When you call the <code class="inline">DescribeEventDetailsForOrganization</code> operation, you specify the
+<code class="inline">organizationEventDetailFilters</code> object in the request. Depending on the AWS Health event type,
+note the following differences:</p>
+<ul>
+<li><p>If the event is public, the <code class="inline">awsAccountId</code> parameter must be empty. If you specify
+an account ID for a public event, then an error message is returned. That&#39;s because the event
+might apply to all AWS accounts and isn&#39;t specific to an account in your organization.</p>
+</li>
+<li><p>If the event is specific to an account, then you must specify the <code class="inline">awsAccountId</code>
+parameter in the request. If you don&#39;t specify an account ID, an error message returns because the
+event is specific to an AWS account in your organization.</p>
+</li>
+</ul>
+<p>For more information, see
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_types/3">
+
+    <span id="describe_event_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the event types that meet the specified filter criteria.</p>
+<p>If no filter criteria are specified, all event types are returned, in no particular order.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_events/3">
+
+    <span id="describe_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about events that meet the specified filter criteria.</p>
+<p>Events are returned in a summary form and do not include the detailed description, any additional
+metadata that depends on the event type, or any affected resources. To retrieve that information,
+use the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html">DescribeEventDetails</a> and
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a>
+operations.</p>
+<p>If no filter criteria are specified, all events are returned. Results are sorted by
+<code class="inline">lastModifiedTime</code>, starting with the most recent event.</p>
+<p>   When you call the <code class="inline">DescribeEvents</code> operation and specify an entity for the
+<code class="inline">entityValues</code> parameter, AWS Health might return public events that aren&#39;t specific to that
+resource. For example, if you call <code class="inline">DescribeEvents</code> and specify an ID for an Amazon Elastic
+Compute Cloud (Amazon EC2) instance, AWS Health might return events that aren&#39;t specific to that
+resource or service. To get events that are specific to a service, use the <code class="inline">services</code> parameter in
+the <code class="inline">filter</code> object. For more information, see
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
+<p>   This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next
+request to return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_events_for_organization/3">
+
+    <span id="describe_events_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_events_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_events_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about events across your organization in AWS Organizations.</p>
+<p>You can use the<code class="inline">filters</code> parameter to specify the events that you want to return. Events are
+returned in a summary form and don&#39;t include the affected accounts, detailed description, any
+additional metadata that depends on the event type, or any affected resources. To retrieve that
+information, use the following operations:</p>
+<p>  <em>
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedAccountsForOrganization.html">DescribeAffectedAccountsForOrganization</a>     </em>
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html">DescribeEventDetailsForOrganization</a></p>
+<p>  *
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html">DescribeAffectedEntitiesForOrganization</a> </p>
+<p>If you don&#39;t specify a <code class="inline">filter</code>, the <code class="inline">DescribeEventsForOrganizations</code> returns all events across
+your organization. Results are sorted by <code class="inline">lastModifiedTime</code>, starting with the most recent event.</p>
+<p>For more information about the different types of AWS Health events, see
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.</p>
+<p>Before you can call this operation, you must first enable AWS Health to work with AWS
+Organizations. To do this, call the
+<a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EnableHealthServiceAccessForOrganization.html">EnableHealthServiceAccessForOrganization</a>
+operation from your organization&#39;s master AWS account.</p>
+<p>This API operation uses pagination. Specify the <code class="inline">nextToken</code> parameter in the next request to
+return more results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_health_service_status_for_organization/3">
+
+    <span id="describe_health_service_status_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_health_service_status_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_health_service_status_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L249" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This operation provides status information on enabling or disabling AWS Health to work with your
+organization.</p>
+<p>To call this operation, you must sign in as an IAM user, assume an IAM role, or sign in as the
+root user (not recommended) in the organization&#39;s master account.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_health_service_access_for_organization/3">
+
+    <span id="disable_health_service_access_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_health_service_access_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_health_service_access_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables AWS Health from working with AWS Organizations.</p>
+<p>To call this operation, you must sign in as an AWS Identity and Access Management (IAM) user,
+assume an IAM role, or sign in as the root user (not recommended) in the organization&#39;s master AWS
+account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in the <em>AWS Health
+User Guide</em>.</p>
+<p>This operation doesn&#39;t remove the service-linked role (SLR) from the AWS master account in your
+organization. You must use the IAM console, API, or AWS Command Line Interface (AWS CLI) to remove
+the SLR. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role">Deleting a Service-Linked Role</a>
+in the <em>IAM User Guide</em>.</p>
+<p>You can also disable the organizational feature by using the Organizations
+<a href="https://docs.aws.amazon.com/organizations/latest/APIReference/API_DisableAWSServiceAccess.html">DisableAWSServiceAccess</a>
+API operation. After you call this operation, AWS Health stops aggregating events for all other
+AWS accounts in your organization. If you call the AWS Health API operations for organizational
+view, AWS Health returns an error. AWS Health continues to aggregate health events for your AWS
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_health_service_access_for_organization/3">
+
+    <span id="enable_health_service_access_for_organization/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_health_service_access_for_organization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_health_service_access_for_organization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/health.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Calling this operation enables AWS Health to work with AWS Organizations.</p>
+<p>This applies a service-linked role (SLR) to the master account in the organization. To call this
+operation, you must sign in as an IAM user, assume an IAM role, or sign in as the root user (not
+recommended) in the organization&#39;s master account.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating AWS Health events</a> in the <em>AWS Health
+User Guide</em>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

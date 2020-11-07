@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodePipeline — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodePipeline
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS CodePipeline</p>
+<p><strong>Overview</strong></p>
+<p>This is the AWS CodePipeline API Reference.</p>
+<p>This guide provides descriptions of the actions and data types for AWS CodePipeline. Some
+functionality for your pipeline can only be configured through the API. For more information, see
+the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.</p>
+<p>You can use the AWS CodePipeline API to work with pipelines, stages, actions, and transitions.</p>
+<p><em>Pipelines</em> are models of automated release processes. Each pipeline is uniquely named, and
+consists of stages, actions, and transitions.</p>
+<p>You can work with pipelines by calling:</p>
+<ul>
+<li><p><code class="inline">CreatePipeline</code>, which creates a uniquely named pipeline.</p>
+</li>
+<li><p><code class="inline">DeletePipeline</code>, which deletes the specified pipeline.</p>
+</li>
+<li><p><code class="inline">GetPipeline</code>, which returns information about the pipeline structure and pipeline
+metadata, including the pipeline Amazon Resource Name (ARN).</p>
+</li>
+<li><p><code class="inline">GetPipelineExecution</code>, which returns information about a specific execution of a
+pipeline.</p>
+</li>
+<li><p><code class="inline">GetPipelineState</code>, which returns information about the current state of the stages
+and actions of a pipeline.</p>
+</li>
+<li><p><code class="inline">ListActionExecutions</code>, which returns action-level details for past executions. The
+details include full stage and action-level details, including individual action duration, status,
+any errors that occurred during the execution, and input and output artifact location details.</p>
+</li>
+<li><p><code class="inline">ListPipelines</code>, which gets a summary of all of the pipelines associated with your
+account.</p>
+</li>
+<li><p><code class="inline">ListPipelineExecutions</code>, which gets a summary of the most recent executions for a
+pipeline.</p>
+</li>
+<li><p><code class="inline">StartPipelineExecution</code>, which runs the most recent revision of an artifact through
+the pipeline.</p>
+</li>
+<li><p><code class="inline">StopPipelineExecution</code>, which stops the specified pipeline execution from
+continuing through the pipeline.</p>
+</li>
+<li><p><code class="inline">UpdatePipeline</code>, which updates a pipeline with edits or changes to the structure of
+the pipeline.</p>
+</li>
+</ul>
+<p>Pipelines include <em>stages</em>. Each stage contains one or more actions that must complete before the
+next stage begins. A stage results in success or failure. If a stage fails, the pipeline stops at
+that stage and remains stopped until either a new version of an artifact appears in the source
+location, or a user takes action to rerun the most recent artifact through the pipeline. You can
+call <code class="inline">GetPipelineState</code>, which displays the status of a pipeline, including the status of stages
+in the pipeline, or <code class="inline">GetPipeline</code>, which returns the entire structure of the pipeline, including
+the stages of that pipeline. For more information about the structure of stages and actions, see
+<a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/pipeline-structure.html">AWS CodePipeline Pipeline Structure Reference</a>.</p>
+<p>Pipeline stages include <em>actions</em> that are categorized into categories such as source or build
+actions performed in a stage of a pipeline. For example, you can use a source action to import
+artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with
+actions directly in most cases, but you do define and interact with actions when working with
+pipeline operations such as <code class="inline">CreatePipeline</code> and <code class="inline">GetPipelineState</code>. Valid action categories are:</p>
+<ul>
+<li><p>Source</p>
+</li>
+<li><p>Build</p>
+</li>
+<li><p>Test</p>
+</li>
+<li><p>Deploy</p>
+</li>
+<li><p>Approval</p>
+</li>
+<li><p>Invoke</p>
+</li>
+</ul>
+<p>Pipelines also include <em>transitions</em>, which allow the transition of artifacts from one stage to
+the next in a pipeline after the actions in one stage complete.</p>
+<p>You can work with transitions by calling:</p>
+<ul>
+<li><p><code class="inline">DisableStageTransition</code>, which prevents artifacts from transitioning to the next
+stage in a pipeline.</p>
+</li>
+<li><p><code class="inline">EnableStageTransition</code>, which enables transition of artifacts between stages in a
+pipeline.</p>
+</li>
+</ul>
+<p><strong>Using the API to integrate with AWS CodePipeline</strong></p>
+<p>For third-party integrators or developers who want to create their own integrations with AWS
+CodePipeline, the expected sequence varies from the standard API user. To integrate with AWS
+CodePipeline, developers need to work with the following items:</p>
+<p><strong>Jobs</strong>, which are instances of an action. For example, a job for a source action might import a
+revision of an artifact from a source.</p>
+<p>You can work with jobs by calling:</p>
+<ul>
+<li><p><code class="inline">AcknowledgeJob</code>, which confirms whether a job worker has received the specified
+job.</p>
+</li>
+<li><p><code class="inline">GetJobDetails</code>, which returns the details of a job.</p>
+</li>
+<li><p><code class="inline">PollForJobs</code>, which determines whether there are any jobs to act on.</p>
+</li>
+<li><p><code class="inline">PutJobFailureResult</code>, which provides details of a job failure.</p>
+</li>
+<li><p><code class="inline">PutJobSuccessResult</code>, which provides details of a job success.</p>
+</li>
+</ul>
+<p><strong>Third party jobs</strong>, which are instances of an action created by a partner action and integrated
+into AWS CodePipeline. Partner actions are created by members of the AWS Partner Network.</p>
+<p>You can work with third party jobs by calling:</p>
+<ul>
+<li><p><code class="inline">AcknowledgeThirdPartyJob</code>, which confirms whether a job worker has received the
+specified job.</p>
+</li>
+<li><p><code class="inline">GetThirdPartyJobDetails</code>, which requests the details of a job for a partner action.</p>
+</li>
+<li><p><code class="inline">PollForThirdPartyJobs</code>, which determines whether there are any jobs to act on.</p>
+</li>
+<li><p><code class="inline">PutThirdPartyJobFailureResult</code>, which provides details of a job failure.</p>
+</li>
+<li><p><code class="inline">PutThirdPartyJobSuccessResult</code>, which provides details of a job success.</p>
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#acknowledge_job/3">acknowledge_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specified job and whether that job has been received by the job
+worker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#acknowledge_third_party_job/3">acknowledge_third_party_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Confirms a job worker has received the specified job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_custom_action_type/3">create_custom_action_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new custom action that can be used in all pipelines associated with the AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_pipeline/3">create_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_custom_action_type/3">delete_custom_action_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Marks a custom action as deleted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_pipeline/3">delete_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_webhook/3">delete_webhook(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a previously created webhook by name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_webhook_with_third_party/3">deregister_webhook_with_third_party(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the connection between the webhook that was created by CodePipeline and the external tool
+with events to be detected.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_stage_transition/3">disable_stage_transition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_stage_transition/3">enable_stage_transition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_job_details/3">get_job_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pipeline/3">get_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the metadata, structure, stages, and actions of a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pipeline_execution/3">get_pipeline_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about an execution of a pipeline, including details about artifacts, the
+pipeline execution ID, and the name, version, and status of the pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_pipeline_state/3">get_pipeline_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the state of a pipeline, including the stages and actions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_third_party_job_details/3">get_third_party_job_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Requests the details of a job for a third party action.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_action_executions/3">list_action_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the action executions that have occurred in a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_action_types/3">list_action_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a summary of all AWS CodePipeline action types associated with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pipeline_executions/3">list_pipeline_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a summary of the most recent executions for a pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_pipelines/3">list_pipelines(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a summary of all of the pipelines associated with your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the set of key-value pairs (metadata) that are used to manage the resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_webhooks/3">list_webhooks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a listing of all the webhooks in this AWS Region for this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#poll_for_jobs/3">poll_for_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about any jobs for AWS CodePipeline to act on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#poll_for_third_party_jobs/3">poll_for_third_party_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Determines whether there are any third party jobs for a job worker to act on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_action_revision/3">put_action_revision(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information to AWS CodePipeline about new revisions to a source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_approval_result/3">put_approval_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides the response to a manual approval request to AWS CodePipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_job_failure_result/3">put_job_failure_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents the failure of a job as returned to the pipeline by a job worker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_job_success_result/3">put_job_success_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents the success of a job as returned to the pipeline by a job worker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_third_party_job_failure_result/3">put_third_party_job_failure_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents the failure of a third party job as returned to the pipeline by a job worker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_third_party_job_success_result/3">put_third_party_job_success_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Represents the success of a third party job as returned to the pipeline by a job worker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_webhook/3">put_webhook(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Defines a webhook and returns a unique webhook URL generated by CodePipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_webhook_with_third_party/3">register_webhook_with_third_party(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures a connection between the webhook that was created and the external tool with events to
+be detected.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#retry_stage_execution/3">retry_stage_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resumes the pipeline execution by retrying the last failed actions in a stage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_pipeline_execution/3">start_pipeline_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the specified pipeline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_pipeline_execution/3">stop_pipeline_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the specified pipeline execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds to or modifies the tags of the given resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from an AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_pipeline/3">update_pipeline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a specified pipeline with edits or changes to its structure.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="acknowledge_job/3">
+
+    <span id="acknowledge_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#acknowledge_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">acknowledge_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L138" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specified job and whether that job has been received by the job
+worker.</p>
+<p>Used for custom actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="acknowledge_third_party_job/3">
+
+    <span id="acknowledge_third_party_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#acknowledge_third_party_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">acknowledge_third_party_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Confirms a job worker has received the specified job.</p>
+<p>Used for partner actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_custom_action_type/3">
+
+    <span id="create_custom_action_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_custom_action_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_custom_action_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new custom action that can be used in all pipelines associated with the AWS account.</p>
+<p>Only used for custom actions.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_pipeline/3">
+
+    <span id="create_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a pipeline.</p>
+<p>In the pipeline structure, you must include either <code class="inline">artifactStore</code> or <code class="inline">artifactStores</code> in your
+pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must
+use <code class="inline">artifactStores</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_custom_action_type/3">
+
+    <span id="delete_custom_action_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_custom_action_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_custom_action_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Marks a custom action as deleted.</p>
+<p><code class="inline">PollForJobs</code> for the custom action fails after the action is marked for deletion. Used for custom
+actions only.</p>
+<p>To re-create a custom action after it has been deleted you must use a string in the version field
+that has never been used before. This string can be an incremented version number, for example. To
+restore a deleted custom action, use a JSON file that is identical to the deleted action,
+including the original string in the version field.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_pipeline/3">
+
+    <span id="delete_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L189" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_webhook/3">
+
+    <span id="delete_webhook/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_webhook/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_webhook(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a previously created webhook by name.</p>
+<p>Deleting the webhook stops AWS CodePipeline from starting a pipeline every time an external event
+occurs. The API returns successfully when trying to delete a webhook that is already deleted. If a
+deleted webhook is re-created by calling PutWebhook with the same name, it will have a different
+URL.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_webhook_with_third_party/3">
+
+    <span id="deregister_webhook_with_third_party/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_webhook_with_third_party/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_webhook_with_third_party(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the connection between the webhook that was created by CodePipeline and the external tool
+with events to be detected.</p>
+<p>Currently supported only for webhooks that target an action type of GitHub.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_stage_transition/3">
+
+    <span id="disable_stage_transition/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_stage_transition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_stage_transition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L218" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_stage_transition/3">
+
+    <span id="enable_stage_transition/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_stage_transition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_stage_transition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L225" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_job_details/3">
+
+    <span id="get_job_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_job_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_job_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a job.</p>
+<p>Used for custom actions only.</p>
+<p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to
+store artifacts for the pipeline, if the action requires access to that S3 bucket for input or
+output artifacts. This API also returns any secret values defined for the action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pipeline/3">
+
+    <span id="get_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the metadata, structure, stages, and actions of a pipeline.</p>
+<p>Can be used to return the entire structure of a pipeline in JSON format, which can then be
+modified and used to update the pipeline structure with <code class="inline">UpdatePipeline</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pipeline_execution/3">
+
+    <span id="get_pipeline_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pipeline_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pipeline_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about an execution of a pipeline, including details about artifacts, the
+pipeline execution ID, and the name, version, and status of the pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_pipeline_state/3">
+
+    <span id="get_pipeline_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_pipeline_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_pipeline_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the state of a pipeline, including the stages and actions.</p>
+<p>Values returned in the <code class="inline">revisionId</code> and <code class="inline">revisionUrl</code> fields indicate the source revision
+information, such as the commit ID, for the current state.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_third_party_job_details/3">
+
+    <span id="get_third_party_job_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_third_party_job_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_third_party_job_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L279" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Requests the details of a job for a third party action.</p>
+<p>Used for partner actions only.</p>
+<p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to
+store artifacts for the pipeline, if the action requires access to that S3 bucket for input or
+output artifacts. This API also returns any secret values defined for the action.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_action_executions/3">
+
+    <span id="list_action_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_action_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_action_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the action executions that have occurred in a pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_action_types/3">
+
+    <span id="list_action_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_action_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_action_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L293" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a summary of all AWS CodePipeline action types associated with your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pipeline_executions/3">
+
+    <span id="list_pipeline_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_pipeline_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pipeline_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L300" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a summary of the most recent executions for a pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_pipelines/3">
+
+    <span id="list_pipelines/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_pipelines/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_pipelines(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a summary of all of the pipelines associated with your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L314" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the set of key-value pairs (metadata) that are used to manage the resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_webhooks/3">
+
+    <span id="list_webhooks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_webhooks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_webhooks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L324" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a listing of all the webhooks in this AWS Region for this account.</p>
+<p>The output lists all webhooks and includes the webhook URL and ARN and the configuration for each
+webhook.</p>
+
+  </section>
+</section>
+<section class="detail" id="poll_for_jobs/3">
+
+    <span id="poll_for_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#poll_for_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">poll_for_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about any jobs for AWS CodePipeline to act on.</p>
+<p><code class="inline">PollForJobs</code> is valid only for action types with &quot;Custom&quot; in the owner field. If the action type
+contains &quot;AWS&quot; or &quot;ThirdParty&quot; in the owner field, the <code class="inline">PollForJobs</code> action returns an error.</p>
+<p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to
+store artifacts for the pipeline, if the action requires access to that S3 bucket for input or
+output artifacts. This API also returns any secret values defined for the action.</p>
+
+  </section>
+</section>
+<section class="detail" id="poll_for_third_party_jobs/3">
+
+    <span id="poll_for_third_party_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#poll_for_third_party_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">poll_for_third_party_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L351" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Determines whether there are any third party jobs for a job worker to act on.</p>
+<p>Used for partner actions only.</p>
+<p>When this API is called, AWS CodePipeline returns temporary credentials for the S3 bucket used to
+store artifacts for the pipeline, if the action requires access to that S3 bucket for input or
+output artifacts.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_action_revision/3">
+
+    <span id="put_action_revision/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_action_revision/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_action_revision(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L358" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information to AWS CodePipeline about new revisions to a source.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_approval_result/3">
+
+    <span id="put_approval_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_approval_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_approval_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L367" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides the response to a manual approval request to AWS CodePipeline.</p>
+<p>Valid responses include Approved and Rejected.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_job_failure_result/3">
+
+    <span id="put_job_failure_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_job_failure_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_job_failure_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L376" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Represents the failure of a job as returned to the pipeline by a job worker.</p>
+<p>Used for custom actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_job_success_result/3">
+
+    <span id="put_job_success_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_job_success_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_job_success_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L385" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Represents the success of a job as returned to the pipeline by a job worker.</p>
+<p>Used for custom actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_third_party_job_failure_result/3">
+
+    <span id="put_third_party_job_failure_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_third_party_job_failure_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_third_party_job_failure_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L394" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Represents the failure of a third party job as returned to the pipeline by a job worker.</p>
+<p>Used for partner actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_third_party_job_success_result/3">
+
+    <span id="put_third_party_job_success_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_third_party_job_success_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_third_party_job_success_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Represents the success of a third party job as returned to the pipeline by a job worker.</p>
+<p>Used for partner actions only.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_webhook/3">
+
+    <span id="put_webhook/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_webhook/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_webhook(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L417" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Defines a webhook and returns a unique webhook URL generated by CodePipeline.</p>
+<p>This URL can be supplied to third party source hosting providers to call every time there&#39;s a code
+change. When CodePipeline receives a POST request on this URL, the pipeline defined in the webhook
+is started as long as the POST request satisfied the authentication and filtering requirements
+supplied when defining the webhook. RegisterWebhookWithThirdParty and
+DeregisterWebhookWithThirdParty APIs can be used to automatically configure supported third
+parties to call the generated webhook URL.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_webhook_with_third_party/3">
+
+    <span id="register_webhook_with_third_party/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_webhook_with_third_party/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_webhook_with_third_party(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L425" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures a connection between the webhook that was created and the external tool with events to
+be detected.</p>
+
+  </section>
+</section>
+<section class="detail" id="retry_stage_execution/3">
+
+    <span id="retry_stage_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#retry_stage_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">retry_stage_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L435" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resumes the pipeline execution by retrying the last failed actions in a stage.</p>
+<p>You can retry a stage immediately if any of the actions in the stage fail. When you retry, all
+actions that are still in progress continue working, and failed actions are triggered again.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_pipeline_execution/3">
+
+    <span id="start_pipeline_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_pipeline_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_pipeline_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L445" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the specified pipeline.</p>
+<p>Specifically, it begins processing the latest commit to the source location specified as part of
+the pipeline.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_pipeline_execution/3">
+
+    <span id="stop_pipeline_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_pipeline_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_pipeline_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L457" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the specified pipeline execution.</p>
+<p>You choose to either stop the pipeline execution by completing in-progress actions without
+starting subsequent actions, or by abandoning in-progress actions. While completing or abandoning
+in-progress actions, the pipeline execution is in a <code class="inline">Stopping</code> state. After all in-progress
+actions are completed or abandoned, the pipeline execution is in a <code class="inline">Stopped</code> state.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L466" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds to or modifies the tags of the given resource.</p>
+<p>Tags are metadata that can be used to manage a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L473" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from an AWS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_pipeline/3">
+
+    <span id="update_pipeline/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_pipeline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_pipeline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_pipeline.ex#L483" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a specified pipeline with edits or changes to its structure.</p>
+<p>Use a JSON file with the pipeline structure and <code class="inline">UpdatePipeline</code> to provide the full structure of
+the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

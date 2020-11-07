@@ -1,0 +1,1958 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Personalize — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Personalize
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Personalize is a machine learning service that makes it easy to add individualized
+recommendations to customers.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_batch_inference_job/3">create_batch_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a batch inference job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_campaign/3">create_campaign(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a campaign by deploying a solution version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset/3">create_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an empty dataset and adds it to the specified dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset_group/3">create_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an empty dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataset_import_job/3">create_dataset_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon
+Personalize dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_event_tracker/3">create_event_tracker(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an event tracker that you use when sending event data to the specified dataset group using
+the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_filter/3">create_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a recommendation filter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_schema/3">create_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Personalize schema from the specified schema string.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_solution/3">create_solution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates the configuration for training a model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_solution_version/3">create_solution_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Trains or retrains an active solution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_campaign/3">delete_campaign(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a campaign by deleting the solution deployment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataset/3">delete_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataset_group/3">delete_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_event_tracker/3">delete_event_tracker(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the event tracker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_filter/3">delete_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a filter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_schema/3">delete_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_solution/3">delete_solution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes all versions of a solution and the <code class="inline">Solution</code> object itself.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_algorithm/3">describe_algorithm(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the given algorithm.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_batch_inference_job/3">describe_batch_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status,
+input and output configurations, and the ARN of the solution version used to generate the
+recommendations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_campaign/3">describe_campaign(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the given campaign, including its status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset/3">describe_dataset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the given dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset_group/3">describe_dataset_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the given dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dataset_import_job/3">describe_dataset_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including the import job
+status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_tracker/3">describe_event_tracker(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an event tracker.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_feature_transformation/3">describe_feature_transformation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the given feature transformation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_filter/3">describe_filter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a filter&#39;s properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_recipe/3">describe_recipe(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a recipe.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_schema/3">describe_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_solution/3">describe_solution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a solution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_solution_version/3">describe_solution_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a specific version of a solution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_solution_metrics/3">get_solution_metrics(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the metrics for the specified solution version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_batch_inference_jobs/3">list_batch_inference_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_campaigns/3">list_campaigns(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of campaigns that use the given solution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dataset_groups/3">list_dataset_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of dataset groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dataset_import_jobs/3">list_dataset_import_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of dataset import jobs that use the given dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_datasets/3">list_datasets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of datasets contained in the given dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_event_trackers/3">list_event_trackers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of event trackers associated with the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_filters/3">list_filters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all filters that belong to a given dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_recipes/3">list_recipes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of available recipes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_schemas/3">list_schemas(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of schemas associated with the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_solution_versions/3">list_solution_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of solution versions for the given solution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_solutions/3">list_solutions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of solutions that use the given dataset group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_campaign/3">update_campaign(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a campaign by either deploying a new solution or changing the value of the campaign&#39;s
+<code class="inline">minProvisionedTPS</code> parameter.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_batch_inference_job/3">
+
+    <span id="create_batch_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_batch_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_batch_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a batch inference job.</p>
+<p>The operation can handle up to 50 million records and the input file must be in JSON format. For
+more information, see <code class="inline">recommendations-batch</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_campaign/3">
+
+    <span id="create_campaign/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_campaign/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_campaign(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L63" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a campaign by deploying a solution version.</p>
+<p>When a client calls the
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> and
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
+APIs, a campaign is specified in the request.</p>
+<p><strong>Minimum Provisioned TPS and Auto-Scaling</strong></p>
+<p>A transaction is a single <code class="inline">GetRecommendations</code> or <code class="inline">GetPersonalizedRanking</code> call. Transactions per
+second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum provisioned
+TPS (<code class="inline">minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon Personalize, and
+thus, the minimum billing charge. If your TPS increases beyond <code class="inline">minProvisionedTPS</code>, Amazon
+Personalize auto-scales the provisioned capacity up and down, but never below <code class="inline">minProvisionedTPS</code>,
+to maintain a 70% utilization. There&#39;s a short time delay while the capacity is increased that
+might cause loss of transactions. It&#39;s recommended to start with a low <code class="inline">minProvisionedTPS</code>, track
+your usage using Amazon CloudWatch metrics, and then increase the <code class="inline">minProvisionedTPS</code> as
+necessary.</p>
+<p><strong>Status</strong></p>
+<p>A campaign can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
+</li>
+</ul>
+<p>To get the campaign status, call <code class="inline">DescribeCampaign</code>.</p>
+<p>Wait until the <code class="inline">status</code> of the campaign is <code class="inline">ACTIVE</code> before asking the campaign for
+recommendations.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListCampaigns</code></p>
+</li>
+<li><p><code class="inline">DescribeCampaign</code></p>
+</li>
+<li><p><code class="inline">UpdateCampaign</code></p>
+</li>
+<li><p><code class="inline">DeleteCampaign</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_dataset/3">
+
+    <span id="create_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an empty dataset and adds it to the specified dataset group.</p>
+<p>Use <code class="inline">CreateDatasetImportJob</code> to import your training data to a dataset.</p>
+<p>There are three types of datasets:</p>
+<ul>
+<li><p>Interactions</p>
+</li>
+<li><p>Items</p>
+</li>
+<li><p>Users</p>
+</li>
+</ul>
+<p>Each dataset type has an associated schema with required field types. Only the <code class="inline">Interactions</code>
+dataset is required in order to train a model (also referred to as creating a solution).</p>
+<p>A dataset can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
+</li>
+</ul>
+<p>To get the status of the dataset, call <code class="inline">DescribeDataset</code>.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">CreateDatasetGroup</code></p>
+</li>
+<li><p><code class="inline">ListDatasets</code></p>
+</li>
+<li><p><code class="inline">DescribeDataset</code></p>
+</li>
+<li><p><code class="inline">DeleteDataset</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_dataset_group/3">
+
+    <span id="create_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an empty dataset group.</p>
+<p>A dataset group contains related datasets that supply data for training a model. A dataset group
+can contain at most three datasets, one for each type of dataset:</p>
+<ul>
+<li><p>Interactions</p>
+</li>
+<li><p>Items</p>
+</li>
+<li><p>Users</p>
+</li>
+</ul>
+<p>To train a model (create a solution), a dataset group that contains an <code class="inline">Interactions</code> dataset is
+required. Call <code class="inline">CreateDataset</code> to add a dataset to the group.</p>
+<p>A dataset group can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING</p>
+</li>
+</ul>
+<p>To get the status of the dataset group, call <code class="inline">DescribeDatasetGroup</code>. If the status shows as CREATE
+FAILED, the response includes a <code class="inline">failureReason</code> key, which describes why the creation failed.</p>
+<p>You must wait until the <code class="inline">status</code> of the dataset group is <code class="inline">ACTIVE</code> before adding a dataset to the
+group.</p>
+<p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group. If
+you specify a KMS key, you must also include an AWS Identity and Access Management (IAM) role that
+has permission to access the key.</p>
+<p><strong>APIs that require a dataset group ARN in the request</strong></p>
+<ul>
+<li><p><code class="inline">CreateDataset</code></p>
+</li>
+<li><p><code class="inline">CreateEventTracker</code></p>
+</li>
+<li><p><code class="inline">CreateSolution</code></p>
+</li>
+</ul>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListDatasetGroups</code></p>
+</li>
+<li><p><code class="inline">DescribeDatasetGroup</code></p>
+</li>
+<li><p><code class="inline">DeleteDatasetGroup</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_dataset_import_job/3">
+
+    <span id="create_dataset_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataset_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataset_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L186" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon
+Personalize dataset.</p>
+<p>To allow Amazon Personalize to import the training data, you must specify an AWS Identity and
+Access Management (IAM) role that has permission to read from the data source, as Amazon
+Personalize makes a copy of your data and processes it in an internal AWS system.</p>
+<p>The dataset import job replaces any previous data in the dataset.</p>
+<p><strong>Status</strong></p>
+<p>A dataset import job can be in one of the following states:</p>
+<ul>
+<li>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+</li>
+</ul>
+<p>To get the status of the import job, call <code class="inline">DescribeDatasetImportJob</code>, providing the Amazon
+Resource Name (ARN) of the dataset import job. The dataset import is complete when the status
+shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code>
+key, which describes why the job failed.</p>
+<p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using
+the dataset.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListDatasetImportJobs</code></p>
+</li>
+<li><p><code class="inline">DescribeDatasetImportJob</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_event_tracker/3">
+
+    <span id="create_event_tracker/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_event_tracker/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_event_tracker(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L222" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an event tracker that you use when sending event data to the specified dataset group using
+the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
+<p>When Amazon Personalize creates an event tracker, it also creates an <em>event-interactions</em> dataset
+in the dataset group associated with the event tracker. The event-interactions dataset stores the
+event data from the <code class="inline">PutEvents</code> call. The contents of this dataset are not available to the user.</p>
+<p>Only one event tracker can be associated with a dataset group. You will get an error if you call
+<code class="inline">CreateEventTracker</code> using the same dataset group as an existing event tracker.</p>
+<p>When you send event data you include your tracking ID. The tracking ID identifies the customer and
+authorizes the customer to send the data.</p>
+<p>The event tracker can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
+</li>
+</ul>
+<p>To get the status of the event tracker, call <code class="inline">DescribeEventTracker</code>.</p>
+<p>The event tracker must be in the ACTIVE state before using the tracking ID.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListEventTrackers</code></p>
+</li>
+<li><p><code class="inline">DescribeEventTracker</code></p>
+</li>
+<li><p><code class="inline">DeleteEventTracker</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_filter/3">
+
+    <span id="create_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a recommendation filter.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filters.html">Using Filters with Amazon Personalize</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_schema/3">
+
+    <span id="create_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L251" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Personalize schema from the specified schema string.</p>
+<p>The schema you create must be in Avro JSON format.</p>
+<p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type
+and has a set of required field and keywords. You specify a schema when you call <code class="inline">CreateDataset</code>.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListSchemas</code></p>
+</li>
+<li><p><code class="inline">DescribeSchema</code></p>
+</li>
+<li><p><code class="inline">DeleteSchema</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_solution/3">
+
+    <span id="create_solution/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_solution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_solution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L299" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates the configuration for training a model.</p>
+<p>A trained model is known as a solution. After the configuration is created, you train the model
+(create a solution) by calling the <code class="inline">CreateSolutionVersion</code> operation. Every time you call
+<code class="inline">CreateSolutionVersion</code>, a new version of the solution is created.</p>
+<p>After creating a solution version, you check its accuracy by calling <code class="inline">GetSolutionMetrics</code>. When
+you are satisfied with the version, you deploy it using <code class="inline">CreateCampaign</code>. The campaign provides
+recommendations to a client through the
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+API.</p>
+<p>To train a model, Amazon Personalize requires training data and a recipe. The training data comes
+from the dataset group that you provide in the request. A recipe specifies the training algorithm
+and a feature transformation. You can specify one of the predefined recipes provided by Amazon
+Personalize. Alternatively, you can specify <code class="inline">performAutoML</code> and Amazon Personalize will analyze
+your data and select the optimum USER_PERSONALIZATION recipe for you.</p>
+<p><strong>Status</strong></p>
+<p>A solution can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
+</li>
+</ul>
+<p>To get the status of the solution, call <code class="inline">DescribeSolution</code>. Wait until the status shows as ACTIVE
+before calling <code class="inline">CreateSolutionVersion</code>.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListSolutions</code></p>
+</li>
+<li><p><code class="inline">CreateSolutionVersion</code></p>
+</li>
+<li><p><code class="inline">DescribeSolution</code></p>
+</li>
+<li><p><code class="inline">DeleteSolution</code></p>
+</li>
+<li><p><code class="inline">ListSolutionVersions</code></p>
+</li>
+<li><p><code class="inline">DescribeSolutionVersion</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_solution_version/3">
+
+    <span id="create_solution_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_solution_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_solution_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L336" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Trains or retrains an active solution.</p>
+<p>A solution is created using the <code class="inline">CreateSolution</code> operation and must be in the ACTIVE state before
+calling <code class="inline">CreateSolutionVersion</code>. A new version of the solution is created every time you call this
+operation.</p>
+<p><strong>Status</strong></p>
+<p>A solution version can be in one of the following states:</p>
+<ul>
+<li>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+</li>
+</ul>
+<p>To get the status of the version, call <code class="inline">DescribeSolutionVersion</code>. Wait until the status shows as
+ACTIVE before calling <code class="inline">CreateCampaign</code>.</p>
+<p>If the status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code> key, which describes
+why the job failed.</p>
+<p><strong>Related APIs</strong></p>
+<ul>
+<li><p><code class="inline">ListSolutionVersions</code></p>
+</li>
+<li><p><code class="inline">DescribeSolutionVersion</code></p>
+</li>
+<li><p><code class="inline">ListSolutions</code></p>
+</li>
+<li><p><code class="inline">CreateSolution</code></p>
+</li>
+<li><p><code class="inline">DescribeSolution</code></p>
+</li>
+<li><p><code class="inline">DeleteSolution</code></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="delete_campaign/3">
+
+    <span id="delete_campaign/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_campaign/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_campaign(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L348" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a campaign by deleting the solution deployment.</p>
+<p>The solution that the campaign is based on is not deleted and can be redeployed when needed. A
+deleted campaign can no longer be specified in a
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+request. For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataset/3">
+
+    <span id="delete_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L358" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataset.</p>
+<p>You can&#39;t delete a dataset if an associated <code class="inline">DatasetImportJob</code> or <code class="inline">SolutionVersion</code> is in the
+CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataset_group/3">
+
+    <span id="delete_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L373" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataset group.</p>
+<p>Before you delete a dataset group, you must delete the following:</p>
+<ul>
+<li><p>All associated event trackers.</p>
+</li>
+<li><p>All associated solutions.</p>
+</li>
+<li><p>All datasets in the dataset group.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="delete_event_tracker/3">
+
+    <span id="delete_event_tracker/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_event_tracker/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_event_tracker(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L383" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the event tracker.</p>
+<p>Does not delete the event-interactions dataset from the associated dataset group. For more
+information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_filter/3">
+
+    <span id="delete_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L390" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_schema/3">
+
+    <span id="delete_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L400" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a schema.</p>
+<p>Before deleting a schema, you must delete all datasets referencing the schema. For more
+information on schemas, see <code class="inline">CreateSchema</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_solution/3">
+
+    <span id="delete_solution/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_solution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_solution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes all versions of a solution and the <code class="inline">Solution</code> object itself.</p>
+<p>Before deleting a solution, you must delete all campaigns based on the solution. To determine what
+campaigns are using the solution, call <code class="inline">ListCampaigns</code> and supply the Amazon Resource Name (ARN)
+of the solution. You can&#39;t delete a solution if an associated <code class="inline">SolutionVersion</code> is in the CREATE
+PENDING or IN PROGRESS state. For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_algorithm/3">
+
+    <span id="describe_algorithm/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_algorithm/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_algorithm(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L419" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the given algorithm.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_batch_inference_job/3">
+
+    <span id="describe_batch_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_batch_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_batch_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L428" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status,
+input and output configurations, and the ARN of the solution version used to generate the
+recommendations.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_campaign/3">
+
+    <span id="describe_campaign/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_campaign/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_campaign(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L446" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the given campaign, including its status.</p>
+<p>A campaign can be in one of the following states:</p>
+<ul>
+<li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
+</li>
+<li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
+</li>
+</ul>
+<p>When the <code class="inline">status</code> is <code class="inline">CREATE FAILED</code>, the response includes the <code class="inline">failureReason</code> key, which
+describes why.</p>
+<p>For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset/3">
+
+    <span id="describe_dataset/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L455" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the given dataset.</p>
+<p>For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset_group/3">
+
+    <span id="describe_dataset_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the given dataset group.</p>
+<p>For more information on dataset groups, see <code class="inline">CreateDatasetGroup</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dataset_import_job/3">
+
+    <span id="describe_dataset_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dataset_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dataset_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L472" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including the import job
+status.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_tracker/3">
+
+    <span id="describe_event_tracker/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_tracker/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_tracker(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L482" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an event tracker.</p>
+<p>The response includes the <code class="inline">trackingId</code> and <code class="inline">status</code> of the event tracker. For more information on
+event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_feature_transformation/3">
+
+    <span id="describe_feature_transformation/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_feature_transformation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_feature_transformation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L489" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the given feature transformation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_filter/3">
+
+    <span id="describe_filter/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_filter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_filter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L496" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a filter&#39;s properties.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_recipe/3">
+
+    <span id="describe_recipe/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_recipe/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_recipe(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L518" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a recipe.</p>
+<p>A recipe contains three items:</p>
+<ul>
+<li><p>An algorithm that trains a model.</p>
+</li>
+<li><p>Hyperparameters that govern the training.</p>
+</li>
+<li><p>Feature transformation information for modifying the input data before training.</p>
+</li>
+</ul>
+<p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a
+solution with the <code class="inline">CreateSolution</code> API. <code class="inline">CreateSolution</code> trains a model by using the algorithm in
+the specified recipe and a training dataset. The solution, when deployed as a campaign, can
+provide recommendations using the
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
+API.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_schema/3">
+
+    <span id="describe_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L527" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a schema.</p>
+<p>For more information on schemas, see <code class="inline">CreateSchema</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_solution/3">
+
+    <span id="describe_solution/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_solution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_solution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L536" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a solution.</p>
+<p>For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_solution_version/3">
+
+    <span id="describe_solution_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_solution_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_solution_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L545" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a specific version of a solution.</p>
+<p>For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_solution_metrics/3">
+
+    <span id="get_solution_metrics/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_solution_metrics/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_solution_metrics(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L552" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the metrics for the specified solution version.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_batch_inference_jobs/3">
+
+    <span id="list_batch_inference_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_batch_inference_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_batch_inference_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L559" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_campaigns/3">
+
+    <span id="list_campaigns/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_campaigns/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_campaigns(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L570" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of campaigns that use the given solution.</p>
+<p>When a solution is not specified, all the campaigns associated with the account are listed. The
+response provides the properties for each campaign, including the Amazon Resource Name (ARN). For
+more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dataset_groups/3">
+
+    <span id="list_dataset_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_dataset_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dataset_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L580" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of dataset groups.</p>
+<p>The response provides the properties for each dataset group, including the Amazon Resource Name
+(ARN). For more information on dataset groups, see <code class="inline">CreateDatasetGroup</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dataset_import_jobs/3">
+
+    <span id="list_dataset_import_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_dataset_import_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dataset_import_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L592" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of dataset import jobs that use the given dataset.</p>
+<p>When a dataset is not specified, all the dataset import jobs associated with the account are
+listed. The response provides the properties for each dataset import job, including the Amazon
+Resource Name (ARN). For more information on dataset import jobs, see <code class="inline">CreateDatasetImportJob</code>.
+For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_datasets/3">
+
+    <span id="list_datasets/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_datasets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_datasets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L602" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of datasets contained in the given dataset group.</p>
+<p>The response provides the properties for each dataset, including the Amazon Resource Name (ARN).
+For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_event_trackers/3">
+
+    <span id="list_event_trackers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_event_trackers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_event_trackers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L612" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of event trackers associated with the account.</p>
+<p>The response provides the properties for each event tracker, including the Amazon Resource Name
+(ARN) and tracking ID. For more information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_filters/3">
+
+    <span id="list_filters/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_filters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_filters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L619" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all filters that belong to a given dataset group.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_recipes/3">
+
+    <span id="list_recipes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_recipes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_recipes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L629" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of available recipes.</p>
+<p>The response provides the properties for each recipe, including the recipe&#39;s Amazon Resource Name
+(ARN).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_schemas/3">
+
+    <span id="list_schemas/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_schemas/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_schemas(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L639" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of schemas associated with the account.</p>
+<p>The response provides the properties for each schema, including the Amazon Resource Name (ARN).
+For more information on schemas, see <code class="inline">CreateSchema</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_solution_versions/3">
+
+    <span id="list_solution_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_solution_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_solution_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L650" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of solution versions for the given solution.</p>
+<p>When a solution is not specified, all the solution versions associated with the account are
+listed. The response provides the properties for each solution version, including the Amazon
+Resource Name (ARN). For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_solutions/3">
+
+    <span id="list_solutions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_solutions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_solutions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L661" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of solutions that use the given dataset group.</p>
+<p>When a dataset group is not specified, all the solutions associated with the account are listed.
+The response provides the properties for each solution, including the Amazon Resource Name (ARN).
+For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_campaign/3">
+
+    <span id="update_campaign/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_campaign/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_campaign(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L677" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a campaign by either deploying a new solution or changing the value of the campaign&#39;s
+<code class="inline">minProvisionedTPS</code> parameter.</p>
+<p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign
+status using the <code class="inline">DescribeCampaign</code> API.</p>
+<p>You must wait until the <code class="inline">status</code> of the updated campaign is <code class="inline">ACTIVE</code> before asking the campaign
+for recommendations.</p>
+<p>For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

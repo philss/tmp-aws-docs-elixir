@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Request — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Request
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L1" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_headers/2">add_headers(list, headers)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Include additions only if they do not already exist in the provided list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#build_params/2">build_params(mapping, params)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Build request params (header or querystring) based on a list of key-value
+pairs representing the <code class="inline">mapping</code> from the input name (key) to the param
+name (value) and a map with the input <code class="inline">params</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign_v4/5">sign_v4(client, method, url, headers, body)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generate headers with an AWS signature version 4 for the specified request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign_v4/6">sign_v4(client, now, method, url, headers, body)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generate headers with an AWS signature version 4 for the specified request
+using the specified time.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign_v4_query/5">sign_v4_query(client, method, url, headers, body)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generate headers with an AWS signature version 4 for the specified request that can be transformed into a query string.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign_v4_query/6">sign_v4_query(client, now, method, url, headers, body)</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generate headers with an AWS signature version 4 for the specified request using the specified time that can be transformed into a query string.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_headers/2">
+
+  <div class="detail-header">
+    <a href="#add_headers/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_headers(list, headers)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Include additions only if they do not already exist in the provided list.</p>
+
+  </section>
+</section>
+<section class="detail" id="build_params/2">
+
+  <div class="detail-header">
+    <a href="#build_params/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">build_params(mapping, params)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Build request params (header or querystring) based on a list of key-value
+pairs representing the <code class="inline">mapping</code> from the input name (key) to the param
+name (value) and a map with the input <code class="inline">params</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="sign_v4/5">
+
+  <div class="detail-header">
+    <a href="#sign_v4/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign_v4(client, method, url, headers, body)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L8" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generate headers with an AWS signature version 4 for the specified request.</p>
+
+  </section>
+</section>
+<section class="detail" id="sign_v4/6">
+
+  <div class="detail-header">
+    <a href="#sign_v4/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign_v4(client, now, method, url, headers, body)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generate headers with an AWS signature version 4 for the specified request
+using the specified time.</p>
+
+  </section>
+</section>
+<section class="detail" id="sign_v4_query/5">
+
+  <div class="detail-header">
+    <a href="#sign_v4_query/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign_v4_query(client, method, url, headers, body)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L45" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generate headers with an AWS signature version 4 for the specified request that can be transformed into a query string.</p>
+
+  </section>
+</section>
+<section class="detail" id="sign_v4_query/6">
+
+  <div class="detail-header">
+    <a href="#sign_v4_query/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign_v4_query(client, now, method, url, headers, body)</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/request.ex#L52" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generate headers with an AWS signature version 4 for the specified request using the specified time that can be transformed into a query string.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

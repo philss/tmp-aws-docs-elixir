@@ -1,0 +1,3310 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Config — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Config
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Config</p>
+<p>AWS Config provides a way to keep track of the configurations of all the AWS resources associated
+with your AWS account.</p>
+<p>You can use AWS Config to get the current and historical configurations of each AWS resource and
+also to get information about the relationship between the resources. An AWS resource can be an
+Amazon Compute Cloud (Amazon EC2) instance, an Elastic Block Store (EBS) volume, an elastic
+network Interface (ENI), or a security group. For a complete list of resources currently supported
+by AWS Config, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported AWS Resources</a>.</p>
+<p>You can access and manage AWS Config through the AWS Management Console, the AWS Command Line
+Interface (AWS CLI), the AWS Config API, or the AWS SDKs for AWS Config. This reference guide
+contains documentation for the AWS Config API and the AWS CLI commands that you can use to manage
+AWS Config. The AWS Config API uses the Signature Version 4 protocol for signing requests. For
+more information about how to sign a request with this protocol, see <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>. For detailed
+information about AWS Config features and their associated actions or commands, as well as how to
+work with AWS Management Console, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <em>AWS
+Config Developer Guide</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_aggregate_resource_config/3">batch_get_aggregate_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current configuration items for resources that are present in your AWS Config
+aggregator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_resource_config/3">batch_get_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current configuration for one or more requested resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_aggregation_authorization/3">delete_aggregation_authorization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the authorization granted to the specified configuration aggregator account in a specified
+region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_config_rule/3">delete_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified AWS Config rule and all of its evaluation results.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_aggregator/3">delete_configuration_aggregator(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified configuration aggregator and the aggregated data associated with the
+aggregator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_recorder/3">delete_configuration_recorder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the configuration recorder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_conformance_pack/3">delete_conformance_pack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified conformance pack and all the AWS Config rules, remediation actions, and all
+evaluation results within that conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_delivery_channel/3">delete_delivery_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the delivery channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_evaluation_results/3">delete_evaluation_results(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the evaluation results for the specified AWS Config rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_organization_config_rule/3">delete_organization_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified organization config rule and all of its evaluation results from all member
+accounts in that organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_organization_conformance_pack/3">delete_organization_conformance_pack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified organization conformance pack and all of the config rules and remediation
+actions from all member accounts in that organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_pending_aggregation_request/3">delete_pending_aggregation_request(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes pending authorization requests for a specified aggregator account in a specified region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_remediation_configuration/3">delete_remediation_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the remediation configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_remediation_exceptions/3">delete_remediation_exceptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes one or more remediation exceptions mentioned in the resource keys.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resource_config/3">delete_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Records the configuration state for a custom resource that has been deleted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_retention_configuration/3">delete_retention_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the retention configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deliver_config_snapshot/3">deliver_config_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery
+channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_aggregate_compliance_by_config_rules/3">describe_aggregate_compliance_by_config_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and
+noncompliant rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_aggregation_authorizations/3">describe_aggregation_authorizations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of authorizations granted to various aggregator accounts and regions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_compliance_by_config_rule/3">describe_compliance_by_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Indicates whether the specified AWS Config rules are compliant.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_compliance_by_resource/3">describe_compliance_by_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Indicates whether the specified AWS resources are compliant.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_config_rule_evaluation_status/3">describe_config_rule_evaluation_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns status information for each of your AWS managed Config rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_config_rules/3">describe_config_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns details about your AWS Config rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_aggregator_sources_status/3">describe_configuration_aggregator_sources_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns status information for sources within an aggregator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_aggregators/3">describe_configuration_aggregators(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of one or more configuration aggregators.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_recorder_status/3">describe_configuration_recorder_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current status of the specified configuration recorder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configuration_recorders/3">describe_configuration_recorders(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details for the specified configuration recorders.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_conformance_pack_compliance/3">describe_conformance_pack_compliance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns compliance details for each rule in that conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_conformance_pack_status/3">describe_conformance_pack_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides one or more conformance packs deployment status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_conformance_packs/3">describe_conformance_packs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of one or more conformance packs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_delivery_channel_status/3">describe_delivery_channel_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current status of the specified delivery channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_delivery_channels/3">describe_delivery_channels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns details about the specified delivery channel.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_organization_config_rule_statuses/3">describe_organization_config_rule_statuses(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides organization config rule deployment status for an organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_organization_config_rules/3">describe_organization_config_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of organization config rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_organization_conformance_pack_statuses/3">describe_organization_conformance_pack_statuses(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides organization conformance pack deployment status for an organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_organization_conformance_packs/3">describe_organization_conformance_packs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of organization conformance packs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_pending_aggregation_requests/3">describe_pending_aggregation_requests(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of all pending aggregation requests.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_remediation_configurations/3">describe_remediation_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of one or more remediation configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_remediation_exceptions/3">describe_remediation_exceptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of one or more remediation exceptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_remediation_execution_status/3">describe_remediation_execution_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a detailed view of a Remediation Execution for a set of resources including state,
+timestamps for when steps for the remediation execution occur, and any error messages for steps
+that have failed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_retention_configurations/3">describe_retention_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the details of one or more retention configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_aggregate_compliance_details_by_config_rule/3">get_aggregate_compliance_details_by_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the evaluation results for the specified AWS Config rule for a specific resource in a
+rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_aggregate_config_rule_compliance_summary/3">get_aggregate_config_rule_compliance_summary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an
+aggregator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_aggregate_discovered_resource_counts/3">get_aggregate_discovered_resource_counts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the resource counts across accounts and regions that are present in your AWS Config
+aggregator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_aggregate_resource_config/3">get_aggregate_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns configuration item that is aggregated for your specific resource in a specific source
+account and region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_compliance_details_by_config_rule/3">get_compliance_details_by_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the evaluation results for the specified AWS Config rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_compliance_details_by_resource/3">get_compliance_details_by_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the evaluation results for the specified AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_compliance_summary_by_config_rule/3">get_compliance_summary_by_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25
+for each.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_compliance_summary_by_resource_type/3">get_compliance_summary_by_resource_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of resources that are compliant and the number that are noncompliant.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_conformance_pack_compliance_details/3">get_conformance_pack_compliance_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns compliance details of a conformance pack for all AWS resources that are monitered by
+conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_conformance_pack_compliance_summary/3">get_conformance_pack_compliance_summary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns compliance details for the conformance pack based on the cumulative compliance results of
+all the rules in that conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_discovered_resource_counts/3">get_discovered_resource_counts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the resource types, the number of each resource type, and the total number of resources
+that AWS Config is recording in this region for your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_organization_config_rule_detailed_status/3">get_organization_config_rule_detailed_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed status for each member account within an organization for a given organization
+config rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_organization_conformance_pack_detailed_status/3">get_organization_conformance_pack_detailed_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed status for each member account within an organization for a given organization
+conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resource_config_history/3">get_resource_config_history(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of configuration items for the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_aggregate_discovered_resources/3">list_aggregate_discovered_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a resource type and returns a list of resource identifiers that are aggregated for a
+specific resource type across accounts and regions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_discovered_resources/3">list_discovered_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a resource type and returns a list of resource identifiers for the resources of that type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the tags for AWS Config resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_aggregation_authorization/3">put_aggregation_authorization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Authorizes the aggregator account and region to collect data from the source account and region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_config_rule/3">put_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your
+desired configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_configuration_aggregator/3">put_configuration_aggregator(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates and updates the configuration aggregator with the selected source accounts and regions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_configuration_recorder/3">put_configuration_recorder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new configuration recorder to record the selected resource configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_conformance_pack/3">put_conformance_pack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates a conformance pack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_delivery_channel/3">put_delivery_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and
+Amazon SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_evaluations/3">put_evaluations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by an AWS Lambda function to deliver evaluation results to AWS Config.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_organization_config_rule/3">put_organization_config_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates organization config rule for your entire organization evaluating whether your AWS
+resources comply with your desired configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_organization_conformance_pack/3">put_organization_conformance_pack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deploys conformance packs across member accounts in an AWS Organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_remediation_configurations/3">put_remediation_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or updates the remediation configuration with a specific AWS Config rule with the selected
+target or action.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_remediation_exceptions/3">put_remediation_exceptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A remediation exception is when a specific resource is no longer considered for auto-remediation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_resource_config/3">put_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Records the configuration state for the resource provided in the request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_retention_configuration/3">put_retention_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates and updates the retention configuration with details about retention period (number of
+days) that AWS Config stores your historical information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#select_aggregate_resource_config/3">select_aggregate_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration
+state of AWS resources across multiple accounts and regions, performs the corresponding search,
+and returns resource configurations matching the properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#select_resource_config/3">select_resource_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a structured query language (SQL) <code class="inline">SELECT</code> command, performs the corresponding search, and
+returns resource configurations matching the properties.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_config_rules_evaluation/3">start_config_rules_evaluation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs an on-demand evaluation for the specified AWS Config rules against the last known
+configuration state of the resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_configuration_recorder/3">start_configuration_recorder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts recording configurations of the AWS resources you have selected to record in your AWS
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_remediation_execution/3">start_remediation_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs an on-demand remediation for the specified AWS Config rules against the last known
+remediation configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_configuration_recorder/3">stop_configuration_recorder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops recording configurations of the AWS resources you have selected to record in your AWS
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified tags to a resource with the specified resourceArn.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes specified tags from a resource.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_get_aggregate_resource_config/3">
+
+    <span id="batch_get_aggregate_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_aggregate_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_aggregate_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current configuration items for resources that are present in your AWS Config
+aggregator.</p>
+<p>The operation also returns a list of resources that are not processed in the current request. If
+there are no unprocessed resources, the operation returns an empty
+<code class="inline">unprocessedResourceIdentifiers</code> list.</p>
+<p>   The API does not return results for deleted resources.</p>
+<p>   The API does not return tags and relationships.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_resource_config/3">
+
+    <span id="batch_get_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current configuration for one or more requested resources.</p>
+<p>The operation also returns a list of resources that are not processed in the current request. If
+there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list.</p>
+<p>   The API does not return results for deleted resources.</p>
+<p>   The API does not return any tags for the requested resources. This information is
+filtered out of the supplementaryConfiguration section of the API response.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_aggregation_authorization/3">
+
+    <span id="delete_aggregation_authorization/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_aggregation_authorization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_aggregation_authorization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L62" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the authorization granted to the specified configuration aggregator account in a specified
+region.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_config_rule/3">
+
+    <span id="delete_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified AWS Config rule and all of its evaluation results.</p>
+<p>AWS Config sets the state of a rule to <code class="inline">DELETING</code> until the deletion is complete. You cannot
+update a rule while it is in this state. If you make a <code class="inline">PutConfigRule</code> or <code class="inline">DeleteConfigRule</code>
+request for the rule, you will receive a <code class="inline">ResourceInUseException</code>.</p>
+<p>You can check the state of a rule by using the <code class="inline">DescribeConfigRules</code> request.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_aggregator/3">
+
+    <span id="delete_configuration_aggregator/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_aggregator/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_aggregator(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified configuration aggregator and the aggregated data associated with the
+aggregator.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_recorder/3">
+
+    <span id="delete_configuration_recorder/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_recorder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_recorder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L98" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the configuration recorder.</p>
+<p>After the configuration recorder is deleted, AWS Config will not record resource configuration
+changes until you create a new configuration recorder.</p>
+<p>This action does not delete the configuration information that was previously recorded. You will
+be able to access the previously recorded information by using the <code class="inline">GetResourceConfigHistory</code>
+action, but you will not be able to access this information in the AWS Config console until you
+create a new configuration recorder.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_conformance_pack/3">
+
+    <span id="delete_conformance_pack/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_conformance_pack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_conformance_pack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified conformance pack and all the AWS Config rules, remediation actions, and all
+evaluation results within that conformance pack.</p>
+<p>AWS Config sets the conformance pack to <code class="inline">DELETE_IN_PROGRESS</code> until the deletion is complete. You
+cannot update a conformance pack while it is in this state.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_delivery_channel/3">
+
+    <span id="delete_delivery_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_delivery_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_delivery_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L119" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the delivery channel.</p>
+<p>Before you can delete the delivery channel, you must stop the configuration recorder by using the
+<code class="inline">StopConfigurationRecorder</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_evaluation_results/3">
+
+    <span id="delete_evaluation_results/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_evaluation_results/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_evaluation_results(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the evaluation results for the specified AWS Config rule.</p>
+<p>You can specify one AWS Config rule per request. After you delete the evaluation results, you can
+call the <code class="inline">StartConfigRulesEvaluation</code> API to start evaluating your AWS resources against the rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_organization_config_rule/3">
+
+    <span id="delete_organization_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_organization_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_organization_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified organization config rule and all of its evaluation results from all member
+accounts in that organization.</p>
+<p>Only a master account and a delegated administrator account can delete an organization config
+rule. When calling this API with a delegated administrator, you must ensure AWS Organizations
+<code class="inline">ListDelegatedAdministrator</code> permissions are added.</p>
+<p>AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You
+cannot update a rule while it is in this state.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_organization_conformance_pack/3">
+
+    <span id="delete_organization_conformance_pack/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_organization_conformance_pack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_organization_conformance_pack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified organization conformance pack and all of the config rules and remediation
+actions from all member accounts in that organization.</p>
+<p>Only a master account or a delegated administrator account can delete an organization conformance
+pack. When calling this API with a delegated administrator, you must ensure AWS Organizations
+<code class="inline">ListDelegatedAdministrator</code> permissions are added.</p>
+<p>AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is
+complete. You cannot update a conformance pack while it is in this state.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_pending_aggregation_request/3">
+
+    <span id="delete_pending_aggregation_request/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_pending_aggregation_request/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_pending_aggregation_request(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes pending authorization requests for a specified aggregator account in a specified region.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_remediation_configuration/3">
+
+    <span id="delete_remediation_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_remediation_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_remediation_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L173" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the remediation configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_remediation_exceptions/3">
+
+    <span id="delete_remediation_exceptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_remediation_exceptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_remediation_exceptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes one or more remediation exceptions mentioned in the resource keys.</p>
+<p>AWS Config generates a remediation exception when a problem occurs executing a remediation action
+to a specific resource. Remediation exceptions blocks auto-remediation until the exception is
+cleared.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resource_config/3">
+
+    <span id="delete_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Records the configuration state for a custom resource that has been deleted.</p>
+<p>This API records a new ConfigurationItem with a ResourceDeleted status. You can retrieve the
+ConfigurationItems recorded for this resource in your AWS Config History.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_retention_configuration/3">
+
+    <span id="delete_retention_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_retention_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_retention_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the retention configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="deliver_config_snapshot/3">
+
+    <span id="deliver_config_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#deliver_config_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deliver_config_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery
+channel.</p>
+<p>After the delivery has started, AWS Config sends the following notifications using an Amazon SNS
+topic that you have specified.</p>
+<ul>
+<li><p>Notification of the start of the delivery.</p>
+</li>
+<li><p>Notification of the completion of the delivery, if the delivery was successfully
+completed.</p>
+</li>
+<li><p>Notification of delivery failure, if the delivery failed.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_aggregate_compliance_by_config_rules/3">
+
+    <span id="describe_aggregate_compliance_by_config_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_aggregate_compliance_by_config_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_aggregate_compliance_by_config_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of compliant and noncompliant rules with the number of resources for compliant and
+noncompliant rules.</p>
+<p>The results can return an empty result page, but if you have a <code class="inline">nextToken</code>, the results are
+displayed on the next page.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_aggregation_authorizations/3">
+
+    <span id="describe_aggregation_authorizations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_aggregation_authorizations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_aggregation_authorizations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of authorizations granted to various aggregator accounts and regions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_compliance_by_config_rule/3">
+
+    <span id="describe_compliance_by_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_compliance_by_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_compliance_by_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L265" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Indicates whether the specified AWS Config rules are compliant.</p>
+<p>If a rule is noncompliant, this action returns the number of AWS resources that do not comply with
+the rule.</p>
+<p>A rule is compliant if all of the evaluated resources comply with it. It is noncompliant if any of
+these resources do not comply.</p>
+<p>If AWS Config has no current evaluation results for the rule, it returns <code class="inline">INSUFFICIENT_DATA</code>. This
+result might indicate one of the following conditions:</p>
+<ul>
+<li><p>AWS Config has never invoked an evaluation for the rule. To check whether it has,
+use the <code class="inline">DescribeConfigRuleEvaluationStatus</code> action to get the <code class="inline">LastSuccessfulInvocationTime</code> and
+<code class="inline">LastFailedInvocationTime</code>.</p>
+</li>
+<li><p>The rule&#39;s AWS Lambda function is failing to send evaluation results to AWS Config.
+Verify that the role you assigned to your configuration recorder includes the
+<code class="inline">config:PutEvaluations</code> permission. If the rule is a custom rule, verify that the AWS Lambda
+execution role includes the <code class="inline">config:PutEvaluations</code> permission.</p>
+</li>
+<li><p>The rule&#39;s AWS Lambda function has returned <code class="inline">NOT_APPLICABLE</code> for all evaluation
+results. This can occur if the resources were deleted or removed from the rule&#39;s scope.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_compliance_by_resource/3">
+
+    <span id="describe_compliance_by_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_compliance_by_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_compliance_by_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Indicates whether the specified AWS resources are compliant.</p>
+<p>If a resource is noncompliant, this action returns the number of AWS Config rules that the
+resource does not comply with.</p>
+<p>A resource is compliant if it complies with all the AWS Config rules that evaluate it. It is
+noncompliant if it does not comply with one or more of these rules.</p>
+<p>If AWS Config has no current evaluation results for the resource, it returns <code class="inline">INSUFFICIENT_DATA</code>.
+This result might indicate one of the following conditions about the rules that evaluate the
+resource:</p>
+<ul>
+<li><p>AWS Config has never invoked an evaluation for the rule. To check whether it has,
+use the <code class="inline">DescribeConfigRuleEvaluationStatus</code> action to get the <code class="inline">LastSuccessfulInvocationTime</code> and
+<code class="inline">LastFailedInvocationTime</code>.</p>
+</li>
+<li><p>The rule&#39;s AWS Lambda function is failing to send evaluation results to AWS Config.
+Verify that the role that you assigned to your configuration recorder includes the
+<code class="inline">config:PutEvaluations</code> permission. If the rule is a custom rule, verify that the AWS Lambda
+execution role includes the <code class="inline">config:PutEvaluations</code> permission.</p>
+</li>
+<li><p>The rule&#39;s AWS Lambda function has returned <code class="inline">NOT_APPLICABLE</code> for all evaluation
+results. This can occur if the resources were deleted or removed from the rule&#39;s scope.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_config_rule_evaluation_status/3">
+
+    <span id="describe_config_rule_evaluation_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_config_rule_evaluation_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_config_rule_evaluation_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns status information for each of your AWS managed Config rules.</p>
+<p>The status includes information such as the last time AWS Config invoked the rule, the last time
+AWS Config failed to invoke the rule, and the related error for the last failure.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_config_rules/3">
+
+    <span id="describe_config_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_config_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_config_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L311" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns details about your AWS Config rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_aggregator_sources_status/3">
+
+    <span id="describe_configuration_aggregator_sources_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_aggregator_sources_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_aggregator_sources_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L322" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns status information for sources within an aggregator.</p>
+<p>The status includes information about the last time AWS Config verified authorization between the
+source account and an aggregator account. In case of a failure, the status contains the related
+error code or message.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_aggregators/3">
+
+    <span id="describe_configuration_aggregators/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_aggregators/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_aggregators(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of one or more configuration aggregators.</p>
+<p>If the configuration aggregator is not specified, this action returns the details for all the
+configuration aggregators associated with the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_recorder_status/3">
+
+    <span id="describe_configuration_recorder_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_recorder_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_recorder_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current status of the specified configuration recorder.</p>
+<p>If a configuration recorder is not specified, this action returns the status of all configuration
+recorders associated with the account.</p>
+<p>Currently, you can specify only one configuration recorder per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configuration_recorders/3">
+
+    <span id="describe_configuration_recorders/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configuration_recorders/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configuration_recorders(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details for the specified configuration recorders.</p>
+<p>If the configuration recorder is not specified, this action returns the details for all
+configuration recorders associated with the account.</p>
+<p>Currently, you can specify only one configuration recorder per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_conformance_pack_compliance/3">
+
+    <span id="describe_conformance_pack_compliance/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_conformance_pack_compliance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_conformance_pack_compliance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L365" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns compliance details for each rule in that conformance pack.</p>
+<p>You must provide exact rule names.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_conformance_pack_status/3">
+
+    <span id="describe_conformance_pack_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_conformance_pack_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_conformance_pack_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L374" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides one or more conformance packs deployment status.</p>
+<p>If there are no conformance packs then you will see an empty result.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_conformance_packs/3">
+
+    <span id="describe_conformance_packs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_conformance_packs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_conformance_packs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L381" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of one or more conformance packs.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_delivery_channel_status/3">
+
+    <span id="describe_delivery_channel_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_delivery_channel_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_delivery_channel_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L393" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current status of the specified delivery channel.</p>
+<p>If a delivery channel is not specified, this action returns the current status of all delivery
+channels associated with the account.</p>
+<p>Currently, you can specify only one delivery channel per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_delivery_channels/3">
+
+    <span id="describe_delivery_channels/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_delivery_channels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_delivery_channels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L405" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns details about the specified delivery channel.</p>
+<p>If a delivery channel is not specified, this action returns the details of all delivery channels
+associated with the account.</p>
+<p>Currently, you can specify only one delivery channel per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_organization_config_rule_statuses/3">
+
+    <span id="describe_organization_config_rule_statuses/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_organization_config_rule_statuses/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_organization_config_rule_statuses(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides organization config rule deployment status for an organization.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+<p>The status is not considered successful until organization config rule is successfully deployed in
+all the member accounts with an exception of excluded accounts.</p>
+<p>When you specify the limit and the next token, you receive a paginated response. Limit and next
+token are not applicable if you specify organization config rule names. It is only applicable,
+when you request all the organization config rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_organization_config_rules/3">
+
+    <span id="describe_organization_config_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_organization_config_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_organization_config_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L438" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of organization config rules.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+<p>When you specify the limit and the next token, you receive a paginated response. Limit and next
+token are not applicable if you specify organization config rule names. It is only applicable,
+when you request all the organization config rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_organization_conformance_pack_statuses/3">
+
+    <span id="describe_organization_conformance_pack_statuses/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_organization_conformance_pack_statuses/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_organization_conformance_pack_statuses(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L456" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides organization conformance pack deployment status for an organization.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+<p>The status is not considered successful until organization conformance pack is successfully
+deployed in all the member accounts with an exception of excluded accounts.</p>
+<p>When you specify the limit and the next token, you receive a paginated response. Limit and next
+token are not applicable if you specify organization conformance pack names. They are only
+applicable, when you request all the organization conformance packs.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_organization_conformance_packs/3">
+
+    <span id="describe_organization_conformance_packs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_organization_conformance_packs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_organization_conformance_packs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L472" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of organization conformance packs.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+<p>When you specify the limit and the next token, you receive a paginated response.</p>
+<p>Limit and next token are not applicable if you specify organization conformance packs names. They
+are only applicable, when you request all the organization conformance packs.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_pending_aggregation_requests/3">
+
+    <span id="describe_pending_aggregation_requests/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_pending_aggregation_requests/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_pending_aggregation_requests(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L479" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of all pending aggregation requests.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_remediation_configurations/3">
+
+    <span id="describe_remediation_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_remediation_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_remediation_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of one or more remediation configurations.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_remediation_exceptions/3">
+
+    <span id="describe_remediation_exceptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_remediation_exceptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_remediation_exceptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L506" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of one or more remediation exceptions.</p>
+<p>A detailed view of a remediation exception for a set of resources that includes an explanation of
+an exception and the time when the exception will be deleted. When you specify the limit and the
+next token, you receive a paginated response.</p>
+<p>AWS Config generates a remediation exception when a problem occurs executing a remediation action
+to a specific resource. Remediation exceptions blocks auto-remediation until the exception is
+cleared.</p>
+<p>When you specify the limit and the next token, you receive a paginated response.</p>
+<p>Limit and next token are not applicable if you request resources in batch. It is only applicable,
+when you request all resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_remediation_execution_status/3">
+
+    <span id="describe_remediation_execution_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_remediation_execution_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_remediation_execution_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L517" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a detailed view of a Remediation Execution for a set of resources including state,
+timestamps for when steps for the remediation execution occur, and any error messages for steps
+that have failed.</p>
+<p>When you specify the limit and the next token, you receive a paginated response.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_retention_configurations/3">
+
+    <span id="describe_retention_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_retention_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_retention_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L529" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the details of one or more retention configurations.</p>
+<p>If the retention configuration name is not specified, this action returns the details for all the
+retention configurations for that account.</p>
+<p>Currently, AWS Config supports only one retention configuration per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_aggregate_compliance_details_by_config_rule/3">
+
+    <span id="get_aggregate_compliance_details_by_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_aggregate_compliance_details_by_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_aggregate_compliance_details_by_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L543" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the evaluation results for the specified AWS Config rule for a specific resource in a
+rule.</p>
+<p>The results indicate which AWS resources were evaluated by the rule, when each resource was last
+evaluated, and whether each resource complies with the rule.</p>
+<p>The results can return an empty result page. But if you have a <code class="inline">nextToken</code>, the results are
+displayed on the next page.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_aggregate_config_rule_compliance_summary/3">
+
+    <span id="get_aggregate_config_rule_compliance_summary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_aggregate_config_rule_compliance_summary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_aggregate_config_rule_compliance_summary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L554" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of compliant and noncompliant rules for one or more accounts and regions in an
+aggregator.</p>
+<p>The results can return an empty result page, but if you have a nextToken, the results are
+displayed on the next page.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_aggregate_discovered_resource_counts/3">
+
+    <span id="get_aggregate_discovered_resource_counts/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_aggregate_discovered_resource_counts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_aggregate_discovered_resource_counts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L569" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the resource counts across accounts and regions that are present in your AWS Config
+aggregator.</p>
+<p>You can request the resource counts by providing filters and GroupByKey.</p>
+<p>For example, if the input contains accountID 12345678910 and region us-east-1 in filters, the API
+returns the count of resources in account ID 12345678910 and region us-east-1. If the input
+contains ACCOUNT_ID as a GroupByKey, the API returns resource counts for all source accounts that
+are present in your aggregator.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_aggregate_resource_config/3">
+
+    <span id="get_aggregate_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_aggregate_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_aggregate_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L577" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns configuration item that is aggregated for your specific resource in a specific source
+account and region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_compliance_details_by_config_rule/3">
+
+    <span id="get_compliance_details_by_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_compliance_details_by_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_compliance_details_by_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L587" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the evaluation results for the specified AWS Config rule.</p>
+<p>The results indicate which AWS resources were evaluated by the rule, when each resource was last
+evaluated, and whether each resource complies with the rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_compliance_details_by_resource/3">
+
+    <span id="get_compliance_details_by_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_compliance_details_by_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_compliance_details_by_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L597" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the evaluation results for the specified AWS resource.</p>
+<p>The results indicate which AWS Config rules were used to evaluate the resource, when each rule was
+last used, and whether the resource complies with each rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_compliance_summary_by_config_rule/3">
+
+    <span id="get_compliance_summary_by_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_compliance_summary_by_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_compliance_summary_by_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L605" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of AWS Config rules that are compliant and noncompliant, up to a maximum of 25
+for each.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_compliance_summary_by_resource_type/3">
+
+    <span id="get_compliance_summary_by_resource_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_compliance_summary_by_resource_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_compliance_summary_by_resource_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L615" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of resources that are compliant and the number that are noncompliant.</p>
+<p>You can specify one or more resource types to get these numbers for each resource type. The
+maximum number returned is 100.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_conformance_pack_compliance_details/3">
+
+    <span id="get_conformance_pack_compliance_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_conformance_pack_compliance_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_conformance_pack_compliance_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L623" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns compliance details of a conformance pack for all AWS resources that are monitered by
+conformance pack.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_conformance_pack_compliance_summary/3">
+
+    <span id="get_conformance_pack_compliance_summary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_conformance_pack_compliance_summary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_conformance_pack_compliance_summary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L631" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns compliance details for the conformance pack based on the cumulative compliance results of
+all the rules in that conformance pack.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_discovered_resource_counts/3">
+
+    <span id="get_discovered_resource_counts/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_discovered_resource_counts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_discovered_resource_counts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L670" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the resource types, the number of each resource type, and the total number of resources
+that AWS Config is recording in this region for your AWS account.</p>
+<p><strong>Example</strong></p>
+<ol>
+<li><p>AWS Config is recording three resource types in the US East (Ohio) Region for your
+account: 25 EC2 instances, 20 IAM users, and 15 S3 buckets.</p>
+</li>
+<li><p>You make a call to the <code class="inline">GetDiscoveredResourceCounts</code> action and specify that you
+want all resource types.</p>
+</li>
+<li><p>AWS Config returns the following:</p>
+<ul>
+<li><p>The resource types (EC2 instances, IAM users, and S3 buckets).</p>
+</li>
+<li><p>The number of each resource type (25, 20, and 15).</p>
+</li>
+<li><p>The total number of all resources (60).</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>The response is paginated. By default, AWS Config lists 100 <code class="inline">ResourceCount</code> objects on each page.
+You can customize this number with the <code class="inline">limit</code> parameter. The response includes a <code class="inline">nextToken</code>
+string. To get the next page of results, run the request again and specify the string for the
+<code class="inline">nextToken</code> parameter.</p>
+<p>If you make a call to the <code class="inline">GetDiscoveredResourceCounts</code> action, you might not immediately receive
+resource counts in the following situations:</p>
+<p>   You are a new AWS Config customer.</p>
+<p>   You just enabled resource recording.</p>
+<p>It might take a few minutes for AWS Config to record and count your resources. Wait a few minutes
+and then retry the <code class="inline">GetDiscoveredResourceCounts</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_organization_config_rule_detailed_status/3">
+
+    <span id="get_organization_config_rule_detailed_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_organization_config_rule_detailed_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_organization_config_rule_detailed_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L682" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed status for each member account within an organization for a given organization
+config rule.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_organization_conformance_pack_detailed_status/3">
+
+    <span id="get_organization_conformance_pack_detailed_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_organization_conformance_pack_detailed_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_organization_conformance_pack_detailed_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L694" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed status for each member account within an organization for a given organization
+conformance pack.</p>
+<p>Only a master account and a delegated administrator account can call this API. When calling this
+API with a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resource_config_history/3">
+
+    <span id="get_resource_config_history/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resource_config_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resource_config_history(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L715" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of configuration items for the specified resource.</p>
+<p>The list contains details about each state of the resource during the specified time interval. If
+you specified a retention period to retain your <code class="inline">ConfigurationItems</code> between a minimum of 30 days
+and a maximum of 7 years (2557 days), AWS Config returns the <code class="inline">ConfigurationItems</code> for the
+specified retention period.</p>
+<p>The response is paginated. By default, AWS Config returns a limit of 10 configuration items per
+page. You can customize this number with the <code class="inline">limit</code> parameter. The response includes a
+<code class="inline">nextToken</code> string. To get the next page of results, run the request again and specify the string
+for the <code class="inline">nextToken</code> parameter.</p>
+<p>Each call to the API is limited to span a duration of seven days. It is likely that the number of
+records returned is smaller than the specified <code class="inline">limit</code>. In such cases, you can make another call,
+using the <code class="inline">nextToken</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_aggregate_discovered_resources/3">
+
+    <span id="list_aggregate_discovered_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_aggregate_discovered_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_aggregate_discovered_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L731" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a resource type and returns a list of resource identifiers that are aggregated for a
+specific resource type across accounts and regions.</p>
+<p>A resource identifier includes the resource type, ID, (if available) the custom resource name,
+source account, and source region. You can narrow the results to include only resources that have
+specific resource IDs, or a resource name, or source account ID, or source region.</p>
+<p>For example, if the input consists of accountID 12345678910 and the region is us-east-1 for
+resource type <code class="inline">AWS::EC2::Instance</code> then the API returns all the EC2 instance identifiers of
+accountID 12345678910 and region us-east-1.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_discovered_resources/3">
+
+    <span id="list_discovered_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_discovered_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_discovered_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L750" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a resource type and returns a list of resource identifiers for the resources of that type.</p>
+<p>A resource identifier includes the resource type, ID, and (if available) the custom resource name.
+The results consist of resources that AWS Config has discovered, including those that AWS Config
+is not currently recording. You can narrow the results to include only resources that have
+specific resource IDs or a resource name.</p>
+<p>You can specify either resource IDs or a resource name, but not both, in the same request.</p>
+<p>The response is paginated. By default, AWS Config lists 100 resource identifiers on each page. You
+can customize this number with the <code class="inline">limit</code> parameter. The response includes a <code class="inline">nextToken</code> string.
+To get the next page of results, run the request again and specify the string for the <code class="inline">nextToken</code>
+parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L757" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the tags for AWS Config resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_aggregation_authorization/3">
+
+    <span id="put_aggregation_authorization/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_aggregation_authorization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_aggregation_authorization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L764" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Authorizes the aggregator account and region to collect data from the source account and region.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_config_rule/3">
+
+    <span id="put_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L803" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates an AWS Config rule for evaluating whether your AWS resources comply with your
+desired configurations.</p>
+<p>You can use this action for custom AWS Config rules and AWS managed Config rules. A custom AWS
+Config rule is a rule that you develop and maintain. An AWS managed Config rule is a customizable,
+predefined rule that AWS Config provides.</p>
+<p>If you are adding a new custom AWS Config rule, you must first create the AWS Lambda function that
+the rule invokes to evaluate your resources. When you use the <code class="inline">PutConfigRule</code> action to add the
+rule to AWS Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the
+function. Specify the ARN for the <code class="inline">SourceIdentifier</code> key. This key is part of the <code class="inline">Source</code> object,
+which is part of the <code class="inline">ConfigRule</code> object.</p>
+<p>If you are adding an AWS managed Config rule, specify the rule&#39;s identifier for the
+<code class="inline">SourceIdentifier</code> key. To reference AWS managed Config rule identifiers, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">About AWS Managed Config
+Rules</a>.</p>
+<p>For any new rule that you add, specify the <code class="inline">ConfigRuleName</code> in the <code class="inline">ConfigRule</code> object. Do not
+specify the <code class="inline">ConfigRuleArn</code> or the <code class="inline">ConfigRuleId</code>. These values are generated by AWS Config for
+new rules.</p>
+<p>If you are updating a rule that you added previously, you can specify the rule by
+<code class="inline">ConfigRuleName</code>, <code class="inline">ConfigRuleId</code>, or <code class="inline">ConfigRuleArn</code> in the <code class="inline">ConfigRule</code> data type that you use in
+this request.</p>
+<p>The maximum number of rules that AWS Config supports is 150.</p>
+<p>For information about requesting a rule limit increase, see <a href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS Config Limits</a> in the
+<em>AWS General Reference Guide</em>.</p>
+<p>For more information about developing and using AWS Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html">Evaluating AWS Resource Configurations with AWS
+Config</a> in the <em>AWS
+Config Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_configuration_aggregator/3">
+
+    <span id="put_configuration_aggregator/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_configuration_aggregator/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_configuration_aggregator(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L818" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates and updates the configuration aggregator with the selected source accounts and regions.</p>
+<p>The source account can be individual account(s) or an organization.</p>
+<p>AWS Config should be enabled in source accounts and regions you want to aggregate.</p>
+<p>If your source type is an organization, you must be signed in to the master account and all
+features must be enabled in your organization. AWS Config calls <code class="inline">EnableAwsServiceAccess</code> API to
+enable integration between AWS Config and AWS Organizations.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_configuration_recorder/3">
+
+    <span id="put_configuration_recorder/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_configuration_recorder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_configuration_recorder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L834" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new configuration recorder to record the selected resource configurations.</p>
+<p>You can use this action to change the role <code class="inline">roleARN</code> or the <code class="inline">recordingGroup</code> of an existing
+recorder. To change the role, call the action on the existing configuration recorder and specify a
+role.</p>
+<p>Currently, you can specify only one configuration recorder per region in your account.</p>
+<p>If <code class="inline">ConfigurationRecorder</code> does not have the <strong>recordingGroup</strong> parameter specified, the default
+is to record all supported resource types.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_conformance_pack/3">
+
+    <span id="put_conformance_pack/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_conformance_pack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_conformance_pack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L851" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates a conformance pack.</p>
+<p>A conformance pack is a collection of AWS Config rules that can be easily deployed in an account
+and a region and across AWS Organization.</p>
+<p>This API creates a service linked role <code class="inline">AWSServiceRoleForConfigConforms</code> in your account. The
+service linked role is created only when the role does not exist in your account.</p>
+<p>You must specify either the <code class="inline">TemplateS3Uri</code> or the <code class="inline">TemplateBody</code> parameter, but not both. If you
+provide both AWS Config uses the <code class="inline">TemplateS3Uri</code> parameter and ignores the <code class="inline">TemplateBody</code>
+parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_delivery_channel/3">
+
+    <span id="put_delivery_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_delivery_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_delivery_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L869" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a delivery channel object to deliver configuration information to an Amazon S3 bucket and
+Amazon SNS topic.</p>
+<p>Before you can create a delivery channel, you must create a configuration recorder.</p>
+<p>You can use this action to change the Amazon S3 bucket or an Amazon SNS topic of the existing
+delivery channel. To change the Amazon S3 bucket or an Amazon SNS topic, call this action and
+specify the changed values for the S3 bucket and the SNS topic. If you specify a different value
+for either the S3 bucket or the SNS topic, this action will keep the existing value for the
+parameter that is not changed.</p>
+<p>You can have only one delivery channel per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_evaluations/3">
+
+    <span id="put_evaluations/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_evaluations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_evaluations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L878" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by an AWS Lambda function to deliver evaluation results to AWS Config.</p>
+<p>This action is required in every AWS Lambda function that is invoked by an AWS Config rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_organization_config_rule/3">
+
+    <span id="put_organization_config_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_organization_config_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_organization_config_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L913" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates organization config rule for your entire organization evaluating whether your AWS
+resources comply with your desired configurations.</p>
+<p>Only a master account and a delegated administrator can create or update an organization config
+rule. When calling this API with a delegated administrator, you must ensure AWS Organizations
+<code class="inline">ListDelegatedAdministrator</code> permissions are added.</p>
+<p>This API enables organization service access through the <code class="inline">EnableAWSServiceAccess</code> action and
+creates a service linked role <code class="inline">AWSServiceRoleForConfigMultiAccountSetup</code> in the master or
+delegated administrator account of your organization. The service linked role is created only when
+the role does not exist in the caller account. AWS Config verifies the existence of role with
+<code class="inline">GetRole</code> action.</p>
+<p>To use this API with delegated administrator, register a delegated administrator by calling AWS
+Organization <code class="inline">register-delegated-administrator</code> for <code class="inline">config-multiaccountsetup.amazonaws.com</code>.</p>
+<p>You can use this action to create both custom AWS Config rules and AWS managed Config rules. If
+you are adding a new custom AWS Config rule, you must first create AWS Lambda function in the
+master account or a delegated administrator that the rule invokes to evaluate your resources. When
+you use the <code class="inline">PutOrganizationConfigRule</code> action to add the rule to AWS Config, you must specify the
+Amazon Resource Name (ARN) that AWS Lambda assigns to the function. If you are adding an AWS
+managed Config rule, specify the rule&#39;s identifier for the <code class="inline">RuleIdentifier</code> key.</p>
+<p>The maximum number of organization config rules that AWS Config supports is 150 and 3 delegated
+administrator per organization.</p>
+<p>Prerequisite: Ensure you call <code class="inline">EnableAllFeatures</code> API to enable all features in an organization.</p>
+<p>Specify either <code class="inline">OrganizationCustomRuleMetadata</code> or <code class="inline">OrganizationManagedRuleMetadata</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_organization_conformance_pack/3">
+
+    <span id="put_organization_conformance_pack/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_organization_conformance_pack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_organization_conformance_pack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L945" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deploys conformance packs across member accounts in an AWS Organization.</p>
+<p>Only a master account and a delegated administrator can call this API. When calling this API with
+a delegated administrator, you must ensure AWS Organizations <code class="inline">ListDelegatedAdministrator</code>
+permissions are added.</p>
+<p>This API enables organization service access for <code class="inline">config-multiaccountsetup.amazonaws.com</code> through
+the <code class="inline">EnableAWSServiceAccess</code> action and creates a service linked role
+<code class="inline">AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of
+your organization. The service linked role is created only when the role does not exist in the
+caller account. To use this API with delegated administrator, register a delegated administrator
+by calling AWS Organization <code class="inline">register-delegate-admin</code> for
+<code class="inline">config-multiaccountsetup.amazonaws.com</code>.</p>
+<p>Prerequisite: Ensure you call <code class="inline">EnableAllFeatures</code> API to enable all features in an organization.</p>
+<p>You must specify either the <code class="inline">TemplateS3Uri</code> or the <code class="inline">TemplateBody</code> parameter, but not both. If you
+provide both AWS Config uses the <code class="inline">TemplateS3Uri</code> parameter and ignores the <code class="inline">TemplateBody</code>
+parameter.</p>
+<p>AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until
+the conformance pack is created or updated. You cannot update a conformance pack while it is in
+this state.</p>
+<p>You can create 6 conformance packs with 25 AWS Config rules in each pack and 3 delegated
+administrator per organization.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_remediation_configurations/3">
+
+    <span id="put_remediation_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_remediation_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_remediation_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L960" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or updates the remediation configuration with a specific AWS Config rule with the selected
+target or action.</p>
+<p>The API creates the <code class="inline">RemediationConfiguration</code> object for the AWS Config rule. The AWS Config rule
+must already exist for you to add a remediation configuration. The target (SSM document) must
+exist and have permissions to use the target.</p>
+<p>If you make backward incompatible changes to the SSM document, you must call this again to ensure
+the remediations can run.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_remediation_exceptions/3">
+
+    <span id="put_remediation_exceptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_remediation_exceptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_remediation_exceptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L974" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A remediation exception is when a specific resource is no longer considered for auto-remediation.</p>
+<p>This API adds a new exception or updates an exisiting exception for a specific resource with a
+specific AWS Config rule.</p>
+<p>AWS Config generates a remediation exception when a problem occurs executing a remediation action
+to a specific resource. Remediation exceptions blocks auto-remediation until the exception is
+cleared.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_resource_config/3">
+
+    <span id="put_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L993" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Records the configuration state for the resource provided in the request.</p>
+<p>The configuration state of a resource is represented in AWS Config as Configuration Items. Once
+this API records the configuration item, you can retrieve the list of configuration items for the
+custom resource type using existing AWS Config APIs.</p>
+<p>The custom resource type must be registered with AWS CloudFormation. This API accepts the
+configuration item registered with AWS CloudFormation.</p>
+<p>When you call this API, AWS Config only stores configuration state of the resource provided in the
+request. This API does not change or remediate the configuration of the resource.</p>
+<p>Write-only schema properites are not recorded as part of the published configuration item.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_retention_configuration/3">
+
+    <span id="put_retention_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_retention_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_retention_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1007" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates and updates the retention configuration with details about retention period (number of
+days) that AWS Config stores your historical information.</p>
+<p>The API creates the <code class="inline">RetentionConfiguration</code> object and names the object as <strong>default</strong>. When you
+have a <code class="inline">RetentionConfiguration</code> object named <strong>default</strong>, calling the API modifies the default
+object.</p>
+<p>Currently, AWS Config supports only one retention configuration per region in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="select_aggregate_resource_config/3">
+
+    <span id="select_aggregate_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#select_aggregate_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">select_aggregate_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1020" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration
+state of AWS resources across multiple accounts and regions, performs the corresponding search,
+and returns resource configurations matching the properties.</p>
+<p>For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <strong>Query Components</strong>
+</a> section in the
+AWS Config Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="select_resource_config/3">
+
+    <span id="select_resource_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#select_resource_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">select_resource_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1032" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a structured query language (SQL) <code class="inline">SELECT</code> command, performs the corresponding search, and
+returns resource configurations matching the properties.</p>
+<p>For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html"> <strong>Query Components</strong>
+</a> section in the
+AWS Config Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_config_rules_evaluation/3">
+
+    <span id="start_config_rules_evaluation/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_config_rules_evaluation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_config_rules_evaluation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1067" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs an on-demand evaluation for the specified AWS Config rules against the last known
+configuration state of the resources.</p>
+<p>Use <code class="inline">StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working as
+expected. <code class="inline">StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your
+resources. It re-runs an evaluation against the last known state of your resources.</p>
+<p>You can specify up to 25 AWS Config rules per request.</p>
+<p>An existing <code class="inline">StartConfigRulesEvaluation</code> call for the specified rules must complete before you can
+call the API again. If you chose to have AWS Config stream to an Amazon SNS topic, you will
+receive a <code class="inline">ConfigRuleEvaluationStarted</code> notification when the evaluation starts.</p>
+<p>You don&#39;t need to call the <code class="inline">StartConfigRulesEvaluation</code> API to run an evaluation for a new rule.
+When you create a rule, AWS Config evaluates your resources against the rule automatically.</p>
+<p>The <code class="inline">StartConfigRulesEvaluation</code> API is useful if you want to run on-demand evaluations, such as
+the following example:</p>
+<ol>
+<li><p>You have a custom rule that evaluates your IAM resources every 24 hours.</p>
+</li>
+<li><p>You update your Lambda function to add additional conditions to your rule.</p>
+</li>
+<li><p>Instead of waiting for the next periodic evaluation, you call the
+<code class="inline">StartConfigRulesEvaluation</code> API.</p>
+</li>
+<li><p>AWS Config invokes your Lambda function and evaluates your IAM resources.</p>
+</li>
+<li><p>Your custom rule will still run periodic evaluations every 24 hours.</p>
+</li>
+</ol>
+
+  </section>
+</section>
+<section class="detail" id="start_configuration_recorder/3">
+
+    <span id="start_configuration_recorder/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_configuration_recorder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_configuration_recorder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1078" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts recording configurations of the AWS resources you have selected to record in your AWS
+account.</p>
+<p>You must have created at least one delivery channel to successfully start the configuration
+recorder.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_remediation_execution/3">
+
+    <span id="start_remediation_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_remediation_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_remediation_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1092" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs an on-demand remediation for the specified AWS Config rules against the last known
+remediation configuration.</p>
+<p>It runs an execution against the current state of your resources. Remediation execution is
+asynchronous.</p>
+<p>You can specify up to 100 resource keys per request. An existing StartRemediationExecution call
+for the specified resource keys must complete before you can call the API again.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_configuration_recorder/3">
+
+    <span id="stop_configuration_recorder/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_configuration_recorder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_configuration_recorder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops recording configurations of the AWS resources you have selected to record in your AWS
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified tags to a resource with the specified resourceArn.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
+When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/config.ex#L1117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes specified tags from a resource.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

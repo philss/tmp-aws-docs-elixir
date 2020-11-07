@@ -1,0 +1,2269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ECS — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ECS
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Elastic Container Service</p>
+<p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management
+service that makes it easy to run, stop, and manage Docker containers on a cluster.</p>
+<p>You can host your cluster on a serverless infrastructure that is managed by Amazon ECS by
+launching your services or tasks using the Fargate launch type. For more control, you can host
+your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage by
+using the EC2 launch type. For more information about launch types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>.</p>
+<p>Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you
+to get the state of your cluster from a centralized service, and gives you access to many familiar
+Amazon EC2 features.</p>
+<p>You can use Amazon ECS to schedule the placement of containers across your cluster based on your
+resource needs, isolation policies, and availability requirements. Amazon ECS eliminates the need
+for you to operate your own cluster management and configuration management systems or worry about
+scaling your management infrastructure.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_capacity_provider/3">create_capacity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new capacity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cluster/3">create_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Amazon ECS cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_service/3">create_service(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs and maintains a desired number of tasks from a specified task definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_task_set/3">create_task_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a task set in the specified cluster and service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_account_setting/3">delete_account_setting(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables an account setting for a specified IAM user, IAM role, or the root user for an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_attributes/3">delete_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes one or more custom attributes from an Amazon ECS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_capacity_provider/3">delete_capacity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified capacity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cluster/3">delete_cluster(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_service/3">delete_service(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified service within a cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_task_set/3">delete_task_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specified task set within a service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_container_instance/3">deregister_container_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters an Amazon ECS container instance from the specified cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_task_definition/3">deregister_task_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters the specified task definition by family and revision.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_capacity_providers/3">describe_capacity_providers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes one or more of your capacity providers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_clusters/3">describe_clusters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes one or more of your clusters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_container_instances/3">describe_container_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes Amazon Elastic Container Service container instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_services/3">describe_services(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified services running in your cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_task_definition/3">describe_task_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a task definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_task_sets/3">describe_task_sets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the task sets in the specified cluster and service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_tasks/3">describe_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a specified task or tasks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#discover_poll_endpoint/3">discover_poll_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_account_settings/3">list_account_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the account settings for a specified principal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_attributes/3">list_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the attributes for Amazon ECS resources within a specified target type and cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_clusters/3">list_clusters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of existing clusters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_container_instances/3">list_container_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of container instances in a specified cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_services/3">list_services(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the services that are running in a specified cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the tags for an Amazon ECS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_task_definition_families/3">list_task_definition_families(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of task definition families that are registered to your account (which may include
+task definition families that no longer have any <code class="inline">ACTIVE</code> task definition revisions).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_task_definitions/3">list_task_definitions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of task definitions that are registered to your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tasks/3">list_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of tasks for a specified cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_account_setting/3">put_account_setting(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies an account setting.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_account_setting_default/3">put_account_setting_default(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies an account setting for all IAM users on an account for whom no individual account setting
+has been specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_attributes/3">put_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create or update an attribute on an Amazon ECS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_cluster_capacity_providers/3">put_cluster_capacity_providers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the available capacity providers and the default capacity provider strategy for a
+cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_container_instance/3">register_container_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_task_definition/3">register_task_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a new task definition from the supplied <code class="inline">family</code> and <code class="inline">containerDefinitions</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#run_task/3">run_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a new task using the specified task definition.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_task/3">start_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a new task from the specified task definition on the specified container instance or
+instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_task/3">stop_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a running task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#submit_attachment_state_changes/3">submit_attachment_state_changes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#submit_container_state_change/3">submit_container_state_change(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#submit_task_state_change/3">submit_task_state_change(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes specified tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_cluster_settings/3">update_cluster_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the settings to use for a cluster.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_container_agent/3">update_container_agent(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Amazon ECS container agent on a specified container instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_container_instances_state/3">update_container_instances_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the status of an Amazon ECS container instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_service/3">update_service(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updating the task placement strategies and constraints on an Amazon ECS service remains in preview
+and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms
+located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> (&quot;Beta Terms&quot;).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_service_primary_task_set/3">update_service_primary_task_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies which task set in a service is the primary task set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_task_set/3">update_task_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies a task set.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_capacity_provider/3">
+
+    <span id="create_capacity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_capacity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_capacity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L36" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new capacity provider.</p>
+<p>Capacity providers are associated with an Amazon ECS cluster and are used in capacity provider
+strategies to facilitate cluster auto scaling.</p>
+<p>Only capacity providers using an Auto Scaling group can be created. Amazon ECS tasks on AWS
+Fargate use the <code class="inline">FARGATE</code> and <code class="inline">FARGATE_SPOT</code> capacity providers which are already created and
+available to all accounts in Regions supported by AWS Fargate.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_cluster/3">
+
+    <span id="create_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Amazon ECS cluster.</p>
+<p>By default, your account receives a <code class="inline">default</code> cluster when you launch your first container
+instance. However, you can create your own cluster with a unique name with the <code class="inline">CreateCluster</code>
+action.</p>
+<p>When you call the <code class="inline">CreateCluster</code> API operation, Amazon ECS attempts to create the Amazon ECS
+service-linked role for your account so that required resources in other AWS services can be
+managed on your behalf. However, if the IAM user that makes the call does not have permissions to
+create the service-linked role, it is not created. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using Service-Linked Roles for Amazon
+ECS</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_service/3">
+
+    <span id="create_service/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_service/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_service(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs and maintains a desired number of tasks from a specified task definition.</p>
+<p>If the number of tasks running in a service drops below the <code class="inline">desiredCount</code>, Amazon ECS runs
+another copy of the task in the specified cluster. To update an existing service, see the
+UpdateService action.</p>
+<p>In addition to maintaining the desired count of tasks in your service, you can optionally run your
+service behind one or more load balancers. The load balancers distribute traffic across the tasks
+that are associated with the service. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load Balancing</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>Tasks for services that <em>do not</em> use a load balancer are considered healthy if they&#39;re in the
+<code class="inline">RUNNING</code> state. Tasks for services that <em>do</em> use a load balancer are considered healthy if
+they&#39;re in the <code class="inline">RUNNING</code> state and the container instance that they&#39;re hosted on is reported as
+healthy by the load balancer.</p>
+<p>There are two service scheduler strategies available:</p>
+<ul>
+<li><p><code class="inline">REPLICA</code> - The replica scheduling strategy places and maintains the desired number
+of tasks across your cluster. By default, the service scheduler spreads tasks across Availability
+Zones. You can use task placement strategies and constraints to customize task placement
+decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+</li>
+<li><p><code class="inline">DAEMON</code> - The daemon scheduling strategy deploys exactly one task on each active
+container instance that meets all of the task placement constraints that you specify in your
+cluster. The service scheduler also evaluates the task placement constraints for running tasks and
+will stop tasks that do not meet the placement constraints. When using this strategy, you don&#39;t
+need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling
+policies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service Scheduler Concepts</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+</li>
+</ul>
+<p>You can optionally specify a deployment configuration for your service. The deployment is
+triggered by changing properties, such as the task definition or the desired count of a service,
+with an <code class="inline">UpdateService</code> operation. The default value for a replica service for
+<code class="inline">minimumHealthyPercent</code> is 100%. The default value for a daemon service for
+<code class="inline">minimumHealthyPercent</code> is 0%.</p>
+<p>If a service is using the <code class="inline">ECS</code> deployment controller, the minimum healthy percent represents a
+lower limit on the number of tasks in a service that must remain in the <code class="inline">RUNNING</code> state during a
+deployment, as a percentage of the desired number of tasks (rounded up to the nearest integer),
+and while any container instances are in the <code class="inline">DRAINING</code> state if the service contains tasks using
+the EC2 launch type. This parameter enables you to deploy without using additional cluster
+capacity. For example, if your service has a desired number of four tasks and a minimum healthy
+percent of 50%, the scheduler might stop two existing tasks to free up cluster capacity before
+starting two new tasks. Tasks for services that <em>do not</em> use a load balancer are considered
+healthy if they&#39;re in the <code class="inline">RUNNING</code> state. Tasks for services that <em>do</em> use a load balancer are
+considered healthy if they&#39;re in the <code class="inline">RUNNING</code> state and they&#39;re reported as healthy by the load
+balancer. The default value for minimum healthy percent is 100%.</p>
+<p>If a service is using the <code class="inline">ECS</code> deployment controller, the <strong>maximum percent</strong> parameter
+represents an upper limit on the number of tasks in a service that are allowed in the <code class="inline">RUNNING</code> or
+<code class="inline">PENDING</code> state during a deployment, as a percentage of the desired number of tasks (rounded down
+to the nearest integer), and while any container instances are in the <code class="inline">DRAINING</code> state if the
+service contains tasks using the EC2 launch type. This parameter enables you to define the
+deployment batch size. For example, if your service has a desired number of four tasks and a
+maximum percent value of 200%, the scheduler may start four new tasks before stopping the four
+older tasks (provided that the cluster resources required to do this are available). The default
+value for maximum percent is 200%.</p>
+<p>If a service is using either the <code class="inline">CODE_DEPLOY</code> or <code class="inline">EXTERNAL</code> deployment controller types and tasks
+that use the EC2 launch type, the <strong>minimum healthy percent</strong> and <strong>maximum percent</strong> values are
+used only to define the lower and upper limit on the number of the tasks in the service that
+remain in the <code class="inline">RUNNING</code> state while the container instances are in the <code class="inline">DRAINING</code> state. If the
+tasks in the service use the Fargate launch type, the minimum healthy percent and maximum percent
+values aren&#39;t used, although they&#39;re currently visible when describing your service.</p>
+<p>When creating a service that uses the <code class="inline">EXTERNAL</code> deployment controller, you can specify only
+parameters that aren&#39;t controlled at the task set level. The only required parameter is the
+service name. You control your services using the <code class="inline">CreateTaskSet</code> operation. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>When the service scheduler launches new tasks, it determines task placement in your cluster using
+the following logic:</p>
+<ul>
+<li><p>Determine which of the container instances in your cluster can support your
+service&#39;s task definition (for example, they have the required CPU, memory, ports, and container
+instance attributes).</p>
+</li>
+<li><p>By default, the service scheduler attempts to balance tasks across Availability
+Zones in this manner (although you can choose a different placement strategy) with the
+<code class="inline">placementStrategy</code> parameter):</p>
+<ul>
+<li><p>Sort the valid container instances, giving priority to instances that
+have the fewest number of running tasks for this service in their respective Availability Zone.
+For example, if zone A has one running service task and zones B and C each have zero, valid
+container instances in either zone B or C are considered optimal for placement.</p>
+</li>
+<li><p>Place the new service task on a valid container instance in an optimal
+Availability Zone (based on the previous steps), favoring container instances with the fewest
+number of running tasks for this service.</p>
+</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_task_set/3">
+
+    <span id="create_task_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_task_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_task_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L163" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a task set in the specified cluster and service.</p>
+<p>This is used when a service uses the <code class="inline">EXTERNAL</code> deployment controller type. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_account_setting/3">
+
+    <span id="delete_account_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_account_setting/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_account_setting(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables an account setting for a specified IAM user, IAM role, or the root user for an account.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_attributes/3">
+
+    <span id="delete_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes one or more custom attributes from an Amazon ECS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_capacity_provider/3">
+
+    <span id="delete_capacity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_capacity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_capacity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified capacity provider.</p>
+<p>The <code class="inline">FARGATE</code> and <code class="inline">FARGATE_SPOT</code> capacity providers are reserved and cannot be deleted. You can
+disassociate them from a cluster using either the <code class="inline">PutClusterCapacityProviders</code> API or by deleting
+the cluster.</p>
+<p>Prior to a capacity provider being deleted, the capacity provider must be removed from the
+capacity provider strategy from all services. The <code class="inline">UpdateService</code> API can be used to remove a
+capacity provider from a service&#39;s capacity provider strategy. When updating a service, the
+<code class="inline">forceNewDeployment</code> option can be used to ensure that any tasks using the Amazon EC2 instance
+capacity provided by the capacity provider are transitioned to use the capacity from the remaining
+capacity providers. Only capacity providers that are not associated with a cluster can be deleted.
+To remove a capacity provider from a cluster, you can either use <code class="inline">PutClusterCapacityProviders</code> or
+delete the cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cluster/3">
+
+    <span id="delete_cluster/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cluster/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cluster(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified cluster.</p>
+<p>The cluster will transition to the <code class="inline">INACTIVE</code> state. Clusters with an <code class="inline">INACTIVE</code> status may remain
+discoverable in your account for a period of time. However, this behavior is subject to change in
+the future, so you should not rely on <code class="inline">INACTIVE</code> clusters persisting.</p>
+<p>You must deregister all container instances from this cluster before you may delete it. You can
+list the container instances in a cluster with <code class="inline">ListContainerInstances</code> and deregister them with
+<code class="inline">DeregisterContainerInstance</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_service/3">
+
+    <span id="delete_service/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_service/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_service(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified service within a cluster.</p>
+<p>You can delete a service if you have no running tasks in it and the desired task count is zero. If
+the service is actively maintaining tasks, you cannot delete it, and you must update the service
+to a desired task count of zero. For more information, see <code class="inline">UpdateService</code>.</p>
+<p>When you delete a service, if there are still running tasks that require cleanup, the service
+status moves from <code class="inline">ACTIVE</code> to <code class="inline">DRAINING</code>, and the service is no longer visible in the console or
+in the <code class="inline">ListServices</code> API operation. After all tasks have transitioned to either <code class="inline">STOPPING</code> or
+<code class="inline">STOPPED</code> status, the service status moves from <code class="inline">DRAINING</code> to <code class="inline">INACTIVE</code>. Services in the
+<code class="inline">DRAINING</code> or <code class="inline">INACTIVE</code> status can still be viewed with the <code class="inline">DescribeServices</code> API operation.
+However, in the future, <code class="inline">INACTIVE</code> services may be cleaned up and purged from Amazon ECS record
+keeping, and <code class="inline">DescribeServices</code> calls on those services return a <code class="inline">ServiceNotFoundException</code> error.</p>
+<p>If you attempt to create a new service with the same name as an existing service in either
+<code class="inline">ACTIVE</code> or <code class="inline">DRAINING</code> status, you receive an error.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_task_set/3">
+
+    <span id="delete_task_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_task_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_task_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L245" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specified task set within a service.</p>
+<p>This is used when a service uses the <code class="inline">EXTERNAL</code> deployment controller type. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_container_instance/3">
+
+    <span id="deregister_container_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_container_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_container_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters an Amazon ECS container instance from the specified cluster.</p>
+<p>This instance is no longer available to run tasks.</p>
+<p>If you intend to use the container instance for some other purpose after deregistration, you
+should stop all of the tasks running on the container instance before deregistration. That
+prevents any orphaned tasks from consuming resources.</p>
+<p>Deregistering a container instance removes the instance from a cluster, but it does not terminate
+the EC2 instance. If you are finished using the instance, be sure to terminate it in the Amazon
+EC2 console to stop billing.</p>
+<p>If you terminate a running container instance, Amazon ECS automatically deregisters the instance
+from your cluster (stopped container instances or instances with disconnected agents are not
+automatically deregistered when terminated).</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_task_definition/3">
+
+    <span id="deregister_task_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_task_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_task_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters the specified task definition by family and revision.</p>
+<p>Upon deregistration, the task definition is marked as <code class="inline">INACTIVE</code>. Existing tasks and services that
+reference an <code class="inline">INACTIVE</code> task definition continue to run without disruption. Existing services that
+reference an <code class="inline">INACTIVE</code> task definition can still scale up or down by modifying the service&#39;s
+desired count.</p>
+<p>You cannot use an <code class="inline">INACTIVE</code> task definition to run new tasks or create new services, and you
+cannot update an existing service to reference an <code class="inline">INACTIVE</code> task definition. However, there may
+be up to a 10-minute window following deregistration where these restrictions have not yet taken
+effect.</p>
+<p>At this time, <code class="inline">INACTIVE</code> task definitions remain discoverable in your account indefinitely.
+However, this behavior is subject to change in the future, so you should not rely on <code class="inline">INACTIVE</code>
+task definitions persisting beyond the lifecycle of any associated tasks and services.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_capacity_providers/3">
+
+    <span id="describe_capacity_providers/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_capacity_providers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_capacity_providers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes one or more of your capacity providers.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_clusters/3">
+
+    <span id="describe_clusters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_clusters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_clusters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L301" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes one or more of your clusters.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_container_instances/3">
+
+    <span id="describe_container_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_container_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_container_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L310" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes Amazon Elastic Container Service container instances.</p>
+<p>Returns metadata about registered and remaining resources on each container instance requested.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_services/3">
+
+    <span id="describe_services/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_services/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_services(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L317" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified services running in your cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_task_definition/3">
+
+    <span id="describe_task_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_task_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_task_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a task definition.</p>
+<p>You can specify a <code class="inline">family</code> and <code class="inline">revision</code> to find information about a specific task definition, or
+you can simply specify the family to find the latest <code class="inline">ACTIVE</code> revision in that family.</p>
+<p>You can only describe <code class="inline">INACTIVE</code> task definitions while an active task or service references them.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_task_sets/3">
+
+    <span id="describe_task_sets/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_task_sets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_task_sets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the task sets in the specified cluster and service.</p>
+<p>This is used when a service uses the <code class="inline">EXTERNAL</code> deployment controller type. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_tasks/3">
+
+    <span id="describe_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L347" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a specified task or tasks.</p>
+
+  </section>
+</section>
+<section class="detail" id="discover_poll_endpoint/3">
+
+    <span id="discover_poll_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#discover_poll_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">discover_poll_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L357" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p>
+<p>Returns an endpoint for the Amazon ECS agent to poll for updates.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_account_settings/3">
+
+    <span id="list_account_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_account_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_account_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the account settings for a specified principal.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_attributes/3">
+
+    <span id="list_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the attributes for Amazon ECS resources within a specified target type and cluster.</p>
+<p>When you specify a target type and cluster, <code class="inline">ListAttributes</code> returns a list of attribute objects,
+one for each attribute on each resource. You can filter the list of results to a single attribute
+name to only return results that have that name. You can also filter the results by attribute name
+and value, for example, to see which container instances in a cluster are running a Linux AMI
+(<code class="inline">ecs.os-type=linux</code>).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_clusters/3">
+
+    <span id="list_clusters/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_clusters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_clusters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of existing clusters.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_container_instances/3">
+
+    <span id="list_container_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_container_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_container_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L395" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of container instances in a specified cluster.</p>
+<p>You can filter the results of a <code class="inline">ListContainerInstances</code> operation with cluster query language
+statements inside the <code class="inline">filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_services/3">
+
+    <span id="list_services/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_services/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_services(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L402" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the services that are running in a specified cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L409" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the tags for an Amazon ECS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_task_definition_families/3">
+
+    <span id="list_task_definition_families/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_task_definition_families/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_task_definition_families(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L421" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of task definition families that are registered to your account (which may include
+task definition families that no longer have any <code class="inline">ACTIVE</code> task definition revisions).</p>
+<p>You can filter out task definition families that do not contain any <code class="inline">ACTIVE</code> task definition
+revisions by setting the <code class="inline">status</code> parameter to <code class="inline">ACTIVE</code>. You can also filter the results with the
+<code class="inline">familyPrefix</code> parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_task_definitions/3">
+
+    <span id="list_task_definitions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_task_definitions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_task_definitions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L431" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of task definitions that are registered to your account.</p>
+<p>You can filter the results by family name with the <code class="inline">familyPrefix</code> parameter or by status with the
+<code class="inline">status</code> parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tasks/3">
+
+    <span id="list_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L444" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of tasks for a specified cluster.</p>
+<p>You can filter the results by family name, by a particular container instance, or by the desired
+status of the task with the <code class="inline">family</code>, <code class="inline">containerInstance</code>, and <code class="inline">desiredStatus</code> parameters.</p>
+<p>Recently stopped tasks might appear in the returned results. Currently, stopped tasks appear in
+the returned results for at least one hour.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_account_setting/3">
+
+    <span id="put_account_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_account_setting/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_account_setting(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L477" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies an account setting.</p>
+<p>Account settings are set on a per-Region basis.</p>
+<p>If you change the account setting for the root user, the default settings for all of the IAM users
+and roles for which no individual account setting has been specified are reset. For more
+information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>When <code class="inline">serviceLongArnFormat</code>, <code class="inline">taskLongArnFormat</code>, or <code class="inline">containerInstanceLongArnFormat</code> are
+specified, the Amazon Resource Name (ARN) and resource ID format of the resource type for a
+specified IAM user, IAM role, or the root user for an account is affected. The opt-in and opt-out
+account setting must be set for each Amazon ECS resource separately. The ARN and resource ID
+format of a resource will be defined by the opt-in status of the IAM user or role that created the
+resource. You must enable this setting to use Amazon ECS features such as resource tagging.</p>
+<p>When <code class="inline">awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit for any new
+container instances that support the feature is changed. If <code class="inline">awsvpcTrunking</code> is enabled, any new
+container instances that support the feature are launched have the increased ENI limits available
+to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic Network Interface Trunking</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>When <code class="inline">containerInsights</code> is specified, the default setting indicating whether CloudWatch Container
+Insights is enabled for your clusters is changed. If <code class="inline">containerInsights</code> is enabled, any new
+clusters that are created will have Container Insights enabled unless you disable it during
+cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch Container Insights</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_account_setting_default/3">
+
+    <span id="put_account_setting_default/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_account_setting_default/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_account_setting_default(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L487" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies an account setting for all IAM users on an account for whom no individual account setting
+has been specified.</p>
+<p>Account settings are set on a per-Region basis.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_attributes/3">
+
+    <span id="put_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L500" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create or update an attribute on an Amazon ECS resource.</p>
+<p>If the attribute does not exist, it is created. If the attribute exists, its value is replaced
+with the specified value. To delete an attribute, use <code class="inline">DeleteAttributes</code>. For more information,
+see
+<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_cluster_capacity_providers/3">
+
+    <span id="put_cluster_capacity_providers/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_cluster_capacity_providers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_cluster_capacity_providers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L521" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the available capacity providers and the default capacity provider strategy for a
+cluster.</p>
+<p>You must specify both the available capacity providers and a default capacity provider strategy
+for the cluster. If the specified cluster has existing capacity providers associated with it, you
+must specify all existing capacity providers in addition to any new ones you want to add. Any
+existing capacity providers associated with a cluster that are omitted from a
+<code class="inline">PutClusterCapacityProviders</code> API call will be disassociated with the cluster. You can only
+disassociate an existing capacity provider from a cluster if it&#39;s not being used by any existing
+tasks.</p>
+<p>When creating a service or running a task on a cluster, if no capacity provider or launch type is
+specified, then the cluster&#39;s default capacity provider strategy is used. It is recommended to
+define a default capacity provider strategy for your cluster, however you may specify an empty
+array (<code class="inline">[]</code>) to bypass defining a default strategy.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_container_instance/3">
+
+    <span id="register_container_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_container_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_container_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L532" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p>
+<p>Registers an EC2 instance into the specified cluster. This instance becomes available to place
+containers on.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_task_definition/3">
+
+    <span id="register_task_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_task_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_task_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L556" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a new task definition from the supplied <code class="inline">family</code> and <code class="inline">containerDefinitions</code>.</p>
+<p>Optionally, you can add data volumes to your containers with the <code class="inline">volumes</code> parameter. For more
+information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in
+the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>You can specify an IAM role for your task with the <code class="inline">taskRoleArn</code> parameter. When you specify an
+IAM role for a task, its containers can then use the latest versions of the AWS CLI or SDKs to
+make API requests to the AWS services that are specified in the IAM policy associated with the
+role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM Roles for Tasks</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>You can specify a Docker networking mode for the containers in your task definition with the
+<code class="inline">networkMode</code> parameter. The available network modes correspond to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network settings</a> in the Docker run
+reference. If you specify the <code class="inline">awsvpc</code> network mode, the task is allocated an elastic network
+interface, and you must specify a <code class="inline">NetworkConfiguration</code> when you create a service or run a task
+with the task definition. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in
+the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="run_task/3">
+
+    <span id="run_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#run_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">run_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L587" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a new task using the specified task definition.</p>
+<p>You can allow Amazon ECS to place tasks for you, or you can customize how Amazon ECS places tasks
+using placement constraints and placement strategies. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+<p>Alternatively, you can use <code class="inline">StartTask</code> to use your own scheduler or place tasks manually on
+specific container instances.</p>
+<p>The Amazon ECS API follows an eventual consistency model, due to the distributed nature of the
+system supporting the API. This means that the result of an API command you run that affects your
+Amazon ECS resources might not be immediately visible to all subsequent commands you run. Keep
+this in mind when you carry out an API command that immediately follows a previous API command.</p>
+<p>To manage eventual consistency, you can do the following:</p>
+<ul>
+<li><p>Confirm the state of the resource before you run a command to modify it. Run the
+DescribeTasks command using an exponential backoff algorithm to ensure that you allow enough time
+for the previous command to propagate through the system. To do this, run the DescribeTasks
+command repeatedly, starting with a couple of seconds of wait time and increasing gradually up to
+five minutes of wait time.</p>
+</li>
+<li><p>Add wait time between subsequent commands, even if the DescribeTasks command returns
+an accurate response. Apply an exponential backoff algorithm starting with a couple of seconds of
+wait time, and increase gradually up to about five minutes of wait time.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="start_task/3">
+
+    <span id="start_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L598" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a new task from the specified task definition on the specified container instance or
+instances.</p>
+<p>Alternatively, you can use <code class="inline">RunTask</code> to place tasks for you. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling Tasks</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_task/3">
+
+    <span id="stop_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L617" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a running task.</p>
+<p>Any tags associated with the task will be deleted.</p>
+<p>When <code class="inline">StopTask</code> is called on a task, the equivalent of <code class="inline">docker stop</code> is issued to the containers
+running in the task. This results in a <code class="inline">SIGTERM</code> value and a default 30-second timeout, after
+which the <code class="inline">SIGKILL</code> value is sent and the containers are forcibly stopped. If the container
+handles the <code class="inline">SIGTERM</code> value gracefully and exits within 30 seconds from receiving it, no <code class="inline">SIGKILL</code>
+value is sent.</p>
+<p>The default 30-second timeout can be configured on the Amazon ECS container agent with the
+<code class="inline">ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon ECS Container Agent Configuration</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="submit_attachment_state_changes/3">
+
+    <span id="submit_attachment_state_changes/2"></span>
+
+  <div class="detail-header">
+    <a href="#submit_attachment_state_changes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">submit_attachment_state_changes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L627" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p>
+<p>Sent to acknowledge that an attachment changed states.</p>
+
+  </section>
+</section>
+<section class="detail" id="submit_container_state_change/3">
+
+    <span id="submit_container_state_change/2"></span>
+
+  <div class="detail-header">
+    <a href="#submit_container_state_change/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">submit_container_state_change(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L637" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p>
+<p>Sent to acknowledge that a container changed states.</p>
+
+  </section>
+</section>
+<section class="detail" id="submit_task_state_change/3">
+
+    <span id="submit_task_state_change/2"></span>
+
+  <div class="detail-header">
+    <a href="#submit_task_state_change/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">submit_task_state_change(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L647" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This action is only used by the Amazon ECS agent, and it is not intended for use outside of the
+agent.</p>
+<p>Sent to acknowledge that a task changed states.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L657" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
+When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L664" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes specified tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_cluster_settings/3">
+
+    <span id="update_cluster_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_cluster_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_cluster_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L671" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the settings to use for a cluster.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_container_agent/3">
+
+    <span id="update_container_agent/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_container_agent/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_container_agent(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L687" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Amazon ECS container agent on a specified container instance.</p>
+<p>Updating the Amazon ECS container agent does not interrupt running tasks or services on the
+container instance. The process for updating the agent differs depending on whether your container
+instance was launched with the Amazon ECS-optimized AMI or another operating system.</p>
+<p><code class="inline">UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or Amazon Linux with the <code class="inline">ecs-init</code>
+service installed and running. For help updating the Amazon ECS container agent on other operating
+systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually Updating the Amazon ECS Container Agent</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_container_instances_state/3">
+
+    <span id="update_container_instances_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_container_instances_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_container_instances_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L737" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the status of an Amazon ECS container instance.</p>
+<p>Once a container instance has reached an <code class="inline">ACTIVE</code> state, you can change the status of a container
+instance to <code class="inline">DRAINING</code> to manually remove an instance from a cluster, for example to perform
+system updates, update the Docker daemon, or scale down the cluster size.</p>
+<p>A container instance cannot be changed to <code class="inline">DRAINING</code> until it has reached an <code class="inline">ACTIVE</code> status. If
+the instance is in any other status, an error will be received.</p>
+<p>When you set a container instance to <code class="inline">DRAINING</code>, Amazon ECS prevents new tasks from being
+scheduled for placement on the container instance and replacement service tasks are started on
+other container instances in the cluster if the resources are available. Service tasks on the
+container instance that are in the <code class="inline">PENDING</code> state are stopped immediately.</p>
+<p>Service tasks on the container instance that are in the <code class="inline">RUNNING</code> state are stopped and replaced
+according to the service&#39;s deployment configuration parameters, <code class="inline">minimumHealthyPercent</code> and
+<code class="inline">maximumPercent</code>. You can change the deployment configuration of your service using
+<code class="inline">UpdateService</code>.</p>
+<ul>
+<li><p>If <code class="inline">minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code class="inline">desiredCount</code>
+temporarily during task replacement. For example, <code class="inline">desiredCount</code> is four tasks, a minimum of 50%
+allows the scheduler to stop two existing tasks before starting two new tasks. If the minimum is
+100%, the service scheduler can&#39;t remove existing tasks until the replacement tasks are considered
+healthy. Tasks for services that do not use a load balancer are considered healthy if they are in
+the <code class="inline">RUNNING</code> state. Tasks for services that use a load balancer are considered healthy if they
+are in the <code class="inline">RUNNING</code> state and the container instance they are hosted on is reported as healthy by
+the load balancer.</p>
+</li>
+<li><p>The <code class="inline">maximumPercent</code> parameter represents an upper limit on the number of running
+tasks during task replacement, which enables you to define the replacement batch size. For
+example, if <code class="inline">desiredCount</code> is four tasks, a maximum of 200% starts four new tasks before stopping
+the four tasks to be drained, provided that the cluster resources required to do this are
+available. If the maximum is 100%, then replacement tasks can&#39;t start until the draining tasks
+have stopped.</p>
+</li>
+</ul>
+<p>Any <code class="inline">PENDING</code> or <code class="inline">RUNNING</code> tasks that do not belong to a service are not affected. You must wait
+for them to finish or stop them manually.</p>
+<p>A container instance has completed draining when it has no more <code class="inline">RUNNING</code> tasks. You can verify
+this using <code class="inline">ListTasks</code>.</p>
+<p>When a container instance has been drained, you can set a container instance to <code class="inline">ACTIVE</code> status
+and once it has reached that status the Amazon ECS scheduler can begin scheduling tasks on the
+instance again.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_service/3">
+
+    <span id="update_service/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_service/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_service(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L832" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updating the task placement strategies and constraints on an Amazon ECS service remains in preview
+and is a Beta Service as defined by and subject to the Beta Service Participation Service Terms
+located at <a href="https://aws.amazon.com/service-terms">https://aws.amazon.com/service-terms</a> (&quot;Beta Terms&quot;).</p>
+<p>These Beta Terms apply to your participation in this preview.</p>
+<p>Modifies the parameters of a service.</p>
+<p>For services using the rolling update (<code class="inline">ECS</code>) deployment controller, the desired count, deployment
+configuration, network configuration, task placement constraints and strategies, or task
+definition used can be updated.</p>
+<p>For services using the blue/green (<code class="inline">CODE_DEPLOY</code>) deployment controller, only the desired count,
+deployment configuration, task placement constraints and strategies, and health check grace period
+can be updated using this API. If the network configuration, platform version, or task definition
+need to be updated, a new AWS CodeDeploy deployment should be created. For more information, see
+<a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+in the <em>AWS CodeDeploy API Reference</em>.</p>
+<p>For services using an external deployment controller, you can update only the desired count, task
+placement constraints and strategies, and health check grace period using this API. If the launch
+type, load balancer, network configuration, platform version, or task definition need to be
+updated, you should create a new task set. For more information, see <code class="inline">CreateTaskSet</code>.</p>
+<p>You can add to or subtract from the number of instantiations of a task definition in a service by
+specifying the cluster that the service is running in and a new <code class="inline">desiredCount</code> parameter.</p>
+<p>If you have updated the Docker image of your application, you can create a new task definition
+with that image and deploy it to your service. The service scheduler uses the minimum healthy
+percent and maximum percent parameters (in the service&#39;s deployment configuration) to determine
+the deployment strategy.</p>
+<p>If your updated Docker image uses the same tag as what is in the existing task definition for your
+service (for example, <code class="inline">my_image:latest</code>), you do not need to create a new revision of your task
+definition. You can update the service using the <code class="inline">forceNewDeployment</code> option. The new tasks
+launched by the deployment pull the current image/tag combination from your repository when they
+start.</p>
+<p>You can also update the deployment configuration of a service. When a deployment is triggered by
+updating the task definition of a service, the service scheduler uses the deployment configuration
+parameters, <code class="inline">minimumHealthyPercent</code> and <code class="inline">maximumPercent</code>, to determine the deployment strategy.</p>
+<ul>
+<li><p>If <code class="inline">minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code class="inline">desiredCount</code>
+temporarily during a deployment. For example, if <code class="inline">desiredCount</code> is four tasks, a minimum of 50%
+allows the scheduler to stop two existing tasks before starting two new tasks. Tasks for services
+that do not use a load balancer are considered healthy if they are in the <code class="inline">RUNNING</code> state. Tasks
+for services that use a load balancer are considered healthy if they are in the <code class="inline">RUNNING</code> state
+and the container instance they are hosted on is reported as healthy by the load balancer.</p>
+</li>
+<li><p>The <code class="inline">maximumPercent</code> parameter represents an upper limit on the number of running
+tasks during a deployment, which enables you to define the deployment batch size. For example, if
+<code class="inline">desiredCount</code> is four tasks, a maximum of 200% starts four new tasks before stopping the four
+older tasks (provided that the cluster resources required to do this are available).</p>
+</li>
+</ul>
+<p>When <code class="inline">UpdateService</code> stops a task during a deployment, the equivalent of <code class="inline">docker stop</code> is issued
+to the containers running in the task. This results in a <code class="inline">SIGTERM</code> and a 30-second timeout, after
+which <code class="inline">SIGKILL</code> is sent and the containers are forcibly stopped. If the container handles the
+<code class="inline">SIGTERM</code> gracefully and exits within 30 seconds from receiving it, no <code class="inline">SIGKILL</code> is sent.</p>
+<p>When the service scheduler launches new tasks, it determines task placement in your cluster with
+the following logic:</p>
+<ul>
+<li><p>Determine which of the container instances in your cluster can support your
+service&#39;s task definition (for example, they have the required CPU, memory, ports, and container
+instance attributes).</p>
+</li>
+<li><p>By default, the service scheduler attempts to balance tasks across Availability
+Zones in this manner (although you can choose a different placement strategy):</p>
+<ul>
+<li><p>Sort the valid container instances by the fewest number of running tasks
+for this service in the same Availability Zone as the instance. For example, if zone A has one
+running service task and zones B and C each have zero, valid container instances in either zone B
+or C are considered optimal for placement.</p>
+</li>
+<li><p>Place the new service task on a valid container instance in an optimal
+Availability Zone (based on the previous steps), favoring container instances with the fewest
+number of running tasks for this service.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>When the service scheduler stops running tasks, it attempts to maintain balance across the
+Availability Zones in your cluster using the following logic:</p>
+<ul>
+<li><p>Sort the container instances by the largest number of running tasks for this service
+in the same Availability Zone as the instance. For example, if zone A has one running service task
+and zones B and C each have two, container instances in either zone B or C are considered optimal
+for termination.</p>
+</li>
+<li><p>Stop the task on a container instance in an optimal Availability Zone (based on the
+previous steps), favoring container instances with the largest number of running tasks for this
+service.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="update_service_primary_task_set/3">
+
+    <span id="update_service_primary_task_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_service_primary_task_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_service_primary_task_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L844" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies which task set in a service is the primary task set.</p>
+<p>Any parameters that are updated on the primary task set in a service will transition to the
+service. This is used when a service uses the <code class="inline">EXTERNAL</code> deployment controller type. For more
+information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_task_set/3">
+
+    <span id="update_task_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_task_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_task_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ecs.ex#L855" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies a task set.</p>
+<p>This is used when a service uses the <code class="inline">EXTERNAL</code> deployment controller type. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the
+<em>Amazon Elastic Container Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

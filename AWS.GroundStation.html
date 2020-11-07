@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.GroundStation — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.GroundStation
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Welcome to the AWS Ground Station API Reference.</p>
+<p>AWS Ground Station is a fully managed service that enables you to control satellite
+communications, downlink and process satellite data, and scale your satellite operations
+efficiently and cost-effectively without having to build or manage your own ground station
+infrastructure.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_contact/4">cancel_contact(client, contact_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels a contact with a specified contact ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_config/3">create_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> with the specified <code class="inline">configData</code> parameters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dataflow_endpoint_group/3">create_dataflow_endpoint_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a <code class="inline">DataflowEndpoint</code> group containing the specified list of <code class="inline">DataflowEndpoint</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_mission_profile/3">create_mission_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a mission profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_config/5">delete_config(client, config_id, config_type, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dataflow_endpoint_group/4">delete_dataflow_endpoint_group(client, dataflow_endpoint_group_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataflow endpoint group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_mission_profile/4">delete_mission_profile(client, mission_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a mission profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_contact/3">describe_contact(client, contact_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an existing contact.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_config/4">get_config(client, config_id, config_type, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_dataflow_endpoint_group/3">get_dataflow_endpoint_group(client, dataflow_endpoint_group_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the dataflow endpoint group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_minute_usage/3">get_minute_usage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the number of minutes used by account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_mission_profile/3">get_mission_profile(client, mission_profile_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a mission profile.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_satellite/3">get_satellite(client, satellite_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a satellite.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_configs/4">list_configs(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_contacts/3">list_contacts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of contacts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dataflow_endpoint_groups/4">list_dataflow_endpoint_groups(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <code class="inline">DataflowEndpoint</code> groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_ground_stations/5">list_ground_stations(client, max_results \\ nil, next_token \\ nil, satellite_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of ground stations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_mission_profiles/4">list_mission_profiles(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of mission profiles.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_satellites/4">list_satellites(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of satellites.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of tags for a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reserve_contact/3">reserve_contact(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reserves a contact using specified parameters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns a tag to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deassigns a resource tag.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_config/5">update_config(client, config_id, config_type, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> used when scheduling contacts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_mission_profile/4">update_mission_profile(client, mission_profile_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a mission profile.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_contact/4">
+
+    <span id="cancel_contact/3"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_contact/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_contact(client, contact_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L17" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels a contact with a specified contact ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_config/3">
+
+    <span id="create_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> with the specified <code class="inline">configData</code> parameters.</p>
+<p>Only one type of <code class="inline">configData</code> can be specified.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_dataflow_endpoint_group/3">
+
+    <span id="create_dataflow_endpoint_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dataflow_endpoint_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dataflow_endpoint_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L45" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a <code class="inline">DataflowEndpoint</code> group containing the specified list of <code class="inline">DataflowEndpoint</code> objects.</p>
+<p>The <code class="inline">name</code> field in each endpoint is used in your mission profile <code class="inline">DataflowEndpointConfig</code> to
+specify which endpoints to use during a contact.</p>
+<p>When a contact uses multiple <code class="inline">DataflowEndpointConfig</code> objects, each <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> must match a
+<code class="inline">DataflowEndpoint</code> in the same group.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_mission_profile/3">
+
+    <span id="create_mission_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_mission_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_mission_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a mission profile.</p>
+<p><code class="inline">dataflowEdges</code> is a list of lists of strings. Each lower level list of strings has two elements:
+a <em>from</em> ARN and a <em>to</em> ARN.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_config/5">
+
+    <span id="delete_config/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_config/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_config(client, config_id, config_type, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L68" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dataflow_endpoint_group/4">
+
+    <span id="delete_dataflow_endpoint_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dataflow_endpoint_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dataflow_endpoint_group(client, dataflow_endpoint_group_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataflow endpoint group.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_mission_profile/4">
+
+    <span id="delete_mission_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_mission_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_mission_profile(client, mission_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L88" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a mission profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_contact/3">
+
+    <span id="describe_contact/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_contact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_contact(client, contact_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L98" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an existing contact.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_config/4">
+
+    <span id="get_config/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_config/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_config(client, config_id, config_type, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> information.</p>
+<p>Only one <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> response can be returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_dataflow_endpoint_group/3">
+
+    <span id="get_dataflow_endpoint_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_dataflow_endpoint_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_dataflow_endpoint_group(client, dataflow_endpoint_group_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the dataflow endpoint group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_minute_usage/3">
+
+    <span id="get_minute_usage/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_minute_usage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_minute_usage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L130" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the number of minutes used by account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_mission_profile/3">
+
+    <span id="get_mission_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_mission_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_mission_profile(client, mission_profile_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a mission profile.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_satellite/3">
+
+    <span id="get_satellite/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_satellite/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_satellite(client, satellite_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a satellite.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_configs/4">
+
+    <span id="list_configs/1"></span>
+
+    <span id="list_configs/2"></span>
+
+    <span id="list_configs/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_configs/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_configs(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L160" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_contacts/3">
+
+    <span id="list_contacts/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_contacts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_contacts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of contacts.</p>
+<p>If <code class="inline">statusList</code> contains AVAILABLE, the request must include <code class="inline">groundStation</code>, <code class="inline">missionprofileArn</code>,
+and <code class="inline">satelliteArn</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dataflow_endpoint_groups/4">
+
+    <span id="list_dataflow_endpoint_groups/1"></span>
+
+    <span id="list_dataflow_endpoint_groups/2"></span>
+
+    <span id="list_dataflow_endpoint_groups/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_dataflow_endpoint_groups/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dataflow_endpoint_groups(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <code class="inline">DataflowEndpoint</code> groups.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_ground_stations/5">
+
+    <span id="list_ground_stations/1"></span>
+
+    <span id="list_ground_stations/2"></span>
+
+    <span id="list_ground_stations/3"></span>
+
+    <span id="list_ground_stations/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_ground_stations/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_ground_stations(client, max_results \\ nil, next_token \\ nil, satellite_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of ground stations.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_mission_profiles/4">
+
+    <span id="list_mission_profiles/1"></span>
+
+    <span id="list_mission_profiles/2"></span>
+
+    <span id="list_mission_profiles/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_mission_profiles/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_mission_profiles(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of mission profiles.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_satellites/4">
+
+    <span id="list_satellites/1"></span>
+
+    <span id="list_satellites/2"></span>
+
+    <span id="list_satellites/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_satellites/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_satellites(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of satellites.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of tags for a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="reserve_contact/3">
+
+    <span id="reserve_contact/2"></span>
+
+  <div class="detail-header">
+    <a href="#reserve_contact/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reserve_contact(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L288" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Reserves a contact using specified parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns a tag to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deassigns a resource tag.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_config/5">
+
+    <span id="update_config/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_config/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_config(client, config_id, config_type, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> used when scheduling contacts.</p>
+<p>Updating a <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a> will not update the execution parameters for existing future contacts
+scheduled with this <a href="https://hexdocs.pm/elixir/Config.html"><code class="inline">Config</code></a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_mission_profile/4">
+
+    <span id="update_mission_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_mission_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_mission_profile(client, mission_profile_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ground_station.ex#L337" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a mission profile.</p>
+<p>Updating a mission profile will not update the execution parameters for existing future contacts.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

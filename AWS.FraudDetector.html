@@ -1,0 +1,1780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.FraudDetector — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.FraudDetector
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>This is the Amazon Fraud Detector API Reference.</p>
+<p>This guide is for developers who need detailed information about Amazon Fraud Detector API
+actions, data types, and errors. For more information about Amazon Fraud Detector features, see
+the <a href="https://docs.aws.amazon.com/frauddetector/latest/ug/">Amazon Fraud Detector User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_create_variable/3">batch_create_variable(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a batch of variables.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_variable/3">batch_get_variable(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a batch of variables.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_detector_version/3">create_detector_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a detector version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_model/3">create_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a model using the specified model type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_model_version/3">create_model_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a version of the model using the specified model type and model id.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_rule/3">create_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a rule for use with the specified detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_variable/3">create_variable(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a variable.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_detector/3">delete_detector(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_detector_version/3">delete_detector_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the detector version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_event/3">delete_event(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified event.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_rule/3">delete_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_detector/3">describe_detector(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all versions for a specified detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_model_versions/3">describe_model_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all of the model versions for the specified model type or for the specified model type and
+model ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_detector_version/3">get_detector_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a particular detector version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_detectors/3">get_detectors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all detectors or a single detector if a <code class="inline">detectorId</code> is specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_entity_types/3">get_entity_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all entity types or a specific entity type if a name is specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_event_prediction/3">get_event_prediction(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Evaluates an event against a detector version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_event_types/3">get_event_types(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all event types or a specific event type if name is provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_external_models/3">get_external_models(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the details for one or more Amazon SageMaker models that have been imported into the service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_k_m_s_encryption_key/3">get_k_m_s_encryption_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been
+specified to be used to encrypt content in Amazon Fraud Detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_labels/3">get_labels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all labels or a specific label if name is provided.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_model_version/3">get_model_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the details of the specified model version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_models/3">get_models(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets one or more models.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_outcomes/3">get_outcomes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets one or more outcomes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_rules/3">get_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get all rules for a detector (paginated) if <code class="inline">ruleId</code> and <code class="inline">ruleVersion</code> are not specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_variables/3">get_variables(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets all of the variables or the specific variable.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all tags associated with the resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_detector/3">put_detector(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates a detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_entity_type/3">put_entity_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates an entity type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_event_type/3">put_event_type(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates an event type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_external_model/3">put_external_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates an Amazon SageMaker model endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_k_m_s_encryption_key/3">put_k_m_s_encryption_key(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content
+in Amazon Fraud Detector.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_label/3">put_label(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates label.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_outcome/3">put_outcome(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates an outcome.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns tags to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_detector_version/3">update_detector_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a detector version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_detector_version_metadata/3">update_detector_version_metadata(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the detector version&#39;s description.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_detector_version_status/3">update_detector_version_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the detector version’s status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_model/3">update_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_model_version/3">update_model_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a model version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_model_version_status/3">update_model_version_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the status of a model version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_rule_metadata/3">update_rule_metadata(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a rule&#39;s metadata.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_rule_version/3">update_rule_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a rule version resulting in a new rule version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_variable/3">update_variable(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a variable.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_create_variable/3">
+
+    <span id="batch_create_variable/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_create_variable/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_create_variable(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a batch of variables.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_variable/3">
+
+    <span id="batch_get_variable/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_variable/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_variable(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a batch of variables.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_detector_version/3">
+
+    <span id="create_detector_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_detector_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_detector_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L32" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a detector version.</p>
+<p>The detector version starts in a <code class="inline">DRAFT</code> status.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_model/3">
+
+    <span id="create_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a model using the specified model type.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_model_version/3">
+
+    <span id="create_model_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_model_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_model_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a version of the model using the specified model type and model id.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_rule/3">
+
+    <span id="create_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L53" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a rule for use with the specified detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_variable/3">
+
+    <span id="create_variable/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_variable/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_variable(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a variable.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_detector/3">
+
+    <span id="delete_detector/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_detector/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_detector(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L70" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the detector.</p>
+<p>Before deleting a detector, you must first delete all detector versions and rule versions
+associated with the detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_detector_version/3">
+
+    <span id="delete_detector_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_detector_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_detector_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L79" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the detector version.</p>
+<p>You cannot delete detector versions that are in <code class="inline">ACTIVE</code> status.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_event/3">
+
+    <span id="delete_event/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_event/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_event(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified event.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_rule/3">
+
+    <span id="delete_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the rule.</p>
+<p>You cannot delete a rule if it is used by an <code class="inline">ACTIVE</code> or <code class="inline">INACTIVE</code> detector version.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_detector/3">
+
+    <span id="describe_detector/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_detector/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_detector(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all versions for a specified detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_model_versions/3">
+
+    <span id="describe_model_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_model_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_model_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L112" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all of the model versions for the specified model type or for the specified model type and
+model ID.</p>
+<p>You can also get details for a single, specified model version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_detector_version/3">
+
+    <span id="get_detector_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_detector_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_detector_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L119" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a particular detector version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_detectors/3">
+
+    <span id="get_detectors/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_detectors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_detectors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L131" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all detectors or a single detector if a <code class="inline">detectorId</code> is specified.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this action retrieves a maximum of 10
+records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 5 and 10. To get the
+next page results, provide the pagination token from the <code class="inline">GetDetectorsResponse</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_entity_types/3">
+
+    <span id="get_entity_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_entity_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_entity_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all entity types or a specific entity type if a name is specified.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this action retrieves a maximum of 10
+records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 5 and 10. To get the
+next page results, provide the pagination token from the <code class="inline">GetEntityTypesResponse</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_event_prediction/3">
+
+    <span id="get_event_prediction/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_event_prediction/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_event_prediction(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Evaluates an event against a detector version.</p>
+<p>If a version ID is not provided, the detector’s (<code class="inline">ACTIVE</code>) version is used.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_event_types/3">
+
+    <span id="get_event_types/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_event_types/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_event_types(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L164" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all event types or a specific event type if name is provided.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this action retrieves a maximum of 10
+records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 5 and 10. To get the
+next page results, provide the pagination token from the <code class="inline">GetEventTypesResponse</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_external_models/3">
+
+    <span id="get_external_models/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_external_models/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_external_models(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L176" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the details for one or more Amazon SageMaker models that have been imported into the service.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this actions retrieves a maximum of
+10 records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 5 and 10. To get the
+next page results, provide the pagination token from the <code class="inline">GetExternalModelsResult</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_k_m_s_encryption_key/3">
+
+    <span id="get_k_m_s_encryption_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_k_m_s_encryption_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_k_m_s_encryption_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the encryption key if a Key Management Service (KMS) customer master key (CMK) has been
+specified to be used to encrypt content in Amazon Fraud Detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_labels/3">
+
+    <span id="get_labels/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_labels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_labels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all labels or a specific label if name is provided.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this action retrieves a maximum of 50
+records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 10 and 50. To get the
+next page results, provide the pagination token from the <code class="inline">GetGetLabelsResponse</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_model_version/3">
+
+    <span id="get_model_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_model_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_model_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L203" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the details of the specified model version.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_models/3">
+
+    <span id="get_models/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_models/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_models(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets one or more models.</p>
+<p>Gets all models for the AWS account if no model type and no model id provided. Gets all models for
+the AWS account and model type, if the model type is specified but model id is not provided. Gets
+a specific model if (model type, model id) tuple is specified.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this action retrieves a maximum of 10
+records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 1 and 10. To get the
+next page results, provide the pagination token from the response as part of your request. A null
+pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_outcomes/3">
+
+    <span id="get_outcomes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_outcomes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_outcomes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets one or more outcomes.</p>
+<p>This is a paginated API. If you provide a null <code class="inline">maxResults</code>, this actions retrieves a maximum of
+100 records per page. If you provide a <code class="inline">maxResults</code>, the value must be between 50 and 100. To get
+the next page results, provide the pagination token from the <code class="inline">GetOutcomesResult</code> as part of your
+request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_rules/3">
+
+    <span id="get_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L246" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get all rules for a detector (paginated) if <code class="inline">ruleId</code> and <code class="inline">ruleVersion</code> are not specified.</p>
+<p>Gets all rules for the detector and the <code class="inline">ruleId</code> if present (paginated). Gets a specific rule if
+both the <code class="inline">ruleId</code> and the <code class="inline">ruleVersion</code> are specified.</p>
+<p>This is a paginated API. Providing null maxResults results in retrieving maximum of 100 records
+per page. If you provide maxResults the value must be between 50 and 100. To get the next page
+result, a provide a pagination token from GetRulesResult as part of your request. Null pagination
+token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_variables/3">
+
+    <span id="get_variables/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_variables/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_variables(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L258" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets all of the variables or the specific variable.</p>
+<p>This is a paginated API. Providing null <code class="inline">maxSizePerPage</code> results in retrieving maximum of 100
+records per page. If you provide <code class="inline">maxSizePerPage</code> the value must be between 50 and 100. To get the
+next page result, a provide a pagination token from <code class="inline">GetVariablesResult</code> as part of your request.
+Null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all tags associated with the resource.</p>
+<p>This is a paginated API. To get the next page results, provide the pagination token from the
+response as part of your request. A null pagination token fetches the records from the beginning.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_detector/3">
+
+    <span id="put_detector/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_detector/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_detector(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L275" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates a detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_entity_type/3">
+
+    <span id="put_entity_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_entity_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_entity_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates an entity type.</p>
+<p>An entity represents who is performing the event. As part of a fraud prediction, you pass the
+entity ID to indicate the specific entity who performed the event. An entity type classifies the
+entity. Example classifications include customer, merchant, or account.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_event_type/3">
+
+    <span id="put_event_type/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_event_type/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_event_type(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L299" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates an event type.</p>
+<p>An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you
+generate fraud predictions for events. An event type defines the structure for an event sent to
+Amazon Fraud Detector. This includes the variables sent as part of the event, the entity
+performing the event (such as a customer), and the labels that classify the event. Example event
+types include online payment transactions, account registrations, and authentications.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_external_model/3">
+
+    <span id="put_external_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_external_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_external_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L309" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates an Amazon SageMaker model endpoint.</p>
+<p>You can also use this action to update the configuration of the model endpoint, including the IAM
+role and/or the mapped variables.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_k_m_s_encryption_key/3">
+
+    <span id="put_k_m_s_encryption_key/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_k_m_s_encryption_key/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_k_m_s_encryption_key(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L317" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specifies the Key Management Service (KMS) customer master key (CMK) to be used to encrypt content
+in Amazon Fraud Detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_label/3">
+
+    <span id="put_label/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_label/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_label(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L327" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates label.</p>
+<p>A label classifies an event as fraudulent or legitimate. Labels are associated with event types
+and used to train supervised machine learning models in Amazon Fraud Detector.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_outcome/3">
+
+    <span id="put_outcome/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_outcome/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_outcome(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L334" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates an outcome.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L341" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns tags to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L348" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_detector_version/3">
+
+    <span id="update_detector_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_detector_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_detector_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L358" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a detector version.</p>
+<p>The detector version attributes that you can update include models, external model endpoints,
+rules, rule execution mode, and description. You can only update a <code class="inline">DRAFT</code> detector version.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_detector_version_metadata/3">
+
+    <span id="update_detector_version_metadata/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_detector_version_metadata/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_detector_version_metadata(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L367" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the detector version&#39;s description.</p>
+<p>You can update the metadata for any detector version (<code class="inline">DRAFT, ACTIVE,</code> or <code class="inline">INACTIVE</code>).</p>
+
+  </section>
+</section>
+<section class="detail" id="update_detector_version_status/3">
+
+    <span id="update_detector_version_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_detector_version_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_detector_version_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the detector version’s status.</p>
+<p>You can perform the following promotions or demotions using <code class="inline">UpdateDetectorVersionStatus</code>: <code class="inline">DRAFT</code>
+to <code class="inline">ACTIVE</code>, <code class="inline">ACTIVE</code> to <code class="inline">INACTIVE</code>, and <code class="inline">INACTIVE</code> to <code class="inline">ACTIVE</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_model/3">
+
+    <span id="update_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a model.</p>
+<p>You can update the description attribute using this action.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_model_version/3">
+
+    <span id="update_model_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_model_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_model_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L398" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a model version.</p>
+<p>Updating a model version retrains an existing model version using updated training data and
+produces a new minor version of the model. You can update the training data set location and data
+access role attributes using this action. This action creates and trains a new minor version of
+the model, for example version 1.01, 1.02, 1.03.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_model_version_status/3">
+
+    <span id="update_model_version_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_model_version_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_model_version_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L411" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the status of a model version.</p>
+<p>You can perform the following status updates:</p>
+<ol>
+<li><p>Change the <code class="inline">TRAINING_COMPLETE</code> status to <code class="inline">ACTIVE</code>.</p>
+</li>
+<li><p>Change <code class="inline">ACTIVE</code>to <code class="inline">INACTIVE</code>.</p>
+</li>
+</ol>
+
+  </section>
+</section>
+<section class="detail" id="update_rule_metadata/3">
+
+    <span id="update_rule_metadata/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_rule_metadata/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_rule_metadata(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L420" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a rule&#39;s metadata.</p>
+<p>The description attribute can be updated.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_rule_version/3">
+
+    <span id="update_rule_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_rule_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_rule_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L429" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a rule version resulting in a new rule version.</p>
+<p>Updates a rule version resulting in a new rule version (version 1, 2, 3 ...).</p>
+
+  </section>
+</section>
+<section class="detail" id="update_variable/3">
+
+    <span id="update_variable/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_variable/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_variable(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fraud_detector.ex#L436" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a variable.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

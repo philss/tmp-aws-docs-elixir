@@ -1,0 +1,4877 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Lightsail — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Lightsail
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Lightsail is the easiest way to get started with Amazon Web Services (AWS) for developers
+who need to build websites or web applications.</p>
+<p>It includes everything you need to launch your project quickly – instances (virtual private
+servers), managed databases, SSD-based block storage, static IP addresses, load balancers, content
+delivery network (CDN) distributions, DNS management of registered domains, and snapshots
+(backups) – for a low, predictable monthly price.</p>
+<p>You can manage your Lightsail resources using the Lightsail console, Lightsail API, AWS Command
+Line Interface (AWS CLI), or SDKs. For more information about Lightsail concepts and tasks, see
+the <a href="http://lightsail.aws.amazon.com/ls/docs/how-to/article/lightsail-how-to-set-up-access-keys-to-use-sdk-api-cli">Lightsail Dev Guide</a>.</p>
+<p>This API Reference provides detailed information about the actions, data types, parameters, and
+errors of the Lightsail service. For more information about the supported AWS Regions, endpoints,
+and service quotas for the Lightsail service, see <a href="https://docs.aws.amazon.com/general/latest/gr/lightsail.html">Amazon Lightsail Endpoints and Quotas</a> in the <em>AWS General
+Reference</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#allocate_static_ip/3">allocate_static_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allocates a static IP address.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_certificate_to_distribution/3">attach_certificate_to_distribution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN)
+distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_disk/3">attach_disk(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the
+instance with the specified disk name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_instances_to_load_balancer/3">attach_instances_to_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches one or more Lightsail instances to a load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_load_balancer_tls_certificate/3">attach_load_balancer_tls_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_static_ip/3">attach_static_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches a static IP address to a specific Amazon Lightsail instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#close_instance_public_ports/3">close_instance_public_ports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Closes ports for a specific Amazon Lightsail instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#copy_snapshot/3">copy_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic
+snapshot of an instance or disk as a manual snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_certificate/3">create_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cloud_formation_stack/3">create_cloud_formation_stack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported
+Amazon Lightsail snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_contact_method/3">create_contact_method(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an email or SMS text message contact method.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_disk/3">create_disk(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same
+Availability Zone (e.g., <code class="inline">us-east-2a</code>).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_disk_from_snapshot/3">create_disk_from_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a block storage disk from a manual or automatic snapshot of a disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_disk_snapshot/3">create_disk_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a snapshot of a block storage disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_distribution/3">create_distribution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_domain/3">create_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a domain resource for the specified domain (e.g., example.com).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_domain_entry/3">create_domain_entry(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates one of the following entry records associated with the domain: Address (A), canonical name
+(CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV),
+or text (TXT).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_instance_snapshot/3">create_instance_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a snapshot of a specific virtual private server, or <em>instance</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_instances/3">create_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates one or more Amazon Lightsail instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_instances_from_snapshot/3">create_instances_from_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates one or more new instances from a manual or automatic snapshot of an instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_key_pair/3">create_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an SSH key pair.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_load_balancer/3">create_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Lightsail load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_load_balancer_tls_certificate/3">create_load_balancer_tls_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Lightsail load balancer TLS certificate.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_relational_database/3">create_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_relational_database_from_snapshot/3">create_relational_database_from_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new database from an existing database snapshot in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_relational_database_snapshot/3">create_relational_database_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a snapshot of your database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_alarm/3">delete_alarm(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an alarm.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_auto_snapshot/3">delete_auto_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an automatic snapshot of an instance or disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_certificate/3">delete_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN)
+distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_contact_method/3">delete_contact_method(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a contact method.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_disk/3">delete_disk(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified block storage disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_disk_snapshot/3">delete_disk_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified disk snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_distribution/3">delete_distribution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes your Amazon Lightsail content delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_domain/3">delete_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified domain recordset and all of its domain records.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_domain_entry/3">delete_domain_entry(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specific domain entry.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_instance/3">delete_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an Amazon Lightsail instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_instance_snapshot/3">delete_instance_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specific snapshot of a virtual private server (or <em>instance</em>).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_key_pair/3">delete_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specific SSH key pair.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_known_host_keys/3">delete_known_host_keys(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP
+clients to authenticate an instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_load_balancer/3">delete_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Lightsail load balancer and all its associated SSL/TLS certificates.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_load_balancer_tls_certificate/3">delete_load_balancer_tls_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_relational_database/3">delete_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_relational_database_snapshot/3">delete_relational_database_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a database snapshot in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_certificate_from_distribution/3">detach_certificate_from_distribution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN)
+distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_disk/3">detach_disk(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a stopped block storage disk from a Lightsail instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_instances_from_load_balancer/3">detach_instances_from_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches the specified instances from a Lightsail load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_static_ip/3">detach_static_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a static IP from the Amazon Lightsail instance to which it is attached.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_add_on/3">disable_add_on(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables an add-on for an Amazon Lightsail resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#download_default_key_pair/3">download_default_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Downloads the default SSH key pair from the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_add_on/3">enable_add_on(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables or modifies an add-on for an Amazon Lightsail resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_snapshot/3">export_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute
+Cloud (Amazon EC2).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_active_names/3">get_active_names(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the names of all active (not deleted) resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_alarms/3">get_alarms(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the configured alarms.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_auto_snapshots/3">get_auto_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the available automatic snapshots for an instance or disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_blueprints/3">get_blueprints(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of available instance images, or <em>blueprints</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_bundles/3">get_bundles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of bundles that are available for purchase.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_certificates/3">get_certificates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cloud_formation_stack_records/3">get_cloud_formation_stack_records(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the CloudFormation stack record created as a result of the <code class="inline">create cloud formation stack</code>
+operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_contact_methods/3">get_contact_methods(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the configured contact methods.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_disk/3">get_disk(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific block storage disk.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_disk_snapshot/3">get_disk_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific block storage disk snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_disk_snapshots/3">get_disk_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all block storage disk snapshots in your AWS account and region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_disks/3">get_disks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all block storage disks in your AWS account and region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_distribution_bundles/3">get_distribution_bundles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list bundles that can be applied to you Amazon Lightsail content delivery network
+(CDN) distributions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_distribution_latest_cache_reset/3">get_distribution_latest_cache_reset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content
+delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_distribution_metric_data/3">get_distribution_metric_data(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the data points of a specific metric for an Amazon Lightsail content delivery network
+(CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_distributions/3">get_distributions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN)
+distributions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_domain/3">get_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific domain recordset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_domains/3">get_domains(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of all domains in the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_export_snapshot_records/3">get_export_snapshot_records(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the export snapshot record created as a result of the <code class="inline">export snapshot</code> operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance/3">get_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific Amazon Lightsail instance, which is a virtual private server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_access_details/3">get_instance_access_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or
+<em>instance</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_metric_data/3">get_instance_metric_data(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the data points for the specified Amazon Lightsail instance metric, given an instance
+name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_port_states/3">get_instance_port_states(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses
+allowed to connect to the instance through the ports, and the protocol.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_snapshot/3">get_instance_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific instance snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_snapshots/3">get_instance_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all instance snapshots for the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instance_state/3">get_instance_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the state of a specific instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_instances/3">get_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all Amazon Lightsail virtual private servers, or <em>instances</em>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_key_pair/3">get_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific key pair.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_key_pairs/3">get_key_pairs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all key pairs in the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_load_balancer/3">get_load_balancer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified Lightsail load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_load_balancer_metric_data/3">get_load_balancer_metric_data(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about health metrics for your Lightsail load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_load_balancer_tls_certificates/3">get_load_balancer_tls_certificates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the TLS certificates that are associated with the specified Lightsail
+load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_load_balancers/3">get_load_balancers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all load balancers in an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_operation/3">get_operation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_operations/3">get_operations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all operations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_operations_for_resource/3">get_operations_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets operations for a specific resource (e.g., an instance or a static IP).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_regions/3">get_regions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of all valid regions for Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database/3">get_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_blueprints/3">get_relational_database_blueprints(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of available database blueprints in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_bundles/3">get_relational_database_bundles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of bundles that are available in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_events/3">get_relational_database_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of events for a specific database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_log_events/3">get_relational_database_log_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of log events for a database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_log_streams/3">get_relational_database_log_streams(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of available log streams for a specific database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_master_user_password/3">get_relational_database_master_user_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current, previous, or pending versions of the master user password for a Lightsail
+database.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_metric_data/3">get_relational_database_metric_data(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the data points of the specified metric for a database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_parameters/3">get_relational_database_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all of the runtime parameters offered by the underlying database software, or engine, for
+a specific database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_snapshot/3">get_relational_database_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific database snapshot in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_database_snapshots/3">get_relational_database_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all of your database snapshots in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_relational_databases/3">get_relational_databases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all of your databases in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_static_ip/3">get_static_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a specific static IP.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_static_ips/3">get_static_ips(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all static IPs in the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#import_key_pair/3">import_key_pair(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Imports a public SSH key from a specific key pair.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#is_vpc_peered/3">is_vpc_peered(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#open_instance_public_ports/3">open_instance_public_ports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to
+connect to the instance through the ports, and the protocol.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#peer_vpc/3">peer_vpc(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tries to peer the Lightsail VPC with the user&#39;s default VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_alarm/3">put_alarm(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates or updates an alarm, and associates it with the specified metric.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_instance_public_ports/3">put_instance_public_ports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to
+connect to the instance through the ports, and the protocol.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reboot_instance/3">reboot_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restarts a specific instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reboot_relational_database/3">reboot_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restarts a specific database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#release_static_ip/3">release_static_ip(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a specific static IP from your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset_distribution_cache/3">reset_distribution_cache(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes currently cached content from your Amazon Lightsail content delivery network (CDN)
+distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_contact_method_verification/3">send_contact_method_verification(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends a verification request to an email contact method to ensure it&#39;s owned by the requester.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_instance/3">start_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a specific Amazon Lightsail instance from a stopped state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_relational_database/3">start_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a specific database from a stopped state in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_instance/3">stop_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a specific Amazon Lightsail instance that is currently running.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_relational_database/3">stop_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a specific database that is currently running in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags to the specified Amazon Lightsail resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#test_alarm/3">test_alarm(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tests an alarm by displaying a banner on the Amazon Lightsail console.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unpeer_vpc/3">unpeer_vpc(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to unpeer the Lightsail VPC from the user&#39;s default VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified set of tag keys and their values from the specified Amazon Lightsail
+resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_distribution/3">update_distribution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing Amazon Lightsail content delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_distribution_bundle/3">update_distribution_bundle(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_domain_entry/3">update_domain_entry(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a domain recordset after it is created.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_load_balancer_attribute/3">update_load_balancer_attribute(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified attribute for a load balancer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_relational_database/3">update_relational_database(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows the update of one or more attributes of a database in Amazon Lightsail.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_relational_database_parameters/3">update_relational_database_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows the update of one or more parameters of a database in Amazon Lightsail.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="allocate_static_ip/3">
+
+    <span id="allocate_static_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#allocate_static_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">allocate_static_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L27" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allocates a static IP address.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_certificate_to_distribution/3">
+
+    <span id="attach_certificate_to_distribution/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_certificate_to_distribution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_certificate_to_distribution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L46" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches an SSL/TLS certificate to your Amazon Lightsail content delivery network (CDN)
+distribution.</p>
+<p>After the certificate is attached, your distribution accepts HTTPS traffic for all of the domains
+that are associated with the certificate.</p>
+<p>Use the <code class="inline">CreateCertificate</code> action to create a certificate that you can attach to your
+distribution.</p>
+<p>Only certificates created in the <code class="inline">us-east-1</code> AWS Region can be attached to Lightsail
+distributions. Lightsail distributions are global resources that can reference an origin in any
+AWS Region, and distribute its content globally. However, all distributions are located in the
+<code class="inline">us-east-1</code> Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_disk/3">
+
+    <span id="attach_disk/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_disk/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_disk(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the
+instance with the specified disk name.</p>
+<p>The <code class="inline">attach disk</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_instances_to_load_balancer/3">
+
+    <span id="attach_instances_to_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_instances_to_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_instances_to_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches one or more Lightsail instances to a load balancer.</p>
+<p>After some time, the instances are attached to the load balancer and the health check status is
+available.</p>
+<p>The <code class="inline">attach instances to load balancer</code> operation supports tag-based access control via resource
+tags applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_load_balancer_tls_certificate/3">
+
+    <span id="attach_load_balancer_tls_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_load_balancer_tls_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_load_balancer_tls_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L89" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches a Transport Layer Security (TLS) certificate to your load balancer.</p>
+<p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+<p>Once you create and validate your certificate, you can attach it to your load balancer. You can
+also use this API to rotate the certificates on your account. Use the
+<code class="inline">AttachLoadBalancerTlsCertificate</code> action with the non-attached certificate, and it will replace
+the existing one and become the attached certificate.</p>
+<p>The <code class="inline">AttachLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource
+tags applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_static_ip/3">
+
+    <span id="attach_static_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_static_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_static_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L96" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="close_instance_public_ports/3">
+
+    <span id="close_instance_public_ports/2"></span>
+
+  <div class="detail-header">
+    <a href="#close_instance_public_ports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">close_instance_public_ports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Closes ports for a specific Amazon Lightsail instance.</p>
+<p>The <code class="inline">CloseInstancePublicPorts</code> action supports tag-based access control via resource tags applied
+to the resource identified by <code class="inline">instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="copy_snapshot/3">
+
+    <span id="copy_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#copy_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">copy_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic
+snapshot of an instance or disk as a manual snapshot.</p>
+<p>This operation can also be used to copy a manual or automatic snapshot of an instance or a disk
+from one AWS Region to another in Amazon Lightsail.</p>
+<p>When copying a <em>manual snapshot</em>, be sure to define the <code class="inline">source region</code>, <code class="inline">source snapshot name</code>,
+and <code class="inline">target snapshot name</code> parameters.</p>
+<p>When copying an <em>automatic snapshot</em>, be sure to define the <code class="inline">source region</code>, <code class="inline">source resource name</code>, <code class="inline">target snapshot name</code>, and either the <code class="inline">restore date</code> or the <code class="inline">use latest restorable auto snapshot</code> parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_certificate/3">
+
+    <span id="create_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an SSL/TLS certificate for a Amazon Lightsail content delivery network (CDN) distribution.</p>
+<p>After the certificate is created, use the <code class="inline">AttachCertificateToDistribution</code> action to attach the
+certificate to your distribution.</p>
+<p>Only certificates created in the <code class="inline">us-east-1</code> AWS Region can be attached to Lightsail
+distributions. Lightsail distributions are global resources that can reference an origin in any
+AWS Region, and distribute its content globally. However, all distributions are located in the
+<code class="inline">us-east-1</code> Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_cloud_formation_stack/3">
+
+    <span id="create_cloud_formation_stack/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_cloud_formation_stack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cloud_formation_stack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported
+Amazon Lightsail snapshot.</p>
+<p>This operation results in a CloudFormation stack record that can be used to track the AWS
+CloudFormation stack created. Use the <code class="inline">get cloud formation stack records</code> operation to get a list
+of the CloudFormation stacks created.</p>
+<p>Wait until after your new Amazon EC2 instance is created before running the <code class="inline">create cloud formation stack</code> operation again with the same export snapshot record.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_contact_method/3">
+
+    <span id="create_contact_method/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_contact_method/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_contact_method(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an email or SMS text message contact method.</p>
+<p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can
+add one email address and one mobile phone number contact method in each AWS Region. However, SMS
+text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some
+countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_disk/3">
+
+    <span id="create_disk/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_disk/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_disk(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the same
+Availability Zone (e.g., <code class="inline">us-east-2a</code>).</p>
+<p>The <code class="inline">create disk</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_disk_from_snapshot/3">
+
+    <span id="create_disk_from_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_disk_from_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_disk_from_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a block storage disk from a manual or automatic snapshot of a disk.</p>
+<p>The resulting disk can be attached to an Amazon Lightsail instance in the same Availability Zone
+(e.g., <code class="inline">us-east-2a</code>).</p>
+<p>The <code class="inline">create disk from snapshot</code> operation supports tag-based access control via request tags and
+resource tags applied to the resource identified by <code class="inline">disk snapshot name</code>. For more information,
+see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_disk_snapshot/3">
+
+    <span id="create_disk_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_disk_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_disk_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L221" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a snapshot of a block storage disk.</p>
+<p>You can use snapshots for backups, to make copies of disks, and to save data before shutting down
+a Lightsail instance.</p>
+<p>You can take a snapshot of an attached disk that is in use; however, snapshots only capture data
+that has been written to your disk at the time the snapshot command is issued. This may exclude
+any data that has been cached by any applications or the operating system. If you can pause any
+file systems on the disk long enough to take a snapshot, your snapshot should be complete.
+Nevertheless, if you cannot pause all file writes to the disk, you should unmount the disk from
+within the Lightsail instance, issue the create disk snapshot command, and then remount the disk
+to ensure a consistent and complete snapshot. You may remount and use your disk while the snapshot
+status is pending.</p>
+<p>You can also use this operation to create a snapshot of an instance&#39;s system volume. You might
+want to do this, for example, to recover data from the system volume of a botched instance or to
+create a backup of the system volume like you would for a block storage disk. To create a snapshot
+of a system volume, just define the <code class="inline">instance name</code> parameter when issuing the snapshot command,
+and a snapshot of the defined instance&#39;s system volume will be created. After the snapshot is
+available, you can create a block storage disk from the snapshot and attach it to a running
+instance to access the data on the disk.</p>
+<p>The <code class="inline">create disk snapshot</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_distribution/3">
+
+    <span id="create_distribution/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_distribution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_distribution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon Lightsail content delivery network (CDN) distribution.</p>
+<p>A distribution is a globally distributed network of caching servers that improve the performance
+of your website or web application hosted on a Lightsail instance. For more information, see
+<a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-content-delivery-networks">Content delivery networks in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_domain/3">
+
+    <span id="create_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a domain resource for the specified domain (e.g., example.com).</p>
+<p>The <code class="inline">create domain</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_domain_entry/3">
+
+    <span id="create_domain_entry/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_domain_entry/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_domain_entry(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L254" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates one of the following entry records associated with the domain: Address (A), canonical name
+(CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV),
+or text (TXT).</p>
+<p>The <code class="inline">create domain entry</code> operation supports tag-based access control via resource tags applied to
+the resource identified by <code class="inline">domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_instance_snapshot/3">
+
+    <span id="create_instance_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_instance_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_instance_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a snapshot of a specific virtual private server, or <em>instance</em>.</p>
+<p>You can use a snapshot to create a new instance that is based on that snapshot.</p>
+<p>The <code class="inline">create instance snapshot</code> operation supports tag-based access control via request tags. For
+more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_instances/3">
+
+    <span id="create_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates one or more Amazon Lightsail instances.</p>
+<p>The <code class="inline">create instances</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_instances_from_snapshot/3">
+
+    <span id="create_instances_from_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_instances_from_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_instances_from_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates one or more new instances from a manual or automatic snapshot of an instance.</p>
+<p>The <code class="inline">create instances from snapshot</code> operation supports tag-based access control via request tags
+and resource tags applied to the resource identified by <code class="inline">instance snapshot name</code>. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_key_pair/3">
+
+    <span id="create_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an SSH key pair.</p>
+<p>The <code class="inline">create key pair</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_load_balancer/3">
+
+    <span id="create_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L314" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Lightsail load balancer.</p>
+<p>To learn more about deciding whether to load balance your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load
+balancing</a>.
+You can create up to 5 load balancers per AWS Region in your account.</p>
+<p>When you create a load balancer, you can specify a unique name and port settings. To change
+additional load balancer settings, use the <code class="inline">UpdateLoadBalancerAttribute</code> operation.</p>
+<p>The <code class="inline">create load balancer</code> operation supports tag-based access control via request tags. For more
+information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_load_balancer_tls_certificate/3">
+
+    <span id="create_load_balancer_tls_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_load_balancer_tls_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_load_balancer_tls_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L327" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Lightsail load balancer TLS certificate.</p>
+<p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+<p>The <code class="inline">CreateLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource
+tags applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_relational_database/3">
+
+    <span id="create_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L337" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new database in Amazon Lightsail.</p>
+<p>The <code class="inline">create relational database</code> operation supports tag-based access control via request tags. For
+more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_relational_database_from_snapshot/3">
+
+    <span id="create_relational_database_from_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_relational_database_from_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_relational_database_from_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L351" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new database from an existing database snapshot in Amazon Lightsail.</p>
+<p>You can create a new database from a snapshot in if something goes wrong with your original
+database, or to change it to a different plan, such as a high availability or standard plan.</p>
+<p>The <code class="inline">create relational database from snapshot</code> operation supports tag-based access control via
+request tags and resource tags applied to the resource identified by
+relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_relational_database_snapshot/3">
+
+    <span id="create_relational_database_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_relational_database_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_relational_database_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a snapshot of your database in Amazon Lightsail.</p>
+<p>You can use snapshots for backups, to make copies of a database, and to save data before deleting
+a database.</p>
+<p>The <code class="inline">create relational database snapshot</code> operation supports tag-based access control via request
+tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_alarm/3">
+
+    <span id="delete_alarm/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_alarm/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_alarm(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L375" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an alarm.</p>
+<p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is
+met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon
+Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_auto_snapshot/3">
+
+    <span id="delete_auto_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_auto_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_auto_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an automatic snapshot of an instance or disk.</p>
+<p>For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_certificate/3">
+
+    <span id="delete_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L395" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN)
+distribution.</p>
+<p>Certificates that are currently attached to a distribution cannot be deleted. Use the
+<code class="inline">DetachCertificateFromDistribution</code> action to detach a certificate from a distribution.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_contact_method/3">
+
+    <span id="delete_contact_method/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_contact_method/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_contact_method(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L407" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a contact method.</p>
+<p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can
+add one email address and one mobile phone number contact method in each AWS Region. However, SMS
+text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some
+countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_disk/3">
+
+    <span id="delete_disk/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_disk/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_disk(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L421" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified block storage disk.</p>
+<p>The disk must be in the <code class="inline">available</code> state (not attached to a Lightsail instance).</p>
+<p>The disk may remain in the <code class="inline">deleting</code> state for several minutes.</p>
+<p>The <code class="inline">delete disk</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_disk_snapshot/3">
+
+    <span id="delete_disk_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_disk_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_disk_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L437" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified disk snapshot.</p>
+<p>When you make periodic snapshots of a disk, the snapshots are incremental, and only the blocks on
+the device that have changed since your last snapshot are saved in the new snapshot. When you
+delete a snapshot, only the data not needed for any other snapshot is removed. So regardless of
+which prior snapshots have been deleted, all active snapshots will have access to all the
+information needed to restore the disk.</p>
+<p>The <code class="inline">delete disk snapshot</code> operation supports tag-based access control via resource tags applied
+to the resource identified by <code class="inline">disk snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_distribution/3">
+
+    <span id="delete_distribution/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_distribution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_distribution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L444" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes your Amazon Lightsail content delivery network (CDN) distribution.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_domain/3">
+
+    <span id="delete_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L454" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified domain recordset and all of its domain records.</p>
+<p>The <code class="inline">delete domain</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_domain_entry/3">
+
+    <span id="delete_domain_entry/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_domain_entry/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_domain_entry(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specific domain entry.</p>
+<p>The <code class="inline">delete domain entry</code> operation supports tag-based access control via resource tags applied to
+the resource identified by <code class="inline">domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_instance/3">
+
+    <span id="delete_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L474" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an Amazon Lightsail instance.</p>
+<p>The <code class="inline">delete instance</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_instance_snapshot/3">
+
+    <span id="delete_instance_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_instance_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_instance_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L485" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specific snapshot of a virtual private server (or <em>instance</em>).</p>
+<p>The <code class="inline">delete instance snapshot</code> operation supports tag-based access control via resource tags
+applied to the resource identified by <code class="inline">instance snapshot name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_key_pair/3">
+
+    <span id="delete_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L495" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specific SSH key pair.</p>
+<p>The <code class="inline">delete key pair</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">key pair name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_known_host_keys/3">
+
+    <span id="delete_known_host_keys/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_known_host_keys/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_known_host_keys(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L510" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP
+clients to authenticate an instance.</p>
+<p>This operation enables the Lightsail browser-based SSH or RDP clients to connect to the instance
+after a host key mismatch.</p>
+<p>Perform this operation only if you were expecting the host key or certificate mismatch or if you
+are familiar with the new host key or certificate on the instance. For more information, see
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP client</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_load_balancer/3">
+
+    <span id="delete_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L523" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Lightsail load balancer and all its associated SSL/TLS certificates.</p>
+<p>Once the load balancer is deleted, you will need to create a new load balancer, create a new
+certificate, and verify domain ownership again.</p>
+<p>The <code class="inline">delete load balancer</code> operation supports tag-based access control via resource tags applied
+to the resource identified by <code class="inline">load balancer name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_load_balancer_tls_certificate/3">
+
+    <span id="delete_load_balancer_tls_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_load_balancer_tls_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_load_balancer_tls_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L534" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
+<p>The <code class="inline">DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access control via resource
+tags applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_relational_database/3">
+
+    <span id="delete_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L545" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a database in Amazon Lightsail.</p>
+<p>The <code class="inline">delete relational database</code> operation supports tag-based access control via resource tags
+applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_relational_database_snapshot/3">
+
+    <span id="delete_relational_database_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_relational_database_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_relational_database_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L556" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a database snapshot in Amazon Lightsail.</p>
+<p>The <code class="inline">delete relational database snapshot</code> operation supports tag-based access control via resource
+tags applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_certificate_from_distribution/3">
+
+    <span id="detach_certificate_from_distribution/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_certificate_from_distribution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_certificate_from_distribution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L567" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN)
+distribution.</p>
+<p>After the certificate is detached, your distribution stops accepting traffic for all of the
+domains that are associated with the certificate.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_disk/3">
+
+    <span id="detach_disk/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_disk/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_disk(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L580" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a stopped block storage disk from a Lightsail instance.</p>
+<p>Make sure to unmount any file systems on the device within your operating system before stopping
+the instance and detaching the disk.</p>
+<p>The <code class="inline">detach disk</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">disk name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_instances_from_load_balancer/3">
+
+    <span id="detach_instances_from_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_instances_from_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_instances_from_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L594" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches the specified instances from a Lightsail load balancer.</p>
+<p>This operation waits until the instances are no longer needed before they are detached from the
+load balancer.</p>
+<p>The <code class="inline">detach instances from load balancer</code> operation supports tag-based access control via resource
+tags applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_static_ip/3">
+
+    <span id="detach_static_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_static_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_static_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L601" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a static IP from the Amazon Lightsail instance to which it is attached.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_add_on/3">
+
+    <span id="disable_add_on/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_add_on/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_add_on(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L610" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables an add-on for an Amazon Lightsail resource.</p>
+<p>For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="download_default_key_pair/3">
+
+    <span id="download_default_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#download_default_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">download_default_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L617" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Downloads the default SSH key pair from the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_add_on/3">
+
+    <span id="enable_add_on/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_add_on/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_add_on(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L626" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables or modifies an add-on for an Amazon Lightsail resource.</p>
+<p>For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_snapshot/3">
+
+    <span id="export_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#export_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L648" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute
+Cloud (Amazon EC2).</p>
+<p>This operation results in an export snapshot record that can be used with the <code class="inline">create cloud formation stack</code> operation to create new Amazon EC2 instances.</p>
+<p>Exported instance snapshots appear in Amazon EC2 as Amazon Machine Images (AMIs), and the instance
+system disk appears as an Amazon Elastic Block Store (Amazon EBS) volume. Exported disk snapshots
+appear in Amazon EC2 as Amazon EBS volumes. Snapshots are exported to the same Amazon Web Services
+Region in Amazon EC2 as the source Lightsail snapshot.</p>
+<p>The <code class="inline">export snapshot</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">source snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+<p>Use the <code class="inline">get instance snapshots</code> or <code class="inline">get disk snapshots</code> operations to get a list of snapshots
+that you can export to Amazon EC2.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_active_names/3">
+
+    <span id="get_active_names/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_active_names/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_active_names(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L655" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the names of all active (not deleted) resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_alarms/3">
+
+    <span id="get_alarms/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_alarms/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_alarms(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L669" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the configured alarms.</p>
+<p>Specify an alarm name in your request to return information about a specific alarm, or specify a
+monitored resource name to return information about all alarms for a specific resource.</p>
+<p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is
+met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon
+Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_auto_snapshots/3">
+
+    <span id="get_auto_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_auto_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_auto_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L678" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the available automatic snapshots for an instance or disk.</p>
+<p>For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_blueprints/3">
+
+    <span id="get_blueprints/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_blueprints/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_blueprints(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L694" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of available instance images, or <em>blueprints</em>.</p>
+<p>You can use a blueprint to create a new instance already running a specific operating system, as
+well as a preinstalled app or development stack. The software each instance is running depends on
+the blueprint image you choose.</p>
+<p>Use active blueprints when creating new instances. Inactive blueprints are listed to support
+customers with existing instances and are not necessarily available to create new instances.
+Blueprints are marked inactive when they become outdated due to operating system updates or new
+application releases.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_bundles/3">
+
+    <span id="get_bundles/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_bundles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_bundles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L703" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of bundles that are available for purchase.</p>
+<p>A bundle describes the specs for your virtual private server (or <em>instance</em>).</p>
+
+  </section>
+</section>
+<section class="detail" id="get_certificates/3">
+
+    <span id="get_certificates/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_certificates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_certificates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L714" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p>
+<p>To get a summary of a certificate, ommit <code class="inline">includeCertificateDetails</code> from your request. The
+response will include only the certificate Amazon Resource Name (ARN), certificate name, domain
+name, and tags.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cloud_formation_stack_records/3">
+
+    <span id="get_cloud_formation_stack_records/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_cloud_formation_stack_records/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cloud_formation_stack_records(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L725" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the CloudFormation stack record created as a result of the <code class="inline">create cloud formation stack</code>
+operation.</p>
+<p>An AWS CloudFormation stack is used to create a new Amazon EC2 instance from an exported Lightsail
+snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_contact_methods/3">
+
+    <span id="get_contact_methods/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_contact_methods/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_contact_methods(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L739" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the configured contact methods.</p>
+<p>Specify a protocol in your request to return information about a specific contact method.</p>
+<p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can
+add one email address and one mobile phone number contact method in each AWS Region. However, SMS
+text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some
+countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_disk/3">
+
+    <span id="get_disk/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_disk/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_disk(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific block storage disk.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_disk_snapshot/3">
+
+    <span id="get_disk_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_disk_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_disk_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L753" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific block storage disk snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_disk_snapshots/3">
+
+    <span id="get_disk_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_disk_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_disk_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L760" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all block storage disk snapshots in your AWS account and region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_disks/3">
+
+    <span id="get_disks/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_disks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_disks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L767" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all block storage disks in your AWS account and region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_distribution_bundles/3">
+
+    <span id="get_distribution_bundles/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_distribution_bundles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_distribution_bundles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L778" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list bundles that can be applied to you Amazon Lightsail content delivery network
+(CDN) distributions.</p>
+<p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your
+dsitribution.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_distribution_latest_cache_reset/3">
+
+    <span id="get_distribution_latest_cache_reset/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_distribution_latest_cache_reset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_distribution_latest_cache_reset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L786" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content
+delivery network (CDN) distribution.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_distribution_metric_data/3">
+
+    <span id="get_distribution_metric_data/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_distribution_metric_data/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_distribution_metric_data(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L798" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the data points of a specific metric for an Amazon Lightsail content delivery network
+(CDN) distribution.</p>
+<p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor
+and collect metric data regularly to maintain the reliability, availability, and performance of
+your resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_distributions/3">
+
+    <span id="get_distributions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_distributions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_distributions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L806" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN)
+distributions.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_domain/3">
+
+    <span id="get_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L813" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific domain recordset.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_domains/3">
+
+    <span id="get_domains/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_domains/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_domains(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L820" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of all domains in the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_export_snapshot_records/3">
+
+    <span id="get_export_snapshot_records/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_export_snapshot_records/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_export_snapshot_records(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L830" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the export snapshot record created as a result of the <code class="inline">export snapshot</code> operation.</p>
+<p>An export snapshot record can be used to create a new Amazon EC2 instance and its related
+resources with the <code class="inline">create cloud formation stack</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance/3">
+
+    <span id="get_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L837" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific Amazon Lightsail instance, which is a virtual private server.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_access_details/3">
+
+    <span id="get_instance_access_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_access_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_access_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L849" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or
+<em>instance</em>.</p>
+<p>The <code class="inline">get instance access details</code> operation supports tag-based access control via resource tags
+applied to the resource identified by <code class="inline">instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev
+Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_metric_data/3">
+
+    <span id="get_instance_metric_data/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_metric_data/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_metric_data(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L861" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the data points for the specified Amazon Lightsail instance metric, given an instance
+name.</p>
+<p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor
+and collect metric data regularly to maintain the reliability, availability, and performance of
+your resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_port_states/3">
+
+    <span id="get_instance_port_states/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_port_states/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_port_states(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L869" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the firewall port states for a specific Amazon Lightsail instance, the IP addresses
+allowed to connect to the instance through the ports, and the protocol.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_snapshot/3">
+
+    <span id="get_instance_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L876" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific instance snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_snapshots/3">
+
+    <span id="get_instance_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L883" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all instance snapshots for the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instance_state/3">
+
+    <span id="get_instance_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instance_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instance_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L892" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the state of a specific instance.</p>
+<p>Works on one instance at a time.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_instances/3">
+
+    <span id="get_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L899" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all Amazon Lightsail virtual private servers, or <em>instances</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_key_pair/3">
+
+    <span id="get_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L906" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific key pair.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_key_pairs/3">
+
+    <span id="get_key_pairs/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_key_pairs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_key_pairs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L913" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all key pairs in the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_load_balancer/3">
+
+    <span id="get_load_balancer/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_load_balancer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_load_balancer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L920" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified Lightsail load balancer.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_load_balancer_metric_data/3">
+
+    <span id="get_load_balancer_metric_data/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_load_balancer_metric_data/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_load_balancer_metric_data(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L931" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about health metrics for your Lightsail load balancer.</p>
+<p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor
+and collect metric data regularly to maintain the reliability, availability, and performance of
+your resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_load_balancer_tls_certificates/3">
+
+    <span id="get_load_balancer_tls_certificates/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_load_balancer_tls_certificates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_load_balancer_tls_certificates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L944" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the TLS certificates that are associated with the specified Lightsail
+load balancer.</p>
+<p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
+<p>You can have a maximum of 2 certificates associated with a Lightsail load balancer. One is active
+and the other is inactive.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_load_balancers/3">
+
+    <span id="get_load_balancers/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_load_balancers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_load_balancers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L951" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all load balancers in an account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_operation/3">
+
+    <span id="get_operation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_operation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_operation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L961" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific operation.</p>
+<p>Operations include events such as when you create an instance, allocate a static IP, attach a
+static IP, and so on.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_operations/3">
+
+    <span id="get_operations/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_operations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_operations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L972" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all operations.</p>
+<p>Results are returned from oldest to newest, up to a maximum of 200. Results can be paged by making
+each subsequent call to <code class="inline">GetOperations</code> use the maximum (last) <code class="inline">statusChangedAt</code> value from the
+previous request.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_operations_for_resource/3">
+
+    <span id="get_operations_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_operations_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_operations_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L979" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets operations for a specific resource (e.g., an instance or a static IP).</p>
+
+  </section>
+</section>
+<section class="detail" id="get_regions/3">
+
+    <span id="get_regions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_regions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_regions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L988" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of all valid regions for Amazon Lightsail.</p>
+<p>Use the <code class="inline">include availability zones</code> parameter to also return the Availability Zones in a region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database/3">
+
+    <span id="get_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L995" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific database in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_blueprints/3">
+
+    <span id="get_relational_database_blueprints/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_blueprints/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_blueprints(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1006" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of available database blueprints in Amazon Lightsail.</p>
+<p>A blueprint describes the major engine version of a database.</p>
+<p>You can use a blueprint ID to create a new database that runs a specific database engine.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_bundles/3">
+
+    <span id="get_relational_database_bundles/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_bundles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_bundles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1017" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of bundles that are available in Amazon Lightsail.</p>
+<p>A bundle describes the performance specifications for a database.</p>
+<p>You can use a bundle ID to create a new database with explicit performance specifications.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_events/3">
+
+    <span id="get_relational_database_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1024" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of events for a specific database in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_log_events/3">
+
+    <span id="get_relational_database_log_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_log_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_log_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1031" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of log events for a database in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_log_streams/3">
+
+    <span id="get_relational_database_log_streams/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_log_streams/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_log_streams(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1038" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of available log streams for a specific database in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_master_user_password/3">
+
+    <span id="get_relational_database_master_user_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_master_user_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_master_user_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1049" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current, previous, or pending versions of the master user password for a Lightsail
+database.</p>
+<p>The <code class="inline">GetRelationalDatabaseMasterUserPassword</code> operation supports tag-based access control via
+resource tags applied to the resource identified by relationalDatabaseName.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_metric_data/3">
+
+    <span id="get_relational_database_metric_data/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_metric_data/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_metric_data(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1060" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the data points of the specified metric for a database in Amazon Lightsail.</p>
+<p>Metrics report the utilization of your resources, and the error counts generated by them. Monitor
+and collect metric data regularly to maintain the reliability, availability, and performance of
+your resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_parameters/3">
+
+    <span id="get_relational_database_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1072" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all of the runtime parameters offered by the underlying database software, or engine, for
+a specific database in Amazon Lightsail.</p>
+<p>In addition to the parameter names and values, this operation returns other information about each
+parameter. This information includes whether changes require a reboot, whether the parameter is
+modifiable, the allowed values, and the data types.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_snapshot/3">
+
+    <span id="get_relational_database_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1079" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific database snapshot in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_database_snapshots/3">
+
+    <span id="get_relational_database_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_database_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_database_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1086" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all of your database snapshots in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_relational_databases/3">
+
+    <span id="get_relational_databases/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_relational_databases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_relational_databases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1093" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all of your databases in Amazon Lightsail.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_static_ip/3">
+
+    <span id="get_static_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_static_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_static_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a specific static IP.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_static_ips/3">
+
+    <span id="get_static_ips/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_static_ips/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_static_ips(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all static IPs in the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="import_key_pair/3">
+
+    <span id="import_key_pair/2"></span>
+
+  <div class="detail-header">
+    <a href="#import_key_pair/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">import_key_pair(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1114" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Imports a public SSH key from a specific key pair.</p>
+
+  </section>
+</section>
+<section class="detail" id="is_vpc_peered/3">
+
+    <span id="is_vpc_peered/2"></span>
+
+  <div class="detail-header">
+    <a href="#is_vpc_peered/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">is_vpc_peered(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1121" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>
+
+  </section>
+</section>
+<section class="detail" id="open_instance_public_ports/3">
+
+    <span id="open_instance_public_ports/2"></span>
+
+  <div class="detail-header">
+    <a href="#open_instance_public_ports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">open_instance_public_ports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to
+connect to the instance through the ports, and the protocol.</p>
+<p>The <code class="inline">OpenInstancePublicPorts</code> action supports tag-based access control via resource tags applied
+to the resource identified by <code class="inline">instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="peer_vpc/3">
+
+    <span id="peer_vpc/2"></span>
+
+  <div class="detail-header">
+    <a href="#peer_vpc/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">peer_vpc(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tries to peer the Lightsail VPC with the user&#39;s default VPC.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_alarm/3">
+
+    <span id="put_alarm/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_alarm/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_alarm(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates or updates an alarm, and associates it with the specified metric.</p>
+<p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is
+met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon
+Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
+<p>When this action creates an alarm, the alarm state is immediately set to <code class="inline">INSUFFICIENT_DATA</code>. The
+alarm is then evaluated and its state is set appropriately. Any actions associated with the new
+state are then executed.</p>
+<p>When you update an existing alarm, its state is left unchanged, but the update completely
+overwrites the previous configuration of the alarm. The alarm is then evaluated with the updated
+configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_instance_public_ports/3">
+
+    <span id="put_instance_public_ports/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_instance_public_ports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_instance_public_ports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1173" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to
+connect to the instance through the ports, and the protocol.</p>
+<p>This action also closes all currently open ports that are not included in the request. Include all
+of the ports and the protocols you want to open in your <code class="inline">PutInstancePublicPorts</code>request. Or use
+the <code class="inline">OpenInstancePublicPorts</code> action to open ports without closing currently open ports.</p>
+<p>The <code class="inline">PutInstancePublicPorts</code> action supports tag-based access control via resource tags applied to
+the resource identified by <code class="inline">instanceName</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="reboot_instance/3">
+
+    <span id="reboot_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#reboot_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reboot_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restarts a specific instance.</p>
+<p>The <code class="inline">reboot instance</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="reboot_relational_database/3">
+
+    <span id="reboot_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#reboot_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reboot_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restarts a specific database in Amazon Lightsail.</p>
+<p>The <code class="inline">reboot relational database</code> operation supports tag-based access control via resource tags
+applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="release_static_ip/3">
+
+    <span id="release_static_ip/2"></span>
+
+  <div class="detail-header">
+    <a href="#release_static_ip/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">release_static_ip(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a specific static IP from your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="reset_distribution_cache/3">
+
+    <span id="reset_distribution_cache/2"></span>
+
+  <div class="detail-header">
+    <a href="#reset_distribution_cache/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset_distribution_cache(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes currently cached content from your Amazon Lightsail content delivery network (CDN)
+distribution.</p>
+<p>After resetting the cache, the next time a content request is made, your distribution pulls,
+serves, and caches it from the origin.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_contact_method_verification/3">
+
+    <span id="send_contact_method_verification/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_contact_method_verification/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_contact_method_verification(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1233" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends a verification request to an email contact method to ensure it&#39;s owned by the requester.</p>
+<p>SMS contact methods don&#39;t need to be verified.</p>
+<p>A contact method is used to send you notifications about your Amazon Lightsail resources. You can
+add one email address and one mobile phone number contact method in each AWS Region. However, SMS
+text messaging is not supported in some AWS Regions, and SMS text messages cannot be sent to some
+countries/regions. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-notifications">Notifications in Amazon Lightsail</a>.</p>
+<p>A verification request is sent to the contact method when you initially create it. Use this action
+to send another verification request if a previous verification request was deleted, or has
+expired.</p>
+<p>Notifications are not sent to an email contact method until after it is verified, and confirmed as
+valid.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_instance/3">
+
+    <span id="start_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1249" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a specific Amazon Lightsail instance from a stopped state.</p>
+<p>To restart an instance, use the <code class="inline">reboot instance</code> operation.</p>
+<p>When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To
+use the same IP address after stopping and starting an instance, create a static IP address and
+attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.</p>
+<p>The <code class="inline">start instance</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_relational_database/3">
+
+    <span id="start_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a specific database from a stopped state in Amazon Lightsail.</p>
+<p>To restart a database, use the <code class="inline">reboot relational database</code> operation.</p>
+<p>The <code class="inline">start relational database</code> operation supports tag-based access control via resource tags
+applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_instance/3">
+
+    <span id="stop_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a specific Amazon Lightsail instance that is currently running.</p>
+<p>When you start a stopped instance, Lightsail assigns a new public IP address to the instance. To
+use the same IP address after stopping and starting an instance, create a static IP address and
+attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.</p>
+<p>The <code class="inline">stop instance</code> operation supports tag-based access control via resource tags applied to the
+resource identified by <code class="inline">instance name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_relational_database/3">
+
+    <span id="stop_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a specific database that is currently running in Amazon Lightsail.</p>
+<p>The <code class="inline">stop relational database</code> operation supports tag-based access control via resource tags
+applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1301" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags to the specified Amazon Lightsail resource.</p>
+<p>Each resource can have a maximum of 50 tags. Each tag consists of a key and an optional value. Tag
+keys must be unique per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail Dev Guide</a>.</p>
+<p>The <code class="inline">tag resource</code> operation supports tag-based access control via request tags and resource tags
+applied to the resource identified by <code class="inline">resource name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev
+Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="test_alarm/3">
+
+    <span id="test_alarm/2"></span>
+
+  <div class="detail-header">
+    <a href="#test_alarm/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">test_alarm(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1315" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tests an alarm by displaying a banner on the Amazon Lightsail console.</p>
+<p>If a notification trigger is configured for the specified alarm, the test also sends a
+notification to the notification protocol (<code class="inline">Email</code> and/or <code class="inline">SMS</code>) configured for the alarm.</p>
+<p>An alarm is used to monitor a single metric for one of your resources. When a metric condition is
+met, the alarm can notify you by email, SMS text message, and a banner displayed on the Amazon
+Lightsail console. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms">Alarms in Amazon Lightsail</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="unpeer_vpc/3">
+
+    <span id="unpeer_vpc/2"></span>
+
+  <div class="detail-header">
+    <a href="#unpeer_vpc/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unpeer_vpc(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1322" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to unpeer the Lightsail VPC from the user&#39;s default VPC.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1334" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified set of tag keys and their values from the specified Amazon Lightsail
+resource.</p>
+<p>The <code class="inline">untag resource</code> operation supports tag-based access control via request tags and resource
+tags applied to the resource identified by <code class="inline">resource name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_distribution/3">
+
+    <span id="update_distribution/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_distribution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_distribution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1343" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing Amazon Lightsail content delivery network (CDN) distribution.</p>
+<p>Use this action to update the configuration of your existing distribution</p>
+
+  </section>
+</section>
+<section class="detail" id="update_distribution_bundle/3">
+
+    <span id="update_distribution_bundle/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_distribution_bundle/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_distribution_bundle(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1361" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p>
+<p>A distribution bundle specifies the monthly network transfer quota and monthly cost of your
+dsitribution.</p>
+<p>Update your distribution&#39;s bundle if your distribution is going over its monthly network transfer
+quota and is incurring an overage fee.</p>
+<p>You can update your distribution&#39;s bundle only one time within your monthly AWS billing cycle. To
+determine if you can update your distribution&#39;s bundle, use the <code class="inline">GetDistributions</code> action. The
+<code class="inline">ableToUpdateBundle</code> parameter in the result will indicate whether you can currently update your
+distribution&#39;s bundle.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_domain_entry/3">
+
+    <span id="update_domain_entry/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_domain_entry/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_domain_entry(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1371" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a domain recordset after it is created.</p>
+<p>The <code class="inline">update domain entry</code> operation supports tag-based access control via resource tags applied to
+the resource identified by <code class="inline">domain name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_load_balancer_attribute/3">
+
+    <span id="update_load_balancer_attribute/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_load_balancer_attribute/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_load_balancer_attribute(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified attribute for a load balancer.</p>
+<p>You can only update one attribute at a time.</p>
+<p>The <code class="inline">update load balancer attribute</code> operation supports tag-based access control via resource tags
+applied to the resource identified by <code class="inline">load balancer name</code>. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_relational_database/3">
+
+    <span id="update_relational_database/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_relational_database/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_relational_database(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1398" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows the update of one or more attributes of a database in Amazon Lightsail.</p>
+<p>Updates are applied immediately, or in cases where the updates could result in an outage, are
+applied during the database&#39;s predefined maintenance window.</p>
+<p>The <code class="inline">update relational database</code> operation supports tag-based access control via resource tags
+applied to the resource identified by relationalDatabaseName. For more information, see the
+<a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_relational_database_parameters/3">
+
+    <span id="update_relational_database_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_relational_database_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_relational_database_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lightsail.ex#L1415" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows the update of one or more parameters of a database in Amazon Lightsail.</p>
+<p>Parameter updates don&#39;t cause outages; therefore, their application is not subject to the
+preferred maintenance window. However, there are two ways in which parameter updates are applied:
+<code class="inline">dynamic</code> or <code class="inline">pending-reboot</code>. Parameters marked with a <code class="inline">dynamic</code> apply type are applied
+immediately. Parameters marked with a <code class="inline">pending-reboot</code> apply type are applied only after the
+database is rebooted using the <code class="inline">reboot relational database</code> operation.</p>
+<p>The <code class="inline">update relational database parameters</code> operation supports tag-based access control via
+resource tags applied to the resource identified by relationalDatabaseName. For more information,
+see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,3849 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.QuickSight — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.QuickSight
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon QuickSight API Reference</p>
+<p>Amazon QuickSight is a fully managed, serverless business intelligence service for the AWS Cloud
+that makes it easy to extend data and insights to every user in your organization.</p>
+<p>This API reference contains documentation for a programming interface that you can use to manage
+Amazon QuickSight.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_ingestion/6">cancel_ingestion(client, aws_account_id, data_set_id, ingestion_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels an ongoing ingestion of data into SPICE.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_account_customization/4">create_account_customization(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates Amazon QuickSight customizations the current AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_analysis/5">create_analysis(client, analysis_id, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an analysis in Amazon QuickSight.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dashboard/5">create_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a dashboard from a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_data_set/4">create_data_set(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_data_source/4">create_data_source(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a data source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group/5">create_group(client, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon QuickSight group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group_membership/7">create_group_membership(client, aws_account_id, group_name, member_name, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds an Amazon QuickSight user to an Amazon QuickSight group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_i_a_m_policy_assignment/5">create_i_a_m_policy_assignment(client, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_ingestion/6">create_ingestion(client, aws_account_id, data_set_id, ingestion_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates and starts a new SPICE ingestion on a dataset</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_namespace/4">create_namespace(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_template/5">create_template(client, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a template from an existing QuickSight analysis or template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_template_alias/6">create_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a template alias for a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_theme/5">create_theme(client, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_theme_alias/6">create_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a theme alias for a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_account_customization/4">delete_account_customization(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and
+QuickSight namespace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_analysis/5">delete_analysis(client, analysis_id, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an analysis from Amazon QuickSight.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dashboard/5">delete_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_data_set/5">delete_data_set(client, aws_account_id, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_data_source/5">delete_data_source(client, aws_account_id, data_source_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the data source permanently.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_group/6">delete_group(client, aws_account_id, group_name, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a user group from Amazon QuickSight.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_group_membership/7">delete_group_membership(client, aws_account_id, group_name, member_name, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a user from a group so that the user is no longer a member of the group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_i_a_m_policy_assignment/6">delete_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing IAM policy assignment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_namespace/5">delete_namespace(client, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a namespace and the users and groups that are associated with the namespace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_template/5">delete_template(client, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_template_alias/6">delete_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the item that the specified template alias points to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_theme/5">delete_theme(client, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_theme_alias/6">delete_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the version of the theme that the specified theme alias points to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user/6">delete_user(client, aws_account_id, namespace, user_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and
+Access Management (IAM) user or role that&#39;s making the call.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_by_principal_id/6">delete_user_by_principal_id(client, aws_account_id, namespace, principal_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user identified by its principal ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_account_customization/5">describe_account_customization(client, aws_account_id, namespace \\ nil, resolved \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the customizations associated with the provided AWS account and Amazon QuickSight
+namespace in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_account_settings/3">describe_account_settings(client, aws_account_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the settings that were used when your QuickSight subscription was first created in this
+AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_analysis/4">describe_analysis(client, analysis_id, aws_account_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a summary of the metadata for an analysis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_analysis_permissions/4">describe_analysis_permissions(client, analysis_id, aws_account_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides the read and write permissions for an analysis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dashboard/6">describe_dashboard(client, aws_account_id, dashboard_id, alias_name \\ nil, version_number \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides a summary for a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dashboard_permissions/4">describe_dashboard_permissions(client, aws_account_id, dashboard_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes read and write permissions for a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_data_set/4">describe_data_set(client, aws_account_id, data_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_data_set_permissions/4">describe_data_set_permissions(client, aws_account_id, data_set_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions on a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_data_source/4">describe_data_source(client, aws_account_id, data_source_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a data source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_data_source_permissions/4">describe_data_source_permissions(client, aws_account_id, data_source_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the resource permissions for a data source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_group/5">describe_group(client, aws_account_id, group_name, namespace, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an Amazon QuickSight group&#39;s description and Amazon Resource Name (ARN).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_i_a_m_policy_assignment/5">describe_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an existing IAM policy assignment, as specified by the assignment name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_ingestion/5">describe_ingestion(client, aws_account_id, data_set_id, ingestion_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a SPICE ingestion.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_namespace/4">describe_namespace(client, aws_account_id, namespace, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the current namespace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_template/6">describe_template(client, aws_account_id, template_id, alias_name \\ nil, version_number \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a template&#39;s metadata.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_template_alias/5">describe_template_alias(client, alias_name, aws_account_id, template_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the template alias for a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_template_permissions/4">describe_template_permissions(client, aws_account_id, template_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes read and write permissions on a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_theme/6">describe_theme(client, aws_account_id, theme_id, alias_name \\ nil, version_number \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_theme_alias/5">describe_theme_alias(client, alias_name, aws_account_id, theme_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the alias for a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_theme_permissions/4">describe_theme_permissions(client, aws_account_id, theme_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the read and write permissions for a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user/5">describe_user(client, aws_account_id, namespace, user_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a user, given the user name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_dashboard_embed_url/9">get_dashboard_embed_url(client, aws_account_id, dashboard_id, identity_type, reset_disabled \\ nil, session_lifetime_in_minutes \\ nil, undo_redo_disabled \\ nil, user_arn \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generates a session URL and authorization code that you can use to embed an Amazon QuickSight
+read-only dashboard in your web server code.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_session_embed_url/6">get_session_embed_url(client, aws_account_id, entry_point \\ nil, session_lifetime_in_minutes \\ nil, user_arn \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generates a session URL and authorization code that you can use to embed the Amazon QuickSight
+console in your web server code.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_analyses/5">list_analyses(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists Amazon QuickSight analyses that exist in the specified AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dashboard_versions/6">list_dashboard_versions(client, aws_account_id, dashboard_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the versions of the dashboards in the QuickSight subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dashboards/5">list_dashboards(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists dashboards in an AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_data_sets/5">list_data_sets(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all of the datasets belonging to the current AWS account in an AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_data_sources/5">list_data_sources(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists data sources in current AWS Region that belong to this AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_group_memberships/7">list_group_memberships(client, aws_account_id, group_name, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists member users in a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_groups/6">list_groups(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all user groups in Amazon QuickSight.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_i_a_m_policy_assignments/6">list_i_a_m_policy_assignments(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists IAM policy assignments in the current Amazon QuickSight account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_i_a_m_policy_assignments_for_user/7">list_i_a_m_policy_assignments_for_user(client, aws_account_id, namespace, user_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM
+policies assigned to the specified user and group or groups that the user belongs to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_ingestions/6">list_ingestions(client, aws_account_id, data_set_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the history of SPICE ingestions for a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_namespaces/5">list_namespaces(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the namespaces for the specified AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags assigned to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_template_aliases/6">list_template_aliases(client, aws_account_id, template_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the aliases of a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_template_versions/6">list_template_versions(client, aws_account_id, template_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the versions of the templates in the current Amazon QuickSight account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_templates/5">list_templates(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the templates in the current Amazon QuickSight account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_theme_aliases/6">list_theme_aliases(client, aws_account_id, theme_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the aliases of a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_theme_versions/6">list_theme_versions(client, aws_account_id, theme_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the versions of the themes in the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_themes/6">list_themes(client, aws_account_id, max_results \\ nil, next_token \\ nil, type \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the themes in the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_groups/7">list_user_groups(client, aws_account_id, namespace, user_name, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_users/6">list_users(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of all of the Amazon QuickSight users belonging to this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_user/5">register_user(client, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity and Access
+Management (IAM) identity or role specified in the request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#restore_analysis/5">restore_analysis(client, analysis_id, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restores an analysis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_analyses/4">search_analyses(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for analyses that belong to the user specified in the filter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_dashboards/4">search_dashboards(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for dashboards that belong to a user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns one or more tags (key-value pairs) to the specified QuickSight resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag or tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_account_customization/4">update_account_customization(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates Amazon QuickSight customizations the current AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_account_settings/4">update_account_settings(client, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Amazon QuickSight settings in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_analysis/5">update_analysis(client, analysis_id, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an analysis in Amazon QuickSight</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_analysis_permissions/5">update_analysis_permissions(client, analysis_id, aws_account_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the read and write permissions for an analysis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_dashboard/5">update_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a dashboard in an AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_dashboard_permissions/5">update_dashboard_permissions(client, aws_account_id, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates read and write permissions on a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_dashboard_published_version/6">update_dashboard_published_version(client, aws_account_id, dashboard_id, version_number, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the published version of a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_set/5">update_data_set(client, aws_account_id, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_set_permissions/5">update_data_set_permissions(client, aws_account_id, data_set_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the permissions on a dataset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_source/5">update_data_source(client, aws_account_id, data_source_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a data source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_data_source_permissions/5">update_data_source_permissions(client, aws_account_id, data_source_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the permissions to a data source.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_group/6">update_group(client, aws_account_id, group_name, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes a group description.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_i_a_m_policy_assignment/6">update_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing IAM policy assignment.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_template/5">update_template(client, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a template from an existing Amazon QuickSight analysis or another template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_template_alias/6">update_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the template alias of a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_template_permissions/5">update_template_permissions(client, aws_account_id, template_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the resource permissions for a template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_theme/5">update_theme(client, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_theme_alias/6">update_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an alias of a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_theme_permissions/5">update_theme_permissions(client, aws_account_id, theme_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the resource permissions for a theme.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user/6">update_user(client, aws_account_id, namespace, user_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an Amazon QuickSight user.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_ingestion/6">
+
+    <span id="cancel_ingestion/5"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_ingestion/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_ingestion(client, aws_account_id, data_set_id, ingestion_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L18" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels an ongoing ingestion of data into SPICE.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_account_customization/4">
+
+    <span id="create_account_customization/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_account_customization/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_account_customization(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L45" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates Amazon QuickSight customizations the current AWS Region.</p>
+<p>Currently, you can add a custom default theme by using the <code class="inline">CreateAccountCustomization</code> or
+<code class="inline">UpdateAccountCustomization</code> API operation. To further customize QuickSight by removing QuickSight
+sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a> in the
+<em>Amazon QuickSight User Guide.</em></p>
+<p>You can create customizations for your AWS account or, if you specify a namespace, for a
+QuickSight namespace instead. Customizations that apply to a namespace always override
+customizations that apply to an AWS account. To find out which customizations apply, use the
+<code class="inline">DescribeAccountCustomization</code> API operation.</p>
+<p>Before you use the <code class="inline">CreateAccountCustomization</code> API operation to add a theme as the namespace
+default, make sure that you first share the theme with the namespace. If you don&#39;t share it with
+the namespace, the theme isn&#39;t visible to your users even if you make it the default theme. To
+check if the theme is shared, view the current permissions by using the <code class="inline"></code>DescribeThemePermissions<code class="inline"></code> API operation. To share the theme, grant permissions by using the <code class="inline"></code>UpdateThemePermissions<code class="inline"></code> API operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_analysis/5">
+
+    <span id="create_analysis/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_analysis/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_analysis(client, analysis_id, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an analysis in Amazon QuickSight.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_dashboard/5">
+
+    <span id="create_dashboard/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_dashboard/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a dashboard from a template.</p>
+<p>To first create a template, see the <code class="inline"></code>CreateTemplate<code class="inline"></code> API operation.</p>
+<p>A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses.
+You can share QuickSight dashboards. With the right permissions, you can create scheduled email
+reports from them. If you have the correct permissions, you can create a dashboard from a template
+that exists in a different AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_data_set/4">
+
+    <span id="create_data_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_data_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_data_set(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a dataset.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_data_source/4">
+
+    <span id="create_data_source/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_data_source/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_data_source(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L96" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group/5">
+
+    <span id="create_group/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_group/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group(client, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon QuickSight group.</p>
+<p>The permissions resource is
+<code class="inline">arn:aws:quicksight:us-east-1:*&lt;relevant-aws-account-id&gt;*:group/default/*&lt;group-name&gt;*</code>.</p>
+<p>The response is a group object.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group_membership/7">
+
+    <span id="create_group_membership/6"></span>
+
+  <div class="detail-header">
+    <a href="#create_group_membership/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group_membership(client, aws_account_id, group_name, member_name, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L121" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds an Amazon QuickSight user to an Amazon QuickSight group.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_i_a_m_policy_assignment/5">
+
+    <span id="create_i_a_m_policy_assignment/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_i_a_m_policy_assignment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_i_a_m_policy_assignment(client, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN).</p>
+<p>This policy will be assigned to specified groups or users of Amazon QuickSight. The users and
+groups need to be in the same namespace.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_ingestion/6">
+
+    <span id="create_ingestion/5"></span>
+
+  <div class="detail-header">
+    <a href="#create_ingestion/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_ingestion(client, aws_account_id, data_set_id, ingestion_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates and starts a new SPICE ingestion on a dataset</p>
+<p>Any ingestions operating on tagged datasets inherit the same tags automatically for use in access
+control.</p>
+<p>For an example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS
+Knowledge Center. Tags are visible on the tagged dataset, but not on the ingestion resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_namespace/4">
+
+    <span id="create_namespace/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_namespace/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_namespace(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.</p>
+<p>A namespace allows you to isolate the QuickSight users and groups that are registered for that
+namespace. Users that access the namespace can share assets only with other users or groups in the
+same namespace. They can&#39;t see users and groups in other namespaces. You can create a namespace
+after your AWS account is subscribed to QuickSight. The namespace must be unique within the AWS
+account. By default, there is a limit of 100 namespaces per AWS account. To increase your limit,
+create a ticket with AWS Support.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_template/5">
+
+    <span id="create_template/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_template/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_template(client, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a template from an existing QuickSight analysis or template.</p>
+<p>You can use the resulting template to create a dashboard.</p>
+<p>A <em>template</em> is an entity in QuickSight that encapsulates the metadata required to create an
+analysis and that you can use to create s dashboard. A template adds a layer of abstraction by
+using placeholders to replace the dataset associated with the analysis. You can use templates to
+create dashboards by replacing dataset placeholders with datasets that follow the same schema that
+was used to create the source analysis and template.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_template_alias/6">
+
+    <span id="create_template_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#create_template_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L195" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a template alias for a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_theme/5">
+
+    <span id="create_theme/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_theme/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_theme(client, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L209" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a theme.</p>
+<p>A <em>theme</em> is set of configuration options for color and layout. Themes apply to analyses and
+dashboards. For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon QuickSight</a> in the
+<em>Amazon QuickSight User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_theme_alias/6">
+
+    <span id="create_theme_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#create_theme_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a theme alias for a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_account_customization/4">
+
+    <span id="delete_account_customization/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_account_customization/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_account_customization(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and
+QuickSight namespace.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_analysis/5">
+
+    <span id="delete_analysis/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_analysis/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_analysis(client, analysis_id, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L257" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an analysis from Amazon QuickSight.</p>
+<p>You can optionally include a recovery window during which you can restore the analysis. If you
+don&#39;t specify a recovery window value, the operation defaults to 30 days. QuickSight attaches a
+<code class="inline">DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of
+the recovery window, QuickSight deletes the analysis permanently.</p>
+<p>At any time before recovery window ends, you can use the <code class="inline">RestoreAnalysis</code> API operation to remove
+the <code class="inline">DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in
+the API until it&#39;s deleted, so you can describe it but you can&#39;t make a template from it.</p>
+<p>An analysis that&#39;s scheduled for deletion isn&#39;t accessible in the QuickSight console. To access it
+in the console, restore it. Deleting an analysis doesn&#39;t delete the dashboards that you publish
+from it.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dashboard/5">
+
+    <span id="delete_dashboard/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dashboard/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L272" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_data_set/5">
+
+    <span id="delete_data_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_data_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_data_set(client, aws_account_id, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dataset.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_data_source/5">
+
+    <span id="delete_data_source/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_data_source/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_data_source(client, aws_account_id, data_source_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the data source permanently.</p>
+<p>This operation breaks all the datasets that reference the deleted data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_group/6">
+
+    <span id="delete_group/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_group/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_group(client, aws_account_id, group_name, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a user group from Amazon QuickSight.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_group_membership/7">
+
+    <span id="delete_group_membership/6"></span>
+
+  <div class="detail-header">
+    <a href="#delete_group_membership/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_group_membership(client, aws_account_id, group_name, member_name, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L318" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a user from a group so that the user is no longer a member of the group.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_i_a_m_policy_assignment/6">
+
+    <span id="delete_i_a_m_policy_assignment/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_i_a_m_policy_assignment/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L328" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing IAM policy assignment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_namespace/5">
+
+    <span id="delete_namespace/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_namespace/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_namespace(client, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L341" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a namespace and the users and groups that are associated with the namespace.</p>
+<p>This is an asynchronous process. Assets including dashboards, analyses, datasets and data sources
+are not deleted. To delete these assets, you use the API operations for the relevant asset.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_template/5">
+
+    <span id="delete_template/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_template/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_template(client, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L351" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_template_alias/6">
+
+    <span id="delete_template_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_template_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L367" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the item that the specified template alias points to.</p>
+<p>If you provide a specific alias, you delete the version of the template that the alias points to.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_theme/5">
+
+    <span id="delete_theme/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_theme/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_theme(client, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_theme_alias/6">
+
+    <span id="delete_theme_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_theme_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L393" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the version of the theme that the specified theme alias points to.</p>
+<p>If you provide a specific alias, you delete the version of the theme that the alias points to.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user/6">
+
+    <span id="delete_user/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user(client, aws_account_id, namespace, user_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L406" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and
+Access Management (IAM) user or role that&#39;s making the call.</p>
+<p>The IAM user isn&#39;t deleted as a result of this call.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_by_principal_id/6">
+
+    <span id="delete_user_by_principal_id/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_by_principal_id/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_by_principal_id(client, aws_account_id, namespace, principal_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L416" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user identified by its principal ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_account_customization/5">
+
+    <span id="describe_account_customization/2"></span>
+
+    <span id="describe_account_customization/3"></span>
+
+    <span id="describe_account_customization/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_account_customization/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_account_customization(client, aws_account_id, namespace \\ nil, resolved \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L465" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the customizations associated with the provided AWS account and Amazon QuickSight
+namespace in an AWS Region.</p>
+<p>The QuickSight console evaluates which customizations to apply by running this API operation with
+the <code class="inline">Resolved</code> flag included.</p>
+<p>To determine what customizations display when you run this command, it can help to visualize the
+relationship of the entities involved.</p>
+<ul>
+<li><p><code class="inline">AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the
+potential to use all of the AWS Regions and AWS Services. When you subscribe to QuickSight, you
+choose one AWS Region to use as your home Region. That&#39;s where your free SPICE capacity is
+located. You can use QuickSight in any supported AWS Region.</p>
+</li>
+<li><p><code class="inline">AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once,
+QuickSight acts as a separate instance of the same service. If you have a user directory, it
+resides in us-east-1, which is the US East (N. Virginia). Generally speaking, these users have
+access to QuickSight in any AWS Region, unless they are constrained to a namespace.</p>
+</li>
+</ul>
+<p>To run the command in a different AWS Region, you change your Region settings. If you&#39;re using the
+AWS CLI, you can use one of the following options:</p>
+<pre><code class="nohighlight makeup elixir"><span class="o">*</span><span class="w"> </span><span class="nc">Use</span><span class="w"> </span><span class="p" data-group-id="4407796144-1">[</span><span class="n">command</span><span class="w"> </span><span class="n">line</span><span class="w"> </span><span class="n">options</span><span class="p" data-group-id="4407796144-1">]</span><span class="p" data-group-id="4407796144-2">(</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">docs</span><span class="o">.</span><span class="n">aws</span><span class="o">.</span><span class="n">amazon</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cli</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">userguide</span><span class="o">/</span><span class="n">cli</span><span class="o">-</span><span class="n">configure</span><span class="o">-</span><span class="n">options</span><span class="o">.</span><span class="n">html</span><span class="p" data-group-id="4407796144-2">)</span><span class="o">.</span><span class="w">
+
+</span><span class="o">*</span><span class="w"> </span><span class="nc">Use</span><span class="w"> </span><span class="p" data-group-id="4407796144-3">[</span><span class="n">named</span><span class="w"> </span><span class="n">profiles</span><span class="p" data-group-id="4407796144-3">]</span><span class="p" data-group-id="4407796144-4">(</span><span class="n">https</span><span class="ss">:/</span><span class="o">/</span><span class="n">docs</span><span class="o">.</span><span class="n">aws</span><span class="o">.</span><span class="n">amazon</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">cli</span><span class="o">/</span><span class="n">latest</span><span class="o">/</span><span class="n">userguide</span><span class="o">/</span><span class="n">cli</span><span class="o">-</span><span class="n">configure</span><span class="o">-</span><span class="n">profiles</span><span class="o">.</span><span class="n">html</span><span class="p" data-group-id="4407796144-4">)</span><span class="o">.</span><span class="w">
+
+</span><span class="o">*</span><span class="w"> </span><span class="nc">Run</span><span class="w"> </span><span class="err">`</span><span class="n">aws</span><span class="w"> </span><span class="n">configure</span><span class="err">`</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">change</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">default</span><span class="w"> </span><span class="nc">AWS</span><span class="w"> </span><span class="nc">Region</span><span class="o">.</span><span class="w"> </span><span class="nc">Use</span><span class="w"> </span><span class="nc">Enter</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">key</span></code></pre>
+<p>the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.</p>
+<ul>
+<li><p><code class="inline">Namespace</code> - A QuickSight namespace is a partition that contains users and assets
+(data sources, datasets, dashboards, and so on). To access assets that are in a specific
+namespace, users and groups must also be part of the same namespace. People who share a namespace
+are completely isolated from users and assets in other namespaces, even if they are in the same
+AWS account and AWS Region.</p>
+</li>
+<li><p><code class="inline">Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations
+can apply to an AWS account or to a namespace. Settings that you apply to a namespace override
+settings that you apply to an AWS account. All settings are isolated to a single AWS Region. To
+apply them in other AWS Regions, run the <code class="inline">CreateAccountCustomization</code> command in each AWS Region
+where you want to apply the same customizations.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_account_settings/3">
+
+    <span id="describe_account_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_account_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_account_settings(client, aws_account_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the settings that were used when your QuickSight subscription was first created in this
+AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_analysis/4">
+
+    <span id="describe_analysis/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_analysis/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_analysis(client, analysis_id, aws_account_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L496" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a summary of the metadata for an analysis.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_analysis_permissions/4">
+
+    <span id="describe_analysis_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_analysis_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_analysis_permissions(client, analysis_id, aws_account_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L506" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides the read and write permissions for an analysis.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dashboard/6">
+
+    <span id="describe_dashboard/3"></span>
+
+    <span id="describe_dashboard/4"></span>
+
+    <span id="describe_dashboard/5"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dashboard/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dashboard(client, aws_account_id, dashboard_id, alias_name \\ nil, version_number \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L516" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides a summary for a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dashboard_permissions/4">
+
+    <span id="describe_dashboard_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dashboard_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dashboard_permissions(client, aws_account_id, dashboard_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L536" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes read and write permissions for a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_data_set/4">
+
+    <span id="describe_data_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_data_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_data_set(client, aws_account_id, data_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L546" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a dataset.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_data_set_permissions/4">
+
+    <span id="describe_data_set_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_data_set_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_data_set_permissions(client, aws_account_id, data_set_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L558" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions on a dataset.</p>
+<p>The permissions resource is <code class="inline">arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_data_source/4">
+
+    <span id="describe_data_source/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_data_source/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_data_source(client, aws_account_id, data_source_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L568" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_data_source_permissions/4">
+
+    <span id="describe_data_source_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_data_source_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_data_source_permissions(client, aws_account_id, data_source_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L578" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the resource permissions for a data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_group/5">
+
+    <span id="describe_group/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_group/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_group(client, aws_account_id, group_name, namespace, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L588" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an Amazon QuickSight group&#39;s description and Amazon Resource Name (ARN).</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_i_a_m_policy_assignment/5">
+
+    <span id="describe_i_a_m_policy_assignment/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_i_a_m_policy_assignment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L598" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an existing IAM policy assignment, as specified by the assignment name.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_ingestion/5">
+
+    <span id="describe_ingestion/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_ingestion/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_ingestion(client, aws_account_id, data_set_id, ingestion_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L608" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a SPICE ingestion.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_namespace/4">
+
+    <span id="describe_namespace/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_namespace/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_namespace(client, aws_account_id, namespace, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L618" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the current namespace.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_template/6">
+
+    <span id="describe_template/3"></span>
+
+    <span id="describe_template/4"></span>
+
+    <span id="describe_template/5"></span>
+
+  <div class="detail-header">
+    <a href="#describe_template/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_template(client, aws_account_id, template_id, alias_name \\ nil, version_number \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L628" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a template&#39;s metadata.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_template_alias/5">
+
+    <span id="describe_template_alias/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_template_alias/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_template_alias(client, alias_name, aws_account_id, template_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L648" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the template alias for a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_template_permissions/4">
+
+    <span id="describe_template_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_template_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_template_permissions(client, aws_account_id, template_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L658" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes read and write permissions on a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_theme/6">
+
+    <span id="describe_theme/3"></span>
+
+    <span id="describe_theme/4"></span>
+
+    <span id="describe_theme/5"></span>
+
+  <div class="detail-header">
+    <a href="#describe_theme/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_theme(client, aws_account_id, theme_id, alias_name \\ nil, version_number \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L668" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_theme_alias/5">
+
+    <span id="describe_theme_alias/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_theme_alias/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_theme_alias(client, alias_name, aws_account_id, theme_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L688" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the alias for a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_theme_permissions/4">
+
+    <span id="describe_theme_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_theme_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_theme_permissions(client, aws_account_id, theme_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L698" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the read and write permissions for a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user/5">
+
+    <span id="describe_user/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user(client, aws_account_id, namespace, user_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L708" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a user, given the user name.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_dashboard_embed_url/9">
+
+    <span id="get_dashboard_embed_url/4"></span>
+
+    <span id="get_dashboard_embed_url/5"></span>
+
+    <span id="get_dashboard_embed_url/6"></span>
+
+    <span id="get_dashboard_embed_url/7"></span>
+
+    <span id="get_dashboard_embed_url/8"></span>
+
+  <div class="detail-header">
+    <a href="#get_dashboard_embed_url/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_dashboard_embed_url(client, aws_account_id, dashboard_id, identity_type, reset_disabled \\ nil, session_lifetime_in_minutes \\ nil, undo_redo_disabled \\ nil, user_arn \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L735" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generates a session URL and authorization code that you can use to embed an Amazon QuickSight
+read-only dashboard in your web server code.</p>
+<p>Before you use this command, make sure that you have configured the dashboards and permissions.</p>
+<p>Currently, you can use <code class="inline">GetDashboardEmbedURL</code> only from the server, not from the user&#39;s browser.
+The following rules apply to the combination of URL and authorization code:</p>
+<ul>
+<li><p>They must be used together.</p>
+</li>
+<li><p>They can be used one time only.</p>
+</li>
+<li><p>They are valid for 5 minutes after you run this command.</p>
+</li>
+<li><p>The resulting user session is valid for 10 hours.</p>
+</li>
+</ul>
+<p>For more information, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight</a> in the
+<em>Amazon QuickSight User Guide</em> .</p>
+
+  </section>
+</section>
+<section class="detail" id="get_session_embed_url/6">
+
+    <span id="get_session_embed_url/2"></span>
+
+    <span id="get_session_embed_url/3"></span>
+
+    <span id="get_session_embed_url/4"></span>
+
+    <span id="get_session_embed_url/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_session_embed_url/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_session_embed_url(client, aws_account_id, entry_point \\ nil, session_lifetime_in_minutes \\ nil, user_arn \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L782" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generates a session URL and authorization code that you can use to embed the Amazon QuickSight
+console in your web server code.</p>
+<p>Use <code class="inline">GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows users to create
+data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+console need belong to the author or admin security cohort. If you want to restrict permissions to
+some of these features, add a custom permissions profile to the user with the <code class="inline"></code>UpdateUser<code class="inline"></code> API
+operation. Use <code class="inline"></code>RegisterUser<code class="inline"></code> API operation to add a new user with a custom permission profile
+attached. For more information, see the following sections in the <em>Amazon QuickSight User Guide</em>:</p>
+<ul>
+<li><p><a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the Amazon QuickSight Console</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html">Customizing Access to the Amazon QuickSight Console</a></p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_analyses/5">
+
+    <span id="list_analyses/2"></span>
+
+    <span id="list_analyses/3"></span>
+
+    <span id="list_analyses/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_analyses/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_analyses(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L807" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists Amazon QuickSight analyses that exist in the specified AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dashboard_versions/6">
+
+    <span id="list_dashboard_versions/3"></span>
+
+    <span id="list_dashboard_versions/4"></span>
+
+    <span id="list_dashboard_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_dashboard_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dashboard_versions(client, aws_account_id, dashboard_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L827" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the versions of the dashboards in the QuickSight subscription.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_dashboards/5">
+
+    <span id="list_dashboards/2"></span>
+
+    <span id="list_dashboards/3"></span>
+
+    <span id="list_dashboards/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_dashboards/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dashboards(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L847" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists dashboards in an AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_data_sets/5">
+
+    <span id="list_data_sets/2"></span>
+
+    <span id="list_data_sets/3"></span>
+
+    <span id="list_data_sets/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_data_sets/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_data_sets(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L869" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all of the datasets belonging to the current AWS account in an AWS Region.</p>
+<p>The permissions resource is <code class="inline">arn:aws:quicksight:region:aws-account-id:dataset/*</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_data_sources/5">
+
+    <span id="list_data_sources/2"></span>
+
+    <span id="list_data_sources/3"></span>
+
+    <span id="list_data_sources/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_data_sources/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_data_sources(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L889" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists data sources in current AWS Region that belong to this AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_group_memberships/7">
+
+    <span id="list_group_memberships/4"></span>
+
+    <span id="list_group_memberships/5"></span>
+
+    <span id="list_group_memberships/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_group_memberships/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_group_memberships(client, aws_account_id, group_name, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L909" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists member users in a group.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_groups/6">
+
+    <span id="list_groups/3"></span>
+
+    <span id="list_groups/4"></span>
+
+    <span id="list_groups/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_groups/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_groups(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L929" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all user groups in Amazon QuickSight.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_i_a_m_policy_assignments/6">
+
+    <span id="list_i_a_m_policy_assignments/3"></span>
+
+    <span id="list_i_a_m_policy_assignments/4"></span>
+
+    <span id="list_i_a_m_policy_assignments/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_i_a_m_policy_assignments/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_i_a_m_policy_assignments(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L949" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists IAM policy assignments in the current Amazon QuickSight account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_i_a_m_policy_assignments_for_user/7">
+
+    <span id="list_i_a_m_policy_assignments_for_user/4"></span>
+
+    <span id="list_i_a_m_policy_assignments_for_user/5"></span>
+
+    <span id="list_i_a_m_policy_assignments_for_user/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_i_a_m_policy_assignments_for_user/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_i_a_m_policy_assignments_for_user(client, aws_account_id, namespace, user_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L970" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the IAM policy assignments, including the Amazon Resource Names (ARNs) for the IAM
+policies assigned to the specified user and group or groups that the user belongs to.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_ingestions/6">
+
+    <span id="list_ingestions/3"></span>
+
+    <span id="list_ingestions/4"></span>
+
+    <span id="list_ingestions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_ingestions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_ingestions(client, aws_account_id, data_set_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L990" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the history of SPICE ingestions for a dataset.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_namespaces/5">
+
+    <span id="list_namespaces/2"></span>
+
+    <span id="list_namespaces/3"></span>
+
+    <span id="list_namespaces/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_namespaces/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_namespaces(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1010" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the namespaces for the specified AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1030" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags assigned to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_template_aliases/6">
+
+    <span id="list_template_aliases/3"></span>
+
+    <span id="list_template_aliases/4"></span>
+
+    <span id="list_template_aliases/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_template_aliases/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_template_aliases(client, aws_account_id, template_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1040" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the aliases of a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_template_versions/6">
+
+    <span id="list_template_versions/3"></span>
+
+    <span id="list_template_versions/4"></span>
+
+    <span id="list_template_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_template_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_template_versions(client, aws_account_id, template_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1060" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the versions of the templates in the current Amazon QuickSight account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_templates/5">
+
+    <span id="list_templates/2"></span>
+
+    <span id="list_templates/3"></span>
+
+    <span id="list_templates/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_templates/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_templates(client, aws_account_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1080" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the templates in the current Amazon QuickSight account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_theme_aliases/6">
+
+    <span id="list_theme_aliases/3"></span>
+
+    <span id="list_theme_aliases/4"></span>
+
+    <span id="list_theme_aliases/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_theme_aliases/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_theme_aliases(client, aws_account_id, theme_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the aliases of a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_theme_versions/6">
+
+    <span id="list_theme_versions/3"></span>
+
+    <span id="list_theme_versions/4"></span>
+
+    <span id="list_theme_versions/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_theme_versions/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_theme_versions(client, aws_account_id, theme_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the versions of the themes in the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_themes/6">
+
+    <span id="list_themes/2"></span>
+
+    <span id="list_themes/3"></span>
+
+    <span id="list_themes/4"></span>
+
+    <span id="list_themes/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_themes/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_themes(client, aws_account_id, max_results \\ nil, next_token \\ nil, type \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the themes in the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_groups/7">
+
+    <span id="list_user_groups/4"></span>
+
+    <span id="list_user_groups/5"></span>
+
+    <span id="list_user_groups/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_groups/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_groups(client, aws_account_id, namespace, user_name, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_users/6">
+
+    <span id="list_users/3"></span>
+
+    <span id="list_users/4"></span>
+
+    <span id="list_users/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_users/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_users(client, aws_account_id, namespace, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of all of the Amazon QuickSight users belonging to this account.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_user/5">
+
+    <span id="register_user/4"></span>
+
+  <div class="detail-header">
+    <a href="#register_user/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_user(client, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1206" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an Amazon QuickSight user, whose identity is associated with the AWS Identity and Access
+Management (IAM) identity or role specified in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="restore_analysis/5">
+
+    <span id="restore_analysis/4"></span>
+
+  <div class="detail-header">
+    <a href="#restore_analysis/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">restore_analysis(client, analysis_id, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restores an analysis.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_analyses/4">
+
+    <span id="search_analyses/3"></span>
+
+  <div class="detail-header">
+    <a href="#search_analyses/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_analyses(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for analyses that belong to the user specified in the filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_dashboards/4">
+
+    <span id="search_dashboards/3"></span>
+
+  <div class="detail-header">
+    <a href="#search_dashboards/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_dashboards(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1236" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for dashboards that belong to a user.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1264" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns one or more tags (key-value pairs) to the specified QuickSight resource.</p>
+<p>Tags can help you organize and categorize your resources. You can also use them to scope user
+permissions, by granting a user permission to access or change only resources with certain tag
+values. You can use the <code class="inline">TagResource</code> operation with a resource that already has tags. If you
+specify a new tag key for the resource, this tag is appended to the list of tags associated with
+the resource. If you specify a tag key that is already associated with the resource, the new tag
+value that you specify replaces the previous value for that tag.</p>
+<p>You can associate as many as 50 tags with a resource. QuickSight supports tagging on data set,
+data source, dashboard, and template.</p>
+<p>Tagging for QuickSight works in a similar way to tagging for other AWS services, except for the
+following:</p>
+<ul>
+<li><p>You can&#39;t use tags to track AWS costs for QuickSight. This restriction is because
+QuickSight costs are based on users and SPICE capacity, which aren&#39;t taggable resources.</p>
+</li>
+<li><p>QuickSight doesn&#39;t currently support the Tag Editor for AWS Resource Groups.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag or tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_account_customization/4">
+
+    <span id="update_account_customization/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_account_customization/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_account_customization(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1295" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates Amazon QuickSight customizations the current AWS Region.</p>
+<p>Currently, the only customization you can use is a theme.</p>
+<p>You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight
+namespace instead. Customizations that apply to a namespace override customizations that apply to
+an AWS account. To find out which customizations apply, use the <code class="inline">DescribeAccountCustomization</code> API
+operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_account_settings/4">
+
+    <span id="update_account_settings/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_account_settings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_account_settings(client, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1309" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Amazon QuickSight settings in your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_analysis/5">
+
+    <span id="update_analysis/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_analysis/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_analysis(client, analysis_id, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1319" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an analysis in Amazon QuickSight</p>
+
+  </section>
+</section>
+<section class="detail" id="update_analysis_permissions/5">
+
+    <span id="update_analysis_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_analysis_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_analysis_permissions(client, analysis_id, aws_account_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the read and write permissions for an analysis.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_dashboard/5">
+
+    <span id="update_dashboard/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_dashboard/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_dashboard(client, aws_account_id, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a dashboard in an AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_dashboard_permissions/5">
+
+    <span id="update_dashboard_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_dashboard_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_dashboard_permissions(client, aws_account_id, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1349" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates read and write permissions on a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_dashboard_published_version/6">
+
+    <span id="update_dashboard_published_version/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_dashboard_published_version/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_dashboard_published_version(client, aws_account_id, dashboard_id, version_number, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1359" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the published version of a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_set/5">
+
+    <span id="update_data_set/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_set/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_set(client, aws_account_id, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1369" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a dataset.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_set_permissions/5">
+
+    <span id="update_data_set_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_set_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_set_permissions(client, aws_account_id, data_set_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1381" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the permissions on a dataset.</p>
+<p>The permissions resource is <code class="inline">arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_source/5">
+
+    <span id="update_data_source/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_source/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_source(client, aws_account_id, data_source_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1391" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_data_source_permissions/5">
+
+    <span id="update_data_source_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_data_source_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_data_source_permissions(client, aws_account_id, data_source_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the permissions to a data source.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_group/6">
+
+    <span id="update_group/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_group/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_group(client, aws_account_id, group_name, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1411" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes a group description.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_i_a_m_policy_assignment/6">
+
+    <span id="update_i_a_m_policy_assignment/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_i_a_m_policy_assignment/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_i_a_m_policy_assignment(client, assignment_name, aws_account_id, namespace, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1424" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing IAM policy assignment.</p>
+<p>This operation updates only the optional parameter or parameters that are specified in the
+request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_template/5">
+
+    <span id="update_template/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_template/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_template(client, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1434" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a template from an existing Amazon QuickSight analysis or another template.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_template_alias/6">
+
+    <span id="update_template_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_template_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_template_alias(client, alias_name, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1444" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the template alias of a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_template_permissions/5">
+
+    <span id="update_template_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_template_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_template_permissions(client, aws_account_id, template_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1454" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the resource permissions for a template.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_theme/5">
+
+    <span id="update_theme/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_theme/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_theme(client, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_theme_alias/6">
+
+    <span id="update_theme_alias/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_theme_alias/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_theme_alias(client, alias_name, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1474" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an alias of a theme.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_theme_permissions/5">
+
+    <span id="update_theme_permissions/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_theme_permissions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_theme_permissions(client, aws_account_id, theme_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1526" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the resource permissions for a theme.</p>
+<p>Permissions apply to the action to grant or revoke permissions on, for example
+<code class="inline">&quot;quicksight:DescribeTheme&quot;</code>.</p>
+<p>Theme permissions apply in groupings. Valid groupings include the following for the three levels
+of permissions, which are user, owner, or no permissions:</p>
+<ul>
+<li><p>User</p>
+<ul>
+<li><p><code class="inline">&quot;quicksight:DescribeTheme&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:DescribeThemeAlias&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:ListThemeAliases&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:ListThemeVersions&quot;</code></p>
+</li>
+</ul>
+</li>
+<li><p>Owner</p>
+<ul>
+<li><p><code class="inline">&quot;quicksight:DescribeTheme&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:DescribeThemeAlias&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:ListThemeAliases&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:ListThemeVersions&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:DeleteTheme&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:UpdateTheme&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:CreateThemeAlias&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:DeleteThemeAlias&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:UpdateThemeAlias&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:UpdateThemePermissions&quot;</code></p>
+</li>
+<li><p><code class="inline">&quot;quicksight:DescribeThemePermissions&quot;</code></p>
+</li>
+</ul>
+</li>
+<li><p>To specify no permissions, omit the permissions list.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="update_user/6">
+
+    <span id="update_user/5"></span>
+
+  <div class="detail-header">
+    <a href="#update_user/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user(client, aws_account_id, namespace, user_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/quick_sight.ex#L1536" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an Amazon QuickSight user.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

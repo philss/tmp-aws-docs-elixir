@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Route53Resolver — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Route53Resolver
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from
+Route 53 Resolver.</p>
+<p>By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2
+instances or ELB load balancers. Resolver performs recursive lookups against public name servers
+for all other domain names.</p>
+<p>You can also configure DNS resolution between your VPC and your network over a Direct Connect or
+VPN connection:</p>
+<p><strong>Forward DNS queries from resolvers on your network to Route 53 Resolver</strong></p>
+<p>DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows
+your DNS resolvers to easily resolve domain names for AWS resources such as EC2 instances or
+records in a Route 53 private hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How DNS Resolvers on Your Network Forward DNS Queries to Route 53
+Resolver</a>
+in the <em>Amazon Route 53 Developer Guide</em>.</p>
+<p><strong>Conditionally forward queries from a VPC to resolvers on your network</strong></p>
+<p>You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to
+DNS resolvers on your network. To forward selected queries, you create Resolver rules that specify
+the domain names for the DNS queries that you want to forward (such as example.com), and the IP
+addresses of the DNS resolvers on your network that you want to forward the queries to. If a query
+matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most
+specific match (acme.example.com) and forwards the query to the IP addresses that you specified in
+that rule. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network">How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your
+Network</a>
+in the <em>Amazon Route 53 Developer Guide</em>.</p>
+<p>Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you can choose whether
+to forward queries from your VPCs to your network (outbound queries), from your network to your
+VPCs (inbound queries), or both.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_resolver_endpoint_ip_address/3">associate_resolver_endpoint_ip_address(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds IP addresses to an inbound or an outbound Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_resolver_query_log_config/3">associate_resolver_query_log_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates an Amazon VPC with a specified query logging configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_resolver_rule/3">associate_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a Resolver rule with a VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resolver_endpoint/3">create_resolver_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resolver_query_log_config/3">create_resolver_query_log_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS
+query logs that originate in your VPCs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resolver_rule/3">create_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass
+through, one domain name that you want to forward to your network, and the IP addresses of the DNS
+resolvers in your network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resolver_endpoint/3">delete_resolver_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resolver_query_log_config/3">delete_resolver_query_log_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a query logging configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resolver_rule/3">delete_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Resolver rule.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_resolver_endpoint_ip_address/3">disassociate_resolver_endpoint_ip_address(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes IP addresses from an inbound or an outbound Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_resolver_query_log_config/3">disassociate_resolver_query_log_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a VPC from a query logging configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_resolver_rule/3">disassociate_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the association between a specified Resolver rule and a specified VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_endpoint/3">get_resolver_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an inbound or an
+outbound Resolver endpoint, and the current status of the endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_query_log_config/3">get_resolver_query_log_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver query logging configuration, such as the number of
+VPCs that the configuration is logging queries for and the location that logs are sent to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_query_log_config_association/3">get_resolver_query_log_config_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a specified association between a Resolver query logging configuration and
+an Amazon VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_query_log_config_policy/3">get_resolver_query_log_config_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a query logging policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_rule/3">get_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards
+DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_rule_association/3">get_resolver_rule_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about an association between a specified Resolver rule and a VPC.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resolver_rule_policy/3">get_resolver_rule_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a Resolver rule policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_endpoint_ip_addresses/3">list_resolver_endpoint_ip_addresses(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the IP addresses for a specified Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_endpoints/3">list_resolver_endpoints(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the Resolver endpoints that were created using the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_query_log_config_associations/3">list_resolver_query_log_config_associations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists information about associations between Amazon VPCs and query logging configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_query_log_configs/3">list_resolver_query_log_configs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists information about the specified query logging configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_rule_associations/3">list_resolver_rule_associations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the associations that were created between Resolver rules and VPCs using the current AWS
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resolver_rules/3">list_resolver_rules(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the Resolver rules that were created using the current AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags that you associated with the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_resolver_query_log_config_policy/3">put_resolver_query_log_config_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share a query logging configuration with, the query
+logging configuration that you want to share, and the operations that you want the account to be
+able to perform on the configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_resolver_rule_policy/3">put_resolver_rule_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share rules with, the Resolver rules that you want to
+share, and the operations that you want the account to be able to perform on those rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags to a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resolver_endpoint/3">update_resolver_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the name of an inbound or an outbound Resolver endpoint.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resolver_rule/3">update_resolver_rule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates settings for a specified Resolver rule.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_resolver_endpoint_ip_address/3">
+
+    <span id="associate_resolver_endpoint_ip_address/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_resolver_endpoint_ip_address/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_resolver_endpoint_ip_address(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds IP addresses to an inbound or an outbound Resolver endpoint.</p>
+<p>If you want to add more than one IP address, submit one <code class="inline">AssociateResolverEndpointIpAddress</code>
+request for each IP address.</p>
+<p>To remove an IP address from an endpoint, see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_resolver_query_log_config/3">
+
+    <span id="associate_resolver_query_log_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_resolver_query_log_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_resolver_query_log_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L67" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates an Amazon VPC with a specified query logging configuration.</p>
+<p>Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated
+with a specified query logging configuration. To associate more than one VPC with a configuration,
+submit one <code class="inline">AssociateResolverQueryLogConfig</code> request for each VPC.</p>
+<p>The VPCs that you associate with a query logging configuration must be in the same Region as the
+configuration.</p>
+<p>To remove a VPC from a query logging configuration, see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_resolver_rule/3">
+
+    <span id="associate_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a Resolver rule with a VPC.</p>
+<p>When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that
+is specified in the rule and that originate in the VPC. The queries are forwarded to the IP
+addresses for the DNS resolvers that are specified in the rule. For more information about rules,
+see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resolver_endpoint/3">
+
+    <span id="create_resolver_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resolver_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resolver_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Resolver endpoint.</p>
+<p>There are two types of Resolver endpoints, inbound and outbound:</p>
+<ul>
+<li><p>An <em>inbound Resolver endpoint</em> forwards DNS queries to the DNS service for a VPC
+from your network.</p>
+</li>
+<li><p>An <em>outbound Resolver endpoint</em> forwards DNS queries from the DNS service for a VPC
+to your network.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_resolver_query_log_config/3">
+
+    <span id="create_resolver_query_log_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resolver_query_log_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resolver_query_log_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS
+query logs that originate in your VPCs.</p>
+<p>Resolver can log queries only for VPCs that are in the same Region as the query logging
+configuration.</p>
+<p>To specify which VPCs you want to log queries for, you use <code class="inline">AssociateResolverQueryLogConfig</code>. For
+more information, see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.</p>
+<p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a query logging
+configuration with other AWS accounts. The other accounts can then associate VPCs with the
+configuration. The query logs that Resolver creates for a configuration include all DNS queries
+that originate in all VPCs that are associated with the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resolver_rule/3">
+
+    <span id="create_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass
+through, one domain name that you want to forward to your network, and the IP addresses of the DNS
+resolvers in your network.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resolver_endpoint/3">
+
+    <span id="delete_resolver_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resolver_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resolver_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Resolver endpoint.</p>
+<p>The effect of deleting a Resolver endpoint depends on whether it&#39;s an inbound or an outbound
+Resolver endpoint:</p>
+<ul>
+<li><p><strong>Inbound</strong>: DNS queries from your network are no longer routed to the DNS service
+for the specified VPC.</p>
+</li>
+<li><p><strong>Outbound</strong>: DNS queries from a VPC are no longer routed to your network.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="delete_resolver_query_log_config/3">
+
+    <span id="delete_resolver_query_log_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resolver_query_log_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resolver_query_log_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a query logging configuration.</p>
+<p>When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs
+that are associated with the configuration. This also applies if the query logging configuration
+is shared with other AWS accounts, and the other accounts have associated VPCs with the shared
+configuration.</p>
+<p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the
+configuration. See
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
+<p>If you used Resource Access Manager (RAM) to share a query logging configuration with other
+accounts, you must stop sharing the configuration before you can delete a configuration. The
+accounts that you shared the configuration with can first disassociate VPCs that they associated
+with the configuration, but that&#39;s not necessary. If you stop sharing the configuration, those
+VPCs are automatically disassociated from the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resolver_rule/3">
+
+    <span id="delete_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Resolver rule.</p>
+<p>Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you
+associated the Resolver rule with. For more information, see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_resolver_endpoint_ip_address/3">
+
+    <span id="disassociate_resolver_endpoint_ip_address/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_resolver_endpoint_ip_address/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_resolver_endpoint_ip_address(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes IP addresses from an inbound or an outbound Resolver endpoint.</p>
+<p>If you want to remove more than one IP address, submit one <code class="inline">DisassociateResolverEndpointIpAddress</code>
+request for each IP address.</p>
+<p>To add an IP address to an endpoint, see
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_resolver_query_log_config/3">
+
+    <span id="disassociate_resolver_query_log_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_resolver_query_log_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_resolver_query_log_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L201" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a VPC from a query logging configuration.</p>
+<p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the
+configuration. If you used Resource Access Manager (RAM) to share a query logging configuration
+with other accounts, VPCs can be disassociated from the configuration in the following ways:</p>
+<p>   The accounts that you shared the configuration with can disassociate VPCs from the
+configuration.</p>
+<p>   You can stop sharing the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_resolver_rule/3">
+
+    <span id="disassociate_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L211" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the association between a specified Resolver rule and a specified VPC.</p>
+<p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the
+domain name that you specified in the Resolver rule.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_endpoint/3">
+
+    <span id="get_resolver_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an inbound or an
+outbound Resolver endpoint, and the current status of the endpoint.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_query_log_config/3">
+
+    <span id="get_resolver_query_log_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_query_log_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_query_log_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a specified Resolver query logging configuration, such as the number of
+VPCs that the configuration is logging queries for and the location that logs are sent to.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_query_log_config_association/3">
+
+    <span id="get_resolver_query_log_config_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_query_log_config_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_query_log_config_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a specified association between a Resolver query logging configuration and
+an Amazon VPC.</p>
+<p>When you associate a VPC with a query logging configuration, Resolver logs DNS queries that
+originate in that VPC.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_query_log_config_policy/3">
+
+    <span id="get_resolver_query_log_config_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_query_log_config_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_query_log_config_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a query logging policy.</p>
+<p>A query logging policy specifies the Resolver query logging operations and resources that you want
+to allow another AWS account to be able to use.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_rule/3">
+
+    <span id="get_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards
+DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_rule_association/3">
+
+    <span id="get_resolver_rule_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_rule_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_rule_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about an association between a specified Resolver rule and a VPC.</p>
+<p>You associate a Resolver rule and a VPC using
+<a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resolver_rule_policy/3">
+
+    <span id="get_resolver_rule_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_resolver_rule_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resolver_rule_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a Resolver rule policy.</p>
+<p>A Resolver rule policy specifies the Resolver operations and resources that you want to allow
+another AWS account to be able to use.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_endpoint_ip_addresses/3">
+
+    <span id="list_resolver_endpoint_ip_addresses/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_endpoint_ip_addresses/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_endpoint_ip_addresses(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L283" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the IP addresses for a specified Resolver endpoint.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_endpoints/3">
+
+    <span id="list_resolver_endpoints/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_endpoints/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_endpoints(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L290" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the Resolver endpoints that were created using the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_query_log_config_associations/3">
+
+    <span id="list_resolver_query_log_config_associations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_query_log_config_associations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_query_log_config_associations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists information about associations between Amazon VPCs and query logging configurations.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_query_log_configs/3">
+
+    <span id="list_resolver_query_log_configs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_query_log_configs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_query_log_configs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists information about the specified query logging configurations.</p>
+<p>Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs
+that you want to log queries for.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_rule_associations/3">
+
+    <span id="list_resolver_rule_associations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_rule_associations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_rule_associations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L315" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the associations that were created between Resolver rules and VPCs using the current AWS
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resolver_rules/3">
+
+    <span id="list_resolver_rules/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resolver_rules/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resolver_rules(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L322" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the Resolver rules that were created using the current AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L329" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags that you associated with the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_resolver_query_log_config_policy/3">
+
+    <span id="put_resolver_query_log_config_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_resolver_query_log_config_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_resolver_query_log_config_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specifies an AWS account that you want to share a query logging configuration with, the query
+logging configuration that you want to share, and the operations that you want the account to be
+able to perform on the configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_resolver_rule_policy/3">
+
+    <span id="put_resolver_rule_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_resolver_rule_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_resolver_rule_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L346" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Specifies an AWS account that you want to share rules with, the Resolver rules that you want to
+share, and the operations that you want the account to be able to perform on those rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L353" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags to a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L360" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resolver_endpoint/3">
+
+    <span id="update_resolver_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_resolver_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resolver_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L367" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the name of an inbound or an outbound Resolver endpoint.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resolver_rule/3">
+
+    <span id="update_resolver_rule/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_resolver_rule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resolver_rule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates settings for a specified Resolver rule.</p>
+<p><code class="inline">ResolverRuleId</code> is required, and all other parameters are optional. If you don&#39;t specify a
+parameter, it retains its current value.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

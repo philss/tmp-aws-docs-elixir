@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodeStar — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodeStar
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS CodeStar</p>
+<p>This is the API reference for AWS CodeStar.</p>
+<p>This reference provides descriptions of the operations and data types for the AWS CodeStar API
+along with usage examples.</p>
+<p>You can use the AWS CodeStar API to work with:</p>
+<p>Projects and their resources, by calling the following:</p>
+<ul>
+<li><p><code class="inline">DeleteProject</code>, which deletes a project.</p>
+</li>
+<li><p><code class="inline">DescribeProject</code>, which lists the attributes of a project.</p>
+</li>
+<li><p><code class="inline">ListProjects</code>, which lists all projects associated with your AWS account.</p>
+</li>
+<li><p><code class="inline">ListResources</code>, which lists the resources associated with a project.</p>
+</li>
+<li><p><code class="inline">ListTagsForProject</code>, which lists the tags associated with a project.</p>
+</li>
+<li><p><code class="inline">TagProject</code>, which adds tags to a project.</p>
+</li>
+<li><p><code class="inline">UntagProject</code>, which removes tags from a project.</p>
+</li>
+<li><p><code class="inline">UpdateProject</code>, which updates the attributes of a project.</p>
+</li>
+</ul>
+<p>Teams and team members, by calling the following:</p>
+<ul>
+<li><p><code class="inline">AssociateTeamMember</code>, which adds an IAM user to the team for a project.</p>
+</li>
+<li><p><code class="inline">DisassociateTeamMember</code>, which removes an IAM user from the team for a project.</p>
+</li>
+<li><p><code class="inline">ListTeamMembers</code>, which lists all the IAM users in the team for a project,
+including their roles and attributes.</p>
+</li>
+<li><p><code class="inline">UpdateTeamMember</code>, which updates a team member&#39;s attributes in a project.</p>
+</li>
+</ul>
+<p>Users, by calling the following:</p>
+<ul>
+<li><p><code class="inline">CreateUserProfile</code>, which creates a user profile that contains data associated with
+the user across all projects.</p>
+</li>
+<li><p><code class="inline">DeleteUserProfile</code>, which deletes all user profile information across all projects.</p>
+</li>
+<li><p><code class="inline">DescribeUserProfile</code>, which describes the profile of a user.</p>
+</li>
+<li><p><code class="inline">ListUserProfiles</code>, which lists all user profiles.</p>
+</li>
+<li><p><code class="inline">UpdateUserProfile</code>, which updates the profile for a user.</p>
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_team_member/3">associate_team_member(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds an IAM user to the team for an AWS CodeStar project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_project/3">create_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a project, including project resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_profile/3">create_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a profile for a user that includes user preferences, such as the display name and email
+address assocciated with the user, in AWS CodeStar.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_project/3">delete_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a project, including project resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_profile/3">delete_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with
+that profile, such as display name and email address.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_project/3">describe_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a project and its resources.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_profile/3">describe_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a user in AWS CodeStar and the user attributes across all projects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_team_member/3">disassociate_team_member(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a user from a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_projects/3">list_projects(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all projects in AWS CodeStar associated with your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resources/3">list_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists resources associated with a project in AWS CodeStar.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_project/3">list_tags_for_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the tags for a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_team_members/3">list_team_members(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all team members associated with a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_profiles/3">list_user_profiles(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the user profiles configured for your AWS account in AWS CodeStar.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_project/3">tag_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tags to a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_project/3">untag_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_project/3">update_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a project in AWS CodeStar.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_team_member/3">update_team_member(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a team member&#39;s attributes in an AWS CodeStar project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_profile/3">update_user_profile(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a user&#39;s profile in AWS CodeStar.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_team_member/3">
+
+    <span id="associate_team_member/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_team_member/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_team_member(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds an IAM user to the team for an AWS CodeStar project.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_project/3">
+
+    <span id="create_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a project, including project resources.</p>
+<p>This action creates a project based on a submitted project request. A set of source code files and
+a toolchain template file can be included with the project request. If these are not provided, an
+empty project is created.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_profile/3">
+
+    <span id="create_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a profile for a user that includes user preferences, such as the display name and email
+address assocciated with the user, in AWS CodeStar.</p>
+<p>The user profile is not project-specific. Information in the user profile is displayed wherever
+the user&#39;s information appears to other users in AWS CodeStar.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_project/3">
+
+    <span id="delete_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a project, including project resources.</p>
+<p>Does not delete users associated with the project, but does delete the IAM roles that allowed
+access to the project.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_profile/3">
+
+    <span id="delete_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user profile in AWS CodeStar, including all personal preference data associated with
+that profile, such as display name and email address.</p>
+<p>It does not delete the history of that user, for example the history of commits made by that user.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_project/3">
+
+    <span id="describe_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a project and its resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_profile/3">
+
+    <span id="describe_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a user in AWS CodeStar and the user attributes across all projects.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_team_member/3">
+
+    <span id="disassociate_team_member/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_team_member/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_team_member(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L128" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a user from a project.</p>
+<p>Removing a user from a project also removes the IAM policies from that user that allowed access to
+the project and its resources. Disassociating a team member does not remove that user&#39;s profile
+from AWS CodeStar. It does not remove the user from IAM.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_projects/3">
+
+    <span id="list_projects/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_projects/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_projects(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L135" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all projects in AWS CodeStar associated with your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resources/3">
+
+    <span id="list_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L142" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists resources associated with a project in AWS CodeStar.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_project/3">
+
+    <span id="list_tags_for_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L149" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the tags for a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_team_members/3">
+
+    <span id="list_team_members/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_team_members/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_team_members(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all team members associated with a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_profiles/3">
+
+    <span id="list_user_profiles/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_profiles/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_profiles(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L163" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the user profiles configured for your AWS account in AWS CodeStar.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_project/3">
+
+    <span id="tag_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tags to a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_project/3">
+
+    <span id="untag_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_project/3">
+
+    <span id="update_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a project in AWS CodeStar.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_team_member/3">
+
+    <span id="update_team_member/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_team_member/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_team_member(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a team member&#39;s attributes in an AWS CodeStar project.</p>
+<p>For example, you can change a team member&#39;s role in the project, or change whether they have
+remote access to project resources.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_profile/3">
+
+    <span id="update_user_profile/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_profile/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_profile(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_star.ex#L204" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a user&#39;s profile in AWS CodeStar.</p>
+<p>The user profile is not project-specific. Information in the user profile is displayed wherever
+the user&#39;s information appears to other users in AWS CodeStar.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

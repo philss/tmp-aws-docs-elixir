@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.EBS — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.EBS
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create EBS snapshots, write
+data directly to your snapshots, read data on your snapshots, and identify the differences or
+changes between two snapshots.</p>
+<p>If you’re an independent software vendor (ISV) who offers backup services for Amazon EBS, the EBS
+direct APIs make it more efficient and cost-effective to track incremental changes on your EBS
+volumes through snapshots. This can be done without having to create new volumes from snapshots,
+and then use Amazon Elastic Compute Cloud (Amazon EC2) instances to compare the differences.</p>
+<p>You can create incremental snapshots directly from data on-premises into EBS volumes and the cloud
+to use for quick disaster recovery. With the ability to write and read snapshots, you can write
+your on-premises data to an EBS snapshot during a disaster. Then after recovery, you can restore
+it back to AWS or on-premises from the snapshot. You no longer need to build and maintain complex
+mechanisms to copy data to and from Amazon EBS.</p>
+<p>This API reference provides detailed information about the actions, data types, parameters, and
+errors of the EBS direct APIs. For more information about the elements that make up the EBS direct
+APIs, and examples of how to use them effectively, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html">Accessing the Contents of an EBS Snapshot</a> in the
+<em>Amazon Elastic Compute Cloud User Guide</em>. For more information about the supported AWS Regions,
+endpoints, and service quotas for the EBS direct APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/ebs-service.html">Amazon Elastic Block Store Endpoints and Quotas</a> in the <em>AWS General
+Reference</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#complete_snapshot/4">complete_snapshot(client, snapshot_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Seals and completes the snapshot after all of the required blocks of data have been written to it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_snapshot_block/5">get_snapshot_block(client, block_index, snapshot_id, block_token, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_changed_blocks/7">list_changed_blocks(client, second_snapshot_id, first_snapshot_id \\ nil, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the blocks that are different between two Amazon Elastic Block Store
+snapshots of the same volume/snapshot lineage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_snapshot_blocks/6">list_snapshot_blocks(client, snapshot_id, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_snapshot_block/5">put_snapshot_block(client, block_index, snapshot_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Writes a block of data to a snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_snapshot/3">start_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Amazon EBS snapshot.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="complete_snapshot/4">
+
+    <span id="complete_snapshot/3"></span>
+
+  <div class="detail-header">
+    <a href="#complete_snapshot/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">complete_snapshot(client, snapshot_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L35" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Seals and completes the snapshot after all of the required blocks of data have been written to it.</p>
+<p>Completing the snapshot changes the status to <code class="inline">completed</code>. You cannot write new blocks to a
+snapshot after it has been completed.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_snapshot_block/5">
+
+    <span id="get_snapshot_block/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_snapshot_block/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_snapshot_block(client, block_index, snapshot_id, block_token, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L52" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_changed_blocks/7">
+
+    <span id="list_changed_blocks/2"></span>
+
+    <span id="list_changed_blocks/3"></span>
+
+    <span id="list_changed_blocks/4"></span>
+
+    <span id="list_changed_blocks/5"></span>
+
+    <span id="list_changed_blocks/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_changed_blocks/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_changed_blocks(client, second_snapshot_id, first_snapshot_id \\ nil, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the blocks that are different between two Amazon Elastic Block Store
+snapshots of the same volume/snapshot lineage.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_snapshot_blocks/6">
+
+    <span id="list_snapshot_blocks/2"></span>
+
+    <span id="list_snapshot_blocks/3"></span>
+
+    <span id="list_snapshot_blocks/4"></span>
+
+    <span id="list_snapshot_blocks/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_snapshot_blocks/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_snapshot_blocks(client, snapshot_id, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_snapshot_block/5">
+
+    <span id="put_snapshot_block/4"></span>
+
+  <div class="detail-header">
+    <a href="#put_snapshot_block/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_snapshot_block(client, block_index, snapshot_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L147" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Writes a block of data to a snapshot.</p>
+<p>If the specified block contains data, the existing data is overwritten. The target snapshot must
+be in the <code class="inline">pending</code> state.</p>
+<p>Data written to a snapshot must be aligned with 512-byte sectors.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_snapshot/3">
+
+    <span id="start_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Amazon EBS snapshot.</p>
+<p>The new snapshot enters the <code class="inline">pending</code> state after the request completes.</p>
+<p>After creating the snapshot, use <a href="https://docs.aws.amazon.com/ebs/latest/APIReference/API_PutSnapshotBlock.html">
+PutSnapshotBlock</a>
+to write blocks of data to the snapshot.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

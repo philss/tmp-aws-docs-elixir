@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.SFN — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.SFN
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Step Functions</p>
+<p>AWS Step Functions is a service that lets you coordinate the components of distributed
+applications and microservices using visual workflows.</p>
+<p>You can use Step Functions to build applications from individual components, each of which
+performs a discrete function, or <em>task</em>, allowing you to scale and change applications quickly.
+Step Functions provides a console that helps visualize the components of your application as a
+series of steps. Step Functions automatically triggers and tracks each step, and retries steps
+when there are errors, so your application executes predictably and in the right order every time.
+Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.</p>
+<p>Step Functions manages operations and underlying infrastructure to ensure your application is
+available at any scale. You can run tasks on AWS, your own servers, or any system that has access
+to AWS. You can access and use Step Functions using the console, the AWS SDKs, or an HTTP API. For
+more information about Step Functions, see the <em><a href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_activity/3">create_activity(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an activity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_state_machine/3">create_state_machine(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a state machine.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_activity/3">delete_activity(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an activity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_state_machine/3">delete_state_machine(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a state machine.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_activity/3">describe_activity(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an activity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_execution/3">describe_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_state_machine/3">describe_state_machine(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a state machine.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_state_machine_for_execution/3">describe_state_machine_for_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the state machine associated with a specific execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_activity_task/3">get_activity_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for
+execution by a running state machine.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_execution_history/3">get_execution_history(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the history of the specified execution as a list of events.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_activities/3">list_activities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the existing activities.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_executions/3">list_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the executions of a state machine that meet the filtering criteria.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_state_machines/3">list_state_machines(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the existing state machines.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List tags for a given resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_task_failure/3">send_task_failure(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+pattern to report that the task identified by the <code class="inline">taskToken</code> failed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_task_heartbeat/3">send_task_heartbeat(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified <code class="inline">taskToken</code> is
+still making progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_task_success/3">send_task_success(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+pattern to report that the task identified by the <code class="inline">taskToken</code> completed successfully.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_execution/3">start_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a state machine execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_execution/3">stop_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops an execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add a tag to a Step Functions resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove a tag from a Step Functions resource</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_state_machine/3">update_state_machine(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing state machine by modifying its <code class="inline">definition</code>, <code class="inline">roleArn</code>, or
+<code class="inline">loggingConfiguration</code>.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_activity/3">
+
+    <span id="create_activity/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_activity/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_activity(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L42" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an activity.</p>
+<p>An activity is a task that you write in any programming language and host on any machine that has
+access to AWS Step Functions. Activities must poll Step Functions using the <code class="inline">GetActivityTask</code> API
+action and respond using <code class="inline">SendTask*</code> API actions. This function lets Step Functions know the
+existence of your activity and returns an identifier for use in a state machine and when polling
+from the activity.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+<p><code class="inline">CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
+was already created. <code class="inline">CreateActivity</code>&#39;s idempotency check is based on the activity <code class="inline">name</code>. If a
+following request has different <code class="inline">tags</code> values, Step Functions will ignore these differences and
+treat it as an idempotent request of the previous. In this case, <code class="inline">tags</code> will not be updated, even
+if they are different.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_state_machine/3">
+
+    <span id="create_state_machine/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_state_machine/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_state_machine(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a state machine.</p>
+<p>A state machine consists of a collection of states that can do work (<a href="https://hexdocs.pm/elixir/Task.html"><code class="inline">Task</code></a> states), determine to
+which states to transition next (<code class="inline">Choice</code> states), stop an execution with an error (<code class="inline">Fail</code>
+states), and so on. State machines are specified using a JSON-based, structured language. For more
+information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>
+in the AWS Step Functions User Guide.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+<p><code class="inline">CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource
+if it was already created. <code class="inline">CreateStateMachine</code>&#39;s idempotency check is based on the state machine
+<code class="inline">name</code>, <code class="inline">definition</code>, <code class="inline">type</code>, <code class="inline">LoggingConfiguration</code> and <code class="inline">TracingConfiguration</code>. If a following
+request has a different <code class="inline">roleArn</code> or <code class="inline">tags</code>, Step Functions will ignore these differences and
+treat it as an idempotent request of the previous. In this case, <code class="inline">roleArn</code> and <code class="inline">tags</code> will not be
+updated, even if they are different.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_activity/3">
+
+    <span id="delete_activity/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_activity/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_activity(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an activity.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_state_machine/3">
+
+    <span id="delete_state_machine/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_state_machine/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_state_machine(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a state machine.</p>
+<p>This is an asynchronous operation: It sets the state machine&#39;s status to <code class="inline">DELETING</code> and begins the
+deletion process.</p>
+<p>For <code class="inline">EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute).
+Running executions may emit logs after <code class="inline">DeleteStateMachine</code> API is called.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_activity/3">
+
+    <span id="describe_activity/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_activity/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_activity(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L95" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an activity.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_execution/3">
+
+    <span id="describe_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an execution.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+<p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_state_machine/3">
+
+    <span id="describe_state_machine/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_state_machine/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_state_machine(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a state machine.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_state_machine_for_execution/3">
+
+    <span id="describe_state_machine_for_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_state_machine_for_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_state_machine_for_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the state machine associated with a specific execution.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+<p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_activity_task/3">
+
+    <span id="get_activity_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_activity_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_activity_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L149" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for
+execution by a running state machine.</p>
+<p>This initiates a long poll, where the service holds the HTTP connection open and responds as soon
+as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time
+the service holds on to the request before responding is 60 seconds. If no task is available
+within 60 seconds, the poll returns a <code class="inline">taskToken</code> with a null string.</p>
+<p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than
+the maximum time the service may hold the poll request).</p>
+<p>Polling with <code class="inline">GetActivityTask</code> can cause latency in some implementations. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling for Activity
+Tasks</a> in the Step
+Functions Developer Guide.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_execution_history/3">
+
+    <span id="get_execution_history/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_execution_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_execution_history(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the history of the specified execution as a list of events.</p>
+<p>By default, the results are returned in ascending order of the <code class="inline">timeStamp</code> of the events. Use the
+<code class="inline">reverseOrder</code> parameter to get the latest events first.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
+pagination token for each page. Make the call again using the returned token to retrieve the next
+page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
+expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_activities/3">
+
+    <span id="list_activities/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_activities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_activities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L181" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the existing activities.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
+pagination token for each page. Make the call again using the returned token to retrieve the next
+page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
+expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_executions/3">
+
+    <span id="list_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L200" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the executions of a state machine that meet the filtering criteria.</p>
+<p>Results are sorted by time, with the most recent execution first.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
+pagination token for each page. Make the call again using the returned token to retrieve the next
+page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
+expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+<p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_state_machines/3">
+
+    <span id="list_state_machines/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_state_machines/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_state_machines(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L215" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the existing state machines.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
+pagination token for each page. Make the call again using the returned token to retrieve the next
+page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
+expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not reflect very
+recent updates and changes.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List tags for a given resource.</p>
+<p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code class="inline">_ . : / = + - @</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_task_failure/3">
+
+    <span id="send_task_failure/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_task_failure/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_task_failure(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L233" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+pattern to report that the task identified by the <code class="inline">taskToken</code> failed.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_task_heartbeat/3">
+
+    <span id="send_task_heartbeat/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_task_heartbeat/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_task_heartbeat(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified <code class="inline">taskToken</code> is
+still making progress.</p>
+<p>This action resets the <code class="inline">Heartbeat</code> clock. The <code class="inline">Heartbeat</code> threshold is specified in the state
+machine&#39;s Amazon States Language definition (<code class="inline">HeartbeatSeconds</code>). This action does not in itself
+create an event in the execution history. However, if the task times out, the execution history
+contains an <code class="inline">ActivityTimedOut</code> entry for activities, or a <code class="inline">TaskTimedOut</code> entry for for tasks using
+the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+run</a>
+or
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+pattern.</p>
+<p>The <code class="inline">Timeout</code> of a task, defined in the state machine&#39;s Amazon States Language definition, is its
+maximum allowed duration, regardless of the number of <code class="inline">SendTaskHeartbeat</code> requests received. Use
+<code class="inline">HeartbeatSeconds</code> to configure the timeout interval for heartbeats.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_task_success/3">
+
+    <span id="send_task_success/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_task_success/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_task_success(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L265" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by activity workers and task states using the
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
+pattern to report that the task identified by the <code class="inline">taskToken</code> completed successfully.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_execution/3">
+
+    <span id="start_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L277" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a state machine execution.</p>
+<p><code class="inline">StartExecution</code> is idempotent. If <code class="inline">StartExecution</code> is called with the same name and input as a
+running execution, the call will succeed and return the same response as the original request. If
+the execution is closed or if the input is different, it will return a 400
+<code class="inline">ExecutionAlreadyExists</code> error. Names can be reused after 90 days.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_execution/3">
+
+    <span id="stop_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops an execution.</p>
+<p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add a tag to a Step Functions resource.</p>
+<p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the
+<em>AWS Billing and Cost Management User Guide</em>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+<p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code class="inline">_ . : / = + - @</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L305" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Remove a tag from a Step Functions resource</p>
+
+  </section>
+</section>
+<section class="detail" id="update_state_machine/3">
+
+    <span id="update_state_machine/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_state_machine/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_state_machine(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L320" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing state machine by modifying its <code class="inline">definition</code>, <code class="inline">roleArn</code>, or
+<code class="inline">loggingConfiguration</code>.</p>
+<p>Running executions will continue to use the previous <code class="inline">definition</code> and <code class="inline">roleArn</code>. You must include
+at least one of <code class="inline">definition</code> or <code class="inline">roleArn</code> or you will receive a <code class="inline">MissingRequiredParameter</code> error.</p>
+<p>All <code class="inline">StartExecution</code> calls within a few seconds will use the updated <code class="inline">definition</code> and <code class="inline">roleArn</code>.
+Executions started immediately after calling <code class="inline">UpdateStateMachine</code> may use the previous state
+machine <code class="inline">definition</code> and <code class="inline">roleArn</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

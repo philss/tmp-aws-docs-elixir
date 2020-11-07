@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.FMS — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.FMS
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Firewall Manager</p>
+<p>This is the <em>AWS Firewall Manager API Reference</em>.</p>
+<p>This guide is for developers who need detailed information about the AWS Firewall Manager API
+actions, data types, and errors. For detailed information about AWS Firewall Manager features, see
+the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS Firewall Manager Developer Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_admin_account/3">associate_admin_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the AWS Firewall Manager administrator account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_apps_list/3">delete_apps_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes an AWS Firewall Manager applications list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_notification_channel/3">delete_notification_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification
+Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_policy/3">delete_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes an AWS Firewall Manager policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_protocols_list/3">delete_protocols_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes an AWS Firewall Manager protocols list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_admin_account/3">disassociate_admin_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the account that has been set as the AWS Firewall Manager administrator account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_admin_account/3">get_admin_account(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the
+AWS Firewall Manager administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_apps_list/3">get_apps_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified AWS Firewall Manager applications list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_compliance_detail/3">get_compliance_detail(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed compliance information about the specified member account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_notification_channel/3">get_notification_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS
+Firewall Manager SNS logs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_policy/3">get_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified AWS Firewall Manager policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_protection_status/3">get_protection_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>If you created a Shield Advanced policy, returns policy-level attack summary information in the
+event of a potential DDoS attack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_protocols_list/3">get_protocols_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about the specified AWS Firewall Manager protocols list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_violation_details/3">get_violation_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_apps_lists/3">list_apps_lists(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of <code class="inline">AppsListDataSummary</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_compliance_status/3">list_compliance_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of <code class="inline">PolicyComplianceStatus</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_member_accounts/3">list_member_accounts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a <code class="inline">MemberAccounts</code> object that lists the member accounts in the administrator&#39;s AWS
+organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_policies/3">list_policies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of <code class="inline">PolicySummary</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_protocols_lists/3">list_protocols_lists(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of <code class="inline">ProtocolsListDataSummary</code> objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the list of tags for the specified AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_apps_list/3">put_apps_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS Firewall Manager applications list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_notification_channel/3">put_notification_channel(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall
+Manager uses to record SNS logs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_policy/3">put_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS Firewall Manager policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_protocols_list/3">put_protocols_list(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AWS Firewall Manager protocols list.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more tags to an AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes one or more tags from an AWS resource.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_admin_account/3">
+
+    <span id="associate_admin_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_admin_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_admin_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the AWS Firewall Manager administrator account.</p>
+<p>AWS Firewall Manager must be associated with the master account of your AWS organization or
+associated with a member account that has the appropriate permissions. If the account ID that you
+submit is not an AWS Organizations master account, AWS Firewall Manager will set the appropriate
+permissions for the given member account.</p>
+<p>The account that you associate with AWS Firewall Manager is called the AWS Firewall Manager
+administrator account.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_apps_list/3">
+
+    <span id="delete_apps_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_apps_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_apps_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L33" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes an AWS Firewall Manager applications list.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_notification_channel/3">
+
+    <span id="delete_notification_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_notification_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_notification_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L41" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification
+Service (SNS) topic that is used to record AWS Firewall Manager SNS logs.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_policy/3">
+
+    <span id="delete_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes an AWS Firewall Manager policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_protocols_list/3">
+
+    <span id="delete_protocols_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_protocols_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_protocols_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes an AWS Firewall Manager protocols list.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_admin_account/3">
+
+    <span id="disassociate_admin_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_admin_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_admin_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the account that has been set as the AWS Firewall Manager administrator account.</p>
+<p>To set a different account as the administrator account, you must submit an
+<code class="inline">AssociateAdminAccount</code> request.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_admin_account/3">
+
+    <span id="get_admin_account/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_admin_account/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_admin_account(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the AWS Organizations master account that is associated with AWS Firewall Manager as the
+AWS Firewall Manager administrator.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_apps_list/3">
+
+    <span id="get_apps_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_apps_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_apps_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified AWS Firewall Manager applications list.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_compliance_detail/3">
+
+    <span id="get_compliance_detail/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_compliance_detail/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_compliance_detail(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed compliance information about the specified member account.</p>
+<p>Details include resources that are in and out of compliance with the specified policy. Resources
+are considered noncompliant for AWS WAF and Shield Advanced policies if the specified policy has
+not been applied to them. Resources are considered noncompliant for security group policies if
+they are in scope of the policy, they violate one or more of the policy rules, and remediation is
+disabled or not possible.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_notification_channel/3">
+
+    <span id="get_notification_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_notification_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_notification_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Information about the Amazon Simple Notification Service (SNS) topic that is used to record AWS
+Firewall Manager SNS logs.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_policy/3">
+
+    <span id="get_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L108" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified AWS Firewall Manager policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_protection_status/3">
+
+    <span id="get_protection_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_protection_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_protection_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>If you created a Shield Advanced policy, returns policy-level attack summary information in the
+event of a potential DDoS attack.</p>
+<p>Other policy types are currently unsupported.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_protocols_list/3">
+
+    <span id="get_protocols_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_protocols_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_protocols_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about the specified AWS Firewall Manager protocols list.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_violation_details/3">
+
+    <span id="get_violation_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_violation_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_violation_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS
+account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_apps_lists/3">
+
+    <span id="list_apps_lists/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_apps_lists/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_apps_lists(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of <code class="inline">AppsListDataSummary</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_compliance_status/3">
+
+    <span id="list_compliance_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_compliance_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_compliance_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of <code class="inline">PolicyComplianceStatus</code> objects.</p>
+<p>Use <code class="inline">PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the
+specified policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_member_accounts/3">
+
+    <span id="list_member_accounts/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_member_accounts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_member_accounts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a <code class="inline">MemberAccounts</code> object that lists the member accounts in the administrator&#39;s AWS
+organization.</p>
+<p>The <code class="inline">ListMemberAccounts</code> must be submitted by the account that is set as the AWS Firewall Manager
+administrator.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_policies/3">
+
+    <span id="list_policies/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_policies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_policies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of <code class="inline">PolicySummary</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_protocols_lists/3">
+
+    <span id="list_protocols_lists/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_protocols_lists/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_protocols_lists(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of <code class="inline">ProtocolsListDataSummary</code> objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the list of tags for the specified AWS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_apps_list/3">
+
+    <span id="put_apps_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_apps_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_apps_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L189" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS Firewall Manager applications list.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_notification_channel/3">
+
+    <span id="put_notification_channel/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_notification_channel/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_notification_channel(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall
+Manager uses to record SNS logs.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_policy/3">
+
+    <span id="put_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS Firewall Manager policy.</p>
+<p>Firewall Manager provides the following types of policies:</p>
+<ul>
+<li><p>A Shield Advanced policy, which applies Shield Advanced protection to specified
+accounts and resources</p>
+</li>
+<li><p>An AWS WAF policy (type WAFV2), which defines rule groups to run first in the
+corresponding AWS WAF web ACL and rule groups to run last in the web ACL.</p>
+</li>
+<li><p>An AWS WAF Classic policy (type WAF), which defines a rule group.</p>
+</li>
+<li><p>A security group policy, which manages VPC security groups across your AWS
+organization.</p>
+</li>
+</ul>
+<p>Each policy is specific to one of the types. If you want to enforce more than one policy type
+across accounts, create multiple policies. You can create multiple policies for each type.</p>
+<p>You must be subscribed to Shield Advanced to create a Shield Advanced policy. For more information
+about subscribing to Shield Advanced, see
+<a href="https://docs.aws.amazon.com/waf/latest/DDOSAPIReference/API_CreateSubscription.html">CreateSubscription</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_protocols_list/3">
+
+    <span id="put_protocols_list/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_protocols_list/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_protocols_list(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AWS Firewall Manager protocols list.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more tags to an AWS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/fms.ex#L245" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes one or more tags from an AWS resource.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

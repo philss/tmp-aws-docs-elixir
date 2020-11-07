@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.MediaConnect — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.MediaConnect
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>API for AWS Elemental MediaConnect</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_flow_outputs/4">add_flow_outputs(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds outputs to an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_flow_sources/4">add_flow_sources(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds Sources to flow</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_flow_vpc_interfaces/4">add_flow_vpc_interfaces(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds VPC interfaces to flow</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_flow/3">create_flow(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_flow/4">delete_flow(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_flow/3">describe_flow(client, flow_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays the details of a flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_offering/3">describe_offering(client, offering_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays the details of an offering.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_reservation/3">describe_reservation(client, reservation_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays the details of a reservation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#grant_flow_entitlements/4">grant_flow_entitlements(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Grants entitlements to an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_entitlements/4">list_entitlements(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays a list of all entitlements that have been granted to this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_flows/4">list_flows(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays a list of flows that are associated with this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_offerings/4">list_offerings(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays a list of all offerings that are available to this account in the current AWS Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_reservations/4">list_reservations(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays a list of all reservations that have been purchased by this account in the current AWS
+Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all tags on an AWS Elemental MediaConnect resource</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#purchase_offering/4">purchase_offering(client, offering_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Submits a request to purchase an offering.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_flow_output/5">remove_flow_output(client, flow_arn, output_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes an output from an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_flow_source/5">remove_flow_source(client, flow_arn, source_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a source from an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_flow_vpc_interface/5">remove_flow_vpc_interface(client, flow_arn, vpc_interface_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a VPC Interface from an existing flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#revoke_flow_entitlement/5">revoke_flow_entitlement(client, entitlement_arn, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Revokes an entitlement from a flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_flow/4">start_flow(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_flow/4">stop_flow(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified tags to a resource with the specified resourceArn.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes specified tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow/4">update_flow(client, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates flow</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow_entitlement/5">update_flow_entitlement(client, entitlement_arn, flow_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>You can change an entitlement&#39;s description, subscribers, and encryption.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow_output/5">update_flow_output(client, flow_arn, output_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing flow output.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow_source/5">update_flow_source(client, flow_arn, source_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the source of a flow.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_flow_outputs/4">
+
+    <span id="add_flow_outputs/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_flow_outputs/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_flow_outputs(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L14" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds outputs to an existing flow.</p>
+<p>You can create up to 50 outputs per flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_flow_sources/4">
+
+    <span id="add_flow_sources/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_flow_sources/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_flow_sources(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds Sources to flow</p>
+
+  </section>
+</section>
+<section class="detail" id="add_flow_vpc_interfaces/4">
+
+    <span id="add_flow_vpc_interfaces/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_flow_vpc_interfaces/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_flow_vpc_interfaces(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds VPC interfaces to flow</p>
+
+  </section>
+</section>
+<section class="detail" id="create_flow/3">
+
+    <span id="create_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_flow(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L47" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new flow.</p>
+<p>The request must include one source. The request optionally can include outputs (up to 50) and
+entitlements (up to 50).</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_flow/4">
+
+    <span id="delete_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_flow(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a flow.</p>
+<p>Before you can delete a flow, you must stop the flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_flow/3">
+
+    <span id="describe_flow/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_flow/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_flow(client, flow_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L72" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays the details of a flow.</p>
+<p>The response includes the flow ARN, name, and Availability Zone, as well as details about the
+source, outputs, and entitlements.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_offering/3">
+
+    <span id="describe_offering/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_offering/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_offering(client, offering_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays the details of an offering.</p>
+<p>The response includes the offering description, duration, outbound bandwidth, price, and Amazon
+Resource Name (ARN).</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_reservation/3">
+
+    <span id="describe_reservation/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_reservation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_reservation(client, reservation_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L99" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays the details of a reservation.</p>
+<p>The response includes the reservation name, state, start date and time, and the details of the
+offering that make up the rest of the reservation (such as price, duration, and outbound
+bandwidth).</p>
+
+  </section>
+</section>
+<section class="detail" id="grant_flow_entitlements/4">
+
+    <span id="grant_flow_entitlements/3"></span>
+
+  <div class="detail-header">
+    <a href="#grant_flow_entitlements/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">grant_flow_entitlements(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Grants entitlements to an existing flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_entitlements/4">
+
+    <span id="list_entitlements/1"></span>
+
+    <span id="list_entitlements/2"></span>
+
+    <span id="list_entitlements/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_entitlements/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_entitlements(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L121" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays a list of all entitlements that have been granted to this account.</p>
+<p>This request returns 20 results per page.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_flows/4">
+
+    <span id="list_flows/1"></span>
+
+    <span id="list_flows/2"></span>
+
+    <span id="list_flows/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_flows/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_flows(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays a list of flows that are associated with this account.</p>
+<p>This request returns a paginated result.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_offerings/4">
+
+    <span id="list_offerings/1"></span>
+
+    <span id="list_offerings/2"></span>
+
+    <span id="list_offerings/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_offerings/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_offerings(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L166" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays a list of all offerings that are available to this account in the current AWS Region.</p>
+<p>If you have an active reservation (which means you&#39;ve purchased an offering that has already
+started and hasn&#39;t expired yet), your account isn&#39;t eligible for other offerings.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_reservations/4">
+
+    <span id="list_reservations/1"></span>
+
+    <span id="list_reservations/2"></span>
+
+    <span id="list_reservations/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_reservations/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_reservations(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L189" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays a list of all reservations that have been purchased by this account in the current AWS
+Region.</p>
+<p>This list includes all reservations in all states (such as active and expired).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L209" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all tags on an AWS Elemental MediaConnect resource</p>
+
+  </section>
+</section>
+<section class="detail" id="purchase_offering/4">
+
+    <span id="purchase_offering/3"></span>
+
+  <div class="detail-header">
+    <a href="#purchase_offering/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">purchase_offering(client, offering_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L221" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Submits a request to purchase an offering.</p>
+<p>If you already have an active reservation, you can&#39;t purchase another offering.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_flow_output/5">
+
+    <span id="remove_flow_output/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_flow_output/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_flow_output(client, flow_arn, output_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L235" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes an output from an existing flow.</p>
+<p>This request can be made only on an output that does not have an entitlement associated with it.
+If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is
+revoked from a flow, the service automatically removes the associated output.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_flow_source/5">
+
+    <span id="remove_flow_source/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_flow_source/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_flow_source(client, flow_arn, source_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L247" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a source from an existing flow.</p>
+<p>This request can be made only if there is more than one source on the flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_flow_vpc_interface/5">
+
+    <span id="remove_flow_vpc_interface/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_flow_vpc_interface/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_flow_vpc_interface(client, flow_arn, vpc_interface_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L261" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a VPC Interface from an existing flow.</p>
+<p>This request can be made only on a VPC interface that does not have a Source or Output associated
+with it. If the VPC interface is referenced by a Source or Output, you must first delete or update
+the Source or Output to no longer reference the VPC interface.</p>
+
+  </section>
+</section>
+<section class="detail" id="revoke_flow_entitlement/5">
+
+    <span id="revoke_flow_entitlement/4"></span>
+
+  <div class="detail-header">
+    <a href="#revoke_flow_entitlement/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">revoke_flow_entitlement(client, entitlement_arn, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Revokes an entitlement from a flow.</p>
+<p>Once an entitlement is revoked, the content becomes unavailable to the subscriber and the
+associated output is removed.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_flow/4">
+
+    <span id="start_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#start_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_flow(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L284" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_flow/4">
+
+    <span id="stop_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#stop_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_flow(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified tags to a resource with the specified resourceArn.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
+When a resource is deleted, the tags associated with that resource are deleted as well.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L317" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes specified tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow/4">
+
+    <span id="update_flow/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow(client, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L331" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates flow</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow_entitlement/5">
+
+    <span id="update_flow_entitlement/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow_entitlement/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow_entitlement(client, entitlement_arn, flow_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>You can change an entitlement&#39;s description, subscribers, and encryption.</p>
+<p>If you change the subscribers, the service will remove the outputs that are are used by the
+subscribers that are removed.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow_output/5">
+
+    <span id="update_flow_output/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow_output/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow_output(client, flow_arn, output_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L354" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing flow output.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow_source/5">
+
+    <span id="update_flow_source/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow_source/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow_source(client, flow_arn, source_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/media_connect.ex#L364" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the source of a flow.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

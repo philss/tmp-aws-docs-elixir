@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodeGuruReviewer — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodeGuruReviewer
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>This section provides documentation for the Amazon CodeGuru Reviewer API operations.</p>
+<p>CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential
+defects that are difficult for developers to find and recommends fixes in your Java code.</p>
+<p>By proactively detecting and providing recommendations for addressing code defects and
+implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of
+your code base during the code review stage. For more information about CodeGuru Reviewer, see the</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User Guide</a>.*
+</li>
+</ul>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_repository/3">associate_repository(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use to associate an AWS CodeCommit repository or a repostory managed by AWS CodeStar Connections
+with Amazon CodeGuru Reviewer.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_code_review/3">create_code_review(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use to create a code review for a repository analysis.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_code_review/3">describe_code_review(client, code_review_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the metadata associated with the code review along with its status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_recommendation_feedback/5">describe_recommendation_feedback(client, code_review_arn, recommendation_id, user_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the customer feedback for a CodeGuru Reviewer recommendation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_repository_association/3">describe_repository_association(client, association_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code class="inline">RepositoryAssociation</code>
+</a> object
+that contains information about the requested repository association.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_repository/4">disassociate_repository(client, association_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the association between Amazon CodeGuru Reviewer and a repository.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_code_reviews/8">list_code_reviews(client, max_results \\ nil, next_token \\ nil, provider_types \\ nil, repository_names \\ nil, states \\ nil, type, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all the code reviews that the customer has created in the past 90 days.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_recommendation_feedback/7">list_recommendation_feedback(client, code_review_arn, max_results \\ nil, next_token \\ nil, recommendation_ids \\ nil, user_ids \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html"> <code class="inline">RecommendationFeedbackSummary</code>
+</a>
+objects that contain customer recommendation feedback for all CodeGuru Reviewer users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_recommendations/5">list_recommendations(client, code_review_arn, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of all recommendations for a completed code review.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_repository_associations/8">list_repository_associations(client, max_results \\ nil, names \\ nil, next_token \\ nil, owners \\ nil, provider_types \\ nil, states \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html"> <code class="inline">RepositoryAssociationSummary</code>
+</a>
+objects that contain summary information about a repository association.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_recommendation_feedback/3">put_recommendation_feedback(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stores customer feedback for a CodeGuru Reviewer recommendation.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_repository/3">
+
+    <span id="associate_repository/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_repository/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_repository(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use to associate an AWS CodeCommit repository or a repostory managed by AWS CodeStar Connections
+with Amazon CodeGuru Reviewer.</p>
+<p>When you associate a repository, CodeGuru Reviewer reviews source code changes in the repository&#39;s
+pull requests and provides automatic recommendations. You can view recommendations using the
+CodeGuru Reviewer console. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html">Recommendations in Amazon CodeGuru Reviewer</a> in the
+<em>Amazon CodeGuru Reviewer User Guide.</em></p>
+<p>If you associate a CodeCommit repository, it must be in the same AWS Region and AWS account where
+its CodeGuru Reviewer code reviews are configured.</p>
+<p>Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections to
+connect to CodeGuru Reviewer. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/reviewer-ug/step-one.html#select-repository-source-provider">Connect to a repository source provider</a>
+in the <em>Amazon CodeGuru Reviewer User Guide.</em></p>
+<p>You cannot use the CodeGuru Reviewer SDK or the AWS CLI to associate a GitHub repository with
+Amazon CodeGuru Reviewer. To associate a GitHub repository, use the console. For more information,
+see <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting started with CodeGuru Reviewer</a>
+in the <em>CodeGuru Reviewer User Guide.</em></p>
+
+  </section>
+</section>
+<section class="detail" id="create_code_review/3">
+
+    <span id="create_code_review/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_code_review/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_code_review(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use to create a code review for a repository analysis.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_code_review/3">
+
+    <span id="describe_code_review/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_code_review/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_code_review(client, code_review_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the metadata associated with the code review along with its status.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_recommendation_feedback/5">
+
+    <span id="describe_recommendation_feedback/3"></span>
+
+    <span id="describe_recommendation_feedback/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_recommendation_feedback/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_recommendation_feedback(client, code_review_arn, recommendation_id, user_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L68" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the customer feedback for a CodeGuru Reviewer recommendation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_repository_association/3">
+
+    <span id="describe_repository_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_repository_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_repository_association(client, association_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html"> <code class="inline">RepositoryAssociation</code>
+</a> object
+that contains information about the requested repository association.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_repository/4">
+
+    <span id="disassociate_repository/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_repository/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_repository(client, association_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the association between Amazon CodeGuru Reviewer and a repository.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_code_reviews/8">
+
+    <span id="list_code_reviews/2"></span>
+
+    <span id="list_code_reviews/3"></span>
+
+    <span id="list_code_reviews/4"></span>
+
+    <span id="list_code_reviews/5"></span>
+
+    <span id="list_code_reviews/6"></span>
+
+    <span id="list_code_reviews/7"></span>
+
+  <div class="detail-header">
+    <a href="#list_code_reviews/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_code_reviews(client, max_results \\ nil, next_token \\ nil, provider_types \\ nil, repository_names \\ nil, states \\ nil, type, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all the code reviews that the customer has created in the past 90 days.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_recommendation_feedback/7">
+
+    <span id="list_recommendation_feedback/2"></span>
+
+    <span id="list_recommendation_feedback/3"></span>
+
+    <span id="list_recommendation_feedback/4"></span>
+
+    <span id="list_recommendation_feedback/5"></span>
+
+    <span id="list_recommendation_feedback/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_recommendation_feedback/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_recommendation_feedback(client, code_review_arn, max_results \\ nil, next_token \\ nil, recommendation_ids \\ nil, user_ids \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html"> <code class="inline">RecommendationFeedbackSummary</code>
+</a>
+objects that contain customer recommendation feedback for all CodeGuru Reviewer users.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_recommendations/5">
+
+    <span id="list_recommendations/2"></span>
+
+    <span id="list_recommendations/3"></span>
+
+    <span id="list_recommendations/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_recommendations/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_recommendations(client, code_review_arn, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of all recommendations for a completed code review.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_repository_associations/8">
+
+    <span id="list_repository_associations/1"></span>
+
+    <span id="list_repository_associations/2"></span>
+
+    <span id="list_repository_associations/3"></span>
+
+    <span id="list_repository_associations/4"></span>
+
+    <span id="list_repository_associations/5"></span>
+
+    <span id="list_repository_associations/6"></span>
+
+    <span id="list_repository_associations/7"></span>
+
+  <div class="detail-header">
+    <a href="#list_repository_associations/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_repository_associations(client, max_results \\ nil, names \\ nil, next_token \\ nil, owners \\ nil, provider_types \\ nil, states \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html"> <code class="inline">RepositoryAssociationSummary</code>
+</a>
+objects that contain summary information about a repository association.</p>
+<p>You can filter the returned list by <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType"> <code class="inline">ProviderType</code>
+</a>,
+<a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name"> <code class="inline">Name</code>
+</a>,
+<a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State"> <code class="inline">State</code>
+</a>,
+and <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner"> <code class="inline">Owner</code>
+</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_recommendation_feedback/3">
+
+    <span id="put_recommendation_feedback/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_recommendation_feedback/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_recommendation_feedback(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_reviewer.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stores customer feedback for a CodeGuru Reviewer recommendation.</p>
+<p>When this API is called again with different reactions the previous feedback is overwritten.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

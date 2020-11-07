@@ -1,0 +1,3760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CognitoIdentityProvider — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CognitoIdentityProvider
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Using the Amazon Cognito User Pools API, you can create a user pool to manage directories and
+users.</p>
+<p>You can authenticate a user to obtain tokens related to user identity and access policies.</p>
+<p>This API reference provides information about user pools in Amazon Cognito User Pools.</p>
+<p>For more information, see the Amazon Cognito Documentation.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_custom_attributes/3">add_custom_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds additional user attributes to the user pool schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_add_user_to_group/3">admin_add_user_to_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds the specified user to the specified group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_confirm_sign_up/3">admin_confirm_sign_up(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Confirms user registration as an admin without using a confirmation code.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_create_user/3">admin_create_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new user in the specified user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_delete_user/3">admin_delete_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a user as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_delete_user_attributes/3">admin_delete_user_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the user attributes in a user pool as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_disable_provider_for_user/3">admin_disable_provider_for_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the user from signing in with the specified external (SAML or social) identity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_disable_user/3">admin_disable_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_enable_user/3">admin_enable_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the specified user as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_forget_device/3">admin_forget_device(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Forgets the device, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_get_device/3">admin_get_device(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the device, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_get_user/3">admin_get_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the specified user by user name in a user pool as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_initiate_auth/3">admin_initiate_auth(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates the authentication flow, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_link_provider_for_user/3">admin_link_provider_for_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Links an existing user account in a user pool (<code class="inline">DestinationUser</code>) to an identity from an external
+identity provider (<code class="inline">SourceUser</code>) based on a specified attribute name and value from the external
+identity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_list_devices/3">admin_list_devices(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists devices, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_list_groups_for_user/3">admin_list_groups_for_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the groups that the user belongs to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_list_user_auth_events/3">admin_list_user_auth_events(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists a history of user activity and any risks detected as part of Amazon Cognito advanced
+security.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_remove_user_from_group/3">admin_remove_user_from_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified user from the specified group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_reset_user_password/3">admin_reset_user_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resets the specified user&#39;s password in a user pool as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_respond_to_auth_challenge/3">admin_respond_to_auth_challenge(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Responds to an authentication challenge, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_set_user_m_f_a_preference/3">admin_set_user_m_f_a_preference(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the user&#39;s multi-factor authentication (MFA) preference, including which MFA options are
+enabled and if any are preferred.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_set_user_password/3">admin_set_user_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the specified user&#39;s password in a user pool as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_set_user_settings/3">admin_set_user_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><em>This action is no longer supported.</em> You can use it to configure only SMS MFA.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_update_auth_event_feedback/3">admin_update_auth_event_feedback(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides feedback for an authentication event as to whether it was from a valid user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_update_device_status/3">admin_update_device_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the device status as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_update_user_attributes/3">admin_update_user_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified user&#39;s attributes, including developer attributes, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#admin_user_global_sign_out/3">admin_user_global_sign_out(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Signs out users from all devices, as an administrator.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_software_token/3">associate_software_token(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a unique generated shared secret key code for the user account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#change_password/3">change_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the password for a specified user in a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#confirm_device/3">confirm_device(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Confirms tracking of the device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#confirm_forgot_password/3">confirm_forgot_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a user to enter a confirmation code to reset a forgotten password.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#confirm_sign_up/3">confirm_sign_up(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Confirms registration of a user and handles the existing alias from a previous user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_group/3">create_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new group in the specified user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_identity_provider/3">create_identity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an identity provider for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resource_server/3">create_resource_server(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new OAuth2.0 resource server and defines custom scopes in it.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_import_job/3">create_user_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates the user import job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_pool/3">create_user_pool(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_pool_client/3">create_user_pool_client(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates the user pool client.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user_pool_domain/3">create_user_pool_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new domain for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_group/3">delete_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_identity_provider/3">delete_identity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an identity provider for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resource_server/3">delete_resource_server(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a resource server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user/3">delete_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a user to delete himself or herself.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_attributes/3">delete_user_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the attributes for a user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_pool/3">delete_user_pool(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified Amazon Cognito user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_pool_client/3">delete_user_pool_client(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows the developer to delete the user pool client.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user_pool_domain/3">delete_user_pool_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a domain for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_identity_provider/3">describe_identity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a specific identity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_resource_server/3">describe_resource_server(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a resource server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_risk_configuration/3">describe_risk_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the risk configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_import_job/3">describe_user_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the user import job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_pool/3">describe_user_pool(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the configuration information and metadata of the specified user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_pool_client/3">describe_user_pool_client(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Client method for returning the configuration information and metadata of the specified user pool
+app client.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_user_pool_domain/3">describe_user_pool_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about a domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#forget_device/3">forget_device(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Forgets the specified device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#forgot_password/3">forgot_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Calling this API causes a message to be sent to the end user with a confirmation code that is
+required to change the user&#39;s password.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_csv_header/3">get_csv_header(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the header information for the .csv file to be used as input for the user import job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_device/3">get_device(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_group/3">get_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_identity_provider_by_identifier/3">get_identity_provider_by_identifier(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the specified identity provider.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_signing_certificate/3">get_signing_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>This method takes a user pool ID, and returns the signing certificate.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_u_i_customization/3">get_u_i_customization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the UI Customization information for a particular app client&#39;s app UI, if there is something
+set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_user/3">get_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the user attributes and metadata for a user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_user_attribute_verification_code/3">get_user_attribute_verification_code(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the user attribute verification code for the specified attribute name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_user_pool_mfa_config/3">get_user_pool_mfa_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the user pool multi-factor authentication (MFA) configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#global_sign_out/3">global_sign_out(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Signs out users from all devices.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#initiate_auth/3">initiate_auth(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates the authentication flow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_devices/3">list_devices(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the devices.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_groups/3">list_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the groups associated with a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_identity_providers/3">list_identity_providers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists information about all identity providers for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resource_servers/3">list_resource_servers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the resource servers for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags that are assigned to an Amazon Cognito user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_import_jobs/3">list_user_import_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the user import jobs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_pool_clients/3">list_user_pool_clients(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the clients that have been created for the specified user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_user_pools/3">list_user_pools(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the user pools associated with an AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_users/3">list_users(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the users in the Amazon Cognito user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_users_in_group/3">list_users_in_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the users in the specified group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#resend_confirmation_code/3">resend_confirmation_code(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resends the confirmation (for confirmation of registration) to a specific user in the user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#respond_to_auth_challenge/3">respond_to_auth_challenge(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Responds to the authentication challenge.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_risk_configuration/3">set_risk_configuration(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configures actions on detected risks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_u_i_customization/3">set_u_i_customization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the UI customization information for a user pool&#39;s built-in app UI.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_user_m_f_a_preference/3">set_user_m_f_a_preference(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Set the user&#39;s multi-factor authentication (MFA) method preference, including which MFA factors
+are enabled and if any are preferred.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_user_pool_mfa_config/3">set_user_pool_mfa_config(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Set the user pool multi-factor authentication (MFA) configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_user_settings/3">set_user_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><em>This action is no longer supported.</em> You can use it to configure only SMS MFA.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#sign_up/3">sign_up(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers the user in the specified user pool and creates a user name, password, and user
+attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_user_import_job/3">start_user_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts the user import.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_user_import_job/3">stop_user_import_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the user import job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns a set of tags to an Amazon Cognito user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified tags from an Amazon Cognito user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_auth_event_feedback/3">update_auth_event_feedback(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides the feedback for an authentication event whether it was from a valid user or not.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_device_status/3">update_device_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the device status.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_group/3">update_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified group with the specified attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_identity_provider/3">update_identity_provider(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates identity provider information for a user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resource_server/3">update_resource_server(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the name and scopes of resource server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_attributes/3">update_user_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a user to update a specific attribute (one at a time).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_pool/3">update_user_pool(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified user pool with the specified attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_pool_client/3">update_user_pool_client(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified user pool app client with the specified attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user_pool_domain/3">update_user_pool_domain(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#verify_software_token/3">verify_software_token(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this API to register a user&#39;s entered TOTP code and mark the user&#39;s software token MFA status
+as &quot;verified&quot; if successful.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#verify_user_attribute/3">verify_user_attribute(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Verifies the specified user attributes in the user pool.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_custom_attributes/3">
+
+    <span id="add_custom_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_custom_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_custom_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L19" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds additional user attributes to the user pool schema.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_add_user_to_group/3">
+
+    <span id="admin_add_user_to_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_add_user_to_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_add_user_to_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L28" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds the specified user to the specified group.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_confirm_sign_up/3">
+
+    <span id="admin_confirm_sign_up/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_confirm_sign_up/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_confirm_sign_up(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L39" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Confirms user registration as an admin without using a confirmation code.</p>
+<p>Works on any user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_create_user/3">
+
+    <span id="admin_create_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_create_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_create_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new user in the specified user pool.</p>
+<p>If <code class="inline">MessageAction</code> is not set, the default is to send a welcome message via email or phone (SMS).</p>
+<p>This message is based on a template that you configured in your call to create or update a user
+pool. This template includes your custom sign-up instructions and placeholders for user name and
+temporary password.</p>
+<p>Alternatively, you can call <code class="inline">AdminCreateUser</code> with “SUPPRESS” for the <code class="inline">MessageAction</code> parameter,
+and Amazon Cognito will not send any email.</p>
+<p>In either case, the user will be in the <code class="inline">FORCE_CHANGE_PASSWORD</code> state until they sign in and
+change their password.</p>
+<p><code class="inline">AdminCreateUser</code> requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_delete_user/3">
+
+    <span id="admin_delete_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_delete_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_delete_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a user as an administrator.</p>
+<p>Works on any user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_delete_user_attributes/3">
+
+    <span id="admin_delete_user_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_delete_user_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_delete_user_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L82" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the user attributes in a user pool as an administrator.</p>
+<p>Works on any user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_disable_provider_for_user/3">
+
+    <span id="admin_disable_provider_for_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_disable_provider_for_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_disable_provider_for_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the user from signing in with the specified external (SAML or social) identity provider.</p>
+<p>If the user to disable is a Cognito User Pools native username + password user, they are not
+permitted to use their password to sign-in. If the user to disable is a linked external IdP user,
+any link between that user and an existing user is removed. The next time the external user (no
+longer attached to the previously linked <code class="inline">DestinationUser</code>) signs in, they must create a new user
+account. See
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>
+<p>This action is enabled only for admin access and requires developer credentials.</p>
+<p>The <code class="inline">ProviderName</code> must match the value specified when creating an IdP for the pool.</p>
+<p>To disable a native username + password user, the <code class="inline">ProviderName</code> value must be <code class="inline">Cognito</code> and the
+<code class="inline">ProviderAttributeName</code> must be <code class="inline">Cognito_Subject</code>, with the <code class="inline">ProviderAttributeValue</code> being the
+name that is used in the user pool for the user.</p>
+<p>The <code class="inline">ProviderAttributeName</code> must always be <code class="inline">Cognito_Subject</code> for social identity providers. The
+<code class="inline">ProviderAttributeValue</code> must always be the exact subject that was used when the user was
+originally linked as a source user.</p>
+<p>For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been
+used to sign-in, the <code class="inline">ProviderAttributeName</code> and <code class="inline">ProviderAttributeValue</code> must be the same values
+that were used for the <code class="inline">SourceUser</code> when the identities were originally linked using <code class="inline">AdminLinkProviderForUser</code> call. (If the linking was done with <code class="inline">ProviderAttributeName</code> set to
+<code class="inline">Cognito_Subject</code>, the same applies here). However, if the user has already signed in, the
+<code class="inline">ProviderAttributeName</code> must be <code class="inline">Cognito_Subject</code> and <code class="inline">ProviderAttributeValue</code> must be the subject
+of the SAML assertion.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_disable_user/3">
+
+    <span id="admin_disable_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_disable_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_disable_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the specified user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_enable_user/3">
+
+    <span id="admin_enable_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_enable_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_enable_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the specified user as an administrator.</p>
+<p>Works on any user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_forget_device/3">
+
+    <span id="admin_forget_device/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_forget_device/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_forget_device(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L145" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Forgets the device, as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_get_device/3">
+
+    <span id="admin_get_device/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_get_device/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_get_device(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the device, as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_get_user/3">
+
+    <span id="admin_get_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_get_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_get_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the specified user by user name in a user pool as an administrator.</p>
+<p>Works on any user.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_initiate_auth/3">
+
+    <span id="admin_initiate_auth/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_initiate_auth/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_initiate_auth(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L174" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates the authentication flow, as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_link_provider_for_user/3">
+
+    <span id="admin_link_provider_for_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_link_provider_for_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_link_provider_for_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L199" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Links an existing user account in a user pool (<code class="inline">DestinationUser</code>) to an identity from an external
+identity provider (<code class="inline">SourceUser</code>) based on a specified attribute name and value from the external
+identity provider.</p>
+<p>This allows you to create a link from the existing user account to an external federated user
+identity that has not yet been used to sign in, so that the federated user identity can be used to
+sign in as the existing user account.</p>
+<p>For example, if there is an existing user with a username and password, this API links that user
+to a federated user identity, so that when the federated user identity is used, the user signs in
+as the existing user account.</p>
+<p>The maximum number of federated identities linked to a user is 5.</p>
+<p>Because this API allows a user with an external federated identity to sign in as an existing user
+in the user pool, it is critical that it only be used with external identity providers and
+provider attributes that have been trusted by the application owner.</p>
+<p>This action is enabled only for admin access and requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_list_devices/3">
+
+    <span id="admin_list_devices/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_list_devices/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_list_devices(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists devices, as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_list_groups_for_user/3">
+
+    <span id="admin_list_groups_for_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_list_groups_for_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_list_groups_for_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L217" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the groups that the user belongs to.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_list_user_auth_events/3">
+
+    <span id="admin_list_user_auth_events/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_list_user_auth_events/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_list_user_auth_events(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L225" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists a history of user activity and any risks detected as part of Amazon Cognito advanced
+security.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_remove_user_from_group/3">
+
+    <span id="admin_remove_user_from_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_remove_user_from_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_remove_user_from_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified user from the specified group.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_reset_user_password/3">
+
+    <span id="admin_reset_user_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_reset_user_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_reset_user_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resets the specified user&#39;s password in a user pool as an administrator.</p>
+<p>Works on any user.</p>
+<p>When a developer calls this API, the current password is invalidated, so it must be changed. If a
+user tries to sign in after the API is called, the app will get a PasswordResetRequiredException
+exception back and should direct the user down the flow to reset the password, which is the same
+as the forgot password flow. In addition, if the user pool has phone verification selected and a
+verified phone number exists for the user, or if email verification is selected and a verified
+email exists for the user, calling this API will also result in sending a message to the end user
+with the code to change their password.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_respond_to_auth_challenge/3">
+
+    <span id="admin_respond_to_auth_challenge/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_respond_to_auth_challenge/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_respond_to_auth_challenge(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Responds to an authentication challenge, as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_set_user_m_f_a_preference/3">
+
+    <span id="admin_set_user_m_f_a_preference/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_set_user_m_f_a_preference/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_set_user_m_f_a_preference(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L274" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the user&#39;s multi-factor authentication (MFA) preference, including which MFA options are
+enabled and if any are preferred.</p>
+<p>Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a
+user if multiple factors are enabled. If multiple options are enabled and no preference is set, a
+challenge to choose an MFA option will be returned during sign in.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_set_user_password/3">
+
+    <span id="admin_set_user_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_set_user_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_set_user_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L292" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the specified user&#39;s password in a user pool as an administrator.</p>
+<p>Works on any user.</p>
+<p>The password can be temporary or permanent. If it is temporary, the user status will be placed
+into the <code class="inline">FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in, the
+InitiateAuth/AdminInitiateAuth response will contain the <code class="inline">NEW_PASSWORD_REQUIRED</code> challenge. If the
+user does not sign in before it expires, the user will not be able to sign in and their password
+will need to be reset by an administrator.</p>
+<p>Once the user has set a new password, or the password is permanent, the user status will be set to
+<code class="inline">Confirmed</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_set_user_settings/3">
+
+    <span id="admin_set_user_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_set_user_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_set_user_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><em>This action is no longer supported.</em> You can use it to configure only SMS MFA.</p>
+<p>You can&#39;t use it to configure TOTP software token MFA. To configure either type of MFA, use
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html">AdminSetUserMFAPreference</a>
+instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_update_auth_event_feedback/3">
+
+    <span id="admin_update_auth_event_feedback/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_update_auth_event_feedback/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_update_auth_event_feedback(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L313" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides feedback for an authentication event as to whether it was from a valid user.</p>
+<p>This feedback is used for improving the risk evaluation decision for the user pool as part of
+Amazon Cognito advanced security.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_update_device_status/3">
+
+    <span id="admin_update_device_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_update_device_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_update_device_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L322" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the device status as an administrator.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_update_user_attributes/3">
+
+    <span id="admin_update_user_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_update_user_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_update_user_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified user&#39;s attributes, including developer attributes, as an administrator.</p>
+<p>Works on any user.</p>
+<p>For custom attributes, you must prepend the <code class="inline">custom:</code> prefix to the attribute name.</p>
+<p>In addition to updating user attributes, this API can also be used to mark phone and email as
+verified.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="admin_user_global_sign_out/3">
+
+    <span id="admin_user_global_sign_out/2"></span>
+
+  <div class="detail-header">
+    <a href="#admin_user_global_sign_out/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">admin_user_global_sign_out(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L350" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Signs out users from all devices, as an administrator.</p>
+<p>It also invalidates all refresh tokens issued to a user. The user&#39;s current access and Id tokens
+remain valid until their expiry. Access and Id tokens expire one hour after they are issued.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_software_token/3">
+
+    <span id="associate_software_token/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_software_token/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_software_token(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L359" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a unique generated shared secret key code for the user account.</p>
+<p>The request takes an access token or a session string, but not both.</p>
+
+  </section>
+</section>
+<section class="detail" id="change_password/3">
+
+    <span id="change_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#change_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">change_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L366" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the password for a specified user in a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="confirm_device/3">
+
+    <span id="confirm_device/2"></span>
+
+  <div class="detail-header">
+    <a href="#confirm_device/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">confirm_device(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L375" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Confirms tracking of the device.</p>
+<p>This API call is the call that begins device tracking.</p>
+
+  </section>
+</section>
+<section class="detail" id="confirm_forgot_password/3">
+
+    <span id="confirm_forgot_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#confirm_forgot_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">confirm_forgot_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L382" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a user to enter a confirmation code to reset a forgotten password.</p>
+
+  </section>
+</section>
+<section class="detail" id="confirm_sign_up/3">
+
+    <span id="confirm_sign_up/2"></span>
+
+  <div class="detail-header">
+    <a href="#confirm_sign_up/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">confirm_sign_up(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L389" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Confirms registration of a user and handles the existing alias from a previous user.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_group/3">
+
+    <span id="create_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L398" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new group in the specified user pool.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_identity_provider/3">
+
+    <span id="create_identity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_identity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_identity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L405" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an identity provider for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resource_server/3">
+
+    <span id="create_resource_server/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resource_server/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resource_server(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new OAuth2.0 resource server and defines custom scopes in it.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_import_job/3">
+
+    <span id="create_user_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L419" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates the user import job.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_pool/3">
+
+    <span id="create_user_pool/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_pool/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_pool(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L426" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_pool_client/3">
+
+    <span id="create_user_pool_client/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_pool_client/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_pool_client(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L433" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates the user pool client.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user_pool_domain/3">
+
+    <span id="create_user_pool_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user_pool_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user_pool_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L440" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new domain for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_group/3">
+
+    <span id="delete_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L451" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a group.</p>
+<p>Currently only groups with no members can be deleted.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_identity_provider/3">
+
+    <span id="delete_identity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_identity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_identity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L458" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an identity provider for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resource_server/3">
+
+    <span id="delete_resource_server/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resource_server/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resource_server(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L465" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a resource server.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user/3">
+
+    <span id="delete_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L472" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a user to delete himself or herself.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_attributes/3">
+
+    <span id="delete_user_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L479" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the attributes for a user.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_pool/3">
+
+    <span id="delete_user_pool/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_pool/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_pool(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L486" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified Amazon Cognito user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_pool_client/3">
+
+    <span id="delete_user_pool_client/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_pool_client/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_pool_client(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L493" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows the developer to delete the user pool client.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user_pool_domain/3">
+
+    <span id="delete_user_pool_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user_pool_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user_pool_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L500" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a domain for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_identity_provider/3">
+
+    <span id="describe_identity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_identity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_identity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L507" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a specific identity provider.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_resource_server/3">
+
+    <span id="describe_resource_server/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_resource_server/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_resource_server(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L514" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a resource server.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_risk_configuration/3">
+
+    <span id="describe_risk_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_risk_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_risk_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L521" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the risk configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_import_job/3">
+
+    <span id="describe_user_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L528" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the user import job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_pool/3">
+
+    <span id="describe_user_pool/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_pool/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_pool(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L535" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the configuration information and metadata of the specified user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_pool_client/3">
+
+    <span id="describe_user_pool_client/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_pool_client/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_pool_client(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L543" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Client method for returning the configuration information and metadata of the specified user pool
+app client.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_user_pool_domain/3">
+
+    <span id="describe_user_pool_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_user_pool_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_user_pool_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L550" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about a domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="forget_device/3">
+
+    <span id="forget_device/2"></span>
+
+  <div class="detail-header">
+    <a href="#forget_device/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">forget_device(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L557" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Forgets the specified device.</p>
+
+  </section>
+</section>
+<section class="detail" id="forgot_password/3">
+
+    <span id="forgot_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#forgot_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">forgot_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L573" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Calling this API causes a message to be sent to the end user with a confirmation code that is
+required to change the user&#39;s password.</p>
+<p>For the <code class="inline">Username</code> parameter, you can use the username or user alias. The method used to send the
+confirmation code is sent according to the specified AccountRecoverySetting. For more information,
+see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering User Accounts</a>
+in the <em>Amazon Cognito Developer Guide</em>. If neither a verified phone number nor a verified email
+exists, an <code class="inline">InvalidParameterException</code> is thrown. To use the confirmation code for resetting the
+password, call
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html">ConfirmForgotPassword</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_csv_header/3">
+
+    <span id="get_csv_header/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_csv_header/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_csv_header(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L580" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the header information for the .csv file to be used as input for the user import job.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_device/3">
+
+    <span id="get_device/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_device/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_device(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L587" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the device.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_group/3">
+
+    <span id="get_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L596" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a group.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_identity_provider_by_identifier/3">
+
+    <span id="get_identity_provider_by_identifier/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_identity_provider_by_identifier/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_identity_provider_by_identifier(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L603" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the specified identity provider.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_signing_certificate/3">
+
+    <span id="get_signing_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_signing_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_signing_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L610" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>This method takes a user pool ID, and returns the signing certificate.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_u_i_customization/3">
+
+    <span id="get_u_i_customization/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_u_i_customization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_u_i_customization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L622" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the UI Customization information for a particular app client&#39;s app UI, if there is something
+set.</p>
+<p>If nothing is set for the particular client, but there is an existing pool level customization
+(app <code class="inline">clientId</code> will be <code class="inline">ALL</code>), then that is returned. If nothing is present, then an empty shape
+is returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_user/3">
+
+    <span id="get_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L629" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the user attributes and metadata for a user.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_user_attribute_verification_code/3">
+
+    <span id="get_user_attribute_verification_code/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_user_attribute_verification_code/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_user_attribute_verification_code(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L636" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the user attribute verification code for the specified attribute name.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_user_pool_mfa_config/3">
+
+    <span id="get_user_pool_mfa_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_user_pool_mfa_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_user_pool_mfa_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L643" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the user pool multi-factor authentication (MFA) configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="global_sign_out/3">
+
+    <span id="global_sign_out/2"></span>
+
+  <div class="detail-header">
+    <a href="#global_sign_out/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">global_sign_out(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L653" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Signs out users from all devices.</p>
+<p>It also invalidates all refresh tokens issued to a user. The user&#39;s current access and Id tokens
+remain valid until their expiry. Access and Id tokens expire one hour after they are issued.</p>
+
+  </section>
+</section>
+<section class="detail" id="initiate_auth/3">
+
+    <span id="initiate_auth/2"></span>
+
+  <div class="detail-header">
+    <a href="#initiate_auth/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">initiate_auth(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L660" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates the authentication flow.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_devices/3">
+
+    <span id="list_devices/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_devices/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_devices(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L667" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the devices.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_groups/3">
+
+    <span id="list_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L676" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the groups associated with a user pool.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_identity_providers/3">
+
+    <span id="list_identity_providers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_identity_providers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_identity_providers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L683" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists information about all identity providers for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resource_servers/3">
+
+    <span id="list_resource_servers/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resource_servers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resource_servers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L690" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the resource servers for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L702" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags that are assigned to an Amazon Cognito user pool.</p>
+<p>A tag is a label that you can apply to user pools to categorize and manage them in different ways,
+such as by purpose, owner, environment, or other criteria.</p>
+<p>You can use this action up to 10 times per second, per account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_import_jobs/3">
+
+    <span id="list_user_import_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_import_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_import_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L709" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the user import jobs.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_pool_clients/3">
+
+    <span id="list_user_pool_clients/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_pool_clients/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_pool_clients(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L716" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the clients that have been created for the specified user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_user_pools/3">
+
+    <span id="list_user_pools/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_user_pools/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_user_pools(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L723" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the user pools associated with an AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_users/3">
+
+    <span id="list_users/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_users/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_users(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L730" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the users in the Amazon Cognito user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_users_in_group/3">
+
+    <span id="list_users_in_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_users_in_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_users_in_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L739" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the users in the specified group.</p>
+<p>Calling this action requires developer credentials.</p>
+
+  </section>
+</section>
+<section class="detail" id="resend_confirmation_code/3">
+
+    <span id="resend_confirmation_code/2"></span>
+
+  <div class="detail-header">
+    <a href="#resend_confirmation_code/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">resend_confirmation_code(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L746" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resends the confirmation (for confirmation of registration) to a specific user in the user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="respond_to_auth_challenge/3">
+
+    <span id="respond_to_auth_challenge/2"></span>
+
+  <div class="detail-header">
+    <a href="#respond_to_auth_challenge/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">respond_to_auth_challenge(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L753" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Responds to the authentication challenge.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_risk_configuration/3">
+
+    <span id="set_risk_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_risk_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_risk_configuration(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L766" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configures actions on detected risks.</p>
+<p>To delete the risk configuration for <code class="inline">UserPoolId</code> or <code class="inline">ClientId</code>, pass null values for all four
+configuration types.</p>
+<p>To enable Amazon Cognito advanced security features, update the user pool to include the
+<code class="inline">UserPoolAddOns</code> key<code class="inline">AdvancedSecurityMode</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_u_i_customization/3">
+
+    <span id="set_u_i_customization/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_u_i_customization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_u_i_customization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L782" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the UI customization information for a user pool&#39;s built-in app UI.</p>
+<p>You can specify app UI customization settings for a single client (with a specific <code class="inline">clientId</code>) or
+for all clients (by setting the <code class="inline">clientId</code> to <code class="inline">ALL</code>). If you specify <code class="inline">ALL</code>, the default
+configuration will be used for every client that has no UI customization set previously. If you
+specify UI customization settings for a particular client, it will no longer fall back to the
+<code class="inline">ALL</code> configuration.</p>
+<p>To use this API, your user pool must have a domain associated with it. Otherwise, there is no
+place to host the app&#39;s pages, and the service will throw an error.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_user_m_f_a_preference/3">
+
+    <span id="set_user_m_f_a_preference/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_user_m_f_a_preference/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_user_m_f_a_preference(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L794" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Set the user&#39;s multi-factor authentication (MFA) method preference, including which MFA factors
+are enabled and if any are preferred.</p>
+<p>Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a
+user if multiple factors are enabled. If multiple options are enabled and no preference is set, a
+challenge to choose an MFA option will be returned during sign in.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_user_pool_mfa_config/3">
+
+    <span id="set_user_pool_mfa_config/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_user_pool_mfa_config/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_user_pool_mfa_config(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L801" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Set the user pool multi-factor authentication (MFA) configuration.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_user_settings/3">
+
+    <span id="set_user_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_user_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_user_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L812" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><em>This action is no longer supported.</em> You can use it to configure only SMS MFA.</p>
+<p>You can&#39;t use it to configure TOTP software token MFA. To configure either type of MFA, use
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a>
+instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="sign_up/3">
+
+    <span id="sign_up/2"></span>
+
+  <div class="detail-header">
+    <a href="#sign_up/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">sign_up(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L820" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers the user in the specified user pool and creates a user name, password, and user
+attributes.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_user_import_job/3">
+
+    <span id="start_user_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_user_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_user_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L827" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts the user import.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_user_import_job/3">
+
+    <span id="stop_user_import_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_user_import_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_user_import_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L834" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the user import job.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L857" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns a set of tags to an Amazon Cognito user pool.</p>
+<p>A tag is a label that you can use to categorize and manage user pools in different ways, such as
+by purpose, owner, environment, or other criteria.</p>
+<p>Each tag consists of a key and value, both of which you define. A key is a general category for
+more specific values. For example, if you have two versions of a user pool, one for testing and
+another for production, you might assign an <code class="inline">Environment</code> tag key to both user pools. The value of
+this key might be <code class="inline">Test</code> for one user pool and <code class="inline">Production</code> for the other.</p>
+<p>Tags are useful for cost tracking and access control. You can activate your tags so that they
+appear on the Billing and Cost Management console, where you can track the costs associated with
+your user pools. In an IAM policy, you can constrain permissions for user pools based on specific
+tags or tag values.</p>
+<p>You can use this action up to 5 times per second, per account. A user pool can have as many as 50
+tags.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L866" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified tags from an Amazon Cognito user pool.</p>
+<p>You can use this action up to 5 times per second, per account</p>
+
+  </section>
+</section>
+<section class="detail" id="update_auth_event_feedback/3">
+
+    <span id="update_auth_event_feedback/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_auth_event_feedback/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_auth_event_feedback(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L876" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides the feedback for an authentication event whether it was from a valid user or not.</p>
+<p>This feedback is used for improving the risk evaluation decision for the user pool as part of
+Amazon Cognito advanced security.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_device_status/3">
+
+    <span id="update_device_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_device_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_device_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L883" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the device status.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_group/3">
+
+    <span id="update_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L894" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified group with the specified attributes.</p>
+<p>Calling this action requires developer credentials.</p>
+<p>If you don&#39;t provide a value for an attribute, it will be set to the default value.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_identity_provider/3">
+
+    <span id="update_identity_provider/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_identity_provider/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_identity_provider(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L901" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates identity provider information for a user pool.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resource_server/3">
+
+    <span id="update_resource_server/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_resource_server/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resource_server(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L912" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the name and scopes of resource server.</p>
+<p>All other fields are read-only.</p>
+<p>If you don&#39;t provide a value for an attribute, it will be set to the default value.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_attributes/3">
+
+    <span id="update_user_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L919" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a user to update a specific attribute (one at a time).</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_pool/3">
+
+    <span id="update_user_pool/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_pool/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_pool(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L931" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified user pool with the specified attributes.</p>
+<p>You can get a list of the current user pool settings using
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>.</p>
+<p>If you don&#39;t provide a value for an attribute, it will be set to the default value.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_pool_client/3">
+
+    <span id="update_user_pool_client/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_pool_client/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_pool_client(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L943" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified user pool app client with the specified attributes.</p>
+<p>You can get a list of the current user pool app client settings using
+<a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p>
+<p>If you don&#39;t provide a value for an attribute, it will be set to the default value.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user_pool_domain/3">
+
+    <span id="update_user_pool_domain/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_user_pool_domain/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user_pool_domain(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L974" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Secure Sockets Layer (SSL) certificate for the custom domain for your user pool.</p>
+<p>You can use this operation to provide the Amazon Resource Name (ARN) of a new certificate to
+Amazon Cognito. You cannot use it to change the domain for a user pool.</p>
+<p>A custom domain is used to host the Amazon Cognito hosted UI, which provides sign-up and sign-in
+pages for your application. When you set up a custom domain, you provide a certificate that you
+manage with AWS Certificate Manager (ACM). When necessary, you can use this operation to change
+the certificate that you applied to your custom domain.</p>
+<p>Usually, this is unnecessary following routine certificate renewal with ACM. When you renew your
+existing certificate in ACM, the ARN for your certificate remains the same, and your custom domain
+uses the new certificate automatically.</p>
+<p>However, if you replace your existing certificate with a new one, ACM gives the new certificate a
+new ARN. To apply the new certificate to your custom domain, you must provide this ARN to Amazon
+Cognito.</p>
+<p>When you add your new certificate in ACM, you must choose US East (N. Virginia) as the AWS Region.</p>
+<p>After you submit your request, Amazon Cognito requires up to 1 hour to distribute your new
+certificate to your custom domain.</p>
+<p>For more information about adding a custom domain to your user pool, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using Your Own Domain for the Hosted
+UI</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="verify_software_token/3">
+
+    <span id="verify_software_token/2"></span>
+
+  <div class="detail-header">
+    <a href="#verify_software_token/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">verify_software_token(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L984" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this API to register a user&#39;s entered TOTP code and mark the user&#39;s software token MFA status
+as &quot;verified&quot; if successful.</p>
+<p>The request takes an access token or a session string, but not both.</p>
+
+  </section>
+</section>
+<section class="detail" id="verify_user_attribute/3">
+
+    <span id="verify_user_attribute/2"></span>
+
+  <div class="detail-header">
+    <a href="#verify_user_attribute/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">verify_user_attribute(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cognito_identity_provider.ex#L991" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Verifies the specified user attributes in the user pool.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.PinpointSMSVoice — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.PinpointSMSVoice
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Pinpoint SMS and Voice Messaging public facing APIs</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_configuration_set/3">create_configuration_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a new configuration set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_configuration_set_event_destination/4">create_configuration_set_event_destination(client, configuration_set_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a new event destination in a configuration set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_set/4">delete_configuration_set(client, configuration_set_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing configuration set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_configuration_set_event_destination/5">delete_configuration_set_event_destination(client, configuration_set_name, event_destination_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an event destination in a configuration set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_configuration_set_event_destinations/3">get_configuration_set_event_destinations(client, configuration_set_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtain information about an event destination, including the types of events it reports, the
+Amazon Resource Name (ARN) of the destination, and the name of the event destination.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_configuration_sets/4">list_configuration_sets(client, next_token \\ nil, page_size \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all of the configuration sets associated with your Amazon Pinpoint account in the current
+region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_voice_message/3">send_voice_message(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a new voice message and send it to a recipient&#39;s phone number.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_configuration_set_event_destination/5">update_configuration_set_event_destination(client, configuration_set_name, event_destination_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Update an event destination in a configuration set.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_configuration_set/3">
+
+    <span id="create_configuration_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_configuration_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_configuration_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L14" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a new configuration set.</p>
+<p>After you create the configuration set, you can add one or more event destinations to it.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_configuration_set_event_destination/4">
+
+    <span id="create_configuration_set_event_destination/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_configuration_set_event_destination/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_configuration_set_event_destination(client, configuration_set_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a new event destination in a configuration set.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_set/4">
+
+    <span id="delete_configuration_set/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_set/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_set(client, configuration_set_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing configuration set.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_configuration_set_event_destination/5">
+
+    <span id="delete_configuration_set_event_destination/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_configuration_set_event_destination/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_configuration_set_event_destination(client, configuration_set_name, event_destination_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L44" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an event destination in a configuration set.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_configuration_set_event_destinations/3">
+
+    <span id="get_configuration_set_event_destinations/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_configuration_set_event_destinations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_configuration_set_event_destinations(client, configuration_set_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtain information about an event destination, including the types of events it reports, the
+Amazon Resource Name (ARN) of the destination, and the name of the event destination.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_configuration_sets/4">
+
+    <span id="list_configuration_sets/1"></span>
+
+    <span id="list_configuration_sets/2"></span>
+
+    <span id="list_configuration_sets/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_configuration_sets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_configuration_sets(client, next_token \\ nil, page_size \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L66" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all of the configuration sets associated with your Amazon Pinpoint account in the current
+region.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_voice_message/3">
+
+    <span id="send_voice_message/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_voice_message/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_voice_message(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Create a new voice message and send it to a recipient&#39;s phone number.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_configuration_set_event_destination/5">
+
+    <span id="update_configuration_set_event_destination/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_configuration_set_event_destination/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_configuration_set_event_destination(client, configuration_set_name, event_destination_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/pinpoint_sms_voice.ex#L99" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Update an event destination in a configuration set.</p>
+<p>An event destination is a location that you publish information about your voice calls to. For
+example, you can log an event to an Amazon CloudWatch destination when a call fails.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,2513 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CloudDirectory — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CloudDirectory
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Cloud Directory</p>
+<p>Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development
+and management of cloud-scale web, mobile, and IoT applications.</p>
+<p>This guide describes the Cloud Directory operations that you can call programmatically and
+includes detailed information on data types and errors. For information about Cloud Directory
+features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon Cloud Directory Developer
+Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_facet_to_object/3">add_facet_to_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a new <code class="inline">Facet</code> to an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#apply_schema/3">apply_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Copies the input published schema, at the specified version, into the <code class="inline">Directory</code> with the same
+name and version as that of the published schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_object/3">attach_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches an existing object to another object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_policy/3">attach_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches a policy object to a regular object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_to_index/3">attach_to_index(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches the specified object to the specified index.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#attach_typed_link/3">attach_typed_link(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attaches a typed link to a specified source and target object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_read/3">batch_read(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Performs all the read operations in a batch.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_write/3">batch_write(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Performs all the write operations in a batch.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_directory/3">create_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a <code class="inline">Directory</code> by copying the published schema into the directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_facet/3">create_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new <code class="inline">Facet</code> in a schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_index/3">create_index(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an index object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_object/3">create_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an object in a <code class="inline">Directory</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_schema/3">create_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new schema in a development state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_typed_link_facet/3">create_typed_link_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a <code class="inline">TypedLinkFacet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_directory/3">delete_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_facet/3">delete_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a given <code class="inline">Facet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_object/3">delete_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an object and its associated attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_schema/3">delete_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a given schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_typed_link_facet/3">delete_typed_link_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a <code class="inline">TypedLinkFacet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_from_index/3">detach_from_index(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches the specified object from the specified index.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_object/3">detach_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a given object from the parent object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_policy/3">detach_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a policy from an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detach_typed_link/3">detach_typed_link(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Detaches a typed link from a specified source and target object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_directory/3">disable_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_directory/3">enable_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_applied_schema_version/3">get_applied_schema_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns current applied schema version ARN, including the minor version in use.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_directory/3">get_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves metadata about a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_facet/3">get_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets details of the <code class="inline">Facet</code>, such as facet name, attributes, <code class="inline">Rule</code>s, or <code class="inline">ObjectType</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_link_attributes/3">get_link_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves attributes that are associated with a typed link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_object_attributes/3">get_object_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves attributes within a facet that are associated with an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_object_information/3">get_object_information(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves metadata about an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_schema_as_json/3">get_schema_as_json(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a JSON representation of the schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_typed_link_facet_information/3">get_typed_link_facet_information(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the identity attribute order for a specific <code class="inline">TypedLinkFacet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_applied_schema_arns/3">list_applied_schema_arns(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists schema major versions applied to a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_attached_indices/3">list_attached_indices(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists indices attached to the specified object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_development_schema_arns/3">list_development_schema_arns(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_directories/3">list_directories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists directories created within an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_facet_attributes/3">list_facet_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves attributes attached to the facet.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_facet_names/3">list_facet_names(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the names of facets that exist in a schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_incoming_typed_links/3">list_incoming_typed_links(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of all the incoming <code class="inline">TypedLinkSpecifier</code> information for an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_index/3">list_index(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists objects attached to the specified index.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_managed_schema_arns/3">list_managed_schema_arns(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the major version families of each managed schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_object_attributes/3">list_object_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all attributes that are associated with an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_object_children/3">list_object_children(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of child objects that are associated with a given object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_object_parent_paths/3">list_object_parent_paths(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and
+index node objects.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_object_parents/3">list_object_parents(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists parent objects that are associated with a given object in pagination fashion.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_object_policies/3">list_object_policies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns policies attached to an object in pagination fashion.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_outgoing_typed_links/3">list_outgoing_typed_links(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of all the outgoing <code class="inline">TypedLinkSpecifier</code> information for an object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_policy_attachments/3">list_policy_attachments(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all of the <code class="inline">ObjectIdentifiers</code> to which a given policy is attached.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_published_schema_arns/3">list_published_schema_arns(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the major version families of each published schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns tags for a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_typed_link_facet_attributes/3">list_typed_link_facet_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of all attribute definitions for a particular <code class="inline">TypedLinkFacet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_typed_link_facet_names/3">list_typed_link_facet_names(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a paginated list of <code class="inline">TypedLink</code> facet names for a particular schema.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#lookup_policy/3">lookup_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all policies from the root of the <code class="inline">Directory</code> to the object specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#publish_schema/3">publish_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Publishes a development schema with a major version and a recommended minor version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_schema_from_json/3">put_schema_from_json(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a schema to be updated using JSON upload.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_facet_from_object/3">remove_facet_from_object(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified facet from the specified object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An API operation for adding tags to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An API operation for removing tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_facet/3">update_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Does the following</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_link_attributes/3">update_link_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a given typed link’s attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_object_attributes/3">update_object_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a given object&#39;s attributes.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_schema/3">update_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the schema name with a new name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_typed_link_facet/3">update_typed_link_facet(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a <code class="inline">TypedLinkFacet</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#upgrade_applied_schema/3">upgrade_applied_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Upgrades a single directory in-place using the <code class="inline">PublishedSchemaArn</code> with schema updates found in
+<code class="inline">MinorVersion</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#upgrade_published_schema/3">upgrade_published_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Upgrades a published schema under a new minor version revision using the current contents of
+<code class="inline">DevelopmentSchemaArn</code>.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_facet_to_object/3">
+
+    <span id="add_facet_to_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_facet_to_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_facet_to_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a new <code class="inline">Facet</code> to an object.</p>
+<p>An object can have more than one facet applied on it.</p>
+
+  </section>
+</section>
+<section class="detail" id="apply_schema/3">
+
+    <span id="apply_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#apply_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">apply_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L37" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Copies the input published schema, at the specified version, into the <code class="inline">Directory</code> with the same
+name and version as that of the published schema.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_object/3">
+
+    <span id="attach_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches an existing object to another object.</p>
+<p>An object can be accessed in two ways:</p>
+<ol>
+<li><p>Using the path</p>
+</li>
+<li><p>Using <code class="inline">ObjectIdentifier</code></p>
+</li>
+</ol>
+
+  </section>
+</section>
+<section class="detail" id="attach_policy/3">
+
+    <span id="attach_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches a policy object to a regular object.</p>
+<p>An object can have a limited number of attached policies.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_to_index/3">
+
+    <span id="attach_to_index/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_to_index/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_to_index(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches the specified object to the specified index.</p>
+
+  </section>
+</section>
+<section class="detail" id="attach_typed_link/3">
+
+    <span id="attach_typed_link/2"></span>
+
+  <div class="detail-header">
+    <a href="#attach_typed_link/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">attach_typed_link(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attaches a typed link to a specified source and target object.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_read/3">
+
+    <span id="batch_read/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_read/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_read(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Performs all the read operations in a batch.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_write/3">
+
+    <span id="batch_write/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_write/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_write(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Performs all the write operations in a batch.</p>
+<p>Either all the operations succeed or none.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_directory/3">
+
+    <span id="create_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a <code class="inline">Directory</code> by copying the published schema into the directory.</p>
+<p>A directory cannot be created without a schema.</p>
+<p>You can also quickly create a directory using a managed schema, called the <code class="inline">QuickStartSchema</code>. For
+more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed Schema</a> in
+the <em>Amazon Cloud Directory Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_facet/3">
+
+    <span id="create_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new <code class="inline">Facet</code> in a schema.</p>
+<p>Facet creation is allowed only in development or applied schemas.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_index/3">
+
+    <span id="create_index/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_index/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_index(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L187" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an index object.</p>
+<p>See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/indexing_search.html">Indexing and search</a> for
+more information.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_object/3">
+
+    <span id="create_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an object in a <code class="inline">Directory</code>.</p>
+<p>Additionally attaches the object to a parent, if a parent reference and <code class="inline">LinkName</code> is specified.
+An object is simply a collection of <code class="inline">Facet</code> attributes. You can also use this API call to create a
+policy object, if the facet from which you create the object is a policy facet.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_schema/3">
+
+    <span id="create_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new schema in a development state.</p>
+<p>A schema can exist in three phases:</p>
+<ul>
+<li><p><em>Development:</em> This is a mutable phase of the schema. All new schemas are in the
+development phase. Once the schema is finalized, it can be published.</p>
+</li>
+<li><p><em>Published:</em> Published schemas are immutable and have a version associated with
+them.</p>
+</li>
+<li><p><em>Applied:</em> Applied schemas are mutable in a way that allows you to add new schema
+facets. You can also add new, nonrequired attributes to existing schema facets. You can apply only
+published schemas to directories.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="create_typed_link_facet/3">
+
+    <span id="create_typed_link_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_typed_link_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_typed_link_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L243" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a <code class="inline">TypedLinkFacet</code>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_directory/3">
+
+    <span id="delete_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L260" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a directory.</p>
+<p>Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme
+caution when deleting directories.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_facet/3">
+
+    <span id="delete_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L277" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a given <code class="inline">Facet</code>.</p>
+<p>All attributes and <code class="inline">Rule</code>s that are associated with the facet will be deleted. Only development
+schema facets are allowed deletion.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_object/3">
+
+    <span id="delete_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L294" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an object and its associated attributes.</p>
+<p>Only objects with no children and no parents can be deleted. The maximum number of attributes that
+can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_schema/3">
+
+    <span id="delete_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L310" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a given schema.</p>
+<p>Schemas in a development and published state can only be deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_typed_link_facet/3">
+
+    <span id="delete_typed_link_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_typed_link_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_typed_link_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L326" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a <code class="inline">TypedLinkFacet</code>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_from_index/3">
+
+    <span id="detach_from_index/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_from_index/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_from_index(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches the specified object from the specified index.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_object/3">
+
+    <span id="detach_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a given object from the parent object.</p>
+<p>The object that is to be detached from the parent is specified by the link name.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_policy/3">
+
+    <span id="detach_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L370" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a policy from an object.</p>
+
+  </section>
+</section>
+<section class="detail" id="detach_typed_link/3">
+
+    <span id="detach_typed_link/2"></span>
+
+  <div class="detail-header">
+    <a href="#detach_typed_link/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detach_typed_link(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Detaches a typed link from a specified source and target object.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_directory/3">
+
+    <span id="disable_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables the specified directory.</p>
+<p>Disabled directories cannot be read or written to. Only enabled directories can be disabled.
+Disabled directories may be reenabled.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_directory/3">
+
+    <span id="enable_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L420" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables the specified directory.</p>
+<p>Only disabled directories can be enabled. Once enabled, the directory can then be read and written
+to.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_applied_schema_version/3">
+
+    <span id="get_applied_schema_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_applied_schema_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_applied_schema_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L434" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns current applied schema version ARN, including the minor version in use.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_directory/3">
+
+    <span id="get_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L444" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves metadata about a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_facet/3">
+
+    <span id="get_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L460" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets details of the <code class="inline">Facet</code>, such as facet name, attributes, <code class="inline">Rule</code>s, or <code class="inline">ObjectType</code>.</p>
+<p>You can call this on all kinds of schema facets -- published, development, or applied.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_link_attributes/3">
+
+    <span id="get_link_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_link_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_link_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L474" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves attributes that are associated with a typed link.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_object_attributes/3">
+
+    <span id="get_object_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_object_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_object_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L488" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves attributes within a facet that are associated with an object.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_object_information/3">
+
+    <span id="get_object_information/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_object_information/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_object_information(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L503" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves metadata about an object.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_schema_as_json/3">
+
+    <span id="get_schema_as_json/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_schema_as_json/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_schema_as_json(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L521" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a JSON representation of the schema.</p>
+<p>See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a>
+for more information.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_typed_link_facet_information/3">
+
+    <span id="get_typed_link_facet_information/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_typed_link_facet_information/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_typed_link_facet_information(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L537" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the identity attribute order for a specific <code class="inline">TypedLinkFacet</code>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_applied_schema_arns/3">
+
+    <span id="list_applied_schema_arns/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_applied_schema_arns/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_applied_schema_arns(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L553" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists schema major versions applied to a directory.</p>
+<p>If <code class="inline">SchemaArn</code> is provided, lists the minor version.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_attached_indices/3">
+
+    <span id="list_attached_indices/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_attached_indices/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_attached_indices(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L563" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists indices attached to the specified object.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_development_schema_arns/3">
+
+    <span id="list_development_schema_arns/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_development_schema_arns/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_development_schema_arns(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L578" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves each Amazon Resource Name (ARN) of schemas in the development state.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_directories/3">
+
+    <span id="list_directories/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_directories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_directories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L588" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists directories created within an account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_facet_attributes/3">
+
+    <span id="list_facet_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_facet_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_facet_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L598" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves attributes attached to the facet.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_facet_names/3">
+
+    <span id="list_facet_names/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_facet_names/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_facet_names(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L612" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the names of facets that exist in a schema.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_incoming_typed_links/3">
+
+    <span id="list_incoming_typed_links/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_incoming_typed_links/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_incoming_typed_links(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L629" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of all the incoming <code class="inline">TypedLinkSpecifier</code> information for an object.</p>
+<p>It also supports filtering by typed link facet and identity attributes. For more information, see
+<a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_index/3">
+
+    <span id="list_index/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_index/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_index(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L643" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists objects attached to the specified index.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_managed_schema_arns/3">
+
+    <span id="list_managed_schema_arns/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_managed_schema_arns/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_managed_schema_arns(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L661" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the major version families of each managed schema.</p>
+<p>If a major version ARN is provided as SchemaArn, the minor version revisions in that family are
+listed instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_object_attributes/3">
+
+    <span id="list_object_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_object_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_object_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L671" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all attributes that are associated with an object.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_object_children/3">
+
+    <span id="list_object_children/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_object_children/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_object_children(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L686" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of child objects that are associated with a given object.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_object_parent_paths/3">
+
+    <span id="list_object_parent_paths/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_object_parent_paths/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_object_parent_paths(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L710" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and
+index node objects.</p>
+<p>For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>
+<p>Use this API to evaluate all parents for an object. The call returns all objects from the root of
+the directory up to the requested object. The API returns the number of paths based on
+user-defined <code class="inline">MaxResults</code>, in case there are multiple paths to the parent. The order of the paths
+and nodes returned is consistent among multiple API calls unless the objects are deleted or moved.
+Paths not leading to the directory root are ignored from the target object.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_object_parents/3">
+
+    <span id="list_object_parents/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_object_parents/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_object_parents(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L724" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists parent objects that are associated with a given object in pagination fashion.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_object_policies/3">
+
+    <span id="list_object_policies/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_object_policies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_object_policies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L739" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns policies attached to an object in pagination fashion.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_outgoing_typed_links/3">
+
+    <span id="list_outgoing_typed_links/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_outgoing_typed_links/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_outgoing_typed_links(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L757" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of all the outgoing <code class="inline">TypedLinkSpecifier</code> information for an object.</p>
+<p>It also supports filtering by typed link facet and identity attributes. For more information, see
+<a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_policy_attachments/3">
+
+    <span id="list_policy_attachments/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_policy_attachments/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_policy_attachments(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L771" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all of the <code class="inline">ObjectIdentifiers</code> to which a given policy is attached.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_published_schema_arns/3">
+
+    <span id="list_published_schema_arns/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_published_schema_arns/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_published_schema_arns(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L789" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the major version families of each published schema.</p>
+<p>If a major version ARN is provided as <code class="inline">SchemaArn</code>, the minor version revisions in that family are
+listed instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L802" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns tags for a resource.</p>
+<p>Tagging is currently supported only for directories with a limit of 50 tags per directory. All 50
+tags are returned for a given directory with this API call.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_typed_link_facet_attributes/3">
+
+    <span id="list_typed_link_facet_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_typed_link_facet_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_typed_link_facet_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L814" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of all attribute definitions for a particular <code class="inline">TypedLinkFacet</code>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_typed_link_facet_names/3">
+
+    <span id="list_typed_link_facet_names/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_typed_link_facet_names/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_typed_link_facet_names(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L830" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a paginated list of <code class="inline">TypedLink</code> facet names for a particular schema.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="lookup_policy/3">
+
+    <span id="lookup_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#lookup_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">lookup_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L850" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all policies from the root of the <code class="inline">Directory</code> to the object specified.</p>
+<p>If there are no policies present, an empty list is returned. If policies are present, and if some
+objects don&#39;t have the policies attached, it returns the <code class="inline">ObjectIdentifier</code> for such objects. If
+policies are present, it returns <code class="inline">ObjectIdentifier</code>, <code class="inline">policyId</code>, and <code class="inline">policyType</code>. Paths that
+don&#39;t lead to the root from the target object are ignored. For more information, see
+<a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="publish_schema/3">
+
+    <span id="publish_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#publish_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">publish_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L864" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Publishes a development schema with a major version and a recommended minor version.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_schema_from_json/3">
+
+    <span id="put_schema_from_json/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_schema_from_json/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_schema_from_json(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L881" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a schema to be updated using JSON upload.</p>
+<p>Only available for development schemas. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a>
+for more information.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_facet_from_object/3">
+
+    <span id="remove_facet_from_object/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_facet_from_object/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_facet_from_object(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L895" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified facet from the specified object.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L909" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An API operation for adding tags to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L919" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An API operation for removing tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_facet/3">
+
+    <span id="update_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L937" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Does the following:</p>
+<p>  1.</p>
+<p>Adds new <code class="inline">Attributes</code>, <code class="inline">Rules</code>, or <code class="inline">ObjectTypes</code>.</p>
+<ol start="2">
+<li><p>Updates existing <code class="inline">Attributes</code>, <code class="inline">Rules</code>, or <code class="inline">ObjectTypes</code>.</p>
+</li>
+<li><p>Deletes existing <code class="inline">Attributes</code>, <code class="inline">Rules</code>, or <code class="inline">ObjectTypes</code>.</p>
+</li>
+</ol>
+
+  </section>
+</section>
+<section class="detail" id="update_link_attributes/3">
+
+    <span id="update_link_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_link_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_link_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L954" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a given typed link’s attributes.</p>
+<p>Attributes to be updated must not contribute to the typed link’s identity, as defined by its
+<code class="inline">IdentityAttributeOrder</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_object_attributes/3">
+
+    <span id="update_object_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_object_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_object_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L968" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a given object&#39;s attributes.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_schema/3">
+
+    <span id="update_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L984" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the schema name with a new name.</p>
+<p>Only development schema names can be updated.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_typed_link_facet/3">
+
+    <span id="update_typed_link_facet/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_typed_link_facet/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_typed_link_facet(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L1000" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a <code class="inline">TypedLinkFacet</code>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="upgrade_applied_schema/3">
+
+    <span id="upgrade_applied_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#upgrade_applied_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">upgrade_applied_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L1020" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Upgrades a single directory in-place using the <code class="inline">PublishedSchemaArn</code> with schema updates found in
+<code class="inline">MinorVersion</code>.</p>
+<p>Backwards-compatible minor version upgrades are instantaneously available for readers on all
+objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a
+given directory per call. To upgrade multiple directories from one schema, you would need to call
+this API on each directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="upgrade_published_schema/3">
+
+    <span id="upgrade_published_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#upgrade_published_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">upgrade_published_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_directory.ex#L1031" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Upgrades a published schema under a new minor version revision using the current contents of
+<code class="inline">DevelopmentSchemaArn</code>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

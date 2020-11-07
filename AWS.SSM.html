@@ -1,0 +1,4774 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.SSM — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.SSM
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Systems Manager</p>
+<p>AWS Systems Manager is a collection of capabilities that helps you automate management tasks such
+as collecting system inventory, applying operating system (OS) patches, automating the creation of
+Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale.</p>
+<p>Systems Manager lets you remotely and securely manage the configuration of your managed instances.
+A <em>managed instance</em> is any Amazon Elastic Compute Cloud instance (EC2 instance), or any
+on-premises server or virtual machine (VM) in your hybrid environment that has been configured for
+Systems Manager.</p>
+<p>This reference is intended to be used with the <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a>.</p>
+<p>To get started, verify prerequisites and configure managed instances. For more information, see
+<a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS Systems Manager</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>For information about other API actions you can perform on EC2 instances, see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about how to
+use a Query API, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_tags_to_resource/3">add_tags_to_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or overwrites one or more tags for the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_command/3">cancel_command(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to cancel the command specified by the Command ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_maintenance_window_execution/3">cancel_maintenance_window_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a maintenance window execution that is already in progress and cancels any tasks in the
+window that have not already starting running.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_activation/3">create_activation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Generates an activation code and activation ID you can use to register your on-premises server or
+virtual machine (VM) with Systems Manager.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_association/3">create_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A State Manager association defines the state that you want to maintain on your instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_association_batch/3">create_association_batch(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates the specified Systems Manager document with the specified instances or targets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_document/3">create_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Systems Manager (SSM) document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_maintenance_window/3">create_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_ops_item/3">create_ops_item(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new OpsItem.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_patch_baseline/3">create_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_resource_data_sync/3">create_resource_data_sync(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A resource data sync helps you view data from multiple sources in a single location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_activation/3">delete_activation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an activation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_association/3">delete_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates the specified Systems Manager document from the specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_document/3">delete_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the Systems Manager document and all instance associations to the document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_inventory/3">delete_inventory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a custom inventory type or the data associated with a custom Inventory type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_maintenance_window/3">delete_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_parameter/3">delete_parameter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a parameter from the system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_parameters/3">delete_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a list of parameters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_patch_baseline/3">delete_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_resource_data_sync/3">delete_resource_data_sync(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Resource Data Sync configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_managed_instance/3">deregister_managed_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the server or virtual machine from the list of registered servers.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_patch_baseline_for_patch_group/3">deregister_patch_baseline_for_patch_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a patch group from a patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_target_from_maintenance_window/3">deregister_target_from_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a target from a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_task_from_maintenance_window/3">deregister_task_from_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a task from a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_activations/3">describe_activations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes details about the activation, such as the date and time the activation was created, its
+expiration date, the IAM role assigned to the instances in the activation, and the number of
+instances registered by using this activation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_association/3">describe_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the association for the specified target or instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_association_execution_targets/3">describe_association_execution_targets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this API action to view information about a specific execution of a specific association.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_association_executions/3">describe_association_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this API action to view all executions for a specific association ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_automation_executions/3">describe_automation_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides details about all active and terminated Automation executions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_automation_step_executions/3">describe_automation_step_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Information about all active and terminated step executions in an Automation workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_available_patches/3">describe_available_patches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all patches eligible to be included in a patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_document/3">describe_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified Systems Manager document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_document_permission/3">describe_document_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions for a Systems Manager document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_effective_instance_associations/3">describe_effective_instance_associations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>All associations for the instance(s).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_effective_patches_for_patch_baseline/3">describe_effective_patches_for_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current effective patches (the patch and the approval state) for the specified patch
+baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instance_associations_status/3">describe_instance_associations_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The status of the associations for the instance(s).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instance_information/3">describe_instance_information(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes one or more of your instances, including information about the operating system
+platform, the version of SSM Agent installed on the instance, instance status, and so on.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instance_patch_states/3">describe_instance_patch_states(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the high-level patch state of one or more instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instance_patch_states_for_patch_group/3">describe_instance_patch_states_for_patch_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the high-level patch state for the instances in the specified patch group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_instance_patches/3">describe_instance_patches(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the patches on the specified instance and their state relative to the
+patch baseline being used for the instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_inventory_deletions/3">describe_inventory_deletions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes a specific delete inventory operation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_execution_task_invocations/3">describe_maintenance_window_execution_task_invocations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the individual task executions (one per target) for a particular task run as part of a
+maintenance window execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_execution_tasks/3">describe_maintenance_window_execution_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For a given maintenance window execution, lists the tasks that were run.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_executions/3">describe_maintenance_window_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the executions of a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_schedule/3">describe_maintenance_window_schedule(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about upcoming executions of a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_targets/3">describe_maintenance_window_targets(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the targets registered with the maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_window_tasks/3">describe_maintenance_window_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tasks in a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_windows/3">describe_maintenance_windows(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the maintenance windows in an AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_maintenance_windows_for_target/3">describe_maintenance_windows_for_target(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about the maintenance window targets or tasks that an instance is associated
+with.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_ops_items/3">describe_ops_items(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Query a set of OpsItems.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_parameters/3">describe_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get information about a parameter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_patch_baselines/3">describe_patch_baselines(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the patch baselines in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_patch_group_state/3">describe_patch_group_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns high-level aggregated patch compliance state for a patch group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_patch_groups/3">describe_patch_groups(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all patch groups that have been registered with patch baselines.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_patch_properties/3">describe_patch_properties(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the properties of available patches organized by product, product family, classification,
+severity, and other properties of available patches.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_sessions/3">describe_sessions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions
+from the past 30 days.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_automation_execution/3">get_automation_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get detailed information about a particular Automation execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_calendar_state/3">get_calendar_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_command_invocation/3">get_command_invocation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed information about command execution for an invocation or plugin.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_connection_status/3">get_connection_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the Session Manager connection status for an instance to determine whether it is running
+and ready to receive Session Manager connections.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_default_patch_baseline/3">get_default_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the default patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_deployable_patch_snapshot_for_instance/3">get_deployable_patch_snapshot_for_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current snapshot for the patch baseline the instance uses.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_document/3">get_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the contents of the specified Systems Manager document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_inventory/3">get_inventory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Query inventory information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_inventory_schema/3">get_inventory_schema(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Return a list of inventory type names for the account, or return a list of attribute names for a
+specific Inventory item type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_maintenance_window/3">get_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_maintenance_window_execution/3">get_maintenance_window_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves details about a specific a maintenance window execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_maintenance_window_execution_task/3">get_maintenance_window_execution_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the details about a specific task run as part of a maintenance window execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_maintenance_window_execution_task_invocation/3">get_maintenance_window_execution_task_invocation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a specific task running on a specific target.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_maintenance_window_task/3">get_maintenance_window_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tasks in a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_ops_item/3">get_ops_item(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get information about an OpsItem by using the ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_ops_summary/3">get_ops_summary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>View a summary of OpsItems based on specified filters and aggregators.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_parameter/3">get_parameter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get information about a parameter by using the parameter name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_parameter_history/3">get_parameter_history(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Query a list of all parameters used by the AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_parameters/3">get_parameters(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get details of a parameter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_parameters_by_path/3">get_parameters_by_path(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve information about one or more parameters in a specific hierarchy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_patch_baseline/3">get_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_patch_baseline_for_patch_group/3">get_patch_baseline_for_patch_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the patch baseline that should be used for the specified patch group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_service_setting/3">get_service_setting(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#label_parameter_version/3">label_parameter_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A parameter label is a user-defined alias to help you manage different versions of a parameter.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_association_versions/3">list_association_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves all versions of an association for a specific association ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_associations/3">list_associations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all State Manager associations in the current AWS account and Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_command_invocations/3">list_command_invocations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>An invocation is copy of a command sent to a specific instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_commands/3">list_commands(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the commands requested by users of the AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_compliance_items/3">list_compliance_items(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For a specified resource ID, this API action returns a list of compliance statuses for different
+resource types.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_compliance_summaries/3">list_compliance_summaries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a summary count of compliant and non-compliant resources for a compliance type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_document_versions/3">list_document_versions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all versions for a document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_documents/3">list_documents(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all Systems Manager (SSM) documents in the current AWS account and Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_inventory_entries/3">list_inventory_entries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A list of inventory items returned by the request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resource_compliance_summaries/3">list_resource_compliance_summaries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a resource-level summary count.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resource_data_sync/3">list_resource_data_sync(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists your resource data sync configurations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the tags assigned to the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#modify_document_permission/3">modify_document_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shares a Systems Manager document publicly or privately.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_compliance_items/3">put_compliance_items(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a compliance type and other compliance details on a designated resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_inventory/3">put_inventory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Bulk update custom inventory items on one more instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_parameter/3">put_parameter(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add a parameter to the system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_default_patch_baseline/3">register_default_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Defines the default patch baseline for the relevant operating system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_patch_baseline_for_patch_group/3">register_patch_baseline_for_patch_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a patch baseline for a patch group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_target_with_maintenance_window/3">register_target_with_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a target with a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_task_with_maintenance_window/3">register_task_with_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a new task to a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_tags_from_resource/3">remove_tags_from_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tag keys from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset_service_setting/3">reset_service_setting(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#resume_session/3">resume_session(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reconnects a session to an instance after it has been disconnected.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_automation_signal/3">send_automation_signal(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends a signal to an Automation execution to change the current behavior or status of the
+execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#send_command/3">send_command(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Runs commands on one or more managed instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_associations_once/3">start_associations_once(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this API action to run an association immediately and only one time.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_automation_execution/3">start_automation_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates execution of an Automation document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_session/3">start_session(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initiates a connection to a target (for example, an instance) for a Session Manager session.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_automation_execution/3">stop_automation_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stop an Automation that is currently running.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#terminate_session/3">terminate_session(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently ends a session and closes the data connection between the Session Manager client and
+SSM Agent on the instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_association/3">update_association(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an association.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_association_status/3">update_association_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the status of the Systems Manager document associated with the specified instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_document/3">update_document(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates one or more values for an SSM document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_document_default_version/3">update_document_default_version(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Set the default version of a document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_maintenance_window/3">update_maintenance_window(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_maintenance_window_target/3">update_maintenance_window_target(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the target of an existing maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_maintenance_window_task/3">update_maintenance_window_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies a task assigned to a maintenance window.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_managed_instance_role/3">update_managed_instance_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the Amazon Identity and Access Management (IAM) role that is assigned to the on-premises
+instance or virtual machines (VM).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_ops_item/3">update_ops_item(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Edit or change an OpsItem.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_patch_baseline/3">update_patch_baseline(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies an existing patch baseline.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resource_data_sync/3">update_resource_data_sync(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Update a resource data sync.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_service_setting/3">update_service_setting(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_tags_to_resource/3">
+
+    <span id="add_tags_to_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_tags_to_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_tags_to_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or overwrites one or more tags for the specified resource.</p>
+<p>Tags are metadata that you can assign to your documents, managed instances, maintenance windows,
+Parameter Store parameters, and patch baselines. Tags enable you to categorize your resources in
+different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an
+optional value, both of which you define. For example, you could define a set of tags for your
+account&#39;s managed instances that helps you track each instance&#39;s owner and stack level. For
+example: Key=Owner and Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production,
+Pre-Production, or Test.</p>
+<p>Each resource can have a maximum of 50 tags.</p>
+<p>We recommend that you devise a set of tag keys that meets your needs for each resource type. Using
+a consistent set of tag keys makes it easier for you to manage your resources. You can search and
+filter the resources based on the tags you add. Tags don&#39;t have any semantic meaning to and are
+interpreted strictly as a string of characters.</p>
+<p>For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the <em>Amazon EC2
+User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="cancel_command/3">
+
+    <span id="cancel_command/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_command/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_command(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to cancel the command specified by the Command ID.</p>
+<p>There is no guarantee that the command will be terminated and the underlying process stopped.</p>
+
+  </section>
+</section>
+<section class="detail" id="cancel_maintenance_window_execution/3">
+
+    <span id="cancel_maintenance_window_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_maintenance_window_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_maintenance_window_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L67" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a maintenance window execution that is already in progress and cancels any tasks in the
+window that have not already starting running.</p>
+<p>(Tasks already in progress will continue to completion.)</p>
+
+  </section>
+</section>
+<section class="detail" id="create_activation/3">
+
+    <span id="create_activation/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_activation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_activation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Generates an activation code and activation ID you can use to register your on-premises server or
+virtual machine (VM) with Systems Manager.</p>
+<p>Registering these machines with Systems Manager makes it possible to manage them using Systems
+Manager capabilities. You use the activation code and ID when installing SSM Agent on machines in
+your hybrid environment. For more information about requirements for managing on-premises
+instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up AWS Systems Manager for hybrid environments</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you
+manage with Systems Manager are all called <em>managed instances</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_association/3">
+
+    <span id="create_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A State Manager association defines the state that you want to maintain on your instances.</p>
+<p>For example, an association can specify that anti-virus software must be installed and running on
+your instances, or that certain ports must be closed. For static targets, the association
+specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an AWS
+Resource Group or an AWS Autoscaling Group, State Manager applies the configuration when new
+instances are added to the group. The association also specifies actions to take when applying the
+configuration. For example, an association for anti-virus software might run once a day. If the
+software is not installed, then State Manager installs it. If the software is installed, but the
+service is not running, then the association might instruct State Manager to start the service.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_association_batch/3">
+
+    <span id="create_association_batch/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_association_batch/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_association_batch(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L113" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates the specified Systems Manager document with the specified instances or targets.</p>
+<p>When you associate a document with one or more instances using instance IDs or tags, SSM Agent
+running on the instance processes the document and configures the instance as specified.</p>
+<p>If you associate a document with an instance that already has an associated document, the system
+returns the AssociationAlreadyExists exception.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_document/3">
+
+    <span id="create_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Systems Manager (SSM) document.</p>
+<p>An SSM document defines the actions that Systems Manager performs on your managed instances. For
+more information about SSM documents, including information about supported schemas, features, and
+syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager Documents</a> in
+the <em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_maintenance_window/3">
+
+    <span id="create_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L138" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new maintenance window.</p>
+<p>The value you specify for <code class="inline">Duration</code> determines the specific end time for the maintenance window
+based on the time it begins. No maintenance window tasks are permitted to start after the
+resulting endtime minus the number of hours you specify for <code class="inline">Cutoff</code>. For example, if the
+maintenance window starts at 3 PM, the duration is three hours, and the value you specify for
+<code class="inline">Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_ops_item/3">
+
+    <span id="create_ops_item/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_ops_item/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_ops_item(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new OpsItem.</p>
+<p>You must have permission in AWS Identity and Access Management (IAM) to create a new OpsItem. For
+more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
+operational issues impacting the performance and health of their AWS resources. For more
+information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
+<em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_patch_baseline/3">
+
+    <span id="create_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a patch baseline.</p>
+<p>For information about valid key and value pairs in <code class="inline">PatchFilters</code> for each supported operating
+system type, see
+<a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_resource_data_sync/3">
+
+    <span id="create_resource_data_sync/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_resource_data_sync/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_resource_data_sync(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A resource data sync helps you view data from multiple sources in a single location.</p>
+<p>Systems Manager offers two types of resource data sync: <code class="inline">SyncToDestination</code> and <code class="inline">SyncFromSource</code>.</p>
+<p>You can configure Systems Manager Inventory to use the <code class="inline">SyncToDestination</code> type to synchronize
+Inventory data from multiple AWS Regions to a single S3 bucket. For more information, see
+<a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring Resource Data Sync for Inventory</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>You can configure Systems Manager Explorer to use the <code class="inline">SyncFromSource</code> type to synchronize
+operational work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a
+single S3 bucket. This type can synchronize OpsItems and OpsData from multiple AWS accounts and
+Regions or <code class="inline">EntireOrganization</code> by using AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up Systems Manager Explorer to display data from multiple accounts and
+Regions</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>A resource data sync is an asynchronous operation that returns immediately. After a successful
+initial sync is completed, the system continuously syncs data. To check the status of a sync, use
+the <code class="inline">ListResourceDataSync</code>.</p>
+<p>By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption
+in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon
+S3 bucket by creating a restrictive bucket policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_activation/3">
+
+    <span id="delete_activation/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_activation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_activation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an activation.</p>
+<p>You are not required to delete an activation. If you delete an activation, you can no longer use
+it to register additional managed instances. Deleting an activation does not de-register managed
+instances. You must manually de-register managed instances.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_association/3">
+
+    <span id="delete_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates the specified Systems Manager document from the specified instance.</p>
+<p>When you disassociate a document from an instance, it does not change the configuration of the
+instance. To change the configuration state of an instance after you disassociate a document, you
+must create a new document with the desired configuration and associate it with the instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_document/3">
+
+    <span id="delete_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the Systems Manager document and all instance associations to the document.</p>
+<p>Before you delete the document, we recommend that you use <code class="inline">DeleteAssociation</code> to disassociate all
+instances that are associated with the document.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_inventory/3">
+
+    <span id="delete_inventory/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_inventory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_inventory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L235" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a custom inventory type or the data associated with a custom Inventory type.</p>
+<p>Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_maintenance_window/3">
+
+    <span id="delete_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L242" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_parameter/3">
+
+    <span id="delete_parameter/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_parameter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_parameter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L249" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a parameter from the system.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_parameters/3">
+
+    <span id="delete_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Delete a list of parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_patch_baseline/3">
+
+    <span id="delete_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L263" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a patch baseline.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_resource_data_sync/3">
+
+    <span id="delete_resource_data_sync/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_resource_data_sync/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_resource_data_sync(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Resource Data Sync configuration.</p>
+<p>After the configuration is deleted, changes to data on managed instances are no longer synced to
+or from the target. Deleting a sync configuration does not delete data.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_managed_instance/3">
+
+    <span id="deregister_managed_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_managed_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_managed_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L283" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the server or virtual machine from the list of registered servers.</p>
+<p>You can reregister the instance again at any time. If you don&#39;t plan to use Run Command on the
+server, we suggest uninstalling SSM Agent first.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_patch_baseline_for_patch_group/3">
+
+    <span id="deregister_patch_baseline_for_patch_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_patch_baseline_for_patch_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_patch_baseline_for_patch_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L290" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a patch group from a patch baseline.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_target_from_maintenance_window/3">
+
+    <span id="deregister_target_from_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_target_from_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_target_from_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a target from a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_task_from_maintenance_window/3">
+
+    <span id="deregister_task_from_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_task_from_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_task_from_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a task from a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_activations/3">
+
+    <span id="describe_activations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_activations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_activations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L313" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes details about the activation, such as the date and time the activation was created, its
+expiration date, the IAM role assigned to the instances in the activation, and the number of
+instances registered by using this activation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_association/3">
+
+    <span id="describe_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L325" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the association for the specified target or instance.</p>
+<p>If you created the association by using the <code class="inline">Targets</code> parameter, then you must retrieve the
+association by using the association ID. If you created the association by specifying an instance
+ID and a Systems Manager document, then you retrieve the association by specifying the document
+name and the instance ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_association_execution_targets/3">
+
+    <span id="describe_association_execution_targets/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_association_execution_targets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_association_execution_targets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L332" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this API action to view information about a specific execution of a specific association.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_association_executions/3">
+
+    <span id="describe_association_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_association_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_association_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L339" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this API action to view all executions for a specific association ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_automation_executions/3">
+
+    <span id="describe_automation_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_automation_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_automation_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L346" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides details about all active and terminated Automation executions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_automation_step_executions/3">
+
+    <span id="describe_automation_step_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_automation_step_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_automation_step_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L353" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Information about all active and terminated step executions in an Automation workflow.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_available_patches/3">
+
+    <span id="describe_available_patches/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_available_patches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_available_patches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L360" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all patches eligible to be included in a patch baseline.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_document/3">
+
+    <span id="describe_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L367" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified Systems Manager document.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_document_permission/3">
+
+    <span id="describe_document_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_document_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_document_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions for a Systems Manager document.</p>
+<p>If you created the document, you are the owner. If a document is shared, it can either be shared
+privately (by specifying a user&#39;s AWS account ID) or publicly (<em>All</em>).</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_effective_instance_associations/3">
+
+    <span id="describe_effective_instance_associations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_effective_instance_associations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_effective_instance_associations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>All associations for the instance(s).</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_effective_patches_for_patch_baseline/3">
+
+    <span id="describe_effective_patches_for_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_effective_patches_for_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_effective_patches_for_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L394" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current effective patches (the patch and the approval state) for the specified patch
+baseline.</p>
+<p>Note that this API applies only to Windows patch baselines.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instance_associations_status/3">
+
+    <span id="describe_instance_associations_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instance_associations_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instance_associations_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The status of the associations for the instance(s).</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instance_information/3">
+
+    <span id="describe_instance_information/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instance_information/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instance_information(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L416" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes one or more of your instances, including information about the operating system
+platform, the version of SSM Agent installed on the instance, instance status, and so on.</p>
+<p>If you specify one or more instance IDs, it returns information for those instances. If you do not
+specify instance IDs, it returns information for all your instances. If you specify an instance ID
+that is not valid or an instance that you do not own, you receive an error.</p>
+<p>The IamRole field for this API action is the Amazon Identity and Access Management (IAM) role
+assigned to on-premises instances. This call does not return the IAM role for EC2 instances.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instance_patch_states/3">
+
+    <span id="describe_instance_patch_states/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instance_patch_states/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instance_patch_states(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the high-level patch state of one or more instances.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instance_patch_states_for_patch_group/3">
+
+    <span id="describe_instance_patch_states_for_patch_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instance_patch_states_for_patch_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instance_patch_states_for_patch_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L430" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the high-level patch state for the instances in the specified patch group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_instance_patches/3">
+
+    <span id="describe_instance_patches/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_instance_patches/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_instance_patches(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L438" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the patches on the specified instance and their state relative to the
+patch baseline being used for the instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_inventory_deletions/3">
+
+    <span id="describe_inventory_deletions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_inventory_deletions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_inventory_deletions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L445" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes a specific delete inventory operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_execution_task_invocations/3">
+
+    <span id="describe_maintenance_window_execution_task_invocations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_execution_task_invocations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_execution_task_invocations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L453" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the individual task executions (one per target) for a particular task run as part of a
+maintenance window execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_execution_tasks/3">
+
+    <span id="describe_maintenance_window_execution_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_execution_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_execution_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L460" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For a given maintenance window execution, lists the tasks that were run.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_executions/3">
+
+    <span id="describe_maintenance_window_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L470" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the executions of a maintenance window.</p>
+<p>This includes information about when the maintenance window was scheduled to be active, and
+information about tasks registered and run with the maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_schedule/3">
+
+    <span id="describe_maintenance_window_schedule/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_schedule/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_schedule(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L477" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about upcoming executions of a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_targets/3">
+
+    <span id="describe_maintenance_window_targets/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_targets/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_targets(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L484" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the targets registered with the maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_window_tasks/3">
+
+    <span id="describe_maintenance_window_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_window_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_window_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L491" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tasks in a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_windows/3">
+
+    <span id="describe_maintenance_windows/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_windows/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_windows(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L498" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the maintenance windows in an AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_maintenance_windows_for_target/3">
+
+    <span id="describe_maintenance_windows_for_target/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_maintenance_windows_for_target/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_maintenance_windows_for_target(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L506" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about the maintenance window targets or tasks that an instance is associated
+with.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_ops_items/3">
+
+    <span id="describe_ops_items/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_ops_items/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_ops_items(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L522" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Query a set of OpsItems.</p>
+<p>You must have permission in AWS Identity and Access Management (IAM) to query a list of OpsItems.
+For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
+operational issues impacting the performance and health of their AWS resources. For more
+information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
+<em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_parameters/3">
+
+    <span id="describe_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L536" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get information about a parameter.</p>
+<p>Request results are returned on a best-effort basis. If you specify <code class="inline">MaxResults</code> in the request,
+the response includes information up to the limit specified. The number of items returned,
+however, can be between zero and the value of <code class="inline">MaxResults</code>. If the service reaches an internal
+limit while processing the results, it stops the operation and returns the matching values up to
+that point and a <code class="inline">NextToken</code>. You can specify the <code class="inline">NextToken</code> in a subsequent call to get the next
+set of results.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_patch_baselines/3">
+
+    <span id="describe_patch_baselines/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_patch_baselines/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_patch_baselines(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L543" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the patch baselines in your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_patch_group_state/3">
+
+    <span id="describe_patch_group_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_patch_group_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_patch_group_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L550" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns high-level aggregated patch compliance state for a patch group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_patch_groups/3">
+
+    <span id="describe_patch_groups/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_patch_groups/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_patch_groups(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L557" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all patch groups that have been registered with patch baselines.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_patch_properties/3">
+
+    <span id="describe_patch_properties/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_patch_properties/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_patch_properties(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L610" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the properties of available patches organized by product, product family, classification,
+severity, and other properties of available patches.</p>
+<p>You can use the reported properties in the filters you specify in requests for actions such as
+<code class="inline">CreatePatchBaseline</code>, <code class="inline">UpdatePatchBaseline</code>, <code class="inline">DescribeAvailablePatches</code>, and
+<code class="inline">DescribePatchBaselines</code>.</p>
+<p>The following section lists the properties that can be used in filters for each major operating
+system type:</p>
+<h2 id="describe_patch_properties/3-definitions" class="section-heading">
+  <a href="#describe_patch_properties/3-definitions" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Definitions
+</h2>
+
+<h3 id="describe_patch_properties/3-amazon_linux" class="section-heading">
+  <a href="#describe_patch_properties/3-amazon_linux" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  AMAZON_LINUX
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-amazon_linux_2" class="section-heading">
+  <a href="#describe_patch_properties/3-amazon_linux_2" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  AMAZON_LINUX_2
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-centos" class="section-heading">
+  <a href="#describe_patch_properties/3-centos" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  CENTOS
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-debian" class="section-heading">
+  <a href="#describe_patch_properties/3-debian" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  DEBIAN
+</h3>
+
+<p>Valid properties: PRODUCT, PRIORITY</p>
+<h3 id="describe_patch_properties/3-oracle_linux" class="section-heading">
+  <a href="#describe_patch_properties/3-oracle_linux" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  ORACLE_LINUX
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-redhat_enterprise_linux" class="section-heading">
+  <a href="#describe_patch_properties/3-redhat_enterprise_linux" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  REDHAT_ENTERPRISE_LINUX
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-suse" class="section-heading">
+  <a href="#describe_patch_properties/3-suse" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  SUSE
+</h3>
+
+<p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+<h3 id="describe_patch_properties/3-ubuntu" class="section-heading">
+  <a href="#describe_patch_properties/3-ubuntu" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  UBUNTU
+</h3>
+
+<p>Valid properties: PRODUCT, PRIORITY</p>
+<h3 id="describe_patch_properties/3-windows" class="section-heading">
+  <a href="#describe_patch_properties/3-windows" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  WINDOWS
+</h3>
+
+<p>Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_sessions/3">
+
+    <span id="describe_sessions/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_sessions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_sessions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L618" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions
+from the past 30 days.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_automation_execution/3">
+
+    <span id="get_automation_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_automation_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_automation_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L625" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get detailed information about a particular Automation execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_calendar_state/3">
+
+    <span id="get_calendar_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_calendar_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_calendar_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L644" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time.</p>
+<p>If you specify a time, <code class="inline">GetCalendarState</code> returns the state of the calendar at a specific time,
+and returns the next time that the Change Calendar state will transition. If you do not specify a
+time, <code class="inline">GetCalendarState</code> assumes the current time. Change Calendar entries have two possible
+states: <code class="inline">OPEN</code> or <code class="inline">CLOSED</code>.</p>
+<p>If you specify more than one calendar in a request, the command returns the status of <code class="inline">OPEN</code> only
+if all calendars in the request are open. If one or more calendars in the request are closed, the
+status returned is <code class="inline">CLOSED</code>.</p>
+<p>For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS Systems Manager Change Calendar</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_command_invocation/3">
+
+    <span id="get_command_invocation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_command_invocation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_command_invocation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L651" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed information about command execution for an invocation or plugin.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_connection_status/3">
+
+    <span id="get_connection_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_connection_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_connection_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L659" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the Session Manager connection status for an instance to determine whether it is running
+and ready to receive Session Manager connections.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_default_patch_baseline/3">
+
+    <span id="get_default_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_default_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_default_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L672" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the default patch baseline.</p>
+<p>Note that Systems Manager supports creating multiple default patch baselines. For example, you can
+create a default patch baseline for each operating system.</p>
+<p>If you do not specify an operating system value, the default patch baseline for Windows is
+returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_deployable_patch_snapshot_for_instance/3">
+
+    <span id="get_deployable_patch_snapshot_for_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_deployable_patch_snapshot_for_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_deployable_patch_snapshot_for_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L681" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current snapshot for the patch baseline the instance uses.</p>
+<p>This API is primarily used by the AWS-RunPatchBaseline Systems Manager document.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_document/3">
+
+    <span id="get_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L688" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the contents of the specified Systems Manager document.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_inventory/3">
+
+    <span id="get_inventory/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_inventory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_inventory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L695" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Query inventory information.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_inventory_schema/3">
+
+    <span id="get_inventory_schema/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_inventory_schema/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_inventory_schema(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L703" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Return a list of inventory type names for the account, or return a list of attribute names for a
+specific Inventory item type.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_maintenance_window/3">
+
+    <span id="get_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L710" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_maintenance_window_execution/3">
+
+    <span id="get_maintenance_window_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_maintenance_window_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_maintenance_window_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L717" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves details about a specific a maintenance window execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_maintenance_window_execution_task/3">
+
+    <span id="get_maintenance_window_execution_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_maintenance_window_execution_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_maintenance_window_execution_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L724" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the details about a specific task run as part of a maintenance window execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_maintenance_window_execution_task_invocation/3">
+
+    <span id="get_maintenance_window_execution_task_invocation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_maintenance_window_execution_task_invocation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_maintenance_window_execution_task_invocation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L731" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a specific task running on a specific target.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_maintenance_window_task/3">
+
+    <span id="get_maintenance_window_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_maintenance_window_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_maintenance_window_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L738" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tasks in a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_ops_item/3">
+
+    <span id="get_ops_item/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_ops_item/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_ops_item(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L754" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get information about an OpsItem by using the ID.</p>
+<p>You must have permission in AWS Identity and Access Management (IAM) to view information about an
+OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
+operational issues impacting the performance and health of their AWS resources. For more
+information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
+<em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_ops_summary/3">
+
+    <span id="get_ops_summary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_ops_summary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_ops_summary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L761" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>View a summary of OpsItems based on specified filters and aggregators.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_parameter/3">
+
+    <span id="get_parameter/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_parameter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_parameter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L770" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get information about a parameter by using the parameter name.</p>
+<p>Don&#39;t confuse this API action with the <code class="inline">GetParameters</code> API action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_parameter_history/3">
+
+    <span id="get_parameter_history/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_parameter_history/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_parameter_history(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L777" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Query a list of all parameters used by the AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_parameters/3">
+
+    <span id="get_parameters/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_parameters/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_parameters(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L786" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get details of a parameter.</p>
+<p>Don&#39;t confuse this API action with the <code class="inline">GetParameter</code> API action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_parameters_by_path/3">
+
+    <span id="get_parameters_by_path/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_parameters_by_path/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_parameters_by_path(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L800" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve information about one or more parameters in a specific hierarchy.</p>
+<p>Request results are returned on a best-effort basis. If you specify <code class="inline">MaxResults</code> in the request,
+the response includes information up to the limit specified. The number of items returned,
+however, can be between zero and the value of <code class="inline">MaxResults</code>. If the service reaches an internal
+limit while processing the results, it stops the operation and returns the matching values up to
+that point and a <code class="inline">NextToken</code>. You can specify the <code class="inline">NextToken</code> in a subsequent call to get the next
+set of results.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_patch_baseline/3">
+
+    <span id="get_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L807" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a patch baseline.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_patch_baseline_for_patch_group/3">
+
+    <span id="get_patch_baseline_for_patch_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_patch_baseline_for_patch_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_patch_baseline_for_patch_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L814" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the patch baseline that should be used for the specified patch group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_service_setting/3">
+
+    <span id="get_service_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_service_setting/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_service_setting(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L834" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p>
+<p>This setting defines how a user interacts with or uses a service or a feature of a service. For
+example, if an AWS service charges money to the account based on feature or service usage, then
+the AWS service team might create a default setting of &quot;false&quot;. This means the user can&#39;t use this
+feature unless they change the setting to &quot;true&quot; and intentionally opt in for a paid feature.</p>
+<p>Services map a <code class="inline">SettingId</code> object to a setting value. AWS services teams define the default value
+for a <code class="inline">SettingId</code>. You can&#39;t create a new <code class="inline">SettingId</code>, but you can overwrite the default value if
+you have the <code class="inline">ssm:UpdateServiceSetting</code> permission for the setting. Use the <code class="inline">UpdateServiceSetting</code>
+API action to change the default setting. Or use the <code class="inline">ResetServiceSetting</code> to change the value
+back to the original value defined by the AWS service team.</p>
+<p>Query the current service setting for the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="label_parameter_version/3">
+
+    <span id="label_parameter_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#label_parameter_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">label_parameter_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L869" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A parameter label is a user-defined alias to help you manage different versions of a parameter.</p>
+<p>When you modify a parameter, Systems Manager automatically saves a new version and increments the
+version number by one. A label can help you remember the purpose of a parameter when there are
+multiple versions.</p>
+<p>Parameter labels have the following requirements and restrictions.</p>
+<ul>
+<li><p>A version of a parameter can have a maximum of 10 labels.</p>
+</li>
+<li><p>You can&#39;t attach the same label to different versions of the same parameter. For
+example, if version 1 has the label Production, then you can&#39;t attach Production to version 2.</p>
+</li>
+<li><p>You can move a label from one version of a parameter to another.</p>
+</li>
+<li><p>You can&#39;t create a label when you create a new parameter. You must attach a label to
+a specific version of a parameter.</p>
+</li>
+<li><p>You can&#39;t delete a parameter label. If you no longer want to use a parameter label,
+then you must move it to a different version of a parameter.</p>
+</li>
+<li><p>A label can have a maximum of 100 characters.</p>
+</li>
+<li><p>Labels can contain letters (case sensitive), numbers, periods (.), hyphens (-), or
+underscores (_).</p>
+</li>
+<li><p>Labels can&#39;t begin with a number, &quot;aws,&quot; or &quot;ssm&quot; (not case sensitive). If a label
+fails to meet these requirements, then the label is not associated with a parameter and the system
+displays it in the list of InvalidLabels.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_association_versions/3">
+
+    <span id="list_association_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_association_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_association_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L876" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves all versions of an association for a specific association ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_associations/3">
+
+    <span id="list_associations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_associations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_associations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L886" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all State Manager associations in the current AWS account and Region.</p>
+<p>You can limit the results to a specific State Manager association document or instance by
+specifying a filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_command_invocations/3">
+
+    <span id="list_command_invocations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_command_invocations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_command_invocations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L897" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>An invocation is copy of a command sent to a specific instance.</p>
+<p>A command can apply to one or more instances. A command invocation applies to one instance. For
+example, if a user runs SendCommand against three instances, then a command invocation is created
+for each requested instance ID. ListCommandInvocations provide status about command execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_commands/3">
+
+    <span id="list_commands/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_commands/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_commands(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L904" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the commands requested by users of the AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_compliance_items/3">
+
+    <span id="list_compliance_items/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_compliance_items/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_compliance_items(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L915" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For a specified resource ID, this API action returns a list of compliance statuses for different
+resource types.</p>
+<p>Currently, you can only specify one resource ID per call. List results depend on the criteria
+specified in the filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_compliance_summaries/3">
+
+    <span id="list_compliance_summaries/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_compliance_summaries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_compliance_summaries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L925" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a summary count of compliant and non-compliant resources for a compliance type.</p>
+<p>For example, this call can return State Manager associations, patches, or custom compliance types
+according to the filter criteria that you specify.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_document_versions/3">
+
+    <span id="list_document_versions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_document_versions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_document_versions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L932" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all versions for a document.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_documents/3">
+
+    <span id="list_documents/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_documents/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_documents(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L941" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all Systems Manager (SSM) documents in the current AWS account and Region.</p>
+<p>You can limit the results of this request by using a filter.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_inventory_entries/3">
+
+    <span id="list_inventory_entries/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_inventory_entries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_inventory_entries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L948" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A list of inventory items returned by the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resource_compliance_summaries/3">
+
+    <span id="list_resource_compliance_summaries/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resource_compliance_summaries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resource_compliance_summaries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L958" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a resource-level summary count.</p>
+<p>The summary includes information about compliant and non-compliant statuses and detailed
+compliance-item severity counts, according to the filter criteria you specify.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resource_data_sync/3">
+
+    <span id="list_resource_data_sync/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resource_data_sync/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resource_data_sync(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L974" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists your resource data sync configurations.</p>
+<p>Includes information about the last time a sync attempted to start, the last sync status, and the
+last time a sync successfully completed.</p>
+<p>The number of sync configurations might be too large to return using a single call to
+<code class="inline">ListResourceDataSync</code>. You can limit the number of sync configurations returned by using the
+<code class="inline">MaxResults</code> parameter. To determine whether there are more sync configurations to list, check the
+value of <code class="inline">NextToken</code> in the output. If there are more sync configurations to list, you can request
+them by specifying the <code class="inline">NextToken</code> returned in the call to the parameter of a subsequent call.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L981" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the tags assigned to the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="modify_document_permission/3">
+
+    <span id="modify_document_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#modify_document_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">modify_document_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L991" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Shares a Systems Manager document publicly or privately.</p>
+<p>If you share a document privately, you must specify the AWS user account IDs for those people who
+can use the document. If you share a document publicly, you must specify <em>All</em> as the account ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_compliance_items/3">
+
+    <span id="put_compliance_items/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_compliance_items/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_compliance_items(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1038" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a compliance type and other compliance details on a designated resource.</p>
+<p>This action lets you register custom compliance details with a resource. This call overwrites
+existing compliance information on the resource, so you must provide a full list of compliance
+items each time that you send the request.</p>
+<p>ComplianceType can be one of the following:</p>
+<ul>
+<li><p>ExecutionId: The execution ID when the patch, association, or custom compliance item
+was applied.</p>
+</li>
+<li><p>ExecutionType: Specify patch, association, or Custom:<code class="inline">string</code>.</p>
+</li>
+<li><p>ExecutionTime. The time the patch, association, or custom compliance item was
+applied to the instance.</p>
+</li>
+<li><p>Id: The patch, association, or custom compliance ID.</p>
+</li>
+<li><p>Title: A title.</p>
+</li>
+<li><p>Status: The status of the compliance item. For example, <code class="inline">approved</code> for patches, or
+<code class="inline">Failed</code> for associations.</p>
+</li>
+<li><p>Severity: A patch severity. For example, <code class="inline">critical</code>.</p>
+</li>
+<li><p>DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.</p>
+</li>
+<li><p>DocumentVersion: An SSM document version number. For example, 4.</p>
+</li>
+<li><p>Classification: A patch classification. For example, <code class="inline">security updates</code>.</p>
+</li>
+<li><p>PatchBaselineId: A patch baseline ID.</p>
+</li>
+<li><p>PatchSeverity: A patch severity. For example, <code class="inline">Critical</code>.</p>
+</li>
+<li><p>PatchState: A patch state. For example, <code class="inline">InstancesWithFailedPatches</code>.</p>
+</li>
+<li><p>PatchGroup: The name of a patch group.</p>
+</li>
+<li><p>InstalledTime: The time the association, patch, or custom compliance item was
+applied to the resource. Specify the time by using the following format: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="put_inventory/3">
+
+    <span id="put_inventory/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_inventory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_inventory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1048" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Bulk update custom inventory items on one more instance.</p>
+<p>The request adds an inventory item, if it doesn&#39;t already exist, or updates an inventory item, if
+it does exist.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_parameter/3">
+
+    <span id="put_parameter/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_parameter/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_parameter(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1055" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add a parameter to the system.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_default_patch_baseline/3">
+
+    <span id="register_default_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_default_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_default_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1067" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Defines the default patch baseline for the relevant operating system.</p>
+<p>To reset the AWS predefined patch baseline as the default, specify the full patch baseline ARN as
+the baseline ID value. For example, for CentOS, specify
+<code class="inline">arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of
+<code class="inline">pb-0574b43a65ea646ed</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_patch_baseline_for_patch_group/3">
+
+    <span id="register_patch_baseline_for_patch_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_patch_baseline_for_patch_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_patch_baseline_for_patch_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1074" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a patch baseline for a patch group.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_target_with_maintenance_window/3">
+
+    <span id="register_target_with_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_target_with_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_target_with_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1081" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a target with a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_task_with_maintenance_window/3">
+
+    <span id="register_task_with_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_task_with_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_task_with_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1088" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a new task to a maintenance window.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_tags_from_resource/3">
+
+    <span id="remove_tags_from_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_tags_from_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_tags_from_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1095" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tag keys from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="reset_service_setting/3">
+
+    <span id="reset_service_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#reset_service_setting/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset_service_setting(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p>
+<p>This setting defines how a user interacts with or uses a service or a feature of a service. For
+example, if an AWS service charges money to the account based on feature or service usage, then
+the AWS service team might create a default setting of &quot;false&quot;. This means the user can&#39;t use this
+feature unless they change the setting to &quot;true&quot; and intentionally opt in for a paid feature.</p>
+<p>Services map a <code class="inline">SettingId</code> object to a setting value. AWS services teams define the default value
+for a <code class="inline">SettingId</code>. You can&#39;t create a new <code class="inline">SettingId</code>, but you can overwrite the default value if
+you have the <code class="inline">ssm:UpdateServiceSetting</code> permission for the setting. Use the <code class="inline">GetServiceSetting</code>
+API action to view the current value. Use the <code class="inline">UpdateServiceSetting</code> API action to change the
+default setting.</p>
+<p>Reset the service setting for the account to the default value as provisioned by the AWS service
+team.</p>
+
+  </section>
+</section>
+<section class="detail" id="resume_session/3">
+
+    <span id="resume_session/2"></span>
+
+  <div class="detail-header">
+    <a href="#resume_session/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">resume_session(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1128" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Reconnects a session to an instance after it has been disconnected.</p>
+<p>Connections can be resumed for disconnected sessions, but not terminated sessions.</p>
+<p>This command is primarily for use by client machines to automatically reconnect during
+intermittent network issues. It is not intended for any other use.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_automation_signal/3">
+
+    <span id="send_automation_signal/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_automation_signal/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_automation_signal(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends a signal to an Automation execution to change the current behavior or status of the
+execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="send_command/3">
+
+    <span id="send_command/2"></span>
+
+  <div class="detail-header">
+    <a href="#send_command/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">send_command(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Runs commands on one or more managed instances.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_associations_once/3">
+
+    <span id="start_associations_once/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_associations_once/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_associations_once(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this API action to run an association immediately and only one time.</p>
+<p>This action can be helpful when troubleshooting associations.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_automation_execution/3">
+
+    <span id="start_automation_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_automation_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_automation_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates execution of an Automation document.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_session/3">
+
+    <span id="start_session/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_session/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_session(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initiates a connection to a target (for example, an instance) for a Session Manager session.</p>
+<p>Returns a URL and token that can be used to open a WebSocket connection for sending input and
+receiving outputs.</p>
+<p>AWS CLI usage: <code class="inline">start-session</code> is an interactive command that requires the Session Manager plugin
+to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install the Session Manager plugin for the AWS
+CLI</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools for
+PowerShell on Windows local machines.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_automation_execution/3">
+
+    <span id="stop_automation_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_automation_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_automation_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stop an Automation that is currently running.</p>
+
+  </section>
+</section>
+<section class="detail" id="terminate_session/3">
+
+    <span id="terminate_session/2"></span>
+
+  <div class="detail-header">
+    <a href="#terminate_session/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">terminate_session(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently ends a session and closes the data connection between the Session Manager client and
+SSM Agent on the instance.</p>
+<p>A terminated session cannot be resumed.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_association/3">
+
+    <span id="update_association/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_association/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_association(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an association.</p>
+<p>You can update the association name and version, the document version, schedule, parameters, and
+Amazon S3 output.</p>
+<p>In order to call this API action, your IAM user account, group, or role must be configured with
+permission to call the <code class="inline">DescribeAssociation</code> API action. If you don&#39;t have permission to call
+DescribeAssociation, then you receive the following error: <code class="inline">An error occurred (AccessDeniedException) when calling the UpdateAssociation operation: User: &lt;user_arn&gt; is not authorized to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code></p>
+<p>When you update an association, the association immediately runs against the specified targets.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_association_status/3">
+
+    <span id="update_association_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_association_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_association_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1219" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the status of the Systems Manager document associated with the specified instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_document/3">
+
+    <span id="update_document/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_document/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_document(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1226" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates one or more values for an SSM document.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_document_default_version/3">
+
+    <span id="update_document_default_version/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_document_default_version/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_document_default_version(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1233" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Set the default version of a document.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_maintenance_window/3">
+
+    <span id="update_maintenance_window/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_maintenance_window/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_maintenance_window(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing maintenance window.</p>
+<p>Only specified parameters are modified.</p>
+<p>The value you specify for <code class="inline">Duration</code> determines the specific end time for the maintenance window
+based on the time it begins. No maintenance window tasks are permitted to start after the
+resulting endtime minus the number of hours you specify for <code class="inline">Cutoff</code>. For example, if the
+maintenance window starts at 3 PM, the duration is three hours, and the value you specify for
+<code class="inline">Cutoff</code> is one hour, no maintenance window tasks can start after 5 PM.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_maintenance_window_target/3">
+
+    <span id="update_maintenance_window_target/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_maintenance_window_target/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_maintenance_window_target(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1272" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the target of an existing maintenance window.</p>
+<p>You can change the following:</p>
+<ul>
+<li><p>Name</p>
+</li>
+<li><p>Description</p>
+</li>
+<li><p>Owner</p>
+</li>
+<li><p>IDs for an ID target</p>
+</li>
+<li><p>Tags for a Tag target</p>
+</li>
+<li><p>From any supported tag type to another. The three supported tag types are ID target,
+Tag target, and resource group. For more information, see <code class="inline">Target</code>.</p>
+</li>
+</ul>
+<p>If a parameter is null, then the corresponding field is not modified.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_maintenance_window_task/3">
+
+    <span id="update_maintenance_window_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_maintenance_window_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_maintenance_window_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies a task assigned to a maintenance window.</p>
+<p>You can&#39;t change the task type, but you can change the following values:</p>
+<ul>
+<li><p>TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript
+to AWS-RunShellScript.</p>
+</li>
+<li><p>ServiceRoleArn</p>
+</li>
+<li><p>TaskInvocationParameters</p>
+</li>
+<li><p>Priority</p>
+</li>
+<li><p>MaxConcurrency</p>
+</li>
+<li><p>MaxErrors</p>
+</li>
+</ul>
+<p>If the value for a parameter in <code class="inline">UpdateMaintenanceWindowTask</code> is null, then the corresponding
+field is not modified. If you set <code class="inline">Replace</code> to true, then all fields required by the
+<code class="inline">RegisterTaskWithMaintenanceWindow</code> action are required for this request. Optional fields that
+aren&#39;t specified are set to null.</p>
+<p>When you update a maintenance window task that has options specified in
+<code class="inline">TaskInvocationParameters</code>, you must provide again all the <code class="inline">TaskInvocationParameters</code> values that
+you want to retain. The values you do not specify again are removed. For example, suppose that
+when you registered a Run Command task, you specified <code class="inline">TaskInvocationParameters</code> values for
+<code class="inline">Comment</code>, <code class="inline">NotificationConfig</code>, and <code class="inline">OutputS3BucketName</code>. If you update the maintenance window
+task and specify only a different <code class="inline">OutputS3BucketName</code> value, the values for <code class="inline">Comment</code> and
+<code class="inline">NotificationConfig</code> are removed.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_managed_instance_role/3">
+
+    <span id="update_managed_instance_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_managed_instance_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_managed_instance_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1318" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the Amazon Identity and Access Management (IAM) role that is assigned to the on-premises
+instance or virtual machines (VM).</p>
+<p>IAM roles are first assigned to these hybrid instances during the activation process. For more
+information, see <code class="inline">CreateActivation</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_ops_item/3">
+
+    <span id="update_ops_item/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_ops_item/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_ops_item(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1334" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Edit or change an OpsItem.</p>
+<p>You must have permission in AWS Identity and Access Management (IAM) to update an OpsItem. For
+more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with OpsCenter</a>
+in the <em>AWS Systems Manager User Guide</em>.</p>
+<p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
+operational issues impacting the performance and health of their AWS resources. For more
+information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
+<em>AWS Systems Manager User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_patch_baseline/3">
+
+    <span id="update_patch_baseline/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_patch_baseline/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_patch_baseline(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1347" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies an existing patch baseline.</p>
+<p>Fields not specified in the request are left unchanged.</p>
+<p>For information about valid key and value pairs in <code class="inline">PatchFilters</code> for each supported operating
+system type, see
+<a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resource_data_sync/3">
+
+    <span id="update_resource_data_sync/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_resource_data_sync/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resource_data_sync(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1363" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Update a resource data sync.</p>
+<p>After you create a resource data sync for a Region, you can&#39;t change the account options for that
+sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the Include
+only the current account option, you can&#39;t edit that sync later and choose the Include all
+accounts from my AWS Organizations configuration option. Instead, you must delete the first
+resource data sync, and create a new one.</p>
+<p>This API action only supports a resource data sync that was created with a SyncFromSource
+<code class="inline">SyncType</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_service_setting/3">
+
+    <span id="update_service_setting/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_service_setting/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_service_setting(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ssm.ex#L1383" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><code class="inline">ServiceSetting</code> is an account-level setting for an AWS service.</p>
+<p>This setting defines how a user interacts with or uses a service or a feature of a service. For
+example, if an AWS service charges money to the account based on feature or service usage, then
+the AWS service team might create a default setting of &quot;false&quot;. This means the user can&#39;t use this
+feature unless they change the setting to &quot;true&quot; and intentionally opt in for a paid feature.</p>
+<p>Services map a <code class="inline">SettingId</code> object to a setting value. AWS services teams define the default value
+for a <code class="inline">SettingId</code>. You can&#39;t create a new <code class="inline">SettingId</code>, but you can overwrite the default value if
+you have the <code class="inline">ssm:UpdateServiceSetting</code> permission for the setting. Use the <code class="inline">GetServiceSetting</code>
+API action to view the current value. Or, use the <code class="inline">ResetServiceSetting</code> to change the value back
+to the original value defined by the AWS service team.</p>
+<p>Update the service setting for the account.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.NetworkManager — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.NetworkManager
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which
+you can monitor your AWS and on-premises networks that are built around transit gateways.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_customer_gateway/4">associate_customer_gateway(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a customer gateway with a device and optionally, with a link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_link/4">associate_link(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a link to a device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_device/4">create_device(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new device in a global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_global_network/3">create_global_network(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new, empty global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_link/4">create_link(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new link for a specified site.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_site/4">create_site(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new site in a global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_device/5">delete_device(client, device_id, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_global_network/4">delete_global_network(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_link/5">delete_link(client, global_network_id, link_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_site/5">delete_site(client, global_network_id, site_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing site.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_transit_gateway/5">deregister_transit_gateway(client, global_network_id, transit_gateway_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters a transit gateway from your global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_global_networks/5">describe_global_networks(client, global_network_ids \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes one or more global networks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_customer_gateway/5">disassociate_customer_gateway(client, customer_gateway_arn, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a customer gateway from a device and a link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_link/4">disassociate_link(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates an existing device from a link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_customer_gateway_associations/6">get_customer_gateway_associations(client, global_network_id, customer_gateway_arns \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the association information for customer gateways that are associated with devices and links
+in your global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_devices/7">get_devices(client, global_network_id, device_ids \\ nil, max_results \\ nil, next_token \\ nil, site_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more of your devices in a global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_link_associations/7">get_link_associations(client, global_network_id, device_id \\ nil, link_id \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the link associations for a device or a link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_links/9">get_links(client, global_network_id, link_ids \\ nil, max_results \\ nil, next_token \\ nil, provider \\ nil, site_id \\ nil, type \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more links in a specified global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_sites/6">get_sites(client, global_network_id, max_results \\ nil, next_token \\ nil, site_ids \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about one or more of your sites in a global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_transit_gateway_registrations/6">get_transit_gateway_registrations(client, global_network_id, max_results \\ nil, next_token \\ nil, transit_gateway_arns \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets information about the transit gateway registrations in a specified global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the tags for a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_transit_gateway/4">register_transit_gateway(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a transit gateway in your global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Tags a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_device/5">update_device(client, device_id, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the details for an existing device.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_global_network/4">update_global_network(client, global_network_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing global network.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_link/5">update_link(client, global_network_id, link_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the details for an existing link.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_site/5">update_site(client, global_network_id, site_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the information for an existing site.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_customer_gateway/4">
+
+    <span id="associate_customer_gateway/3"></span>
+
+  <div class="detail-header">
+    <a href="#associate_customer_gateway/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_customer_gateway(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a customer gateway with a device and optionally, with a link.</p>
+<p>If you specify a link, it must be associated with the specified device.</p>
+<p>You can only associate customer gateways that are connected to a VPN attachment on a transit
+gateway. The transit gateway must be registered in your global network. When you register a
+transit gateway, customer gateways that are connected to the transit gateway are automatically
+included in the global network. To list customer gateways that are connected to a transit gateway,
+use the
+<a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
+EC2 API and filter by <code class="inline">transit-gateway-id</code>.</p>
+<p>You cannot associate a customer gateway with more than one device and link.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_link/4">
+
+    <span id="associate_link/3"></span>
+
+  <div class="detail-header">
+    <a href="#associate_link/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_link(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a link to a device.</p>
+<p>A device can be associated to multiple links and a link can be associated to multiple devices. The
+device and link must be in the same global network and the same site.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_device/4">
+
+    <span id="create_device/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_device/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_device(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L51" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new device in a global network.</p>
+<p>If you specify both a site ID and a location, the location of the site is used for visualization
+in the Network Manager console.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_global_network/3">
+
+    <span id="create_global_network/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_global_network/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_global_network(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new, empty global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_link/4">
+
+    <span id="create_link/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_link/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_link(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new link for a specified site.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_site/4">
+
+    <span id="create_site/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_site/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_site(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L81" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new site in a global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_device/5">
+
+    <span id="delete_device/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_device/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_device(client, device_id, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing device.</p>
+<p>You must first disassociate the device from any links and customer gateways.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_global_network/4">
+
+    <span id="delete_global_network/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_global_network/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_global_network(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L106" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing global network.</p>
+<p>You must first delete all global network objects (devices, links, and sites) and deregister all
+transit gateways.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_link/5">
+
+    <span id="delete_link/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_link/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_link(client, global_network_id, link_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing link.</p>
+<p>You must first disassociate the link from any devices and customer gateways.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_site/5">
+
+    <span id="delete_site/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_site/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_site(client, global_network_id, site_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L130" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing site.</p>
+<p>The site cannot be associated with any device or link.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_transit_gateway/5">
+
+    <span id="deregister_transit_gateway/4"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_transit_gateway/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_transit_gateway(client, global_network_id, transit_gateway_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters a transit gateway from your global network.</p>
+<p>This action does not delete your transit gateway, or modify any of its attachments. This action
+removes any customer gateway associations.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_global_networks/5">
+
+    <span id="describe_global_networks/1"></span>
+
+    <span id="describe_global_networks/2"></span>
+
+    <span id="describe_global_networks/3"></span>
+
+    <span id="describe_global_networks/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_global_networks/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_global_networks(client, global_network_ids \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes one or more global networks.</p>
+<p>By default, all global networks are described. To describe the objects in your global network, you
+must use the appropriate <code class="inline">Get*</code> action. For example, to list the transit gateways in your global
+network, use <code class="inline">GetTransitGatewayRegistrations</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_customer_gateway/5">
+
+    <span id="disassociate_customer_gateway/4"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_customer_gateway/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_customer_gateway(client, customer_gateway_arn, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a customer gateway from a device and a link.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_link/4">
+
+    <span id="disassociate_link/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_link/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_link(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates an existing device from a link.</p>
+<p>You must first disassociate any customer gateways that are associated with the link.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_customer_gateway_associations/6">
+
+    <span id="get_customer_gateway_associations/2"></span>
+
+    <span id="get_customer_gateway_associations/3"></span>
+
+    <span id="get_customer_gateway_associations/4"></span>
+
+    <span id="get_customer_gateway_associations/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_customer_gateway_associations/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_customer_gateway_associations(client, global_network_id, customer_gateway_arns \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L210" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the association information for customer gateways that are associated with devices and links
+in your global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_devices/7">
+
+    <span id="get_devices/2"></span>
+
+    <span id="get_devices/3"></span>
+
+    <span id="get_devices/4"></span>
+
+    <span id="get_devices/5"></span>
+
+    <span id="get_devices/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_devices/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_devices(client, global_network_id, device_ids \\ nil, max_results \\ nil, next_token \\ nil, site_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L235" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more of your devices in a global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_link_associations/7">
+
+    <span id="get_link_associations/2"></span>
+
+    <span id="get_link_associations/3"></span>
+
+    <span id="get_link_associations/4"></span>
+
+    <span id="get_link_associations/5"></span>
+
+    <span id="get_link_associations/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_link_associations/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_link_associations(client, global_network_id, device_id \\ nil, link_id \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L267" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the link associations for a device or a link.</p>
+<p>Either the device ID or the link ID must be specified.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_links/9">
+
+    <span id="get_links/2"></span>
+
+    <span id="get_links/3"></span>
+
+    <span id="get_links/4"></span>
+
+    <span id="get_links/5"></span>
+
+    <span id="get_links/6"></span>
+
+    <span id="get_links/7"></span>
+
+    <span id="get_links/8"></span>
+
+  <div class="detail-header">
+    <a href="#get_links/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_links(client, global_network_id, link_ids \\ nil, max_results \\ nil, next_token \\ nil, provider \\ nil, site_id \\ nil, type \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L300" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more links in a specified global network.</p>
+<p>If you specify the site ID, you cannot specify the type or provider in the same request. You can
+specify the type and provider in the same request.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_sites/6">
+
+    <span id="get_sites/2"></span>
+
+    <span id="get_sites/3"></span>
+
+    <span id="get_sites/4"></span>
+
+    <span id="get_sites/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_sites/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_sites(client, global_network_id, max_results \\ nil, next_token \\ nil, site_ids \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L340" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about one or more of your sites in a global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_transit_gateway_registrations/6">
+
+    <span id="get_transit_gateway_registrations/2"></span>
+
+    <span id="get_transit_gateway_registrations/3"></span>
+
+    <span id="get_transit_gateway_registrations/4"></span>
+
+    <span id="get_transit_gateway_registrations/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_transit_gateway_registrations/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_transit_gateway_registrations(client, global_network_id, max_results \\ nil, next_token \\ nil, transit_gateway_arns \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L365" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets information about the transit gateway registrations in a specified global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L390" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the tags for a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_transit_gateway/4">
+
+    <span id="register_transit_gateway/3"></span>
+
+  <div class="detail-header">
+    <a href="#register_transit_gateway/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_transit_gateway(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a transit gateway in your global network.</p>
+<p>The transit gateway can be in any AWS Region, but it must be owned by the same AWS account that
+owns the global network. You cannot register a transit gateway in more than one global network.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L413" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Tags a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L423" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_device/5">
+
+    <span id="update_device/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_device/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_device(client, device_id, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L439" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the details for an existing device.</p>
+<p>To remove information for any of the parameters, specify an empty string.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_global_network/4">
+
+    <span id="update_global_network/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_global_network/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_global_network(client, global_network_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L451" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing global network.</p>
+<p>To remove information for any of the parameters, specify an empty string.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_link/5">
+
+    <span id="update_link/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_link/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_link(client, global_network_id, link_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L463" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the details for an existing link.</p>
+<p>To remove information for any of the parameters, specify an empty string.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_site/5">
+
+    <span id="update_site/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_site/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_site(client, global_network_id, site_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/network_manager.ex#L475" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the information for an existing site.</p>
+<p>To remove information for any of the parameters, specify an empty string.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

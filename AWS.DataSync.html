@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.DataSync — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.DataSync
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS DataSync</p>
+<p>AWS DataSync is a managed data transfer service that makes it simpler for you to automate moving
+data between on-premises storage and Amazon Simple Storage Service (Amazon S3) or Amazon Elastic
+File System (Amazon EFS).</p>
+<p>This API interface reference for AWS DataSync contains documentation for a programming interface
+that you can use to manage AWS DataSync.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_task_execution/3">cancel_task_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels execution of a task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_agent/3">create_agent(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates an AWS DataSync agent that you have deployed on your host.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_efs/3">create_location_efs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an endpoint for an Amazon EFS file system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_fsx_windows/3">create_location_fsx_windows(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an endpoint for an Amazon FSx for Windows file system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_nfs/3">create_location_nfs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Defines a file system on a Network File System (NFS) server that can be read from or written to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_object_storage/3">create_location_object_storage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an endpoint for a self-managed object storage bucket.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_s3/3">create_location_s3(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an endpoint for an Amazon S3 bucket.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_location_smb/3">create_location_smb(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Defines a file system on a Server Message Block (SMB) server that can be read from or written to.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_task/3">create_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_agent/3">delete_agent(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_location/3">delete_location(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the configuration of a location used by AWS DataSync.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_task/3">delete_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_agent/3">describe_agent(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata such as the name, the network interfaces, and the status (that is, whether the
+agent is running or not) for an agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_efs/3">describe_location_efs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata, such as the path information about an Amazon EFS location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_fsx_windows/3">describe_location_fsx_windows(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata, such as the path information about an Amazon FSx for Windows location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_nfs/3">describe_location_nfs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata, such as the path information, about an NFS location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_object_storage/3">describe_location_object_storage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata about a self-managed object storage server location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_s3/3">describe_location_s3(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_location_smb/3">describe_location_smb(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata, such as the path and user information about an SMB location.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_task/3">describe_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata about a task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_task_execution/3">describe_task_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed metadata about a task that is being executed.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_agents/3">list_agents(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of agents owned by an AWS account in the AWS Region specified in the request.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_locations/3">list_locations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of source and destination locations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all the tags associated with a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_task_executions/3">list_task_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of executed tasks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tasks/3">list_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of all the tasks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_task_execution/3">start_task_execution(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a specific invocation of a task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Applies a key-value pair to an AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag from an AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_agent/3">update_agent(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the name of an agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_task/3">update_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the metadata associated with a task.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="cancel_task_execution/3">
+
+    <span id="cancel_task_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_task_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_task_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels execution of a task.</p>
+<p>When you cancel a task execution, the transfer of some files is abruptly interrupted. The contents
+of files that are transferred to the destination might be incomplete or inconsistent with the
+source files. However, if you start a new task execution on the same task and you allow the task
+execution to complete, file content on the destination is complete and consistent. This applies to
+other unexpected failures that interrupt a task execution. In all of these cases, AWS DataSync
+successfully complete the transfer when you start the next task execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_agent/3">
+
+    <span id="create_agent/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_agent/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_agent(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates an AWS DataSync agent that you have deployed on your host.</p>
+<p>The activation process associates your agent with your account. In the activation process, you
+specify information such as the AWS Region that you want to activate the agent in. You activate
+the agent in the AWS Region where your target locations (in Amazon S3 or Amazon EFS) reside. Your
+tasks are created in this AWS Region.</p>
+<p>You can activate the agent in a VPC (virtual private cloud) or provide the agent access to a VPC
+endpoint so you can run tasks without going over the public internet.</p>
+<p>You can use an agent for more than one location. If a task uses multiple agents, all of them need
+to have status AVAILABLE for the task to run. If you use multiple agents for a source location,
+the status of all the agents must be AVAILABLE for the task to run.</p>
+<p>Agents are automatically updated by AWS on a regular basis, using a mechanism that ensures minimal
+interruption to your tasks.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_efs/3">
+
+    <span id="create_location_efs/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_efs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_efs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an endpoint for an Amazon EFS file system.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_fsx_windows/3">
+
+    <span id="create_location_fsx_windows/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_fsx_windows/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_fsx_windows(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L62" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an endpoint for an Amazon FSx for Windows file system.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_nfs/3">
+
+    <span id="create_location_nfs/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_nfs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_nfs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L69" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Defines a file system on a Network File System (NFS) server that can be read from or written to.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_object_storage/3">
+
+    <span id="create_location_object_storage/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_object_storage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_object_storage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L78" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an endpoint for a self-managed object storage bucket.</p>
+<p>For more information about self-managed object storage locations, see <code class="inline">create-object-location</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_s3/3">
+
+    <span id="create_location_s3/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_s3/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_s3(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L89" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an endpoint for an Amazon S3 bucket.</p>
+<p>For more information, see
+<a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli">https://docs.aws.amazon.com/datasync/latest/userguide/create-locations-cli.html#create-location-s3-cli</a>
+in the <em>AWS DataSync User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_location_smb/3">
+
+    <span id="create_location_smb/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_location_smb/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_location_smb(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L96" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Defines a file system on a Server Message Block (SMB) server that can be read from or written to.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_task/3">
+
+    <span id="create_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a task.</p>
+<p>A task is a set of two locations (source and destination) and a set of Options that you use to
+control the behavior of a task. If you don&#39;t specify Options when you create a task, AWS DataSync
+populates them with service defaults.</p>
+<p>When you create a task, it first enters the CREATING state. During CREATING AWS DataSync attempts
+to mount the on-premises Network File System (NFS) location. The task transitions to the AVAILABLE
+state without waiting for the AWS location to become mounted. If required, AWS DataSync mounts the
+AWS location before each task execution.</p>
+<p>If an agent that is associated with a source (NFS) location goes offline, the task transitions to
+the UNAVAILABLE status. If the status of the task remains in the CREATING status for more than a
+few minutes, it means that your agent might be having trouble mounting the source NFS file system.
+Check the task&#39;s ErrorCode and ErrorDetail. Mount issues are often caused by either a
+misconfigured firewall or a mistyped NFS server hostname.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_agent/3">
+
+    <span id="delete_agent/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_agent/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_agent(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L129" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an agent.</p>
+<p>To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your request.
+The operation disassociates the agent from your AWS account. However, it doesn&#39;t delete the agent
+virtual machine (VM) from your on-premises environment.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_location/3">
+
+    <span id="delete_location/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_location/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_location(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L136" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the configuration of a location used by AWS DataSync.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_task/3">
+
+    <span id="delete_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a task.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_agent/3">
+
+    <span id="describe_agent/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_agent/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_agent(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata such as the name, the network interfaces, and the status (that is, whether the
+agent is running or not) for an agent.</p>
+<p>To specify which agent to describe, use the Amazon Resource Name (ARN) of the agent in your
+request.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_efs/3">
+
+    <span id="describe_location_efs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_efs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_efs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L161" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata, such as the path information about an Amazon EFS location.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_fsx_windows/3">
+
+    <span id="describe_location_fsx_windows/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_fsx_windows/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_fsx_windows(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata, such as the path information about an Amazon FSx for Windows location.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_nfs/3">
+
+    <span id="describe_location_nfs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_nfs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_nfs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata, such as the path information, about an NFS location.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_object_storage/3">
+
+    <span id="describe_location_object_storage/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_object_storage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_object_storage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata about a self-managed object storage server location.</p>
+<p>For more information about self-managed object storage locations, see <code class="inline">create-object-location</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_s3/3">
+
+    <span id="describe_location_s3/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_s3/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_s3(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_location_smb/3">
+
+    <span id="describe_location_smb/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_location_smb/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_location_smb(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L198" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata, such as the path and user information about an SMB location.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_task/3">
+
+    <span id="describe_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata about a task.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_task_execution/3">
+
+    <span id="describe_task_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_task_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_task_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L212" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed metadata about a task that is being executed.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_agents/3">
+
+    <span id="list_agents/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_agents/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_agents(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L228" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of agents owned by an AWS account in the AWS Region specified in the request.</p>
+<p>The returned list is ordered by agent Amazon Resource Name (ARN).</p>
+<p>By default, this operation returns a maximum of 100 agents. This operation supports pagination
+that enables you to optionally reduce the number of agents returned in a response.</p>
+<p>If you have more agents than are returned in a response (that is, the response returns only a
+truncated list of your agents), the response contains a marker that you can specify in your next
+request to fetch the next page of agents.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_locations/3">
+
+    <span id="list_locations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_locations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_locations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L239" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of source and destination locations.</p>
+<p>If you have more locations than are returned in a response (that is, the response returns only a
+truncated list of your agents), the response contains a token that you can specify in your next
+request to fetch the next page of locations.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L246" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all the tags associated with a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_task_executions/3">
+
+    <span id="list_task_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_task_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_task_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of executed tasks.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tasks/3">
+
+    <span id="list_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L260" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of all the tasks.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_task_execution/3">
+
+    <span id="start_task_execution/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_task_execution/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_task_execution(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a specific invocation of a task.</p>
+<p>A <code class="inline">TaskExecution</code> value represents an individual run of a task. Each task can have at most one
+<code class="inline">TaskExecution</code> at a time.</p>
+<p><code class="inline">TaskExecution</code> has the following transition phases: INITIALIZING | PREPARING | TRANSFERRING |
+VERIFYING | SUCCESS/FAILURE.</p>
+<p>For detailed information, see the Task Execution section in the Components and Terminology topic
+in the <em>AWS DataSync User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L283" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Applies a key-value pair to an AWS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L290" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag from an AWS resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_agent/3">
+
+    <span id="update_agent/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_agent/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_agent(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the name of an agent.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_task/3">
+
+    <span id="update_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/data_sync.ex#L304" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the metadata associated with a task.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

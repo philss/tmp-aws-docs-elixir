@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.LakeFormation — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.LakeFormation
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Lake Formation</p>
+<p>Defines the public endpoint for the AWS Lake Formation service.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_grant_permissions/3">batch_grant_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Batch operation to grant permissions to the principal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_revoke_permissions/3">batch_revoke_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Batch operation to revoke permissions from the principal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_resource/3">deregister_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deregisters the resource as managed by the Data Catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_resource/3">describe_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current data access role for the given resource registered in AWS Lake Formation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_data_lake_settings/3">get_data_lake_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_effective_permissions_for_path/3">get_effective_permissions_for_path(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the Lake Formation permissions for a specified table or database resource located at a
+path in Amazon S3.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#grant_permissions/3">grant_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in
+underlying data storage such as Amazon S3.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_permissions/3">list_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the principal permissions on the resource, filtered by the permissions of the
+caller.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_resources/3">list_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the resources registered to be managed by the Data Catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_data_lake_settings/3">put_data_lake_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the list of data lake administrators who have admin privileges on all resources managed by
+Lake Formation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_resource/3">register_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers the resource as managed by the Data Catalog.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#revoke_permissions/3">revoke_permissions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in
+underlying data storage such as Amazon S3.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_resource/3">update_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the data access role used for vending access to the given (registered) resource in AWS
+Lake Formation.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="batch_grant_permissions/3">
+
+    <span id="batch_grant_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_grant_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_grant_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L14" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Batch operation to grant permissions to the principal.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_revoke_permissions/3">
+
+    <span id="batch_revoke_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_revoke_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_revoke_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L21" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Batch operation to revoke permissions from the principal.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_resource/3">
+
+    <span id="deregister_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deregisters the resource as managed by the Data Catalog.</p>
+<p>When you deregister a path, Lake Formation removes the path from the inline policy attached to
+your service-linked role.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_resource/3">
+
+    <span id="describe_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current data access role for the given resource registered in AWS Lake Formation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_data_lake_settings/3">
+
+    <span id="get_data_lake_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_data_lake_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_data_lake_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L45" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_effective_permissions_for_path/3">
+
+    <span id="get_effective_permissions_for_path/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_effective_permissions_for_path/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_effective_permissions_for_path(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the Lake Formation permissions for a specified table or database resource located at a
+path in Amazon S3.</p>
+<p><code class="inline">GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>
+
+  </section>
+</section>
+<section class="detail" id="grant_permissions/3">
+
+    <span id="grant_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#grant_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">grant_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in
+underlying data storage such as Amazon S3.</p>
+<p>For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_permissions/3">
+
+    <span id="list_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the principal permissions on the resource, filtered by the permissions of the
+caller.</p>
+<p>For example, if you are granted an ALTER permission, you are able to see only the principal
+permissions for ALTER.</p>
+<p>This operation returns only those permissions that have been explicitly granted.</p>
+<p>For information about permissions, see <a href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control to Metadata and Data</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_resources/3">
+
+    <span id="list_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the resources registered to be managed by the Data Catalog.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_data_lake_settings/3">
+
+    <span id="put_data_lake_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_data_lake_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_data_lake_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the list of data lake administrators who have admin privileges on all resources managed by
+Lake Formation.</p>
+<p>For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake Formation Permissions</a>.</p>
+<p>This API replaces the current list of data lake admins with the new list being passed. To add an
+admin, fetch the current list and add the new admin to that list and pass that list in this API.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_resource/3">
+
+    <span id="register_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers the resource as managed by the Data Catalog.</p>
+<p>To add or update data, Lake Formation needs read/write access to the chosen Amazon S3 path. Choose
+a role that you know has permission to do this, or choose the
+AWSServiceRoleForLakeFormationDataAccess service-linked role. When you register the first Amazon
+S3 path, the service-linked role and a new inline policy are created on your behalf. Lake
+Formation adds the first path to the inline policy and attaches it to the service-linked role.
+When you register subsequent paths, Lake Formation adds the path to the existing policy.</p>
+<p>The following request registers a new location and gives AWS Lake Formation permission to use the
+service-linked role to access that location.</p>
+<p><code class="inline">ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code></p>
+<p>If <code class="inline">UseServiceLinkedRole</code> is not set to true, you must provide or set the <code class="inline">RoleArn</code>:</p>
+<p><code class="inline">arn:aws:iam::12345:role/my-data-access-role</code></p>
+
+  </section>
+</section>
+<section class="detail" id="revoke_permissions/3">
+
+    <span id="revoke_permissions/2"></span>
+
+  <div class="detail-header">
+    <a href="#revoke_permissions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">revoke_permissions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L131" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in
+underlying data storage such as Amazon S3.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_resource/3">
+
+    <span id="update_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/lake_formation.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the data access role used for vending access to the given (registered) resource in AWS
+Lake Formation.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

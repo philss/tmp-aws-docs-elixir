@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ApplicationDiscovery — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ApplicationDiscovery
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Application Discovery Service</p>
+<p>AWS Application Discovery Service helps you plan application migration projects.</p>
+<p>It automatically identifies servers, virtual machines (VMs), and network dependencies in your
+on-premises data centers. For more information, see the <a href="http://aws.amazon.com/application-discovery/faqs/">AWS Application Discovery Service FAQ</a>. Application Discovery Service offers
+three ways of performing discovery and collecting data about your on-premises servers:</p>
+<ul>
+<li><p><strong>Agentless discovery</strong> is recommended for environments that use VMware vCenter
+Server. This mode doesn&#39;t require you to install an agent on each host. It does not work in
+non-VMware environments.</p>
+<ul>
+<li><p>Agentless discovery gathers server information regardless of the
+operating systems, which minimizes the time required for initial on-premises infrastructure
+assessment.</p>
+</li>
+<li><p>Agentless discovery doesn&#39;t collect information about network
+dependencies, only agent-based discovery collects that information.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Agent-based discovery</strong> collects a richer set of data than agentless discovery by
+using the AWS Application Discovery Agent, which you install on one or more hosts in your data
+center.</p>
+<ul>
+<li><p>The agent captures infrastructure and application information, including
+an inventory of running processes, system performance information, resource utilization, and
+network dependencies.</p>
+</li>
+<li><p>The information collected by agents is secured at rest and in transit to
+the Application Discovery Service database in the cloud.</p>
+</li>
+</ul>
+</li>
+<li><p><strong>AWS Partner Network (APN) solutions</strong> integrate with Application Discovery
+Service, enabling you to import details of your on-premises environment directly into Migration
+Hub without using the discovery connector or discovery agent.</p>
+<ul>
+<li><p>Third-party application discovery tools can query AWS Application
+Discovery Service, and they can write to the Application Discovery Service database using the
+public API.</p>
+</li>
+<li><p>In this way, you can import data into Migration Hub and view it, so that
+you can associate applications with servers and track migrations.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Recommendations</strong></p>
+<p>We recommend that you use agent-based discovery for non-VMware environments, and whenever you want
+to collect information about network dependencies. You can run agent-based and agentless discovery
+simultaneously. Use agentless discovery to complete the initial infrastructure assessment quickly,
+and then install agents on select hosts to collect additional information.</p>
+<p><strong>Working With This Guide</strong></p>
+<p>This API reference provides descriptions, syntax, and usage examples for each of the actions and
+data types for Application Discovery Service. The topic for each action shows the API request
+parameters and the response. Alternatively, you can use one of the AWS SDKs to access an API that
+is tailored to the programming language or platform that you&#39;re using. For more information, see
+<a href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.     Remember that you must set your Migration Hub home region before you call any of
+these APIs.</p>
+<p>   You must make API calls for write actions (create, notify, associate, disassociate,
+import, or put) while in your home region, or a <code class="inline">HomeRegionNotSetException</code> error is returned.</p>
+<p>   API calls for read actions (list, describe, stop, and delete) are permitted outside
+of your home region.</p>
+<p>   Although it is unlikely, the Migration Hub home region could change. If you call APIs
+outside the home region, an <code class="inline">InvalidInputException</code> is returned.</p>
+<p>   You must call <code class="inline">GetHomeRegion</code> to obtain the latest Migration Hub home region.</p>
+<p>This guide is intended for use with the <a href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">AWS Application Discovery Service User
+Guide</a>.</p>
+<p>All data is handled according to the <a href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can
+operate Application Discovery Service offline to inspect collected data before it is shared with
+the service.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_configuration_items_to_application/3">associate_configuration_items_to_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates one or more configuration items with an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_delete_import_data/3">batch_delete_import_data(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes one or more import tasks, each identified by their import ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_application/3">create_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an application with the given name and description.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_tags/3">create_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates one or more tags for configuration items.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_applications/3">delete_applications(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a list of applications and their associations with configuration items.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_tags/3">delete_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the association between configuration items and one or more tags.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_agents/3">describe_agents(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists agents or connectors as specified by ID or other filters.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_configurations/3">describe_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves attributes for a list of configuration item IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_continuous_exports/3">describe_continuous_exports(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists exports as specified by ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_export_configurations/3">describe_export_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><code class="inline">DescribeExportConfigurations</code> is deprecated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_export_tasks/3">describe_export_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve status of one or more export tasks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_import_tasks/3">describe_import_tasks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of import tasks for your account, including status information, times, IDs, the
+Amazon S3 Object URL for the import file, and more.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_tags/3">describe_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name
+and value, passed to the optional parameter <code class="inline">filters</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_configuration_items_from_application/3">disassociate_configuration_items_from_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates one or more configuration items from an application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_configurations/3">export_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_discovery_summary/3">get_discovery_summary(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a short summary of discovered assets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_configurations/3">list_configurations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of configuration items as specified by the value passed to the required parameter
+<code class="inline">configurationType</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_server_neighbors/3">list_server_neighbors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a list of servers that are one network hop away from a specified server.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_continuous_export/3">start_continuous_export(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Start the continuous flow of agent&#39;s discovered data into Amazon Athena.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_data_collection_by_agent_ids/3">start_data_collection_by_agent_ids(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Instructs the specified agents or connectors to start collecting data.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_export_task/3">start_export_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Begins the export of discovered data to an S3 bucket.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_import_task/3">start_import_task(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an import task, which allows you to import details of your on-premises environment directly
+into AWS Migration Hub without having to use the Application Discovery Service (ADS) tools such as
+the Discovery Connector or Discovery Agent.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_continuous_export/3">stop_continuous_export(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stop the continuous flow of agent&#39;s discovered data into Amazon Athena.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_data_collection_by_agent_ids/3">stop_data_collection_by_agent_ids(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Instructs the specified agents or connectors to stop collecting data.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_application/3">update_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates metadata about an application.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_configuration_items_to_application/3">
+
+    <span id="associate_configuration_items_to_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_configuration_items_to_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_configuration_items_to_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates one or more configuration items with an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_delete_import_data/3">
+
+    <span id="batch_delete_import_data/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_delete_import_data/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_delete_import_data(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes one or more import tasks, each identified by their import ID.</p>
+<p>Each import task has a number of records that can identify servers or applications.</p>
+<p>AWS Application Discovery Service has built-in matching logic that will identify when discovered
+servers match existing entries that you&#39;ve previously discovered, the information for the
+already-existing discovered server is updated. When you delete an import task that contains
+records that were used to match, the information in those matched records that comes from the
+deleted records will also be deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_application/3">
+
+    <span id="create_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L107" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an application with the given name and description.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_tags/3">
+
+    <span id="create_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates one or more tags for configuration items.</p>
+<p>Tags are metadata that help you categorize IT assets. This API accepts a list of multiple
+configuration items.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_applications/3">
+
+    <span id="delete_applications/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_applications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_applications(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L124" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a list of applications and their associations with configuration items.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_tags/3">
+
+    <span id="delete_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the association between configuration items and one or more tags.</p>
+<p>This API accepts a list of multiple configuration items.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_agents/3">
+
+    <span id="describe_agents/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_agents/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_agents(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists agents or connectors as specified by ID or other filters.</p>
+<p>All agents/connectors associated with your user account can be listed if you call <code class="inline">DescribeAgents</code>
+as is without passing any parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_configurations/3">
+
+    <span id="describe_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves attributes for a list of configuration item IDs.</p>
+<p>All of the supplied IDs must be for the same asset type from one of the following:</p>
+<p>   server</p>
+<p>   application</p>
+<p>   process</p>
+<p>   connection</p>
+<p>Output fields are specific to the asset type specified. For example, the output for a <em>server</em>
+configuration item includes a list of attributes about the server, such as host name, operating
+system, number of network cards, etc.</p>
+<p>For a complete list of outputs for each asset type, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-api-queries.html#DescribeConfigurations">Using the DescribeConfigurations Action</a>
+in the <em>AWS Application Discovery Service User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_continuous_exports/3">
+
+    <span id="describe_continuous_exports/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_continuous_exports/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_continuous_exports(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists exports as specified by ID.</p>
+<p>All continuous exports associated with your user account can be listed if you call
+<code class="inline">DescribeContinuousExports</code> as is without passing any parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_export_configurations/3">
+
+    <span id="describe_export_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_export_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_export_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L188" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><code class="inline">DescribeExportConfigurations</code> is deprecated.</p>
+<p>Use
+<a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeImportTasks</a>,
+instead.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_export_tasks/3">
+
+    <span id="describe_export_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_export_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_export_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieve status of one or more export tasks.</p>
+<p>You can retrieve the status of up to 100 export tasks.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_import_tasks/3">
+
+    <span id="describe_import_tasks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_import_tasks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_import_tasks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of import tasks for your account, including status information, times, IDs, the
+Amazon S3 Object URL for the import file, and more.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_tags/3">
+
+    <span id="describe_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of configuration items that have tags as specified by the key-value pairs, name
+and value, passed to the optional parameter <code class="inline">filters</code>.</p>
+<p>There are three valid tag filter names:</p>
+<ul>
+<li><p>tagKey</p>
+</li>
+<li><p>tagValue</p>
+</li>
+<li><p>configurationId</p>
+</li>
+</ul>
+<p>Also, all configuration items associated with your user account that have tags can be listed if
+you call <code class="inline">DescribeTags</code> as is without passing any parameters.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_configuration_items_from_application/3">
+
+    <span id="disassociate_configuration_items_from_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_configuration_items_from_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_configuration_items_from_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates one or more configuration items from an application.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_configurations/3">
+
+    <span id="export_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#export_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L246" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecated.</p>
+<p>Use <code class="inline">StartExportTask</code> instead.</p>
+<p>Exports all discovered configuration data to an Amazon S3 bucket or an application that enables
+you to view and evaluate the data. Data includes tags and tag associations, processes,
+connections, servers, and system performance. This API returns an export ID that you can query
+using the <em>DescribeExportConfigurations</em> API. The system imposes a limit of two configuration
+exports in six hours.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_discovery_summary/3">
+
+    <span id="get_discovery_summary/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_discovery_summary/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_discovery_summary(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a short summary of discovered assets.</p>
+<p>This API operation takes no request parameters and is called as is at the command prompt as shown
+in the example.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_configurations/3">
+
+    <span id="list_configurations/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_configurations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_configurations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L266" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of configuration items as specified by the value passed to the required parameter
+<code class="inline">configurationType</code>.</p>
+<p>Optional filtering may be applied to refine search results.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_server_neighbors/3">
+
+    <span id="list_server_neighbors/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_server_neighbors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_server_neighbors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L273" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a list of servers that are one network hop away from a specified server.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_continuous_export/3">
+
+    <span id="start_continuous_export/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_continuous_export/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_continuous_export(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L280" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Start the continuous flow of agent&#39;s discovered data into Amazon Athena.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_data_collection_by_agent_ids/3">
+
+    <span id="start_data_collection_by_agent_ids/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_data_collection_by_agent_ids/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_data_collection_by_agent_ids(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Instructs the specified agents or connectors to start collecting data.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_export_task/3">
+
+    <span id="start_export_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_export_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_export_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Begins the export of discovered data to an S3 bucket.</p>
+<p>If you specify <code class="inline">agentIds</code> in a filter, the task exports up to 72 hours of detailed data collected
+by the identified Application Discovery Agent, including network, process, and performance
+details. A time range for exported agent data may be set by using <code class="inline">startTime</code> and <code class="inline">endTime</code>.
+Export of detailed agent data is limited to five concurrently running exports.</p>
+<p>If you do not include an <code class="inline">agentIds</code> filter, summary data is exported that includes both AWS
+Agentless Discovery Connector data and summary data from AWS Discovery Agents. Export of summary
+data is limited to two exports per day.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_import_task/3">
+
+    <span id="start_import_task/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_import_task/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_import_task(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L336" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an import task, which allows you to import details of your on-premises environment directly
+into AWS Migration Hub without having to use the Application Discovery Service (ADS) tools such as
+the Discovery Connector or Discovery Agent.</p>
+<p>This gives you the option to perform migration assessment and planning directly from your imported
+data, including the ability to group your devices as applications and track their migration
+status.</p>
+<p>To start an import request, do this:</p>
+<ol>
+<li><p>Download the specially formatted comma separated value (CSV) import template, which
+you can find here:
+<a href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.     2. Fill out the template with your server and application data.</p>
+</li>
+<li><p>Upload your import file to an Amazon S3 bucket, and make a note of it&#39;s Object URL.
+Your import file must be in the CSV format.</p>
+</li>
+<li><p>Use the console or the <code class="inline">StartImportTask</code> command with the AWS CLI or one of the AWS
+SDKs to import the records from your file.</p>
+</li>
+</ol>
+<p>For more information, including step-by-step procedures, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration Hub
+Import</a>
+in the <em>AWS Application Discovery Service User Guide</em>.</p>
+<p>There are limits to the number of import tasks you can create (and delete) in an AWS account. For
+more information, see <a href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS Application Discovery Service Limits</a>
+in the <em>AWS Application Discovery Service User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_continuous_export/3">
+
+    <span id="stop_continuous_export/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_continuous_export/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_continuous_export(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L343" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stop the continuous flow of agent&#39;s discovered data into Amazon Athena.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_data_collection_by_agent_ids/3">
+
+    <span id="stop_data_collection_by_agent_ids/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_data_collection_by_agent_ids/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_data_collection_by_agent_ids(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L350" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Instructs the specified agents or connectors to stop collecting data.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_application/3">
+
+    <span id="update_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/application_discovery.ex#L357" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates metadata about an application.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

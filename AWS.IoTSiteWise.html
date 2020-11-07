@@ -1,0 +1,2279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.IoTSiteWise — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.IoTSiteWise
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Welcome to the AWS IoT SiteWise API Reference.</p>
+<p>AWS IoT SiteWise is an AWS service that connects <a href="https://en.wikipedia.org/wiki/Internet_of_things#Industrial_applications">Industrial Internet of Things (IIoT)</a> devices to the
+power of the AWS Cloud. For more information, see the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/">AWS IoT SiteWise User Guide</a>. For information about AWS IoT
+SiteWise quotas, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <em>AWS IoT
+SiteWise User Guide</em>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_assets/4">associate_assets(client, asset_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a child asset with the given parent asset through a hierarchy defined in the parent
+asset&#39;s model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_associate_project_assets/4">batch_associate_project_assets(client, project_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a group (batch) of assets with an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_disassociate_project_assets/4">batch_disassociate_project_assets(client, project_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_put_asset_property_value/3">batch_put_asset_property_value(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends a list of asset property values to AWS IoT SiteWise.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_access_policy/3">create_access_policy(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM
+user) access to the specified AWS IoT SiteWise Monitor portal or project resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_asset/3">create_asset(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an asset from an existing asset model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_asset_model/3">create_asset_model(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an asset model from specified property and hierarchy definitions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_dashboard/3">create_dashboard(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a dashboard in an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_gateway/3">create_gateway(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams from
+local servers to AWS IoT SiteWise.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_portal/3">create_portal(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a portal, which can contain projects and dashboards.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_presigned_portal_url/4">create_presigned_portal_url(client, portal_id, session_duration_seconds \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a pre-signed URL to a portal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_project/3">create_project(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a project in the specified portal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_access_policy/4">delete_access_policy(client, access_policy_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an access policy that grants the specified identity access to the specified AWS IoT
+SiteWise Monitor resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_asset/4">delete_asset(client, asset_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an asset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_asset_model/4">delete_asset_model(client, asset_model_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an asset model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_dashboard/4">delete_dashboard(client, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a dashboard from AWS IoT SiteWise Monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_gateway/4">delete_gateway(client, gateway_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a gateway from AWS IoT SiteWise.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_portal/4">delete_portal(client, portal_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a portal from AWS IoT SiteWise Monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_project/4">delete_project(client, project_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a project from AWS IoT SiteWise Monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_access_policy/3">describe_access_policy(client, access_policy_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes an access policy, which specifies an identity&#39;s access to an AWS IoT SiteWise Monitor
+portal or project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_asset/3">describe_asset(client, asset_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an asset.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_asset_model/3">describe_asset_model(client, asset_model_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an asset model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_asset_property/4">describe_asset_property(client, asset_id, property_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about an asset property.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_dashboard/3">describe_dashboard(client, dashboard_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_gateway/3">describe_gateway(client, gateway_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a gateway.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_gateway_capability_configuration/4">describe_gateway_capability_configuration(client, capability_namespace, gateway_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a gateway capability configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_logging_options/2">describe_logging_options(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the current AWS IoT SiteWise logging options.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_portal/3">describe_portal(client, portal_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a portal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_project/3">describe_project(client, project_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves information about a project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_assets/4">disassociate_assets(client, asset_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent
+asset&#39;s model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_asset_property_aggregates/13">get_asset_property_aggregates(client, aggregate_types, asset_id \\ nil, end_date, max_results \\ nil, next_token \\ nil, property_alias \\ nil, property_id \\ nil, qualities \\ nil, resolution, start_date, time_ordering \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets aggregated values for an asset property.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_asset_property_value/5">get_asset_property_value(client, asset_id \\ nil, property_alias \\ nil, property_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets an asset property&#39;s current value.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_asset_property_value_history/11">get_asset_property_value_history(client, asset_id \\ nil, end_date \\ nil, max_results \\ nil, next_token \\ nil, property_alias \\ nil, property_id \\ nil, qualities \\ nil, start_date \\ nil, time_ordering \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the history of an asset property&#39;s values.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_access_policies/9">list_access_policies(client, iam_arn \\ nil, identity_id \\ nil, identity_type \\ nil, max_results \\ nil, next_token \\ nil, resource_id \\ nil, resource_type \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group,
+or an IAM user) or an AWS IoT SiteWise Monitor resource (a portal or project).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_asset_models/4">list_asset_models(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of summaries of all asset models.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_assets/6">list_assets(client, asset_model_id \\ nil, filter \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of asset summaries.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_associated_assets/7">list_associated_assets(client, asset_id, hierarchy_id \\ nil, max_results \\ nil, next_token \\ nil, traversal_direction \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of associated assets.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_dashboards/5">list_dashboards(client, max_results \\ nil, next_token \\ nil, project_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_gateways/4">list_gateways(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of gateways.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_portals/4">list_portals(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of AWS IoT SiteWise Monitor portals.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_project_assets/5">list_project_assets(client, project_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of assets associated with an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_projects/5">list_projects(client, max_results \\ nil, next_token \\ nil, portal_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the list of tags for an AWS IoT SiteWise resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_logging_options/3">put_logging_options(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets logging options for AWS IoT SiteWise.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds tags to an AWS IoT SiteWise resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag from an AWS IoT SiteWise resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_access_policy/4">update_access_policy(client, access_policy_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing access policy that specifies an identity&#39;s access to an AWS IoT SiteWise
+Monitor portal or project resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_asset/4">update_asset(client, asset_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an asset&#39;s name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_asset_model/4">update_asset_model(client, asset_model_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an asset model and all of the assets that were created from the model.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_asset_property/5">update_asset_property(client, asset_id, property_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an asset property&#39;s alias and notification state.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_dashboard/4">update_dashboard(client, dashboard_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an AWS IoT SiteWise Monitor dashboard.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_gateway/4">update_gateway(client, gateway_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a gateway&#39;s name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_gateway_capability_configuration/4">update_gateway_capability_configuration(client, gateway_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a gateway capability configuration or defines a new capability configuration.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_portal/4">update_portal(client, portal_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an AWS IoT SiteWise Monitor portal.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_project/4">update_project(client, project_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an AWS IoT SiteWise Monitor project.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_assets/4">
+
+    <span id="associate_assets/3"></span>
+
+  <div class="detail-header">
+    <a href="#associate_assets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_assets(client, asset_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L22" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a child asset with the given parent asset through a hierarchy defined in the parent
+asset&#39;s model.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in
+the <em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_associate_project_assets/4">
+
+    <span id="batch_associate_project_assets/3"></span>
+
+  <div class="detail-header">
+    <a href="#batch_associate_project_assets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_associate_project_assets(client, project_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L32" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a group (batch) of assets with an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_disassociate_project_assets/4">
+
+    <span id="batch_disassociate_project_assets/3"></span>
+
+  <div class="detail-header">
+    <a href="#batch_disassociate_project_assets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_disassociate_project_assets(client, project_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L42" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a group (batch) of assets from an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_put_asset_property_value/3">
+
+    <span id="batch_put_asset_property_value/2"></span>
+
+  <div class="detail-header">
+    <a href="#batch_put_asset_property_value/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_put_asset_property_value(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends a list of asset property values to AWS IoT SiteWise.</p>
+<p>Each value is a timestamp-quality-value (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in
+the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>To identify an asset property, you must specify one of the following:</p>
+<ul>
+<li><p>The <code class="inline">assetId</code> and <code class="inline">propertyId</code> of an asset property.</p>
+</li>
+<li><p>A <code class="inline">propertyAlias</code>, which is a data stream alias (for example,
+<code class="inline">/company/windfarm/3/turbine/7/temperature</code>). To define an asset property&#39;s alias, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>. </p>
+</li>
+</ul>
+<p>With respect to Unix epoch time, AWS IoT SiteWise accepts only TQVs that have a timestamp of no
+more than 15 minutes in the past and no more than 5 minutes in the future. AWS IoT SiteWise
+rejects timestamps outside of the inclusive range of [-15, +5] minutes and returns a
+<code class="inline">TimestampOutOfRangeException</code> error.</p>
+<p>For each asset property, AWS IoT SiteWise overwrites TQVs with duplicate timestamps unless the
+newer TQV has a different quality. For example, if you store a TQV <code class="inline">{T1, GOOD, V1}</code>, then storing
+<code class="inline">{T1, GOOD, V2}</code> replaces the existing TQV.</p>
+<p>AWS IoT SiteWise authorizes access to each <code class="inline">BatchPutAssetPropertyValue</code> entry individually. For
+more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue authorization</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_access_policy/3">
+
+    <span id="create_access_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_access_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_access_policy(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an access policy that grants the specified identity (AWS SSO user, AWS SSO group, or IAM
+user) access to the specified AWS IoT SiteWise Monitor portal or project resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_asset/3">
+
+    <span id="create_asset/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_asset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_asset(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an asset from an existing asset model.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the <em>AWS
+IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_asset_model/3">
+
+    <span id="create_asset_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_asset_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_asset_model(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an asset model from specified property and hierarchy definitions.</p>
+<p>You create assets from asset models. With asset models, you can easily create assets of the same
+type that have standardized definitions. Each asset created from a model inherits the asset
+model&#39;s property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <em>AWS
+IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_dashboard/3">
+
+    <span id="create_dashboard/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_dashboard/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_dashboard(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a dashboard in an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_gateway/3">
+
+    <span id="create_gateway/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_gateway/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_gateway(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L139" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams from
+local servers to AWS IoT SiteWise.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the
+<em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_portal/3">
+
+    <span id="create_portal/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_portal/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_portal(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L156" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a portal, which can contain projects and dashboards.</p>
+<p>AWS IoT SiteWise Monitor uses AWS SSO or IAM to authenticate portal users and manage user
+permissions.</p>
+<p>Before you can sign in to a new portal, you must add at least one identity to that portal. For
+more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/administer-portals.html#portal-change-admins">Adding or removing portal administrators</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_presigned_portal_url/4">
+
+    <span id="create_presigned_portal_url/2"></span>
+
+    <span id="create_presigned_portal_url/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_presigned_portal_url/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_presigned_portal_url(client, portal_id, session_duration_seconds \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L170" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a pre-signed URL to a portal.</p>
+<p>Use this operation to create URLs to portals that use AWS Identity and Access Management (IAM) to
+authenticate users. An IAM user with access to a portal can call this API to get a URL to that
+portal. The URL contains a session token that lets the IAM user access the portal.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_project/3">
+
+    <span id="create_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_project(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L185" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a project in the specified portal.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_access_policy/4">
+
+    <span id="delete_access_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_access_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_access_policy(client, access_policy_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L198" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an access policy that grants the specified identity access to the specified AWS IoT
+SiteWise Monitor resource.</p>
+<p>You can use this operation to revoke access to an AWS IoT SiteWise Monitor resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_asset/4">
+
+    <span id="delete_asset/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_asset/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_asset(client, asset_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L218" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an asset.</p>
+<p>This action can&#39;t be undone. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>You can&#39;t delete an asset that&#39;s associated to another asset. For more information, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DisassociateAssets.html">DisassociateAssets</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_asset_model/4">
+
+    <span id="delete_asset_model/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_asset_model/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_asset_model(client, asset_model_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an asset model.</p>
+<p>This action can&#39;t be undone. You must delete all assets created from an asset model before you can
+delete the model. Also, you can&#39;t delete an asset model if a parent asset model exists that
+contains a property formula expression that depends on the asset model that you want to delete.
+For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_dashboard/4">
+
+    <span id="delete_dashboard/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_dashboard/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_dashboard(client, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a dashboard from AWS IoT SiteWise Monitor.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_gateway/4">
+
+    <span id="delete_gateway/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_gateway/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_gateway(client, gateway_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L268" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a gateway from AWS IoT SiteWise.</p>
+<p>When you delete a gateway, some of the gateway&#39;s files remain in your gateway&#39;s file system.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_portal/4">
+
+    <span id="delete_portal/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_portal/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_portal(client, portal_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a portal from AWS IoT SiteWise Monitor.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_project/4">
+
+    <span id="delete_project/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_project/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_project(client, project_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L292" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a project from AWS IoT SiteWise Monitor.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_access_policy/3">
+
+    <span id="describe_access_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_access_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_access_policy(client, access_policy_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L307" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes an access policy, which specifies an identity&#39;s access to an AWS IoT SiteWise Monitor
+portal or project.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_asset/3">
+
+    <span id="describe_asset/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_asset/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_asset(client, asset_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L317" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an asset.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_asset_model/3">
+
+    <span id="describe_asset_model/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_asset_model/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_asset_model(client, asset_model_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L327" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an asset model.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_asset_property/4">
+
+    <span id="describe_asset_property/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_asset_property/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_asset_property(client, asset_id, property_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L345" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about an asset property.</p>
+<p>When you call this operation for an attribute property, this response includes the default
+attribute value that you define in the asset model. If you update the default value in the model,
+this operation&#39;s response includes the new default value.</p>
+<p>This operation doesn&#39;t return the value of the asset property. To get the value of an asset
+property, use
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_GetAssetPropertyValue.html">GetAssetPropertyValue</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_dashboard/3">
+
+    <span id="describe_dashboard/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_dashboard/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_dashboard(client, dashboard_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L355" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_gateway/3">
+
+    <span id="describe_gateway/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_gateway/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_gateway(client, gateway_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L365" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a gateway.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_gateway_capability_configuration/4">
+
+    <span id="describe_gateway_capability_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_gateway_capability_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_gateway_capability_configuration(client, capability_namespace, gateway_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L381" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a gateway capability configuration.</p>
+<p>Each gateway capability defines data sources for a gateway. A capability configuration can contain
+multiple data source configurations. If you define OPC-UA sources for a gateway in the AWS IoT
+SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list
+all capability configurations for a gateway, use
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_logging_options/2">
+
+    <span id="describe_logging_options/1"></span>
+
+  <div class="detail-header">
+    <a href="#describe_logging_options/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_logging_options(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L391" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the current AWS IoT SiteWise logging options.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_portal/3">
+
+    <span id="describe_portal/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_portal/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_portal(client, portal_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L401" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a portal.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_project/3">
+
+    <span id="describe_project/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_project/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_project(client, project_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L411" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves information about a project.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_assets/4">
+
+    <span id="disassociate_assets/3"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_assets/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_assets(client, asset_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L422" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent
+asset&#39;s model.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_asset_property_aggregates/13">
+
+    <span id="get_asset_property_aggregates/5"></span>
+
+    <span id="get_asset_property_aggregates/6"></span>
+
+    <span id="get_asset_property_aggregates/7"></span>
+
+    <span id="get_asset_property_aggregates/8"></span>
+
+    <span id="get_asset_property_aggregates/9"></span>
+
+    <span id="get_asset_property_aggregates/10"></span>
+
+    <span id="get_asset_property_aggregates/11"></span>
+
+    <span id="get_asset_property_aggregates/12"></span>
+
+  <div class="detail-header">
+    <a href="#get_asset_property_aggregates/13" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_asset_property_aggregates(client, aggregate_types, asset_id \\ nil, end_date, max_results \\ nil, next_token \\ nil, property_alias \\ nil, property_id \\ nil, qualities \\ nil, resolution, start_date, time_ordering \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L443" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets aggregated values for an asset property.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#aggregates">Querying aggregates</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>To identify an asset property, you must specify one of the following:</p>
+<ul>
+<li><p>The <code class="inline">assetId</code> and <code class="inline">propertyId</code> of an asset property.</p>
+</li>
+<li><p>A <code class="inline">propertyAlias</code>, which is a data stream alias (for example,
+<code class="inline">/company/windfarm/3/turbine/7/temperature</code>). To define an asset property&#39;s alias, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="get_asset_property_value/5">
+
+    <span id="get_asset_property_value/1"></span>
+
+    <span id="get_asset_property_value/2"></span>
+
+    <span id="get_asset_property_value/3"></span>
+
+    <span id="get_asset_property_value/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_asset_property_value/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_asset_property_value(client, asset_id \\ nil, property_alias \\ nil, property_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L519" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets an asset property&#39;s current value.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>To identify an asset property, you must specify one of the following:</p>
+<ul>
+<li><p>The <code class="inline">assetId</code> and <code class="inline">propertyId</code> of an asset property.</p>
+</li>
+<li><p>A <code class="inline">propertyAlias</code>, which is a data stream alias (for example,
+<code class="inline">/company/windfarm/3/turbine/7/temperature</code>). To define an asset property&#39;s alias, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="get_asset_property_value_history/11">
+
+    <span id="get_asset_property_value_history/1"></span>
+
+    <span id="get_asset_property_value_history/2"></span>
+
+    <span id="get_asset_property_value_history/3"></span>
+
+    <span id="get_asset_property_value_history/4"></span>
+
+    <span id="get_asset_property_value_history/5"></span>
+
+    <span id="get_asset_property_value_history/6"></span>
+
+    <span id="get_asset_property_value_history/7"></span>
+
+    <span id="get_asset_property_value_history/8"></span>
+
+    <span id="get_asset_property_value_history/9"></span>
+
+    <span id="get_asset_property_value_history/10"></span>
+
+  <div class="detail-header">
+    <a href="#get_asset_property_value_history/11" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_asset_property_value_history(client, asset_id \\ nil, end_date \\ nil, max_results \\ nil, next_token \\ nil, property_alias \\ nil, property_id \\ nil, qualities \\ nil, start_date \\ nil, time_ordering \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L555" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the history of an asset property&#39;s values.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>To identify an asset property, you must specify one of the following:</p>
+<ul>
+<li><p>The <code class="inline">assetId</code> and <code class="inline">propertyId</code> of an asset property.</p>
+</li>
+<li><p>A <code class="inline">propertyAlias</code>, which is a data stream alias (for example,
+<code class="inline">/company/windfarm/3/turbine/7/temperature</code>). To define an asset property&#39;s alias, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_access_policies/9">
+
+    <span id="list_access_policies/1"></span>
+
+    <span id="list_access_policies/2"></span>
+
+    <span id="list_access_policies/3"></span>
+
+    <span id="list_access_policies/4"></span>
+
+    <span id="list_access_policies/5"></span>
+
+    <span id="list_access_policies/6"></span>
+
+    <span id="list_access_policies/7"></span>
+
+    <span id="list_access_policies/8"></span>
+
+  <div class="detail-header">
+    <a href="#list_access_policies/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_access_policies(client, iam_arn \\ nil, identity_id \\ nil, identity_type \\ nil, max_results \\ nil, next_token \\ nil, resource_id \\ nil, resource_type \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L611" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of access policies for an identity (an AWS SSO user, an AWS SSO group,
+or an IAM user) or an AWS IoT SiteWise Monitor resource (a portal or project).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_asset_models/4">
+
+    <span id="list_asset_models/1"></span>
+
+    <span id="list_asset_models/2"></span>
+
+    <span id="list_asset_models/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_asset_models/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_asset_models(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L656" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of summaries of all asset models.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_assets/6">
+
+    <span id="list_assets/1"></span>
+
+    <span id="list_assets/2"></span>
+
+    <span id="list_assets/3"></span>
+
+    <span id="list_assets/4"></span>
+
+    <span id="list_assets/5"></span>
+
+  <div class="detail-header">
+    <a href="#list_assets/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_assets(client, asset_model_id \\ nil, filter \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L686" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of asset summaries.</p>
+<p>You can use this operation to do the following:</p>
+<ul>
+<li><p>List assets based on a specific asset model.</p>
+</li>
+<li><p>List top-level assets.</p>
+</li>
+</ul>
+<p>You can&#39;t use this operation to list all assets. To retrieve summaries for all of your assets, use
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_ListAssetModels.html">ListAssetModels</a>
+to get all of your asset model IDs. Then, use ListAssets to get all assets for each asset model.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_associated_assets/7">
+
+    <span id="list_associated_assets/2"></span>
+
+    <span id="list_associated_assets/3"></span>
+
+    <span id="list_associated_assets/4"></span>
+
+    <span id="list_associated_assets/5"></span>
+
+    <span id="list_associated_assets/6"></span>
+
+  <div class="detail-header">
+    <a href="#list_associated_assets/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_associated_assets(client, asset_id, hierarchy_id \\ nil, max_results \\ nil, next_token \\ nil, traversal_direction \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L722" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of associated assets.</p>
+<p>You can use this operation to do the following:</p>
+<ul>
+<li><p>List child assets associated to a parent asset by a hierarchy that you specify.</p>
+</li>
+<li><p>List an asset&#39;s parent asset.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="list_dashboards/5">
+
+    <span id="list_dashboards/2"></span>
+
+    <span id="list_dashboards/3"></span>
+
+    <span id="list_dashboards/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_dashboards/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_dashboards(client, max_results \\ nil, next_token \\ nil, project_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L752" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of dashboards for an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_gateways/4">
+
+    <span id="list_gateways/1"></span>
+
+    <span id="list_gateways/2"></span>
+
+    <span id="list_gateways/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_gateways/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_gateways(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L777" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of gateways.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_portals/4">
+
+    <span id="list_portals/1"></span>
+
+    <span id="list_portals/2"></span>
+
+    <span id="list_portals/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_portals/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_portals(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L797" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of AWS IoT SiteWise Monitor portals.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_project_assets/5">
+
+    <span id="list_project_assets/2"></span>
+
+    <span id="list_project_assets/3"></span>
+
+    <span id="list_project_assets/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_project_assets/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_project_assets(client, project_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L817" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of assets associated with an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_projects/5">
+
+    <span id="list_projects/2"></span>
+
+    <span id="list_projects/3"></span>
+
+    <span id="list_projects/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_projects/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_projects(client, max_results \\ nil, next_token \\ nil, portal_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L837" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a paginated list of projects for an AWS IoT SiteWise Monitor portal.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L862" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the list of tags for an AWS IoT SiteWise resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_logging_options/3">
+
+    <span id="put_logging_options/2"></span>
+
+  <div class="detail-header">
+    <a href="#put_logging_options/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_logging_options(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L877" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets logging options for AWS IoT SiteWise.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L889" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds tags to an AWS IoT SiteWise resource.</p>
+<p>If a tag already exists for the resource, this operation updates the tag&#39;s value.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L903" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag from an AWS IoT SiteWise resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_access_policy/4">
+
+    <span id="update_access_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_access_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_access_policy(client, access_policy_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L919" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing access policy that specifies an identity&#39;s access to an AWS IoT SiteWise
+Monitor portal or project resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_asset/4">
+
+    <span id="update_asset/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_asset/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_asset(client, asset_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L932" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an asset&#39;s name.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_asset_model/4">
+
+    <span id="update_asset_model/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_asset_model/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_asset_model(client, asset_model_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L956" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an asset model and all of the assets that were created from the model.</p>
+<p>Each asset created from the model inherits the updated asset model&#39;s property and hierarchy
+definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a>
+in the <em>AWS IoT SiteWise User Guide</em>.</p>
+<p>This operation overwrites the existing model with the provided model. To avoid deleting your asset
+model&#39;s properties or hierarchies, you must include their IDs and definitions in the updated asset
+model payload. For more information, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a>.</p>
+<p>If you remove a property from an asset model, AWS IoT SiteWise deletes all previous data for that
+property. If you remove a hierarchy definition from an asset model, AWS IoT SiteWise disassociates
+every asset associated with that hierarchy. You can&#39;t change the type or data type of an existing
+property.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_asset_property/5">
+
+    <span id="update_asset_property/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_asset_property/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_asset_property(client, asset_id, property_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L971" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an asset property&#39;s alias and notification state.</p>
+<p>This operation overwrites the property&#39;s existing alias and notification state. To keep your
+existing property&#39;s alias or notification state, you must include the existing values in the
+UpdateAssetProperty request. For more information, see
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetProperty.html">DescribeAssetProperty</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_dashboard/4">
+
+    <span id="update_dashboard/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_dashboard/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_dashboard(client, dashboard_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L981" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an AWS IoT SiteWise Monitor dashboard.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_gateway/4">
+
+    <span id="update_gateway/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_gateway/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_gateway(client, gateway_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L991" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a gateway&#39;s name.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_gateway_capability_configuration/4">
+
+    <span id="update_gateway_capability_configuration/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_gateway_capability_configuration/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_gateway_capability_configuration(client, gateway_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L1007" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a gateway capability configuration or defines a new capability configuration.</p>
+<p>Each gateway capability defines data sources for a gateway. A capability configuration can contain
+multiple data source configurations. If you define OPC-UA sources for a gateway in the AWS IoT
+SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list
+all capability configurations for a gateway, use
+<a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_portal/4">
+
+    <span id="update_portal/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_portal/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_portal(client, portal_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L1017" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an AWS IoT SiteWise Monitor portal.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_project/4">
+
+    <span id="update_project/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_project/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_project(client, project_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_site_wise.ex#L1027" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an AWS IoT SiteWise Monitor project.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

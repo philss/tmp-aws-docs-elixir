@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Backup — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Backup
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Backup</p>
+<p>AWS Backup is a unified backup service designed to protect AWS services and their associated data.</p>
+<p>AWS Backup simplifies the creation, migration, restoration, and deletion of backups, while also
+providing reporting and auditing.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_backup_plan/3">create_backup_plan(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a backup plan using a backup plan name and backup rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_backup_selection/4">create_backup_selection(client, backup_plan_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a JSON document that specifies a set of resources to assign to a backup plan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_backup_vault/4">create_backup_vault(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a logical container where backups are stored.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup_plan/4">delete_backup_plan(client, backup_plan_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a backup plan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup_selection/5">delete_backup_selection(client, backup_plan_id, selection_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the resource selection associated with a backup plan that is specified by the
+<code class="inline">SelectionId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup_vault/4">delete_backup_vault(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the backup vault identified by its name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup_vault_access_policy/4">delete_backup_vault_access_policy(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the policy document that manages permissions on a backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_backup_vault_notifications/4">delete_backup_vault_notifications(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes event notifications for the specified backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_recovery_point/5">delete_recovery_point(client, backup_vault_name, recovery_point_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the recovery point specified by a recovery point ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_backup_job/3">describe_backup_job(client, backup_job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns backup job details for the specified <code class="inline">BackupJobId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_backup_vault/3">describe_backup_vault(client, backup_vault_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata about a backup vault specified by its name.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_copy_job/3">describe_copy_job(client, copy_job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata associated with creating a copy of a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_protected_resource/3">describe_protected_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about a saved resource, including the last time it was backed up, its Amazon
+Resource Name (ARN), and the AWS service type of the saved resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_recovery_point/4">describe_recovery_point(client, backup_vault_name, recovery_point_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata associated with a recovery point, including ID, status, encryption, and
+lifecycle.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_region_settings/2">describe_region_settings(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current service opt-in settings for the Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_restore_job/3">describe_restore_job(client, restore_job_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata associated with a restore job that is specified by a job ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_backup_plan_template/3">export_backup_plan_template(client, backup_plan_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the backup plan that is specified by the plan ID as a backup template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_plan/4">get_backup_plan(client, backup_plan_id, version_id \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns <code class="inline">BackupPlan</code> details for the specified <code class="inline">BackupPlanId</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_plan_from_j_s_o_n/3">get_backup_plan_from_j_s_o_n(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a valid JSON document specifying a backup plan or an error.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_plan_from_template/3">get_backup_plan_from_template(client, backup_plan_template_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the template specified by its <code class="inline">templateId</code> as a backup plan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_selection/4">get_backup_selection(client, backup_plan_id, selection_id, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns selection metadata and a document in JSON format that specifies a list of resources that
+are associated with a backup plan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_vault_access_policy/3">get_backup_vault_access_policy(client, backup_vault_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the access policy document that is associated with the named backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_backup_vault_notifications/3">get_backup_vault_notifications(client, backup_vault_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns event notifications for the specified backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_recovery_point_restore_metadata/4">get_recovery_point_restore_metadata(client, backup_vault_name, recovery_point_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a set of metadata key-value pairs that were used to create the backup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_supported_resource_types/2">get_supported_resource_types(client, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the AWS resource types supported by AWS Backup.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_jobs/11">list_backup_jobs(client, by_account_id \\ nil, by_backup_vault_name \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, by_state \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of existing backup jobs for an authenticated account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_plan_templates/4">list_backup_plan_templates(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata of your saved backup plan templates, including the template ID, name, and the
+creation and deletion dates.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_plan_versions/5">list_backup_plan_versions(client, backup_plan_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns version metadata of your backup plans, including Amazon Resource Names (ARNs), backup plan
+IDs, creation and deletion dates, plan names, and version IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_plans/5">list_backup_plans(client, include_deleted \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of existing backup plans for an authenticated account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_selections/5">list_backup_selections(client, backup_plan_id, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array containing metadata of the resources associated with the target backup plan.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_backup_vaults/4">list_backup_vaults(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of recovery point storage containers along with information about them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_copy_jobs/11">list_copy_jobs(client, by_account_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_destination_vault_arn \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, by_state \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns metadata about your copy jobs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_protected_resources/4">list_protected_resources(client, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns an array of resources successfully backed up by AWS Backup, including the time the
+resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_recovery_points_by_backup_vault/10">list_recovery_points_by_backup_vault(client, backup_vault_name, by_backup_plan_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed information about the recovery points stored in a backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_recovery_points_by_resource/5">list_recovery_points_by_resource(client, resource_arn, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns detailed information about recovery points of the type specified by a resource Amazon
+Resource Name (ARN).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_restore_jobs/8">list_restore_jobs(client, by_account_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_status \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of jobs that AWS Backup initiated to restore a saved resource, including metadata
+about the recovery process.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags/5">list_tags(client, resource_arn, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup
+vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_backup_vault_access_policy/4">put_backup_vault_access_policy(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets a resource-based policy that is used to manage access permissions on the target backup vault.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_backup_vault_notifications/4">put_backup_vault_notifications(client, backup_vault_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Turns on notifications on a backup vault for the specified topic and events.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_backup_job/3">start_backup_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an on-demand backup job for the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_copy_job/3">start_copy_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts a job to create a one-time copy of the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_restore_job/3">start_restore_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Recovers the saved resource identified by an Amazon Resource Name (ARN).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_backup_job/4">stop_backup_job(client, backup_job_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Attempts to cancel a job to create a one-time backup of a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault identified by
+an Amazon Resource Name (ARN).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a set of key-value pairs from a recovery point, backup plan, or backup vault identified by
+an Amazon Resource Name (ARN)</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_backup_plan/4">update_backup_plan(client, backup_plan_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing backup plan identified by its <code class="inline">backupPlanId</code> with the input document in JSON
+format.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_recovery_point_lifecycle/5">update_recovery_point_lifecycle(client, backup_vault_name, recovery_point_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the transition lifecycle of a recovery point.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_region_settings/3">update_region_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the current service opt-in settings for the Region.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_backup_plan/3">
+
+    <span id="create_backup_plan/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_backup_plan/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_backup_plan(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a backup plan using a backup plan name and backup rules.</p>
+<p>A backup plan is a document that contains information that AWS Backup uses to schedule tasks that
+create recovery points for resources.</p>
+<p>If you call <code class="inline">CreateBackupPlan</code> with a plan that already exists, an <code class="inline">AlreadyExistsException</code> is
+returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_backup_selection/4">
+
+    <span id="create_backup_selection/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_backup_selection/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_backup_selection(client, backup_plan_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L60" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a JSON document that specifies a set of resources to assign to a backup plan.</p>
+<p>Resources can be included by specifying patterns for a <code class="inline">ListOfTags</code> and selected <code class="inline">Resources</code>.</p>
+<p>For example, consider the following patterns:</p>
+<ul>
+<li><p><code class="inline">Resources: &quot;arn:aws:ec2:region:account-id:volume/volume-id&quot;</code></p>
+</li>
+<li><p><code class="inline">ConditionKey:&quot;department&quot;</code></p>
+</li>
+</ul>
+<p><code class="inline">ConditionValue:&quot;finance&quot;</code></p>
+<p><code class="inline">ConditionType:&quot;StringEquals&quot;</code></p>
+<ul>
+<li><code class="inline">ConditionKey:&quot;importance&quot;</code>
+</li>
+</ul>
+<p><code class="inline">ConditionValue:&quot;critical&quot;</code></p>
+<p><code class="inline">ConditionType:&quot;StringEquals&quot;</code></p>
+<p>Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that are
+tagged as <code class="inline">&quot;department=finance&quot;</code>, <code class="inline">&quot;importance=critical&quot;</code>, in addition to an EBS volume with the
+specified volume ID.</p>
+<p>Resources and conditions are additive in that all resources that match the pattern are selected.
+This shouldn&#39;t be confused with a logical AND, where all conditions must match. The matching
+patterns are logically put together using the OR operator. In other words, all patterns that match
+are selected for backup.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_backup_vault/4">
+
+    <span id="create_backup_vault/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_backup_vault/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_backup_vault(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L75" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a logical container where backups are stored.</p>
+<p>A <code class="inline">CreateBackupVault</code> request includes a name, optionally one or more resource tags, an encryption
+key, and a request ID.</p>
+<p>Sensitive data, such as passport numbers, should not be included the name of a backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup_plan/4">
+
+    <span id="delete_backup_plan/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup_plan/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup_plan(client, backup_plan_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L89" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a backup plan.</p>
+<p>A backup plan can only be deleted after all associated selections of resources have been deleted.
+Deleting a backup plan deletes the current version of a backup plan. Previous versions, if any,
+will still exist.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup_selection/5">
+
+    <span id="delete_backup_selection/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup_selection/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup_selection(client, backup_plan_id, selection_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L100" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the resource selection associated with a backup plan that is specified by the
+<code class="inline">SelectionId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup_vault/4">
+
+    <span id="delete_backup_vault/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup_vault/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup_vault(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L112" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the backup vault identified by its name.</p>
+<p>A vault can be deleted only if it is empty.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup_vault_access_policy/4">
+
+    <span id="delete_backup_vault_access_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup_vault_access_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup_vault_access_policy(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L122" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the policy document that manages permissions on a backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_backup_vault_notifications/4">
+
+    <span id="delete_backup_vault_notifications/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_backup_vault_notifications/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_backup_vault_notifications(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes event notifications for the specified backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_recovery_point/5">
+
+    <span id="delete_recovery_point/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_recovery_point/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_recovery_point(client, backup_vault_name, recovery_point_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L142" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the recovery point specified by a recovery point ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_backup_job/3">
+
+    <span id="describe_backup_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_backup_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_backup_job(client, backup_job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L152" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns backup job details for the specified <code class="inline">BackupJobId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_backup_vault/3">
+
+    <span id="describe_backup_vault/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_backup_vault/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_backup_vault(client, backup_vault_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L162" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata about a backup vault specified by its name.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_copy_job/3">
+
+    <span id="describe_copy_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_copy_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_copy_job(client, copy_job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata associated with creating a copy of a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_protected_resource/3">
+
+    <span id="describe_protected_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_protected_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_protected_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L183" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about a saved resource, including the last time it was backed up, its Amazon
+Resource Name (ARN), and the AWS service type of the saved resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_recovery_point/4">
+
+    <span id="describe_recovery_point/3"></span>
+
+  <div class="detail-header">
+    <a href="#describe_recovery_point/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_recovery_point(client, backup_vault_name, recovery_point_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L194" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata associated with a recovery point, including ID, status, encryption, and
+lifecycle.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_region_settings/2">
+
+    <span id="describe_region_settings/1"></span>
+
+  <div class="detail-header">
+    <a href="#describe_region_settings/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_region_settings(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L208" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current service opt-in settings for the Region.</p>
+<p>If the service has a value set to <code class="inline">true</code>, AWS Backup tries to protect that service&#39;s resources in
+this Region, when included in an on-demand backup or scheduled backup plan. If the value is set to
+<code class="inline">false</code> for a service, AWS Backup does not try to protect that service&#39;s resources in this Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_restore_job/3">
+
+    <span id="describe_restore_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_restore_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_restore_job(client, restore_job_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L218" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata associated with a restore job that is specified by a job ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_backup_plan_template/3">
+
+    <span id="export_backup_plan_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#export_backup_plan_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_backup_plan_template(client, backup_plan_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L228" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the backup plan that is specified by the plan ID as a backup template.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_plan/4">
+
+    <span id="get_backup_plan/2"></span>
+
+    <span id="get_backup_plan/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_plan/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_plan(client, backup_plan_id, version_id \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L240" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns <code class="inline">BackupPlan</code> details for the specified <code class="inline">BackupPlanId</code>.</p>
+<p>Returns the body of a backup plan in JSON format, in addition to plan metadata.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_plan_from_j_s_o_n/3">
+
+    <span id="get_backup_plan_from_j_s_o_n/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_plan_from_j_s_o_n/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_plan_from_j_s_o_n(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a valid JSON document specifying a backup plan or an error.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_plan_from_template/3">
+
+    <span id="get_backup_plan_from_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_plan_from_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_plan_from_template(client, backup_plan_template_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L265" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the template specified by its <code class="inline">templateId</code> as a backup plan.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_selection/4">
+
+    <span id="get_backup_selection/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_selection/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_selection(client, backup_plan_id, selection_id, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L276" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns selection metadata and a document in JSON format that specifies a list of resources that
+are associated with a backup plan.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_vault_access_policy/3">
+
+    <span id="get_backup_vault_access_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_vault_access_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_vault_access_policy(client, backup_vault_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the access policy document that is associated with the named backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_backup_vault_notifications/3">
+
+    <span id="get_backup_vault_notifications/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_backup_vault_notifications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_backup_vault_notifications(client, backup_vault_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L296" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns event notifications for the specified backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_recovery_point_restore_metadata/4">
+
+    <span id="get_recovery_point_restore_metadata/3"></span>
+
+  <div class="detail-header">
+    <a href="#get_recovery_point_restore_metadata/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_recovery_point_restore_metadata(client, backup_vault_name, recovery_point_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L306" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a set of metadata key-value pairs that were used to create the backup.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_supported_resource_types/2">
+
+    <span id="get_supported_resource_types/1"></span>
+
+  <div class="detail-header">
+    <a href="#get_supported_resource_types/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_supported_resource_types(client, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L316" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the AWS resource types supported by AWS Backup.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_jobs/11">
+
+    <span id="list_backup_jobs/1"></span>
+
+    <span id="list_backup_jobs/2"></span>
+
+    <span id="list_backup_jobs/3"></span>
+
+    <span id="list_backup_jobs/4"></span>
+
+    <span id="list_backup_jobs/5"></span>
+
+    <span id="list_backup_jobs/6"></span>
+
+    <span id="list_backup_jobs/7"></span>
+
+    <span id="list_backup_jobs/8"></span>
+
+    <span id="list_backup_jobs/9"></span>
+
+    <span id="list_backup_jobs/10"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_jobs/11" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_jobs(client, by_account_id \\ nil, by_backup_vault_name \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, by_state \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L326" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of existing backup jobs for an authenticated account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_plan_templates/4">
+
+    <span id="list_backup_plan_templates/1"></span>
+
+    <span id="list_backup_plan_templates/2"></span>
+
+    <span id="list_backup_plan_templates/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_plan_templates/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_plan_templates(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L382" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata of your saved backup plan templates, including the template ID, name, and the
+creation and deletion dates.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_plan_versions/5">
+
+    <span id="list_backup_plan_versions/2"></span>
+
+    <span id="list_backup_plan_versions/3"></span>
+
+    <span id="list_backup_plan_versions/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_plan_versions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_plan_versions(client, backup_plan_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L403" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns version metadata of your backup plans, including Amazon Resource Names (ARNs), backup plan
+IDs, creation and deletion dates, plan names, and version IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_plans/5">
+
+    <span id="list_backup_plans/1"></span>
+
+    <span id="list_backup_plans/2"></span>
+
+    <span id="list_backup_plans/3"></span>
+
+    <span id="list_backup_plans/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_plans/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_plans(client, include_deleted \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L427" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of existing backup plans for an authenticated account.</p>
+<p>The list is populated only if the advanced option is set for the backup plan. The list contains
+information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion dates, version
+IDs, plan names, and creator request IDs.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_selections/5">
+
+    <span id="list_backup_selections/2"></span>
+
+    <span id="list_backup_selections/3"></span>
+
+    <span id="list_backup_selections/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_selections/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_selections(client, backup_plan_id, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L452" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array containing metadata of the resources associated with the target backup plan.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_backup_vaults/4">
+
+    <span id="list_backup_vaults/1"></span>
+
+    <span id="list_backup_vaults/2"></span>
+
+    <span id="list_backup_vaults/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_backup_vaults/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_backup_vaults(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L472" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of recovery point storage containers along with information about them.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_copy_jobs/11">
+
+    <span id="list_copy_jobs/1"></span>
+
+    <span id="list_copy_jobs/2"></span>
+
+    <span id="list_copy_jobs/3"></span>
+
+    <span id="list_copy_jobs/4"></span>
+
+    <span id="list_copy_jobs/5"></span>
+
+    <span id="list_copy_jobs/6"></span>
+
+    <span id="list_copy_jobs/7"></span>
+
+    <span id="list_copy_jobs/8"></span>
+
+    <span id="list_copy_jobs/9"></span>
+
+    <span id="list_copy_jobs/10"></span>
+
+  <div class="detail-header">
+    <a href="#list_copy_jobs/11" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_copy_jobs(client, by_account_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_destination_vault_arn \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, by_state \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L492" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns metadata about your copy jobs.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_protected_resources/4">
+
+    <span id="list_protected_resources/1"></span>
+
+    <span id="list_protected_resources/2"></span>
+
+    <span id="list_protected_resources/3"></span>
+
+  <div class="detail-header">
+    <a href="#list_protected_resources/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_protected_resources(client, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L548" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns an array of resources successfully backed up by AWS Backup, including the time the
+resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_recovery_points_by_backup_vault/10">
+
+    <span id="list_recovery_points_by_backup_vault/2"></span>
+
+    <span id="list_recovery_points_by_backup_vault/3"></span>
+
+    <span id="list_recovery_points_by_backup_vault/4"></span>
+
+    <span id="list_recovery_points_by_backup_vault/5"></span>
+
+    <span id="list_recovery_points_by_backup_vault/6"></span>
+
+    <span id="list_recovery_points_by_backup_vault/7"></span>
+
+    <span id="list_recovery_points_by_backup_vault/8"></span>
+
+    <span id="list_recovery_points_by_backup_vault/9"></span>
+
+  <div class="detail-header">
+    <a href="#list_recovery_points_by_backup_vault/10" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_recovery_points_by_backup_vault(client, backup_vault_name, by_backup_plan_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_resource_arn \\ nil, by_resource_type \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L568" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed information about the recovery points stored in a backup vault.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_recovery_points_by_resource/5">
+
+    <span id="list_recovery_points_by_resource/2"></span>
+
+    <span id="list_recovery_points_by_resource/3"></span>
+
+    <span id="list_recovery_points_by_resource/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_recovery_points_by_resource/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_recovery_points_by_resource(client, resource_arn, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L614" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns detailed information about recovery points of the type specified by a resource Amazon
+Resource Name (ARN).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_restore_jobs/8">
+
+    <span id="list_restore_jobs/1"></span>
+
+    <span id="list_restore_jobs/2"></span>
+
+    <span id="list_restore_jobs/3"></span>
+
+    <span id="list_restore_jobs/4"></span>
+
+    <span id="list_restore_jobs/5"></span>
+
+    <span id="list_restore_jobs/6"></span>
+
+    <span id="list_restore_jobs/7"></span>
+
+  <div class="detail-header">
+    <a href="#list_restore_jobs/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_restore_jobs(client, by_account_id \\ nil, by_created_after \\ nil, by_created_before \\ nil, by_status \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L635" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of jobs that AWS Backup initiated to restore a saved resource, including metadata
+about the recovery process.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags/5">
+
+    <span id="list_tags/2"></span>
+
+    <span id="list_tags/3"></span>
+
+    <span id="list_tags/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags(client, resource_arn, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L678" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of key-value pairs assigned to a target recovery point, backup plan, or backup
+vault.</p>
+<p><code class="inline">ListTags</code> are currently only supported with Amazon EFS backups.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_backup_vault_access_policy/4">
+
+    <span id="put_backup_vault_access_policy/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_backup_vault_access_policy/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_backup_vault_access_policy(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L700" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets a resource-based policy that is used to manage access permissions on the target backup vault.</p>
+<p>Requires a backup vault name and an access policy document in JSON format.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_backup_vault_notifications/4">
+
+    <span id="put_backup_vault_notifications/3"></span>
+
+  <div class="detail-header">
+    <a href="#put_backup_vault_notifications/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_backup_vault_notifications(client, backup_vault_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L710" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Turns on notifications on a backup vault for the specified topic and events.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_backup_job/3">
+
+    <span id="start_backup_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_backup_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_backup_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L720" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an on-demand backup job for the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_copy_job/3">
+
+    <span id="start_copy_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_copy_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_copy_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L730" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts a job to create a one-time copy of the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_restore_job/3">
+
+    <span id="start_restore_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_restore_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_restore_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L743" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Recovers the saved resource identified by an Amazon Resource Name (ARN).</p>
+<p>If the resource ARN is included in the request, then the last complete backup of that resource is
+recovered. If the ARN of a recovery point is supplied, then that recovery point is restored.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_backup_job/4">
+
+    <span id="stop_backup_job/3"></span>
+
+  <div class="detail-header">
+    <a href="#stop_backup_job/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_backup_job(client, backup_job_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L753" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Attempts to cancel a job to create a one-time backup of a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L764" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Assigns a set of key-value pairs to a recovery point, backup plan, or backup vault identified by
+an Amazon Resource Name (ARN).</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L775" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a set of key-value pairs from a recovery point, backup plan, or backup vault identified by
+an Amazon Resource Name (ARN)</p>
+
+  </section>
+</section>
+<section class="detail" id="update_backup_plan/4">
+
+    <span id="update_backup_plan/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_backup_plan/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_backup_plan(client, backup_plan_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L788" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing backup plan identified by its <code class="inline">backupPlanId</code> with the input document in JSON
+format.</p>
+<p>The new version is uniquely identified by a <code class="inline">VersionId</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_recovery_point_lifecycle/5">
+
+    <span id="update_recovery_point_lifecycle/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_recovery_point_lifecycle/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_recovery_point_lifecycle(client, backup_vault_name, recovery_point_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L807" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the transition lifecycle of a recovery point.</p>
+<p>The lifecycle defines when a protected resource is transitioned to cold storage and when it
+expires. AWS Backup transitions and expires backups automatically according to the lifecycle that
+you define.</p>
+<p>Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days.
+Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold
+after days” setting. The “transition to cold after days” setting cannot be changed after a backup
+has been transitioned to cold.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_region_settings/3">
+
+    <span id="update_region_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_region_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_region_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/backup.ex#L821" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the current service opt-in settings for the Region.</p>
+<p>If the service has a value set to <code class="inline">true</code>, AWS Backup tries to protect that service&#39;s resources in
+this Region, when included in an on-demand backup or scheduled backup plan. If the value is set to
+<code class="inline">false</code> for a service, AWS Backup does not try to protect that service&#39;s resources in this Region.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

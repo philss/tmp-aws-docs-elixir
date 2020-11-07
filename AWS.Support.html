@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Support — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Support
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Support</p>
+<p>The AWS Support API reference is intended for programmers who need detailed information about the
+AWS Support operations and data types.</p>
+<p>This service enables you to manage your AWS Support cases programmatically. It uses HTTP methods
+that return results in JSON format.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+<p>The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">AWS Trusted Advisor</a> features. You can retrieve a list
+of checks and their descriptions, get check results, specify checks to refresh, and get the
+refresh status of checks.</p>
+<p>The following list describes the AWS Support case management operations:</p>
+<ul>
+<li><p><strong>Service names, issue categories, and available severity levels. </strong>The
+<code class="inline">DescribeServices</code> and <code class="inline">DescribeSeverityLevels</code> operations return AWS service names, service
+codes, service categories, and problem severity levels. You use these values when you call the
+<code class="inline">CreateCase</code> operation.</p>
+</li>
+<li><p><strong>Case creation, case details, and case resolution.</strong> The <code class="inline">CreateCase</code>,
+<code class="inline">DescribeCases</code>, <code class="inline">DescribeAttachment</code>, and <code class="inline">ResolveCase</code> operations create AWS Support cases,
+retrieve information about cases, and resolve cases.</p>
+</li>
+<li><p><strong>Case communication.</strong> The <code class="inline">DescribeCommunications</code>, <code class="inline">AddCommunicationToCase</code>, and
+<code class="inline">AddAttachmentsToSet</code> operations retrieve and add communications and attachments to AWS Support
+cases.</p>
+</li>
+</ul>
+<p>The following list describes the operations available from the AWS Support service for Trusted
+Advisor:</p>
+<ul>
+<li><p><code class="inline">DescribeTrustedAdvisorChecks</code> returns the list of checks that run against your AWS
+resources.</p>
+</li>
+<li><p>Using the <code class="inline">checkId</code> for a specific check returned by <code class="inline">DescribeTrustedAdvisorChecks</code>,
+you can call <code class="inline">DescribeTrustedAdvisorCheckResult</code> to obtain the results for the check that you
+specified.</p>
+</li>
+<li><p><code class="inline">DescribeTrustedAdvisorCheckSummaries</code> returns summarized results for one or more
+Trusted Advisor checks.</p>
+</li>
+<li><p><code class="inline">RefreshTrustedAdvisorCheck</code> requests that Trusted Advisor rerun a specified check.</p>
+</li>
+<li><p><code class="inline">DescribeTrustedAdvisorCheckRefreshStatuses</code> reports the refresh status of one or
+more checks.</p>
+</li>
+</ul>
+<p>For authentication of requests, AWS Support uses <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a>.</p>
+<p>See <a href="https://docs.aws.amazon.com/awssupport/latest/user/Welcome.html">About the AWS Support API</a>
+in the <em>AWS Support User Guide</em> for information about how to use this service to create and manage
+your support cases, and how to call Trusted Advisor for results of checks on your resources.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_attachments_to_set/3">add_attachments_to_set(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more attachments to an attachment set.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_communication_to_case/3">add_communication_to_case(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds additional customer communication to an AWS Support case.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_case/3">create_case(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a case in the AWS Support Center.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_attachment/3">describe_attachment(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the attachment that has the specified ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_cases/3">describe_cases(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of cases that you specify by passing one or more case IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_communications/3">describe_communications(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns communications and attachments for one or more support cases.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_services/3">describe_services(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current list of AWS services and a list of service categories for each service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_severity_levels/3">describe_severity_levels(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the list of severity levels that you can assign to an AWS Support case.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_trusted_advisor_check_refresh_statuses/3">describe_trusted_advisor_check_refresh_statuses(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the refresh status of the AWS Trusted Advisor checks that have the specified check IDs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_trusted_advisor_check_result/3">describe_trusted_advisor_check_result(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the results of the AWS Trusted Advisor check that has the specified check ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_trusted_advisor_check_summaries/3">describe_trusted_advisor_check_summaries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the results for the AWS Trusted Advisor check summaries for the check IDs that you
+specified.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_trusted_advisor_checks/3">describe_trusted_advisor_checks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns information about all available AWS Trusted Advisor checks, including the name, ID,
+category, description, and metadata.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#refresh_trusted_advisor_check/3">refresh_trusted_advisor_check(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Refreshes the AWS Trusted Advisor check that you specify using the check ID.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#resolve_case/3">resolve_case(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resolves a support case.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_attachments_to_set/3">
+
+    <span id="add_attachments_to_set/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_attachments_to_set/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_attachments_to_set(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more attachments to an attachment set.</p>
+<p>An attachment set is a temporary container for attachments that you add to a case or case
+communication. The set is available for 1 hour after it&#39;s created. The <code class="inline">expiryTime</code> returned in
+the response is when the set expires.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_communication_to_case/3">
+
+    <span id="add_communication_to_case/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_communication_to_case/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_communication_to_case(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds additional customer communication to an AWS Support case.</p>
+<p>Use the <code class="inline">caseId</code> parameter to identify the case to which to add communication. You can list a set
+of email addresses to copy on the communication by using the <code class="inline">ccEmailAddresses</code> parameter. The
+<code class="inline">communicationBody</code> value contains the text of the communication.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_case/3">
+
+    <span id="create_case/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_case/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_case(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a case in the AWS Support Center.</p>
+<p>This operation is similar to how you create a case in the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+<p>The AWS Support API doesn&#39;t support requesting service limit increases. You can submit a service
+limit increase in the following ways:</p>
+<ul>
+<li><p>Submit a request from the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.</p>
+</li>
+<li><p>Use the Service Quotas
+<a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a> operation.</p>
+</li>
+</ul>
+<p>A successful <code class="inline">CreateCase</code> request returns an AWS Support case number. You can use the
+<code class="inline">DescribeCases</code> operation and specify the case number to get existing AWS Support cases. After you
+create a case, use the <code class="inline">AddCommunicationToCase</code> operation to add additional communication or
+attachments to an existing case.</p>
+<p>The <code class="inline">caseId</code> is separate from the <code class="inline">displayId</code> that appears in the <a href="https://console.aws.amazon.com/support">AWS Support
+Center</a>. Use the <code class="inline">DescribeCases</code> operation to get the
+<code class="inline">displayId</code>.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_attachment/3">
+
+    <span id="describe_attachment/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_attachment/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_attachment(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the attachment that has the specified ID.</p>
+<p>Attachments can include screenshots, error logs, or other files that describe your issue.
+Attachment IDs are generated by the case management system when you add an attachment to a case or
+case communication. Attachment IDs are returned in the <code class="inline">AttachmentDetails</code> objects that are
+returned by the <code class="inline">DescribeCommunications</code> operation.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_cases/3">
+
+    <span id="describe_cases/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_cases/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_cases(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L173" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of cases that you specify by passing one or more case IDs.</p>
+<p>You can use the <code class="inline">afterTime</code> and <code class="inline">beforeTime</code> parameters to filter the cases by date. You can set
+values for the <code class="inline">includeResolvedCases</code> and <code class="inline">includeCommunications</code> parameters to specify how much
+information to return.</p>
+<p>The response returns the following in JSON format:</p>
+<ul>
+<li><p>One or more
+<a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data types.</p>
+</li>
+<li><p>One or more <code class="inline">nextToken</code> values, which specify where to paginate the returned records
+represented by the <code class="inline">CaseDetails</code> objects.</p>
+</li>
+</ul>
+<p>Case data is available for 12 months after creation. If a case was created more than 12 months
+ago, a request might return an error.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS
+Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_communications/3">
+
+    <span id="describe_communications/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_communications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_communications(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns communications and attachments for one or more support cases.</p>
+<p>Use the <code class="inline">afterTime</code> and <code class="inline">beforeTime</code> parameters to filter by date. You can use the <code class="inline">caseId</code>
+parameter to restrict the results to a specific case.</p>
+<p>Case data is available for 12 months after creation. If a case was created more than 12 months
+ago, a request for data might cause an error.</p>
+<p>You can use the <code class="inline">maxResults</code> and <code class="inline">nextToken</code> parameters to control the pagination of the results.
+Set <code class="inline">maxResults</code> to the number of cases that you want to display on each page, and use <code class="inline">nextToken</code>
+to specify the resumption of pagination.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_services/3">
+
+    <span id="describe_services/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_services/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_services(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L218" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current list of AWS services and a list of service categories for each service.</p>
+<p>You then use service names and categories in your <code class="inline">CreateCase</code> requests. Each AWS service has its
+own set of categories.</p>
+<p>The service codes and category codes correspond to the values that appear in the <strong>Service</strong> and
+<strong>Category</strong> lists on the AWS Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields
+don&#39;t necessarily match the service codes and categories returned by the <code class="inline">DescribeServices</code>
+operation. Always use the service codes and categories that the <code class="inline">DescribeServices</code> operation
+returns, so that you have the most recent set of service and category codes.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_severity_levels/3">
+
+    <span id="describe_severity_levels/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_severity_levels/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_severity_levels(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L234" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the list of severity levels that you can assign to an AWS Support case.</p>
+<p>The severity level for a case is also a field in the <code class="inline">CaseDetails</code> data type that you include for
+a <code class="inline">CreateCase</code> request.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_trusted_advisor_check_refresh_statuses/3">
+
+    <span id="describe_trusted_advisor_check_refresh_statuses/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_trusted_advisor_check_refresh_statuses/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_trusted_advisor_check_refresh_statuses(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L253" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the refresh status of the AWS Trusted Advisor checks that have the specified check IDs.</p>
+<p>You can get the check IDs by calling the <code class="inline">DescribeTrustedAdvisorChecks</code> operation.</p>
+<p>Some checks are refreshed automatically, and you can&#39;t return their refresh statuses by using the
+<code class="inline">DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call this operation for these
+checks, you might see an <code class="inline">InvalidParameterValue</code> error.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_trusted_advisor_check_result/3">
+
+    <span id="describe_trusted_advisor_check_result/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_trusted_advisor_check_result/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_trusted_advisor_check_result(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L285" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the results of the AWS Trusted Advisor check that has the specified check ID.</p>
+<p>You can get the check IDs by calling the <code class="inline">DescribeTrustedAdvisorChecks</code> operation.</p>
+<p>The response contains a <code class="inline">TrustedAdvisorCheckResult</code> object, which contains these three objects:</p>
+<ul>
+<li><p><code class="inline">TrustedAdvisorCategorySpecificSummary</code></p>
+</li>
+<li><p><code class="inline">TrustedAdvisorResourceDetail</code></p>
+</li>
+<li><p><code class="inline">TrustedAdvisorResourcesSummary</code></p>
+</li>
+</ul>
+<p>In addition, the response contains these fields:</p>
+<ul>
+<li><p><strong>status</strong> - The alert status of the check: &quot;ok&quot; (green), &quot;warning&quot; (yellow),
+&quot;error&quot; (red), or &quot;not_available&quot;.</p>
+</li>
+<li><p><strong>timestamp</strong> - The time of the last refresh of the check.</p>
+</li>
+<li><p><strong>checkId</strong> - The unique identifier for the check.</p>
+<p>You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="describe_trusted_advisor_check_summaries/3">
+
+    <span id="describe_trusted_advisor_check_summaries/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_trusted_advisor_check_summaries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_trusted_advisor_check_summaries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L303" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the results for the AWS Trusted Advisor check summaries for the check IDs that you
+specified.</p>
+<p>You can get the check IDs by calling the <code class="inline">DescribeTrustedAdvisorChecks</code> operation.</p>
+<p>The response contains an array of <code class="inline">TrustedAdvisorCheckSummary</code> objects.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_trusted_advisor_checks/3">
+
+    <span id="describe_trusted_advisor_checks/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_trusted_advisor_checks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_trusted_advisor_checks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L321" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns information about all available AWS Trusted Advisor checks, including the name, ID,
+category, description, and metadata.</p>
+<p>You must specify a language code. The AWS Support API currently supports English (&quot;en&quot;) and
+Japanese (&quot;ja&quot;). The response contains a <code class="inline">TrustedAdvisorCheckDescription</code> object for each check.
+You must set the AWS Region to us-east-1.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="refresh_trusted_advisor_check/3">
+
+    <span id="refresh_trusted_advisor_check/2"></span>
+
+  <div class="detail-header">
+    <a href="#refresh_trusted_advisor_check/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">refresh_trusted_advisor_check(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L341" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Refreshes the AWS Trusted Advisor check that you specify using the check ID.</p>
+<p>You can get the check IDs by calling the <code class="inline">DescribeTrustedAdvisorChecks</code> operation.</p>
+<p>Some checks are refreshed automatically. If you call the <code class="inline">RefreshTrustedAdvisorCheck</code> operation to
+refresh them, you might see the <code class="inline">InvalidParameterValue</code> error.</p>
+<p>The response contains a <code class="inline">TrustedAdvisorCheckRefreshStatus</code> object.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="resolve_case/3">
+
+    <span id="resolve_case/2"></span>
+
+  <div class="detail-header">
+    <a href="#resolve_case/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">resolve_case(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/support.ex#L356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resolves a support case.</p>
+<p>This operation takes a <code class="inline">caseId</code> and returns the initial and final state of the case.</p>
+<p>   You must have a Business or Enterprise support plan to use the AWS Support API.</p>
+<p>   If you call the AWS Support API from an account that does not have a Business or
+Enterprise support plan, the <code class="inline">SubscriptionRequiredException</code> error message appears. For
+information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

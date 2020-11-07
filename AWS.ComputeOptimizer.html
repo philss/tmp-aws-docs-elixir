@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ComputeOptimizer — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ComputeOptimizer
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Compute Optimizer is a service that analyzes the configuration and utilization metrics of your
+AWS resources, such as EC2 instances and Auto Scaling groups.</p>
+<p>It reports whether your resources are optimal, and generates optimization recommendations to
+reduce the cost and improve the performance of your workloads. Compute Optimizer also provides
+recent utilization metric data, as well as projected utilization metric data for the
+recommendations, which you can use to evaluate which recommendation provides the best
+price-performance trade-off. The analysis of your usage patterns can help you decide when to move
+or resize your running resources, and still meet your performance and capacity requirements. For
+more information about Compute Optimizer, including the required permissions to use the service,
+see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_recommendation_export_jobs/3">describe_recommendation_export_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes recommendation export jobs created in the last seven days.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_auto_scaling_group_recommendations/3">export_auto_scaling_group_recommendations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Exports optimization recommendations for Auto Scaling groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#export_e_c2_instance_recommendations/3">export_e_c2_instance_recommendations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Exports optimization recommendations for Amazon EC2 instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_auto_scaling_group_recommendations/3">get_auto_scaling_group_recommendations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns Auto Scaling group recommendations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_e_c2_instance_recommendations/3">get_e_c2_instance_recommendations(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns Amazon EC2 instance recommendations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_e_c2_recommendation_projected_metrics/3">get_e_c2_recommendation_projected_metrics(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_enrollment_status/3">get_enrollment_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_recommendation_summaries/3">get_recommendation_summaries(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the optimization findings for an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_enrollment_status/3">update_enrollment_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="describe_recommendation_export_jobs/3">
+
+    <span id="describe_recommendation_export_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_recommendation_export_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_recommendation_export_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes recommendation export jobs created in the last seven days.</p>
+<p>Use the <code class="inline">ExportAutoScalingGroupRecommendations</code> or <code class="inline">ExportEC2InstanceRecommendations</code> actions to
+request an export of your recommendations. Then use the <code class="inline">DescribeRecommendationExportJobs</code> action
+to view your export jobs.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_auto_scaling_group_recommendations/3">
+
+    <span id="export_auto_scaling_group_recommendations/2"></span>
+
+  <div class="detail-header">
+    <a href="#export_auto_scaling_group_recommendations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_auto_scaling_group_recommendations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L40" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Exports optimization recommendations for Auto Scaling groups.</p>
+<p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a
+JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3)
+bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
+in the <em>Compute Optimizer User Guide</em>.</p>
+<p>You can have only one Auto Scaling group export job in progress per AWS Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="export_e_c2_instance_recommendations/3">
+
+    <span id="export_e_c2_instance_recommendations/2"></span>
+
+  <div class="detail-header">
+    <a href="#export_e_c2_instance_recommendations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">export_e_c2_instance_recommendations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L54" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Exports optimization recommendations for Amazon EC2 instances.</p>
+<p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a
+JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3)
+bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
+in the <em>Compute Optimizer User Guide</em>.</p>
+<p>You can have only one Amazon EC2 instance export job in progress per AWS Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_auto_scaling_group_recommendations/3">
+
+    <span id="get_auto_scaling_group_recommendations/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_auto_scaling_group_recommendations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_auto_scaling_group_recommendations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L65" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns Auto Scaling group recommendations.</p>
+<p>AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet a
+specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the
+<em>AWS Compute Optimizer User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_e_c2_instance_recommendations/3">
+
+    <span id="get_e_c2_instance_recommendations/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_e_c2_instance_recommendations/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_e_c2_instance_recommendations(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L77" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns Amazon EC2 instance recommendations.</p>
+<p>AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
+instances that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
+requirements</a> in the
+<em>AWS Compute Optimizer User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_e_c2_recommendation_projected_metrics/3">
+
+    <span id="get_e_c2_recommendation_projected_metrics/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_e_c2_recommendation_projected_metrics/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_e_c2_recommendation_projected_metrics(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L89" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p>
+<p>The <code class="inline">Cpu</code> and <code class="inline">Memory</code> metrics are the only projected utilization metrics returned when you run
+this action. Additionally, the <code class="inline">Memory</code> metric is returned only for resources that have the
+unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch
+Agent</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_enrollment_status/3">
+
+    <span id="get_enrollment_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_enrollment_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_enrollment_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L99" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p>
+<p>If the account is the master account of an organization, this action also confirms the enrollment
+status of member accounts within the organization.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_recommendation_summaries/3">
+
+    <span id="get_recommendation_summaries/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_recommendation_summaries/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_recommendation_summaries(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L110" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the optimization findings for an account.</p>
+<p>For example, it returns the number of Amazon EC2 instances in an account that are
+under-provisioned, over-provisioned, or optimized. It also returns the number of Auto Scaling
+groups in an account that are not optimized, or optimized.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_enrollment_status/3">
+
+    <span id="update_enrollment_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_enrollment_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_enrollment_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p>
+<p>If the account is a master account of an organization, this action can also be used to enroll
+member accounts within the organization.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

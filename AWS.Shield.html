@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Shield — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Shield
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Shield Advanced</p>
+<p>This is the <em>AWS Shield Advanced API Reference</em>.</p>
+<p>This guide is for developers who need detailed information about the AWS Shield Advanced API
+actions, data types, and errors. For detailed information about AWS WAF and AWS Shield Advanced
+features and an overview of how to use the AWS WAF and AWS Shield Advanced APIs, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_d_r_t_log_bucket/3">associate_d_r_t_log_bucket(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your
+AWS WAF logs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_d_r_t_role/3">associate_d_r_t_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to
+assist with DDoS attack mitigation during potential attacks.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_health_check/3">associate_health_check(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds health-based detection to the Shield Advanced protection for a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_proactive_engagement_details/3">associate_proactive_engagement_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to
+use.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_protection/3">create_protection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables AWS Shield Advanced for a specific AWS resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_subscription/3">create_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates AWS Shield Advanced for an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_protection/3">delete_protection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an AWS Shield Advanced <code class="inline">Protection</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_subscription/3">delete_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes AWS Shield Advanced from an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_attack/3">describe_attack(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the details of a DDoS attack.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_d_r_t_access/3">describe_d_r_t_access(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to
+access your AWS account while assisting with attack mitigation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_emergency_contact_settings/3">describe_emergency_contact_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact
+you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+customer support.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_protection/3">describe_protection(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the details of a <code class="inline">Protection</code> object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_subscription/3">describe_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides details about the AWS Shield Advanced subscription for an account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_proactive_engagement/3">disable_proactive_engagement(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to
+the DRT and to initiate proactive customer support.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_d_r_t_log_bucket/3">disassociate_d_r_t_log_bucket(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the DDoS Response Team&#39;s (DRT) access to the specified Amazon S3 bucket containing your
+AWS WAF logs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_d_r_t_role/3">disassociate_d_r_t_role(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the DDoS Response Team&#39;s (DRT) access to your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disassociate_health_check/3">disassociate_health_check(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes health-based detection from the Shield Advanced protection for a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_proactive_engagement/3">enable_proactive_engagement(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about
+escalations to the DRT and to initiate proactive customer support.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_subscription_state/3">get_subscription_state(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the <code class="inline">SubscriptionState</code>, either <code class="inline">Active</code> or <code class="inline">Inactive</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_attacks/3">list_attacks(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_protections/3">list_protections(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all <code class="inline">Protection</code> objects for the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_emergency_contact_settings/3">update_emergency_contact_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the details of the list of email addresses and phone numbers that the DDoS Response Team
+(DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT
+and to initiate proactive customer support.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_subscription/3">update_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the details of an existing subscription.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_d_r_t_log_bucket/3">
+
+    <span id="associate_d_r_t_log_bucket/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_d_r_t_log_bucket/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_d_r_t_log_bucket(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your
+AWS WAF logs.</p>
+<p>You can associate up to 10 Amazon S3 buckets with your subscription.</p>
+<p>To use the services of the DRT and make an <code class="inline">AssociateDRTLogBucket</code> request, you must be subscribed
+to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_d_r_t_role/3">
+
+    <span id="associate_d_r_t_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_d_r_t_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_d_r_t_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to
+assist with DDoS attack mitigation during potential attacks.</p>
+<p>This enables the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and
+web ACLs.</p>
+<p>You can associate only one <code class="inline">RoleArn</code> with your subscription. If you submit an <code class="inline">AssociateDRTRole</code>
+request for an account that already has an associated role, the new <code class="inline">RoleArn</code> will replace the
+existing <code class="inline">RoleArn</code>.</p>
+<p>Prior to making the <code class="inline">AssociateDRTRole</code> request, you must attach the
+<a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a> managed policy to the role you will specify in the request. For more information see <a href="
+https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Attaching
+and Detaching IAM Policies</a>. The
+role must also trust the service principal <code class="inline">drt.shield.amazonaws.com</code>. For more information, see
+<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM JSON Policy Elements: Principal</a>.</p>
+<p>The DRT will have access only to your AWS WAF and Shield resources. By submitting this request,
+you authorize the DRT to inspect your AWS WAF and Shield configuration and create and update AWS
+WAF rules and web ACLs on your behalf. The DRT takes these actions only if explicitly authorized
+by you.</p>
+<p>You must have the <code class="inline">iam:PassRole</code> permission to make an <code class="inline">AssociateDRTRole</code> request. For more
+information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting a User Permissions to Pass a Role to an AWS Service</a>.</p>
+<p>To use the services of the DRT and make an <code class="inline">AssociateDRTRole</code> request, you must be subscribed to
+the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_health_check/3">
+
+    <span id="associate_health_check/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_health_check/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_health_check(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds health-based detection to the Shield Advanced protection for a resource.</p>
+<p>Shield Advanced health-based detection uses the health of your AWS resource to improve
+responsiveness and accuracy in attack detection and mitigation.</p>
+<p>You define the health check in Route 53 and then associate it with your Shield Advanced
+protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a>
+in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="associate_proactive_engagement_details/3">
+
+    <span id="associate_proactive_engagement_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_proactive_engagement_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_proactive_engagement_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L91" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to
+use.</p>
+<p>You must provide at least one phone number in the emergency contact list.</p>
+<p>After you have initialized proactive engagement using this call, to disable or enable proactive
+engagement, use the calls <code class="inline">DisableProactiveEngagement</code> and <code class="inline">EnableProactiveEngagement</code>.</p>
+<p>This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT)
+can use to contact you for escalations to the DRT and to initiate proactive customer support.</p>
+<p>The contacts that you provide in the request replace any contacts that were already defined. If
+you already have contacts defined and want to use them, retrieve the list using
+<code class="inline">DescribeEmergencyContactSettings</code> and then provide it to this call.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_protection/3">
+
+    <span id="create_protection/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_protection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_protection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L105" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables AWS Shield Advanced for a specific AWS resource.</p>
+<p>The resource can be an Amazon CloudFront distribution, Elastic Load Balancing load balancer, AWS
+Global Accelerator accelerator, Elastic IP Address, or an Amazon Route 53 hosted zone.</p>
+<p>You can add protection to only a single resource with each CreateProtection request. If you want
+to add protection to multiple resources at once, use the <a href="https://console.aws.amazon.com/waf/">AWS WAF console</a>. For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting Started with AWS Shield Advanced</a>
+and <a href="https://docs.aws.amazon.com/waf/latest/developerguide/configure-new-protection.html">Add AWS Shield Advanced Protection to more AWS Resources</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_subscription/3">
+
+    <span id="create_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates AWS Shield Advanced for an account.</p>
+<p>When you initally create a subscription, your subscription is set to be automatically renewed at
+the end of the existing subscription period. You can change this by submitting an
+<code class="inline">UpdateSubscription</code> request.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_protection/3">
+
+    <span id="delete_protection/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_protection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_protection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L123" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an AWS Shield Advanced <code class="inline">Protection</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_subscription/3">
+
+    <span id="delete_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes AWS Shield Advanced from an account.</p>
+<p>AWS Shield Advanced requires a 1-year subscription commitment. You cannot delete a subscription
+prior to the completion of that commitment.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_attack/3">
+
+    <span id="describe_attack/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_attack/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_attack(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L140" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the details of a DDoS attack.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_d_r_t_access/3">
+
+    <span id="describe_d_r_t_access/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_d_r_t_access/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_d_r_t_access(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to
+access your AWS account while assisting with attack mitigation.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_emergency_contact_settings/3">
+
+    <span id="describe_emergency_contact_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_emergency_contact_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_emergency_contact_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact
+you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+customer support.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_protection/3">
+
+    <span id="describe_protection/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_protection/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_protection(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L164" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the details of a <code class="inline">Protection</code> object.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_subscription/3">
+
+    <span id="describe_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L171" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides details about the AWS Shield Advanced subscription for an account.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_proactive_engagement/3">
+
+    <span id="disable_proactive_engagement/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_proactive_engagement/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_proactive_engagement(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to
+the DRT and to initiate proactive customer support.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_d_r_t_log_bucket/3">
+
+    <span id="disassociate_d_r_t_log_bucket/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_d_r_t_log_bucket/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_d_r_t_log_bucket(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the DDoS Response Team&#39;s (DRT) access to the specified Amazon S3 bucket containing your
+AWS WAF logs.</p>
+<p>To make a <code class="inline">DisassociateDRTLogBucket</code> request, you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>. However, if you are not
+subscribed to one of these support plans, but had been previously and had granted the DRT access
+to your account, you can submit a <code class="inline">DisassociateDRTLogBucket</code> request to remove this access.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_d_r_t_role/3">
+
+    <span id="disassociate_d_r_t_role/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_d_r_t_role/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_d_r_t_role(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L202" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the DDoS Response Team&#39;s (DRT) access to your AWS account.</p>
+<p>To make a <code class="inline">DisassociateDRTRole</code> request, you must be subscribed to the <a href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>. However, if you are not
+subscribed to one of these support plans, but had been previously and had granted the DRT access
+to your account, you can submit a <code class="inline">DisassociateDRTRole</code> request to remove this access.</p>
+
+  </section>
+</section>
+<section class="detail" id="disassociate_health_check/3">
+
+    <span id="disassociate_health_check/2"></span>
+
+  <div class="detail-header">
+    <a href="#disassociate_health_check/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disassociate_health_check(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes health-based detection from the Shield Advanced protection for a resource.</p>
+<p>Shield Advanced health-based detection uses the health of your AWS resource to improve
+responsiveness and accuracy in attack detection and mitigation.</p>
+<p>You define the health check in Route 53 and then associate or disassociate it with your Shield
+Advanced protection. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/ddos-overview.html#ddos-advanced-health-check-option">Shield Advanced Health-Based Detection</a>
+in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/">AWS WAF and AWS Shield Developer Guide</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_proactive_engagement/3">
+
+    <span id="enable_proactive_engagement/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_proactive_engagement/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_proactive_engagement(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L224" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about
+escalations to the DRT and to initiate proactive customer support.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_subscription_state/3">
+
+    <span id="get_subscription_state/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_subscription_state/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_subscription_state(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L231" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the <code class="inline">SubscriptionState</code>, either <code class="inline">Active</code> or <code class="inline">Inactive</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_attacks/3">
+
+    <span id="list_attacks/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_attacks/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_attacks(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L238" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all ongoing DDoS attacks or all DDoS attacks during a specified time period.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_protections/3">
+
+    <span id="list_protections/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_protections/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_protections(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L245" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all <code class="inline">Protection</code> objects for the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_emergency_contact_settings/3">
+
+    <span id="update_emergency_contact_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_emergency_contact_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_emergency_contact_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L254" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the details of the list of email addresses and phone numbers that the DDoS Response Team
+(DRT) can use to contact you if you have proactive engagement enabled, for escalations to the DRT
+and to initiate proactive customer support.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_subscription/3">
+
+    <span id="update_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/shield.ex#L263" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the details of an existing subscription.</p>
+<p>Only enter values for parameters you want to change. Empty parameters are not updated.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

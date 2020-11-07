@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CostExplorer — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CostExplorer
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The Cost Explorer API enables you to programmatically query your cost and usage data.</p>
+<p>You can query for aggregated data such as total monthly costs or total daily usage. You can also
+query for granular data, such as the number of daily write operations for Amazon DynamoDB database
+tables in your production environment.</p>
+<p>Service Endpoint</p>
+<p>The Cost Explorer API provides the following endpoint:</p>
+<ul>
+<li><code class="inline">https://ce.us-east-1.amazonaws.com</code>
+</li>
+</ul>
+<p>For information about costs associated with the Cost Explorer API, see <a href="http://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management Pricing</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_anomaly_monitor/3">create_anomaly_monitor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new cost anomaly detection monitor with the requested type and monitor specification.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_anomaly_subscription/3">create_anomaly_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a subscription to a cost anomaly detection monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_cost_category_definition/3">create_cost_category_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new Cost Category with the requested name and rules.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_anomaly_monitor/3">delete_anomaly_monitor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a cost anomaly monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_anomaly_subscription/3">delete_anomaly_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a cost anomaly subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_cost_category_definition/3">delete_cost_category_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a Cost Category.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_cost_category_definition/3">describe_cost_category_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the name, ARN, rules, definition, and effective dates of a Cost Category that&#39;s defined in
+the account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_anomalies/3">get_anomalies(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves all of the cost anomalies detected on your account, during the time period specified by
+the <code class="inline">DateInterval</code> object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_anomaly_monitors/3">get_anomaly_monitors(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the cost anomaly monitor definitions for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_anomaly_subscriptions/3">get_anomaly_subscriptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the cost anomaly subscription objects for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cost_and_usage/3">get_cost_and_usage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves cost and usage metrics for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cost_and_usage_with_resources/3">get_cost_and_usage_with_resources(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves cost and usage metrics with resources for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_cost_forecast/3">get_cost_forecast(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the
+forecast time period that you select, based on your past costs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_dimension_values/3">get_dimension_values(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves all available filter values for a specified filter over a period of time.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_coverage/3">get_reservation_coverage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the reservation coverage for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_purchase_recommendation/3">get_reservation_purchase_recommendation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets recommendations for which reservations to purchase.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_reservation_utilization/3">get_reservation_utilization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the reservation utilization for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_rightsizing_recommendation/3">get_rightsizing_recommendation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2
+instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_savings_plans_coverage/3">get_savings_plans_coverage(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the Savings Plans covered for your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_savings_plans_purchase_recommendation/3">get_savings_plans_purchase_recommendation(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves your request parameters, Savings Plan Recommendations Summary and Details.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_savings_plans_utilization/3">get_savings_plans_utilization(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly
+granularity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_savings_plans_utilization_details/3">get_savings_plans_utilization_details(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves attribute data along with aggregate utilization and savings data for a given time
+period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_tags/3">get_tags(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Queries for available tag keys and tag values for a specified period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_usage_forecast/3">get_usage_forecast(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast
+time period that you select, based on your past usage.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_cost_category_definitions/3">list_cost_category_definitions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the name, ARN, <code class="inline">NumberOfRules</code> and effective dates of all Cost Categories defined in the
+account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#provide_anomaly_feedback/3">provide_anomaly_feedback(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Modifies the feedback property of a given cost anomaly.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_anomaly_monitor/3">update_anomaly_monitor(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing cost anomaly monitor.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_anomaly_subscription/3">update_anomaly_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing cost anomaly monitor subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_cost_category_definition/3">update_cost_category_definition(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates an existing Cost Category.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_anomaly_monitor/3">
+
+    <span id="create_anomaly_monitor/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_anomaly_monitor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_anomaly_monitor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new cost anomaly detection monitor with the requested type and monitor specification.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_anomaly_subscription/3">
+
+    <span id="create_anomaly_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_anomaly_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_anomaly_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a subscription to a cost anomaly detection monitor.</p>
+<p>You can use each subscription to define subscribers with email or SNS notifications. Email
+subscribers can set a dollar threshold and a time frequency for receiving notifications.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_cost_category_definition/3">
+
+    <span id="create_cost_category_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_cost_category_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_cost_category_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L41" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new Cost Category with the requested name and rules.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_anomaly_monitor/3">
+
+    <span id="delete_anomaly_monitor/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_anomaly_monitor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_anomaly_monitor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L48" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a cost anomaly monitor.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_anomaly_subscription/3">
+
+    <span id="delete_anomaly_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_anomaly_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_anomaly_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a cost anomaly subscription.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_cost_category_definition/3">
+
+    <span id="delete_cost_category_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_cost_category_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_cost_category_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L64" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a Cost Category.</p>
+<p>Expenses from this month going forward will no longer be categorized with this Cost Category.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_cost_category_definition/3">
+
+    <span id="describe_cost_category_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_cost_category_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_cost_category_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L76" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the name, ARN, rules, definition, and effective dates of a Cost Category that&#39;s defined in
+the account.</p>
+<p>You have the option to use <code class="inline">EffectiveOn</code> to return a Cost Category that is active on a specific
+date. If there is no <code class="inline">EffectiveOn</code> specified, you’ll see a Cost Category that is effective on the
+current date. If Cost Category is still effective, <code class="inline">EffectiveEnd</code> is omitted in the response.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_anomalies/3">
+
+    <span id="get_anomalies/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_anomalies/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_anomalies(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves all of the cost anomalies detected on your account, during the time period specified by
+the <code class="inline">DateInterval</code> object.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_anomaly_monitors/3">
+
+    <span id="get_anomaly_monitors/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_anomaly_monitors/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_anomaly_monitors(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the cost anomaly monitor definitions for your account.</p>
+<p>You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).</p>
+
+  </section>
+</section>
+<section class="detail" id="get_anomaly_subscriptions/3">
+
+    <span id="get_anomaly_subscriptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_anomaly_subscriptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_anomaly_subscriptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the cost anomaly subscription objects for your account.</p>
+<p>You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs).</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cost_and_usage/3">
+
+    <span id="get_cost_and_usage/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_cost_and_usage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cost_and_usage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L117" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves cost and usage metrics for your account.</p>
+<p>You can specify which cost and usage-related metric, such as <code class="inline">BlendedCosts</code> or <code class="inline">UsageQuantity</code>,
+that you want the request to return. You can also filter and group your data by various
+dimensions, such as <code class="inline">SERVICE</code> or <code class="inline">AZ</code>, in a specific time range. For a complete list of valid
+dimensions, see the
+<a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+operation. Master account in an organization in AWS Organizations have access to all member
+accounts.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cost_and_usage_with_resources/3">
+
+    <span id="get_cost_and_usage_with_resources/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_cost_and_usage_with_resources/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cost_and_usage_with_resources(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L137" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves cost and usage metrics with resources for your account.</p>
+<p>You can specify which cost and usage-related metric, such as <code class="inline">BlendedCosts</code> or <code class="inline">UsageQuantity</code>,
+that you want the request to return. You can also filter and group your data by various
+dimensions, such as <code class="inline">SERVICE</code> or <code class="inline">AZ</code>, in a specific time range. For a complete list of valid
+dimensions, see the
+<a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Master account in an organization in AWS Organizations have access to all member
+accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service
+only.</p>
+<p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page.
+For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost
+Explorer</a> in the <em>AWS
+Billing and Cost Management User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_cost_forecast/3">
+
+    <span id="get_cost_forecast/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_cost_forecast/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_cost_forecast(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L145" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the
+forecast time period that you select, based on your past costs.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_dimension_values/3">
+
+    <span id="get_dimension_values/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_dimension_values/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_dimension_values(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L154" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves all available filter values for a specified filter over a period of time.</p>
+<p>You can search the dimension values for an arbitrary string.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_reservation_coverage/3">
+
+    <span id="get_reservation_coverage/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_reservation_coverage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_reservation_coverage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the reservation coverage for your account.</p>
+<p>This enables you to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
+Relational Database Service, or Amazon Redshift usage is covered by a reservation. An
+organization&#39;s master account can see the coverage of the associated member accounts. This
+supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter
+data about reservation usage by the following dimensions:</p>
+<ul>
+<li><p>AZ</p>
+</li>
+<li><p>CACHE_ENGINE</p>
+</li>
+<li><p>DATABASE_ENGINE</p>
+</li>
+<li><p>DEPLOYMENT_OPTION</p>
+</li>
+<li><p>INSTANCE_TYPE</p>
+</li>
+<li><p>LINKED_ACCOUNT</p>
+</li>
+<li><p>OPERATING_SYSTEM</p>
+</li>
+<li><p>PLATFORM</p>
+</li>
+<li><p>REGION</p>
+</li>
+<li><p>SERVICE</p>
+</li>
+<li><p>TAG</p>
+</li>
+<li><p>TENANCY</p>
+</li>
+</ul>
+<p>To determine valid values for a dimension, use the <code class="inline">GetDimensionValues</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_reservation_purchase_recommendation/3">
+
+    <span id="get_reservation_purchase_recommendation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_reservation_purchase_recommendation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_reservation_purchase_recommendation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets recommendations for which reservations to purchase.</p>
+<p>These recommendations could help you reduce your costs. Reservations provide a discounted hourly
+rate (up to 75%) compared to On-Demand pricing.</p>
+<p>AWS generates your recommendations by identifying your On-Demand usage during a specific time
+period and collecting your usage into categories that are eligible for a reservation. After AWS
+has these categories, it simulates every combination of reservations in each category of usage to
+identify the best number of each type of RI to purchase to maximize your estimated savings.</p>
+<p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family
+usage in the US West (Oregon) Region and recommends that you buy size-flexible regional
+reservations to apply to the c4 family usage. AWS recommends the smallest size instance in an
+instance family. This makes it easier to purchase a size-flexible RI. AWS also shows the equal
+number of normalized units so that you can purchase any instance size that you want. For this
+example, your RI recommendation would be for <code class="inline">c4.large</code> because that is the smallest size instance
+in the c4 instance family.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_reservation_utilization/3">
+
+    <span id="get_reservation_utilization/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_reservation_utilization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_reservation_utilization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the reservation utilization for your account.</p>
+<p>Master account in an organization have access to member accounts. You can filter data by
+dimensions in a time period. You can use <code class="inline">GetDimensionValues</code> to determine the possible dimension
+values. Currently, you can group only by <code class="inline">SUBSCRIPTION_ID</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_rightsizing_recommendation/3">
+
+    <span id="get_rightsizing_recommendation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_rightsizing_recommendation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_rightsizing_recommendation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L240" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2
+instances.</p>
+<p>Recommendations are generated to either downsize or terminate instances, along with providing
+savings detail and metrics. For details on calculation and function, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing Your Cost with Rightsizing
+Recommendations</a>
+in the <em>AWS Billing and Cost Management User Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_savings_plans_coverage/3">
+
+    <span id="get_savings_plans_coverage/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_savings_plans_coverage/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_savings_plans_coverage(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the Savings Plans covered for your account.</p>
+<p>This enables you to see how much of your cost is covered by a Savings Plan. An organization’s
+master account can see the coverage of the associated member accounts. This supports dimensions,
+Cost Categories, and nested expressions. For any time period, you can filter data for Savings
+Plans usage with the following dimensions:</p>
+<ul>
+<li><p><code class="inline">LINKED_ACCOUNT</code></p>
+</li>
+<li><p><code class="inline">REGION</code></p>
+</li>
+<li><p><code class="inline">SERVICE</code></p>
+</li>
+<li><p><code class="inline">INSTANCE_FAMILY</code></p>
+</li>
+</ul>
+<p>To determine valid values for a dimension, use the <code class="inline">GetDimensionValues</code> operation.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_savings_plans_purchase_recommendation/3">
+
+    <span id="get_savings_plans_purchase_recommendation/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_savings_plans_purchase_recommendation/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_savings_plans_purchase_recommendation(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L269" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves your request parameters, Savings Plan Recommendations Summary and Details.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_savings_plans_utilization/3">
+
+    <span id="get_savings_plans_utilization/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_savings_plans_utilization/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_savings_plans_utilization(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L282" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly
+granularity.</p>
+<p>Master account in an organization have access to member accounts. You can use <code class="inline">GetDimensionValues</code>
+in <code class="inline">SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+<p>You cannot group by any dimension values for <code class="inline">GetSavingsPlansUtilization</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_savings_plans_utilization_details/3">
+
+    <span id="get_savings_plans_utilization_details/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_savings_plans_utilization_details/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_savings_plans_utilization_details(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves attribute data along with aggregate utilization and savings data for a given time
+period.</p>
+<p>This doesn&#39;t support granular or grouped data (daily/monthly) in response. You can&#39;t retrieve data
+by dates in a single response similar to <code class="inline">GetSavingsPlanUtilization</code>, but you have the option to
+make multiple calls to <code class="inline">GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can
+use <code class="inline">GetDimensionValues</code> in <code class="inline">SAVINGS_PLANS</code> to determine the possible dimension values.</p>
+<p><code class="inline">GetSavingsPlanUtilizationDetails</code> internally groups data by <code class="inline">SavingsPlansArn</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_tags/3">
+
+    <span id="get_tags/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_tags/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_tags(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L306" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Queries for available tag keys and tag values for a specified period.</p>
+<p>You can search the tag values for an arbitrary string.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_usage_forecast/3">
+
+    <span id="get_usage_forecast/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_usage_forecast/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_usage_forecast(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L314" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a forecast for how much Amazon Web Services predicts that you will use over the forecast
+time period that you select, based on your past usage.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_cost_category_definitions/3">
+
+    <span id="list_cost_category_definitions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_cost_category_definitions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_cost_category_definitions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L328" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the name, ARN, <code class="inline">NumberOfRules</code> and effective dates of all Cost Categories defined in the
+account.</p>
+<p>You have the option to use <code class="inline">EffectiveOn</code> to return a list of Cost Categories that were active on a
+specific date. If there is no <code class="inline">EffectiveOn</code> specified, you’ll see Cost Categories that are
+effective on the current date. If Cost Category is still effective, <code class="inline">EffectiveEnd</code> is omitted in
+the response. <code class="inline">ListCostCategoryDefinitions</code> supports pagination. The request can have a
+<code class="inline">MaxResults</code> range up to 100.</p>
+
+  </section>
+</section>
+<section class="detail" id="provide_anomaly_feedback/3">
+
+    <span id="provide_anomaly_feedback/2"></span>
+
+  <div class="detail-header">
+    <a href="#provide_anomaly_feedback/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">provide_anomaly_feedback(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L335" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Modifies the feedback property of a given cost anomaly.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_anomaly_monitor/3">
+
+    <span id="update_anomaly_monitor/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_anomaly_monitor/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_anomaly_monitor(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing cost anomaly monitor.</p>
+<p>The changes made are applied going forward, and does not change anomalies detected in the past.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_anomaly_subscription/3">
+
+    <span id="update_anomaly_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_anomaly_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_anomaly_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L351" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing cost anomaly monitor subscription.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_cost_category_definition/3">
+
+    <span id="update_cost_category_definition/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_cost_category_definition/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_cost_category_definition(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cost_explorer.ex#L361" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates an existing Cost Category.</p>
+<p>Changes made to the Cost Category rules will be used to categorize the current month’s expenses
+and future expenses. This won’t change categorization for the previous months.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

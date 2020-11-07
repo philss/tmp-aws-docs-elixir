@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.WorkDocs — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.WorkDocs
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>The WorkDocs API is designed for the following use cases:</p>
+<ul>
+<li>File Migration: File migration applications are supported for users who want to
+migrate their files from an on-premises or off-premises file system or service.
+</li>
+</ul>
+<p>Users can insert files into a user directory structure, as well as allow for basic metadata
+changes, such as modifications to the permissions of files.</p>
+<ul>
+<li><p>Security: Support security applications are supported for users who have additional
+security needs, such as antivirus or data loss prevention. The API actions, along with AWS
+CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the
+application can take the necessary actions and replace the target file. If the target file
+violates the policy, the application can also choose to email the user.</p>
+</li>
+<li><p>eDiscovery/Analytics: General administrative applications are supported, such as
+eDiscovery and analytics. These applications can choose to mimic or record the actions in an
+Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery, backup, or
+analytical applications.</p>
+</li>
+</ul>
+<p>All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only
+require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to
+help facilitate access, trust, and permission policies. By creating a role and allowing an IAM
+user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into
+the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited
+to, the ability to modify file permissions and upload any file to any user. This allows developers
+to perform the three use cases above, as well as give users the ability to grant access on a
+selective basis using the IAM model.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#abort_document_version_upload/5">abort_document_version_upload(client, document_id, version_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Aborts the upload of the specified document version that was previously initiated by
+<code class="inline">InitiateDocumentVersionUpload</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#activate_user/4">activate_user(client, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates the specified user.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_resource_permissions/4">add_resource_permissions(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a set of permissions for the specified folder or document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_comment/5">create_comment(client, document_id, version_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a new comment to the specified document version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_custom_metadata/4">create_custom_metadata(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_folder/3">create_folder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a folder with the specified name and parent folder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_labels/4">create_labels(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds the specified list of labels to the given resource (a document or folder)</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_notification_subscription/4">create_notification_subscription(client, organization_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Configure Amazon WorkDocs to use Amazon SNS notifications.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_user/3">create_user(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a user in a Simple AD or Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deactivate_user/4">deactivate_user(client, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deactivates the specified user, which revokes the user&#39;s access to Amazon WorkDocs.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_comment/6">delete_comment(client, comment_id, document_id, version_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified comment from the document version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_custom_metadata/4">delete_custom_metadata(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes custom metadata from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_document/4">delete_document(client, document_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes the specified document and its associated metadata.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_folder/4">delete_folder(client, folder_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Permanently deletes the specified folder and its contents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_folder_contents/4">delete_folder_contents(client, folder_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the contents of the specified folder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_labels/4">delete_labels(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified list of labels from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_notification_subscription/5">delete_notification_subscription(client, organization_id, subscription_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified subscription from the specified organization.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_user/4">delete_user(client, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_activities/12">describe_activities(client, activity_types \\ nil, end_time \\ nil, include_indirect_activities \\ nil, limit \\ nil, marker \\ nil, organization_id \\ nil, resource_id \\ nil, start_time \\ nil, user_id \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the user activities in a specified time period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_comments/7">describe_comments(client, document_id, version_id, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all the comments for the specified document version.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_document_versions/8">describe_document_versions(client, document_id, fields \\ nil, include \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the document versions for the specified document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_folder_contents/10">describe_folder_contents(client, folder_id, include \\ nil, limit \\ nil, marker \\ nil, order \\ nil, sort \\ nil, type \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the contents of the specified folder, including its documents and subfolders.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_groups/7">describe_groups(client, limit \\ nil, marker \\ nil, organization_id \\ nil, search_query, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the groups specified by the query.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_notification_subscriptions/5">describe_notification_subscriptions(client, organization_id, limit \\ nil, marker \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the specified notification subscriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_resource_permissions/7">describe_resource_permissions(client, resource_id, limit \\ nil, marker \\ nil, principal_id \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the permissions of a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_root_folders/5">describe_root_folders(client, limit \\ nil, marker \\ nil, authentication_token, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the current user&#39;s special folders; the <code class="inline">RootFolder</code> and the <code class="inline">RecycleBin</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_users/12">describe_users(client, fields \\ nil, include \\ nil, limit \\ nil, marker \\ nil, order \\ nil, organization_id \\ nil, query \\ nil, sort \\ nil, user_ids \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the specified users.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_current_user/3">get_current_user(client, authentication_token, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves details of the current user for whom the authentication token was generated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_document/5">get_document(client, document_id, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves details of a document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_document_path/7">get_document_path(client, document_id, fields \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_document_version/7">get_document_version(client, document_id, version_id, fields \\ nil, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves version metadata for the specified document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_folder/5">get_folder(client, folder_id, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the metadata of the specified folder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_folder_path/7">get_folder_path(client, folder_id, fields \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_resources/7">get_resources(client, collection_type \\ nil, limit \\ nil, marker \\ nil, user_id \\ nil, authentication_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves a collection of resources, including folders and documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#initiate_document_version_upload/3">initiate_document_version_upload(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a new document object and version object.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_all_resource_permissions/4">remove_all_resource_permissions(client, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes all the permissions from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_resource_permission/5">remove_resource_permission(client, principal_id, resource_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the permission for the specified principal from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_document/4">update_document(client, document_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified attributes of a document.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_document_version/5">update_document_version(client, document_id, version_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Changes the status of the document version to ACTIVE.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_folder/4">update_folder(client, folder_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified attributes of the specified folder.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_user/4">update_user(client, user_id, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified attributes of the specified user, and grants or revokes administrative
+privileges to the Amazon WorkDocs site.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="abort_document_version_upload/5">
+
+    <span id="abort_document_version_upload/4"></span>
+
+  <div class="detail-header">
+    <a href="#abort_document_version_upload/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">abort_document_version_upload(client, document_id, version_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L42" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Aborts the upload of the specified document version that was previously initiated by
+<code class="inline">InitiateDocumentVersionUpload</code>.</p>
+<p>The client should make this call only when it no longer intends to upload the document version, or
+fails to do so.</p>
+
+  </section>
+</section>
+<section class="detail" id="activate_user/4">
+
+    <span id="activate_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#activate_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">activate_user(client, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L58" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates the specified user.</p>
+<p>Only active users can access Amazon WorkDocs.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_resource_permissions/4">
+
+    <span id="add_resource_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_resource_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_resource_permissions(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L74" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a set of permissions for the specified folder or document.</p>
+<p>The resource permissions are overwritten if the principals already have different permissions.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_comment/5">
+
+    <span id="create_comment/4"></span>
+
+  <div class="detail-header">
+    <a href="#create_comment/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_comment(client, document_id, version_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L88" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a new comment to the specified document version.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_custom_metadata/4">
+
+    <span id="create_custom_metadata/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_custom_metadata/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_custom_metadata(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L102" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>
+
+  </section>
+</section>
+<section class="detail" id="create_folder/3">
+
+    <span id="create_folder/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_folder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_folder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L120" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a folder with the specified name and parent folder.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_labels/4">
+
+    <span id="create_labels/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_labels/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_labels(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds the specified list of labels to the given resource (a document or folder)</p>
+
+  </section>
+</section>
+<section class="detail" id="create_notification_subscription/4">
+
+    <span id="create_notification_subscription/3"></span>
+
+  <div class="detail-header">
+    <a href="#create_notification_subscription/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_notification_subscription(client, organization_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L153" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Configure Amazon WorkDocs to use Amazon SNS notifications.</p>
+<p>The endpoint receives a confirmation message, and must confirm the subscription.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe to Notifications</a>
+in the <em>Amazon WorkDocs Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_user/3">
+
+    <span id="create_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_user(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a user in a Simple AD or Microsoft AD directory.</p>
+<p>The status of a newly created user is &quot;ACTIVE&quot;. New users can access Amazon WorkDocs.</p>
+
+  </section>
+</section>
+<section class="detail" id="deactivate_user/4">
+
+    <span id="deactivate_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#deactivate_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deactivate_user(client, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L179" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deactivates the specified user, which revokes the user&#39;s access to Amazon WorkDocs.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_comment/6">
+
+    <span id="delete_comment/5"></span>
+
+  <div class="detail-header">
+    <a href="#delete_comment/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_comment(client, comment_id, document_id, version_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified comment from the document version.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_custom_metadata/4">
+
+    <span id="delete_custom_metadata/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_custom_metadata/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_custom_metadata(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L207" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes custom metadata from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_document/4">
+
+    <span id="delete_document/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_document/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_document(client, document_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes the specified document and its associated metadata.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_folder/4">
+
+    <span id="delete_folder/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_folder/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_folder(client, folder_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L241" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Permanently deletes the specified folder and its contents.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_folder_contents/4">
+
+    <span id="delete_folder_contents/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_folder_contents/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_folder_contents(client, folder_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the contents of the specified folder.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_labels/4">
+
+    <span id="delete_labels/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_labels/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_labels(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L269" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified list of labels from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_notification_subscription/5">
+
+    <span id="delete_notification_subscription/4"></span>
+
+  <div class="detail-header">
+    <a href="#delete_notification_subscription/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_notification_subscription(client, organization_id, subscription_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L288" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified subscription from the specified organization.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_user/4">
+
+    <span id="delete_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_user(client, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L298" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified user from a Simple AD or Microsoft AD directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_activities/12">
+
+    <span id="describe_activities/1"></span>
+
+    <span id="describe_activities/2"></span>
+
+    <span id="describe_activities/3"></span>
+
+    <span id="describe_activities/4"></span>
+
+    <span id="describe_activities/5"></span>
+
+    <span id="describe_activities/6"></span>
+
+    <span id="describe_activities/7"></span>
+
+    <span id="describe_activities/8"></span>
+
+    <span id="describe_activities/9"></span>
+
+    <span id="describe_activities/10"></span>
+
+    <span id="describe_activities/11"></span>
+
+  <div class="detail-header">
+    <a href="#describe_activities/12" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_activities(client, activity_types \\ nil, end_time \\ nil, include_indirect_activities \\ nil, limit \\ nil, marker \\ nil, organization_id \\ nil, resource_id \\ nil, start_time \\ nil, user_id \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L312" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the user activities in a specified time period.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_comments/7">
+
+    <span id="describe_comments/3"></span>
+
+    <span id="describe_comments/4"></span>
+
+    <span id="describe_comments/5"></span>
+
+    <span id="describe_comments/6"></span>
+
+  <div class="detail-header">
+    <a href="#describe_comments/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_comments(client, document_id, version_id, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L372" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all the comments for the specified document version.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_document_versions/8">
+
+    <span id="describe_document_versions/2"></span>
+
+    <span id="describe_document_versions/3"></span>
+
+    <span id="describe_document_versions/4"></span>
+
+    <span id="describe_document_versions/5"></span>
+
+    <span id="describe_document_versions/6"></span>
+
+    <span id="describe_document_versions/7"></span>
+
+  <div class="detail-header">
+    <a href="#describe_document_versions/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_document_versions(client, document_id, fields \\ nil, include \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L399" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the document versions for the specified document.</p>
+<p>By default, only active versions are returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_folder_contents/10">
+
+    <span id="describe_folder_contents/2"></span>
+
+    <span id="describe_folder_contents/3"></span>
+
+    <span id="describe_folder_contents/4"></span>
+
+    <span id="describe_folder_contents/5"></span>
+
+    <span id="describe_folder_contents/6"></span>
+
+    <span id="describe_folder_contents/7"></span>
+
+    <span id="describe_folder_contents/8"></span>
+
+    <span id="describe_folder_contents/9"></span>
+
+  <div class="detail-header">
+    <a href="#describe_folder_contents/10" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_folder_contents(client, folder_id, include \\ nil, limit \\ nil, marker \\ nil, order \\ nil, sort \\ nil, type \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L438" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the contents of the specified folder, including its documents and subfolders.</p>
+<p>By default, Amazon WorkDocs returns the first 100 active document and folder metadata items. If
+there are more results, the response includes a marker that you can use to request the next set of
+results. You can also request initialized documents.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_groups/7">
+
+    <span id="describe_groups/2"></span>
+
+    <span id="describe_groups/3"></span>
+
+    <span id="describe_groups/4"></span>
+
+    <span id="describe_groups/5"></span>
+
+    <span id="describe_groups/6"></span>
+
+  <div class="detail-header">
+    <a href="#describe_groups/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_groups(client, limit \\ nil, marker \\ nil, organization_id \\ nil, search_query, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L485" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the groups specified by the query.</p>
+<p>Groups are defined by the underlying Active Directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_notification_subscriptions/5">
+
+    <span id="describe_notification_subscriptions/2"></span>
+
+    <span id="describe_notification_subscriptions/3"></span>
+
+    <span id="describe_notification_subscriptions/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_notification_subscriptions/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_notification_subscriptions(client, organization_id, limit \\ nil, marker \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L520" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the specified notification subscriptions.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_resource_permissions/7">
+
+    <span id="describe_resource_permissions/2"></span>
+
+    <span id="describe_resource_permissions/3"></span>
+
+    <span id="describe_resource_permissions/4"></span>
+
+    <span id="describe_resource_permissions/5"></span>
+
+    <span id="describe_resource_permissions/6"></span>
+
+  <div class="detail-header">
+    <a href="#describe_resource_permissions/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_resource_permissions(client, resource_id, limit \\ nil, marker \\ nil, principal_id \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L540" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the permissions of a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_root_folders/5">
+
+    <span id="describe_root_folders/2"></span>
+
+    <span id="describe_root_folders/3"></span>
+
+    <span id="describe_root_folders/4"></span>
+
+  <div class="detail-header">
+    <a href="#describe_root_folders/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_root_folders(client, limit \\ nil, marker \\ nil, authentication_token, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L577" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the current user&#39;s special folders; the <code class="inline">RootFolder</code> and the <code class="inline">RecycleBin</code>.</p>
+<p><code class="inline">RootFolder</code> is the root of user&#39;s files and folders and <code class="inline">RecycleBin</code> is the root of recycled
+items. This is not a valid action for SigV4 (administrative API) clients.</p>
+<p>This action requires an authentication token. To get an authentication token, register an
+application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a>
+in the <em>Amazon WorkDocs Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_users/12">
+
+    <span id="describe_users/1"></span>
+
+    <span id="describe_users/2"></span>
+
+    <span id="describe_users/3"></span>
+
+    <span id="describe_users/4"></span>
+
+    <span id="describe_users/5"></span>
+
+    <span id="describe_users/6"></span>
+
+    <span id="describe_users/7"></span>
+
+    <span id="describe_users/8"></span>
+
+    <span id="describe_users/9"></span>
+
+    <span id="describe_users/10"></span>
+
+    <span id="describe_users/11"></span>
+
+  <div class="detail-header">
+    <a href="#describe_users/12" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_users(client, fields \\ nil, include \\ nil, limit \\ nil, marker \\ nil, order \\ nil, organization_id \\ nil, query \\ nil, sort \\ nil, user_ids \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L607" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the specified users.</p>
+<p>You can describe all users or filter the results (for example, by status or organization).</p>
+<p>By default, Amazon WorkDocs returns the first 24 active or pending users. If there are more
+results, the response includes a marker that you can use to request the next set of results.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_current_user/3">
+
+    <span id="get_current_user/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_current_user/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_current_user(client, authentication_token, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L673" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves details of the current user for whom the authentication token was generated.</p>
+<p>This is not a valid action for SigV4 (administrative API) clients.</p>
+<p>This action requires an authentication token. To get an authentication token, register an
+application with Amazon WorkDocs. For more information, see <a href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication and Access Control for User Applications</a>
+in the <em>Amazon WorkDocs Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_document/5">
+
+    <span id="get_document/2"></span>
+
+    <span id="get_document/3"></span>
+
+    <span id="get_document/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_document/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_document(client, document_id, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L688" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves details of a document.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_document_path/7">
+
+    <span id="get_document_path/2"></span>
+
+    <span id="get_document_path/3"></span>
+
+    <span id="get_document_path/4"></span>
+
+    <span id="get_document_path/5"></span>
+
+    <span id="get_document_path/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_document_path/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_document_path(client, document_id, fields \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L712" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p>
+<p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested document
+and only includes the IDs of the parent folders in the path. You can limit the maximum number of
+levels. You can also request the names of the parent folders.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_document_version/7">
+
+    <span id="get_document_version/3"></span>
+
+    <span id="get_document_version/4"></span>
+
+    <span id="get_document_version/5"></span>
+
+    <span id="get_document_version/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_document_version/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_document_version(client, document_id, version_id, fields \\ nil, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L742" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves version metadata for the specified document.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_folder/5">
+
+    <span id="get_folder/2"></span>
+
+    <span id="get_folder/3"></span>
+
+    <span id="get_folder/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_folder/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_folder(client, folder_id, include_custom_metadata \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L767" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the metadata of the specified folder.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_folder_path/7">
+
+    <span id="get_folder_path/2"></span>
+
+    <span id="get_folder_path/3"></span>
+
+    <span id="get_folder_path/4"></span>
+
+    <span id="get_folder_path/5"></span>
+
+    <span id="get_folder_path/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_folder_path/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_folder_path(client, folder_id, fields \\ nil, limit \\ nil, marker \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L791" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p>
+<p>By default, Amazon WorkDocs returns a maximum of 100 levels upwards from the requested folder and
+only includes the IDs of the parent folders in the path. You can limit the maximum number of
+levels. You can also request the parent folder names.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_resources/7">
+
+    <span id="get_resources/1"></span>
+
+    <span id="get_resources/2"></span>
+
+    <span id="get_resources/3"></span>
+
+    <span id="get_resources/4"></span>
+
+    <span id="get_resources/5"></span>
+
+    <span id="get_resources/6"></span>
+
+  <div class="detail-header">
+    <a href="#get_resources/7" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_resources(client, collection_type \\ nil, limit \\ nil, marker \\ nil, user_id \\ nil, authentication_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L823" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves a collection of resources, including folders and documents.</p>
+<p>The only <code class="inline">CollectionType</code> supported is <code class="inline">SHARED_WITH_ME</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="initiate_document_version_upload/3">
+
+    <span id="initiate_document_version_upload/2"></span>
+
+  <div class="detail-header">
+    <a href="#initiate_document_version_upload/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">initiate_document_version_upload(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L865" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a new document object and version object.</p>
+<p>The client specifies the parent folder ID and name of the document to upload. The ID is optionally
+specified when creating a new version of an existing document. This is the first step to upload a
+document. Next, upload the document to the URL returned from the call, and then call
+<code class="inline">UpdateDocumentVersion</code>.</p>
+<p>To cancel the document upload, call <code class="inline">AbortDocumentVersionUpload</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_all_resource_permissions/4">
+
+    <span id="remove_all_resource_permissions/3"></span>
+
+  <div class="detail-header">
+    <a href="#remove_all_resource_permissions/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_all_resource_permissions(client, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L879" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes all the permissions from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_resource_permission/5">
+
+    <span id="remove_resource_permission/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_resource_permission/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_resource_permission(client, principal_id, resource_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L893" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the permission for the specified principal from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_document/4">
+
+    <span id="update_document/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_document/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_document(client, document_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L913" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified attributes of a document.</p>
+<p>The user must have access to both the document and its parent folder, if applicable.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_document_version/5">
+
+    <span id="update_document_version/4"></span>
+
+  <div class="detail-header">
+    <a href="#update_document_version/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_document_version(client, document_id, version_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L931" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Changes the status of the document version to ACTIVE.</p>
+<p>Amazon WorkDocs also sets its document container to ACTIVE. This is the last step in a document
+upload, after the client uploads the document to an S3-presigned URL returned by
+<code class="inline">InitiateDocumentVersionUpload</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_folder/4">
+
+    <span id="update_folder/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_folder/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_folder(client, folder_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L947" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified attributes of the specified folder.</p>
+<p>The user must have access to both the folder and its parent folder, if applicable.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_user/4">
+
+    <span id="update_user/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_user/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_user(client, user_id, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/work_docs.ex#L962" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified attributes of the specified user, and grants or revokes administrative
+privileges to the Amazon WorkDocs site.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

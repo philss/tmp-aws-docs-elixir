@@ -1,0 +1,1458 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.IoTThingsGraph — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.IoTThingsGraph
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS IoT Things Graph</p>
+<p>AWS IoT Things Graph provides an integrated set of tools that enable developers to connect devices
+and services that use different standards, such as units of measure and communication protocols.</p>
+<p>AWS IoT Things Graph makes it possible to build IoT applications with little to no code by
+connecting devices and services and defining how they interact at an abstract level.</p>
+<p>For more information about how AWS IoT Things Graph works, see the <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-whatis.html">User Guide</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#associate_entity_to_thing/3">associate_entity_to_thing(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a device with a concrete thing that is in the user&#39;s registry.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_flow_template/3">create_flow_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a workflow template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_system_instance/3">create_system_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a system instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_system_template/3">create_system_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_flow_template/3">delete_flow_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_namespace/3">delete_namespace(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified namespace.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_system_instance/3">delete_system_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a system instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_system_template/3">delete_system_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deploy_system_instance/3">deploy_system_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p><strong>Greengrass and Cloud Deployments</strong></p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deprecate_flow_template/3">deprecate_flow_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecates the specified workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deprecate_system_template/3">deprecate_system_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deprecates the specified system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_namespace/3">describe_namespace(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the latest version of the user&#39;s namespace and the public version that it is tracking.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#dissociate_entity_from_thing/3">dissociate_entity_from_thing(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Dissociates a device entity from a concrete thing.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_entities/3">get_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets definitions of the specified entities.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_flow_template/3">get_flow_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the latest version of the <code class="inline">DefinitionDocument</code> and <code class="inline">FlowTemplateSummary</code> for the specified
+workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_flow_template_revisions/3">get_flow_template_revisions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets revisions of the specified workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_namespace_deletion_status/3">get_namespace_deletion_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the status of a namespace deletion task.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_system_instance/3">get_system_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a system instance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_system_template/3">get_system_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_system_template_revisions/3">get_system_template_revisions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets revisions made to the specified system template.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_upload_status/3">get_upload_status(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the status of the specified upload.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_flow_execution_messages/3">list_flow_execution_messages(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of objects that contain information about events in a flow execution.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all tags on an AWS IoT Things Graph resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_entities/3">search_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for entities of the specified type.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_flow_executions/3">search_flow_executions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for AWS IoT Things Graph workflow execution instances.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_flow_templates/3">search_flow_templates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for summary information about workflows.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_system_instances/3">search_system_instances(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for system instances in the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_system_templates/3">search_system_templates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for summary information about systems in the user&#39;s account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#search_things/3">search_things(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Searches for things associated with the specified entity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a tag for the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#undeploy_system_instance/3">undeploy_system_instance(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a system instance from its target (Cloud or Greengrass).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a tag from the specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_flow_template/3">update_flow_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified workflow.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_system_template/3">update_system_template(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the specified system.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#upload_entity_definitions/3">upload_entity_definitions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Asynchronously uploads one or more entity definitions to the user&#39;s namespace.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="associate_entity_to_thing/3">
+
+    <span id="associate_entity_to_thing/2"></span>
+
+  <div class="detail-header">
+    <a href="#associate_entity_to_thing/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">associate_entity_to_thing(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L23" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a device with a concrete thing that is in the user&#39;s registry.</p>
+<p>A thing can be associated with only one device at a time. If you associate a thing with a new
+device id, its previous association will be removed.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_flow_template/3">
+
+    <span id="create_flow_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_flow_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_flow_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L35" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a workflow template.</p>
+<p>Workflows can be created only in the user&#39;s namespace. (The public namespace contains only
+entities.) The workflow can contain only entities in the specified namespace. The workflow is
+validated against the entities in the latest version of the user&#39;s namespace unless another
+namespace version is specified in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_system_instance/3">
+
+    <span id="create_system_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_system_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_system_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a system instance.</p>
+<p>This action validates the system instance, prepares the deployment-related resources. For
+Greengrass deployments, it updates the Greengrass group that is specified by the
+<code class="inline">greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified by the
+<code class="inline">s3BucketName</code> parameter. You need to call <code class="inline">DeploySystemInstance</code> after running this action.</p>
+<p>For Greengrass deployments, since this action modifies and adds resources to a Greengrass group
+and an S3 bucket on the caller&#39;s behalf, the calling identity must have write permissions to both
+the specified Greengrass group and S3 bucket. Otherwise, the call will fail with an authorization
+error.</p>
+<p>For cloud deployments, this action requires a <code class="inline">flowActionsRoleArn</code> value. This is an IAM role that
+has permissions to access AWS services, such as AWS Lambda and AWS IoT, that the flow uses when it
+executes.</p>
+<p>If the definition document doesn&#39;t specify a version of the user&#39;s namespace, the latest version
+will be used by default.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_system_template/3">
+
+    <span id="create_system_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_system_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_system_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L69" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a system.</p>
+<p>The system is validated against the entities in the latest version of the user&#39;s namespace unless
+another namespace version is specified in the request.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_flow_template/3">
+
+    <span id="delete_flow_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_flow_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_flow_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L80" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a workflow.</p>
+<p>Any new system or deployment that contains this workflow will fail to update or deploy. Existing
+deployments that contain the workflow will continue to run (since they use a snapshot of the
+workflow taken at the time of deployment).</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_namespace/3">
+
+    <span id="delete_namespace/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_namespace/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_namespace(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified namespace.</p>
+<p>This action deletes all of the entities in the namespace. Delete the systems and flows that use
+entities in the namespace before performing this action.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_system_instance/3">
+
+    <span id="delete_system_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_system_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_system_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L101" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a system instance.</p>
+<p>Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>
+<p>Users can create a new system instance that has the same ID as a deleted system instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_system_template/3">
+
+    <span id="delete_system_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_system_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_system_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L112" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a system.</p>
+<p>New deployments can&#39;t contain the system after its deletion. Existing deployments that contain the
+system will continue to work because they use a snapshot of the system that is taken when it is
+deployed.</p>
+
+  </section>
+</section>
+<section class="detail" id="deploy_system_instance/3">
+
+    <span id="deploy_system_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#deploy_system_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deploy_system_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L133" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p><strong>Greengrass and Cloud Deployments</strong></p>
+<p>Deploys the system instance to the target specified in <code class="inline">CreateSystemInstance</code>.</p>
+<p><strong>Greengrass Deployments</strong></p>
+<p>If the system or any workflows and entities have been updated before this action is called, then
+the deployment will create a new Amazon Simple Storage Service resource file and then deploy it.</p>
+<p>Since this action creates a Greengrass deployment on the caller&#39;s behalf, the calling identity
+must have write permissions to the specified Greengrass group. Otherwise, the call will fail with
+an authorization error.</p>
+<p>For information about the artifacts that get added to your Greengrass core device when you use
+this API, see <a href="https://docs.aws.amazon.com/thingsgraph/latest/ug/iot-tg-greengrass.html">AWS IoT Things Graph and AWS IoT Greengrass</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="deprecate_flow_template/3">
+
+    <span id="deprecate_flow_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#deprecate_flow_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deprecate_flow_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L143" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecates the specified workflow.</p>
+<p>This action marks the workflow for deletion. Deprecated flows can&#39;t be deployed, but existing
+deployments will continue to run.</p>
+
+  </section>
+</section>
+<section class="detail" id="deprecate_system_template/3">
+
+    <span id="deprecate_system_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#deprecate_system_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deprecate_system_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deprecates the specified system.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_namespace/3">
+
+    <span id="describe_namespace/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_namespace/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_namespace(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the latest version of the user&#39;s namespace and the public version that it is tracking.</p>
+
+  </section>
+</section>
+<section class="detail" id="dissociate_entity_from_thing/3">
+
+    <span id="dissociate_entity_from_thing/2"></span>
+
+  <div class="detail-header">
+    <a href="#dissociate_entity_from_thing/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">dissociate_entity_from_thing(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L167" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Dissociates a device entity from a concrete thing.</p>
+<p>The action takes only the type of the entity that you need to dissociate because only one entity
+of a particular type can be associated with a thing.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_entities/3">
+
+    <span id="get_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets definitions of the specified entities.</p>
+<p>Uses the latest version of the user&#39;s namespace by default. This API returns the following TDM
+entities.</p>
+<ul>
+<li><p>Properties</p>
+</li>
+<li><p>States</p>
+</li>
+<li><p>Events</p>
+</li>
+<li><p>Actions</p>
+</li>
+<li><p>Capabilities</p>
+</li>
+<li><p>Mappings</p>
+</li>
+<li><p>Devices</p>
+</li>
+<li><p>Device Models</p>
+</li>
+<li><p>Services</p>
+</li>
+</ul>
+<p>This action doesn&#39;t return definitions for systems, flows, and deployments.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_flow_template/3">
+
+    <span id="get_flow_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_flow_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_flow_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L205" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the latest version of the <code class="inline">DefinitionDocument</code> and <code class="inline">FlowTemplateSummary</code> for the specified
+workflow.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_flow_template_revisions/3">
+
+    <span id="get_flow_template_revisions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_flow_template_revisions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_flow_template_revisions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L216" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets revisions of the specified workflow.</p>
+<p>Only the last 100 revisions are stored. If the workflow has been deprecated, this action will
+return revisions that occurred before the deprecation. This action won&#39;t work for workflows that
+have been deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_namespace_deletion_status/3">
+
+    <span id="get_namespace_deletion_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_namespace_deletion_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_namespace_deletion_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the status of a namespace deletion task.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_system_instance/3">
+
+    <span id="get_system_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_system_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_system_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L230" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a system instance.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_system_template/3">
+
+    <span id="get_system_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_system_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_system_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a system.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_system_template_revisions/3">
+
+    <span id="get_system_template_revisions/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_system_template_revisions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_system_template_revisions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L248" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets revisions made to the specified system template.</p>
+<p>Only the previous 100 revisions are stored. If the system has been deprecated, this action will
+return the revisions that occurred before its deprecation. This action won&#39;t work with systems
+that have been deleted.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_upload_status/3">
+
+    <span id="get_upload_status/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_upload_status/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_upload_status(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the status of the specified upload.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_flow_execution_messages/3">
+
+    <span id="list_flow_execution_messages/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_flow_execution_messages/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_flow_execution_messages(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of objects that contain information about events in a flow execution.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L269" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all tags on an AWS IoT Things Graph resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_entities/3">
+
+    <span id="search_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L278" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for entities of the specified type.</p>
+<p>You can search for entities in your namespace and the public namespace that you&#39;re tracking.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_flow_executions/3">
+
+    <span id="search_flow_executions/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_flow_executions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_flow_executions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L285" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for AWS IoT Things Graph workflow execution instances.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_flow_templates/3">
+
+    <span id="search_flow_templates/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_flow_templates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_flow_templates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L292" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for summary information about workflows.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_system_instances/3">
+
+    <span id="search_system_instances/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_system_instances/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_system_instances(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L299" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for system instances in the user&#39;s account.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_system_templates/3">
+
+    <span id="search_system_templates/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_system_templates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_system_templates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L308" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for summary information about systems in the user&#39;s account.</p>
+<p>You can filter by the ID of a workflow to return only systems that use the specified workflow.</p>
+
+  </section>
+</section>
+<section class="detail" id="search_things/3">
+
+    <span id="search_things/2"></span>
+
+  <div class="detail-header">
+    <a href="#search_things/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">search_things(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L323" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Searches for things associated with the specified entity.</p>
+<p>You can search by both device and device model.</p>
+<p>For example, if two different devices, camera1 and camera2, implement the camera device model, the
+user can associate thing1 to camera1 and thing2 to camera2. <code class="inline">SearchThings(camera2)</code> will return
+only thing2, but <code class="inline">SearchThings(camera)</code> will return both thing1 and thing2.</p>
+<p>This action searches for exact matches and doesn&#39;t perform partial text matching.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L330" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a tag for the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="undeploy_system_instance/3">
+
+    <span id="undeploy_system_instance/2"></span>
+
+  <div class="detail-header">
+    <a href="#undeploy_system_instance/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">undeploy_system_instance(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L337" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a system instance from its target (Cloud or Greengrass).</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L344" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a tag from the specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_flow_template/3">
+
+    <span id="update_flow_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_flow_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_flow_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified workflow.</p>
+<p>All deployed systems and system instances that use the workflow will see the changes in the flow
+when it is redeployed. If you don&#39;t want this behavior, copy the workflow (creating a new workflow
+with a different ID), and update the copy. The workflow can contain only entities in the specified
+namespace.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_system_template/3">
+
+    <span id="update_system_template/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_system_template/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_system_template(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L366" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the specified system.</p>
+<p>You don&#39;t need to run this action after updating a workflow. Any deployment that uses the system
+will see the changes in the system when it is redeployed.</p>
+
+  </section>
+</section>
+<section class="detail" id="upload_entity_definitions/3">
+
+    <span id="upload_entity_definitions/2"></span>
+
+  <div class="detail-header">
+    <a href="#upload_entity_definitions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">upload_entity_definitions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/iot_things_graph.ex#L392" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Asynchronously uploads one or more entity definitions to the user&#39;s namespace.</p>
+<p>The <code class="inline">document</code> parameter is required if <code class="inline">syncWithPublicNamespace</code> and <code class="inline">deleteExistingEntites</code> are
+false. If the <code class="inline">syncWithPublicNamespace</code> parameter is set to <code class="inline">true</code>, the user&#39;s namespace will
+synchronize with the latest version of the public namespace. If <code class="inline">deprecateExistingEntities</code> is set
+to true, all entities in the latest version will be deleted before the new <code class="inline">DefinitionDocument</code> is
+uploaded.</p>
+<p>When a user uploads entity definitions for the first time, the service creates a new namespace for
+the user. The new namespace tracks the public namespace. Currently users can have only one
+namespace. The namespace version increments whenever a user uploads entity definitions that are
+backwards-incompatible and whenever a user sets the <code class="inline">syncWithPublicNamespace</code> parameter or the
+<code class="inline">deprecateExistingEntities</code> parameter to <code class="inline">true</code>.</p>
+<p>The IDs for all of the entities should be in URN format. Each entity must be in the user&#39;s
+namespace. Users can&#39;t create entities in the public namespace, but entity definitions can refer
+to entities in the public namespace.</p>
+<p>Valid entities are <code class="inline">Device</code>, <code class="inline">DeviceModel</code>, <code class="inline">Service</code>, <code class="inline">Capability</code>, <code class="inline">State</code>, <code class="inline">Action</code>, <code class="inline">Event</code>,
+<code class="inline">Property</code>, <code class="inline">Mapping</code>, <a href="https://hexdocs.pm/elixir/Enum.html"><code class="inline">Enum</code></a>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

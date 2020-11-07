@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.Directory — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.Directory
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>AWS Directory Service</p>
+<p>AWS Directory Service is a web service that makes it easy for you to setup and run directories in
+the AWS cloud, or connect your AWS resources with an existing on-premises Microsoft Active
+Directory.</p>
+<p>This guide provides detailed information about AWS Directory Service operations, data types,
+parameters, and errors. For information about AWS Directory Services features, see <a href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service Administration Guide</a>.</p>
+<p>AWS provides SDKs that consist of libraries and sample code for various programming languages and
+platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create
+programmatic access to AWS Directory Service and other AWS services. For more information about
+the AWS SDKs, including how to download and install them, see <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#accept_shared_directory/3">accept_shared_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a directory sharing request that was sent from the directory owner account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_ip_routes/3">add_ip_routes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>If the DNS server for your on-premises domain uses a publicly addressable IP address, you must add
+a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web
+Services.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_tags_to_resource/3">add_tags_to_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or overwrites one or more tags for the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#cancel_schema_extension/3">cancel_schema_extension(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Cancels an in-progress schema extension to a Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#connect_directory/3">connect_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an AD Connector to connect to an on-premises directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_alias/3">create_alias(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an alias for a directory and assigns the alias to the directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_computer/3">create_computer(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a computer account in the specified directory, and joins the computer to the directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_conditional_forwarder/3">create_conditional_forwarder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a conditional forwarder associated with your AWS directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_directory/3">create_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Simple AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_log_subscription/3">create_log_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a subscription to forward real-time Directory Service domain controller security logs to
+the specified Amazon CloudWatch log group in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_microsoft_a_d/3">create_microsoft_a_d(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a Microsoft AD directory in the AWS Cloud.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_snapshot/3">create_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_trust/3">create_trust(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_conditional_forwarder/3">delete_conditional_forwarder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a conditional forwarder that has been set up for your AWS directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_directory/3">delete_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an AWS Directory Service directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_log_subscription/3">delete_log_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the specified log subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_snapshot/3">delete_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a directory snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_trust/3">delete_trust(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an
+external domain.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_certificate/3">deregister_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes from the system the certificate that was registered for a secured LDAP connection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#deregister_event_topic/3">deregister_event_topic(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes the specified directory as a publisher to the specified SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_certificate/3">describe_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Displays information about the certificate registered for a secured LDAP connection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_conditional_forwarders/3">describe_conditional_forwarders(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains information about the conditional forwarders for this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_directories/3">describe_directories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains information about the directories that belong to this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_domain_controllers/3">describe_domain_controllers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Provides information about any domain controllers in your directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_event_topics/3">describe_event_topics(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains information about which SNS topics receive status messages from the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_l_d_a_p_s_settings/3">describe_l_d_a_p_s_settings(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Describes the status of LDAP security for the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_shared_directories/3">describe_shared_directories(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the shared directories in your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_snapshots/3">describe_snapshots(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains information about the directory snapshots that belong to this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_trusts/3">describe_trusts(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains information about the trust relationships for this account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_l_d_a_p_s/3">disable_l_d_a_p_s(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deactivates LDAP secure calls for the specified directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_radius/3">disable_radius(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service
+(RADIUS) server for an AD Connector or Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#disable_sso/3">disable_sso(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Disables single-sign on for a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_l_d_a_p_s/3">enable_l_d_a_p_s(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Activates the switch for the specific directory to always use LDAP secure calls.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_radius/3">enable_radius(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service
+(RADIUS) server for an AD Connector or Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#enable_sso/3">enable_sso(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enables single sign-on for a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_directory_limits/3">get_directory_limits(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains directory limit information for the current Region.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_snapshot_limits/3">get_snapshot_limits(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Obtains the manual snapshot limits for a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_certificates/3">list_certificates(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>For the specified directory, lists all the certificates registered for a secured LDAP connection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_ip_routes/3">list_ip_routes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the address blocks that you have added to a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_log_subscriptions/3">list_log_subscriptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the active log subscriptions for the AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_schema_extensions/3">list_schema_extensions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all schema extensions applied to a Microsoft AD Directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists all tags on a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_certificate/3">register_certificate(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Registers a certificate for secured LDAP connection.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#register_event_topic/3">register_event_topic(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Associates a directory with an SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reject_shared_directory/3">reject_shared_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Rejects a directory sharing request that was sent from the directory owner account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_ip_routes/3">remove_ip_routes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes IP address blocks from a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_tags_from_resource/3">remove_tags_from_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes tags from a directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#reset_user_password/3">reset_user_password(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#restore_from_snapshot/3">restore_from_snapshot(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Restores a directory using an existing directory snapshot.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#share_directory/3">share_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Shares a specified directory (<code class="inline">DirectoryId</code>) in your AWS account (directory owner) with another
+AWS account (directory consumer).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_schema_extension/3">start_schema_extension(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Applies a schema extension to a Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unshare_directory/3">unshare_directory(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops the directory sharing between the directory owner and consumer accounts.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_conditional_forwarder/3">update_conditional_forwarder(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a conditional forwarder that has been set up for your AWS directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_number_of_domain_controllers/3">update_number_of_domain_controllers(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds or removes domain controllers to or from the directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_radius/3">update_radius(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD
+Connector or Microsoft AD directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_trust/3">update_trust(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an
+on-premises Active Directory.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#verify_trust/3">verify_trust(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust
+relationships.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="accept_shared_directory/3">
+
+    <span id="accept_shared_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#accept_shared_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">accept_shared_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L24" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a directory sharing request that was sent from the directory owner account.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_ip_routes/3">
+
+    <span id="add_ip_routes/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_ip_routes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_ip_routes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L40" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>If the DNS server for your on-premises domain uses a publicly addressable IP address, you must add
+a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web
+Services.</p>
+<p><em>AddIpRoutes</em> adds this address block. You can also use <em>AddIpRoutes</em> to facilitate routing
+traffic that uses public IP ranges from your Microsoft AD on AWS to a peer VPC.</p>
+<p>Before you call <em>AddIpRoutes</em>, ensure that all of the required permissions have been explicitly
+granted through a policy. For details about what permissions are required to run the <em>AddIpRoutes</em>
+operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS Directory Service API Permissions: Actions, Resources, and Conditions Reference</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="add_tags_to_resource/3">
+
+    <span id="add_tags_to_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_tags_to_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_tags_to_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or overwrites one or more tags for the specified directory.</p>
+<p>Each directory can have a maximum of 50 tags. Each tag consists of a key and optional value. Tag
+keys must be unique to each resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="cancel_schema_extension/3">
+
+    <span id="cancel_schema_extension/2"></span>
+
+  <div class="detail-header">
+    <a href="#cancel_schema_extension/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">cancel_schema_extension(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Cancels an in-progress schema extension to a Microsoft AD directory.</p>
+<p>Once a schema extension has started replicating to all domain controllers, the task can no longer
+be canceled. A schema extension can be canceled during any of the following states;
+<code class="inline">Initializing</code>, <code class="inline">CreatingSnapshot</code>, and <code class="inline">UpdatingSchema</code>.</p>
+
+  </section>
+</section>
+<section class="detail" id="connect_directory/3">
+
+    <span id="connect_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#connect_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">connect_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an AD Connector to connect to an on-premises directory.</p>
+<p>Before you call <code class="inline">ConnectDirectory</code>, ensure that all of the required permissions have been
+explicitly granted through a policy. For details about what permissions are required to run the
+<code class="inline">ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS Directory Service API Permissions: Actions, Resources, and Conditions
+Reference</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_alias/3">
+
+    <span id="create_alias/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_alias/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_alias(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L86" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an alias for a directory and assigns the alias to the directory.</p>
+<p>The alias is used to construct the access URL for the directory, such as
+<code class="inline">http://&lt;alias&gt;.awsapps.com</code>.</p>
+<p>After an alias has been created, it cannot be deleted or reused, so this operation should only be
+used when absolutely necessary.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_computer/3">
+
+    <span id="create_computer/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_computer/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_computer(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L93" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a computer account in the specified directory, and joins the computer to the directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_conditional_forwarder/3">
+
+    <span id="create_conditional_forwarder/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_conditional_forwarder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_conditional_forwarder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a conditional forwarder associated with your AWS directory.</p>
+<p>Conditional forwarders are required in order to set up a trust relationship with another domain.
+The conditional forwarder points to the trusted domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_directory/3">
+
+    <span id="create_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Simple AD directory.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_simple_ad.html">Simple Active Directory</a>
+in the <em>AWS Directory Service Admin Guide</em>.</p>
+<p>Before you call <code class="inline">CreateDirectory</code>, ensure that all of the required permissions have been
+explicitly granted through a policy. For details about what permissions are required to run the
+<code class="inline">CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS Directory Service API Permissions: Actions, Resources, and Conditions
+Reference</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_log_subscription/3">
+
+    <span id="create_log_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_log_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_log_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L126" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a subscription to forward real-time Directory Service domain controller security logs to
+the specified Amazon CloudWatch log group in your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_microsoft_a_d/3">
+
+    <span id="create_microsoft_a_d/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_microsoft_a_d/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_microsoft_a_d(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L141" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a Microsoft AD directory in the AWS Cloud.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">AWS Managed Microsoft AD</a>
+in the <em>AWS Directory Service Admin Guide</em>.</p>
+<p>Before you call <em>CreateMicrosoftAD</em>, ensure that all of the required permissions have been
+explicitly granted through a policy. For details about what permissions are required to run the
+<em>CreateMicrosoftAD</em> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS Directory Service API Permissions: Actions, Resources, and Conditions
+Reference</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_snapshot/3">
+
+    <span id="create_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a snapshot of a Simple AD or Microsoft AD directory in the AWS cloud.</p>
+<p>You cannot take snapshots of AD Connector directories.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_trust/3">
+
+    <span id="create_trust/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_trust/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_trust(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L165" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships.</p>
+<p>For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your
+existing on-premises Microsoft Active Directory. This would allow you to provide users and groups
+access to resources in either domain, with a single set of credentials.</p>
+<p>This action initiates the creation of the AWS side of a trust relationship between an AWS Managed
+Microsoft AD directory and an external domain. You can create either a forest trust or an external
+trust.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_conditional_forwarder/3">
+
+    <span id="delete_conditional_forwarder/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_conditional_forwarder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_conditional_forwarder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L172" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a conditional forwarder that has been set up for your AWS directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_directory/3">
+
+    <span id="delete_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an AWS Directory Service directory.</p>
+<p>Before you call <code class="inline">DeleteDirectory</code>, ensure that all of the required permissions have been
+explicitly granted through a policy. For details about what permissions are required to run the
+<code class="inline">DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">AWS Directory Service API Permissions: Actions, Resources, and Conditions
+Reference</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_log_subscription/3">
+
+    <span id="delete_log_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_log_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_log_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L191" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the specified log subscription.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_snapshot/3">
+
+    <span id="delete_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L198" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a directory snapshot.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_trust/3">
+
+    <span id="delete_trust/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_trust/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_trust(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L206" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes an existing trust relationship between your AWS Managed Microsoft AD directory and an
+external domain.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_certificate/3">
+
+    <span id="deregister_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L213" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes from the system the certificate that was registered for a secured LDAP connection.</p>
+
+  </section>
+</section>
+<section class="detail" id="deregister_event_topic/3">
+
+    <span id="deregister_event_topic/2"></span>
+
+  <div class="detail-header">
+    <a href="#deregister_event_topic/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">deregister_event_topic(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L220" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes the specified directory as a publisher to the specified SNS topic.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_certificate/3">
+
+    <span id="describe_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L227" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Displays information about the certificate registered for a secured LDAP connection.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_conditional_forwarders/3">
+
+    <span id="describe_conditional_forwarders/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_conditional_forwarders/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_conditional_forwarders(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L237" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains information about the conditional forwarders for this account.</p>
+<p>If no input parameters are provided for RemoteDomainNames, this request describes all conditional
+forwarders for the specified directory ID.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_directories/3">
+
+    <span id="describe_directories/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_directories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_directories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L255" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains information about the directories that belong to this account.</p>
+<p>You can retrieve information about specific directories by passing the directory identifiers in
+the <code class="inline">DirectoryIds</code> parameter. Otherwise, all directories that belong to the current account are
+returned.</p>
+<p>This operation supports pagination with the use of the <code class="inline">NextToken</code> request and response
+parameters. If more results are available, the <code class="inline">DescribeDirectoriesResult.NextToken</code> member
+contains a token that you pass in the next call to <code class="inline">DescribeDirectories</code> to retrieve the next set
+of items.</p>
+<p>You can also specify a maximum number of return results with the <code class="inline">Limit</code> parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_domain_controllers/3">
+
+    <span id="describe_domain_controllers/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_domain_controllers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_domain_controllers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L262" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Provides information about any domain controllers in your directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_event_topics/3">
+
+    <span id="describe_event_topics/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_event_topics/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_event_topics(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L272" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains information about which SNS topics receive status messages from the specified directory.</p>
+<p>If no input parameters are provided, such as DirectoryId or TopicName, this request describes all
+of the associations in the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_l_d_a_p_s_settings/3">
+
+    <span id="describe_l_d_a_p_s_settings/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_l_d_a_p_s_settings/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_l_d_a_p_s_settings(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L279" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Describes the status of LDAP security for the specified directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_shared_directories/3">
+
+    <span id="describe_shared_directories/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_shared_directories/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_shared_directories(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L286" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the shared directories in your account.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_snapshots/3">
+
+    <span id="describe_snapshots/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_snapshots/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_snapshots(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L299" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains information about the directory snapshots that belong to this account.</p>
+<p>This operation supports pagination with the use of the <em>NextToken</em> request and response
+parameters. If more results are available, the <em>DescribeSnapshots.NextToken</em> member contains a
+token that you pass in the next call to <code class="inline">DescribeSnapshots</code> to retrieve the next set of items.</p>
+<p>You can also specify a maximum number of return results with the <em>Limit</em> parameter.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_trusts/3">
+
+    <span id="describe_trusts/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_trusts/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_trusts(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L309" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains information about the trust relationships for this account.</p>
+<p>If no input parameters are provided, such as DirectoryId or TrustIds, this request describes all
+the trust relationships belonging to the account.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_l_d_a_p_s/3">
+
+    <span id="disable_l_d_a_p_s/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_l_d_a_p_s/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_l_d_a_p_s(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L316" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deactivates LDAP secure calls for the specified directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_radius/3">
+
+    <span id="disable_radius/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_radius/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_radius(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L324" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service
+(RADIUS) server for an AD Connector or Microsoft AD directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="disable_sso/3">
+
+    <span id="disable_sso/2"></span>
+
+  <div class="detail-header">
+    <a href="#disable_sso/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">disable_sso(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L331" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Disables single-sign on for a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_l_d_a_p_s/3">
+
+    <span id="enable_l_d_a_p_s/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_l_d_a_p_s/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_l_d_a_p_s(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Activates the switch for the specific directory to always use LDAP secure calls.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_radius/3">
+
+    <span id="enable_radius/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_radius/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_radius(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L346" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service
+(RADIUS) server for an AD Connector or Microsoft AD directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="enable_sso/3">
+
+    <span id="enable_sso/2"></span>
+
+  <div class="detail-header">
+    <a href="#enable_sso/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">enable_sso(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L356" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Enables single sign-on for a directory.</p>
+<p>Single sign-on allows users in your directory to access certain AWS services from a computer
+joined to the directory without having to enter their credentials separately.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_directory_limits/3">
+
+    <span id="get_directory_limits/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_directory_limits/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_directory_limits(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L363" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains directory limit information for the current Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_snapshot_limits/3">
+
+    <span id="get_snapshot_limits/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_snapshot_limits/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_snapshot_limits(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L370" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Obtains the manual snapshot limits for a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_certificates/3">
+
+    <span id="list_certificates/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_certificates/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_certificates(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>For the specified directory, lists all the certificates registered for a secured LDAP connection.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_ip_routes/3">
+
+    <span id="list_ip_routes/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_ip_routes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_ip_routes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L384" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the address blocks that you have added to a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_log_subscriptions/3">
+
+    <span id="list_log_subscriptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_log_subscriptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_log_subscriptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L391" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the active log subscriptions for the AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_schema_extensions/3">
+
+    <span id="list_schema_extensions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_schema_extensions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_schema_extensions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L398" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all schema extensions applied to a Microsoft AD Directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L405" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists all tags on a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_certificate/3">
+
+    <span id="register_certificate/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_certificate/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_certificate(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L412" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Registers a certificate for secured LDAP connection.</p>
+
+  </section>
+</section>
+<section class="detail" id="register_event_topic/3">
+
+    <span id="register_event_topic/2"></span>
+
+  <div class="detail-header">
+    <a href="#register_event_topic/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">register_event_topic(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L424" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Associates a directory with an SNS topic.</p>
+<p>This establishes the directory as a publisher to the specified SNS topic. You can then receive
+email or text (SMS) messages when the status of your directory changes. You get notified if your
+directory goes from an Active status to an Impaired or Inoperable status. You also receive a
+notification when the directory returns to an Active status.</p>
+
+  </section>
+</section>
+<section class="detail" id="reject_shared_directory/3">
+
+    <span id="reject_shared_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#reject_shared_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reject_shared_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L431" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Rejects a directory sharing request that was sent from the directory owner account.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_ip_routes/3">
+
+    <span id="remove_ip_routes/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_ip_routes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_ip_routes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L438" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes IP address blocks from a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_tags_from_resource/3">
+
+    <span id="remove_tags_from_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_tags_from_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_tags_from_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L445" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes tags from a directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="reset_user_password/3">
+
+    <span id="reset_user_password/2"></span>
+
+  <div class="detail-header">
+    <a href="#reset_user_password/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">reset_user_password(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L463" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Resets the password for any user in your AWS Managed Microsoft AD or Simple AD directory.</p>
+<p>You can reset the password for any user in your directory with the following exceptions:</p>
+<ul>
+<li><p>For Simple AD, you cannot reset the password for any user that is a member of either
+the <strong>Domain Admins</strong> or <strong>Enterprise Admins</strong> group except for the administrator user.</p>
+</li>
+<li><p>For AWS Managed Microsoft AD, you can only reset the password for a user that is in
+an OU based off of the NetBIOS name that you typed when you created your directory. For example,
+you cannot reset the password for a user in the <strong>AWS Reserved</strong> OU. For more information about
+the OU structure for an AWS Managed Microsoft AD directory, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/ms_ad_getting_started_what_gets_created.html">What Gets Created</a>
+in the <em>AWS Directory Service Administration Guide</em>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="restore_from_snapshot/3">
+
+    <span id="restore_from_snapshot/2"></span>
+
+  <div class="detail-header">
+    <a href="#restore_from_snapshot/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">restore_from_snapshot(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L478" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Restores a directory using an existing directory snapshot.</p>
+<p>When you restore a directory from a snapshot, any changes made to the directory after the snapshot
+date are overwritten.</p>
+<p>This action returns as soon as the restore operation is initiated. You can monitor the progress of
+the restore operation by calling the <code class="inline">DescribeDirectories</code> operation with the directory
+identifier. When the <strong>DirectoryDescription.Stage</strong> value changes to <code class="inline">Active</code>, the restore
+operation is complete.</p>
+
+  </section>
+</section>
+<section class="detail" id="share_directory/3">
+
+    <span id="share_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#share_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">share_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L502" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Shares a specified directory (<code class="inline">DirectoryId</code>) in your AWS account (directory owner) with another
+AWS account (directory consumer).</p>
+<p>With this operation you can use your directory from any AWS account and from any Amazon VPC within
+an AWS Region.</p>
+<p>When you share your AWS Managed Microsoft AD directory, AWS Directory Service creates a shared
+directory in the directory consumer account. This shared directory contains the metadata to
+provide access to the directory within the directory owner account. The shared directory is
+visible in all VPCs in the directory consumer account.</p>
+<p>The <code class="inline">ShareMethod</code> parameter determines whether the specified directory can be shared between AWS
+accounts inside the same AWS organization (<code class="inline">ORGANIZATIONS</code>). It also determines whether you can
+share the directory with any other AWS account either inside or outside of the organization
+(<code class="inline">HANDSHAKE</code>).</p>
+<p>The <code class="inline">ShareNotes</code> parameter is only used when <code class="inline">HANDSHAKE</code> is called, which sends a directory
+sharing request to the directory consumer.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_schema_extension/3">
+
+    <span id="start_schema_extension/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_schema_extension/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_schema_extension(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L509" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Applies a schema extension to a Microsoft AD directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="unshare_directory/3">
+
+    <span id="unshare_directory/2"></span>
+
+  <div class="detail-header">
+    <a href="#unshare_directory/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unshare_directory(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L516" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops the directory sharing between the directory owner and consumer accounts.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_conditional_forwarder/3">
+
+    <span id="update_conditional_forwarder/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_conditional_forwarder/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_conditional_forwarder(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L523" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a conditional forwarder that has been set up for your AWS directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_number_of_domain_controllers/3">
+
+    <span id="update_number_of_domain_controllers/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_number_of_domain_controllers/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_number_of_domain_controllers(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L535" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds or removes domain controllers to or from the directory.</p>
+<p>Based on the difference between current value and new value (provided through this API call),
+domain controllers will be added or removed. It may take up to 45 minutes for any new domain
+controllers to become fully active once the requested number of domain controllers is updated.
+During this time, you cannot make another update request.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_radius/3">
+
+    <span id="update_radius/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_radius/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_radius(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L543" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD
+Connector or Microsoft AD directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_trust/3">
+
+    <span id="update_trust/2"></span>
+
+  <div class="detail-header">
+    <a href="#update_trust/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_trust(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L551" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates the trust that has been set up between your AWS Managed Microsoft AD directory and an
+on-premises Active Directory.</p>
+
+  </section>
+</section>
+<section class="detail" id="verify_trust/3">
+
+    <span id="verify_trust/2"></span>
+
+  <div class="detail-header">
+    <a href="#verify_trust/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">verify_trust(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/directory.ex#L562" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>AWS Directory Service for Microsoft Active Directory allows you to configure and verify trust
+relationships.</p>
+<p>This action verifies a trust relationship between your AWS Managed Microsoft AD directory and an
+external domain.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

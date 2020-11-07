@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.CodeGuruProfiler — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.CodeGuruProfiler
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>This section provides documentation for the Amazon CodeGuru Profiler API operations.</p>
+<p><code class="inline">Amazon CodeGuru Profiler collects runtime performance data from your live applications, and provides recommendations that can help you fine-tune your application performance. Using machine learning algorithms, CodeGuru Profiler can help you find your most expensive lines of code and suggest ways you can improve efficiency and remove CPU bottlenecks. Amazon CodeGuru Profiler provides different visualizations of profiling data to help you identify what code is running on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization. Amazon CodeGuru Profiler currently supports applications written in all Java virtual machine (JVM) languages. While CodeGuru Profiler supports both visualizations and recommendations for applications written in Java, it can also generate visualizations and a subset of recommendations for applications written in other JVM languages. For more information, see [What is Amazon CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html) in the *Amazon CodeGuru Profiler User Guide*.</code></p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_notification_channels/4">add_notification_channels(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add up to 2 anomaly notifications channels for a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#batch_get_frame_metric_data/4">batch_get_frame_metric_data(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the time series of values for a requested list of frame metrics from a time period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#configure_agent/4">configure_agent(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Used by profiler agents to report their current state and to receive remote configuration updates.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_profiling_group/3">create_profiling_group(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_profiling_group/4">delete_profiling_group(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_profiling_group/3">describe_profiling_group(client, profiling_group_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code class="inline">ProfilingGroupDescription</code>
+</a>
+object that contains information about the requested profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_findings_report_account_summary/5">get_findings_report_account_summary(client, daily_reports_only \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code class="inline">FindingsReportSummary</code>
+</a> objects
+that contain analysis results for all profiling groups in your AWS account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_notification_configuration/3">get_notification_configuration(client, profiling_group_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Get the current configuration for anomaly notifications for a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_policy/3">get_policy(client, profiling_group_name, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the JSON-formatted resource-based policy on a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_profile/8">get_profile(client, profiling_group_name, end_time \\ nil, max_depth \\ nil, period \\ nil, start_time \\ nil, accept \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the aggregated profile of a profiling group for a specified time range.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_recommendations/6">get_recommendations(client, profiling_group_name, end_time, locale \\ nil, start_time, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code class="inline">Recommendation</code>
+</a> objects that
+contain recommendations for a profiling group for a given time period.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_findings_reports/8">list_findings_reports(client, profiling_group_name, daily_reports_only \\ nil, end_time, max_results \\ nil, next_token \\ nil, start_time, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List the available reports for a given profiling group and time range.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_profile_times/9">list_profile_times(client, profiling_group_name, end_time, max_results \\ nil, next_token \\ nil, order_by \\ nil, period, start_time, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the start times of the available aggregated profiles of a profiling group for an aggregation
+period within the specified time range.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_profiling_groups/5">list_profiling_groups(client, include_description \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of profiling groups.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, resource_arn, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the tags that are assigned to a specified resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#post_agent_profile/4">post_agent_profile(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Submits profiling data to an aggregated profile of a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#put_permission/5">put_permission(client, action_group, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds permissions to a profiling group&#39;s resource-based policy that are provided using an action
+group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_notification_channel/5">remove_notification_channel(client, channel_id, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove one anomaly notifications channel for a profiling group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_permission/5">remove_permission(client, action_group, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes permissions from a profiling group&#39;s resource-based policy that are provided using an
+action group.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#submit_feedback/5">submit_feedback(client, anomaly_instance_id, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful
+or not.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/4">tag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use to assign one or more tags to a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/4">untag_resource(client, resource_arn, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use to remove one or more tags from a resource.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_profiling_group/4">update_profiling_group(client, profiling_group_name, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Updates a profiling group.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_notification_channels/4">
+
+    <span id="add_notification_channels/3"></span>
+
+  <div class="detail-header">
+    <a href="#add_notification_channels/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_notification_channels(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L31" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add up to 2 anomaly notifications channels for a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="batch_get_frame_metric_data/4">
+
+    <span id="batch_get_frame_metric_data/3"></span>
+
+  <div class="detail-header">
+    <a href="#batch_get_frame_metric_data/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">batch_get_frame_metric_data(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L41" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the time series of values for a requested list of frame metrics from a time period.</p>
+
+  </section>
+</section>
+<section class="detail" id="configure_agent/4">
+
+    <span id="configure_agent/3"></span>
+
+  <div class="detail-header">
+    <a href="#configure_agent/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">configure_agent(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L61" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Used by profiler agents to report their current state and to receive remote configuration updates.</p>
+<p>For example, <code class="inline">ConfigureAgent</code> can be used to tell and agent whether to profile or not and for how
+long to return profiling data.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_profiling_group/3">
+
+    <span id="create_profiling_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_profiling_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_profiling_group(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L71" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_profiling_group/4">
+
+    <span id="delete_profiling_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#delete_profiling_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_profiling_group(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L85" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_profiling_group/3">
+
+    <span id="describe_profiling_group/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_profiling_group/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_profiling_group(client, profiling_group_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L97" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code class="inline">ProfilingGroupDescription</code>
+</a>
+object that contains information about the requested profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_findings_report_account_summary/5">
+
+    <span id="get_findings_report_account_summary/1"></span>
+
+    <span id="get_findings_report_account_summary/2"></span>
+
+    <span id="get_findings_report_account_summary/3"></span>
+
+    <span id="get_findings_report_account_summary/4"></span>
+
+  <div class="detail-header">
+    <a href="#get_findings_report_account_summary/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_findings_report_account_summary(client, daily_reports_only \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L109" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html"> <code class="inline">FindingsReportSummary</code>
+</a> objects
+that contain analysis results for all profiling groups in your AWS account.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_notification_configuration/3">
+
+    <span id="get_notification_configuration/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_notification_configuration/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_notification_configuration(client, profiling_group_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L134" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Get the current configuration for anomaly notifications for a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_policy/3">
+
+    <span id="get_policy/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_policy/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_policy(client, profiling_group_name, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L144" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the JSON-formatted resource-based policy on a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_profile/8">
+
+    <span id="get_profile/2"></span>
+
+    <span id="get_profile/3"></span>
+
+    <span id="get_profile/4"></span>
+
+    <span id="get_profile/5"></span>
+
+    <span id="get_profile/6"></span>
+
+    <span id="get_profile/7"></span>
+
+  <div class="detail-header">
+    <a href="#get_profile/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_profile(client, profiling_group_name, end_time \\ nil, max_depth \\ nil, period \\ nil, start_time \\ nil, accept \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L197" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the aggregated profile of a profiling group for a specified time range.</p>
+<p>Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated
+profiles.</p>
+<p><code class="inline">Because aggregated profiles expire over time</code>GetProfile<code class="inline">is not idempotent. Specify the time range for the requested aggregated profile using 1 or 2 of the following parameters:</code>startTime<code class="inline">,</code>endTime<code class="inline">,</code>period<code class="inline">. The maximum time range allowed is 7 days. If you specify all 3 parameters, an exception is thrown. If you specify only</code>period<code class="inline">, the latest aggregated profile is returned. Aggregated profiles are available with aggregation periods of 5 minutes, 1 hour, and 1 day, aligned to UTC. The aggregation period of an aggregated profile determines how long it is retained. For more information, see [</code>AggregatedProfileTime<code class="inline">](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AggregatedProfileTime.html). The aggregated profile&#39;s aggregation period determines how long it is retained by CodeGuru Profiler. * If the aggregation period is 5 minutes, the aggregated profile is retained for 15 days. * If the aggregation period is 1 hour, the aggregated profile is retained for 60 days. * If the aggregation period is 1 day, the aggregated profile is retained for 3 years. There are two use cases for calling</code>GetProfile<code class="inline">. 1. If you want to return an aggregated profile that already exists, use [</code>ListProfileTimes<code class="inline">](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ListProfileTimes.html) to view the time ranges of existing aggregated profiles. Use them in a</code>GetProfile<code class="inline">request to return a specific, existing aggregated profile. 2. If you want to return an aggregated profile for a time range that doesn&#39;t align with an existing aggregated profile, then CodeGuru Profiler makes a best effort to combine existing aggregated profiles from the requested time range and return them as one aggregated profile. If aggregated profiles do not exist for the full time range requested, then aggregated profiles for a smaller time range are returned. For example, if the requested time range is from 00:00 to 00:20, and the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles from 00:15 to 00:20 are returned.</code></p>
+
+  </section>
+</section>
+<section class="detail" id="get_recommendations/6">
+
+    <span id="get_recommendations/4"></span>
+
+    <span id="get_recommendations/5"></span>
+
+  <div class="detail-header">
+    <a href="#get_recommendations/6" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_recommendations(client, profiling_group_name, end_time, locale \\ nil, start_time, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L256" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code class="inline">Recommendation</code>
+</a> objects that
+contain recommendations for a profiling group for a given time period.</p>
+<p>A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code class="inline">Anomaly</code> </a>
+objects that contains details about anomalies detected in the profiling group for the same time
+period is also returned.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_findings_reports/8">
+
+    <span id="list_findings_reports/4"></span>
+
+    <span id="list_findings_reports/5"></span>
+
+    <span id="list_findings_reports/6"></span>
+
+    <span id="list_findings_reports/7"></span>
+
+  <div class="detail-header">
+    <a href="#list_findings_reports/8" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_findings_reports(client, profiling_group_name, daily_reports_only \\ nil, end_time, max_results \\ nil, next_token \\ nil, start_time, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L281" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List the available reports for a given profiling group and time range.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_profile_times/9">
+
+    <span id="list_profile_times/5"></span>
+
+    <span id="list_profile_times/6"></span>
+
+    <span id="list_profile_times/7"></span>
+
+    <span id="list_profile_times/8"></span>
+
+  <div class="detail-header">
+    <a href="#list_profile_times/9" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_profile_times(client, profiling_group_name, end_time, max_results \\ nil, next_token \\ nil, order_by \\ nil, period, start_time, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L317" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the start times of the available aggregated profiles of a profiling group for an aggregation
+period within the specified time range.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_profiling_groups/5">
+
+    <span id="list_profiling_groups/1"></span>
+
+    <span id="list_profiling_groups/2"></span>
+
+    <span id="list_profiling_groups/3"></span>
+
+    <span id="list_profiling_groups/4"></span>
+
+  <div class="detail-header">
+    <a href="#list_profiling_groups/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_profiling_groups(client, include_description \\ nil, max_results \\ nil, next_token \\ nil, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L361" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of profiling groups.</p>
+<p>The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code class="inline">ProfilingGroupDescription</code>
+</a>
+objects.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L386" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the tags that are assigned to a specified resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="post_agent_profile/4">
+
+    <span id="post_agent_profile/3"></span>
+
+  <div class="detail-header">
+    <a href="#post_agent_profile/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">post_agent_profile(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L399" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Submits profiling data to an aggregated profile of a profiling group.</p>
+<p>To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code class="inline">GetProfile</code>
+</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="put_permission/5">
+
+    <span id="put_permission/4"></span>
+
+  <div class="detail-header">
+    <a href="#put_permission/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">put_permission(client, action_group, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L437" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds permissions to a profiling group&#39;s resource-based policy that are provided using an action
+group.</p>
+<p>If a profiling group doesn&#39;t have a resource-based policy, one is created for it using the
+permissions in the action group and the roles and users in the <code class="inline">principals</code> parameter.</p>
+<p><code class="inline">The one supported action group that can be added is</code>agentPermission<code class="inline">which grants</code>ConfigureAgent<code class="inline">and</code>PostAgent<code class="inline">permissions. For more information, see [Resource-based policies in CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html) in the *Amazon CodeGuru Profiler User Guide*, [</code>ConfigureAgent<code class="inline">](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html), and [</code>PostAgentProfile<code class="inline">](https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html). The first time you call</code>PutPermission<code class="inline">on a profiling group, do not specify a</code>revisionId<code class="inline">because it doesn&#39;t have a resource-based policy. Subsequent calls must provide a</code>revisionId<code class="inline">to specify which revision of the resource-based policy to add the permissions to. The response contains the profiling group&#39;s JSON-formatted resource policy.</code></p>
+
+  </section>
+</section>
+<section class="detail" id="remove_notification_channel/5">
+
+    <span id="remove_notification_channel/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_notification_channel/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_notification_channel(client, channel_id, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L447" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Remove one anomaly notifications channel for a profiling group.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_permission/5">
+
+    <span id="remove_permission/4"></span>
+
+  <div class="detail-header">
+    <a href="#remove_permission/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_permission(client, action_group, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L466" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes permissions from a profiling group&#39;s resource-based policy that are provided using an
+action group.</p>
+<p>The one supported action group that can be removed is <code class="inline">agentPermission</code> which grants
+<code class="inline">ConfigureAgent</code> and <code class="inline">PostAgent</code> permissions. For more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based policies in CodeGuru
+Profiler</a> in
+the <em>Amazon CodeGuru Profiler User Guide</em>, <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html"> <code class="inline">ConfigureAgent</code>
+</a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
+<code class="inline">PostAgentProfile</code>
+</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="submit_feedback/5">
+
+    <span id="submit_feedback/4"></span>
+
+  <div class="detail-header">
+    <a href="#submit_feedback/5" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">submit_feedback(client, anomaly_instance_id, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L481" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends feedback to CodeGuru Profiler about whether the anomaly detected by the analysis is useful
+or not.</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/4">
+
+    <span id="tag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L491" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use to assign one or more tags to a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/4">
+
+    <span id="untag_resource/3"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L501" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use to remove one or more tags from a resource.</p>
+
+  </section>
+</section>
+<section class="detail" id="update_profiling_group/4">
+
+    <span id="update_profiling_group/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_profiling_group/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_profiling_group(client, profiling_group_name, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_guru_profiler.ex#L515" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Updates a profiling group.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

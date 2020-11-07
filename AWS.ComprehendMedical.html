@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.ComprehendMedical — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.ComprehendMedical
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Comprehend Medical extracts structured information from unstructured clinical text.</p>
+<p>Use these actions to gain insight in your documents.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_entities_detection_v2_job/3">describe_entities_detection_v2_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a medical entities detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_i_c_d10_c_m_inference_job/3">describe_i_c_d10_c_m_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with an InferICD10CM job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_p_h_i_detection_job/3">describe_p_h_i_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with a protected health information (PHI) detection job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#describe_rx_norm_inference_job/3">describe_rx_norm_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets the properties associated with an InferRxNorm job.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_entities/3">detect_entities(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The <code class="inline">DetectEntities</code> operation is deprecated.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_entities_v2/3">detect_entities_v2(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects the clinical text for a variety of medical entities and returns specific information
+about them such as entity category, location, and confidence score on that information.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#detect_p_h_i/3">detect_p_h_i(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Inspects the clinical text for protected health information (PHI) entities and returns the entity
+category, location, and confidence score for each entity.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#infer_i_c_d10_c_m/3">infer_i_c_d10_c_m(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>InferICD10CM detects medical conditions as entities listed in a patient record and links those
+entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for
+Disease Control.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#infer_rx_norm/3">infer_rx_norm(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized
+concept identifiers in the RxNorm database from the National Library of Medicine.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_entities_detection_v2_jobs/3">list_entities_detection_v2_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of medical entity detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_i_c_d10_c_m_inference_jobs/3">list_i_c_d10_c_m_inference_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of InferICD10CM jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_p_h_i_detection_jobs/3">list_p_h_i_detection_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of protected health information (PHI) detection jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_rx_norm_inference_jobs/3">list_rx_norm_inference_jobs(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gets a list of InferRxNorm jobs that you have submitted.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_entities_detection_v2_job/3">start_entities_detection_v2_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous medical entity detection job for a collection of documents.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_i_c_d10_c_m_inference_job/3">start_i_c_d10_c_m_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_p_h_i_detection_job/3">start_p_h_i_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous job to detect protected health information (PHI).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#start_rx_norm_inference_job/3">start_rx_norm_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_entities_detection_v2_job/3">stop_entities_detection_v2_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a medical entities detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_i_c_d10_c_m_inference_job/3">stop_i_c_d10_c_m_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops an InferICD10CM inference job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_p_h_i_detection_job/3">stop_p_h_i_detection_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops a protected health information (PHI) detection job in progress.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#stop_rx_norm_inference_job/3">stop_rx_norm_inference_job(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stops an InferRxNorm inference job in progress.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="describe_entities_detection_v2_job/3">
+
+    <span id="describe_entities_detection_v2_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_entities_detection_v2_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_entities_detection_v2_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L16" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a medical entities detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_i_c_d10_c_m_inference_job/3">
+
+    <span id="describe_i_c_d10_c_m_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_i_c_d10_c_m_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_i_c_d10_c_m_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L25" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with an InferICD10CM job.</p>
+<p>Use this operation to get the status of an inference job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_p_h_i_detection_job/3">
+
+    <span id="describe_p_h_i_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_p_h_i_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_p_h_i_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L34" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with a protected health information (PHI) detection job.</p>
+<p>Use this operation to get the status of a detection job.</p>
+
+  </section>
+</section>
+<section class="detail" id="describe_rx_norm_inference_job/3">
+
+    <span id="describe_rx_norm_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#describe_rx_norm_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">describe_rx_norm_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L43" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets the properties associated with an InferRxNorm job.</p>
+<p>Use this operation to get the status of an inference job.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_entities/3">
+
+    <span id="detect_entities/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_entities/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_entities(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L55" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>The <code class="inline">DetectEntities</code> operation is deprecated.</p>
+<p>You should use the <code class="inline">DetectEntitiesV2</code> operation instead.</p>
+<p>Inspects the clinical text for a variety of medical entities and returns specific information
+about them such as entity category, location, and confidence score on that information .</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_entities_v2/3">
+
+    <span id="detect_entities_v2/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_entities_v2/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_entities_v2(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L73" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects the clinical text for a variety of medical entities and returns specific information
+about them such as entity category, location, and confidence score on that information.</p>
+<p>Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+<p>The <code class="inline">DetectEntitiesV2</code> operation replaces the <code class="inline">DetectEntities</code> operation. This new action uses a
+different model for determining the entities in your medical text and changes the way that some
+entities are returned in the output. You should use the <code class="inline">DetectEntitiesV2</code> operation in all new
+applications.</p>
+<p>The <code class="inline">DetectEntitiesV2</code> operation returns the <code class="inline">Acuity</code> and <code class="inline">Direction</code> entities as attributes
+instead of types.</p>
+
+  </section>
+</section>
+<section class="detail" id="detect_p_h_i/3">
+
+    <span id="detect_p_h_i/2"></span>
+
+  <div class="detail-header">
+    <a href="#detect_p_h_i/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">detect_p_h_i(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L83" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Inspects the clinical text for protected health information (PHI) entities and returns the entity
+category, location, and confidence score for each entity.</p>
+<p>Amazon Comprehend Medical only detects entities in English language texts.</p>
+
+  </section>
+</section>
+<section class="detail" id="infer_i_c_d10_c_m/3">
+
+    <span id="infer_i_c_d10_c_m/2"></span>
+
+  <div class="detail-header">
+    <a href="#infer_i_c_d10_c_m/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">infer_i_c_d10_c_m(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L94" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>InferICD10CM detects medical conditions as entities listed in a patient record and links those
+entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for
+Disease Control.</p>
+<p>Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+
+  </section>
+</section>
+<section class="detail" id="infer_rx_norm/3">
+
+    <span id="infer_rx_norm/2"></span>
+
+  <div class="detail-header">
+    <a href="#infer_rx_norm/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">infer_rx_norm(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L104" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized
+concept identifiers in the RxNorm database from the National Library of Medicine.</p>
+<p>Amazon Comprehend Medical only detects medical entities in English language texts.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_entities_detection_v2_jobs/3">
+
+    <span id="list_entities_detection_v2_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_entities_detection_v2_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_entities_detection_v2_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L111" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of medical entity detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_i_c_d10_c_m_inference_jobs/3">
+
+    <span id="list_i_c_d10_c_m_inference_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_i_c_d10_c_m_inference_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_i_c_d10_c_m_inference_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L118" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of InferICD10CM jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_p_h_i_detection_jobs/3">
+
+    <span id="list_p_h_i_detection_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_p_h_i_detection_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_p_h_i_detection_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L125" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of protected health information (PHI) detection jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_rx_norm_inference_jobs/3">
+
+    <span id="list_rx_norm_inference_jobs/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_rx_norm_inference_jobs/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_rx_norm_inference_jobs(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L132" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Gets a list of InferRxNorm jobs that you have submitted.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_entities_detection_v2_job/3">
+
+    <span id="start_entities_detection_v2_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_entities_detection_v2_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_entities_detection_v2_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L141" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous medical entity detection job for a collection of documents.</p>
+<p>Use the <code class="inline">DescribeEntitiesDetectionV2Job</code> operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_i_c_d10_c_m_inference_job/3">
+
+    <span id="start_i_c_d10_c_m_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_i_c_d10_c_m_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_i_c_d10_c_m_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L150" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM ontology.</p>
+<p>Use the <code class="inline">DescribeICD10CMInferenceJob</code> operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_p_h_i_detection_job/3">
+
+    <span id="start_p_h_i_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_p_h_i_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_p_h_i_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L159" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous job to detect protected health information (PHI).</p>
+<p>Use the <code class="inline">DescribePHIDetectionJob</code> operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="start_rx_norm_inference_job/3">
+
+    <span id="start_rx_norm_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#start_rx_norm_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">start_rx_norm_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology.</p>
+<p>Use the <code class="inline">DescribeRxNormInferenceJob</code> operation to track the status of a job.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_entities_detection_v2_job/3">
+
+    <span id="stop_entities_detection_v2_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_entities_detection_v2_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_entities_detection_v2_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L175" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a medical entities detection job in progress.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_i_c_d10_c_m_inference_job/3">
+
+    <span id="stop_i_c_d10_c_m_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_i_c_d10_c_m_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_i_c_d10_c_m_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L182" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops an InferICD10CM inference job in progress.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_p_h_i_detection_job/3">
+
+    <span id="stop_p_h_i_detection_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_p_h_i_detection_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_p_h_i_detection_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L189" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops a protected health information (PHI) detection job in progress.</p>
+
+  </section>
+</section>
+<section class="detail" id="stop_rx_norm_inference_job/3">
+
+    <span id="stop_rx_norm_inference_job/2"></span>
+
+  <div class="detail-header">
+    <a href="#stop_rx_norm_inference_job/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">stop_rx_norm_inference_job(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/comprehend_medical.ex#L196" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Stops an InferRxNorm inference job in progress.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.21.2">
+    <meta name="project" content="aws-elixir v0.6.0">
+
+    <title>AWS.SNS — aws-elixir v0.6.0</title>
+    <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
+
+    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/html-de2388dc2f8074b0a4db.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>try { if(localStorage.getItem('night-mode') === 'true') document.body.className += ' night-mode'; } catch (e) { }</script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button">
+      <span class="icon-search" aria-hidden="true"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button">
+      <span class="icon-cross" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" id="search-list" class="search-input" placeholder="Search..." aria-label="Search" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="http://github.com/aws-beam/aws-elixir" class="sidebar-projectName">
+aws-elixir
+      </a>
+      <h2 class="sidebar-projectVersion">
+        v0.6.0
+      </h2>
+    </div>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list" href="#full-list">Modules</a></li>
+
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+        <small class="app-vsn">aws-elixir v0.6.0</small>
+AWS.SNS
+
+          <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L4" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>Amazon Simple Notification Service</p>
+<p>Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build
+distributed web-enabled applications.</p>
+<p>Applications can use Amazon SNS to easily push real-time notification messages to interested
+subscribers over multiple delivery protocols. For more information about this product see
+<a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+Guide</a>.</p>
+<p>We also provide SDKs that enable you to access Amazon SNS from your preferred programming
+language. The SDKs contain functionality that automatically takes care of tasks such as:
+cryptographically signing your service requests, retrying requests, and handling error responses.
+For a list of available SDKs, go to <a href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a>.</p>
+
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#add_permission/3">add_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Adds a statement to a topic&#39;s access control policy, granting access for the specified AWS
+accounts to the specified actions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#check_if_phone_number_is_opted_out/3">check_if_phone_number_is_opted_out(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Accepts a phone number and indicates whether the phone holder has opted out of receiving SMS
+messages from your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#confirm_subscription/3">confirm_subscription(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Verifies an endpoint owner&#39;s intent to receive messages by validating the token sent to the
+endpoint by an earlier <code class="inline">Subscribe</code> action.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_platform_application/3">create_platform_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a platform application object for one of the supported push notification services, such as
+APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_platform_endpoint/3">create_platform_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates an endpoint for a device and mobile app on one of the supported push notification
+services, such as GCM (Firebase Cloud Messaging) and APNS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_topic/3">create_topic(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Creates a topic to which notifications can be published.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_endpoint/3">delete_endpoint(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes the endpoint for a device and mobile app from Amazon SNS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_platform_application/3">delete_platform_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a platform application object for one of the supported push notification services, such as
+APNS and GCM (Firebase Cloud Messaging).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_topic/3">delete_topic(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a topic and all its subscriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_endpoint_attributes/3">get_endpoint_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the endpoint attributes for a device on one of the supported push notification services,
+such as GCM (Firebase Cloud Messaging) and APNS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_platform_application_attributes/3">get_platform_application_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieves the attributes of the platform application object for the supported push notification
+services, such as APNS and GCM (Firebase Cloud Messaging).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_s_m_s_attributes/3">get_s_m_s_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns the settings for sending SMS messages from your account.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_subscription_attributes/3">get_subscription_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all of the properties of a subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#get_topic_attributes/3">get_topic_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns all of the properties of a topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_endpoints_by_platform_application/3">list_endpoints_by_platform_application(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the endpoints and endpoint attributes for devices in a supported push notification service,
+such as GCM (Firebase Cloud Messaging) and APNS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_phone_numbers_opted_out/3">list_phone_numbers_opted_out(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_platform_applications/3">list_platform_applications(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Lists the platform application objects for the supported push notification services, such as APNS
+and GCM (Firebase Cloud Messaging).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_subscriptions/3">list_subscriptions(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the requester&#39;s subscriptions.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_subscriptions_by_topic/3">list_subscriptions_by_topic(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the subscriptions to a specific topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_tags_for_resource/3">list_tags_for_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List all tags added to the specified Amazon SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_topics/3">list_topics(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Returns a list of the requester&#39;s topics.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#opt_in_phone_number/3">opt_in_phone_number(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this request to opt in a phone number that is opted out, which enables you to resume sending
+SMS messages to the number.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#publish/3">publish(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number,
+or a message to a mobile platform endpoint (when you specify the <code class="inline">TargetArn</code>).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#remove_permission/3">remove_permission(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Removes a statement from a topic&#39;s access control policy.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_endpoint_attributes/3">set_endpoint_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the attributes for an endpoint for a device on one of the supported push notification
+services, such as GCM (Firebase Cloud Messaging) and APNS.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_platform_application_attributes/3">set_platform_application_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Sets the attributes of the platform application object for the supported push notification
+services, such as APNS and GCM (Firebase Cloud Messaging).</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_s_m_s_attributes/3">set_s_m_s_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Use this request to set the default settings for sending SMS messages and receiving daily SMS
+usage reports.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_subscription_attributes/3">set_subscription_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a subscription owner to set an attribute of the subscription to a new value.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#set_topic_attributes/3">set_topic_attributes(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Allows a topic owner to set an attribute of the topic to a new value.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#subscribe/3">subscribe(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Subscribes an endpoint to an Amazon SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#tag_resource/3">tag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Add tags to the specified Amazon SNS topic.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#unsubscribe/3">unsubscribe(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Deletes a subscription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#untag_resource/3">untag_resource(client, input, options \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove tags from the specified Amazon SNS topic.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="add_permission/3">
+
+    <span id="add_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#add_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">add_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L26" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Adds a statement to a topic&#39;s access control policy, granting access for the specified AWS
+accounts to the specified actions.</p>
+
+  </section>
+</section>
+<section class="detail" id="check_if_phone_number_is_opted_out/3">
+
+    <span id="check_if_phone_number_is_opted_out/2"></span>
+
+  <div class="detail-header">
+    <a href="#check_if_phone_number_is_opted_out/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">check_if_phone_number_is_opted_out(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L38" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Accepts a phone number and indicates whether the phone holder has opted out of receiving SMS
+messages from your account.</p>
+<p>You cannot send SMS messages to a number that is opted out.</p>
+<p>To resume sending messages, you can opt in the number by using the <code class="inline">OptInPhoneNumber</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="confirm_subscription/3">
+
+    <span id="confirm_subscription/2"></span>
+
+  <div class="detail-header">
+    <a href="#confirm_subscription/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">confirm_subscription(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L50" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Verifies an endpoint owner&#39;s intent to receive messages by validating the token sent to the
+endpoint by an earlier <code class="inline">Subscribe</code> action.</p>
+<p>If the token is valid, the action creates a new subscription and returns its Amazon Resource Name
+(ARN). This call requires an AWS signature only when the <code class="inline">AuthenticateOnUnsubscribe</code> flag is set
+to &quot;true&quot;.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_platform_application/3">
+
+    <span id="create_platform_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_platform_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_platform_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L84" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a platform application object for one of the supported push notification services, such as
+APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register.</p>
+<p>You must specify <code class="inline">PlatformPrincipal</code> and <code class="inline">PlatformCredential</code> attributes when using the
+<code class="inline">CreatePlatformApplication</code> action.</p>
+<p><code class="inline">PlatformPrincipal</code> and <code class="inline">PlatformCredential</code> are received from the notification service.</p>
+<ul>
+<li><p>For <code class="inline">ADM</code>, <code class="inline">PlatformPrincipal</code> is <code class="inline">client id</code> and <code class="inline">PlatformCredential</code> is <code class="inline">client secret</code>.</p>
+</li>
+<li><p>For <code class="inline">Baidu</code>, <code class="inline">PlatformPrincipal</code> is <code class="inline">API key</code> and <code class="inline">PlatformCredential</code> is <code class="inline">secret key</code>.</p>
+</li>
+<li><p>For <code class="inline">APNS</code> and <code class="inline">APNS_SANDBOX</code>, <code class="inline">PlatformPrincipal</code> is <code class="inline">SSL certificate</code> and
+<code class="inline">PlatformCredential</code> is <code class="inline">private key</code>.</p>
+</li>
+<li><p>For <code class="inline">GCM</code> (Firebase Cloud Messaging), there is no <code class="inline">PlatformPrincipal</code> and the
+<code class="inline">PlatformCredential</code> is <code class="inline">API key</code>.</p>
+</li>
+<li><p>For <code class="inline">MPNS</code>, <code class="inline">PlatformPrincipal</code> is <code class="inline">TLS certificate</code> and <code class="inline">PlatformCredential</code> is
+<code class="inline">private key</code>.</p>
+</li>
+<li><p>For <code class="inline">WNS</code>, <code class="inline">PlatformPrincipal</code> is <code class="inline">Package Security Identifier</code> and
+<code class="inline">PlatformCredential</code> is <code class="inline">secret key</code>.</p>
+</li>
+</ul>
+<p>You can use the returned <code class="inline">PlatformApplicationArn</code> as an attribute for the <code class="inline">CreatePlatformEndpoint</code>
+action.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_platform_endpoint/3">
+
+    <span id="create_platform_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_platform_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_platform_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L103" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates an endpoint for a device and mobile app on one of the supported push notification
+services, such as GCM (Firebase Cloud Messaging) and APNS.</p>
+<p><code class="inline">CreatePlatformEndpoint</code> requires the <code class="inline">PlatformApplicationArn</code> that is returned from
+<code class="inline">CreatePlatformApplication</code>. You can use the returned <code class="inline">EndpointArn</code> to send a message to a mobile
+app or by the <code class="inline">Subscribe</code> action for subscription to a topic. The <code class="inline">CreatePlatformEndpoint</code> action
+is idempotent, so if the requester already owns an endpoint with the same device token and
+attributes, that endpoint&#39;s ARN is returned without creating a new endpoint. For more information,
+see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+<p>When using <code class="inline">CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and
+UserId. The token field must also contain the ChannelId. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePushBaiduEndpoint.html">Creating an Amazon SNS Endpoint for
+Baidu</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="create_topic/3">
+
+    <span id="create_topic/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_topic/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_topic(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L115" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Creates a topic to which notifications can be published.</p>
+<p>Users can create at most 100,000 topics. For more information, see
+<a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent, so if the
+requester already owns a topic with the specified name, that topic&#39;s ARN is returned without
+creating a new topic.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_endpoint/3">
+
+    <span id="delete_endpoint/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_endpoint/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_endpoint(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L127" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes the endpoint for a device and mobile app from Amazon SNS.</p>
+<p>This action is idempotent. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+<p>When you delete an endpoint that is also subscribed to a topic, then you must also unsubscribe the
+endpoint from the topic.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_platform_application/3">
+
+    <span id="delete_platform_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_platform_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_platform_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L137" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a platform application object for one of the supported push notification services, such as
+APNS and GCM (Firebase Cloud Messaging).</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="delete_topic/3">
+
+    <span id="delete_topic/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_topic/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_topic(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L148" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a topic and all its subscriptions.</p>
+<p>Deleting a topic might prevent some messages previously sent to the topic from being delivered to
+subscribers. This action is idempotent, so deleting a topic that does not exist does not result in
+an error.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_endpoint_attributes/3">
+
+    <span id="get_endpoint_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_endpoint_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_endpoint_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L158" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the endpoint attributes for a device on one of the supported push notification services,
+such as GCM (Firebase Cloud Messaging) and APNS.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_platform_application_attributes/3">
+
+    <span id="get_platform_application_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_platform_application_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_platform_application_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L168" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Retrieves the attributes of the platform application object for the supported push notification
+services, such as APNS and GCM (Firebase Cloud Messaging).</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_s_m_s_attributes/3">
+
+    <span id="get_s_m_s_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_s_m_s_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_s_m_s_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L177" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns the settings for sending SMS messages from your account.</p>
+<p>These settings are set with the <code class="inline">SetSMSAttributes</code> action.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_subscription_attributes/3">
+
+    <span id="get_subscription_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_subscription_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_subscription_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L184" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all of the properties of a subscription.</p>
+
+  </section>
+</section>
+<section class="detail" id="get_topic_attributes/3">
+
+    <span id="get_topic_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#get_topic_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">get_topic_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L193" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns all of the properties of a topic.</p>
+<p>Topic properties returned might differ based on the authorization of the user.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_endpoints_by_platform_application/3">
+
+    <span id="list_endpoints_by_platform_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_endpoints_by_platform_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_endpoints_by_platform_application(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L210" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the endpoints and endpoint attributes for devices in a supported push notification service,
+such as GCM (Firebase Cloud Messaging) and APNS.</p>
+<p>The results for <code class="inline">ListEndpointsByPlatformApplication</code> are paginated and return a limited list of
+endpoints, up to 100. If additional records are available after the first page results, then a
+NextToken string will be returned. To receive the next page, you call
+<code class="inline">ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous
+call. When there are no more records to return, NextToken will be null. For more information, see
+<a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+<p>This action is throttled at 30 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_phone_numbers_opted_out/3">
+
+    <span id="list_phone_numbers_opted_out/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_phone_numbers_opted_out/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_phone_numbers_opted_out(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L223" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of phone numbers that are opted out, meaning you cannot send SMS messages to them.</p>
+<p>The results for <code class="inline">ListPhoneNumbersOptedOut</code> are paginated, and each page returns up to 100 phone
+numbers. If additional phone numbers are available after the first page of results, then a
+<code class="inline">NextToken</code> string will be returned. To receive the next page, you call <code class="inline">ListPhoneNumbersOptedOut</code>
+again using the <code class="inline">NextToken</code> string received from the previous call. When there are no more records
+to return, <code class="inline">NextToken</code> will be null.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_platform_applications/3">
+
+    <span id="list_platform_applications/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_platform_applications/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_platform_applications(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L239" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Lists the platform application objects for the supported push notification services, such as APNS
+and GCM (Firebase Cloud Messaging).</p>
+<p>The results for <code class="inline">ListPlatformApplications</code> are paginated and return a limited list of
+applications, up to 100. If additional records are available after the first page results, then a
+NextToken string will be returned. To receive the next page, you call <code class="inline">ListPlatformApplications</code>
+using the NextToken string received from the previous call. When there are no more records to
+return, <code class="inline">NextToken</code> will be null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+<p>This action is throttled at 15 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_subscriptions/3">
+
+    <span id="list_subscriptions/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_subscriptions/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_subscriptions(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L252" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the requester&#39;s subscriptions.</p>
+<p>Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a
+<code class="inline">NextToken</code> is also returned. Use the <code class="inline">NextToken</code> parameter in a new <code class="inline">ListSubscriptions</code> call to
+get further results.</p>
+<p>This action is throttled at 30 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_subscriptions_by_topic/3">
+
+    <span id="list_subscriptions_by_topic/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_subscriptions_by_topic/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_subscriptions_by_topic(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L265" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the subscriptions to a specific topic.</p>
+<p>Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a
+<code class="inline">NextToken</code> is also returned. Use the <code class="inline">NextToken</code> parameter in a new <code class="inline">ListSubscriptionsByTopic</code>
+call to get further results.</p>
+<p>This action is throttled at 30 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="list_tags_for_resource/3">
+
+    <span id="list_tags_for_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_tags_for_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L275" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>List all tags added to the specified Amazon SNS topic.</p>
+<p>For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in
+the <em>Amazon Simple Notification Service Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="list_topics/3">
+
+    <span id="list_topics/2"></span>
+
+  <div class="detail-header">
+    <a href="#list_topics/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_topics(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L287" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Returns a list of the requester&#39;s topics.</p>
+<p>Each call returns a limited list of topics, up to 100. If there are more topics, a <code class="inline">NextToken</code> is
+also returned. Use the <code class="inline">NextToken</code> parameter in a new <code class="inline">ListTopics</code> call to get further results.</p>
+<p>This action is throttled at 30 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="opt_in_phone_number/3">
+
+    <span id="opt_in_phone_number/2"></span>
+
+  <div class="detail-header">
+    <a href="#opt_in_phone_number/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">opt_in_phone_number(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L297" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this request to opt in a phone number that is opted out, which enables you to resume sending
+SMS messages to the number.</p>
+<p>You can opt in a phone number only once every 30 days.</p>
+
+  </section>
+</section>
+<section class="detail" id="publish/3">
+
+    <span id="publish/2"></span>
+
+  <div class="detail-header">
+    <a href="#publish/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">publish(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L321" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number,
+or a message to a mobile platform endpoint (when you specify the <code class="inline">TargetArn</code>).</p>
+<p>If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is
+subscribed to the topic. The format of the message depends on the notification protocol for each
+subscribed endpoint.</p>
+<p>When a <code class="inline">messageId</code> is returned, the message has been saved and Amazon SNS will attempt to deliver
+it shortly.</p>
+<p>To use the <code class="inline">Publish</code> action for sending a message to a mobile endpoint, such as an app on a Kindle
+device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The
+EndpointArn is returned when making a call with the <code class="inline">CreatePlatformEndpoint</code> action.</p>
+<p>For more information about formatting messages, see <a href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom Platform-Specific Payloads in Messages to Mobile
+Devices</a>.</p>
+<p>You can publish messages only to topics and endpoints in the same AWS Region.</p>
+
+  </section>
+</section>
+<section class="detail" id="remove_permission/3">
+
+    <span id="remove_permission/2"></span>
+
+  <div class="detail-header">
+    <a href="#remove_permission/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">remove_permission(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L328" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Removes a statement from a topic&#39;s access control policy.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_endpoint_attributes/3">
+
+    <span id="set_endpoint_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_endpoint_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_endpoint_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L338" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the attributes for an endpoint for a device on one of the supported push notification
+services, such as GCM (Firebase Cloud Messaging) and APNS.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_platform_application_attributes/3">
+
+    <span id="set_platform_application_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_platform_application_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_platform_application_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L349" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Sets the attributes of the platform application object for the supported push notification
+services, such as APNS and GCM (Firebase Cloud Messaging).</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. For information on
+configuring attributes for message delivery status, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for Message Delivery Status</a>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_s_m_s_attributes/3">
+
+    <span id="set_s_m_s_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_s_m_s_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_s_m_s_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L361" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Use this request to set the default settings for sending SMS messages and receiving daily SMS
+usage reports.</p>
+<p>You can override some of these settings for a single message when you use the <code class="inline">Publish</code> action
+with the <code class="inline">MessageAttributes.entry.N</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the <em>Amazon SNS
+Developer Guide</em>.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_subscription_attributes/3">
+
+    <span id="set_subscription_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_subscription_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_subscription_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L368" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a subscription owner to set an attribute of the subscription to a new value.</p>
+
+  </section>
+</section>
+<section class="detail" id="set_topic_attributes/3">
+
+    <span id="set_topic_attributes/2"></span>
+
+  <div class="detail-header">
+    <a href="#set_topic_attributes/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">set_topic_attributes(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L375" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Allows a topic owner to set an attribute of the topic to a new value.</p>
+
+  </section>
+</section>
+<section class="detail" id="subscribe/3">
+
+    <span id="subscribe/2"></span>
+
+  <div class="detail-header">
+    <a href="#subscribe/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">subscribe(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L390" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Subscribes an endpoint to an Amazon SNS topic.</p>
+<p>If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same AWS
+account, the endpoint owner must the <code class="inline">ConfirmSubscription</code> action to confirm the subscription.</p>
+<p>You call the <code class="inline">ConfirmSubscription</code> action with the token from the subscription response.
+Confirmation tokens are valid for three days.</p>
+<p>This action is throttled at 100 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="tag_resource/3">
+
+    <span id="tag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#tag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L415" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Add tags to the specified Amazon SNS topic.</p>
+<p>For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in the <em>Amazon SNS Developer Guide</em>.</p>
+<p>When you use topic tags, keep the following guidelines in mind:</p>
+<ul>
+<li><p>Adding more than 50 tags to a topic isn&#39;t recommended.</p>
+</li>
+<li><p>Tags don&#39;t have any semantic meaning. Amazon SNS interprets tags as character
+strings.</p>
+</li>
+<li><p>Tags are case-sensitive.</p>
+</li>
+<li><p>A new tag with a key identical to that of an existing tag overwrites the existing
+tag.</p>
+</li>
+<li><p>Tagging actions are limited to 10 TPS per AWS account, per AWS region. If your
+application requires a higher throughput, file a <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=technical">technical support
+request</a>.</p>
+</li>
+</ul>
+
+  </section>
+</section>
+<section class="detail" id="unsubscribe/3">
+
+    <span id="unsubscribe/2"></span>
+
+  <div class="detail-header">
+    <a href="#unsubscribe/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">unsubscribe(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L430" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Deletes a subscription.</p>
+<p>If the subscription requires authentication for deletion, only the owner of the subscription or
+the topic&#39;s owner can unsubscribe, and an AWS signature is required. If the <code class="inline">Unsubscribe</code> call
+does not require authentication and the requester is not the subscription owner, a final
+cancellation message is delivered to the endpoint, so that the endpoint owner can easily
+resubscribe to the topic if the <code class="inline">Unsubscribe</code> request was unintended.</p>
+<p>This action is throttled at 100 transactions per second (TPS).</p>
+
+  </section>
+</section>
+<section class="detail" id="untag_resource/3">
+
+    <span id="untag_resource/2"></span>
+
+  <div class="detail-header">
+    <a href="#untag_resource/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
+
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sns.ex#L440" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+
+  </div>
+
+  <section class="docstring">
+<p>Remove tags from the specified Amazon SNS topic.</p>
+<p>For an overview, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-tags.html">Amazon SNS Tags</a> in
+the <em>Amazon SNS Developer Guide</em>.</p>
+
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.21.2),
+          </span>
+          <span class="line">
+            designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
