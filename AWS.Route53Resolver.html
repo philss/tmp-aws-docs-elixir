@@ -10,7 +10,7 @@
     <title>AWS.Route53Resolver — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,32 +86,42 @@ AWS.Route53Resolver
 
 
         <section id="moduledoc">
-<p>When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from
-Route 53 Resolver.</p>
-<p>By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2
-instances or ELB load balancers. Resolver performs recursive lookups against public name servers
-for all other domain names.</p>
-<p>You can also configure DNS resolution between your VPC and your network over a Direct Connect or
-VPN connection:</p>
-<p><strong>Forward DNS queries from resolvers on your network to Route 53 Resolver</strong></p>
-<p>DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows
-your DNS resolvers to easily resolve domain names for AWS resources such as EC2 instances or
-records in a Route 53 private hosted zone. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How DNS Resolvers on Your Network Forward DNS Queries to Route 53
+<p>When you create a VPC using Amazon VPC, you automatically get DNS resolution
+within the VPC from Route 53 Resolver.</p>
+<p>By default, Resolver answers DNS queries for VPC domain names such as domain
+names for EC2 instances or ELB load balancers. Resolver performs recursive
+lookups against public name servers for all other domain names.</p>
+<p>You can also configure DNS resolution between your VPC and your network over a
+Direct Connect or VPN connection:</p>
+<h2 id="module-forward-dns-queries-from-resolvers-on-your-network-to-route-53-resolver" class="section-heading">
+  <a href="#module-forward-dns-queries-from-resolvers-on-your-network-to-route-53-resolver" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Forward DNS queries from resolvers on your network to Route 53 Resolver
+</h2>
+
+<p>DNS resolvers on your network can forward DNS queries to Resolver in a specified
+VPC. This allows your DNS resolvers to easily resolve domain names for AWS
+resources such as EC2 instances or records in a Route 53 private hosted zone.
+For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc">How DNS Resolvers on Your Network Forward DNS Queries to Route 53
 Resolver</a>
 in the <em>Amazon Route 53 Developer Guide</em>.</p>
-<p><strong>Conditionally forward queries from a VPC to resolvers on your network</strong></p>
-<p>You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to
-DNS resolvers on your network. To forward selected queries, you create Resolver rules that specify
-the domain names for the DNS queries that you want to forward (such as example.com), and the IP
-addresses of the DNS resolvers on your network that you want to forward the queries to. If a query
-matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most
-specific match (acme.example.com) and forwards the query to the IP addresses that you specified in
-that rule. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network">How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your
-Network</a>
+<h2 id="module-conditionally-forward-queries-from-a-vpc-to-resolvers-on-your-network" class="section-heading">
+  <a href="#module-conditionally-forward-queries-from-a-vpc-to-resolvers-on-your-network" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Conditionally forward queries from a VPC to resolvers on your network
+</h2>
+
+<p>You can configure Resolver to forward queries that it receives from EC2
+instances in your VPCs to DNS resolvers on your network. To forward selected
+queries, you create Resolver rules that specify the domain names for the DNS
+queries that you want to forward (such as example.com), and the IP addresses of
+the DNS resolvers on your network that you want to forward the queries to. If a
+query matches multiple rules (example.com, acme.example.com), Resolver chooses
+the rule with the most specific match (acme.example.com) and forwards the query
+to the IP addresses that you specified in that rule. For more information, see
+<a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network">How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network</a>
 in the <em>Amazon Route 53 Developer Guide</em>.</p>
-<p>Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you can choose whether
-to forward queries from your VPCs to your network (outbound queries), from your network to your
-VPCs (inbound queries), or both.</p>
+<p>Like Amazon VPC, Resolver is regional. In each region where you have VPCs, you
+can choose whether to forward queries from your VPCs to your network (outbound
+queries), from your network to your VPCs (inbound queries), or both.</p>
 
         </section>
 
@@ -171,8 +181,8 @@ VPCs (inbound queries), or both.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS
-query logs that originate in your VPCs.</p></div>
+    <div class="summary-synopsis"><p>Creates a Resolver query logging configuration, which defines where you want
+Resolver to save DNS query logs that originate in your VPCs.</p></div>
 
 </div>
 <div class="summary-row">
@@ -181,9 +191,9 @@ query logs that originate in your VPCs.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass
-through, one domain name that you want to forward to your network, and the IP addresses of the DNS
-resolvers in your network.</p></div>
+    <div class="summary-synopsis"><p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint
+the queries pass through, one domain name that you want to forward to your
+network, and the IP addresses of the DNS resolvers in your network.</p></div>
 
 </div>
 <div class="summary-row">
@@ -246,8 +256,9 @@ resolvers in your network.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an inbound or an
-outbound Resolver endpoint, and the current status of the endpoint.</p></div>
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an
+inbound or an outbound Resolver endpoint, and the current status of the
+endpoint.</p></div>
 
 </div>
 <div class="summary-row">
@@ -256,8 +267,9 @@ outbound Resolver endpoint, and the current status of the endpoint.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about a specified Resolver query logging configuration, such as the number of
-VPCs that the configuration is logging queries for and the location that logs are sent to.</p></div>
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver query logging configuration, such as
+the number of VPCs that the configuration is logging queries for and the
+location that logs are sent to.</p></div>
 
 </div>
 <div class="summary-row">
@@ -266,8 +278,8 @@ VPCs that the configuration is logging queries for and the location that logs ar
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about a specified association between a Resolver query logging configuration and
-an Amazon VPC.</p></div>
+    <div class="summary-synopsis"><p>Gets information about a specified association between a Resolver query logging
+configuration and an Amazon VPC.</p></div>
 
 </div>
 <div class="summary-row">
@@ -285,8 +297,9 @@ an Amazon VPC.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards
-DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p></div>
+    <div class="summary-synopsis"><p>Gets information about a specified Resolver rule, such as the domain name that
+the rule forwards DNS queries for and the ID of the outbound Resolver endpoint
+that the rule is associated with.</p></div>
 
 </div>
 <div class="summary-row">
@@ -295,7 +308,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about an association between a specified Resolver rule and a VPC.</p></div>
+    <div class="summary-synopsis"><p>Gets information about an association between a specified Resolver rule and a
+VPC.</p></div>
 
 </div>
 <div class="summary-row">
@@ -322,7 +336,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists all the Resolver endpoints that were created using the current AWS account.</p></div>
+    <div class="summary-synopsis"><p>Lists all the Resolver endpoints that were created using the current AWS
+account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -331,7 +346,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists information about associations between Amazon VPCs and query logging configurations.</p></div>
+    <div class="summary-synopsis"><p>Lists information about associations between Amazon VPCs and query logging
+configurations.</p></div>
 
 </div>
 <div class="summary-row">
@@ -349,8 +365,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists the associations that were created between Resolver rules and VPCs using the current AWS
-account.</p></div>
+    <div class="summary-synopsis"><p>Lists the associations that were created between Resolver rules and VPCs using
+the current AWS account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -377,9 +393,9 @@ account.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share a query logging configuration with, the query
-logging configuration that you want to share, and the operations that you want the account to be
-able to perform on the configuration.</p></div>
+    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share a query logging configuration
+with, the query logging configuration that you want to share, and the operations
+that you want the account to be able to perform on the configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -388,8 +404,9 @@ able to perform on the configuration.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share rules with, the Resolver rules that you want to
-share, and the operations that you want the account to be able to perform on those rules.</p></div>
+    <div class="summary-synopsis"><p>Specifies an AWS account that you want to share rules with, the Resolver rules
+that you want to share, and the operations that you want the account to be able
+to perform on those rules.</p></div>
 
 </div>
 <div class="summary-row">
@@ -454,7 +471,7 @@ Functions
     </a>
     <h1 class="signature">associate_resolver_endpoint_ip_address(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L50" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L52" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -465,8 +482,8 @@ Functions
 
   <section class="docstring">
 <p>Adds IP addresses to an inbound or an outbound Resolver endpoint.</p>
-<p>If you want to add more than one IP address, submit one <code class="inline">AssociateResolverEndpointIpAddress</code>
-request for each IP address.</p>
+<p>If you want to add more than one IP address, submit one
+<code class="inline">AssociateResolverEndpointIpAddress</code> request for each IP address.</p>
 <p>To remove an IP address from an endpoint, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverEndpointIpAddress.html">DisassociateResolverEndpointIpAddress</a>.</p>
 
@@ -483,7 +500,7 @@ request for each IP address.</p>
     </a>
     <h1 class="signature">associate_resolver_query_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L67" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L70" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -494,11 +511,12 @@ request for each IP address.</p>
 
   <section class="docstring">
 <p>Associates an Amazon VPC with a specified query logging configuration.</p>
-<p>Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated
-with a specified query logging configuration. To associate more than one VPC with a configuration,
-submit one <code class="inline">AssociateResolverQueryLogConfig</code> request for each VPC.</p>
-<p>The VPCs that you associate with a query logging configuration must be in the same Region as the
-configuration.</p>
+<p>Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that
+are associated with a specified query logging configuration. To associate more
+than one VPC with a configuration, submit one <code class="inline">AssociateResolverQueryLogConfig</code>
+request for each VPC.</p>
+<p>The VPCs that you associate with a query logging configuration must be in the
+same Region as the configuration.</p>
 <p>To remove a VPC from a query logging configuration, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
 
@@ -515,7 +533,7 @@ configuration.</p>
     </a>
     <h1 class="signature">associate_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L80" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L83" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -526,10 +544,10 @@ configuration.</p>
 
   <section class="docstring">
 <p>Associates a Resolver rule with a VPC.</p>
-<p>When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that
-is specified in the rule and that originate in the VPC. The queries are forwarded to the IP
-addresses for the DNS resolvers that are specified in the rule. For more information about rules,
-see
+<p>When you associate a rule with a VPC, Resolver forwards all DNS queries for the
+domain name that is specified in the rule and that originate in the VPC. The
+queries are forwarded to the IP addresses for the DNS resolvers that are
+specified in the rule. For more information about rules, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>.</p>
 
   </section>
@@ -545,7 +563,7 @@ see
     </a>
     <h1 class="signature">create_resolver_endpoint(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L95" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L98" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -558,11 +576,11 @@ see
 <p>Creates a Resolver endpoint.</p>
 <p>There are two types of Resolver endpoints, inbound and outbound:</p>
 <ul>
-<li><p>An <em>inbound Resolver endpoint</em> forwards DNS queries to the DNS service for a VPC
-from your network.</p>
+<li><p>An <em>inbound Resolver endpoint</em> forwards DNS queries to the DNS
+service for a VPC from your network.</p>
 </li>
-<li><p>An <em>outbound Resolver endpoint</em> forwards DNS queries from the DNS service for a VPC
-to your network.</p>
+<li><p>An <em>outbound Resolver endpoint</em> forwards DNS queries from the DNS
+service for a VPC to your network.</p>
 </li>
 </ul>
 
@@ -579,7 +597,7 @@ to your network.</p>
     </a>
     <h1 class="signature">create_resolver_query_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L115" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L119" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -589,17 +607,18 @@ to your network.</p>
   </div>
 
   <section class="docstring">
-<p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS
-query logs that originate in your VPCs.</p>
-<p>Resolver can log queries only for VPCs that are in the same Region as the query logging
-configuration.</p>
-<p>To specify which VPCs you want to log queries for, you use <code class="inline">AssociateResolverQueryLogConfig</code>. For
-more information, see
+<p>Creates a Resolver query logging configuration, which defines where you want
+Resolver to save DNS query logs that originate in your VPCs.</p>
+<p>Resolver can log queries only for VPCs that are in the same Region as the query
+logging configuration.</p>
+<p>To specify which VPCs you want to log queries for, you use
+<code class="inline">AssociateResolverQueryLogConfig</code>. For more information, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>.</p>
-<p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a query logging
-configuration with other AWS accounts. The other accounts can then associate VPCs with the
-configuration. The query logs that Resolver creates for a configuration include all DNS queries
-that originate in all VPCs that are associated with the configuration.</p>
+<p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a query
+logging configuration with other AWS accounts. The other accounts can then
+associate VPCs with the configuration. The query logs that Resolver creates for
+a configuration include all DNS queries that originate in all VPCs that are
+associated with the configuration.</p>
 
   </section>
 </section>
@@ -614,7 +633,7 @@ that originate in all VPCs that are associated with the configuration.</p>
     </a>
     <h1 class="signature">create_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L124" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L128" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -624,9 +643,9 @@ that originate in all VPCs that are associated with the configuration.</p>
   </div>
 
   <section class="docstring">
-<p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass
-through, one domain name that you want to forward to your network, and the IP addresses of the DNS
-resolvers in your network.</p>
+<p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint
+the queries pass through, one domain name that you want to forward to your
+network, and the IP addresses of the DNS resolvers in your network.</p>
 
   </section>
 </section>
@@ -641,7 +660,7 @@ resolvers in your network.</p>
     </a>
     <h1 class="signature">delete_resolver_endpoint(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L139" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L144" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -652,13 +671,14 @@ resolvers in your network.</p>
 
   <section class="docstring">
 <p>Deletes a Resolver endpoint.</p>
-<p>The effect of deleting a Resolver endpoint depends on whether it&#39;s an inbound or an outbound
-Resolver endpoint:</p>
+<p>The effect of deleting a Resolver endpoint depends on whether it&#39;s an inbound or
+an outbound Resolver endpoint:</p>
 <ul>
-<li><p><strong>Inbound</strong>: DNS queries from your network are no longer routed to the DNS service
-for the specified VPC.</p>
+<li><p><strong>Inbound</strong>: DNS queries from your network are no longer routed to
+the DNS service for the specified VPC.</p>
 </li>
-<li><p><strong>Outbound</strong>: DNS queries from a VPC are no longer routed to your network.</p>
+<li><p><strong>Outbound</strong>: DNS queries from a VPC are no longer routed to your
+network.</p>
 </li>
 </ul>
 
@@ -675,7 +695,7 @@ for the specified VPC.</p>
     </a>
     <h1 class="signature">delete_resolver_query_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L161" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L167" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -686,18 +706,19 @@ for the specified VPC.</p>
 
   <section class="docstring">
 <p>Deletes a query logging configuration.</p>
-<p>When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs
-that are associated with the configuration. This also applies if the query logging configuration
-is shared with other AWS accounts, and the other accounts have associated VPCs with the shared
-configuration.</p>
-<p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the
-configuration. See
+<p>When you delete a configuration, Resolver stops logging DNS queries for all of
+the Amazon VPCs that are associated with the configuration. This also applies if
+the query logging configuration is shared with other AWS accounts, and the other
+accounts have associated VPCs with the shared configuration.</p>
+<p>Before you can delete a query logging configuration, you must first disassociate
+all VPCs from the configuration. See
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
-<p>If you used Resource Access Manager (RAM) to share a query logging configuration with other
-accounts, you must stop sharing the configuration before you can delete a configuration. The
-accounts that you shared the configuration with can first disassociate VPCs that they associated
-with the configuration, but that&#39;s not necessary. If you stop sharing the configuration, those
-VPCs are automatically disassociated from the configuration.</p>
+<p>If you used Resource Access Manager (RAM) to share a query logging configuration
+with other accounts, you must stop sharing the configuration before you can
+delete a configuration. The accounts that you shared the configuration with can
+first disassociate VPCs that they associated with the configuration, but that&#39;s
+not necessary. If you stop sharing the configuration, those VPCs are
+automatically disassociated from the configuration.</p>
 
   </section>
 </section>
@@ -712,7 +733,7 @@ VPCs are automatically disassociated from the configuration.</p>
     </a>
     <h1 class="signature">delete_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L172" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L178" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -723,8 +744,8 @@ VPCs are automatically disassociated from the configuration.</p>
 
   <section class="docstring">
 <p>Deletes a Resolver rule.</p>
-<p>Before you can delete a Resolver rule, you must disassociate it from all the VPCs that you
-associated the Resolver rule with. For more information, see
+<p>Before you can delete a Resolver rule, you must disassociate it from all the
+VPCs that you associated the Resolver rule with. For more information, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverRule.html">DisassociateResolverRule</a>.</p>
 
   </section>
@@ -740,7 +761,7 @@ associated the Resolver rule with. For more information, see
     </a>
     <h1 class="signature">disassociate_resolver_endpoint_ip_address(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L185" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L191" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -751,8 +772,8 @@ associated the Resolver rule with. For more information, see
 
   <section class="docstring">
 <p>Removes IP addresses from an inbound or an outbound Resolver endpoint.</p>
-<p>If you want to remove more than one IP address, submit one <code class="inline">DisassociateResolverEndpointIpAddress</code>
-request for each IP address.</p>
+<p>If you want to remove more than one IP address, submit one
+<code class="inline">DisassociateResolverEndpointIpAddress</code> request for each IP address.</p>
 <p>To add an IP address to an endpoint, see
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverEndpointIpAddress.html">AssociateResolverEndpointIpAddress</a>.</p>
 
@@ -769,7 +790,7 @@ request for each IP address.</p>
     </a>
     <h1 class="signature">disassociate_resolver_query_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L201" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L208" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -780,11 +801,12 @@ request for each IP address.</p>
 
   <section class="docstring">
 <p>Disassociates a VPC from a query logging configuration.</p>
-<p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the
-configuration. If you used Resource Access Manager (RAM) to share a query logging configuration
-with other accounts, VPCs can be disassociated from the configuration in the following ways:</p>
-<p>   The accounts that you shared the configuration with can disassociate VPCs from the
-configuration.</p>
+<p>Before you can delete a query logging configuration, you must first disassociate
+all VPCs from the configuration. If you used Resource Access Manager (RAM) to
+share a query logging configuration with other accounts, VPCs can be
+disassociated from the configuration in the following ways:</p>
+<p>   The accounts that you shared the configuration with can
+disassociate VPCs from the configuration.</p>
 <p>   You can stop sharing the configuration.</p>
 
   </section>
@@ -800,7 +822,7 @@ configuration.</p>
     </a>
     <h1 class="signature">disassociate_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L211" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L218" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -811,8 +833,8 @@ configuration.</p>
 
   <section class="docstring">
 <p>Removes the association between a specified Resolver rule and a specified VPC.</p>
-<p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS queries for the
-domain name that you specified in the Resolver rule.</p>
+<p>If you disassociate a Resolver rule from a VPC, Resolver stops forwarding DNS
+queries for the domain name that you specified in the Resolver rule.</p>
 
   </section>
 </section>
@@ -827,7 +849,7 @@ domain name that you specified in the Resolver rule.</p>
     </a>
     <h1 class="signature">get_resolver_endpoint(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L219" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L227" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -837,8 +859,9 @@ domain name that you specified in the Resolver rule.</p>
   </div>
 
   <section class="docstring">
-<p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an inbound or an
-outbound Resolver endpoint, and the current status of the endpoint.</p>
+<p>Gets information about a specified Resolver endpoint, such as whether it&#39;s an
+inbound or an outbound Resolver endpoint, and the current status of the
+endpoint.</p>
 
   </section>
 </section>
@@ -853,7 +876,7 @@ outbound Resolver endpoint, and the current status of the endpoint.</p>
     </a>
     <h1 class="signature">get_resolver_query_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L227" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L236" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -863,8 +886,9 @@ outbound Resolver endpoint, and the current status of the endpoint.</p>
   </div>
 
   <section class="docstring">
-<p>Gets information about a specified Resolver query logging configuration, such as the number of
-VPCs that the configuration is logging queries for and the location that logs are sent to.</p>
+<p>Gets information about a specified Resolver query logging configuration, such as
+the number of VPCs that the configuration is logging queries for and the
+location that logs are sent to.</p>
 
   </section>
 </section>
@@ -879,7 +903,7 @@ VPCs that the configuration is logging queries for and the location that logs ar
     </a>
     <h1 class="signature">get_resolver_query_log_config_association(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L238" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L247" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -889,10 +913,10 @@ VPCs that the configuration is logging queries for and the location that logs ar
   </div>
 
   <section class="docstring">
-<p>Gets information about a specified association between a Resolver query logging configuration and
-an Amazon VPC.</p>
-<p>When you associate a VPC with a query logging configuration, Resolver logs DNS queries that
-originate in that VPC.</p>
+<p>Gets information about a specified association between a Resolver query logging
+configuration and an Amazon VPC.</p>
+<p>When you associate a VPC with a query logging configuration, Resolver logs DNS
+queries that originate in that VPC.</p>
 
   </section>
 </section>
@@ -907,7 +931,7 @@ originate in that VPC.</p>
     </a>
     <h1 class="signature">get_resolver_query_log_config_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L248" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L257" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -918,8 +942,8 @@ originate in that VPC.</p>
 
   <section class="docstring">
 <p>Gets information about a query logging policy.</p>
-<p>A query logging policy specifies the Resolver query logging operations and resources that you want
-to allow another AWS account to be able to use.</p>
+<p>A query logging policy specifies the Resolver query logging operations and
+resources that you want to allow another AWS account to be able to use.</p>
 
   </section>
 </section>
@@ -934,7 +958,7 @@ to allow another AWS account to be able to use.</p>
     </a>
     <h1 class="signature">get_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L256" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L266" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -944,8 +968,9 @@ to allow another AWS account to be able to use.</p>
   </div>
 
   <section class="docstring">
-<p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards
-DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p>
+<p>Gets information about a specified Resolver rule, such as the domain name that
+the rule forwards DNS queries for and the ID of the outbound Resolver endpoint
+that the rule is associated with.</p>
 
   </section>
 </section>
@@ -960,7 +985,7 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
     </a>
     <h1 class="signature">get_resolver_rule_association(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L266" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L277" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -970,7 +995,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
   </div>
 
   <section class="docstring">
-<p>Gets information about an association between a specified Resolver rule and a VPC.</p>
+<p>Gets information about an association between a specified Resolver rule and a
+VPC.</p>
 <p>You associate a Resolver rule and a VPC using
 <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>.</p>
 
@@ -987,7 +1013,7 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
     </a>
     <h1 class="signature">get_resolver_rule_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L276" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L287" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -998,8 +1024,8 @@ DNS queries for and the ID of the outbound Resolver endpoint that the rule is as
 
   <section class="docstring">
 <p>Gets information about a Resolver rule policy.</p>
-<p>A Resolver rule policy specifies the Resolver operations and resources that you want to allow
-another AWS account to be able to use.</p>
+<p>A Resolver rule policy specifies the Resolver operations and resources that you
+want to allow another AWS account to be able to use.</p>
 
   </section>
 </section>
@@ -1014,7 +1040,7 @@ another AWS account to be able to use.</p>
     </a>
     <h1 class="signature">list_resolver_endpoint_ip_addresses(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L283" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L294" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1039,7 +1065,7 @@ another AWS account to be able to use.</p>
     </a>
     <h1 class="signature">list_resolver_endpoints(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L290" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L302" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1049,7 +1075,8 @@ another AWS account to be able to use.</p>
   </div>
 
   <section class="docstring">
-<p>Lists all the Resolver endpoints that were created using the current AWS account.</p>
+<p>Lists all the Resolver endpoints that were created using the current AWS
+account.</p>
 
   </section>
 </section>
@@ -1064,7 +1091,7 @@ another AWS account to be able to use.</p>
     </a>
     <h1 class="signature">list_resolver_query_log_config_associations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L297" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L310" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1074,7 +1101,8 @@ another AWS account to be able to use.</p>
   </div>
 
   <section class="docstring">
-<p>Lists information about associations between Amazon VPCs and query logging configurations.</p>
+<p>Lists information about associations between Amazon VPCs and query logging
+configurations.</p>
 
   </section>
 </section>
@@ -1089,7 +1117,7 @@ another AWS account to be able to use.</p>
     </a>
     <h1 class="signature">list_resolver_query_log_configs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L307" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L320" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1100,8 +1128,8 @@ another AWS account to be able to use.</p>
 
   <section class="docstring">
 <p>Lists information about the specified query logging configurations.</p>
-<p>Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs
-that you want to log queries for.</p>
+<p>Each configuration defines where you want Resolver to save DNS query logs and
+specifies the VPCs that you want to log queries for.</p>
 
   </section>
 </section>
@@ -1116,7 +1144,7 @@ that you want to log queries for.</p>
     </a>
     <h1 class="signature">list_resolver_rule_associations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L315" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L328" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1126,8 +1154,8 @@ that you want to log queries for.</p>
   </div>
 
   <section class="docstring">
-<p>Lists the associations that were created between Resolver rules and VPCs using the current AWS
-account.</p>
+<p>Lists the associations that were created between Resolver rules and VPCs using
+the current AWS account.</p>
 
   </section>
 </section>
@@ -1142,7 +1170,7 @@ account.</p>
     </a>
     <h1 class="signature">list_resolver_rules(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L322" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L335" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1167,7 +1195,7 @@ account.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L329" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L342" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1192,7 +1220,7 @@ account.</p>
     </a>
     <h1 class="signature">put_resolver_query_log_config_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L338" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L351" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1202,9 +1230,9 @@ account.</p>
   </div>
 
   <section class="docstring">
-<p>Specifies an AWS account that you want to share a query logging configuration with, the query
-logging configuration that you want to share, and the operations that you want the account to be
-able to perform on the configuration.</p>
+<p>Specifies an AWS account that you want to share a query logging configuration
+with, the query logging configuration that you want to share, and the operations
+that you want the account to be able to perform on the configuration.</p>
 
   </section>
 </section>
@@ -1219,7 +1247,7 @@ able to perform on the configuration.</p>
     </a>
     <h1 class="signature">put_resolver_rule_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L346" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L360" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1229,8 +1257,9 @@ able to perform on the configuration.</p>
   </div>
 
   <section class="docstring">
-<p>Specifies an AWS account that you want to share rules with, the Resolver rules that you want to
-share, and the operations that you want the account to be able to perform on those rules.</p>
+<p>Specifies an AWS account that you want to share rules with, the Resolver rules
+that you want to share, and the operations that you want the account to be able
+to perform on those rules.</p>
 
   </section>
 </section>
@@ -1245,7 +1274,7 @@ share, and the operations that you want the account to be able to perform on tho
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L353" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L367" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1270,7 +1299,7 @@ share, and the operations that you want the account to be able to perform on tho
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L360" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L374" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1295,7 +1324,7 @@ share, and the operations that you want the account to be able to perform on tho
     </a>
     <h1 class="signature">update_resolver_endpoint(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L367" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L381" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1320,7 +1349,7 @@ share, and the operations that you want the account to be able to perform on tho
     </a>
     <h1 class="signature">update_resolver_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L377" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/route53_resolver.ex#L391" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1331,8 +1360,8 @@ share, and the operations that you want the account to be able to perform on tho
 
   <section class="docstring">
 <p>Updates settings for a specified Resolver rule.</p>
-<p><code class="inline">ResolverRuleId</code> is required, and all other parameters are optional. If you don&#39;t specify a
-parameter, it retains its current value.</p>
+<p><code class="inline">ResolverRuleId</code> is required, and all other parameters are optional. If you
+don&#39;t specify a parameter, it retains its current value.</p>
 
   </section>
 </section>

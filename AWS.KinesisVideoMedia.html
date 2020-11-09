@@ -10,7 +10,7 @@
     <title>AWS.KinesisVideoMedia — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -138,7 +138,7 @@ Functions
     </a>
     <h1 class="signature">get_media(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_media.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_media.ex#L52" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -149,32 +149,38 @@ Functions
 
   <section class="docstring">
 <p>Use this API to retrieve media content from a Kinesis video stream.</p>
-<p>In the request, you identify the stream name or stream Amazon Resource Name (ARN), and the
-starting chunk. Kinesis Video Streams then returns a stream of chunks in order by fragment number.</p>
-<p>You must first call the <code class="inline">GetDataEndpoint</code> API to get an endpoint. Then send the <code class="inline">GetMedia</code>
-requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.</p>
-<p>When you put media data (fragments) on a stream, Kinesis Video Streams stores each incoming
-fragment and related metadata in what is called a &quot;chunk.&quot; For more information, see
-<a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The <code class="inline">GetMedia</code> API returns a stream of these chunks starting from the chunk that you specify in
-the request.</p>
+<p>In the request, you identify the stream name or stream Amazon Resource Name
+(ARN), and the starting chunk. Kinesis Video Streams then returns a stream of
+chunks in order by fragment number.</p>
+<p>You must first call the <code class="inline">GetDataEndpoint</code> API to get an endpoint. Then send the
+<code class="inline">GetMedia</code> requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url parameter</a>.</p>
+<p>When you put media data (fragments) on a stream, Kinesis Video Streams stores
+each incoming fragment and related metadata in what is called a &quot;chunk.&quot; For
+more information, see
+<a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>. The <code class="inline">GetMedia</code> API returns a stream of these chunks starting from the chunk that
+you specify in the request.</p>
 <p>The following limits apply when using the <code class="inline">GetMedia</code> API:</p>
 <ul>
-<li><p>A client can call <code class="inline">GetMedia</code> up to five times per second per stream.</p>
+<li><p>A client can call <code class="inline">GetMedia</code> up to five times per second per
+stream.</p>
 </li>
-<li><p>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second
-(or 200 megabits per second) during a <code class="inline">GetMedia</code> session.</p>
+<li><p>Kinesis Video Streams sends media data at a rate of up to 25
+megabytes per second (or 200 megabits per second) during a <code class="inline">GetMedia</code> session.</p>
 </li>
 </ul>
-<p>If an error is thrown after invoking a Kinesis Video Streams media API, in addition to the HTTP
-status code and the response body, it includes the following pieces of information:</p>
-<p>   <code class="inline">x-amz-ErrorType</code> HTTP header – contains a more specific error type in addition to
-what the HTTP status code provides.</p>
-<p>   <code class="inline">x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS, the support
-team can better diagnose the problem if given the Request Id.</p>
-<p>Both the HTTP status code and the ErrorType header can be utilized to make programmatic decisions
-about whether errors are retry-able and under what conditions, as well as provide information on
-what actions the client programmer might need to take in order to successfully try again.</p>
-<p>For more information, see the <strong>Errors</strong> section at the bottom of this topic, as well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
+<p>If an error is thrown after invoking a Kinesis Video Streams media API, in
+addition to the HTTP status code and the response body, it includes the
+following pieces of information:</p>
+<p>   <code class="inline">x-amz-ErrorType</code> HTTP header – contains a more specific error type
+in addition to what the HTTP status code provides.</p>
+<p>   <code class="inline">x-amz-RequestId</code> HTTP header – if you want to report an issue to
+AWS, the support team can better diagnose the problem if given the Request Id.</p>
+<p>Both the HTTP status code and the ErrorType header can be utilized to make
+programmatic decisions about whether errors are retry-able and under what
+conditions, as well as provide information on what actions the client programmer
+might need to take in order to successfully try again.</p>
+<p>For more information, see the <strong>Errors</strong> section at the bottom of this topic, as
+well as <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/CommonErrors.html">Common
 Errors</a>.</p>
 
   </section>

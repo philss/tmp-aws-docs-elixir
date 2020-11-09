@@ -10,7 +10,7 @@
     <title>AWS.ACM — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -88,8 +88,8 @@ AWS.ACM
         <section id="moduledoc">
 <p>AWS Certificate Manager</p>
 <p>Welcome to the AWS Certificate Manager (ACM) API documentation.</p>
-<p>You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For
-general information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <em>AWS Certificate Manager User Guide</em>
+<p>You can use ACM to manage SSL/TLS certificates for your AWS-based websites and
+applications. For general information about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <em>AWS Certificate Manager User Guide</em>
 </a>.</p>
 
         </section>
@@ -141,7 +141,8 @@ general information about using ACM, see the <a href="https://docs.aws.amazon.co
 
   </div>
 
-    <div class="summary-synopsis"><p>Exports a private certificate issued by a private certificate authority (CA) for use anywhere.</p></div>
+    <div class="summary-synopsis"><p>Exports a private certificate issued by a private certificate authority (CA) for
+use anywhere.</p></div>
 
 </div>
 <div class="summary-row">
@@ -159,8 +160,8 @@ general information about using ACM, see the <a href="https://docs.aws.amazon.co
 
   </div>
 
-    <div class="summary-synopsis"><p>Imports a certificate into AWS Certificate Manager (ACM) to use with services that are integrated
-with ACM.</p></div>
+    <div class="summary-synopsis"><p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
+that are integrated with ACM.</p></div>
 
 </div>
 <div class="summary-row">
@@ -252,7 +253,7 @@ Functions
     </a>
     <h1 class="signature">add_tags_to_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L32" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L36" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -263,17 +264,21 @@ Functions
 
   <section class="docstring">
 <p>Adds one or more tags to an ACM certificate.</p>
-<p>Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of
-a <code class="inline">key</code> and an optional <code class="inline">value</code>. You specify the certificate on input by its Amazon Resource Name
-(ARN). You specify the tag by using a key-value pair.</p>
-<p>You can apply a tag to just one certificate if you want to identify a specific characteristic of
-that certificate, or you can apply the same tag to multiple certificates if you want to filter for
-a common relationship among those certificates. Similarly, you can apply the same tag to multiple
-resources if you want to specify a relationship among those resources. For example, you can add
-the same tag to an ACM certificate and an Elastic Load Balancing load balancer to indicate that
-they are both used by the same website. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM certificates</a>.</p>
-<p>To remove one or more tags, use the <code class="inline">RemoveTagsFromCertificate</code> action. To view all of the tags
-that have been applied to the certificate, use the <code class="inline">ListTagsForCertificate</code> action.</p>
+<p>Tags are labels that you can use to identify and organize your AWS resources.
+Each tag consists of a <code class="inline">key</code> and an optional <code class="inline">value</code>. You specify the
+certificate on input by its Amazon Resource Name (ARN). You specify the tag by
+using a key-value pair.</p>
+<p>You can apply a tag to just one certificate if you want to identify a specific
+characteristic of that certificate, or you can apply the same tag to multiple
+certificates if you want to filter for a common relationship among those
+certificates. Similarly, you can apply the same tag to multiple resources if you
+want to specify a relationship among those resources. For example, you can add
+the same tag to an ACM certificate and an Elastic Load Balancing load balancer
+to indicate that they are both used by the same website. For more information,
+see <a href="https://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM certificates</a>.</p>
+<p>To remove one or more tags, use the <code class="inline">RemoveTagsFromCertificate</code> action. To view
+all of the tags that have been applied to the certificate, use the
+<code class="inline">ListTagsForCertificate</code> action.</p>
 
   </section>
 </section>
@@ -288,7 +293,7 @@ that have been applied to the certificate, use the <code class="inline">ListTags
     </a>
     <h1 class="signature">delete_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L52" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -299,11 +304,13 @@ that have been applied to the certificate, use the <code class="inline">ListTags
 
   <section class="docstring">
 <p>Deletes a certificate and its associated private key.</p>
-<p>If this action succeeds, the certificate no longer appears in the list that can be displayed by
-calling the <code class="inline">ListCertificates</code> action or be retrieved by calling the <code class="inline">GetCertificate</code> action. The
-certificate will not be available for use by AWS services integrated with ACM.</p>
-<p>You cannot delete an ACM certificate that is being used by another AWS service. To delete a
-certificate that is in use, the certificate association must first be removed.</p>
+<p>If this action succeeds, the certificate no longer appears in the list that can
+be displayed by calling the <code class="inline">ListCertificates</code> action or be retrieved by calling
+the <code class="inline">GetCertificate</code> action. The certificate will not be available for use by
+AWS services integrated with ACM.</p>
+<p>You cannot delete an ACM certificate that is being used by another AWS service.
+To delete a certificate that is in use, the certificate association must first
+be removed.</p>
 
   </section>
 </section>
@@ -318,7 +325,7 @@ certificate that is in use, the certificate association must first be removed.</
     </a>
     <h1 class="signature">describe_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L53" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L59" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -343,7 +350,7 @@ certificate that is in use, the certificate association must first be removed.</
     </a>
     <h1 class="signature">export_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L67" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L75" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -353,12 +360,14 @@ certificate that is in use, the certificate association must first be removed.</
   </div>
 
   <section class="docstring">
-<p>Exports a private certificate issued by a private certificate authority (CA) for use anywhere.</p>
-<p>The exported file contains the certificate, the certificate chain, and the encrypted private
-2048-bit RSA key associated with the public key that is embedded in the certificate. For security,
-you must assign a passphrase for the private key when exporting it.</p>
-<p>For information about exporting and formatting a certificate using the ACM console or CLI, see
-<a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a Private Certificate</a>.</p>
+<p>Exports a private certificate issued by a private certificate authority (CA) for
+use anywhere.</p>
+<p>The exported file contains the certificate, the certificate chain, and the
+encrypted private 2048-bit RSA key associated with the public key that is
+embedded in the certificate. For security, you must assign a passphrase for the
+private key when exporting it.</p>
+<p>For information about exporting and formatting a certificate using the ACM
+console or CLI, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-export-private.html">Export a Private Certificate</a>.</p>
 
   </section>
 </section>
@@ -373,7 +382,7 @@ you must assign a passphrase for the private key when exporting it.</p>
     </a>
     <h1 class="signature">get_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L79" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L88" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -384,10 +393,11 @@ you must assign a passphrase for the private key when exporting it.</p>
 
   <section class="docstring">
 <p>Retrieves an Amazon-issued certificate and its certificate chain.</p>
-<p>The chain consists of the certificate of the issuing CA and the intermediate certificates of any
-other subordinate CAs. All of the certificates are base64 encoded. You can use
-<a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode the certificates
-and inspect individual fields.</p>
+<p>The chain consists of the certificate of the issuing CA and the intermediate
+certificates of any other subordinate CAs. All of the certificates are base64
+encoded. You can use
+<a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode
+the certificates and inspect individual fields.</p>
 
   </section>
 </section>
@@ -402,7 +412,7 @@ and inspect individual fields.</p>
     </a>
     <h1 class="signature">import_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L139" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L153" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -412,58 +422,63 @@ and inspect individual fields.</p>
   </div>
 
   <section class="docstring">
-<p>Imports a certificate into AWS Certificate Manager (ACM) to use with services that are integrated
-with ACM.</p>
-<p>Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a> allow only
-certificate types and keys they support to be associated with their resources. Further, their
-support differs depending on whether the certificate is imported into IAM or into ACM. For more
-information, see the documentation for each service. For more information about importing
-certificates into ACM, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a> in the
-<em>AWS Certificate Manager User Guide</em>.</p>
-<p>ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for certificates that
-you import.</p>
+<p>Imports a certificate into AWS Certificate Manager (ACM) to use with services
+that are integrated with ACM.</p>
+<p>Note that <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-services.html">integrated services</a>
+allow only certificate types and keys they support to be associated with their
+resources. Further, their support differs depending on whether the certificate
+is imported into IAM or into ACM. For more information, see the documentation
+for each service. For more information about importing certificates into ACM,
+see <a href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing Certificates</a>
+in the <em>AWS Certificate Manager User Guide</em>.</p>
+<p>ACM does not provide <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed renewal</a> for
+certificates that you import.</p>
 <p>Note the following guidelines when importing third party certificates:</p>
 <ul>
-<li><p>You must enter the private key that matches the certificate you are importing.</p>
+<li><p>You must enter the private key that matches the certificate you
+are importing.</p>
 </li>
-<li><p>The private key must be unencrypted. You cannot import a private key that is
-protected by a password or a passphrase.</p>
+<li><p>The private key must be unencrypted. You cannot import a private
+key that is protected by a password or a passphrase.</p>
 </li>
-<li><p>If the certificate you are importing is not self-signed, you must enter its
-certificate chain.</p>
+<li><p>If the certificate you are importing is not self-signed, you must
+enter its certificate chain.</p>
 </li>
-<li><p>If a certificate chain is included, the issuer must be the subject of one of the
-certificates in the chain.</p>
+<li><p>If a certificate chain is included, the issuer must be the subject
+of one of the certificates in the chain.</p>
 </li>
-<li><p>The certificate, private key, and certificate chain must be PEM-encoded.</p>
+<li><p>The certificate, private key, and certificate chain must be
+PEM-encoded.</p>
 </li>
-<li><p>The current time must be between the <code class="inline">Not Before</code> and <code class="inline">Not After</code> certificate
-fields.</p>
+<li><p>The current time must be between the <code class="inline">Not Before</code> and <code class="inline">Not After</code>
+certificate fields.</p>
 </li>
 <li><p>The <code class="inline">Issuer</code> field must not be empty.</p>
 </li>
-<li><p>The OCSP authority URL, if present, must not exceed 1000 characters.</p>
+<li><p>The OCSP authority URL, if present, must not exceed 1000
+characters.</p>
 </li>
-<li><p>To import a new certificate, omit the <code class="inline">CertificateArn</code> argument. Include this
-argument only when you want to replace a previously imported certifica</p>
+<li><p>To import a new certificate, omit the <code class="inline">CertificateArn</code> argument.
+Include this argument only when you want to replace a previously imported
+certifica</p>
 </li>
-<li><p>When you import a certificate by using the CLI, you must specify the certificate,
-the certificate chain, and the private key by their file names preceded by <code class="inline">file://</code>. For example,
-you can specify a certificate saved in the <code class="inline">C: emp</code> folder as
-<code class="inline">file://C: empcertificate_to_import.pem</code>. If you are making an HTTP or HTTPS Query request,
-include these arguments as BLOBs.</p>
+<li><p>When you import a certificate by using the CLI, you must specify
+the certificate, the certificate chain, and the private key by their file names
+preceded by <code class="inline">file://</code>. For example, you can specify a certificate saved in the
+<code class="inline">C: emp</code> folder as <code class="inline">file://C: empcertificate_to_import.pem</code>. If you are
+making an HTTP or HTTPS Query request, include these arguments as BLOBs.</p>
 </li>
-<li><p>When you import a certificate by using an SDK, you must specify the certificate, the
-certificate chain, and the private key files in the manner required by the programming language
-you&#39;re using.</p>
+<li><p>When you import a certificate by using an SDK, you must specify
+the certificate, the certificate chain, and the private key files in the manner
+required by the programming language you&#39;re using.</p>
 </li>
-<li><p>The cryptographic algorithm of an imported certificate must match the algorithm of
-the signing CA. For example, if the signing CA key type is RSA, then the certificate key type must
-also be RSA.</p>
+<li><p>The cryptographic algorithm of an imported certificate must match
+the algorithm of the signing CA. For example, if the signing CA key type is RSA,
+then the certificate key type must also be RSA.</p>
 </li>
 </ul>
-<p>This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of the imported
-certificate.</p>
+<p>This operation returns the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a>
+of the imported certificate.</p>
 
   </section>
 </section>
@@ -478,7 +493,7 @@ certificate.</p>
     </a>
     <h1 class="signature">list_certificates(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L150" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L164" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -489,9 +504,9 @@ certificate.</p>
 
   <section class="docstring">
 <p>Retrieves a list of certificate ARNs and domain names.</p>
-<p>You can request that only certificates that match a specific status be listed. You can also filter
-by specific attributes of the certificate. Default filtering returns only <code class="inline">RSA_2048</code> certificates.
-For more information, see <code class="inline">Filters</code>.</p>
+<p>You can request that only certificates that match a specific status be listed.
+You can also filter by specific attributes of the certificate. Default filtering
+returns only <code class="inline">RSA_2048</code> certificates. For more information, see <code class="inline">Filters</code>.</p>
 
   </section>
 </section>
@@ -506,7 +521,7 @@ For more information, see <code class="inline">Filters</code>.</p>
     </a>
     <h1 class="signature">list_tags_for_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L161" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L175" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -517,9 +532,9 @@ For more information, see <code class="inline">Filters</code>.</p>
 
   <section class="docstring">
 <p>Lists the tags that have been applied to the ACM certificate.</p>
-<p>Use the certificate&#39;s Amazon Resource Name (ARN) to specify the certificate. To add a tag to an
-ACM certificate, use the <code class="inline">AddTagsToCertificate</code> action. To delete a tag, use the
-<code class="inline">RemoveTagsFromCertificate</code> action.</p>
+<p>Use the certificate&#39;s Amazon Resource Name (ARN) to specify the certificate. To
+add a tag to an ACM certificate, use the <code class="inline">AddTagsToCertificate</code> action. To
+delete a tag, use the <code class="inline">RemoveTagsFromCertificate</code> action.</p>
 
   </section>
 </section>
@@ -534,7 +549,7 @@ ACM certificate, use the <code class="inline">AddTagsToCertificate</code> action
     </a>
     <h1 class="signature">remove_tags_from_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L175" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L191" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -545,11 +560,13 @@ ACM certificate, use the <code class="inline">AddTagsToCertificate</code> action
 
   <section class="docstring">
 <p>Remove one or more tags from an ACM certificate.</p>
-<p>A tag consists of a key-value pair. If you do not specify the value portion of the tag when
-calling this function, the tag will be removed regardless of value. If you specify a value, the
-tag is removed only if it is associated with the specified value.</p>
-<p>To add tags to a certificate, use the <code class="inline">AddTagsToCertificate</code> action. To view all of the tags that
-have been applied to a specific ACM certificate, use the <code class="inline">ListTagsForCertificate</code> action.</p>
+<p>A tag consists of a key-value pair. If you do not specify the value portion of
+the tag when calling this function, the tag will be removed regardless of value.
+If you specify a value, the tag is removed only if it is associated with the
+specified value.</p>
+<p>To add tags to a certificate, use the <code class="inline">AddTagsToCertificate</code> action. To view all
+of the tags that have been applied to a specific ACM certificate, use the
+<code class="inline">ListTagsForCertificate</code> action.</p>
 
   </section>
 </section>
@@ -564,7 +581,7 @@ have been applied to a specific ACM certificate, use the <code class="inline">Li
     </a>
     <h1 class="signature">renew_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L187" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L204" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -575,10 +592,11 @@ have been applied to a specific ACM certificate, use the <code class="inline">Li
 
   <section class="docstring">
 <p>Renews an eligable ACM certificate.</p>
-<p>At this time, only exported private certificates can be renewed with this operation. In order to
-renew your ACM PCA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>.
-For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User
-Guide.</p>
+<p>At this time, only exported private certificates can be renewed with this
+operation. In order to renew your ACM PCA certificates with ACM, you must first
+<a href="https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>.
+For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a>
+in the ACM User Guide.</p>
 
   </section>
 </section>
@@ -593,7 +611,7 @@ Guide.</p>
     </a>
     <h1 class="signature">request_certificate(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L204" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L222" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -604,14 +622,15 @@ Guide.</p>
 
   <section class="docstring">
 <p>Requests an ACM certificate for use with other AWS services.</p>
-<p>To request an ACM certificate, you must specify a fully qualified domain name (FQDN) in the
-<code class="inline">DomainName</code> parameter. You can also specify additional FQDNs in the <code class="inline">SubjectAlternativeNames</code>
-parameter.</p>
-<p>If you are requesting a private certificate, domain validation is not required. If you are
-requesting a public certificate, each domain name that you specify must be validated to verify
-that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a> or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>. We
-recommend that you use DNS validation. ACM issues public certificates after receiving approval
-from the domain owner.</p>
+<p>To request an ACM certificate, you must specify a fully qualified domain name
+(FQDN) in the <code class="inline">DomainName</code> parameter. You can also specify additional FQDNs in
+the <code class="inline">SubjectAlternativeNames</code> parameter.</p>
+<p>If you are requesting a private certificate, domain validation is not required.
+If you are requesting a public certificate, each domain name that you specify
+must be validated to verify that you own or control the domain. You can use <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html">DNS validation</a>
+or <a href="https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html">email validation</a>.
+We recommend that you use DNS validation. ACM issues public certificates after
+receiving approval from the domain owner.</p>
 
   </section>
 </section>
@@ -626,7 +645,7 @@ from the domain owner.</p>
     </a>
     <h1 class="signature">resend_validation_email(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L220" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L240" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -637,14 +656,16 @@ from the domain owner.</p>
 
   <section class="docstring">
 <p>Resends the email that requests domain ownership validation.</p>
-<p>The domain owner or an authorized representative must approve the ACM certificate before it can be
-issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon
-certificate approval website and then clicking <strong>I Approve</strong>. However, the validation email can be
-blocked by spam filters. Therefore, if you do not receive the original mail, you can request that
-the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have
-elapsed since your original request or since your last attempt to resend validation mail, you must
-request a new certificate. For more information about setting up your contact email addresses, see
-<a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>.</p>
+<p>The domain owner or an authorized representative must approve the ACM
+certificate before it can be issued. The certificate can be approved by clicking
+a link in the mail to navigate to the Amazon certificate approval website and
+then clicking <strong>I Approve</strong>. However, the validation email can be blocked by
+spam filters. Therefore, if you do not receive the original mail, you can
+request that the mail be resent within 72 hours of requesting the ACM
+certificate. If more than 72 hours have elapsed since your original request or
+since your last attempt to resend validation mail, you must request a new
+certificate. For more information about setting up your contact email addresses,
+see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>.</p>
 
   </section>
 </section>
@@ -659,7 +680,7 @@ request a new certificate. For more information about setting up your contact em
     </a>
     <h1 class="signature">update_certificate_options(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L231" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/acm.ex#L251" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -670,9 +691,9 @@ request a new certificate. For more information about setting up your contact em
 
   <section class="docstring">
 <p>Updates a certificate.</p>
-<p>Currently, you can use this function to specify whether to opt in to or out of recording your
-certificate in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency
-Logging</a>.</p>
+<p>Currently, you can use this function to specify whether to opt in to or out of
+recording your certificate in a certificate transparency log. For more
+information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency Logging</a>.</p>
 
   </section>
 </section>

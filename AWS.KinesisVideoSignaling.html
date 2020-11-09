@@ -10,7 +10,7 @@
     <title>AWS.KinesisVideoSignaling — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,9 +86,9 @@ AWS.KinesisVideoSignaling
 
 
         <section id="moduledoc">
-<p>Kinesis Video Streams Signaling Service is a intermediate service that establishes a communication
-channel for discovering peers, transmitting offers and answers in order to establish peer-to-peer
-connection in webRTC technology.</p>
+<p>Kinesis Video Streams Signaling Service is a intermediate service that
+establishes a communication channel for discovering peers, transmitting offers
+and answers in order to establish peer-to-peer connection in webRTC technology.</p>
 
         </section>
 
@@ -112,8 +112,9 @@ connection in webRTC technology.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including
-URIs, username, and password which can be used to configure the WebRTC connection.</p></div>
+    <div class="summary-synopsis"><p>Gets the Interactive Connectivity Establishment (ICE) server configuration
+information, including URIs, username, and password which can be used to
+configure the WebRTC connection.</p></div>
 
 </div>
 <div class="summary-row">
@@ -122,7 +123,8 @@ URIs, username, and password which can be used to configure the WebRTC connectio
 
   </div>
 
-    <div class="summary-synopsis"><p>This API allows you to connect WebRTC-enabled devices with Alexa display devices.</p></div>
+    <div class="summary-synopsis"><p>This API allows you to connect WebRTC-enabled devices with Alexa display
+devices.</p></div>
 
 </div>
 
@@ -151,7 +153,7 @@ Functions
     </a>
     <h1 class="signature">get_ice_server_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_signaling.ex#L27" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_signaling.ex#L30" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -161,17 +163,20 @@ Functions
   </div>
 
   <section class="docstring">
-<p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including
-URIs, username, and password which can be used to configure the WebRTC connection.</p>
-<p>The ICE component uses this configuration information to setup the WebRTC connection, including
-authenticating with the Traversal Using Relays around NAT (TURN) relay server.</p>
-<p>TURN is a protocol that is used to improve the connectivity of peer-to-peer applications. By
-providing a cloud-based relay service, TURN ensures that a connection can be established even when
-one or more peers are incapable of a direct peer-to-peer connection. For more information, see <a href="https://tools.ietf.org/html/draft-uberti-rtcweb-turn-rest-00">A REST API For Access To TURN
-Services</a>.</p>
-<p>You can invoke this API to establish a fallback mechanism in case either of the peers is unable to
-establish a direct peer-to-peer connection over a signaling channel. You must specify either a
-signaling channel ARN or the client ID in order to invoke this API.</p>
+<p>Gets the Interactive Connectivity Establishment (ICE) server configuration
+information, including URIs, username, and password which can be used to
+configure the WebRTC connection.</p>
+<p>The ICE component uses this configuration information to setup the WebRTC
+connection, including authenticating with the Traversal Using Relays around NAT
+(TURN) relay server.</p>
+<p>TURN is a protocol that is used to improve the connectivity of peer-to-peer
+applications. By providing a cloud-based relay service, TURN ensures that a
+connection can be established even when one or more peers are incapable of a
+direct peer-to-peer connection. For more information, see <a href="https://tools.ietf.org/html/draft-uberti-rtcweb-turn-rest-00">A REST API For Access To TURN Services</a>.</p>
+<p>You can invoke this API to establish a fallback mechanism in case either of the
+peers is unable to establish a direct peer-to-peer connection over a signaling
+channel. You must specify either a signaling channel ARN or the client ID in
+order to invoke this API.</p>
 
   </section>
 </section>
@@ -186,7 +191,7 @@ signaling channel ARN or the client ID in order to invoke this API.</p>
     </a>
     <h1 class="signature">send_alexa_offer_to_master(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_signaling.ex#L42" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/kinesis_video_signaling.ex#L47" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -196,11 +201,13 @@ signaling channel ARN or the client ID in order to invoke this API.</p>
   </div>
 
   <section class="docstring">
-<p>This API allows you to connect WebRTC-enabled devices with Alexa display devices.</p>
-<p>When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The
-offer is delivered as soon as the master is connected to the specified signaling channel. This API
-returns the SDP answer from the connected master. If the master is not connected to the signaling
-channel, redelivery requests are made until the message expires.</p>
+<p>This API allows you to connect WebRTC-enabled devices with Alexa display
+devices.</p>
+<p>When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the
+master peer. The offer is delivered as soon as the master is connected to the
+specified signaling channel. This API returns the SDP answer from the connected
+master. If the master is not connected to the signaling channel, redelivery
+requests are made until the message expires.</p>
 
   </section>
 </section>

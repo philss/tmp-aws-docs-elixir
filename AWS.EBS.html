@@ -10,7 +10,7 @@
     <title>AWS.EBS — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,24 +86,28 @@ AWS.EBS
 
 
         <section id="moduledoc">
-<p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create EBS snapshots, write
-data directly to your snapshots, read data on your snapshots, and identify the differences or
-changes between two snapshots.</p>
-<p>If you’re an independent software vendor (ISV) who offers backup services for Amazon EBS, the EBS
-direct APIs make it more efficient and cost-effective to track incremental changes on your EBS
-volumes through snapshots. This can be done without having to create new volumes from snapshots,
-and then use Amazon Elastic Compute Cloud (Amazon EC2) instances to compare the differences.</p>
-<p>You can create incremental snapshots directly from data on-premises into EBS volumes and the cloud
-to use for quick disaster recovery. With the ability to write and read snapshots, you can write
-your on-premises data to an EBS snapshot during a disaster. Then after recovery, you can restore
-it back to AWS or on-premises from the snapshot. You no longer need to build and maintain complex
+<p>You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create
+EBS snapshots, write data directly to your snapshots, read data on your
+snapshots, and identify the differences or changes between two snapshots.</p>
+<p>If you’re an independent software vendor (ISV) who offers backup services for
+Amazon EBS, the EBS direct APIs make it more efficient and cost-effective to
+track incremental changes on your EBS volumes through snapshots. This can be
+done without having to create new volumes from snapshots, and then use Amazon
+Elastic Compute Cloud (Amazon EC2) instances to compare the differences.</p>
+<p>You can create incremental snapshots directly from data on-premises into EBS
+volumes and the cloud to use for quick disaster recovery. With the ability to
+write and read snapshots, you can write your on-premises data to an EBS snapshot
+during a disaster. Then after recovery, you can restore it back to AWS or
+on-premises from the snapshot. You no longer need to build and maintain complex
 mechanisms to copy data to and from Amazon EBS.</p>
-<p>This API reference provides detailed information about the actions, data types, parameters, and
-errors of the EBS direct APIs. For more information about the elements that make up the EBS direct
-APIs, and examples of how to use them effectively, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html">Accessing the Contents of an EBS Snapshot</a> in the
-<em>Amazon Elastic Compute Cloud User Guide</em>. For more information about the supported AWS Regions,
-endpoints, and service quotas for the EBS direct APIs, see <a href="https://docs.aws.amazon.com/general/latest/gr/ebs-service.html">Amazon Elastic Block Store Endpoints and Quotas</a> in the <em>AWS General
-Reference</em>.</p>
+<p>This API reference provides detailed information about the actions, data types,
+parameters, and errors of the EBS direct APIs. For more information about the
+elements that make up the EBS direct APIs, and examples of how to use them
+effectively, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-accessing-snapshot.html">Accessing the Contents of an EBS Snapshot</a>
+in the <em>Amazon Elastic Compute Cloud User Guide</em>. For more information about the
+supported AWS Regions, endpoints, and service quotas for the EBS direct APIs,
+see <a href="https://docs.aws.amazon.com/general/latest/gr/ebs-service.html">Amazon Elastic Block Store Endpoints and Quotas</a> in the
+<em>AWS General Reference</em>.</p>
 
         </section>
 
@@ -127,7 +131,8 @@ Reference</em>.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Seals and completes the snapshot after all of the required blocks of data have been written to it.</p></div>
+    <div class="summary-synopsis"><p>Seals and completes the snapshot after all of the required blocks of data have
+been written to it.</p></div>
 
 </div>
 <div class="summary-row">
@@ -145,8 +150,8 @@ Reference</em>.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns information about the blocks that are different between two Amazon Elastic Block Store
-snapshots of the same volume/snapshot lineage.</p></div>
+    <div class="summary-synopsis"><p>Returns information about the blocks that are different between two Amazon
+Elastic Block Store snapshots of the same volume/snapshot lineage.</p></div>
 
 </div>
 <div class="summary-row">
@@ -202,7 +207,7 @@ Functions
     </a>
     <h1 class="signature">complete_snapshot(client, snapshot_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L35" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L40" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -212,9 +217,10 @@ Functions
   </div>
 
   <section class="docstring">
-<p>Seals and completes the snapshot after all of the required blocks of data have been written to it.</p>
-<p>Completing the snapshot changes the status to <code class="inline">completed</code>. You cannot write new blocks to a
-snapshot after it has been completed.</p>
+<p>Seals and completes the snapshot after all of the required blocks of data have
+been written to it.</p>
+<p>Completing the snapshot changes the status to <code class="inline">completed</code>. You cannot write new
+blocks to a snapshot after it has been completed.</p>
 
   </section>
 </section>
@@ -229,7 +235,7 @@ snapshot after it has been completed.</p>
     </a>
     <h1 class="signature">get_snapshot_block(client, block_index, snapshot_id, block_token, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L52" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L57" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -262,7 +268,7 @@ snapshot after it has been completed.</p>
     </a>
     <h1 class="signature">list_changed_blocks(client, second_snapshot_id, first_snapshot_id \\ nil, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L87" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L92" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -272,8 +278,8 @@ snapshot after it has been completed.</p>
   </div>
 
   <section class="docstring">
-<p>Returns information about the blocks that are different between two Amazon Elastic Block Store
-snapshots of the same volume/snapshot lineage.</p>
+<p>Returns information about the blocks that are different between two Amazon
+Elastic Block Store snapshots of the same volume/snapshot lineage.</p>
 
   </section>
 </section>
@@ -294,7 +300,7 @@ snapshots of the same volume/snapshot lineage.</p>
     </a>
     <h1 class="signature">list_snapshot_blocks(client, snapshot_id, max_results \\ nil, next_token \\ nil, starting_block_index \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L117" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L122" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -319,7 +325,7 @@ snapshots of the same volume/snapshot lineage.</p>
     </a>
     <h1 class="signature">put_snapshot_block(client, block_index, snapshot_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L147" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L152" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -330,8 +336,8 @@ snapshots of the same volume/snapshot lineage.</p>
 
   <section class="docstring">
 <p>Writes a block of data to a snapshot.</p>
-<p>If the specified block contains data, the existing data is overwritten. The target snapshot must
-be in the <code class="inline">pending</code> state.</p>
+<p>If the specified block contains data, the existing data is overwritten. The
+target snapshot must be in the <code class="inline">pending</code> state.</p>
 <p>Data written to a snapshot must be aligned with 512-byte sectors.</p>
 
   </section>
@@ -347,7 +353,7 @@ be in the <code class="inline">pending</code> state.</p>
     </a>
     <h1 class="signature">start_snapshot(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L188" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ebs.ex#L193" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

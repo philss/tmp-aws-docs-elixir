@@ -10,7 +10,7 @@
     <title>AWS.XRay — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,8 +86,8 @@ AWS.XRay
 
 
         <section id="moduledoc">
-<p>AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data
-created by processing those traces.</p>
+<p>AWS X-Ray provides APIs for managing debug traces and retrieving service maps
+and other data created by processing those traces.</p>
 
         </section>
 
@@ -201,7 +201,8 @@ created by processing those traces.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Requests a sampling quota for rules that the service is using to sample requests.</p></div>
+    <div class="summary-synopsis"><p>Requests a sampling quota for rules that the service is using to sample
+requests.</p></div>
 
 </div>
 <div class="summary-row">
@@ -210,8 +211,8 @@ created by processing those traces.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Retrieves a document that describes services that process incoming requests, and downstream
-services that they call as a result.</p></div>
+    <div class="summary-synopsis"><p>Retrieves a document that describes services that process incoming requests, and
+downstream services that they call as a result.</p></div>
 
 </div>
 <div class="summary-row">
@@ -238,8 +239,8 @@ services that they call as a result.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Retrieves IDs and annotations for traces available for a specified time frame using an optional
-filter.</p></div>
+    <div class="summary-synopsis"><p>Retrieves IDs and annotations for traces available for a specified time frame
+using an optional filter.</p></div>
 
 </div>
 <div class="summary-row">
@@ -248,7 +249,8 @@ filter.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.</p></div>
+    <div class="summary-synopsis"><p>Returns a list of tags that are applied to the specified AWS X-Ray group or
+sampling rule.</p></div>
 
 </div>
 <div class="summary-row">
@@ -351,8 +353,8 @@ Functions
 
   <section class="docstring">
 <p>Retrieves a list of traces specified by ID.</p>
-<p>Each trace is a collection of segment documents that originates from a single request. Use
-<code class="inline">GetTraceSummaries</code> to get a list of trace IDs.</p>
+<p>Each trace is a collection of segment documents that originates from a single
+request. Use <code class="inline">GetTraceSummaries</code> to get a list of trace IDs.</p>
 
   </section>
 </section>
@@ -392,7 +394,7 @@ Functions
     </a>
     <h1 class="signature">create_sampling_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L42" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L43" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -403,10 +405,11 @@ Functions
 
   <section class="docstring">
 <p>Creates a rule to control sampling behavior for instrumented applications.</p>
-<p>Services retrieve rules with <code class="inline">GetSamplingRules</code>, and evaluate each rule in ascending order of
-<em>priority</em> for each request. If a rule matches, the service records a trace, borrowing it from the
-reservoir size. After 10 seconds, the service reports back to X-Ray with <code class="inline">GetSamplingTargets</code> to
-get updated versions of each in-use rule. The updated rule contains a trace quota that the service
+<p>Services retrieve rules with <code class="inline">GetSamplingRules</code>, and evaluate each rule in
+ascending order of <em>priority</em> for each request. If a rule matches, the service
+records a trace, borrowing it from the reservoir size. After 10 seconds, the
+service reports back to X-Ray with <code class="inline">GetSamplingTargets</code> to get updated versions
+of each in-use rule. The updated rule contains a trace quota that the service
 can use instead of borrowing from the reservoir.</p>
 
   </section>
@@ -422,7 +425,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">delete_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L52" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L53" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -447,7 +450,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">delete_sampling_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L62" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L63" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -472,7 +475,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_encryption_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L72" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L73" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -497,7 +500,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L82" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L83" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -522,7 +525,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_groups(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L92" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L93" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -547,7 +550,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_sampling_rules(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L102" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L103" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -572,7 +575,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_sampling_statistic_summaries(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L112" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L113" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -597,7 +600,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_sampling_targets(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L122" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L124" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -607,7 +610,8 @@ can use instead of borrowing from the reservoir.</p>
   </div>
 
   <section class="docstring">
-<p>Requests a sampling quota for rules that the service is using to sample requests.</p>
+<p>Requests a sampling quota for rules that the service is using to sample
+requests.</p>
 
   </section>
 </section>
@@ -622,7 +626,7 @@ can use instead of borrowing from the reservoir.</p>
     </a>
     <h1 class="signature">get_service_graph(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L137" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L139" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -632,11 +636,11 @@ can use instead of borrowing from the reservoir.</p>
   </div>
 
   <section class="docstring">
-<p>Retrieves a document that describes services that process incoming requests, and downstream
-services that they call as a result.</p>
-<p>Root services process incoming requests and make calls to downstream services. Root services are
-applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream
-services can be other applications, AWS resources, HTTP web APIs, or SQL databases.</p>
+<p>Retrieves a document that describes services that process incoming requests, and
+downstream services that they call as a result.</p>
+<p>Root services process incoming requests and make calls to downstream services.
+Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">AWS X-Ray SDK</a>. Downstream services can be
+other applications, AWS resources, HTTP web APIs, or SQL databases.</p>
 
   </section>
 </section>
@@ -651,7 +655,7 @@ services can be other applications, AWS resources, HTTP web APIs, or SQL databas
     </a>
     <h1 class="signature">get_time_series_service_statistics(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L147" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L149" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -676,7 +680,7 @@ services can be other applications, AWS resources, HTTP web APIs, or SQL databas
     </a>
     <h1 class="signature">get_trace_graph(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L157" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L159" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -701,7 +705,7 @@ services can be other applications, AWS resources, HTTP web APIs, or SQL databas
     </a>
     <h1 class="signature">get_trace_summaries(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L184" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L187" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -711,18 +715,19 @@ services can be other applications, AWS resources, HTTP web APIs, or SQL databas
   </div>
 
   <section class="docstring">
-<p>Retrieves IDs and annotations for traces available for a specified time frame using an optional
-filter.</p>
+<p>Retrieves IDs and annotations for traces available for a specified time frame
+using an optional filter.</p>
 <p>To get the full traces, pass the trace IDs to <code class="inline">BatchGetTraces</code>.</p>
-<p>A filter expression can target traced requests that hit specific service nodes or edges, have
-errors, or come from a known user. For example, the following filter expression targets traces
-that pass through <code class="inline">api.example.com</code>:</p>
+<p>A filter expression can target traced requests that hit specific service nodes
+or edges, have errors, or come from a known user. For example, the following
+filter expression targets traces that pass through <code class="inline">api.example.com</code>:</p>
 <p><code class="inline">service(&quot;api.example.com&quot;)</code></p>
-<p>This filter expression finds traces that have an annotation named <code class="inline">account</code> with the value
-<code class="inline">12345</code>:</p>
+<p>This filter expression finds traces that have an annotation named <code class="inline">account</code> with
+the value <code class="inline">12345</code>:</p>
 <p><code class="inline">annotation.account = &quot;12345&quot;</code></p>
-<p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in
-the <em>AWS X-Ray Developer Guide</em>.</p>
+<p>For a full list of indexed fields and keywords that you can use in filter
+expressions, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a>
+in the <em>AWS X-Ray Developer Guide</em>.</p>
 
   </section>
 </section>
@@ -737,7 +742,7 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L194" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L198" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -747,7 +752,8 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.</p>
+<p>Returns a list of tags that are applied to the specified AWS X-Ray group or
+sampling rule.</p>
 
   </section>
 </section>
@@ -762,7 +768,7 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
     </a>
     <h1 class="signature">put_encryption_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L204" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L208" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -787,7 +793,7 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
     </a>
     <h1 class="signature">put_telemetry_records(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L214" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L218" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -812,7 +818,7 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
     </a>
     <h1 class="signature">put_trace_segments(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L267" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L276" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -823,46 +829,59 @@ the <em>AWS X-Ray Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Uploads segment documents to AWS X-Ray.</p>
-<p>The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document can be a completed
-segment, an in-progress segment, or an array of subsegments.</p>
-<p>Segments must include the following fields. For the full segment document schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray
-Segment
-Documents</a> in the
-<em>AWS X-Ray Developer Guide</em>.</p>
-<p><strong>Required Segment Document Fields</strong></p>
+<p>The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A
+segment document can be a completed segment, an in-progress segment, or an array
+of subsegments.</p>
+<p>Segments must include the following fields. For the full segment document
+schema, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-api-segmentdocuments.html">AWS X-Ray Segment
+Documents</a>
+in the <em>AWS X-Ray Developer Guide</em>.</p>
+<h2 id="put_trace_segments/3-required-segment-document-fields" class="section-heading">
+  <a href="#put_trace_segments/3-required-segment-document-fields" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Required Segment Document Fields
+</h2>
+
 <ul>
 <li><p><code class="inline">name</code> - The name of the service that handled the request.</p>
 </li>
-<li><p><code class="inline">id</code> - A 64-bit identifier for the segment, unique among segments in the same trace,
-in 16 hexadecimal digits.</p>
+<li><p><code class="inline">id</code> - A 64-bit identifier for the segment, unique among segments
+in the same trace, in 16 hexadecimal digits.</p>
 </li>
-<li><p><code class="inline">trace_id</code> - A unique identifier that connects all segments and subsegments
-originating from a single client request.</p>
+<li><p><code class="inline">trace_id</code> - A unique identifier that connects all segments and
+subsegments originating from a single client request.</p>
 </li>
-<li><p><code class="inline">start_time</code> - Time the segment or subsegment was created, in floating point seconds
-in epoch time, accurate to milliseconds. For example, <code class="inline">1480615200.010</code> or <code class="inline">1.480615200010E9</code>.</p>
+<li><p><code class="inline">start_time</code> - Time the segment or subsegment was created, in
+floating point seconds in epoch time, accurate to milliseconds. For example,
+<code class="inline">1480615200.010</code> or <code class="inline">1.480615200010E9</code>.</p>
 </li>
-<li><p><code class="inline">end_time</code> - Time the segment or subsegment was closed. For example,
-<code class="inline">1480615200.090</code> or <code class="inline">1.480615200090E9</code>. Specify either an <code class="inline">end_time</code> or <code class="inline">in_progress</code>.</p>
+<li><p><code class="inline">end_time</code> - Time the segment or subsegment was closed. For
+example, <code class="inline">1480615200.090</code> or <code class="inline">1.480615200090E9</code>. Specify either an <code class="inline">end_time</code> or
+<code class="inline">in_progress</code>.</p>
 </li>
-<li><p><code class="inline">in_progress</code> - Set to <code class="inline">true</code> instead of specifying an <code class="inline">end_time</code> to record that a
-segment has been started, but is not complete. Send an in progress segment when your application
-receives a request that will take a long time to serve, to trace the fact that the request was
-received. When the response is sent, send the complete segment to overwrite the in-progress
+<li><p><code class="inline">in_progress</code> - Set to <code class="inline">true</code> instead of specifying an <code class="inline">end_time</code>
+to record that a segment has been started, but is not complete. Send an in
+progress segment when your application receives a request that will take a long
+time to serve, to trace the fact that the request was received. When the
+response is sent, send the complete segment to overwrite the in-progress
 segment.</p>
 </li>
 </ul>
 <p>A <code class="inline">trace_id</code> consists of three numbers separated by hyphens. For example,
 1-58406520-a006649127e371903a2de979. This includes:</p>
-<p><strong>Trace ID Format</strong></p>
+<h2 id="put_trace_segments/3-trace-id-format" class="section-heading">
+  <a href="#put_trace_segments/3-trace-id-format" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Trace ID Format
+</h2>
+
 <ul>
 <li><p>The version number, i.e. <code class="inline">1</code>.</p>
 </li>
-<li><p>The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For
-example, 10:00AM December 2nd, 2016 PST in epoch time is <code class="inline">1480615200</code> seconds, or <code class="inline">58406520</code> in
-hexadecimal.</p>
+<li><p>The time of the original request, in Unix epoch time, in 8
+hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST in epoch time is
+<code class="inline">1480615200</code> seconds, or <code class="inline">58406520</code> in hexadecimal.</p>
 </li>
-<li><p>A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.</p>
+<li><p>A 96-bit identifier for the trace, globally unique, in 24
+hexadecimal digits.</p>
 </li>
 </ul>
 
@@ -879,7 +898,7 @@ hexadecimal.</p>
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L277" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L286" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -904,7 +923,7 @@ hexadecimal.</p>
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L289" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L298" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -930,7 +949,7 @@ hexadecimal.</p>
     </a>
     <h1 class="signature">update_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L299" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L308" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -955,7 +974,7 @@ hexadecimal.</p>
     </a>
     <h1 class="signature">update_sampling_rule(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L309" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/xray.ex#L318" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

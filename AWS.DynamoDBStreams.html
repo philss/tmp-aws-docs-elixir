@@ -10,7 +10,7 @@
     <title>AWS.DynamoDBStreams — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,8 +87,10 @@ AWS.DynamoDBStreams
 
         <section id="moduledoc">
 <p>Amazon DynamoDB</p>
-<p>Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records.</p>
-<p>To learn more about application development with Streams, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with DynamoDB Streams</a>
+<p>Amazon DynamoDB Streams provides API actions for accessing streams and
+processing stream records.</p>
+<p>To learn more about application development with Streams, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html">Capturing Table Activity with DynamoDB
+Streams</a>
 in the Amazon DynamoDB Developer Guide.</p>
 
         </section>
@@ -113,8 +115,9 @@ in the Amazon DynamoDB Developer Guide.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns information about a stream, including the current status of the stream, its Amazon
-Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p></div>
+    <div class="summary-synopsis"><p>Returns information about a stream, including the current status of the stream,
+its Amazon Resource Name (ARN), the composition of its shards, and its
+corresponding DynamoDB table.</p></div>
 
 </div>
 <div class="summary-row">
@@ -141,7 +144,8 @@ Resource Name (ARN), the composition of its shards, and its corresponding Dynamo
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns an array of stream ARNs associated with the current account and endpoint.</p></div>
+    <div class="summary-synopsis"><p>Returns an array of stream ARNs associated with the current account and
+endpoint.</p></div>
 
 </div>
 
@@ -170,7 +174,7 @@ Functions
     </a>
     <h1 class="signature">describe_stream(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L25" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -180,13 +184,15 @@ Functions
   </div>
 
   <section class="docstring">
-<p>Returns information about a stream, including the current status of the stream, its Amazon
-Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p>
+<p>Returns information about a stream, including the current status of the stream,
+its Amazon Resource Name (ARN), the composition of its shards, and its
+corresponding DynamoDB table.</p>
 <p>You can call <code class="inline">DescribeStream</code> at a maximum rate of 10 times per second.</p>
 <p>Each shard in the stream has a <code class="inline">SequenceNumberRange</code> associated with it. If the
-<code class="inline">SequenceNumberRange</code> has a <code class="inline">StartingSequenceNumber</code> but no <code class="inline">EndingSequenceNumber</code>, then the shard
-is still open (able to receive more stream records). If both <code class="inline">StartingSequenceNumber</code> and
-<code class="inline">EndingSequenceNumber</code> are present, then that shard is closed and can no longer receive more data.</p>
+<code class="inline">SequenceNumberRange</code> has a <code class="inline">StartingSequenceNumber</code> but no
+<code class="inline">EndingSequenceNumber</code>, then the shard is still open (able to receive more
+stream records). If both <code class="inline">StartingSequenceNumber</code> and <code class="inline">EndingSequenceNumber</code> are
+present, then that shard is closed and can no longer receive more data.</p>
 
   </section>
 </section>
@@ -201,7 +207,7 @@ is still open (able to receive more stream records). If both <code class="inline
     </a>
     <h1 class="signature">get_records(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L40" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L46" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -212,12 +218,14 @@ is still open (able to receive more stream records). If both <code class="inline
 
   <section class="docstring">
 <p>Retrieves the stream records from a given shard.</p>
-<p>Specify a shard iterator using the <code class="inline">ShardIterator</code> parameter. The shard iterator specifies the
-position in the shard from which you want to start reading stream records sequentially. If there
-are no stream records available in the portion of the shard that the iterator points to,
-<code class="inline">GetRecords</code> returns an empty list. Note that it might take multiple calls to get to a portion of
-the shard that contains stream records.</p>
-<p><code class="inline">GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes first.</p>
+<p>Specify a shard iterator using the <code class="inline">ShardIterator</code> parameter. The shard iterator
+specifies the position in the shard from which you want to start reading stream
+records sequentially. If there are no stream records available in the portion of
+the shard that the iterator points to, <code class="inline">GetRecords</code> returns an empty list. Note
+that it might take multiple calls to get to a portion of the shard that contains
+stream records.</p>
+<p><code class="inline">GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+whichever comes first.</p>
 
   </section>
 </section>
@@ -232,7 +240,7 @@ the shard that contains stream records.</p>
     </a>
     <h1 class="signature">get_shard_iterator(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L53" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L59" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -243,9 +251,9 @@ the shard that contains stream records.</p>
 
   <section class="docstring">
 <p>Returns a shard iterator.</p>
-<p>A shard iterator provides information about how to retrieve the stream records from within a
-shard. Use the shard iterator in a subsequent <code class="inline">GetRecords</code> request to read the stream records from
-the shard.</p>
+<p>A shard iterator provides information about how to retrieve the stream records
+from within a shard. Use the shard iterator in a subsequent <code class="inline">GetRecords</code> request
+to read the stream records from the shard.</p>
 <p>A shard iterator expires 15 minutes after it is returned to the requester.</p>
 
   </section>
@@ -261,7 +269,7 @@ the shard.</p>
     </a>
     <h1 class="signature">list_streams(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L65" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/dynamodb_streams.ex#L72" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -271,9 +279,10 @@ the shard.</p>
   </div>
 
   <section class="docstring">
-<p>Returns an array of stream ARNs associated with the current account and endpoint.</p>
-<p>If the <code class="inline">TableName</code> parameter is present, then <code class="inline">ListStreams</code> will return only the streams ARNs for
-that table.</p>
+<p>Returns an array of stream ARNs associated with the current account and
+endpoint.</p>
+<p>If the <code class="inline">TableName</code> parameter is present, then <code class="inline">ListStreams</code> will return only the
+streams ARNs for that table.</p>
 <p>You can call <code class="inline">ListStreams</code> at a maximum rate of 5 times per second.</p>
 
   </section>

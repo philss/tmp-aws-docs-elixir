@@ -10,7 +10,7 @@
     <title>AWS.Codeartifact — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,121 +86,137 @@ AWS.Codeartifact
 
 
         <section id="moduledoc">
-<p>AWS CodeArtifact is a fully managed artifact repository compatible with language-native package
-managers and build tools such as npm, Apache Maven, and pip.</p>
-<p>You can use CodeArtifact to share packages with development teams and pull packages. Packages can
-be pulled from both public and CodeArtifact repositories. You can also create an upstream
-relationship between a CodeArtifact repository and another repository, which effectively merges
-their contents from the point of view of a package manager client.</p>
-<p><strong>AWS CodeArtifact Components</strong></p>
-<p>Use the information in this guide to help you work with the following CodeArtifact components:</p>
+<p>AWS CodeArtifact is a fully managed artifact repository compatible with
+language-native package managers and build tools such as npm, Apache Maven, and
+pip.</p>
+<p>You can use CodeArtifact to share packages with development teams and pull
+packages. Packages can be pulled from both public and CodeArtifact repositories.
+You can also create an upstream relationship between a CodeArtifact repository
+and another repository, which effectively merges their contents from the point
+of view of a package manager client.</p>
+<h2 id="module-aws-codeartifact-components" class="section-heading">
+  <a href="#module-aws-codeartifact-components" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  AWS CodeArtifact Components
+</h2>
+
+<p>Use the information in this guide to help you work with the following
+CodeArtifact components:</p>
 <ul>
-<li><p><strong>Repository</strong>: A CodeArtifact repository contains a set of <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package versions</a>,
-each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository
-can contain packages of any supported type. Each repository exposes endpoints for fetching and
-publishing packages using tools like the <strong> <code class="inline">npm</code> </strong> CLI, the Maven CLI (<strong> <code class="inline">mvn</code> </strong>), and <strong>
-<code class="inline">pip</code> </strong>. You can create up to 100 repositories per AWS account.</p>
+<li><p><strong>Repository## : A CodeArtifact repository contains a set of
+<a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package versions</a>,
+each of which maps to a set of assets, or files. Repositories are polyglot, so a
+single repository can contain packages of any supported type. Each repository
+exposes endpoints for fetching and publishing packages using tools like the 
+<code class="inline">npm</code> </strong> CLI, the Maven CLI (<strong> <code class="inline">mvn</code> </strong>), and <strong> <code class="inline">pip</code> </strong>. You can create up to
+100 repositories per AWS account.</p>
 </li>
-<li><p><strong>Domain</strong>: Repositories are aggregated into a higher-level entity known as a
-<em>domain</em>. All package assets and metadata are stored in the domain, but are consumed through
-repositories. A given package asset, such as a Maven JAR file, is stored once per domain, no
-matter how many repositories it&#39;s present in. All of the assets and metadata in a domain are
-encrypted with the same customer master key (CMK) stored in AWS Key Management Service (AWS KMS).</p>
+<li><p><strong>Domain</strong>: Repositories are aggregated into a higher-level entity
+known as a <em>domain</em>. All package assets and metadata are stored in the domain,
+but are consumed through repositories. A given package asset, such as a Maven
+JAR file, is stored once per domain, no matter how many repositories it&#39;s
+present in. All of the assets and metadata in a domain are encrypted with the
+same customer master key (CMK) stored in AWS Key Management Service (AWS KMS).</p>
 </li>
 </ul>
-<p>Each repository is a member of a single domain and can&#39;t be moved to a different domain.</p>
-<p>The domain allows organizational policy to be applied across multiple repositories, such as which
-accounts can access repositories in the domain, and which public repositories can be used as
-sources of packages.</p>
-<p>Although an organization can have multiple domains, we recommend a single production domain that
-contains all published artifacts so that teams can find and share packages across their
-organization.</p>
+<p>Each repository is a member of a single domain and can&#39;t be moved to a different
+domain.</p>
+<p>The domain allows organizational policy to be applied across multiple
+repositories, such as which accounts can access repositories in the domain, and
+which public repositories can be used as sources of packages.</p>
+<p>Although an organization can have multiple domains, we recommend a single
+production domain that contains all published artifacts so that teams can find
+and share packages across their organization.</p>
 <ul>
-<li><p><strong>Package</strong>: A <em>package</em> is a bundle of software and the metadata required to
-resolve dependencies and install the software. CodeArtifact supports
-<a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>, and
-<a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a> package formats.  In CodeArtifact, a package consists of:</p>
-<ul>
-<li><p>A <em>name</em> (for example, <code class="inline">webpack</code> is the name of a popular npm package)</p>
-</li>
-<li><p>An optional namespace (for example, <code class="inline">@types</code> in <code class="inline">@types/node</code>)</p>
-</li>
-<li><p>A set of versions (for example, <code class="inline">1.0.0</code>, <code class="inline">1.0.1</code>, <code class="inline">1.0.2</code>, etc.)</p>
-</li>
-<li><p>Package-level metadata (for example, npm tags)</p>
+<li><strong>Package</strong>: A <em>package</em> is a bundle of software and the metadata
+required to resolve dependencies and install the software. CodeArtifact supports
+<a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>, <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
+and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a> package formats.
 </li>
 </ul>
+<p>In CodeArtifact, a package consists of:</p>
+<pre><code class="nohighlight makeup elixir"><span class="o">*</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="o">*</span><span class="n">name</span><span class="o">*</span><span class="w"> </span><span class="p" data-group-id="0286250917-1">(</span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="n">webpack</span><span class="err">`</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">a</span></code></pre>
+<p>popular npm package)</p>
+<pre><code class="nohighlight makeup elixir"><span class="o">*</span><span class="w"> </span><span class="nc">An</span><span class="w"> </span><span class="n">optional</span><span class="w"> </span><span class="n">namespace</span><span class="w"> </span><span class="p" data-group-id="5370751841-1">(</span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="na">@types</span><span class="err">`</span><span class="w"> </span><span class="ow">in</span></code></pre>
+<p><code class="inline">@types/node</code>)</p>
+<pre><code class="nohighlight makeup elixir"><span class="o">*</span><span class="w"> </span><span class="nc">A</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">versions</span><span class="w"> </span><span class="p" data-group-id="1066514573-1">(</span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">0</span><span class="err">`</span><span class="p">,</span><span class="w"> </span><span class="err">`</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">1</span><span class="err">`</span><span class="p">,</span></code></pre>
+<p><code class="inline">1.0.2</code>, etc.)</p>
+<pre><code class="nohighlight makeup elixir"><span class="o">*</span><span class="w"> </span><span class="nc">Package</span><span class="o">-</span><span class="n">level</span><span class="w"> </span><span class="n">metadata</span><span class="w"> </span><span class="p" data-group-id="9221515794-1">(</span><span class="k">for</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="n">npm</span><span class="w"> </span><span class="n">tags</span><span class="p" data-group-id="9221515794-1">)</span></code></pre>
+<ul>
+<li><p><strong>Package version</strong>: A version of a package, such as <code class="inline">@types/node 12.6.9</code>. The version number format and semantics vary for different package
+formats. For example, npm package versions must conform to the <a href="https://semver.org/">Semantic
+Versioning specification</a>. In CodeArtifact, a package
+version consists of the version identifier, metadata at the package version
+level, and a set of assets.</p>
 </li>
-<li><p><strong>Package version</strong>: A version of a package, such as <code class="inline">@types/node 12.6.9</code>. The
-version number format and semantics vary for different package formats. For example, npm package
-versions must conform to the <a href="https://semver.org/">Semantic Versioning specification</a>. In
-CodeArtifact, a package version consists of the version identifier, metadata at the package
-version level, and a set of assets.</p>
+<li><p><strong>Upstream repository</strong>: One repository is <em>upstream</em> of another
+when the package versions in it can be accessed from the repository endpoint of
+the downstream repository, effectively merging the contents of the two
+repositories from the point of view of a client. CodeArtifact allows creating an
+upstream relationship between two repositories.</p>
 </li>
-<li><p><strong>Upstream repository</strong>: One repository is <em>upstream</em> of another when the package
-versions in it can be accessed from the repository endpoint of the downstream repository,
-effectively merging the contents of the two repositories from the point of view of a client.
-CodeArtifact allows creating an upstream relationship between two repositories.</p>
-</li>
-<li><p><strong>Asset</strong>: An individual file stored in CodeArtifact associated with a package
-version, such as an npm <code class="inline">.tgz</code> file or Maven POM and JAR files.</p>
+<li><p><strong>Asset</strong>: An individual file stored in CodeArtifact associated
+with a package version, such as an npm <code class="inline">.tgz</code> file or Maven POM and JAR files.</p>
 </li>
 </ul>
 <p>CodeArtifact supports these operations:</p>
 <ul>
-<li><p><code class="inline">AssociateExternalConnection</code>: Adds an existing external connection to a repository.</p>
+<li><p><code class="inline">AssociateExternalConnection</code>: Adds an existing external
+connection to a repository.</p>
 </li>
-<li><p><code class="inline">CopyPackageVersions</code>: Copies package versions from one repository to another
-repository in the same domain.</p>
+<li><p><code class="inline">CopyPackageVersions</code>: Copies package versions from one repository
+to another repository in the same domain.</p>
 </li>
 <li><p><code class="inline">CreateDomain</code>: Creates a domain</p>
 </li>
 <li><p><code class="inline">CreateRepository</code>: Creates a CodeArtifact repository in a domain.</p>
 </li>
-<li><p><code class="inline">DeleteDomain</code>: Deletes a domain. You cannot delete a domain that contains
-repositories.</p>
+<li><p><code class="inline">DeleteDomain</code>: Deletes a domain. You cannot delete a domain that
+contains repositories.</p>
 </li>
-<li><p><code class="inline">DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that is set on a
-domain.</p>
+<li><p><code class="inline">DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that
+is set on a domain.</p>
 </li>
-<li><p><code class="inline">DeletePackageVersions</code>: Deletes versions of a package. After a package has been
-deleted, it can be republished, but its assets and metadata cannot be restored because they have
-been permanently removed from storage.</p>
+<li><p><code class="inline">DeletePackageVersions</code>: Deletes versions of a package. After a
+package has been deleted, it can be republished, but its assets and metadata
+cannot be restored because they have been permanently removed from storage.</p>
 </li>
 <li><p><code class="inline">DeleteRepository</code>: Deletes a repository.</p>
 </li>
-<li><p><code class="inline">DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy that is set on a
-repository.</p>
+<li><p><code class="inline">DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy
+that is set on a repository.</p>
 </li>
-<li><p><code class="inline">DescribeDomain</code>: Returns a <code class="inline">DomainDescription</code> object that contains information
-about the requested domain.</p>
+<li><p><code class="inline">DescribeDomain</code>: Returns a <code class="inline">DomainDescription</code> object that
+contains information about the requested domain.</p>
 </li>
 <li><p><code class="inline">DescribePackageVersion</code>: Returns a <code class="inline">[PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)</code> object that contains details about a package version.</p>
 </li>
-<li><p><code class="inline">DescribeRepository</code>: Returns a <code class="inline">RepositoryDescription</code> object that contains
-detailed information about the requested repository.</p>
+<li><p><code class="inline">DescribeRepository</code>: Returns a <code class="inline">RepositoryDescription</code> object
+that contains detailed information about the requested repository.</p>
 </li>
-<li><p><code class="inline">DisposePackageVersions</code>: Disposes versions of a package. A package version with the
-status <code class="inline">Disposed</code> cannot be restored because they have been permanently removed from storage.</p>
+<li><p><code class="inline">DisposePackageVersions</code>: Disposes versions of a package. A
+package version with the status <code class="inline">Disposed</code> cannot be restored because they have
+been permanently removed from storage.</p>
 </li>
-<li><p><code class="inline">DisassociateExternalConnection</code>: Removes an existing external connection from a
-repository.</p>
+<li><p><code class="inline">DisassociateExternalConnection</code>: Removes an existing external
+connection from a repository.</p>
 </li>
-<li><p><code class="inline">GetAuthorizationToken</code>: Generates a temporary authorization token for accessing
-repositories in the domain. The token expires the authorization period has passed. The default
-authorization period is 12 hours and can be customized to any length with a maximum of 12 hours.</p>
+<li><p><code class="inline">GetAuthorizationToken</code>: Generates a temporary authorization token
+for accessing repositories in the domain. The token expires the authorization
+period has passed. The default authorization period is 12 hours and can be
+customized to any length with a maximum of 12 hours.</p>
 </li>
-<li><p><code class="inline">GetDomainPermissionsPolicy</code>: Returns the policy of a resource that is attached to
-the specified domain.</p>
+<li><p><code class="inline">GetDomainPermissionsPolicy</code>: Returns the policy of a resource
+that is attached to the specified domain.</p>
 </li>
-<li><p><code class="inline">GetPackageVersionAsset</code>: Returns the contents of an asset that is in a package
-version.</p>
+<li><p><code class="inline">GetPackageVersionAsset</code>: Returns the contents of an asset that is
+in a package version.</p>
 </li>
-<li><p><code class="inline">GetPackageVersionReadme</code>: Gets the readme file or descriptive text for a package
-version.</p>
+<li><p><code class="inline">GetPackageVersionReadme</code>: Gets the readme file or descriptive
+text for a package version.</p>
 </li>
-<li><p><code class="inline">GetRepositoryEndpoint</code>: Returns the endpoint of a repository for a specific package
-format. A repository has one endpoint for each package format:</p>
+<li><p><code class="inline">GetRepositoryEndpoint</code>: Returns the endpoint of a repository for
+a specific package format. A repository has one endpoint for each package
+format:</p>
 <ul>
 <li><p><code class="inline">npm</code></p>
 </li>
@@ -210,34 +226,37 @@ format. A repository has one endpoint for each package format:</p>
 </li>
 </ul>
 </li>
-<li><p><code class="inline">GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is set on a
-repository.</p>
+<li><p><code class="inline">GetRepositoryPermissionsPolicy</code>: Returns the resource policy that
+is set on a repository.</p>
 </li>
-<li><p><code class="inline">ListDomains</code>: Returns a list of <code class="inline">DomainSummary</code> objects. Each returned
-<code class="inline">DomainSummary</code> object contains information about a domain.</p>
+<li><p><code class="inline">ListDomains</code>: Returns a list of <code class="inline">DomainSummary</code> objects. Each
+returned <code class="inline">DomainSummary</code> object contains information about a domain.</p>
 </li>
 <li><p><code class="inline">ListPackages</code>: Lists the packages in a repository.</p>
 </li>
-<li><p><code class="inline">ListPackageVersionAssets</code>: Lists the assets for a given package version.</p>
+<li><p><code class="inline">ListPackageVersionAssets</code>: Lists the assets for a given package
+version.</p>
 </li>
-<li><p><code class="inline">ListPackageVersionDependencies</code>: Returns a list of the direct dependencies for a
-package version.</p>
+<li><p><code class="inline">ListPackageVersionDependencies</code>: Returns a list of the direct
+dependencies for a package version.</p>
 </li>
-<li><p><code class="inline">ListPackageVersions</code>: Returns a list of package versions for a specified package in
-a repository.</p>
+<li><p><code class="inline">ListPackageVersions</code>: Returns a list of package versions for a
+specified package in a repository.</p>
 </li>
-<li><p><code class="inline">ListRepositories</code>: Returns a list of repositories owned by the AWS account that
-called this method.</p>
+<li><p><code class="inline">ListRepositories</code>: Returns a list of repositories owned by the
+AWS account that called this method.</p>
 </li>
-<li><p><code class="inline">ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.</p>
+<li><p><code class="inline">ListRepositoriesInDomain</code>: Returns a list of the repositories in
+a domain.</p>
 </li>
-<li><p><code class="inline">PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.</p>
+<li><p><code class="inline">PutDomainPermissionsPolicy</code>: Attaches a resource policy to a
+domain.</p>
 </li>
-<li><p><code class="inline">PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository that
-specifies permissions to access it.</p>
+<li><p><code class="inline">PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a
+repository that specifies permissions to access it.</p>
 </li>
-<li><p><code class="inline">UpdatePackageVersionsStatus</code>: Updates the status of one or more versions of a
-package.</p>
+<li><p><code class="inline">UpdatePackageVersionsStatus</code>: Updates the status of one or more
+versions of a package.</p>
 </li>
 <li><p><code class="inline">UpdateRepository</code>: Updates the properties of a repository.</p>
 </li>
@@ -274,7 +293,8 @@ package.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Copies package versions from one repository to another repository in the same domain.</p></div>
+    <div class="summary-synopsis"><p>Copies package versions from one repository to another repository in the same
+domain.</p></div>
 
 </div>
 <div class="summary-row">
@@ -347,8 +367,8 @@ package.</p>
   </div>
 
     <div class="summary-synopsis"><p>Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html"> <code class="inline">DomainDescription</code>
-</a> object
-that contains information about the requested domain.</p></div>
+</a>
+object that contains information about the requested domain.</p></div>
 
 </div>
 <div class="summary-row">
@@ -368,8 +388,8 @@ object that contains information about the requested package version.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a <code class="inline">RepositoryDescription</code> object that contains detailed information about the requested
-repository.</p></div>
+    <div class="summary-synopsis"><p>Returns a <code class="inline">RepositoryDescription</code> object that contains detailed information
+about the requested repository.</p></div>
 
 </div>
 <div class="summary-row">
@@ -387,7 +407,8 @@ repository.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Deletes the assets in package versions and sets the package versions&#39; status to <code class="inline">Disposed</code>.</p></div>
+    <div class="summary-synopsis"><p>Deletes the assets in package versions and sets the package versions&#39; status to
+<code class="inline">Disposed</code>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -396,7 +417,8 @@ repository.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Generates a temporary authentication token for accessing repositories in the domain.</p></div>
+    <div class="summary-synopsis"><p>Generates a temporary authentication token for accessing repositories in the
+domain.</p></div>
 
 </div>
 <div class="summary-row">
@@ -460,8 +482,8 @@ repository.</p></div>
   </div>
 
     <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html"> <code class="inline">AssetSummary</code>
-</a> objects for
-assets in a package version.</p></div>
+</a>
+objects for assets in a package version.</p></div>
 
 </div>
 <div class="summary-row">
@@ -491,8 +513,8 @@ objects for package versions in a repository that match the request parameters.<
   </div>
 
     <div class="summary-synopsis"><p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"> <code class="inline">PackageSummary</code>
-</a> objects
-for packages in a repository that match the request parameters.</p></div>
+</a>
+objects for packages in a repository that match the request parameters.</p></div>
 
 </div>
 <div class="summary-row">
@@ -532,7 +554,8 @@ objects.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Sets the resource policy on a repository that specifies permissions to access it.</p></div>
+    <div class="summary-synopsis"><p>Sets the resource policy on a repository that specifies permissions to access
+it.</p></div>
 
 </div>
 <div class="summary-row">
@@ -579,7 +602,7 @@ Functions
     </a>
     <h1 class="signature">associate_external_connection(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L170" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L192" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -591,7 +614,8 @@ Functions
   <section class="docstring">
 <p>Adds an existing external connection to a repository.</p>
 <p>One external connection is allowed per repository.</p>
-<p>A repository can have one or more upstream repositories, or an external connection.</p>
+<p>A repository can have one or more upstream repositories, or an external
+connection.</p>
 
   </section>
 </section>
@@ -606,7 +630,7 @@ Functions
     </a>
     <h1 class="signature">copy_package_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L189" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L212" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -616,7 +640,8 @@ Functions
   </div>
 
   <section class="docstring">
-<p>Copies package versions from one repository to another repository in the same domain.</p>
+<p>Copies package versions from one repository to another repository in the same
+domain.</p>
 <p>You must specify <code class="inline">versions</code> or <code class="inline">versionRevisions</code>. You cannot specify both.</p>
 
   </section>
@@ -632,7 +657,7 @@ Functions
     </a>
     <h1 class="signature">create_domain(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L217" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L242" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -643,12 +668,14 @@ Functions
 
   <section class="docstring">
 <p>Creates a domain.</p>
-<p>CodeArtifact <em>domains</em> make it easier to manage multiple repositories across an organization. You
-can use a domain to apply permissions across many repositories owned by different AWS accounts. An
-asset is stored only once in a domain, even if it&#39;s in multiple repositories.</p>
-<p>Although you can have multiple domains, we recommend a single production domain that contains all
-published artifacts so that your development teams can find and share packages. You can use a
-second pre-production domain to test changes to the production domain configuration.</p>
+<p>CodeArtifact <em>domains</em> make it easier to manage multiple repositories across an
+organization. You can use a domain to apply permissions across many repositories
+owned by different AWS accounts. An asset is stored only once in a domain, even
+if it&#39;s in multiple repositories.</p>
+<p>Although you can have multiple domains, we recommend a single production domain
+that contains all published artifacts so that your development teams can find
+and share packages. You can use a second pre-production domain to test changes
+to the production domain configuration.</p>
 
   </section>
 </section>
@@ -663,7 +690,7 @@ second pre-production domain to test changes to the production domain configurat
     </a>
     <h1 class="signature">create_repository(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L231" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L256" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -688,7 +715,7 @@ second pre-production domain to test changes to the production domain configurat
     </a>
     <h1 class="signature">delete_domain(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L250" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L275" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -699,8 +726,8 @@ second pre-production domain to test changes to the production domain configurat
 
   <section class="docstring">
 <p>Deletes a domain.</p>
-<p>You cannot delete a domain that contains repositories. If you want to delete a domain with
-repositories, first delete its repositories.</p>
+<p>You cannot delete a domain that contains repositories. If you want to delete a
+domain with repositories, first delete its repositories.</p>
 
   </section>
 </section>
@@ -715,7 +742,7 @@ repositories, first delete its repositories.</p>
     </a>
     <h1 class="signature">delete_domain_permissions_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L265" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L290" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -740,7 +767,7 @@ repositories, first delete its repositories.</p>
     </a>
     <h1 class="signature">delete_package_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L289" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L314" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -751,10 +778,10 @@ repositories, first delete its repositories.</p>
 
   <section class="docstring">
 <p>Deletes one or more versions of a package.</p>
-<p>A deleted package version cannot be restored in your repository. If you want to remove a package
-version from your repository and be able to restore it later, set its status to <code class="inline">Archived</code>.
-Archived packages cannot be downloaded from a repository and don&#39;t show up with list package APIs
-(for example, <code class="inline">[ListackageVersions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html)</code>), but you can restore them using <code class="inline">[UpdatePackageVersionsStatus](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html)</code>.</p>
+<p>A deleted package version cannot be restored in your repository. If you want to
+remove a package version from your repository and be able to restore it later,
+set its status to <code class="inline">Archived</code>. Archived packages cannot be downloaded from a
+repository and don&#39;t show up with list package APIs (for example, <code class="inline">[ListackageVersions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html)</code>), but you can restore them using <code class="inline">[UpdatePackageVersionsStatus](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html)</code>.</p>
 
   </section>
 </section>
@@ -769,7 +796,7 @@ Archived packages cannot be downloaded from a repository and don&#39;t show up w
     </a>
     <h1 class="signature">delete_repository(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L308" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L333" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -794,7 +821,7 @@ Archived packages cannot be downloaded from a repository and don&#39;t show up w
     </a>
     <h1 class="signature">delete_repository_permissions_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L330" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L357" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -805,10 +832,12 @@ Archived packages cannot be downloaded from a repository and don&#39;t show up w
 
   <section class="docstring">
 <p>Deletes the resource policy that is set on a repository.</p>
-<p>After a resource policy is deleted, the permissions allowed and denied by the deleted policy are
-removed. The effect of deleting a resource policy might not be immediate.</p>
-<p>Use <code class="inline">DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted, AWS users, roles,
-and accounts lose permissions to perform the repository actions granted by the deleted policy.</p>
+<p>After a resource policy is deleted, the permissions allowed and denied by the
+deleted policy are removed. The effect of deleting a resource policy might not
+be immediate.</p>
+<p>Use <code class="inline">DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is deleted,
+AWS users, roles, and accounts lose permissions to perform the repository
+actions granted by the deleted policy.</p>
 
   </section>
 </section>
@@ -825,7 +854,7 @@ and accounts lose permissions to perform the repository actions granted by the d
     </a>
     <h1 class="signature">describe_domain(client, domain, domain_owner \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L349" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L376" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -836,8 +865,8 @@ and accounts lose permissions to perform the repository actions granted by the d
 
   <section class="docstring">
 <p>Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html"> <code class="inline">DomainDescription</code>
-</a> object
-that contains information about the requested domain.</p>
+</a>
+object that contains information about the requested domain.</p>
 
   </section>
 </section>
@@ -856,7 +885,7 @@ that contains information about the requested domain.</p>
     </a>
     <h1 class="signature">describe_package_version(client, domain, domain_owner \\ nil, format, namespace \\ nil, package, package_version, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L371" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L398" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -885,7 +914,7 @@ object that contains information about the requested package version.</p>
     </a>
     <h1 class="signature">describe_repository(client, domain, domain_owner \\ nil, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L417" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L444" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -895,8 +924,8 @@ object that contains information about the requested package version.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a <code class="inline">RepositoryDescription</code> object that contains detailed information about the requested
-repository.</p>
+<p>Returns a <code class="inline">RepositoryDescription</code> object that contains detailed information
+about the requested repository.</p>
 
   </section>
 </section>
@@ -911,7 +940,7 @@ repository.</p>
     </a>
     <h1 class="signature">disassociate_external_connection(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L442" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L469" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -936,7 +965,7 @@ repository.</p>
     </a>
     <h1 class="signature">dispose_package_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L471" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L500" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -946,8 +975,10 @@ repository.</p>
   </div>
 
   <section class="docstring">
-<p>Deletes the assets in package versions and sets the package versions&#39; status to <code class="inline">Disposed</code>.</p>
-<p>A disposed package version cannot be restored in your repository because its assets are deleted.</p>
+<p>Deletes the assets in package versions and sets the package versions&#39; status to
+<code class="inline">Disposed</code>.</p>
+<p>A disposed package version cannot be restored in your repository because its
+assets are deleted.</p>
 <p>To view all disposed package versions in a repository, use <code class="inline">[ListackageVersions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html)</code> and set the <code class="inline">[status](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax)</code> parameter to <code class="inline">Disposed</code>.</p>
 <p>To view information about a disposed package version, use <code class="inline">[ListPackageVersions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html)</code> and set the <code class="inline">[status](https://docs.aws.amazon.com/API_ListPackageVersions.html#codeartifact-ListPackageVersions-response-status)</code> parameter to <code class="inline">Disposed</code>.</p>
 
@@ -964,7 +995,7 @@ repository.</p>
     </a>
     <h1 class="signature">get_authorization_token(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L508" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L540" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -974,21 +1005,24 @@ repository.</p>
   </div>
 
   <section class="docstring">
-<p>Generates a temporary authentication token for accessing repositories in the domain.</p>
-<p>This API requires the <code class="inline">codeartifact:GetAuthorizationToken</code> and <code class="inline">sts:GetServiceBearerToken</code>
-permissions.</p>
-<p>CodeArtifact authorization tokens are valid for a period of 12 hours when created with the <code class="inline">login</code>
-command. You can call <code class="inline">login</code> periodically to refresh the token. When you create an authorization
-token with the <code class="inline">GetAuthorizationToken</code> API, you can set a custom authorization period, up to a
+<p>Generates a temporary authentication token for accessing repositories in the
+domain.</p>
+<p>This API requires the <code class="inline">codeartifact:GetAuthorizationToken</code> and
+<code class="inline">sts:GetServiceBearerToken</code> permissions.</p>
+<p>CodeArtifact authorization tokens are valid for a period of 12 hours when
+created with the <code class="inline">login</code> command. You can call <code class="inline">login</code> periodically to refresh
+the token. When you create an authorization token with the
+<code class="inline">GetAuthorizationToken</code> API, you can set a custom authorization period, up to a
 maximum of 12 hours, with the <code class="inline">durationSeconds</code> parameter.</p>
-<p>The authorization period begins after <code class="inline">login</code> or <code class="inline">GetAuthorizationToken</code> is called. If <code class="inline">login</code> or
-<code class="inline">GetAuthorizationToken</code> is called while assuming a role, the token lifetime is independent of the
-maximum session duration of the role. For example, if you call <code class="inline">sts assume-role</code> and specify a
-session duration of 15 minutes, then generate a CodeArtifact authorization token, the token will
-be valid for the full authorization period even though this is longer than the 15-minute session
-duration.</p>
-<p>See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> for more
-information on controlling session duration.</p>
+<p>The authorization period begins after <code class="inline">login</code> or <code class="inline">GetAuthorizationToken</code> is
+called. If <code class="inline">login</code> or <code class="inline">GetAuthorizationToken</code> is called while assuming a role,
+the token lifetime is independent of the maximum session duration of the role.
+For example, if you call <code class="inline">sts assume-role</code> and specify a session duration of 15
+minutes, then generate a CodeArtifact authorization token, the token will be
+valid for the full authorization period even though this is longer than the
+15-minute session duration.</p>
+<p>See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a> for
+more information on controlling session duration.</p>
 
   </section>
 </section>
@@ -1005,7 +1039,7 @@ information on controlling session duration.</p>
     </a>
     <h1 class="signature">get_domain_permissions_policy(client, domain, domain_owner \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L529" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L561" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1016,10 +1050,10 @@ information on controlling session duration.</p>
 
   <section class="docstring">
 <p>Returns the resource policy attached to the specified domain.</p>
-<p>The policy is a resource-based policy, not an identity-based policy. For more information, see
-<a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies
-</a> in
-the <em>AWS Identity and Access Management User Guide</em>.</p>
+<p>The policy is a resource-based policy, not an identity-based policy. For more
+information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies
+</a>
+in the <em>AWS Identity and Access Management User Guide</em>.</p>
 
   </section>
 </section>
@@ -1040,7 +1074,7 @@ the <em>AWS Identity and Access Management User Guide</em>.</p>
     </a>
     <h1 class="signature">get_package_version_asset(client, asset, domain, domain_owner \\ nil, format, namespace \\ nil, package, package_version, package_version_revision \\ nil, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L552" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L584" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1051,8 +1085,8 @@ the <em>AWS Identity and Access Management User Guide</em>.</p>
 
   <section class="docstring">
 <p>Returns an asset (or file) that is in a package.</p>
-<p>For example, for a Maven package version, use <code class="inline">GetPackageVersionAsset</code> to download a <code class="inline">JAR</code> file, a
-<code class="inline">POM</code> file, or any other assets in the package version.</p>
+<p>For example, for a Maven package version, use <code class="inline">GetPackageVersionAsset</code> to
+download a <code class="inline">JAR</code> file, a <code class="inline">POM</code> file, or any other assets in the package version.</p>
 
   </section>
 </section>
@@ -1071,7 +1105,7 @@ the <em>AWS Identity and Access Management User Guide</em>.</p>
     </a>
     <h1 class="signature">get_package_version_readme(client, domain, domain_owner \\ nil, format, namespace \\ nil, package, package_version, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L633" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L665" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1082,11 +1116,11 @@ the <em>AWS Identity and Access Management User Guide</em>.</p>
 
   <section class="docstring">
 <p>Gets the readme file or descriptive text for a package version.</p>
-<p>For packages that do not contain a readme file, CodeArtifact extracts a description from a
-metadata file. For example, from the <code class="inline">&lt;description&gt;</code> element in the <code class="inline">pom.xml</code> file of a Maven
-package.</p>
-<p>The returned text might contain formatting. For example, it might contain formatting for Markdown
-or reStructuredText.</p>
+<p>For packages that do not contain a readme file, CodeArtifact extracts a
+description from a metadata file. For example, from the <code class="inline">&lt;description&gt;</code> element
+in the <code class="inline">pom.xml</code> file of a Maven package.</p>
+<p>The returned text might contain formatting. For example, it might contain
+formatting for Markdown or reStructuredText.</p>
 
   </section>
 </section>
@@ -1103,7 +1137,7 @@ or reStructuredText.</p>
     </a>
     <h1 class="signature">get_repository_endpoint(client, domain, domain_owner \\ nil, format, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L686" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L718" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1139,7 +1173,7 @@ or reStructuredText.</p>
     </a>
     <h1 class="signature">get_repository_permissions_policy(client, domain, domain_owner \\ nil, repository, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L716" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L748" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1164,7 +1198,7 @@ or reStructuredText.</p>
     </a>
     <h1 class="signature">list_domains(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L745" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L777" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1190,7 +1224,7 @@ or reStructuredText.</p>
     </a>
     <h1 class="signature">list_package_version_assets(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L757" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L789" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1201,8 +1235,8 @@ or reStructuredText.</p>
 
   <section class="docstring">
 <p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html"> <code class="inline">AssetSummary</code>
-</a> objects for
-assets in a package version.</p>
+</a>
+objects for assets in a package version.</p>
 
   </section>
 </section>
@@ -1217,7 +1251,7 @@ assets in a package version.</p>
     </a>
     <h1 class="signature">list_package_version_dependencies(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L786" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L818" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1230,10 +1264,10 @@ assets in a package version.</p>
 <p>Returns the direct dependencies for a package version.</p>
 <p>The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html"> <code class="inline">PackageDependency</code>
 </a>
-objects. CodeArtifact extracts the dependencies for a package version from the metadata file for
-the package format (for example, the <code class="inline">package.json</code> file for npm packages and the <code class="inline">pom.xml</code> file
-for Maven). Any package version dependencies that are not listed in the configuration file are not
-returned.</p>
+objects. CodeArtifact extracts the dependencies for a package version from the
+metadata file for the package format (for example, the <code class="inline">package.json</code> file for
+npm packages and the <code class="inline">pom.xml</code> file for Maven). Any package version dependencies
+that are not listed in the configuration file are not returned.</p>
 
   </section>
 </section>
@@ -1248,7 +1282,7 @@ returned.</p>
     </a>
     <h1 class="signature">list_package_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L809" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L841" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1275,7 +1309,7 @@ objects for package versions in a repository that match the request parameters.<
     </a>
     <h1 class="signature">list_packages(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L834" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L866" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1286,8 +1320,8 @@ objects for package versions in a repository that match the request parameters.<
 
   <section class="docstring">
 <p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html"> <code class="inline">PackageSummary</code>
-</a> objects
-for packages in a repository that match the request parameters.</p>
+</a>
+objects for packages in a repository that match the request parameters.</p>
 
   </section>
 </section>
@@ -1302,7 +1336,7 @@ for packages in a repository that match the request parameters.</p>
     </a>
     <h1 class="signature">list_repositories(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L860" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L892" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1315,8 +1349,8 @@ for packages in a repository that match the request parameters.</p>
 <p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"> <code class="inline">RepositorySummary</code>
 </a>
 objects.</p>
-<p>Each <code class="inline">RepositorySummary</code> contains information about a repository in the specified AWS account and
-that matches the input parameters.</p>
+<p>Each <code class="inline">RepositorySummary</code> contains information about a repository in the
+specified AWS account and that matches the input parameters.</p>
 
   </section>
 </section>
@@ -1331,7 +1365,7 @@ that matches the input parameters.</p>
     </a>
     <h1 class="signature">list_repositories_in_domain(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L881" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L913" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1344,8 +1378,8 @@ that matches the input parameters.</p>
 <p>Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html"> <code class="inline">RepositorySummary</code>
 </a>
 objects.</p>
-<p>Each <code class="inline">RepositorySummary</code> contains information about a repository in the specified domain and that
-matches the input parameters.</p>
+<p>Each <code class="inline">RepositorySummary</code> contains information about a repository in the
+specified domain and that matches the input parameters.</p>
 
   </section>
 </section>
@@ -1360,7 +1394,7 @@ matches the input parameters.</p>
     </a>
     <h1 class="signature">put_domain_permissions_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L900" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L932" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1385,7 +1419,7 @@ matches the input parameters.</p>
     </a>
     <h1 class="signature">put_repository_permissions_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L910" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L943" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1395,7 +1429,8 @@ matches the input parameters.</p>
   </div>
 
   <section class="docstring">
-<p>Sets the resource policy on a repository that specifies permissions to access it.</p>
+<p>Sets the resource policy on a repository that specifies permissions to access
+it.</p>
 
   </section>
 </section>
@@ -1410,7 +1445,7 @@ matches the input parameters.</p>
     </a>
     <h1 class="signature">update_package_versions_status(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L926" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L959" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1435,7 +1470,7 @@ matches the input parameters.</p>
     </a>
     <h1 class="signature">update_repository(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L945" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/codeartifact.ex#L978" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

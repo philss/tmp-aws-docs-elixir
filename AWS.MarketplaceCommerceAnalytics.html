@@ -10,7 +10,7 @@
     <title>AWS.MarketplaceCommerceAnalytics — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -110,8 +110,9 @@ AWS.MarketplaceCommerceAnalytics
 
   </div>
 
-    <div class="summary-synopsis"><p>Given a data set type and data set publication date, asynchronously publishes the requested data
-set to the specified S3 bucket and notifies the specified SNS topic once the data is available.</p></div>
+    <div class="summary-synopsis"><p>Given a data set type and data set publication date, asynchronously publishes
+the requested data set to the specified S3 bucket and notifies the specified SNS
+topic once the data is available.</p></div>
 
 </div>
 <div class="summary-row">
@@ -120,8 +121,9 @@ set to the specified S3 bucket and notifies the specified SNS topic once the dat
 
   </div>
 
-    <div class="summary-synopsis"><p>Given a data set type and a from date, asynchronously publishes the requested customer support
-data to the specified S3 bucket and notifies the specified SNS topic once the data is available.</p></div>
+    <div class="summary-synopsis"><p>Given a data set type and a from date, asynchronously publishes the requested
+customer support data to the specified S3 bucket and notifies the specified SNS
+topic once the data is available.</p></div>
 
 </div>
 
@@ -150,7 +152,7 @@ Functions
     </a>
     <h1 class="signature">generate_data_set(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_commerce_analytics.ex#L20" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_commerce_analytics.ex#L23" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -160,14 +162,17 @@ Functions
   </div>
 
   <section class="docstring">
-<p>Given a data set type and data set publication date, asynchronously publishes the requested data
-set to the specified S3 bucket and notifies the specified SNS topic once the data is available.</p>
-<p>Returns a unique request identifier that can be used to correlate requests with notifications from
-the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file
-name {data_set_type}_YYYY-MM-DD.csv. If a file with the same name already exists (e.g. if the same
-data set is requested twice), the original file will be overwritten by the new file. Requires a
-Role with an attached permissions policy providing Allow permissions for the following actions:
-s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:GetRolePolicy.</p>
+<p>Given a data set type and data set publication date, asynchronously publishes
+the requested data set to the specified S3 bucket and notifies the specified SNS
+topic once the data is available.</p>
+<p>Returns a unique request identifier that can be used to correlate requests with
+notifications from the SNS topic. Data sets will be published in comma-separated
+values (CSV) format with the file name {data_set_type}_YYYY-MM-DD.csv. If a file
+with the same name already exists (e.g. if the same data set is requested
+twice), the original file will be overwritten by the new file. Requires a Role
+with an attached permissions policy providing Allow permissions for the
+following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes,
+sns:Publish, iam:GetRolePolicy.</p>
 
   </section>
 </section>
@@ -182,7 +187,7 @@ s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:Get
     </a>
     <h1 class="signature">start_support_data_export(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_commerce_analytics.ex#L36" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/marketplace_commerce_analytics.ex#L42" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -192,14 +197,17 @@ s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish, iam:Get
   </div>
 
   <section class="docstring">
-<p>Given a data set type and a from date, asynchronously publishes the requested customer support
-data to the specified S3 bucket and notifies the specified SNS topic once the data is available.</p>
-<p>Returns a unique request identifier that can be used to correlate requests with notifications from
-the SNS topic. Data sets will be published in comma-separated values (CSV) format with the file
-name {data_set_type}_YYYY-MM-DD&#39;T&#39;HH-mm-ss&#39;Z&#39;.csv. If a file with the same name already exists
-(e.g. if the same data set is requested twice), the original file will be overwritten by the new
-file. Requires a Role with an attached permissions policy providing Allow permissions for the
-following actions: s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
+<p>Given a data set type and a from date, asynchronously publishes the requested
+customer support data to the specified S3 bucket and notifies the specified SNS
+topic once the data is available.</p>
+<p>Returns a unique request identifier that can be used to correlate requests with
+notifications from the SNS topic. Data sets will be published in comma-separated
+values (CSV) format with the file name
+{data_set_type}_YYYY-MM-DD&#39;T&#39;HH-mm-ss&#39;Z&#39;.csv. If a file with the same name
+already exists (e.g. if the same data set is requested twice), the original file
+will be overwritten by the new file. Requires a Role with an attached
+permissions policy providing Allow permissions for the following actions:
+s3:PutObject, s3:GetBucketLocation, sns:GetTopicAttributes, sns:Publish,
 iam:GetRolePolicy.</p>
 
   </section>

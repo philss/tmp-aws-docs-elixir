@@ -10,7 +10,7 @@
     <title>AWS.OpsWorksCM — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,40 +87,52 @@ AWS.OpsWorksCM
 
         <section id="moduledoc">
 <p>AWS OpsWorks CM</p>
-<p>AWS OpsWorks for configuration management (CM) is a service that runs and manages configuration
-management servers.</p>
-<p>You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate and AWS OpsWorks
-for Puppet Enterprise servers, and add or remove nodes for the servers to manage.</p>
-<p><strong>Glossary of terms</strong></p>
+<p>AWS OpsWorks for configuration management (CM) is a service that runs and
+manages configuration management servers.</p>
+<p>You can use AWS OpsWorks CM to create and manage AWS OpsWorks for Chef Automate
+and AWS OpsWorks for Puppet Enterprise servers, and add or remove nodes for the
+servers to manage.</p>
+<h2 id="module-glossary-of-terms" class="section-heading">
+  <a href="#module-glossary-of-terms" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Glossary of terms
+</h2>
+
 <ul>
-<li><p><strong>Server</strong>: A configuration management server that can be highly-available. The
-configuration management server runs on an Amazon Elastic Compute Cloud (EC2) instance, and may
-use various other AWS services, such as Amazon Relational Database Service (RDS) and Elastic Load
-Balancing. A server is a generic abstraction over the configuration manager that you want to use,
-much like Amazon RDS. In AWS OpsWorks CM, you do not start or stop servers. After you create
-servers, they continue to run until they are deleted.</p>
+<li><p><strong>Server</strong>: A configuration management server that can be
+highly-available. The configuration management server runs on an Amazon Elastic
+Compute Cloud (EC2) instance, and may use various other AWS services, such as
+Amazon Relational Database Service (RDS) and Elastic Load Balancing. A server is
+a generic abstraction over the configuration manager that you want to use, much
+like Amazon RDS. In AWS OpsWorks CM, you do not start or stop servers. After you
+create servers, they continue to run until they are deleted.</p>
 </li>
-<li><p><strong>Engine</strong>: The engine is the specific configuration manager that you want to use.
-Valid values in this release include <code class="inline">ChefAutomate</code> and <code class="inline">Puppet</code>.</p>
+<li><p><strong>Engine</strong>: The engine is the specific configuration manager that
+you want to use. Valid values in this release include <code class="inline">ChefAutomate</code> and
+<code class="inline">Puppet</code>.</p>
 </li>
-<li><p><strong>Backup</strong>: This is an application-level backup of the data that the configuration
-manager stores. AWS OpsWorks CM creates an S3 bucket for backups when you launch the first server.
-A backup maintains a snapshot of a server&#39;s configuration-related attributes at the time the
-backup starts.</p>
+<li><p><strong>Backup</strong>: This is an application-level backup of the data that
+the configuration manager stores. AWS OpsWorks CM creates an S3 bucket for
+backups when you launch the first server. A backup maintains a snapshot of a
+server&#39;s configuration-related attributes at the time the backup starts.</p>
 </li>
-<li><p><strong>Events</strong>: Events are always related to a server. Events are written during server
-creation, when health checks run, when backups are created, when system maintenance is performed,
-etc. When you delete a server, the server&#39;s events are also deleted.</p>
+<li><p><strong>Events</strong>: Events are always related to a server. Events are
+written during server creation, when health checks run, when backups are
+created, when system maintenance is performed, etc. When you delete a server,
+the server&#39;s events are also deleted.</p>
 </li>
-<li><p><strong>Account attributes</strong>: Every account has attributes that are assigned in the AWS
-OpsWorks CM database. These attributes store information about configuration limits (servers,
-backups, etc.) and your customer account.</p>
+<li><p><strong>Account attributes</strong>: Every account has attributes that are
+assigned in the AWS OpsWorks CM database. These attributes store information
+about configuration limits (servers, backups, etc.) and your customer account.</p>
 </li>
 </ul>
-<p><strong>Endpoints</strong></p>
-<p>AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to one of the
-following endpoints. Your servers can only be accessed or managed within the endpoint in which
-they are created.</p>
+<h2 id="module-endpoints" class="section-heading">
+  <a href="#module-endpoints" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Endpoints
+</h2>
+
+<p>AWS OpsWorks CM supports the following endpoints, all HTTPS. You must connect to
+one of the following endpoints. Your servers can only be accessed or managed
+within the endpoint in which they are created.</p>
 <ul>
 <li><p>opsworks-cm.us-east-1.amazonaws.com</p>
 </li>
@@ -141,10 +153,15 @@ they are created.</p>
 <li><p>opsworks-cm.eu-west-1.amazonaws.com</p>
 </li>
 </ul>
-<p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS OpsWorks endpoints and quotas</a> in the AWS General
-Reference.</p>
-<p><strong>Throttling limits</strong></p>
-<p>All API operations allow for five requests per second with a burst of 10 requests per second.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS OpsWorks endpoints and quotas</a> in
+the AWS General Reference.</p>
+<h2 id="module-throttling-limits" class="section-heading">
+  <a href="#module-throttling-limits" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Throttling limits
+</h2>
+
+<p>All API operations allow for five requests per second with a burst of 10
+requests per second.</p>
 
         </section>
 
@@ -204,8 +221,8 @@ Reference.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Deletes the server and the underlying AWS CloudFormation stacks (including the server&#39;s EC2
-instance).</p></div>
+    <div class="summary-synopsis"><p>Deletes the server and the underlying AWS CloudFormation stacks (including the
+server&#39;s EC2 instance).</p></div>
 
 </div>
 <div class="summary-row">
@@ -250,7 +267,8 @@ instance).</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists all configuration management servers that are identified with your account.</p></div>
+    <div class="summary-synopsis"><p>Lists all configuration management servers that are identified with your
+account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -259,8 +277,8 @@ instance).</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server&#39;s
-managed nodes.</p></div>
+    <div class="summary-synopsis"><p>Disassociates a node from an AWS OpsWorks CM server, and removes the node from
+the server&#39;s managed nodes.</p></div>
 
 </div>
 <div class="summary-row">
@@ -278,8 +296,8 @@ managed nodes.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate or AWS
-OpsWorks for Puppet Enterprise servers or backups.</p></div>
+    <div class="summary-synopsis"><p>Returns a list of tags that are applied to the specified AWS OpsWorks for Chef
+Automate or AWS OpsWorks for Puppet Enterprise servers or backups.</p></div>
 
 </div>
 <div class="summary-row">
@@ -288,8 +306,8 @@ OpsWorks for Puppet Enterprise servers or backups.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Restores a backup to a server that is in a <code class="inline">CONNECTION_LOST</code>, <code class="inline">HEALTHY</code>, <code class="inline">RUNNING</code>, <code class="inline">UNHEALTHY</code>,
-or <code class="inline">TERMINATED</code> state.</p></div>
+    <div class="summary-synopsis"><p>Restores a backup to a server that is in a <code class="inline">CONNECTION_LOST</code>, <code class="inline">HEALTHY</code>,
+<code class="inline">RUNNING</code>, <code class="inline">UNHEALTHY</code>, or <code class="inline">TERMINATED</code> state.</p></div>
 
 </div>
 <div class="summary-row">
@@ -307,8 +325,8 @@ or <code class="inline">TERMINATED</code> state.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or
-to server backups.</p></div>
+    <div class="summary-synopsis"><p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
+Enterprise server, or to server backups.</p></div>
 
 </div>
 <div class="summary-row">
@@ -364,7 +382,7 @@ Functions
     </a>
     <h1 class="signature">associate_node(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L94" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L102" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -378,14 +396,15 @@ Functions
 <p>For more information about how to disassociate a node, see <code class="inline">DisassociateNode</code>.</p>
 <p>On a Chef server: This command is an alternative to <code class="inline">knife bootstrap</code>.</p>
 <p>Example (Chef): <code class="inline">aws opsworks-cm associate-node --server-name *MyServer* --node-name *MyManagedNode* --engine-attributes &quot;Name=*CHEF_ORGANIZATION*,Value=default&quot; &quot;Name=*CHEF_NODE_PUBLIC_KEY*,Value=*public-key-pem*&quot;</code></p>
-<p>On a Puppet server, this command is an alternative to the <code class="inline">puppet cert sign</code> command that signs a
-Puppet node CSR.</p>
+<p>On a Puppet server, this command is an alternative to the <code class="inline">puppet cert sign</code>
+command that signs a Puppet node CSR.</p>
 <p>Example (Puppet): <code class="inline">aws opsworks-cm associate-node --server-name *MyServer* --node-name *MyManagedNode* --engine-attributes &quot;Name=*PUPPET_NODE_CSR*,Value=*csr-pem*&quot;</code></p>
-<p>A node can can only be associated with servers that are in a <code class="inline">HEALTHY</code> state. Otherwise, an
-<code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code> is thrown when the server does
-not exist. A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid. The
-AssociateNode API call can be integrated into Auto Scaling configurations, AWS Cloudformation
-templates, or the user data of a server&#39;s instance.</p>
+<p>A node can can only be associated with servers that are in a <code class="inline">HEALTHY</code> state.
+Otherwise, an <code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code>
+is thrown when the server does not exist. A <code class="inline">ValidationException</code> is raised when
+parameters of the request are not valid. The AssociateNode API call can be
+integrated into Auto Scaling configurations, AWS Cloudformation templates, or
+the user data of a server&#39;s instance.</p>
 
   </section>
 </section>
@@ -400,7 +419,7 @@ templates, or the user data of a server&#39;s instance.</p>
     </a>
     <h1 class="signature">create_backup(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L114" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L123" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -411,14 +430,15 @@ templates, or the user data of a server&#39;s instance.</p>
 
   <section class="docstring">
 <p>Creates an application-level backup of a server.</p>
-<p>While the server is in the <code class="inline">BACKING_UP</code> state, the server cannot be changed, and no additional
-backup can be created.</p>
-<p>Backups can be created for servers in <code class="inline">RUNNING</code>, <code class="inline">HEALTHY</code>, and <code class="inline">UNHEALTHY</code> states. By default,
-you can create a maximum of 50 manual backups.</p>
+<p>While the server is in the <code class="inline">BACKING_UP</code> state, the server cannot be changed, and
+no additional backup can be created.</p>
+<p>Backups can be created for servers in <code class="inline">RUNNING</code>, <code class="inline">HEALTHY</code>, and <code class="inline">UNHEALTHY</code>
+states. By default, you can create a maximum of 50 manual backups.</p>
 <p>This operation is asynchronous.</p>
-<p>A <code class="inline">LimitExceededException</code> is thrown when the maximum number of manual backups is reached. An
-<code class="inline">InvalidStateException</code> is thrown when the server is not in any of the following states: RUNNING,
-HEALTHY, or UNHEALTHY. A <code class="inline">ResourceNotFoundException</code> is thrown when the server is not found. A
+<p>A <code class="inline">LimitExceededException</code> is thrown when the maximum number of manual backups
+is reached. An <code class="inline">InvalidStateException</code> is thrown when the server is not in any
+of the following states: RUNNING, HEALTHY, or UNHEALTHY. A
+<code class="inline">ResourceNotFoundException</code> is thrown when the server is not found. A
 <code class="inline">ValidationException</code> is thrown when parameters of the request are not valid.</p>
 
   </section>
@@ -434,7 +454,7 @@ HEALTHY, or UNHEALTHY. A <code class="inline">ResourceNotFoundException</code> i
     </a>
     <h1 class="signature">create_server(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L150" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L162" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -445,27 +465,30 @@ HEALTHY, or UNHEALTHY. A <code class="inline">ResourceNotFoundException</code> i
 
   <section class="docstring">
 <p>Creates and immedately starts a new server.</p>
-<p>The server is ready to use when it is in the <code class="inline">HEALTHY</code> state. By default, you can create a maximum
-of 10 servers.</p>
+<p>The server is ready to use when it is in the <code class="inline">HEALTHY</code> state. By default, you
+can create a maximum of 10 servers.</p>
 <p>This operation is asynchronous.</p>
-<p>A <code class="inline">LimitExceededException</code> is thrown when you have created the maximum number of servers (10). A
-<code class="inline">ResourceAlreadyExistsException</code> is thrown when a server with the same name already exists in the
-account. A <code class="inline">ResourceNotFoundException</code> is thrown when you specify a backup ID that is not valid or
-is for a backup that does not exist. A <code class="inline">ValidationException</code> is thrown when parameters of the
-request are not valid.</p>
-<p>If you do not specify a security group by adding the <code class="inline">SecurityGroupIds</code> parameter, AWS OpsWorks
-creates a new security group.</p>
-<p><em>Chef Automate:</em> The default security group opens the Chef server to the world on TCP port 443. If
-a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world on TCP port
-22.</p>
-<p><em>Puppet Enterprise:</em> The default security group opens TCP ports 22, 443, 4433, 8140, 8142, 8143,
-and 8170. If a KeyName is present, AWS OpsWorks enables SSH access. SSH is also open to the world
-on TCP port 22.</p>
-<p>By default, your server is accessible from any IP address. We recommend that you update your
-security group rules to allow access from known IP addresses and address ranges only. To edit
-security group rules, open Security Groups in the navigation pane of the EC2 management console.</p>
-<p>To specify your own domain for a server, and provide your own self-signed or CA-signed certificate
-and private key, specify values for <code class="inline">CustomDomain</code>, <code class="inline">CustomCertificate</code>, and <code class="inline">CustomPrivateKey</code>.</p>
+<p>A <code class="inline">LimitExceededException</code> is thrown when you have created the maximum number of
+servers (10). A <code class="inline">ResourceAlreadyExistsException</code> is thrown when a server with
+the same name already exists in the account. A <code class="inline">ResourceNotFoundException</code> is
+thrown when you specify a backup ID that is not valid or is for a backup that
+does not exist. A <code class="inline">ValidationException</code> is thrown when parameters of the request
+are not valid.</p>
+<p>If you do not specify a security group by adding the <code class="inline">SecurityGroupIds</code>
+parameter, AWS OpsWorks creates a new security group.</p>
+<p><em>Chef Automate:</em> The default security group opens the Chef server to the world
+on TCP port 443. If a KeyName is present, AWS OpsWorks enables SSH access. SSH
+is also open to the world on TCP port 22.</p>
+<p><em>Puppet Enterprise:</em> The default security group opens TCP ports 22, 443, 4433,
+8140, 8142, 8143, and 8170. If a KeyName is present, AWS OpsWorks enables SSH
+access. SSH is also open to the world on TCP port 22.</p>
+<p>By default, your server is accessible from any IP address. We recommend that you
+update your security group rules to allow access from known IP addresses and
+address ranges only. To edit security group rules, open Security Groups in the
+navigation pane of the EC2 management console.</p>
+<p>To specify your own domain for a server, and provide your own self-signed or
+CA-signed certificate and private key, specify values for <code class="inline">CustomDomain</code>,
+<code class="inline">CustomCertificate</code>, and <code class="inline">CustomPrivateKey</code>.</p>
 
   </section>
 </section>
@@ -480,7 +503,7 @@ and private key, specify values for <code class="inline">CustomDomain</code>, <c
     </a>
     <h1 class="signature">delete_backup(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L163" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L177" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -491,10 +514,12 @@ and private key, specify values for <code class="inline">CustomDomain</code>, <c
 
   <section class="docstring">
 <p>Deletes a backup.</p>
-<p>You can delete both manual and automated backups. This operation is asynchronous.</p>
-<p>An <code class="inline">InvalidStateException</code> is thrown when a backup deletion is already in progress. A
-<code class="inline">ResourceNotFoundException</code> is thrown when the backup does not exist. A <code class="inline">ValidationException</code> is
-thrown when parameters of the request are not valid.</p>
+<p>You can delete both manual and automated backups. This operation is
+asynchronous.</p>
+<p>An <code class="inline">InvalidStateException</code> is thrown when a backup deletion is already in
+progress. A <code class="inline">ResourceNotFoundException</code> is thrown when the backup does not
+exist. A <code class="inline">ValidationException</code> is thrown when parameters of the request are not
+valid.</p>
 
   </section>
 </section>
@@ -509,7 +534,7 @@ thrown when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">delete_server(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L181" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L196" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -519,15 +544,16 @@ thrown when parameters of the request are not valid.</p>
   </div>
 
   <section class="docstring">
-<p>Deletes the server and the underlying AWS CloudFormation stacks (including the server&#39;s EC2
-instance).</p>
-<p>When you run this command, the server state is updated to <code class="inline">DELETING</code>. After the server is deleted,
-it is no longer returned by <code class="inline">DescribeServer</code> requests. If the AWS CloudFormation stack cannot be
-deleted, the server cannot be deleted.</p>
+<p>Deletes the server and the underlying AWS CloudFormation stacks (including the
+server&#39;s EC2 instance).</p>
+<p>When you run this command, the server state is updated to <code class="inline">DELETING</code>. After the
+server is deleted, it is no longer returned by <code class="inline">DescribeServer</code> requests. If the
+AWS CloudFormation stack cannot be deleted, the server cannot be deleted.</p>
 <p>This operation is asynchronous.</p>
-<p>An <code class="inline">InvalidStateException</code> is thrown when a server deletion is already in progress. A
-<code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A <code class="inline">ValidationException</code> is
-raised when parameters of the request are not valid.</p>
+<p>An <code class="inline">InvalidStateException</code> is thrown when a server deletion is already in
+progress. A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not
+exist. A <code class="inline">ValidationException</code> is raised when parameters of the request are not
+valid.</p>
 
   </section>
 </section>
@@ -542,7 +568,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">describe_account_attributes(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L190" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L205" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -568,7 +594,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">describe_backups(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L205" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L220" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -579,11 +605,11 @@ raised when parameters of the request are not valid.</p>
 
   <section class="docstring">
 <p>Describes backups.</p>
-<p>The results are ordered by time, with newest backups first. If you do not specify a BackupId or
-ServerName, the command returns all backups.</p>
+<p>The results are ordered by time, with newest backups first. If you do not
+specify a BackupId or ServerName, the command returns all backups.</p>
 <p>This operation is synchronous.</p>
-<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the backup does not exist. A <code class="inline">ValidationException</code> is
-raised when parameters of the request are not valid.</p>
+<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the backup does not exist. A
+<code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -598,7 +624,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">describe_events(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L219" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L234" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -611,8 +637,8 @@ raised when parameters of the request are not valid.</p>
 <p>Describes events for a specified server.</p>
 <p>Results are ordered by time, with newest events first.</p>
 <p>This operation is synchronous.</p>
-<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A <code class="inline">ValidationException</code> is
-raised when parameters of the request are not valid.</p>
+<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A
+<code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -627,7 +653,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">describe_node_association_status(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L230" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L246" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -638,9 +664,10 @@ raised when parameters of the request are not valid.</p>
 
   <section class="docstring">
 <p>Returns the current status of an existing association or disassociation request.</p>
-<p>A <code class="inline">ResourceNotFoundException</code> is thrown when no recent association or disassociation request with
-the specified token is found, or when the server does not exist. A <code class="inline">ValidationException</code> is raised
-when parameters of the request are not valid.</p>
+<p>A <code class="inline">ResourceNotFoundException</code> is thrown when no recent association or
+disassociation request with the specified token is found, or when the server
+does not exist. A <code class="inline">ValidationException</code> is raised when parameters of the request
+are not valid.</p>
 
   </section>
 </section>
@@ -655,7 +682,7 @@ when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">describe_servers(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L245" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L262" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -665,12 +692,13 @@ when parameters of the request are not valid.</p>
   </div>
 
   <section class="docstring">
-<p>Lists all configuration management servers that are identified with your account.</p>
-<p>Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other
-services.</p>
+<p>Lists all configuration management servers that are identified with your
+account.</p>
+<p>Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does
+not query other services.</p>
 <p>This operation is synchronous.</p>
-<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A <code class="inline">ValidationException</code> is
-raised when parameters of the request are not valid.</p>
+<p>A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A
+<code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -685,7 +713,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">disassociate_node(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L261" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L279" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -695,14 +723,15 @@ raised when parameters of the request are not valid.</p>
   </div>
 
   <section class="docstring">
-<p>Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server&#39;s
-managed nodes.</p>
-<p>After a node is disassociated, the node key pair is no longer valid for accessing the
-configuration manager&#39;s API. For more information about how to associate a node, see
-<code class="inline">AssociateNode</code>.</p>
-<p>A node can can only be disassociated from a server that is in a <code class="inline">HEALTHY</code> state. Otherwise, an
-<code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code> is thrown when the server does
-not exist. A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
+<p>Disassociates a node from an AWS OpsWorks CM server, and removes the node from
+the server&#39;s managed nodes.</p>
+<p>After a node is disassociated, the node key pair is no longer valid for
+accessing the configuration manager&#39;s API. For more information about how to
+associate a node, see <code class="inline">AssociateNode</code>.</p>
+<p>A node can can only be disassociated from a server that is in a <code class="inline">HEALTHY</code> state.
+Otherwise, an <code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code>
+is thrown when the server does not exist. A <code class="inline">ValidationException</code> is raised when
+parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -717,7 +746,7 @@ not exist. A <code class="inline">ValidationException</code> is raised when para
     </a>
     <h1 class="signature">export_server_engine_attribute(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L277" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L296" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -728,12 +757,13 @@ not exist. A <code class="inline">ValidationException</code> is raised when para
 
   <section class="docstring">
 <p>Exports a specified server engine attribute as a base64-encoded string.</p>
-<p>For example, you can export user data that you can use in EC2 to associate nodes with a server.</p>
+<p>For example, you can export user data that you can use in EC2 to associate nodes
+with a server.</p>
 <p>This operation is synchronous.</p>
-<p>A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid. A
-<code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. An <code class="inline">InvalidStateException</code>
-is thrown when the server is in any of the following states: CREATING, TERMINATED, FAILED or
-DELETING.</p>
+<p>A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid.
+A <code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. An
+<code class="inline">InvalidStateException</code> is thrown when the server is in any of the following
+states: CREATING, TERMINATED, FAILED or DELETING.</p>
 
   </section>
 </section>
@@ -748,7 +778,7 @@ DELETING.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L285" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L304" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -758,8 +788,8 @@ DELETING.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a list of tags that are applied to the specified AWS OpsWorks for Chef Automate or AWS
-OpsWorks for Puppet Enterprise servers or backups.</p>
+<p>Returns a list of tags that are applied to the specified AWS OpsWorks for Chef
+Automate or AWS OpsWorks for Puppet Enterprise servers or backups.</p>
 
   </section>
 </section>
@@ -774,7 +804,7 @@ OpsWorks for Puppet Enterprise servers or backups.</p>
     </a>
     <h1 class="signature">restore_server(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L308" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L329" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -784,19 +814,21 @@ OpsWorks for Puppet Enterprise servers or backups.</p>
   </div>
 
   <section class="docstring">
-<p>Restores a backup to a server that is in a <code class="inline">CONNECTION_LOST</code>, <code class="inline">HEALTHY</code>, <code class="inline">RUNNING</code>, <code class="inline">UNHEALTHY</code>,
-or <code class="inline">TERMINATED</code> state.</p>
-<p>When you run RestoreServer, the server&#39;s EC2 instance is deleted, and a new EC2 instance is
-configured. RestoreServer maintains the existing server endpoint, so configuration management of
-the server&#39;s client devices (nodes) should continue to work.</p>
-<p>Restoring from a backup is performed by creating a new EC2 instance. If restoration is successful,
-and the server is in a <code class="inline">HEALTHY</code> state, AWS OpsWorks CM switches traffic over to the new instance.
-After restoration is finished, the old EC2 instance is maintained in a <code class="inline">Running</code> or <code class="inline">Stopped</code>
-state, but is eventually terminated.</p>
+<p>Restores a backup to a server that is in a <code class="inline">CONNECTION_LOST</code>, <code class="inline">HEALTHY</code>,
+<code class="inline">RUNNING</code>, <code class="inline">UNHEALTHY</code>, or <code class="inline">TERMINATED</code> state.</p>
+<p>When you run RestoreServer, the server&#39;s EC2 instance is deleted, and a new EC2
+instance is configured. RestoreServer maintains the existing server endpoint, so
+configuration management of the server&#39;s client devices (nodes) should continue
+to work.</p>
+<p>Restoring from a backup is performed by creating a new EC2 instance. If
+restoration is successful, and the server is in a <code class="inline">HEALTHY</code> state, AWS OpsWorks
+CM switches traffic over to the new instance. After restoration is finished, the
+old EC2 instance is maintained in a <code class="inline">Running</code> or <code class="inline">Stopped</code> state, but is
+eventually terminated.</p>
 <p>This operation is asynchronous.</p>
 <p>An <code class="inline">InvalidStateException</code> is thrown when the server is not in a valid state. A
-<code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A <code class="inline">ValidationException</code> is
-raised when parameters of the request are not valid.</p>
+<code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A
+<code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -811,7 +843,7 @@ raised when parameters of the request are not valid.</p>
     </a>
     <h1 class="signature">start_maintenance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L323" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L345" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -822,12 +854,13 @@ raised when parameters of the request are not valid.</p>
 
   <section class="docstring">
 <p>Manually starts server maintenance.</p>
-<p>This command can be useful if an earlier maintenance attempt failed, and the underlying cause of
-maintenance failure has been resolved. The server is in an <code class="inline">UNDER_MAINTENANCE</code> state while
-maintenance is in progress.</p>
-<p>Maintenance can only be started on servers in <code class="inline">HEALTHY</code> and <code class="inline">UNHEALTHY</code> states. Otherwise, an
-<code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code> is thrown when the server does
-not exist. A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
+<p>This command can be useful if an earlier maintenance attempt failed, and the
+underlying cause of maintenance failure has been resolved. The server is in an
+<code class="inline">UNDER_MAINTENANCE</code> state while maintenance is in progress.</p>
+<p>Maintenance can only be started on servers in <code class="inline">HEALTHY</code> and <code class="inline">UNHEALTHY</code> states.
+Otherwise, an <code class="inline">InvalidStateException</code> is thrown. A <code class="inline">ResourceNotFoundException</code>
+is thrown when the server does not exist. A <code class="inline">ValidationException</code> is raised when
+parameters of the request are not valid.</p>
 
   </section>
 </section>
@@ -842,7 +875,7 @@ not exist. A <code class="inline">ValidationException</code> is raised when para
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L331" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L353" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -852,8 +885,8 @@ not exist. A <code class="inline">ValidationException</code> is raised when para
   </div>
 
   <section class="docstring">
-<p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet Enterprise server, or
-to server backups.</p>
+<p>Applies tags to an AWS OpsWorks for Chef Automate or AWS OpsWorks for Puppet
+Enterprise server, or to server backups.</p>
 
   </section>
 </section>
@@ -868,7 +901,7 @@ to server backups.</p>
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L338" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L360" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -893,7 +926,7 @@ to server backups.</p>
     </a>
     <h1 class="signature">update_server(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L347" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L369" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -919,7 +952,7 @@ to server backups.</p>
     </a>
     <h1 class="signature">update_server_engine_attributes(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L364" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works_c_m.ex#L388" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -930,13 +963,15 @@ to server backups.</p>
 
   <section class="docstring">
 <p>Updates engine-specific attributes on a specified server.</p>
-<p>The server enters the <code class="inline">MODIFYING</code> state when this operation is in progress. Only one update can
-occur at a time. You can use this command to reset a Chef server&#39;s public key (<code class="inline">CHEF_PIVOTAL_KEY</code>)
-or a Puppet server&#39;s admin password (<code class="inline">PUPPET_ADMIN_PASSWORD</code>).</p>
+<p>The server enters the <code class="inline">MODIFYING</code> state when this operation is in progress. Only
+one update can occur at a time. You can use this command to reset a Chef
+server&#39;s public key (<code class="inline">CHEF_PIVOTAL_KEY</code>) or a Puppet server&#39;s admin password
+(<code class="inline">PUPPET_ADMIN_PASSWORD</code>).</p>
 <p>This operation is asynchronous.</p>
-<p>This operation can only be called for servers in <code class="inline">HEALTHY</code> or <code class="inline">UNHEALTHY</code> states. Otherwise, an
-<code class="inline">InvalidStateException</code> is raised. A <code class="inline">ResourceNotFoundException</code> is thrown when the server does
-not exist. A <code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
+<p>This operation can only be called for servers in <code class="inline">HEALTHY</code> or <code class="inline">UNHEALTHY</code>
+states. Otherwise, an <code class="inline">InvalidStateException</code> is raised. A
+<code class="inline">ResourceNotFoundException</code> is thrown when the server does not exist. A
+<code class="inline">ValidationException</code> is raised when parameters of the request are not valid.</p>
 
   </section>
 </section>

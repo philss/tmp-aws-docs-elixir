@@ -10,7 +10,7 @@
     <title>AWS.SFN — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,18 +87,21 @@ AWS.SFN
 
         <section id="moduledoc">
 <p>AWS Step Functions</p>
-<p>AWS Step Functions is a service that lets you coordinate the components of distributed
-applications and microservices using visual workflows.</p>
-<p>You can use Step Functions to build applications from individual components, each of which
-performs a discrete function, or <em>task</em>, allowing you to scale and change applications quickly.
-Step Functions provides a console that helps visualize the components of your application as a
-series of steps. Step Functions automatically triggers and tracks each step, and retries steps
-when there are errors, so your application executes predictably and in the right order every time.
-Step Functions logs the state of each step, so you can quickly diagnose and debug any issues.</p>
-<p>Step Functions manages operations and underlying infrastructure to ensure your application is
-available at any scale. You can run tasks on AWS, your own servers, or any system that has access
-to AWS. You can access and use Step Functions using the console, the AWS SDKs, or an HTTP API. For
-more information about Step Functions, see the <em><a href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </em>.</p>
+<p>AWS Step Functions is a service that lets you coordinate the components of
+distributed applications and microservices using visual workflows.</p>
+<p>You can use Step Functions to build applications from individual components,
+each of which performs a discrete function, or <em>task</em>, allowing you to scale and
+change applications quickly. Step Functions provides a console that helps
+visualize the components of your application as a series of steps. Step
+Functions automatically triggers and tracks each step, and retries steps when
+there are errors, so your application executes predictably and in the right
+order every time. Step Functions logs the state of each step, so you can quickly
+diagnose and debug any issues.</p>
+<p>Step Functions manages operations and underlying infrastructure to ensure your
+application is available at any scale. You can run tasks on AWS, your own
+servers, or any system that has access to AWS. You can access and use Step
+Functions using the console, the AWS SDKs, or an HTTP API. For more information
+about Step Functions, see the <em><a href="https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html">AWS Step Functions Developer Guide</a> </em>.</p>
 
         </section>
 
@@ -194,8 +197,8 @@ more information about Step Functions, see the <em><a href="https://docs.aws.ama
 
   </div>
 
-    <div class="summary-synopsis"><p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for
-execution by a running state machine.</p></div>
+    <div class="summary-synopsis"><p>Used by workers to retrieve a task (with the specified activity ARN) which has
+been scheduled for execution by a running state machine.</p></div>
 
 </div>
 <div class="summary-row">
@@ -261,8 +264,8 @@ pattern to report that the task identified by the <code class="inline">taskToken
   </div>
 
     <div class="summary-synopsis"><p>Used by activity workers and task states using the
-<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified <code class="inline">taskToken</code> is
-still making progress.</p></div>
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified
+<code class="inline">taskToken</code> is still making progress.</p></div>
 
 </div>
 <div class="summary-row">
@@ -273,7 +276,8 @@ still making progress.</p></div>
 
     <div class="summary-synopsis"><p>Used by activity workers and task states using the
 <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-pattern to report that the task identified by the <code class="inline">taskToken</code> completed successfully.</p></div>
+pattern to report that the task identified by the <code class="inline">taskToken</code> completed
+successfully.</p></div>
 
 </div>
 <div class="summary-row">
@@ -348,7 +352,7 @@ Functions
     </a>
     <h1 class="signature">create_activity(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L42" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L47" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -359,18 +363,20 @@ Functions
 
   <section class="docstring">
 <p>Creates an activity.</p>
-<p>An activity is a task that you write in any programming language and host on any machine that has
-access to AWS Step Functions. Activities must poll Step Functions using the <code class="inline">GetActivityTask</code> API
-action and respond using <code class="inline">SendTask*</code> API actions. This function lets Step Functions know the
-existence of your activity and returns an identifier for use in a state machine and when polling
+<p>An activity is a task that you write in any programming language and host on any
+machine that has access to AWS Step Functions. Activities must poll Step
+Functions using the <code class="inline">GetActivityTask</code> API action and respond using <code class="inline">SendTask*</code>
+API actions. This function lets Step Functions know the existence of your
+activity and returns an identifier for use in a state machine and when polling
 from the activity.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
-<p><code class="inline">CreateActivity</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
-was already created. <code class="inline">CreateActivity</code>&#39;s idempotency check is based on the activity <code class="inline">name</code>. If a
-following request has different <code class="inline">tags</code> values, Step Functions will ignore these differences and
-treat it as an idempotent request of the previous. In this case, <code class="inline">tags</code> will not be updated, even
-if they are different.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
+<p><code class="inline">CreateActivity</code> is an idempotent API. Subsequent requests won’t create a
+duplicate resource if it was already created. <code class="inline">CreateActivity</code>&#39;s idempotency
+check is based on the activity <code class="inline">name</code>. If a following request has different
+<code class="inline">tags</code> values, Step Functions will ignore these differences and treat it as an
+idempotent request of the previous. In this case, <code class="inline">tags</code> will not be updated,
+even if they are different.</p>
 
   </section>
 </section>
@@ -385,7 +391,7 @@ if they are different.</p>
     </a>
     <h1 class="signature">create_state_machine(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L65" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L72" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -396,19 +402,21 @@ if they are different.</p>
 
   <section class="docstring">
 <p>Creates a state machine.</p>
-<p>A state machine consists of a collection of states that can do work (<a href="https://hexdocs.pm/elixir/Task.html"><code class="inline">Task</code></a> states), determine to
-which states to transition next (<code class="inline">Choice</code> states), stop an execution with an error (<code class="inline">Fail</code>
-states), and so on. State machines are specified using a JSON-based, structured language. For more
-information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a>
+<p>A state machine consists of a collection of states that can do work (<a href="https://hexdocs.pm/elixir/Task.html"><code class="inline">Task</code></a>
+states), determine to which states to transition next (<code class="inline">Choice</code> states), stop an
+execution with an error (<code class="inline">Fail</code> states), and so on. State machines are specified
+using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States
+Language</a>
 in the AWS Step Functions User Guide.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
-<p><code class="inline">CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource
-if it was already created. <code class="inline">CreateStateMachine</code>&#39;s idempotency check is based on the state machine
-<code class="inline">name</code>, <code class="inline">definition</code>, <code class="inline">type</code>, <code class="inline">LoggingConfiguration</code> and <code class="inline">TracingConfiguration</code>. If a following
-request has a different <code class="inline">roleArn</code> or <code class="inline">tags</code>, Step Functions will ignore these differences and
-treat it as an idempotent request of the previous. In this case, <code class="inline">roleArn</code> and <code class="inline">tags</code> will not be
-updated, even if they are different.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
+<p><code class="inline">CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a
+duplicate resource if it was already created. <code class="inline">CreateStateMachine</code>&#39;s idempotency
+check is based on the state machine <code class="inline">name</code>, <code class="inline">definition</code>, <code class="inline">type</code>,
+<code class="inline">LoggingConfiguration</code> and <code class="inline">TracingConfiguration</code>. If a following request has a
+different <code class="inline">roleArn</code> or <code class="inline">tags</code>, Step Functions will ignore these differences and
+treat it as an idempotent request of the previous. In this case, <code class="inline">roleArn</code> and
+<code class="inline">tags</code> will not be updated, even if they are different.</p>
 
   </section>
 </section>
@@ -423,7 +431,7 @@ updated, even if they are different.</p>
     </a>
     <h1 class="signature">delete_activity(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L72" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L79" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -448,7 +456,7 @@ updated, even if they are different.</p>
     </a>
     <h1 class="signature">delete_state_machine(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L85" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L93" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -459,10 +467,11 @@ updated, even if they are different.</p>
 
   <section class="docstring">
 <p>Deletes a state machine.</p>
-<p>This is an asynchronous operation: It sets the state machine&#39;s status to <code class="inline">DELETING</code> and begins the
-deletion process.</p>
-<p>For <code class="inline">EXPRESS</code>state machines, the deletion will happen eventually (usually less than a minute).
-Running executions may emit logs after <code class="inline">DeleteStateMachine</code> API is called.</p>
+<p>This is an asynchronous operation: It sets the state machine&#39;s status to
+<code class="inline">DELETING</code> and begins the deletion process.</p>
+<p>For <code class="inline">EXPRESS</code>state machines, the deletion will happen eventually (usually less
+than a minute). Running executions may emit logs after <code class="inline">DeleteStateMachine</code> API
+is called.</p>
 
   </section>
 </section>
@@ -477,7 +486,7 @@ Running executions may emit logs after <code class="inline">DeleteStateMachine</
     </a>
     <h1 class="signature">describe_activity(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L95" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L103" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -488,8 +497,8 @@ Running executions may emit logs after <code class="inline">DeleteStateMachine</
 
   <section class="docstring">
 <p>Describes an activity.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 
   </section>
 </section>
@@ -504,7 +513,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">describe_execution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L107" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L115" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -515,8 +524,8 @@ recent updates and changes.</p>
 
   <section class="docstring">
 <p>Describes an execution.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 <p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
 
   </section>
@@ -532,7 +541,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">describe_state_machine(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L117" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L125" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -543,8 +552,8 @@ recent updates and changes.</p>
 
   <section class="docstring">
 <p>Describes a state machine.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 
   </section>
 </section>
@@ -559,7 +568,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">describe_state_machine_for_execution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L129" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L137" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -570,8 +579,8 @@ recent updates and changes.</p>
 
   <section class="docstring">
 <p>Describes the state machine associated with a specific execution.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 <p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
 
   </section>
@@ -587,7 +596,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">get_activity_task(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L149" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L158" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -597,17 +606,18 @@ recent updates and changes.</p>
   </div>
 
   <section class="docstring">
-<p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for
-execution by a running state machine.</p>
-<p>This initiates a long poll, where the service holds the HTTP connection open and responds as soon
-as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time
-the service holds on to the request before responding is 60 seconds. If no task is available
-within 60 seconds, the poll returns a <code class="inline">taskToken</code> with a null string.</p>
-<p>Workers should set their client side socket timeout to at least 65 seconds (5 seconds higher than
-the maximum time the service may hold the poll request).</p>
-<p>Polling with <code class="inline">GetActivityTask</code> can cause latency in some implementations. See <a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling for Activity
-Tasks</a> in the Step
-Functions Developer Guide.</p>
+<p>Used by workers to retrieve a task (with the specified activity ARN) which has
+been scheduled for execution by a running state machine.</p>
+<p>This initiates a long poll, where the service holds the HTTP connection open and
+responds as soon as a task becomes available (i.e. an execution of a task of
+this type is needed.) The maximum time the service holds on to the request
+before responding is 60 seconds. If no task is available within 60 seconds, the
+poll returns a <code class="inline">taskToken</code> with a null string.</p>
+<p>Workers should set their client side socket timeout to at least 65 seconds (5
+seconds higher than the maximum time the service may hold the poll request).</p>
+<p>Polling with <code class="inline">GetActivityTask</code> can cause latency in some implementations. See
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/bp-activity-pollers.html">Avoid Latency When Polling for Activity Tasks</a>
+in the Step Functions Developer Guide.</p>
 
   </section>
 </section>
@@ -622,7 +632,7 @@ Functions Developer Guide.</p>
     </a>
     <h1 class="signature">get_execution_history(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L166" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L176" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -633,12 +643,13 @@ Functions Developer Guide.</p>
 
   <section class="docstring">
 <p>Returns the history of the specified execution as a list of events.</p>
-<p>By default, the results are returned in ascending order of the <code class="inline">timeStamp</code> of the events. Use the
-<code class="inline">reverseOrder</code> parameter to get the latest events first.</p>
-<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
-pagination token for each page. Make the call again using the returned token to retrieve the next
-page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
-expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>By default, the results are returned in ascending order of the <code class="inline">timeStamp</code> of
+the events. Use the <code class="inline">reverseOrder</code> parameter to get the latest events first.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of
+<code class="inline">nextToken</code> is a unique pagination token for each page. Make the call again
+using the returned token to retrieve the next page. Keep all other arguments
+unchanged. Each pagination token expires after 24 hours. Using an expired
+pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
 <p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
 
   </section>
@@ -654,7 +665,7 @@ expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p
     </a>
     <h1 class="signature">list_activities(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L181" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L192" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -665,12 +676,13 @@ expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p
 
   <section class="docstring">
 <p>Lists the existing activities.</p>
-<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
-pagination token for each page. Make the call again using the returned token to retrieve the next
-page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
-expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of
+<code class="inline">nextToken</code> is a unique pagination token for each page. Make the call again
+using the returned token to retrieve the next page. Keep all other arguments
+unchanged. Each pagination token expires after 24 hours. Using an expired
+pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 
   </section>
 </section>
@@ -685,7 +697,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">list_executions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L200" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L212" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -697,12 +709,13 @@ recent updates and changes.</p>
   <section class="docstring">
 <p>Lists the executions of a state machine that meet the filtering criteria.</p>
 <p>Results are sorted by time, with the most recent execution first.</p>
-<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
-pagination token for each page. Make the call again using the returned token to retrieve the next
-page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
-expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of
+<code class="inline">nextToken</code> is a unique pagination token for each page. Make the call again
+using the returned token to retrieve the next page. Keep all other arguments
+unchanged. Each pagination token expires after 24 hours. Using an expired
+pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 <p>This API action is not supported by <code class="inline">EXPRESS</code> state machines.</p>
 
   </section>
@@ -718,7 +731,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">list_state_machines(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L215" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L228" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -729,12 +742,13 @@ recent updates and changes.</p>
 
   <section class="docstring">
 <p>Lists the existing state machines.</p>
-<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of <code class="inline">nextToken</code> is a unique
-pagination token for each page. Make the call again using the returned token to retrieve the next
-page. Keep all other arguments unchanged. Each pagination token expires after 24 hours. Using an
-expired pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
-<p>This operation is eventually consistent. The results are best effort and may not reflect very
-recent updates and changes.</p>
+<p>If <code class="inline">nextToken</code> is returned, there are more results available. The value of
+<code class="inline">nextToken</code> is a unique pagination token for each page. Make the call again
+using the returned token to retrieve the next page. Keep all other arguments
+unchanged. Each pagination token expires after 24 hours. Using an expired
+pagination token will return an <em>HTTP 400 InvalidToken</em> error.</p>
+<p>This operation is eventually consistent. The results are best effort and may not
+reflect very recent updates and changes.</p>
 
   </section>
 </section>
@@ -749,7 +763,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L224" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L238" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -775,7 +789,7 @@ recent updates and changes.</p>
     </a>
     <h1 class="signature">send_task_failure(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L233" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L247" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -802,7 +816,7 @@ pattern to report that the task identified by the <code class="inline">taskToken
     </a>
     <h1 class="signature">send_task_heartbeat(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L256" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L272" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -813,20 +827,22 @@ pattern to report that the task identified by the <code class="inline">taskToken
 
   <section class="docstring">
 <p>Used by activity workers and task states using the
-<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified <code class="inline">taskToken</code> is
-still making progress.</p>
-<p>This action resets the <code class="inline">Heartbeat</code> clock. The <code class="inline">Heartbeat</code> threshold is specified in the state
-machine&#39;s Amazon States Language definition (<code class="inline">HeartbeatSeconds</code>). This action does not in itself
-create an event in the execution history. However, if the task times out, the execution history
-contains an <code class="inline">ActivityTimedOut</code> entry for activities, or a <code class="inline">TaskTimedOut</code> entry for for tasks using
-the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
+<a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report to Step Functions that the task represented by the specified
+<code class="inline">taskToken</code> is still making progress.</p>
+<p>This action resets the <code class="inline">Heartbeat</code> clock. The <code class="inline">Heartbeat</code> threshold is specified
+in the state machine&#39;s Amazon States Language definition (<code class="inline">HeartbeatSeconds</code>).
+This action does not in itself create an event in the execution history.
+However, if the task times out, the execution history contains an
+<code class="inline">ActivityTimedOut</code> entry for activities, or a <code class="inline">TaskTimedOut</code> entry for for tasks
+using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
 run</a>
 or
 <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
 pattern.</p>
-<p>The <code class="inline">Timeout</code> of a task, defined in the state machine&#39;s Amazon States Language definition, is its
-maximum allowed duration, regardless of the number of <code class="inline">SendTaskHeartbeat</code> requests received. Use
-<code class="inline">HeartbeatSeconds</code> to configure the timeout interval for heartbeats.</p>
+<p>The <code class="inline">Timeout</code> of a task, defined in the state machine&#39;s Amazon States Language
+definition, is its maximum allowed duration, regardless of the number of
+<code class="inline">SendTaskHeartbeat</code> requests received. Use <code class="inline">HeartbeatSeconds</code> to configure the
+timeout interval for heartbeats.</p>
 
   </section>
 </section>
@@ -841,7 +857,7 @@ maximum allowed duration, regardless of the number of <code class="inline">SendT
     </a>
     <h1 class="signature">send_task_success(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L265" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L282" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -853,7 +869,8 @@ maximum allowed duration, regardless of the number of <code class="inline">SendT
   <section class="docstring">
 <p>Used by activity workers and task states using the
 <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
-pattern to report that the task identified by the <code class="inline">taskToken</code> completed successfully.</p>
+pattern to report that the task identified by the <code class="inline">taskToken</code> completed
+successfully.</p>
 
   </section>
 </section>
@@ -868,7 +885,7 @@ pattern to report that the task identified by the <code class="inline">taskToken
     </a>
     <h1 class="signature">start_execution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L277" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L295" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -879,10 +896,11 @@ pattern to report that the task identified by the <code class="inline">taskToken
 
   <section class="docstring">
 <p>Starts a state machine execution.</p>
-<p><code class="inline">StartExecution</code> is idempotent. If <code class="inline">StartExecution</code> is called with the same name and input as a
-running execution, the call will succeed and return the same response as the original request. If
-the execution is closed or if the input is different, it will return a 400
-<code class="inline">ExecutionAlreadyExists</code> error. Names can be reused after 90 days.</p>
+<p><code class="inline">StartExecution</code> is idempotent. If <code class="inline">StartExecution</code> is called with the same name
+and input as a running execution, the call will succeed and return the same
+response as the original request. If the execution is closed or if the input is
+different, it will return a 400 <code class="inline">ExecutionAlreadyExists</code> error. Names can be
+reused after 90 days.</p>
 
   </section>
 </section>
@@ -897,7 +915,7 @@ the execution is closed or if the input is different, it will return a 400
     </a>
     <h1 class="signature">stop_execution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L286" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L304" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -923,7 +941,7 @@ the execution is closed or if the input is different, it will return a 400
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L298" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L318" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -934,8 +952,9 @@ the execution is closed or if the input is different, it will return a 400
 
   <section class="docstring">
 <p>Add a tag to a Step Functions resource.</p>
-<p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a> in the
-<em>AWS Billing and Cost Management User Guide</em>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM Tags</a>.</p>
+<p>An array of key-value pairs. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation Tags</a>
+in the <em>AWS Billing and Cost Management User Guide</em>, and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+Tags</a>.</p>
 <p>Tags may only contain Unicode letters, digits, white space, or these symbols: <code class="inline">_ . : / = + - @</code>.</p>
 
   </section>
@@ -951,7 +970,7 @@ the execution is closed or if the input is different, it will return a 400
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L305" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L325" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -976,7 +995,7 @@ the execution is closed or if the input is different, it will return a 400
     </a>
     <h1 class="signature">update_state_machine(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L320" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/sfn.ex#L342" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -988,11 +1007,13 @@ the execution is closed or if the input is different, it will return a 400
   <section class="docstring">
 <p>Updates an existing state machine by modifying its <code class="inline">definition</code>, <code class="inline">roleArn</code>, or
 <code class="inline">loggingConfiguration</code>.</p>
-<p>Running executions will continue to use the previous <code class="inline">definition</code> and <code class="inline">roleArn</code>. You must include
-at least one of <code class="inline">definition</code> or <code class="inline">roleArn</code> or you will receive a <code class="inline">MissingRequiredParameter</code> error.</p>
-<p>All <code class="inline">StartExecution</code> calls within a few seconds will use the updated <code class="inline">definition</code> and <code class="inline">roleArn</code>.
-Executions started immediately after calling <code class="inline">UpdateStateMachine</code> may use the previous state
-machine <code class="inline">definition</code> and <code class="inline">roleArn</code>.</p>
+<p>Running executions will continue to use the previous <code class="inline">definition</code> and <code class="inline">roleArn</code>.
+You must include at least one of <code class="inline">definition</code> or <code class="inline">roleArn</code> or you will receive a
+<code class="inline">MissingRequiredParameter</code> error.</p>
+<p>All <code class="inline">StartExecution</code> calls within a few seconds will use the updated
+<code class="inline">definition</code> and <code class="inline">roleArn</code>. Executions started immediately after calling
+<code class="inline">UpdateStateMachine</code> may use the previous state machine <code class="inline">definition</code> and
+<code class="inline">roleArn</code>.</p>
 
   </section>
 </section>

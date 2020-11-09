@@ -10,7 +10,7 @@
     <title>AWS.Textract — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,7 +86,8 @@ AWS.Textract
 
 
         <section id="moduledoc">
-<p>Amazon Textract detects and analyzes text in documents and converts it into machine-readable text.</p>
+<p>Amazon Textract detects and analyzes text in documents and converts it into
+machine-readable text.</p>
 <p>This is the API reference documentation for Amazon Textract.</p>
 
         </section>
@@ -129,7 +130,8 @@ AWS.Textract
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets the results for an Amazon Textract asynchronous operation that analyzes text in a document.</p></div>
+    <div class="summary-synopsis"><p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+text in a document.</p></div>
 
 </div>
 <div class="summary-row">
@@ -138,7 +140,8 @@ AWS.Textract
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets the results for an Amazon Textract asynchronous operation that detects text in a document.</p></div>
+    <div class="summary-synopsis"><p>Gets the results for an Amazon Textract asynchronous operation that detects text
+in a document.</p></div>
 
 </div>
 <div class="summary-row">
@@ -147,8 +150,8 @@ AWS.Textract
 
   </div>
 
-    <div class="summary-synopsis"><p>Starts the asynchronous analysis of an input document for relationships between detected items
-such as key-value pairs, tables, and selection elements.</p></div>
+    <div class="summary-synopsis"><p>Starts the asynchronous analysis of an input document for relationships between
+detected items such as key-value pairs, tables, and selection elements.</p></div>
 
 </div>
 <div class="summary-row">
@@ -186,7 +189,7 @@ Functions
     </a>
     <h1 class="signature">analyze_document(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L41" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L45" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -199,26 +202,29 @@ Functions
 <p>Analyzes an input document for relationships between detected items.</p>
 <p>The types of information returned are as follows:</p>
 <ul>
-<li><p>Form data (key-value pairs). The related information is returned in two <code class="inline">Block</code>
-objects, each of type <code class="inline">KEY_VALUE_SET</code>: a KEY <code class="inline">Block</code> object and a VALUE <code class="inline">Block</code> object. For
-example, <em>Name: Ana Silva Carolina</em> contains a key and value. <em>Name:</em> is the key. <em>Ana Silva
-Carolina</em> is the value.</p>
+<li><p>Form data (key-value pairs). The related information is returned
+in two <code class="inline">Block</code> objects, each of type <code class="inline">KEY_VALUE_SET</code>: a KEY <code class="inline">Block</code> object and a
+VALUE <code class="inline">Block</code> object. For example, <em>Name: Ana Silva Carolina</em> contains a key and
+value. <em>Name:</em> is the key. <em>Ana Silva Carolina</em> is the value.</p>
 </li>
-<li><p>Table and table cell data. A TABLE <code class="inline">Block</code> object contains information about a
-detected table. A CELL <code class="inline">Block</code> object is returned for each cell in a table.</p>
+<li><p>Table and table cell data. A TABLE <code class="inline">Block</code> object contains
+information about a detected table. A CELL <code class="inline">Block</code> object is returned for each
+cell in a table.</p>
 </li>
-<li><p>Lines and words of text. A LINE <code class="inline">Block</code> object contains one or more WORD <code class="inline">Block</code>
-objects. All lines and words that are detected in the document are returned (including text that
-doesn&#39;t have a relationship with the value of <code class="inline">FeatureTypes</code>).</p>
+<li><p>Lines and words of text. A LINE <code class="inline">Block</code> object contains one or
+more WORD <code class="inline">Block</code> objects. All lines and words that are detected in the document
+are returned (including text that doesn&#39;t have a relationship with the value of
+<code class="inline">FeatureTypes</code>).</p>
 </li>
 </ul>
-<p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form
-data and in tables. A SELECTION_ELEMENT <code class="inline">Block</code> object contains information about a selection
-element, including the selection status.</p>
-<p>You can choose which type of analysis to perform by specifying the <code class="inline">FeatureTypes</code> list.</p>
+<p>Selection elements such as check boxes and option buttons (radio buttons) can be
+detected in form data and in tables. A SELECTION_ELEMENT <code class="inline">Block</code> object contains
+information about a selection element, including the selection status.</p>
+<p>You can choose which type of analysis to perform by specifying the
+<code class="inline">FeatureTypes</code> list.</p>
 <p>The output is returned in a list of <code class="inline">Block</code> objects.</p>
-<p><code class="inline">AnalyzeDocument</code> is a synchronous operation. To analyze documents asynchronously, use
-<code class="inline">StartDocumentAnalysis</code>.</p>
+<p><code class="inline">AnalyzeDocument</code> is a synchronous operation. To analyze documents
+asynchronously, use <code class="inline">StartDocumentAnalysis</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
 
   </section>
@@ -234,7 +240,7 @@ element, including the selection status.</p>
     </a>
     <h1 class="signature">detect_document_text(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L62" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L66" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -245,15 +251,15 @@ element, including the selection status.</p>
 
   <section class="docstring">
 <p>Detects text in the input document.</p>
-<p>Amazon Textract can detect lines of text and the words that make up a line of text. The input
-document must be an image in JPEG or PNG format. <code class="inline">DetectDocumentText</code> returns the detected text in
-an array of <code class="inline">Block</code> objects.</p>
-<p>Each document page has as an associated <code class="inline">Block</code> of type PAGE. Each PAGE <code class="inline">Block</code> object is the
-parent of LINE <code class="inline">Block</code> objects that represent the lines of detected text on a page. A LINE <code class="inline">Block</code>
-object is a parent for each word that makes up the line. Words are represented by <code class="inline">Block</code> objects
-of type WORD.</p>
-<p><code class="inline">DetectDocumentText</code> is a synchronous operation. To analyze documents asynchronously, use
-<code class="inline">StartDocumentTextDetection</code>.</p>
+<p>Amazon Textract can detect lines of text and the words that make up a line of
+text. The input document must be an image in JPEG or PNG format.
+<code class="inline">DetectDocumentText</code> returns the detected text in an array of <code class="inline">Block</code> objects.</p>
+<p>Each document page has as an associated <code class="inline">Block</code> of type PAGE. Each PAGE <code class="inline">Block</code>
+object is the parent of LINE <code class="inline">Block</code> objects that represent the lines of
+detected text on a page. A LINE <code class="inline">Block</code> object is a parent for each word that
+makes up the line. Words are represented by <code class="inline">Block</code> objects of type WORD.</p>
+<p><code class="inline">DetectDocumentText</code> is a synchronous operation. To analyze documents
+asynchronously, use <code class="inline">StartDocumentTextDetection</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
 
   </section>
@@ -269,7 +275,7 @@ of type WORD.</p>
     </a>
     <h1 class="signature">get_document_analysis(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L105" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L113" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -279,39 +285,43 @@ of type WORD.</p>
   </div>
 
   <section class="docstring">
-<p>Gets the results for an Amazon Textract asynchronous operation that analyzes text in a document.</p>
-<p>You start asynchronous text analysis by calling <code class="inline">StartDocumentAnalysis</code>, which returns a job
-identifier (<code class="inline">JobId</code>). When the text analysis operation finishes, Amazon Textract publishes a
-completion status to the Amazon Simple Notification Service (Amazon SNS) topic that&#39;s registered
-in the initial call to <code class="inline">StartDocumentAnalysis</code>. To get the results of the text-detection
-operation, first check that the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If
-so, call <code class="inline">GetDocumentAnalysis</code>, and pass the job identifier (<code class="inline">JobId</code>) from the initial call to
-<code class="inline">StartDocumentAnalysis</code>.</p>
-<p><code class="inline">GetDocumentAnalysis</code> returns an array of <code class="inline">Block</code> objects. The following types of information are
-returned:</p>
+<p>Gets the results for an Amazon Textract asynchronous operation that analyzes
+text in a document.</p>
+<p>You start asynchronous text analysis by calling <code class="inline">StartDocumentAnalysis</code>, which
+returns a job identifier (<code class="inline">JobId</code>). When the text analysis operation finishes,
+Amazon Textract publishes a completion status to the Amazon Simple Notification
+Service (Amazon SNS) topic that&#39;s registered in the initial call to
+<code class="inline">StartDocumentAnalysis</code>. To get the results of the text-detection operation,
+first check that the status value published to the Amazon SNS topic is
+<code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentAnalysis</code>, and pass the job identifier
+(<code class="inline">JobId</code>) from the initial call to <code class="inline">StartDocumentAnalysis</code>.</p>
+<p><code class="inline">GetDocumentAnalysis</code> returns an array of <code class="inline">Block</code> objects. The following types
+of information are returned:</p>
 <ul>
-<li><p>Form data (key-value pairs). The related information is returned in two <code class="inline">Block</code>
-objects, each of type <code class="inline">KEY_VALUE_SET</code>: a KEY <code class="inline">Block</code> object and a VALUE <code class="inline">Block</code> object. For
-example, <em>Name: Ana Silva Carolina</em> contains a key and value. <em>Name:</em> is the key. <em>Ana Silva
-Carolina</em> is the value.</p>
+<li><p>Form data (key-value pairs). The related information is returned
+in two <code class="inline">Block</code> objects, each of type <code class="inline">KEY_VALUE_SET</code>: a KEY <code class="inline">Block</code> object and a
+VALUE <code class="inline">Block</code> object. For example, <em>Name: Ana Silva Carolina</em> contains a key and
+value. <em>Name:</em> is the key. <em>Ana Silva Carolina</em> is the value.</p>
 </li>
-<li><p>Table and table cell data. A TABLE <code class="inline">Block</code> object contains information about a
-detected table. A CELL <code class="inline">Block</code> object is returned for each cell in a table.</p>
+<li><p>Table and table cell data. A TABLE <code class="inline">Block</code> object contains
+information about a detected table. A CELL <code class="inline">Block</code> object is returned for each
+cell in a table.</p>
 </li>
-<li><p>Lines and words of text. A LINE <code class="inline">Block</code> object contains one or more WORD <code class="inline">Block</code>
-objects. All lines and words that are detected in the document are returned (including text that
-doesn&#39;t have a relationship with the value of the <code class="inline">StartDocumentAnalysis</code> <code class="inline">FeatureTypes</code> input
-parameter).</p>
+<li><p>Lines and words of text. A LINE <code class="inline">Block</code> object contains one or
+more WORD <code class="inline">Block</code> objects. All lines and words that are detected in the document
+are returned (including text that doesn&#39;t have a relationship with the value of
+the <code class="inline">StartDocumentAnalysis</code> <code class="inline">FeatureTypes</code> input parameter).</p>
 </li>
 </ul>
-<p>Selection elements such as check boxes and option buttons (radio buttons) can be detected in form
-data and in tables. A SELECTION_ELEMENT <code class="inline">Block</code> object contains information about a selection
-element, including the selection status.</p>
-<p>Use the <code class="inline">MaxResults</code> parameter to limit the number of blocks that are returned. If there are more
-results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response
-contains a pagination token for getting the next set of results. To get the next page of results,
-call <code class="inline">GetDocumentAnalysis</code>, and populate the <code class="inline">NextToken</code> request parameter with the token value
-that&#39;s returned from the previous call to <code class="inline">GetDocumentAnalysis</code>.</p>
+<p>Selection elements such as check boxes and option buttons (radio buttons) can be
+detected in form data and in tables. A SELECTION_ELEMENT <code class="inline">Block</code> object contains
+information about a selection element, including the selection status.</p>
+<p>Use the <code class="inline">MaxResults</code> parameter to limit the number of blocks that are returned.
+If there are more results than specified in <code class="inline">MaxResults</code>, the value of
+<code class="inline">NextToken</code> in the operation response contains a pagination token for getting
+the next set of results. To get the next page of results, call
+<code class="inline">GetDocumentAnalysis</code>, and populate the <code class="inline">NextToken</code> request parameter with the
+token value that&#39;s returned from the previous call to <code class="inline">GetDocumentAnalysis</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
 
   </section>
@@ -327,7 +337,7 @@ that&#39;s returned from the previous call to <code class="inline">GetDocumentAn
     </a>
     <h1 class="signature">get_document_text_detection(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L137" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L149" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -337,25 +347,29 @@ that&#39;s returned from the previous call to <code class="inline">GetDocumentAn
   </div>
 
   <section class="docstring">
-<p>Gets the results for an Amazon Textract asynchronous operation that detects text in a document.</p>
-<p>Amazon Textract can detect lines of text and the words that make up a line of text.</p>
-<p>You start asynchronous text detection by calling <code class="inline">StartDocumentTextDetection</code>, which returns a job
-identifier (<code class="inline">JobId</code>). When the text detection operation finishes, Amazon Textract publishes a
-completion status to the Amazon Simple Notification Service (Amazon SNS) topic that&#39;s registered
-in the initial call to <code class="inline">StartDocumentTextDetection</code>. To get the results of the text-detection
-operation, first check that the status value published to the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If
-so, call <code class="inline">GetDocumentTextDetection</code>, and pass the job identifier (<code class="inline">JobId</code>) from the initial call
-to <code class="inline">StartDocumentTextDetection</code>.</p>
+<p>Gets the results for an Amazon Textract asynchronous operation that detects text
+in a document.</p>
+<p>Amazon Textract can detect lines of text and the words that make up a line of
+text.</p>
+<p>You start asynchronous text detection by calling <code class="inline">StartDocumentTextDetection</code>,
+which returns a job identifier (<code class="inline">JobId</code>). When the text detection operation
+finishes, Amazon Textract publishes a completion status to the Amazon Simple
+Notification Service (Amazon SNS) topic that&#39;s registered in the initial call to
+<code class="inline">StartDocumentTextDetection</code>. To get the results of the text-detection
+operation, first check that the status value published to the Amazon SNS topic
+is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentTextDetection</code>, and pass the job
+identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartDocumentTextDetection</code>.</p>
 <p><code class="inline">GetDocumentTextDetection</code> returns an array of <code class="inline">Block</code> objects.</p>
-<p>Each document page has as an associated <code class="inline">Block</code> of type PAGE. Each PAGE <code class="inline">Block</code> object is the
-parent of LINE <code class="inline">Block</code> objects that represent the lines of detected text on a page. A LINE <code class="inline">Block</code>
-object is a parent for each word that makes up the line. Words are represented by <code class="inline">Block</code> objects
-of type WORD.</p>
-<p>Use the MaxResults parameter to limit the number of blocks that are returned. If there are more
-results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code> in the operation response
-contains a pagination token for getting the next set of results. To get the next page of results,
-call <code class="inline">GetDocumentTextDetection</code>, and populate the <code class="inline">NextToken</code> request parameter with the token
-value that&#39;s returned from the previous call to <code class="inline">GetDocumentTextDetection</code>.</p>
+<p>Each document page has as an associated <code class="inline">Block</code> of type PAGE. Each PAGE <code class="inline">Block</code>
+object is the parent of LINE <code class="inline">Block</code> objects that represent the lines of
+detected text on a page. A LINE <code class="inline">Block</code> object is a parent for each word that
+makes up the line. Words are represented by <code class="inline">Block</code> objects of type WORD.</p>
+<p>Use the MaxResults parameter to limit the number of blocks that are returned. If
+there are more results than specified in <code class="inline">MaxResults</code>, the value of <code class="inline">NextToken</code>
+in the operation response contains a pagination token for getting the next set
+of results. To get the next page of results, call <code class="inline">GetDocumentTextDetection</code>,
+and populate the <code class="inline">NextToken</code> request parameter with the token value that&#39;s
+returned from the previous call to <code class="inline">GetDocumentTextDetection</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
 
   </section>
@@ -371,7 +385,7 @@ value that&#39;s returned from the previous call to <code class="inline">GetDocu
     </a>
     <h1 class="signature">start_document_analysis(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L158" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L171" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -381,17 +395,18 @@ value that&#39;s returned from the previous call to <code class="inline">GetDocu
   </div>
 
   <section class="docstring">
-<p>Starts the asynchronous analysis of an input document for relationships between detected items
-such as key-value pairs, tables, and selection elements.</p>
-<p><code class="inline">StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, and PDF format. The
-documents are stored in an Amazon S3 bucket. Use <code class="inline">DocumentLocation</code> to specify the bucket name and
-file name of the document.</p>
-<p><code class="inline">StartDocumentAnalysis</code> returns a job identifier (<code class="inline">JobId</code>) that you use to get the results of the
-operation. When text analysis is finished, Amazon Textract publishes a completion status to the
-Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code class="inline">NotificationChannel</code>.
-To get the results of the text analysis operation, first check that the status value published to
-the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentAnalysis</code>, and pass the job
-identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartDocumentAnalysis</code>.</p>
+<p>Starts the asynchronous analysis of an input document for relationships between
+detected items such as key-value pairs, tables, and selection elements.</p>
+<p><code class="inline">StartDocumentAnalysis</code> can analyze text in documents that are in JPEG, PNG, and
+PDF format. The documents are stored in an Amazon S3 bucket. Use
+<code class="inline">DocumentLocation</code> to specify the bucket name and file name of the document.</p>
+<p><code class="inline">StartDocumentAnalysis</code> returns a job identifier (<code class="inline">JobId</code>) that you use to get
+the results of the operation. When text analysis is finished, Amazon Textract
+publishes a completion status to the Amazon Simple Notification Service (Amazon
+SNS) topic that you specify in <code class="inline">NotificationChannel</code>. To get the results of the
+text analysis operation, first check that the status value published to the
+Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentAnalysis</code>, and pass the
+job identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartDocumentAnalysis</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html">Document Text Analysis</a>.</p>
 
   </section>
@@ -407,7 +422,7 @@ identifier (<code class="inline">JobId</code>) from the initial call to <code cl
     </a>
     <h1 class="signature">start_document_text_detection(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L180" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/textract.ex#L196" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -418,16 +433,19 @@ identifier (<code class="inline">JobId</code>) from the initial call to <code cl
 
   <section class="docstring">
 <p>Starts the asynchronous detection of text in a document.</p>
-<p>Amazon Textract can detect lines of text and the words that make up a line of text.</p>
-<p><code class="inline">StartDocumentTextDetection</code> can analyze text in documents that are in JPEG, PNG, and PDF format.
-The documents are stored in an Amazon S3 bucket. Use <code class="inline">DocumentLocation</code> to specify the bucket name
-and file name of the document.</p>
-<p><code class="inline">StartTextDetection</code> returns a job identifier (<code class="inline">JobId</code>) that you use to get the results of the
-operation. When text detection is finished, Amazon Textract publishes a completion status to the
-Amazon Simple Notification Service (Amazon SNS) topic that you specify in <code class="inline">NotificationChannel</code>.
-To get the results of the text detection operation, first check that the status value published to
-the Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentTextDetection</code>, and pass the job
-identifier (<code class="inline">JobId</code>) from the initial call to <code class="inline">StartDocumentTextDetection</code>.</p>
+<p>Amazon Textract can detect lines of text and the words that make up a line of
+text.</p>
+<p><code class="inline">StartDocumentTextDetection</code> can analyze text in documents that are in JPEG,
+PNG, and PDF format. The documents are stored in an Amazon S3 bucket. Use
+<code class="inline">DocumentLocation</code> to specify the bucket name and file name of the document.</p>
+<p><code class="inline">StartTextDetection</code> returns a job identifier (<code class="inline">JobId</code>) that you use to get the
+results of the operation. When text detection is finished, Amazon Textract
+publishes a completion status to the Amazon Simple Notification Service (Amazon
+SNS) topic that you specify in <code class="inline">NotificationChannel</code>. To get the results of the
+text detection operation, first check that the status value published to the
+Amazon SNS topic is <code class="inline">SUCCEEDED</code>. If so, call <code class="inline">GetDocumentTextDetection</code>, and
+pass the job identifier (<code class="inline">JobId</code>) from the initial call to
+<code class="inline">StartDocumentTextDetection</code>.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/textract/latest/dg/how-it-works-detecting.html">Document Text Detection</a>.</p>
 
   </section>

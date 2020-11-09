@@ -10,7 +10,7 @@
     <title>AWS.Personalize — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,8 +86,8 @@ AWS.Personalize
 
 
         <section id="moduledoc">
-<p>Amazon Personalize is a machine learning service that makes it easy to add individualized
-recommendations to customers.</p>
+<p>Amazon Personalize is a machine learning service that makes it easy to add
+individualized recommendations to customers.</p>
 
         </section>
 
@@ -147,8 +147,8 @@ recommendations to customers.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon
-Personalize dataset.</p></div>
+    <div class="summary-synopsis"><p>Creates a job that imports training data from your data source (an Amazon S3
+bucket) to an Amazon Personalize dataset.</p></div>
 
 </div>
 <div class="summary-row">
@@ -157,8 +157,10 @@ Personalize dataset.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Creates an event tracker that you use when sending event data to the specified dataset group using
-the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p></div>
+    <div class="summary-synopsis"><p>Creates an event tracker that you use when sending event data to the specified
+dataset group using the
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+API.</p></div>
 
 </div>
 <div class="summary-row">
@@ -275,9 +277,9 @@ the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status,
-input and output configurations, and the ARN of the solution version used to generate the
-recommendations.</p></div>
+    <div class="summary-synopsis"><p>Gets the properties of a batch inference job including name, Amazon Resource
+Name (ARN), status, input and output configurations, and the ARN of the solution
+version used to generate the recommendations.</p></div>
 
 </div>
 <div class="summary-row">
@@ -313,8 +315,8 @@ recommendations.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including the import job
-status.</p></div>
+    <div class="summary-synopsis"><p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including
+the import job status.</p></div>
 
 </div>
 <div class="summary-row">
@@ -395,7 +397,8 @@ status.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p></div>
+    <div class="summary-synopsis"><p>Gets a list of the batch inference jobs that have been performed off of a
+solution version.</p></div>
 
 </div>
 <div class="summary-row">
@@ -494,8 +497,8 @@ status.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Updates a campaign by either deploying a new solution or changing the value of the campaign&#39;s
-<code class="inline">minProvisionedTPS</code> parameter.</p></div>
+    <div class="summary-synopsis"><p>Updates a campaign by either deploying a new solution or changing the value of
+the campaign&#39;s <code class="inline">minProvisionedTPS</code> parameter.</p></div>
 
 </div>
 
@@ -535,8 +538,8 @@ Functions
 
   <section class="docstring">
 <p>Creates a batch inference job.</p>
-<p>The operation can handle up to 50 million records and the input file must be in JSON format. For
-more information, see <code class="inline">recommendations-batch</code>.</p>
+<p>The operation can handle up to 50 million records and the input file must be in
+JSON format. For more information, see <code class="inline">recommendations-batch</code>.</p>
 
   </section>
 </section>
@@ -551,7 +554,7 @@ more information, see <code class="inline">recommendations-batch</code>.</p>
     </a>
     <h1 class="signature">create_campaign(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L63" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L65" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -566,17 +569,27 @@ more information, see <code class="inline">recommendations-batch</code>.</p>
 <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> and
 <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
 APIs, a campaign is specified in the request.</p>
-<p><strong>Minimum Provisioned TPS and Auto-Scaling</strong></p>
-<p>A transaction is a single <code class="inline">GetRecommendations</code> or <code class="inline">GetPersonalizedRanking</code> call. Transactions per
-second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum provisioned
-TPS (<code class="inline">minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon Personalize, and
-thus, the minimum billing charge. If your TPS increases beyond <code class="inline">minProvisionedTPS</code>, Amazon
-Personalize auto-scales the provisioned capacity up and down, but never below <code class="inline">minProvisionedTPS</code>,
-to maintain a 70% utilization. There&#39;s a short time delay while the capacity is increased that
-might cause loss of transactions. It&#39;s recommended to start with a low <code class="inline">minProvisionedTPS</code>, track
-your usage using Amazon CloudWatch metrics, and then increase the <code class="inline">minProvisionedTPS</code> as
+<h2 id="create_campaign/3-minimum-provisioned-tps-and-auto-scaling" class="section-heading">
+  <a href="#create_campaign/3-minimum-provisioned-tps-and-auto-scaling" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Minimum Provisioned TPS and Auto-Scaling
+</h2>
+
+<p>A transaction is a single <code class="inline">GetRecommendations</code> or <code class="inline">GetPersonalizedRanking</code> call.
+Transactions per second (TPS) is the throughput and unit of billing for Amazon
+Personalize. The minimum provisioned TPS (<code class="inline">minProvisionedTPS</code>) specifies the
+baseline throughput provisioned by Amazon Personalize, and thus, the minimum
+billing charge. If your TPS increases beyond <code class="inline">minProvisionedTPS</code>, Amazon
+Personalize auto-scales the provisioned capacity up and down, but never below
+<code class="inline">minProvisionedTPS</code>, to maintain a 70% utilization. There&#39;s a short time delay
+while the capacity is increased that might cause loss of transactions. It&#39;s
+recommended to start with a low <code class="inline">minProvisionedTPS</code>, track your usage using
+Amazon CloudWatch metrics, and then increase the <code class="inline">minProvisionedTPS</code> as
 necessary.</p>
-<p><strong>Status</strong></p>
+<h2 id="create_campaign/3-status" class="section-heading">
+  <a href="#create_campaign/3-status" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Status
+</h2>
+
 <p>A campaign can be in one of the following states:</p>
 <ul>
 <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
@@ -585,9 +598,13 @@ necessary.</p>
 </li>
 </ul>
 <p>To get the campaign status, call <code class="inline">DescribeCampaign</code>.</p>
-<p>Wait until the <code class="inline">status</code> of the campaign is <code class="inline">ACTIVE</code> before asking the campaign for
-recommendations.</p>
-<p><strong>Related APIs</strong></p>
+<p>Wait until the <code class="inline">status</code> of the campaign is <code class="inline">ACTIVE</code> before asking the campaign
+for recommendations.</p>
+<h2 id="create_campaign/3-related-apis" class="section-heading">
+  <a href="#create_campaign/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListCampaigns</code></p>
 </li>
@@ -612,7 +629,7 @@ recommendations.</p>
     </a>
     <h1 class="signature">create_dataset(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L101" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L104" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -633,8 +650,9 @@ recommendations.</p>
 <li><p>Users</p>
 </li>
 </ul>
-<p>Each dataset type has an associated schema with required field types. Only the <code class="inline">Interactions</code>
-dataset is required in order to train a model (also referred to as creating a solution).</p>
+<p>Each dataset type has an associated schema with required field types. Only the
+<code class="inline">Interactions</code> dataset is required in order to train a model (also referred to
+as creating a solution).</p>
 <p>A dataset can be in one of the following states:</p>
 <ul>
 <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
@@ -643,7 +661,11 @@ dataset is required in order to train a model (also referred to as creating a so
 </li>
 </ul>
 <p>To get the status of the dataset, call <code class="inline">DescribeDataset</code>.</p>
-<p><strong>Related APIs</strong></p>
+<h2 id="create_dataset/3-related-apis" class="section-heading">
+  <a href="#create_dataset/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">CreateDatasetGroup</code></p>
 </li>
@@ -668,7 +690,7 @@ dataset is required in order to train a model (also referred to as creating a so
     </a>
     <h1 class="signature">create_dataset_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L152" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L158" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -679,8 +701,9 @@ dataset is required in order to train a model (also referred to as creating a so
 
   <section class="docstring">
 <p>Creates an empty dataset group.</p>
-<p>A dataset group contains related datasets that supply data for training a model. A dataset group
-can contain at most three datasets, one for each type of dataset:</p>
+<p>A dataset group contains related datasets that supply data for training a model.
+A dataset group can contain at most three datasets, one for each type of
+dataset:</p>
 <ul>
 <li><p>Interactions</p>
 </li>
@@ -689,8 +712,9 @@ can contain at most three datasets, one for each type of dataset:</p>
 <li><p>Users</p>
 </li>
 </ul>
-<p>To train a model (create a solution), a dataset group that contains an <code class="inline">Interactions</code> dataset is
-required. Call <code class="inline">CreateDataset</code> to add a dataset to the group.</p>
+<p>To train a model (create a solution), a dataset group that contains an
+<code class="inline">Interactions</code> dataset is required. Call <code class="inline">CreateDataset</code> to add a dataset to the
+group.</p>
 <p>A dataset group can be in one of the following states:</p>
 <ul>
 <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
@@ -698,14 +722,19 @@ required. Call <code class="inline">CreateDataset</code> to add a dataset to the
 <li><p>DELETE PENDING</p>
 </li>
 </ul>
-<p>To get the status of the dataset group, call <code class="inline">DescribeDatasetGroup</code>. If the status shows as CREATE
-FAILED, the response includes a <code class="inline">failureReason</code> key, which describes why the creation failed.</p>
-<p>You must wait until the <code class="inline">status</code> of the dataset group is <code class="inline">ACTIVE</code> before adding a dataset to the
-group.</p>
-<p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group. If
-you specify a KMS key, you must also include an AWS Identity and Access Management (IAM) role that
-has permission to access the key.</p>
-<p><strong>APIs that require a dataset group ARN in the request</strong></p>
+<p>To get the status of the dataset group, call <code class="inline">DescribeDatasetGroup</code>. If the
+status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code> key,
+which describes why the creation failed.</p>
+<p>You must wait until the <code class="inline">status</code> of the dataset group is <code class="inline">ACTIVE</code> before adding
+a dataset to the group.</p>
+<p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets
+in the group. If you specify a KMS key, you must also include an AWS Identity
+and Access Management (IAM) role that has permission to access the key.</p>
+<h2 id="create_dataset_group/3-apis-that-require-a-dataset-group-arn-in-the-request" class="section-heading">
+  <a href="#create_dataset_group/3-apis-that-require-a-dataset-group-arn-in-the-request" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  APIs that require a dataset group ARN in the request
+</h2>
+
 <ul>
 <li><p><code class="inline">CreateDataset</code></p>
 </li>
@@ -714,7 +743,11 @@ has permission to access the key.</p>
 <li><p><code class="inline">CreateSolution</code></p>
 </li>
 </ul>
-<p><strong>Related APIs</strong></p>
+<h2 id="create_dataset_group/3-related-apis" class="section-heading">
+  <a href="#create_dataset_group/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListDatasetGroups</code></p>
 </li>
@@ -737,7 +770,7 @@ has permission to access the key.</p>
     </a>
     <h1 class="signature">create_dataset_import_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L186" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L193" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -747,25 +780,34 @@ has permission to access the key.</p>
   </div>
 
   <section class="docstring">
-<p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon
-Personalize dataset.</p>
-<p>To allow Amazon Personalize to import the training data, you must specify an AWS Identity and
-Access Management (IAM) role that has permission to read from the data source, as Amazon
-Personalize makes a copy of your data and processes it in an internal AWS system.</p>
+<p>Creates a job that imports training data from your data source (an Amazon S3
+bucket) to an Amazon Personalize dataset.</p>
+<p>To allow Amazon Personalize to import the training data, you must specify an AWS
+Identity and Access Management (IAM) role that has permission to read from the
+data source, as Amazon Personalize makes a copy of your data and processes it in
+an internal AWS system.</p>
 <p>The dataset import job replaces any previous data in the dataset.</p>
-<p><strong>Status</strong></p>
+<h2 id="create_dataset_import_job/3-status" class="section-heading">
+  <a href="#create_dataset_import_job/3-status" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Status
+</h2>
+
 <p>A dataset import job can be in one of the following states:</p>
 <ul>
 <li>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
 </li>
 </ul>
-<p>To get the status of the import job, call <code class="inline">DescribeDatasetImportJob</code>, providing the Amazon
-Resource Name (ARN) of the dataset import job. The dataset import is complete when the status
-shows as ACTIVE. If the status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code>
-key, which describes why the job failed.</p>
-<p>Importing takes time. You must wait until the status shows as ACTIVE before training a model using
-the dataset.</p>
-<p><strong>Related APIs</strong></p>
+<p>To get the status of the import job, call <code class="inline">DescribeDatasetImportJob</code>, providing
+the Amazon Resource Name (ARN) of the dataset import job. The dataset import is
+complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
+the response includes a <code class="inline">failureReason</code> key, which describes why the job failed.</p>
+<p>Importing takes time. You must wait until the status shows as ACTIVE before
+training a model using the dataset.</p>
+<h2 id="create_dataset_import_job/3-related-apis" class="section-heading">
+  <a href="#create_dataset_import_job/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListDatasetImportJobs</code></p>
 </li>
@@ -786,7 +828,7 @@ the dataset.</p>
     </a>
     <h1 class="signature">create_event_tracker(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L222" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L233" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -796,15 +838,19 @@ the dataset.</p>
   </div>
 
   <section class="docstring">
-<p>Creates an event tracker that you use when sending event data to the specified dataset group using
-the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
-<p>When Amazon Personalize creates an event tracker, it also creates an <em>event-interactions</em> dataset
-in the dataset group associated with the event tracker. The event-interactions dataset stores the
-event data from the <code class="inline">PutEvents</code> call. The contents of this dataset are not available to the user.</p>
-<p>Only one event tracker can be associated with a dataset group. You will get an error if you call
-<code class="inline">CreateEventTracker</code> using the same dataset group as an existing event tracker.</p>
-<p>When you send event data you include your tracking ID. The tracking ID identifies the customer and
-authorizes the customer to send the data.</p>
+<p>Creates an event tracker that you use when sending event data to the specified
+dataset group using the
+<a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a>
+API.</p>
+<p>When Amazon Personalize creates an event tracker, it also creates an
+<em>event-interactions</em> dataset in the dataset group associated with the event
+tracker. The event-interactions dataset stores the event data from the
+<code class="inline">PutEvents</code> call. The contents of this dataset are not available to the user.</p>
+<p>Only one event tracker can be associated with a dataset group. You will get an
+error if you call <code class="inline">CreateEventTracker</code> using the same dataset group as an
+existing event tracker.</p>
+<p>When you send event data you include your tracking ID. The tracking ID
+identifies the customer and authorizes the customer to send the data.</p>
 <p>The event tracker can be in one of the following states:</p>
 <ul>
 <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
@@ -814,7 +860,11 @@ authorizes the customer to send the data.</p>
 </ul>
 <p>To get the status of the event tracker, call <code class="inline">DescribeEventTracker</code>.</p>
 <p>The event tracker must be in the ACTIVE state before using the tracking ID.</p>
-<p><strong>Related APIs</strong></p>
+<h2 id="create_event_tracker/3-related-apis" class="section-heading">
+  <a href="#create_event_tracker/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListEventTrackers</code></p>
 </li>
@@ -837,7 +887,7 @@ authorizes the customer to send the data.</p>
     </a>
     <h1 class="signature">create_filter(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L231" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L242" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -863,7 +913,7 @@ authorizes the customer to send the data.</p>
     </a>
     <h1 class="signature">create_schema(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L251" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L263" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -875,9 +925,14 @@ authorizes the customer to send the data.</p>
   <section class="docstring">
 <p>Creates an Amazon Personalize schema from the specified schema string.</p>
 <p>The schema you create must be in Avro JSON format.</p>
-<p>Amazon Personalize recognizes three schema variants. Each schema is associated with a dataset type
-and has a set of required field and keywords. You specify a schema when you call <code class="inline">CreateDataset</code>.</p>
-<p><strong>Related APIs</strong></p>
+<p>Amazon Personalize recognizes three schema variants. Each schema is associated
+with a dataset type and has a set of required field and keywords. You specify a
+schema when you call <code class="inline">CreateDataset</code>.</p>
+<h2 id="create_schema/3-related-apis" class="section-heading">
+  <a href="#create_schema/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListSchemas</code></p>
 </li>
@@ -900,7 +955,7 @@ and has a set of required field and keywords. You specify a schema when you call
     </a>
     <h1 class="signature">create_solution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L299" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L314" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -911,20 +966,27 @@ and has a set of required field and keywords. You specify a schema when you call
 
   <section class="docstring">
 <p>Creates the configuration for training a model.</p>
-<p>A trained model is known as a solution. After the configuration is created, you train the model
-(create a solution) by calling the <code class="inline">CreateSolutionVersion</code> operation. Every time you call
-<code class="inline">CreateSolutionVersion</code>, a new version of the solution is created.</p>
-<p>After creating a solution version, you check its accuracy by calling <code class="inline">GetSolutionMetrics</code>. When
-you are satisfied with the version, you deploy it using <code class="inline">CreateCampaign</code>. The campaign provides
-recommendations to a client through the
+<p>A trained model is known as a solution. After the configuration is created, you
+train the model (create a solution) by calling the <code class="inline">CreateSolutionVersion</code>
+operation. Every time you call <code class="inline">CreateSolutionVersion</code>, a new version of the
+solution is created.</p>
+<p>After creating a solution version, you check its accuracy by calling
+<code class="inline">GetSolutionMetrics</code>. When you are satisfied with the version, you deploy it
+using <code class="inline">CreateCampaign</code>. The campaign provides recommendations to a client
+through the
 <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
 API.</p>
-<p>To train a model, Amazon Personalize requires training data and a recipe. The training data comes
-from the dataset group that you provide in the request. A recipe specifies the training algorithm
-and a feature transformation. You can specify one of the predefined recipes provided by Amazon
-Personalize. Alternatively, you can specify <code class="inline">performAutoML</code> and Amazon Personalize will analyze
-your data and select the optimum USER_PERSONALIZATION recipe for you.</p>
-<p><strong>Status</strong></p>
+<p>To train a model, Amazon Personalize requires training data and a recipe. The
+training data comes from the dataset group that you provide in the request. A
+recipe specifies the training algorithm and a feature transformation. You can
+specify one of the predefined recipes provided by Amazon Personalize.
+Alternatively, you can specify <code class="inline">performAutoML</code> and Amazon Personalize will
+analyze your data and select the optimum USER_PERSONALIZATION recipe for you.</p>
+<h2 id="create_solution/3-status" class="section-heading">
+  <a href="#create_solution/3-status" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Status
+</h2>
+
 <p>A solution can be in one of the following states:</p>
 <ul>
 <li><p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p>
@@ -932,9 +994,13 @@ your data and select the optimum USER_PERSONALIZATION recipe for you.</p>
 <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
 </li>
 </ul>
-<p>To get the status of the solution, call <code class="inline">DescribeSolution</code>. Wait until the status shows as ACTIVE
-before calling <code class="inline">CreateSolutionVersion</code>.</p>
-<p><strong>Related APIs</strong></p>
+<p>To get the status of the solution, call <code class="inline">DescribeSolution</code>. Wait until the
+status shows as ACTIVE before calling <code class="inline">CreateSolutionVersion</code>.</p>
+<h2 id="create_solution/3-related-apis" class="section-heading">
+  <a href="#create_solution/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListSolutions</code></p>
 </li>
@@ -963,7 +1029,7 @@ before calling <code class="inline">CreateSolutionVersion</code>.</p>
     </a>
     <h1 class="signature">create_solution_version(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L336" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L351" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -974,20 +1040,28 @@ before calling <code class="inline">CreateSolutionVersion</code>.</p>
 
   <section class="docstring">
 <p>Trains or retrains an active solution.</p>
-<p>A solution is created using the <code class="inline">CreateSolution</code> operation and must be in the ACTIVE state before
-calling <code class="inline">CreateSolutionVersion</code>. A new version of the solution is created every time you call this
-operation.</p>
-<p><strong>Status</strong></p>
+<p>A solution is created using the <code class="inline">CreateSolution</code> operation and must be in the
+ACTIVE state before calling <code class="inline">CreateSolutionVersion</code>. A new version of the
+solution is created every time you call this operation.</p>
+<h2 id="create_solution_version/3-status" class="section-heading">
+  <a href="#create_solution_version/3-status" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Status
+</h2>
+
 <p>A solution version can be in one of the following states:</p>
 <ul>
 <li>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
 </li>
 </ul>
-<p>To get the status of the version, call <code class="inline">DescribeSolutionVersion</code>. Wait until the status shows as
-ACTIVE before calling <code class="inline">CreateCampaign</code>.</p>
-<p>If the status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code> key, which describes
-why the job failed.</p>
-<p><strong>Related APIs</strong></p>
+<p>To get the status of the version, call <code class="inline">DescribeSolutionVersion</code>. Wait until the
+status shows as ACTIVE before calling <code class="inline">CreateCampaign</code>.</p>
+<p>If the status shows as CREATE FAILED, the response includes a <code class="inline">failureReason</code>
+key, which describes why the job failed.</p>
+<h2 id="create_solution_version/3-related-apis" class="section-heading">
+  <a href="#create_solution_version/3-related-apis" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related APIs
+</h2>
+
 <ul>
 <li><p><code class="inline">ListSolutionVersions</code></p>
 </li>
@@ -1016,7 +1090,7 @@ why the job failed.</p>
     </a>
     <h1 class="signature">delete_campaign(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L348" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L363" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1027,8 +1101,8 @@ why the job failed.</p>
 
   <section class="docstring">
 <p>Removes a campaign by deleting the solution deployment.</p>
-<p>The solution that the campaign is based on is not deleted and can be redeployed when needed. A
-deleted campaign can no longer be specified in a
+<p>The solution that the campaign is based on is not deleted and can be redeployed
+when needed. A deleted campaign can no longer be specified in a
 <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
 request. For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
 
@@ -1045,7 +1119,7 @@ request. For more information on campaigns, see <code class="inline">CreateCampa
     </a>
     <h1 class="signature">delete_dataset(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L358" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L374" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1056,8 +1130,9 @@ request. For more information on campaigns, see <code class="inline">CreateCampa
 
   <section class="docstring">
 <p>Deletes a dataset.</p>
-<p>You can&#39;t delete a dataset if an associated <code class="inline">DatasetImportJob</code> or <code class="inline">SolutionVersion</code> is in the
-CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+<p>You can&#39;t delete a dataset if an associated <code class="inline">DatasetImportJob</code> or
+<code class="inline">SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more
+information on datasets, see <code class="inline">CreateDataset</code>.</p>
 
   </section>
 </section>
@@ -1072,7 +1147,7 @@ CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code
     </a>
     <h1 class="signature">delete_dataset_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L373" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L389" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1106,7 +1181,7 @@ CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code
     </a>
     <h1 class="signature">delete_event_tracker(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L383" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L399" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1117,8 +1192,8 @@ CREATE PENDING or IN PROGRESS state. For more information on datasets, see <code
 
   <section class="docstring">
 <p>Deletes the event tracker.</p>
-<p>Does not delete the event-interactions dataset from the associated dataset group. For more
-information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+<p>Does not delete the event-interactions dataset from the associated dataset
+group. For more information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
 
   </section>
 </section>
@@ -1133,7 +1208,7 @@ information on event trackers, see <code class="inline">CreateEventTracker</code
     </a>
     <h1 class="signature">delete_filter(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L390" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L406" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1158,7 +1233,7 @@ information on event trackers, see <code class="inline">CreateEventTracker</code
     </a>
     <h1 class="signature">delete_schema(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L400" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L416" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1169,8 +1244,8 @@ information on event trackers, see <code class="inline">CreateEventTracker</code
 
   <section class="docstring">
 <p>Deletes a schema.</p>
-<p>Before deleting a schema, you must delete all datasets referencing the schema. For more
-information on schemas, see <code class="inline">CreateSchema</code>.</p>
+<p>Before deleting a schema, you must delete all datasets referencing the schema.
+For more information on schemas, see <code class="inline">CreateSchema</code>.</p>
 
   </section>
 </section>
@@ -1185,7 +1260,7 @@ information on schemas, see <code class="inline">CreateSchema</code>.</p>
     </a>
     <h1 class="signature">delete_solution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L412" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L429" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1196,10 +1271,11 @@ information on schemas, see <code class="inline">CreateSchema</code>.</p>
 
   <section class="docstring">
 <p>Deletes all versions of a solution and the <code class="inline">Solution</code> object itself.</p>
-<p>Before deleting a solution, you must delete all campaigns based on the solution. To determine what
-campaigns are using the solution, call <code class="inline">ListCampaigns</code> and supply the Amazon Resource Name (ARN)
-of the solution. You can&#39;t delete a solution if an associated <code class="inline">SolutionVersion</code> is in the CREATE
-PENDING or IN PROGRESS state. For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+<p>Before deleting a solution, you must delete all campaigns based on the solution.
+To determine what campaigns are using the solution, call <code class="inline">ListCampaigns</code> and
+supply the Amazon Resource Name (ARN) of the solution. You can&#39;t delete a
+solution if an associated <code class="inline">SolutionVersion</code> is in the CREATE PENDING or IN
+PROGRESS state. For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
 
   </section>
 </section>
@@ -1214,7 +1290,7 @@ PENDING or IN PROGRESS state. For more information on solutions, see <code class
     </a>
     <h1 class="signature">describe_algorithm(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L419" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L436" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1239,7 +1315,7 @@ PENDING or IN PROGRESS state. For more information on solutions, see <code class
     </a>
     <h1 class="signature">describe_batch_inference_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L428" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L445" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1249,9 +1325,9 @@ PENDING or IN PROGRESS state. For more information on solutions, see <code class
   </div>
 
   <section class="docstring">
-<p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status,
-input and output configurations, and the ARN of the solution version used to generate the
-recommendations.</p>
+<p>Gets the properties of a batch inference job including name, Amazon Resource
+Name (ARN), status, input and output configurations, and the ARN of the solution
+version used to generate the recommendations.</p>
 
   </section>
 </section>
@@ -1266,7 +1342,7 @@ recommendations.</p>
     </a>
     <h1 class="signature">describe_campaign(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L446" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L463" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1284,8 +1360,8 @@ recommendations.</p>
 <li><p>DELETE PENDING &gt; DELETE IN_PROGRESS</p>
 </li>
 </ul>
-<p>When the <code class="inline">status</code> is <code class="inline">CREATE FAILED</code>, the response includes the <code class="inline">failureReason</code> key, which
-describes why.</p>
+<p>When the <code class="inline">status</code> is <code class="inline">CREATE FAILED</code>, the response includes the <code class="inline">failureReason</code>
+key, which describes why.</p>
 <p>For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
 
   </section>
@@ -1301,7 +1377,7 @@ describes why.</p>
     </a>
     <h1 class="signature">describe_dataset(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L455" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L472" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1327,7 +1403,7 @@ describes why.</p>
     </a>
     <h1 class="signature">describe_dataset_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L464" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L481" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1353,7 +1429,7 @@ describes why.</p>
     </a>
     <h1 class="signature">describe_dataset_import_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L472" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L489" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1363,8 +1439,8 @@ describes why.</p>
   </div>
 
   <section class="docstring">
-<p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including the import job
-status.</p>
+<p>Describes the dataset import job created by <code class="inline">CreateDatasetImportJob</code>, including
+the import job status.</p>
 
   </section>
 </section>
@@ -1379,7 +1455,7 @@ status.</p>
     </a>
     <h1 class="signature">describe_event_tracker(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L482" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L499" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1390,8 +1466,8 @@ status.</p>
 
   <section class="docstring">
 <p>Describes an event tracker.</p>
-<p>The response includes the <code class="inline">trackingId</code> and <code class="inline">status</code> of the event tracker. For more information on
-event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+<p>The response includes the <code class="inline">trackingId</code> and <code class="inline">status</code> of the event tracker. For
+more information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
 
   </section>
 </section>
@@ -1406,7 +1482,7 @@ event trackers, see <code class="inline">CreateEventTracker</code>.</p>
     </a>
     <h1 class="signature">describe_feature_transformation(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L489" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L506" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1431,7 +1507,7 @@ event trackers, see <code class="inline">CreateEventTracker</code>.</p>
     </a>
     <h1 class="signature">describe_filter(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L496" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L513" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1456,7 +1532,7 @@ event trackers, see <code class="inline">CreateEventTracker</code>.</p>
     </a>
     <h1 class="signature">describe_recipe(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L518" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L537" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1473,13 +1549,15 @@ event trackers, see <code class="inline">CreateEventTracker</code>.</p>
 </li>
 <li><p>Hyperparameters that govern the training.</p>
 </li>
-<li><p>Feature transformation information for modifying the input data before training.</p>
+<li><p>Feature transformation information for modifying the input data
+before training.</p>
 </li>
 </ul>
-<p>Amazon Personalize provides a set of predefined recipes. You specify a recipe when you create a
-solution with the <code class="inline">CreateSolution</code> API. <code class="inline">CreateSolution</code> trains a model by using the algorithm in
-the specified recipe and a training dataset. The solution, when deployed as a campaign, can
-provide recommendations using the
+<p>Amazon Personalize provides a set of predefined recipes. You specify a recipe
+when you create a solution with the <code class="inline">CreateSolution</code> API. <code class="inline">CreateSolution</code>
+trains a model by using the algorithm in the specified recipe and a training
+dataset. The solution, when deployed as a campaign, can provide recommendations
+using the
 <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
 API.</p>
 
@@ -1496,7 +1574,7 @@ API.</p>
     </a>
     <h1 class="signature">describe_schema(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L527" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L546" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1522,7 +1600,7 @@ API.</p>
     </a>
     <h1 class="signature">describe_solution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L536" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L555" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1548,7 +1626,7 @@ API.</p>
     </a>
     <h1 class="signature">describe_solution_version(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L545" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L564" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1574,7 +1652,7 @@ API.</p>
     </a>
     <h1 class="signature">get_solution_metrics(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L552" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L571" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1599,7 +1677,7 @@ API.</p>
     </a>
     <h1 class="signature">list_batch_inference_jobs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L559" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L579" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1609,7 +1687,8 @@ API.</p>
   </div>
 
   <section class="docstring">
-<p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p>
+<p>Gets a list of the batch inference jobs that have been performed off of a
+solution version.</p>
 
   </section>
 </section>
@@ -1624,7 +1703,7 @@ API.</p>
     </a>
     <h1 class="signature">list_campaigns(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L570" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L591" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1635,9 +1714,10 @@ API.</p>
 
   <section class="docstring">
 <p>Returns a list of campaigns that use the given solution.</p>
-<p>When a solution is not specified, all the campaigns associated with the account are listed. The
-response provides the properties for each campaign, including the Amazon Resource Name (ARN). For
-more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
+<p>When a solution is not specified, all the campaigns associated with the account
+are listed. The response provides the properties for each campaign, including
+the Amazon Resource Name (ARN). For more information on campaigns, see
+<code class="inline">CreateCampaign</code>.</p>
 
   </section>
 </section>
@@ -1652,7 +1732,7 @@ more information on campaigns, see <code class="inline">CreateCampaign</code>.</
     </a>
     <h1 class="signature">list_dataset_groups(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L580" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L602" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1663,8 +1743,9 @@ more information on campaigns, see <code class="inline">CreateCampaign</code>.</
 
   <section class="docstring">
 <p>Returns a list of dataset groups.</p>
-<p>The response provides the properties for each dataset group, including the Amazon Resource Name
-(ARN). For more information on dataset groups, see <code class="inline">CreateDatasetGroup</code>.</p>
+<p>The response provides the properties for each dataset group, including the
+Amazon Resource Name (ARN). For more information on dataset groups, see
+<code class="inline">CreateDatasetGroup</code>.</p>
 
   </section>
 </section>
@@ -1679,7 +1760,7 @@ more information on campaigns, see <code class="inline">CreateCampaign</code>.</
     </a>
     <h1 class="signature">list_dataset_import_jobs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L592" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L615" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1690,10 +1771,11 @@ more information on campaigns, see <code class="inline">CreateCampaign</code>.</
 
   <section class="docstring">
 <p>Returns a list of dataset import jobs that use the given dataset.</p>
-<p>When a dataset is not specified, all the dataset import jobs associated with the account are
-listed. The response provides the properties for each dataset import job, including the Amazon
-Resource Name (ARN). For more information on dataset import jobs, see <code class="inline">CreateDatasetImportJob</code>.
-For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+<p>When a dataset is not specified, all the dataset import jobs associated with the
+account are listed. The response provides the properties for each dataset import
+job, including the Amazon Resource Name (ARN). For more information on dataset
+import jobs, see <code class="inline">CreateDatasetImportJob</code>. For more information on datasets, see
+<code class="inline">CreateDataset</code>.</p>
 
   </section>
 </section>
@@ -1708,7 +1790,7 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
     </a>
     <h1 class="signature">list_datasets(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L602" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L625" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1719,8 +1801,8 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
 
   <section class="docstring">
 <p>Returns the list of datasets contained in the given dataset group.</p>
-<p>The response provides the properties for each dataset, including the Amazon Resource Name (ARN).
-For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
+<p>The response provides the properties for each dataset, including the Amazon
+Resource Name (ARN). For more information on datasets, see <code class="inline">CreateDataset</code>.</p>
 
   </section>
 </section>
@@ -1735,7 +1817,7 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
     </a>
     <h1 class="signature">list_event_trackers(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L612" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L636" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1746,8 +1828,9 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
 
   <section class="docstring">
 <p>Returns the list of event trackers associated with the account.</p>
-<p>The response provides the properties for each event tracker, including the Amazon Resource Name
-(ARN) and tracking ID. For more information on event trackers, see <code class="inline">CreateEventTracker</code>.</p>
+<p>The response provides the properties for each event tracker, including the
+Amazon Resource Name (ARN) and tracking ID. For more information on event
+trackers, see <code class="inline">CreateEventTracker</code>.</p>
 
   </section>
 </section>
@@ -1762,7 +1845,7 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
     </a>
     <h1 class="signature">list_filters(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L619" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L643" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1787,7 +1870,7 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
     </a>
     <h1 class="signature">list_recipes(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L629" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L653" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1798,8 +1881,8 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
 
   <section class="docstring">
 <p>Returns a list of available recipes.</p>
-<p>The response provides the properties for each recipe, including the recipe&#39;s Amazon Resource Name
-(ARN).</p>
+<p>The response provides the properties for each recipe, including the recipe&#39;s
+Amazon Resource Name (ARN).</p>
 
   </section>
 </section>
@@ -1814,7 +1897,7 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
     </a>
     <h1 class="signature">list_schemas(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L639" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L663" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1825,8 +1908,8 @@ For more information on datasets, see <code class="inline">CreateDataset</code>.
 
   <section class="docstring">
 <p>Returns the list of schemas associated with the account.</p>
-<p>The response provides the properties for each schema, including the Amazon Resource Name (ARN).
-For more information on schemas, see <code class="inline">CreateSchema</code>.</p>
+<p>The response provides the properties for each schema, including the Amazon
+Resource Name (ARN). For more information on schemas, see <code class="inline">CreateSchema</code>.</p>
 
   </section>
 </section>
@@ -1841,7 +1924,7 @@ For more information on schemas, see <code class="inline">CreateSchema</code>.</
     </a>
     <h1 class="signature">list_solution_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L650" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L675" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1852,9 +1935,10 @@ For more information on schemas, see <code class="inline">CreateSchema</code>.</
 
   <section class="docstring">
 <p>Returns a list of solution versions for the given solution.</p>
-<p>When a solution is not specified, all the solution versions associated with the account are
-listed. The response provides the properties for each solution version, including the Amazon
-Resource Name (ARN). For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+<p>When a solution is not specified, all the solution versions associated with the
+account are listed. The response provides the properties for each solution
+version, including the Amazon Resource Name (ARN). For more information on
+solutions, see <code class="inline">CreateSolution</code>.</p>
 
   </section>
 </section>
@@ -1869,7 +1953,7 @@ Resource Name (ARN). For more information on solutions, see <code class="inline"
     </a>
     <h1 class="signature">list_solutions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L661" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L687" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1880,9 +1964,10 @@ Resource Name (ARN). For more information on solutions, see <code class="inline"
 
   <section class="docstring">
 <p>Returns a list of solutions that use the given dataset group.</p>
-<p>When a dataset group is not specified, all the solutions associated with the account are listed.
-The response provides the properties for each solution, including the Amazon Resource Name (ARN).
-For more information on solutions, see <code class="inline">CreateSolution</code>.</p>
+<p>When a dataset group is not specified, all the solutions associated with the
+account are listed. The response provides the properties for each solution,
+including the Amazon Resource Name (ARN). For more information on solutions, see
+<code class="inline">CreateSolution</code>.</p>
 
   </section>
 </section>
@@ -1897,7 +1982,7 @@ For more information on solutions, see <code class="inline">CreateSolution</code
     </a>
     <h1 class="signature">update_campaign(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L677" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/personalize.ex#L703" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1907,12 +1992,12 @@ For more information on solutions, see <code class="inline">CreateSolution</code
   </div>
 
   <section class="docstring">
-<p>Updates a campaign by either deploying a new solution or changing the value of the campaign&#39;s
-<code class="inline">minProvisionedTPS</code> parameter.</p>
-<p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check the campaign
-status using the <code class="inline">DescribeCampaign</code> API.</p>
-<p>You must wait until the <code class="inline">status</code> of the updated campaign is <code class="inline">ACTIVE</code> before asking the campaign
-for recommendations.</p>
+<p>Updates a campaign by either deploying a new solution or changing the value of
+the campaign&#39;s <code class="inline">minProvisionedTPS</code> parameter.</p>
+<p>To update a campaign, the campaign status must be ACTIVE or CREATE FAILED. Check
+the campaign status using the <code class="inline">DescribeCampaign</code> API.</p>
+<p>You must wait until the <code class="inline">status</code> of the updated campaign is <code class="inline">ACTIVE</code> before
+asking the campaign for recommendations.</p>
 <p>For more information on campaigns, see <code class="inline">CreateCampaign</code>.</p>
 
   </section>

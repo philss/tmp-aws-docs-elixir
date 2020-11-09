@@ -10,7 +10,7 @@
     <title>AWS.OpsWorks — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -88,14 +88,19 @@ AWS.OpsWorks
         <section id="moduledoc">
 <p>AWS OpsWorks</p>
 <p>Welcome to the <em>AWS OpsWorks Stacks API Reference</em>.</p>
-<p>This guide provides descriptions, syntax, and usage examples for AWS OpsWorks Stacks actions and
-data types, including common parameters and error codes.</p>
-<p>AWS OpsWorks Stacks is an application management service that provides an integrated experience
-for overseeing the complete application lifecycle. For information about this product, go to the
-<a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.  <strong>SDKs and CLI</strong></p>
-<p>The most common way to use the AWS OpsWorks Stacks API is by using the AWS Command Line Interface
-(CLI) or by using one of the AWS SDKs to implement applications in your preferred language. For
-more information, see:</p>
+<p>This guide provides descriptions, syntax, and usage examples for AWS OpsWorks
+Stacks actions and data types, including common parameters and error codes.</p>
+<p>AWS OpsWorks Stacks is an application management service that provides an
+integrated experience for overseeing the complete application lifecycle. For
+information about this product, go to the <a href="http://aws.amazon.com/opsworks/">AWS OpsWorks</a> details page.</p>
+<h2 id="module-sdks-and-cli" class="section-heading">
+  <a href="#module-sdks-and-cli" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  SDKs and CLI
+</h2>
+
+<p>The most common way to use the AWS OpsWorks Stacks API is by using the AWS
+Command Line Interface (CLI) or by using one of the AWS SDKs to implement
+applications in your preferred language. For more information, see:</p>
 <ul>
 <li><p><a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html">AWS CLI</a></p>
 </li>
@@ -105,15 +110,20 @@ more information, see:</p>
 </li>
 <li><p><a href="https://docs.aws.amazon.com/aws-sdk-php-2/latest/class-Aws.OpsWorks.OpsWorksClient.html">AWS SDK for PHP 2</a></p>
 </li>
-<li><p><a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a>     * <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for Node.js</a></p>
+<li><p><a href="http://docs.aws.amazon.com/sdkforruby/api/">AWS SDK for Ruby</a>     * <a href="http://aws.amazon.com/documentation/sdkforjavascript/">AWS SDK for
+Node.js</a></p>
 </li>
-<li><p><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a> </p>
+<li><p><a href="http://docs.pythonboto.org/en/latest/ref/opsworks.html">AWS SDK for Python(Boto)</a></p>
 </li>
 </ul>
-<p><strong>Endpoints</strong></p>
-<p>AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must connect to one of the
-following endpoints. Stacks can only be accessed or managed within the endpoint in which they are
-created.</p>
+<h2 id="module-endpoints" class="section-heading">
+  <a href="#module-endpoints" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Endpoints
+</h2>
+
+<p>AWS OpsWorks Stacks supports the following endpoints, all HTTPS. You must
+connect to one of the following endpoints. Stacks can only be accessed or
+managed within the endpoint in which they are created.</p>
 <ul>
 <li><p>opsworks.us-east-1.amazonaws.com</p>
 </li>
@@ -123,7 +133,8 @@ created.</p>
 </li>
 <li><p>opsworks.us-west-2.amazonaws.com</p>
 </li>
-<li><p>opsworks.ca-central-1.amazonaws.com (API only; not available in the AWS console)</p>
+<li><p>opsworks.ca-central-1.amazonaws.com (API only; not available in
+the AWS console)</p>
 </li>
 <li><p>opsworks.eu-west-1.amazonaws.com</p>
 </li>
@@ -146,13 +157,17 @@ created.</p>
 <li><p>opsworks.sa-east-1.amazonaws.com</p>
 </li>
 </ul>
-<p><strong>Chef Versions</strong></p>
-<p>When you call <code class="inline">CreateStack</code>, <code class="inline">CloneStack</code>, or <code class="inline">UpdateStack</code> we recommend you use the
-<code class="inline">ConfigurationManager</code> parameter to specify the Chef version. The recommended and default value
-for Linux stacks is currently 12. Windows stacks use Chef 12.2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
-Versions</a>.</p>
-<p>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend migrating your existing
-Linux stacks to Chef 12 as soon as possible.</p>
+<h2 id="module-chef-versions" class="section-heading">
+  <a href="#module-chef-versions" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Chef Versions
+</h2>
+
+<p>When you call <code class="inline">CreateStack</code>, <code class="inline">CloneStack</code>, or <code class="inline">UpdateStack</code> we recommend you use
+the <code class="inline">ConfigurationManager</code> parameter to specify the Chef version. The
+recommended and default value for Linux stacks is currently 12. Windows stacks
+use Chef 12.2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef Versions</a>.</p>
+<p>You can specify Chef 12, 11.10, or 11.4 for your Linux stack. We recommend
+migrating your existing Linux stacks to Chef 12 as soon as possible.</p>
 
         </section>
 
@@ -185,7 +200,8 @@ Linux stacks to Chef 12 as soon as possible.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified instance.</p></div>
+    <div class="summary-synopsis"><p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified
+instance.</p></div>
 
 </div>
 <div class="summary-row">
@@ -194,7 +210,8 @@ Linux stacks to Chef 12 as soon as possible.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified instance.</p></div>
+    <div class="summary-synopsis"><p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified
+instance.</p></div>
 
 </div>
 <div class="summary-row">
@@ -284,7 +301,8 @@ Linux stacks to Chef 12 as soon as possible.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Deletes a specified instance, which terminates the associated Amazon EC2 instance.</p></div>
+    <div class="summary-synopsis"><p>Deletes a specified instance, which terminates the associated Amazon EC2
+instance.</p></div>
 
 </div>
 <div class="summary-row">
@@ -518,8 +536,8 @@ Linux stacks to Chef 12 as soon as possible.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Describes the number of layers and apps in a specified stack, and the number of instances in each
-state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p></div>
+    <div class="summary-synopsis"><p>Describes the number of layers and apps in a specified stack, and the number of
+instances in each state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -582,7 +600,8 @@ state, such as <code class="inline">running_setup</code> or <code class="inline"
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets a generated host name for the specified layer, based on the current host name theme.</p></div>
+    <div class="summary-synopsis"><p>Gets a generated host name for the specified layer, based on the current host
+name theme.</p></div>
 
 </div>
 <div class="summary-row">
@@ -636,7 +655,8 @@ state, such as <code class="inline">running_setup</code> or <code class="inline"
 
   </div>
 
-    <div class="summary-synopsis"><p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p></div>
+    <div class="summary-synopsis"><p>Registers instances that were created outside of AWS OpsWorks Stacks with a
+specified stack.</p></div>
 
 </div>
 <div class="summary-row">
@@ -863,7 +883,7 @@ Functions
     </a>
     <h1 class="signature">assign_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L94" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L100" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -877,15 +897,17 @@ Functions
 <ul>
 <li><p>You can assign registered on-premises instances to any layer type.</p>
 </li>
-<li><p>You can assign registered Amazon EC2 instances only to custom layers.</p>
+<li><p>You can assign registered Amazon EC2 instances only to custom
+layers.</p>
 </li>
-<li><p>You cannot use this action with instances that were created with AWS OpsWorks
-Stacks.</p>
+<li><p>You cannot use this action with instances that were created with
+AWS OpsWorks Stacks.</p>
 </li>
 </ul>
-<p><strong>Required Permissions</strong>: To use this action, an AWS Identity and Access Management (IAM) user
-must have a Manage permissions level for the stack or an attached policy that explicitly grants
-permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an AWS Identity and Access
+Management (IAM) user must have a Manage permissions level for the stack or an
+attached policy that explicitly grants permissions. For more information on user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -900,7 +922,7 @@ permissions. For more information on user permissions, see <a href="https://docs
     </a>
     <h1 class="signature">assign_volume(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L109" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L116" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -910,13 +932,14 @@ permissions. For more information on user permissions, see <a href="https://docs
   </div>
 
   <section class="docstring">
-<p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified instance.</p>
-<p>The volume must first be registered with the stack by calling <code class="inline">RegisterVolume</code>. After you register
-the volume, you must call <code class="inline">UpdateVolume</code> to specify a mount point before calling <code class="inline">AssignVolume</code>.
-For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>Assigns one of the stack&#39;s registered Amazon EBS volumes to a specified
+instance.</p>
+<p>The volume must first be registered with the stack by calling <code class="inline">RegisterVolume</code>.
+After you register the volume, you must call <code class="inline">UpdateVolume</code> to specify a mount
+point before calling <code class="inline">AssignVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -931,7 +954,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">associate_elastic_ip(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L123" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L131" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -941,12 +964,13 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   </div>
 
   <section class="docstring">
-<p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified instance.</p>
-<p>The address must first be registered with the stack by calling <code class="inline">RegisterElasticIp</code>. For more
-information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>Associates one of the stack&#39;s registered Elastic IP addresses with a specified
+instance.</p>
+<p>The address must first be registered with the stack by calling
+<code class="inline">RegisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -961,7 +985,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">attach_elastic_load_balancer(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L140" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L150" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -972,13 +996,15 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Attaches an Elastic Load Balancing load balancer to a specified layer.</p>
-<p>AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load
-Balancer with AWS OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p>
-<p>You must create the Elastic Load Balancing instance separately, by using the Elastic Load
-Balancing console, API, or CLI. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer Guide</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>AWS OpsWorks Stacks does not support Application Load Balancer. You can only use
+Classic Load Balancer with AWS OpsWorks Stacks. For more information, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p>
+<p>You must create the Elastic Load Balancing instance separately, by using the
+Elastic Load Balancing console, API, or CLI. For more information, see <a href="https://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/Welcome.html"> Elastic Load Balancing Developer
+Guide</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -993,7 +1019,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">clone_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L153" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L164" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1004,10 +1030,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Creates a clone of a specified stack.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By
-default, all parameters are set to the values used by the parent stack.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>.
+By default, all parameters are set to the values used by the parent stack.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1022,7 +1049,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">create_app(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L166" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L177" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1034,9 +1061,9 @@ explicitly grants permissions. For more information about user permissions, see 
   <section class="docstring">
 <p>Creates an app for a specified stack.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1051,7 +1078,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">create_deployment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L180" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L191" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1062,11 +1089,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Runs deployment or stack commands.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a> and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack
-Commands</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or Manage permissions
-level for the stack, or an attached policy that explicitly grants permissions. For more
-information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">Deploying Apps</a>
+and <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">Run Stack Commands</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or
+Manage permissions level for the stack, or an attached policy that explicitly
+grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1081,7 +1108,7 @@ information on user permissions, see <a href="https://docs.aws.amazon.com/opswor
     </a>
     <h1 class="signature">create_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L193" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L204" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1093,9 +1120,9 @@ information on user permissions, see <a href="https://docs.aws.amazon.com/opswor
   <section class="docstring">
 <p>Creates an instance in a specified stack.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1110,7 +1137,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">create_layer(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L212" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L224" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1122,14 +1149,15 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Creates a layer.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p>
-<p>You should use <strong>CreateLayer</strong> for noncustom layer types such as PHP App Server only if the stack
-does not have an existing layer of that type. A stack can have at most one instance of each
-noncustom layer; if you attempt to create a second instance, <strong>CreateLayer</strong> fails. A stack can
-have an arbitrary number of custom layers, so you can call <strong>CreateLayer</strong> as many times as you
-like for that layer type.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>You should use <strong>CreateLayer</strong> for noncustom layer types such as PHP App Server
+only if the stack does not have an existing layer of that type. A stack can have
+at most one instance of each noncustom layer; if you attempt to create a second
+instance, <strong>CreateLayer</strong> fails. A stack can have an arbitrary number of custom
+layers, so you can call <strong>CreateLayer</strong> as many times as you like for that layer
+type.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1144,7 +1172,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">create_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L224" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L237" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1156,8 +1184,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Creates a new stack.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">Create a New Stack</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1172,7 +1201,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">create_user_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L234" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L248" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1183,8 +1212,9 @@ explicitly grants permissions. For more information about user permissions, see 
 
   <section class="docstring">
 <p>Creates a new user profile.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1199,7 +1229,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">delete_app(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L245" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L259" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1210,9 +1240,9 @@ explicitly grants permissions. For more information about user permissions, see 
 
   <section class="docstring">
 <p>Deletes a specified app.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1227,7 +1257,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">delete_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L260" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L275" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1237,12 +1267,13 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   </div>
 
   <section class="docstring">
-<p>Deletes a specified instance, which terminates the associated Amazon EC2 instance.</p>
+<p>Deletes a specified instance, which terminates the associated Amazon EC2
+instance.</p>
 <p>You must stop an instance before you can delete it.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">Deleting Instances</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1257,7 +1288,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">delete_layer(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L274" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L289" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1268,11 +1299,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deletes a specified layer.</p>
-<p>You must first stop and then delete all associated instances or unassign registered instances. For
-more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>You must first stop and then delete all associated instances or unassign
+registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1287,7 +1318,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">delete_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L288" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L303" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1298,11 +1329,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deletes a specified stack.</p>
-<p>You must first delete all instances, layers, and apps or deregister registered instances. For more
-information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>You must first delete all instances, layers, and apps or deregister registered
+instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">Shut Down a Stack</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1317,7 +1348,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">delete_user_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L298" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L314" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1328,8 +1359,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deletes a user profile.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1344,7 +1376,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">deregister_ecs_cluster(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L312" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L328" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1356,9 +1388,9 @@ explicitly grants permissions. For more information about user permissions, see 
   <section class="docstring">
 <p>Deregisters a specified Amazon ECS cluster from a stack.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack or an attached policy that explicitly grants permissions. For more information on user
-permissions, see
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information on user permissions, see
 <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html</a>.</p>
 
   </section>
@@ -1374,7 +1406,7 @@ permissions, see
     </a>
     <h1 class="signature">deregister_elastic_ip(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L325" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L342" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1385,10 +1417,11 @@ permissions, see
 
   <section class="docstring">
 <p>Deregisters a specified Elastic IP address.</p>
-<p>The address can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>The address can then be registered by another stack. For more information, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1403,7 +1436,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">deregister_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L339" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L357" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1414,11 +1447,12 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deregister a registered Amazon EC2 or on-premises instance.</p>
-<p>This action removes the instance from the stack and returns it to your control. This action cannot
-be used with instances that were created with AWS OpsWorks Stacks.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>This action removes the instance from the stack and returns it to your control.
+This action cannot be used with instances that were created with AWS OpsWorks
+Stacks.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1433,7 +1467,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">deregister_rds_db_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L350" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L368" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1444,9 +1478,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deregisters an Amazon RDS instance.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1461,7 +1495,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">deregister_volume(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L363" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L382" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1472,10 +1506,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Deregisters an Amazon EBS volume.</p>
-<p>The volume can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>The volume can then be registered by another stack. For more information, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1490,7 +1525,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">describe_agent_versions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L373" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L393" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1501,8 +1536,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Describes the available AWS OpsWorks Stacks agent versions.</p>
-<p>You must specify a stack ID or a configuration manager. <code class="inline">DescribeAgentVersions</code> returns a list of
-available agent versions for the specified stack or configuration manager.</p>
+<p>You must specify a stack ID or a configuration manager. <code class="inline">DescribeAgentVersions</code>
+returns a list of available agent versions for the specified stack or
+configuration manager.</p>
 
   </section>
 </section>
@@ -1517,7 +1553,7 @@ available agent versions for the specified stack or configuration manager.</p>
     </a>
     <h1 class="signature">describe_apps(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L386" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L407" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1529,9 +1565,10 @@ available agent versions for the specified stack or configuration manager.</p>
   <section class="docstring">
 <p>Requests a description of a specified set of apps.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1546,7 +1583,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_commands(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L399" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L421" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1558,9 +1595,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Describes the results of specified commands.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1575,7 +1613,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_deployments(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L412" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L435" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1587,9 +1625,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Requests a description of a specified set of deployments.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1604,7 +1643,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_ecs_clusters(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L429" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L454" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1615,12 +1654,14 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Describes Amazon ECS clusters that are registered with a stack.</p>
-<p>If you specify only a stack ID, you can use the <code class="inline">MaxResults</code> and <code class="inline">NextToken</code> parameters to
-paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer,
-so the result set has a maximum of one element.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack or an attached policy that explicitly grants permission. For more
-information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>If you specify only a stack ID, you can use the <code class="inline">MaxResults</code> and <code class="inline">NextToken</code>
+parameters to paginate the response. However, AWS OpsWorks Stacks currently
+supports only one cluster per layer, so the result set has a maximum of one
+element.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack or an attached policy that
+explicitly grants permission. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
 
   </section>
@@ -1636,7 +1677,7 @@ information about user permissions, see <a href="https://docs.aws.amazon.com/ops
     </a>
     <h1 class="signature">describe_elastic_ips(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L442" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L468" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1648,9 +1689,10 @@ information about user permissions, see <a href="https://docs.aws.amazon.com/ops
   <section class="docstring">
 <p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1665,7 +1707,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_elastic_load_balancers(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L455" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L482" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1677,9 +1719,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Describes a stack&#39;s Elastic Load Balancing instances.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1694,7 +1737,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L468" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L496" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1706,9 +1749,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Requests a description of a set of instances.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1723,7 +1767,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_layers(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L481" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L510" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1735,9 +1779,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Requests a description of one or more layers in a specified stack.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1752,7 +1797,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_load_based_auto_scaling(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L494" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L524" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1764,9 +1809,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Describes load-based auto scaling configurations for specified layers.</p>
 <p>You must specify at least one of the parameters.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1781,7 +1827,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_my_user_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L505" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L535" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1792,9 +1838,9 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Describes a user&#39;s SSH information.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have self-management enabled or an
-attached policy that explicitly grants permissions. For more information about user permissions,
-see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have
+self-management enabled or an attached policy that explicitly grants
+permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1809,7 +1855,7 @@ see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-secu
     </a>
     <h1 class="signature">describe_operating_systems(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L512" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L542" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1834,7 +1880,7 @@ see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-secu
     </a>
     <h1 class="signature">describe_permissions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L523" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L553" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1845,9 +1891,9 @@ see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-secu
 
   <section class="docstring">
 <p>Describes the permissions for a specified stack.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1862,7 +1908,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">describe_raid_arrays(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L536" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L567" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1874,9 +1920,10 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Describe an instance&#39;s RAID arrays.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1891,7 +1938,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_rds_db_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L549" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L581" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1902,9 +1949,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Describes Amazon RDS instances.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
 
   </section>
@@ -1920,7 +1968,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_service_errors(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L562" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L595" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1931,9 +1979,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Describes AWS OpsWorks Stacks service errors.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
 
   </section>
@@ -1949,7 +1998,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_stack_provisioning_parameters(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L573" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L607" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1960,9 +2009,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Requests a description of a stack&#39;s provisioning parameters.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack or an attached policy that explicitly grants permissions. For more
-information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -1977,7 +2027,7 @@ information about user permissions, see <a href="https://docs.aws.amazon.com/ops
     </a>
     <h1 class="signature">describe_stack_summary(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L585" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L620" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1987,11 +2037,12 @@ information about user permissions, see <a href="https://docs.aws.amazon.com/ops
   </div>
 
   <section class="docstring">
-<p>Describes the number of layers and apps in a specified stack, and the number of instances in each
-state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>Describes the number of layers and apps in a specified stack, and the number of
+instances in each state, such as <code class="inline">running_setup</code> or <code class="inline">online</code>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2006,7 +2057,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_stacks(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L596" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L632" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2017,9 +2068,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Requests a description of one or more stacks.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2034,7 +2086,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_time_based_auto_scaling(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L609" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L646" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2046,9 +2098,10 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
   <section class="docstring">
 <p>Describes time-based auto scaling configurations for specified instances.</p>
 <p>You must specify at least one of the parameters.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2063,7 +2116,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">describe_user_profiles(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L619" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L657" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2074,8 +2127,9 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Describe specified users.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2090,7 +2144,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">describe_volumes(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L632" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L671" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2102,9 +2156,10 @@ explicitly grants permissions. For more information about user permissions, see 
   <section class="docstring">
 <p>Describes an instance&#39;s Amazon EBS volumes.</p>
 <p>This call accepts only one resource-identifying parameter.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show, Deploy, or Manage
-permissions level for the stack, or an attached policy that explicitly grants permissions. For
-more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Show,
+Deploy, or Manage permissions level for the stack, or an attached policy that
+explicitly grants permissions. For more information about user permissions, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2119,7 +2174,7 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
     </a>
     <h1 class="signature">detach_elastic_load_balancer(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L643" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L682" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2130,9 +2185,9 @@ more information about user permissions, see <a href="https://docs.aws.amazon.co
 
   <section class="docstring">
 <p>Detaches a specified Elastic Load Balancing instance from its layer.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2147,7 +2202,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">disassociate_elastic_ip(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L656" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L696" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2158,10 +2213,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Disassociates an Elastic IP address from its instance.</p>
-<p>The address remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>The address remains registered with the stack. For more information, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2176,7 +2232,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">get_hostname_suggestion(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L667" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L708" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2186,10 +2242,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   </div>
 
   <section class="docstring">
-<p>Gets a generated host name for the specified layer, based on the current host name theme.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>Gets a generated host name for the specified layer, based on the current host
+name theme.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2204,7 +2261,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">grant_access(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L676" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L717" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2230,7 +2287,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">list_tags(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L683" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L724" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2255,7 +2312,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">reboot_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L696" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L737" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2267,9 +2324,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Reboots a specified instance.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2284,7 +2341,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">register_ecs_cluster(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L710" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L751" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2295,11 +2352,11 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Registers a specified Amazon ECS cluster with a stack.</p>
-<p>You can register only one cluster with a stack. A cluster can be registered with only one stack.
-For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions</a>.</p>
+<p>You can register only one cluster with a stack. A cluster can be registered with
+only one stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html"> Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2314,7 +2371,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">register_elastic_ip(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L724" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L766" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2325,11 +2382,12 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Registers an Elastic IP address with a specified stack.</p>
-<p>An address can be registered with only one stack at a time. If the address is already registered,
-you must first deregister it by calling <code class="inline">DeregisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>An address can be registered with only one stack at a time. If the address is
+already registered, you must first deregister it by calling
+<code class="inline">DeregisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2344,7 +2402,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">register_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L746" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L791" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2354,19 +2412,22 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   </div>
 
   <section class="docstring">
-<p>Registers instances that were created outside of AWS OpsWorks Stacks with a specified stack.</p>
-<p>We do not recommend using this action to register instances. The complete registration operation
-includes two tasks: installing the AWS OpsWorks Stacks agent on the instance, and registering the
-instance with the stack. <code class="inline">RegisterInstance</code> handles only the second step. You should instead use
-the AWS CLI <code class="inline">register</code> command, which performs the entire registration operation. For more
-information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
-<p>Registered instances have the same requirements as instances that are created by using the
-<code class="inline">CreateInstance</code> API. For example, registered instances must be running a supported Linux-based
-operating system, and they must have a supported instance type. For more information about
-requirements for instances that you want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html"> Preparing the Instance</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>Registers instances that were created outside of AWS OpsWorks Stacks with a
+specified stack.</p>
+<p>We do not recommend using this action to register instances. The complete
+registration operation includes two tasks: installing the AWS OpsWorks Stacks
+agent on the instance, and registering the instance with the stack.
+<code class="inline">RegisterInstance</code> handles only the second step. You should instead use the AWS
+CLI <code class="inline">register</code> command, which performs the entire registration operation. For
+more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html"> Registering an Instance with an AWS OpsWorks Stacks Stack</a>.</p>
+<p>Registered instances have the same requirements as instances that are created by
+using the <code class="inline">CreateInstance</code> API. For example, registered instances must be
+running a supported Linux-based operating system, and they must have a supported
+instance type. For more information about requirements for instances that you
+want to register, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register-registering-preparer.html"> Preparing the Instance</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2381,7 +2442,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">register_rds_db_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L757" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L802" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2392,9 +2453,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Registers an Amazon RDS instance with a stack.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2409,7 +2470,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">register_volume(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L771" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L817" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2420,11 +2481,12 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Registers an Amazon EBS volume with a specified stack.</p>
-<p>A volume can be registered with only one stack at a time. If the volume is already registered, you
-must first deregister it by calling <code class="inline">DeregisterVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>A volume can be registered with only one stack at a time. If the volume is
+already registered, you must first deregister it by calling <code class="inline">DeregisterVolume</code>.
+For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2439,7 +2501,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">set_load_based_auto_scaling(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L788" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L835" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2451,12 +2513,13 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Specify the load-based auto scaling configuration for a specified layer.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>
-<p>To use load-based auto scaling, you must create a set of load-based auto scaling instances.
-Load-based auto scaling operates only on the instances from that set, so you must ensure that you
-have created enough instances to handle the maximum anticipated load.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>To use load-based auto scaling, you must create a set of load-based auto scaling
+instances. Load-based auto scaling operates only on the instances from that set,
+so you must ensure that you have created enough instances to handle the maximum
+anticipated load.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2471,7 +2534,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">set_permission(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L801" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L848" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2483,9 +2546,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Specifies a user&#39;s permissions.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2500,7 +2563,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">set_time_based_auto_scaling(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L814" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L861" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2512,9 +2575,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Specify the time-based auto scaling configuration for a specified instance.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2529,7 +2592,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">start_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L827" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L874" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2541,9 +2604,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Starts a specified instance.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2558,7 +2621,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">start_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L838" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L885" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2569,9 +2632,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Starts a stack&#39;s instances.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2586,7 +2649,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">stop_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L853" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L901" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2597,12 +2660,13 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Stops a specified instance.</p>
-<p>When you stop a standard instance, the data disappears and must be reinstalled when you restart
-the instance. You can stop an Amazon EBS-backed instance without losing data. For more
-information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>When you stop a standard instance, the data disappears and must be reinstalled
+when you restart the instance. You can stop an Amazon EBS-backed instance
+without losing data. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting
+Instances</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2617,7 +2681,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">stop_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L864" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L912" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2628,9 +2692,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Stops a specified stack.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2645,7 +2709,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L875" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L923" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2657,8 +2721,8 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
   <section class="docstring">
 <p>Apply cost-allocation tags to a specified stack or layer in AWS OpsWorks Stacks.</p>
 <p>For more information about how tagging works, see
-<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in the AWS OpsWorks
-User Guide.</p>
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/tagging.html">Tags</a> in
+the AWS OpsWorks User Guide.</p>
 
   </section>
 </section>
@@ -2673,7 +2737,7 @@ User Guide.</p>
     </a>
     <h1 class="signature">unassign_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L889" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L938" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2684,11 +2748,12 @@ User Guide.</p>
 
   <section class="docstring">
 <p>Unassigns a registered instance from all layers that are using the instance.</p>
-<p>The instance remains in the stack as an unassigned instance, and can be assigned to another layer
-as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack or an attached policy that explicitly grants permissions. For more information about
-user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>The instance remains in the stack as an unassigned instance, and can be assigned
+to another layer as needed. You cannot use this action with instances that were
+created with AWS OpsWorks Stacks.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack or an attached policy that explicitly grants
+permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2703,7 +2768,7 @@ user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userg
     </a>
     <h1 class="signature">unassign_volume(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L902" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L952" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2714,10 +2779,11 @@ user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userg
 
   <section class="docstring">
 <p>Unassigns an assigned Amazon EBS volume.</p>
-<p>The volume remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p>The volume remains registered with the stack. For more information, see
+<a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2732,7 +2798,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L909" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L959" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2757,7 +2823,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_app(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L920" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L970" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2768,9 +2834,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a specified app.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or Manage permissions
-level for the stack, or an attached policy that explicitly grants permissions. For more
-information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Deploy or
+Manage permissions level for the stack, or an attached policy that explicitly
+grants permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2785,7 +2851,7 @@ information on user permissions, see <a href="https://docs.aws.amazon.com/opswor
     </a>
     <h1 class="signature">update_elastic_ip(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L933" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L983" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2797,9 +2863,9 @@ information on user permissions, see <a href="https://docs.aws.amazon.com/opswor
   <section class="docstring">
 <p>Updates a registered Elastic IP address&#39;s name.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2814,7 +2880,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L944" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L994" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2825,9 +2891,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a specified instance.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2842,7 +2908,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_layer(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L955" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1005" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2853,9 +2919,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a specified layer.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2870,7 +2936,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_my_user_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L966" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1016" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2881,9 +2947,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a user&#39;s SSH public key.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have self-management enabled or an
-attached policy that explicitly grants permissions. For more information about user permissions,
-see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have
+self-management enabled or an attached policy that explicitly grants
+permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2898,7 +2964,7 @@ see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-secu
     </a>
     <h1 class="signature">update_rds_db_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L977" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1027" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2909,9 +2975,9 @@ see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-secu
 
   <section class="docstring">
 <p>Updates an Amazon RDS instance.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2926,7 +2992,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_stack(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L988" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1038" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2937,9 +3003,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a specified stack.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2954,7 +3020,7 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
     </a>
     <h1 class="signature">update_user_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L998" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1049" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2965,8 +3031,9 @@ permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/
 
   <section class="docstring">
 <p>Updates a specified user profile.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached policy that
-explicitly grants permissions. For more information about user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have an attached
+policy that explicitly grants permissions. For more information about user
+permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>
@@ -2981,7 +3048,7 @@ explicitly grants permissions. For more information about user permissions, see 
     </a>
     <h1 class="signature">update_volume(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1011" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/ops_works.ex#L1062" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2993,9 +3060,9 @@ explicitly grants permissions. For more information about user permissions, see 
   <section class="docstring">
 <p>Updates an Amazon EBS volume&#39;s name or mount point.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>
-<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage permissions level for
-the stack, or an attached policy that explicitly grants permissions. For more information on user
-permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
+<p><strong>Required Permissions</strong>: To use this action, an IAM user must have a Manage
+permissions level for the stack, or an attached policy that explicitly grants
+permissions. For more information on user permissions, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a>.</p>
 
   </section>
 </section>

@@ -10,7 +10,7 @@
     <title>AWS.CodeDeploy — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,58 +87,76 @@ AWS.CodeDeploy
 
         <section id="moduledoc">
 <p>AWS CodeDeploy</p>
-<p>AWS CodeDeploy is a deployment service that automates application deployments to Amazon EC2
-instances, on-premises instances running in your own facility, serverless AWS Lambda functions, or
-applications in an Amazon ECS service.</p>
-<p>You can deploy a nearly unlimited variety of application content, such as an updated Lambda
-function, updated applications in an Amazon ECS service, code, web and configuration files,
-executables, packages, scripts, multimedia files, and so on. AWS CodeDeploy can deploy application
-content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not
-need to make changes to your existing code before you can use AWS CodeDeploy.</p>
-<p>AWS CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime
-during application deployment, and handles the complexity of updating your applications, without
-many of the risks associated with error-prone manual deployments.</p>
-<p><strong>AWS CodeDeploy Components</strong></p>
-<p>Use the information in this guide to help you work with the following AWS CodeDeploy components:</p>
+<p>AWS CodeDeploy is a deployment service that automates application deployments to
+Amazon EC2 instances, on-premises instances running in your own facility,
+serverless AWS Lambda functions, or applications in an Amazon ECS service.</p>
+<p>You can deploy a nearly unlimited variety of application content, such as an
+updated Lambda function, updated applications in an Amazon ECS service, code,
+web and configuration files, executables, packages, scripts, multimedia files,
+and so on. AWS CodeDeploy can deploy application content stored in Amazon S3
+buckets, GitHub repositories, or Bitbucket repositories. You do not need to make
+changes to your existing code before you can use AWS CodeDeploy.</p>
+<p>AWS CodeDeploy makes it easier for you to rapidly release new features, helps
+you avoid downtime during application deployment, and handles the complexity of
+updating your applications, without many of the risks associated with
+error-prone manual deployments.</p>
+<h2 id="module-aws-codedeploy-components" class="section-heading">
+  <a href="#module-aws-codedeploy-components" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  AWS CodeDeploy Components
+</h2>
+
+<p>Use the information in this guide to help you work with the following AWS
+CodeDeploy components:</p>
 <ul>
-<li><p><strong>Application</strong>: A name that uniquely identifies the application you want to deploy.
-AWS CodeDeploy uses this name, which functions as a container, to ensure the correct combination
-of revision, deployment configuration, and deployment group are referenced during a deployment.</p>
+<li><p><strong>Application</strong>: A name that uniquely identifies the application
+you want to deploy. AWS CodeDeploy uses this name, which functions as a
+container, to ensure the correct combination of revision, deployment
+configuration, and deployment group are referenced during a deployment.</p>
 </li>
-<li><p><strong>Deployment group</strong>: A set of individual instances, CodeDeploy Lambda deployment
-configuration settings, or an Amazon ECS service and network details. A Lambda deployment group
-specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment
-group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to
-reroute production traffic to an updated containerized application. An EC2/On-premises deployment
-group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling
-groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.</p>
+<li><p><strong>Deployment group</strong>: A set of individual instances, CodeDeploy
+Lambda deployment configuration settings, or an Amazon ECS service and network
+details. A Lambda deployment group specifies how to route traffic to a new
+version of a Lambda function. An Amazon ECS deployment group specifies the
+service created in Amazon ECS to deploy, a load balancer, and a listener to
+reroute production traffic to an updated containerized application. An
+EC2/On-premises deployment group contains individually tagged instances, Amazon
+EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups
+can specify optional trigger, alarm, and rollback settings.</p>
 </li>
-<li><p><strong>Deployment configuration</strong>: A set of deployment rules and deployment success and
-failure conditions used by AWS CodeDeploy during a deployment.</p>
+<li><p><strong>Deployment configuration</strong>: A set of deployment rules and
+deployment success and failure conditions used by AWS CodeDeploy during a
+deployment.</p>
 </li>
-<li><p><strong>Deployment</strong>: The process and the components used when updating a Lambda function,
-a containerized application in an Amazon ECS service, or of installing content on one or more
-instances.</p>
+<li><p><strong>Deployment</strong>: The process and the components used when updating
+a Lambda function, a containerized application in an Amazon ECS service, or of
+installing content on one or more instances.</p>
 </li>
-<li><p><strong>Application revisions</strong>: For an AWS Lambda deployment, this is an AppSpec file
-that specifies the Lambda function to be updated and one or more functions to validate deployment
-lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon
-ECS task definition, container, and port where production traffic is rerouted. For an
-EC2/On-premises deployment, this is an archive file that contains source content—source code,
-webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are
-stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely
-identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is
-uniquely identified by its commit ID.</p>
+<li><p><strong>Application revisions</strong>: For an AWS Lambda deployment, this is
+an AppSpec file that specifies the Lambda function to be updated and one or more
+functions to validate deployment lifecycle events. For an Amazon ECS deployment,
+this is an AppSpec file that specifies the Amazon ECS task definition,
+container, and port where production traffic is rerouted. For an EC2/On-premises
+deployment, this is an archive file that contains source content—source code,
+webpages, executable files, and deployment scripts—along with an AppSpec file.
+Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3,
+a revision is uniquely identified by its Amazon S3 object key and its ETag,
+version, or both. For GitHub, a revision is uniquely identified by its commit
+ID.</p>
 </li>
 </ul>
-<p>This guide also contains information to help you get details about the instances in your
-deployments, to make on-premises instances available for AWS CodeDeploy deployments, to get
-details about a Lambda function deployment, and to get details about Amazon ECS service
-deployments.</p>
-<p><strong>AWS CodeDeploy Information Resources</strong></p>
+<p>This guide also contains information to help you get details about the instances
+in your deployments, to make on-premises instances available for AWS CodeDeploy
+deployments, to get details about a Lambda function deployment, and to get
+details about Amazon ECS service deployments.</p>
+<h2 id="module-aws-codedeploy-information-resources" class="section-heading">
+  <a href="#module-aws-codedeploy-information-resources" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  AWS CodeDeploy Information Resources
+</h2>
+
 <ul>
-<li><p><a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a>     * <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference
-Guide</a></p>
+<li><p><a href="https://docs.aws.amazon.com/codedeploy/latest/userguide">AWS CodeDeploy User Guide</a></p>
+</li>
+<li><p><a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/">AWS CodeDeploy API Reference Guide</a></p>
 </li>
 <li><p><a href="https://docs.aws.amazon.com/cli/latest/reference/deploy/index.html">AWS CLI Reference for AWS CodeDeploy</a></p>
 </li>
@@ -240,9 +258,9 @@ Guide</a></p>
 
   </div>
 
-    <div class="summary-synopsis"><p>For a blue/green deployment, starts the process of rerouting traffic from instances in the
-original environment to instances in the replacement environment without waiting for a specified
-wait time to elapse.</p></div>
+    <div class="summary-synopsis"><p>For a blue/green deployment, starts the process of rerouting traffic from
+instances in the original environment to instances in the replacement
+environment without waiting for a specified wait time to elapse.</p></div>
 
 </div>
 <div class="summary-row">
@@ -440,7 +458,8 @@ wait time to elapse.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists the deployment groups for an application registered with the IAM user or AWS account.</p></div>
+    <div class="summary-synopsis"><p>Lists the deployment groups for an application registered with the IAM user or
+AWS account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -449,8 +468,8 @@ wait time to elapse.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>The newer <code class="inline">BatchGetDeploymentTargets</code> should be used instead because it works with all compute
-types.</p></div>
+    <div class="summary-synopsis"><p>The newer <code class="inline">BatchGetDeploymentTargets</code> should be used instead because it works
+with all compute types.</p></div>
 
 </div>
 <div class="summary-row">
@@ -468,8 +487,8 @@ types.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists the deployments in a deployment group for an application registered with the IAM user or AWS
-account.</p></div>
+    <div class="summary-synopsis"><p>Lists the deployments in a deployment group for an application registered with
+the IAM user or AWS account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -496,7 +515,8 @@ account.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN).</p></div>
+    <div class="summary-synopsis"><p>Returns a list of tags for the resource identified by a specified Amazon
+Resource Name (ARN).</p></div>
 
 </div>
 <div class="summary-row">
@@ -541,8 +561,8 @@ account.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>In a blue/green deployment, overrides any specified wait time and starts terminating instances
-immediately after the traffic routing is complete.</p></div>
+    <div class="summary-synopsis"><p>In a blue/green deployment, overrides any specified wait time and starts
+terminating instances immediately after the traffic routing is complete.</p></div>
 
 </div>
 <div class="summary-row">
@@ -560,8 +580,8 @@ immediately after the traffic routing is complete.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Associates the list of tags in the input <code class="inline">Tags</code> parameter with the resource identified by the
-<code class="inline">ResourceArn</code> input parameter.</p></div>
+    <div class="summary-synopsis"><p>Associates the list of tags in the input <code class="inline">Tags</code> parameter with the resource
+identified by the <code class="inline">ResourceArn</code> input parameter.</p></div>
 
 </div>
 <div class="summary-row">
@@ -617,7 +637,7 @@ Functions
     </a>
     <h1 class="signature">add_tags_to_on_premises_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L73" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L83" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -642,7 +662,7 @@ Functions
     </a>
     <h1 class="signature">batch_get_application_revisions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L82" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L92" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -668,7 +688,7 @@ Functions
     </a>
     <h1 class="signature">batch_get_applications(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L91" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L101" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -694,7 +714,7 @@ Functions
     </a>
     <h1 class="signature">batch_get_deployment_groups(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L98" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L108" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -719,7 +739,7 @@ Functions
     </a>
     <h1 class="signature">batch_get_deployment_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L111" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L122" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -731,9 +751,10 @@ Functions
   <section class="docstring">
 <p>This method works, but is deprecated.</p>
 <p>Use <code class="inline">BatchGetDeploymentTargets</code> instead.</p>
-<p>Returns an array of one or more instances associated with a deployment. This method works with
-EC2/On-premises and AWS Lambda compute platforms. The newer <code class="inline">BatchGetDeploymentTargets</code> works with
-all compute platforms. The maximum number of instances that can be returned is 25.</p>
+<p>Returns an array of one or more instances associated with a deployment. This
+method works with EC2/On-premises and AWS Lambda compute platforms. The newer
+<code class="inline">BatchGetDeploymentTargets</code> works with all compute platforms. The maximum number
+of instances that can be returned is 25.</p>
 
   </section>
 </section>
@@ -748,7 +769,7 @@ all compute platforms. The maximum number of instances that can be returned is 2
     </a>
     <h1 class="signature">batch_get_deployment_targets(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L132" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L145" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -759,9 +780,11 @@ all compute platforms. The maximum number of instances that can be returned is 2
 
   <section class="docstring">
 <p>Returns an array of one or more targets associated with a deployment.</p>
-<p>This method works with all compute types and should be used instead of the deprecated
-<code class="inline">BatchGetDeploymentInstances</code>. The maximum number of targets that can be returned is 25.</p>
-<p>The type of targets returned depends on the deployment&#39;s compute platform or deployment method:</p>
+<p>This method works with all compute types and should be used instead of the
+deprecated <code class="inline">BatchGetDeploymentInstances</code>. The maximum number of targets that can
+be returned is 25.</p>
+<p>The type of targets returned depends on the deployment&#39;s compute platform or
+deployment method:</p>
 <ul>
 <li><p><strong>EC2/On-premises</strong>: Information about EC2 instance targets.</p>
 </li>
@@ -769,8 +792,8 @@ all compute platforms. The maximum number of instances that can be returned is 2
 </li>
 <li><p><strong>Amazon ECS</strong>: Information about Amazon ECS service targets.</p>
 </li>
-<li><p><strong>CloudFormation</strong>: Information about targets of blue/green deployments initiated by
-a CloudFormation stack update.</p>
+<li><p><strong>CloudFormation</strong>: Information about targets of blue/green
+deployments initiated by a CloudFormation stack update.</p>
 </li>
 </ul>
 
@@ -787,7 +810,7 @@ a CloudFormation stack update.</p>
     </a>
     <h1 class="signature">batch_get_deployments(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L141" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L154" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -813,7 +836,7 @@ a CloudFormation stack update.</p>
     </a>
     <h1 class="signature">batch_get_on_premises_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L150" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L163" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -839,7 +862,7 @@ a CloudFormation stack update.</p>
     </a>
     <h1 class="signature">continue_deployment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L162" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L176" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -849,11 +872,12 @@ a CloudFormation stack update.</p>
   </div>
 
   <section class="docstring">
-<p>For a blue/green deployment, starts the process of rerouting traffic from instances in the
-original environment to instances in the replacement environment without waiting for a specified
-wait time to elapse.</p>
-<p>(Traffic rerouting, which is achieved by registering instances in the replacement environment with
-the load balancer, can start as soon as all instances have a status of Ready.)</p>
+<p>For a blue/green deployment, starts the process of rerouting traffic from
+instances in the original environment to instances in the replacement
+environment without waiting for a specified wait time to elapse.</p>
+<p>(Traffic rerouting, which is achieved by registering instances in the
+replacement environment with the load balancer, can start as soon as all
+instances have a status of Ready.)</p>
 
   </section>
 </section>
@@ -868,7 +892,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">create_application(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L169" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L183" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -893,7 +917,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">create_deployment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L176" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L190" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -918,7 +942,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">create_deployment_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L183" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L197" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -943,7 +967,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">create_deployment_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L190" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L204" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -968,7 +992,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">delete_application(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L197" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L211" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -993,7 +1017,7 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
     </a>
     <h1 class="signature">delete_deployment_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L207" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L221" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1004,8 +1028,8 @@ the load balancer, can start as soon as all instances have a status of Ready.)</
 
   <section class="docstring">
 <p>Deletes a deployment configuration.</p>
-<p>A deployment configuration cannot be deleted if it is currently in use. Predefined configurations
-cannot be deleted.</p>
+<p>A deployment configuration cannot be deleted if it is currently in use.
+Predefined configurations cannot be deleted.</p>
 
   </section>
 </section>
@@ -1020,7 +1044,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">delete_deployment_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L214" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L228" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1045,7 +1069,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">delete_git_hub_account_token(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L221" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L235" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1070,7 +1094,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">delete_resources_by_external_id(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L228" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L242" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1095,7 +1119,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">deregister_on_premises_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L235" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L249" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1120,7 +1144,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">get_application(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L242" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L256" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1145,7 +1169,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">get_application_revision(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L249" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L263" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1170,7 +1194,7 @@ cannot be deleted.</p>
     </a>
     <h1 class="signature">get_deployment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L260" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L275" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1181,9 +1205,10 @@ cannot be deleted.</p>
 
   <section class="docstring">
 <p>Gets information about a deployment.</p>
-<p>The <code class="inline">content</code> property of the <code class="inline">appSpecContent</code> object in the returned revision is always null. Use
-<code class="inline">GetApplicationRevision</code> and the <code class="inline">sha256</code> property of the returned <code class="inline">appSpecContent</code> object to get
-the content of the deployment’s AppSpec file.</p>
+<p>The <code class="inline">content</code> property of the <code class="inline">appSpecContent</code> object in the returned revision
+is always null. Use <code class="inline">GetApplicationRevision</code> and the <code class="inline">sha256</code> property of the
+returned <code class="inline">appSpecContent</code> object to get the content of the deployment’s AppSpec
+file.</p>
 
   </section>
 </section>
@@ -1198,7 +1223,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">get_deployment_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L267" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L282" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1223,7 +1248,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">get_deployment_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L274" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L289" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1248,7 +1273,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">get_deployment_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L281" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L296" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1273,7 +1298,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">get_deployment_target(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L288" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L303" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1298,7 +1323,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">get_on_premises_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L295" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L310" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1323,7 +1348,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">list_application_revisions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L302" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L317" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1348,7 +1373,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">list_applications(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L309" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L324" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1373,7 +1398,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">list_deployment_configs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L316" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L331" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1398,7 +1423,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">list_deployment_groups(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L323" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L339" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1408,7 +1433,8 @@ the content of the deployment’s AppSpec file.</p>
   </div>
 
   <section class="docstring">
-<p>Lists the deployment groups for an application registered with the IAM user or AWS account.</p>
+<p>Lists the deployment groups for an application registered with the IAM user or
+AWS account.</p>
 
   </section>
 </section>
@@ -1423,7 +1449,7 @@ the content of the deployment’s AppSpec file.</p>
     </a>
     <h1 class="signature">list_deployment_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L336" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L352" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1433,10 +1459,10 @@ the content of the deployment’s AppSpec file.</p>
   </div>
 
   <section class="docstring">
-<p>The newer <code class="inline">BatchGetDeploymentTargets</code> should be used instead because it works with all compute
-types.</p>
-<p><code class="inline">ListDeploymentInstances</code> throws an exception if it is used with a compute platform other than
-EC2/On-premises or AWS Lambda.</p>
+<p>The newer <code class="inline">BatchGetDeploymentTargets</code> should be used instead because it works
+with all compute types.</p>
+<p><code class="inline">ListDeploymentInstances</code> throws an exception if it is used with a compute
+platform other than EC2/On-premises or AWS Lambda.</p>
 <p>Lists the instance for a deployment associated with the IAM user or AWS account.</p>
 
   </section>
@@ -1452,7 +1478,7 @@ EC2/On-premises or AWS Lambda.</p>
     </a>
     <h1 class="signature">list_deployment_targets(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L343" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L359" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1477,7 +1503,7 @@ EC2/On-premises or AWS Lambda.</p>
     </a>
     <h1 class="signature">list_deployments(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L351" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L367" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1487,8 +1513,8 @@ EC2/On-premises or AWS Lambda.</p>
   </div>
 
   <section class="docstring">
-<p>Lists the deployments in a deployment group for an application registered with the IAM user or AWS
-account.</p>
+<p>Lists the deployments in a deployment group for an application registered with
+the IAM user or AWS account.</p>
 
   </section>
 </section>
@@ -1503,7 +1529,7 @@ account.</p>
     </a>
     <h1 class="signature">list_git_hub_account_token_names(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L358" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L374" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1528,7 +1554,7 @@ account.</p>
     </a>
     <h1 class="signature">list_on_premises_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L369" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L385" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1539,9 +1565,9 @@ account.</p>
 
   <section class="docstring">
 <p>Gets a list of names for one or more on-premises instances.</p>
-<p>Unless otherwise specified, both registered and deregistered on-premises instance names are
-listed. To list only registered or deregistered on-premises instance names, use the registration
-status parameter.</p>
+<p>Unless otherwise specified, both registered and deregistered on-premises
+instance names are listed. To list only registered or deregistered on-premises
+instance names, use the registration status parameter.</p>
 
   </section>
 </section>
@@ -1556,7 +1582,7 @@ status parameter.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L378" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L395" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1566,7 +1592,8 @@ status parameter.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a list of tags for the resource identified by a specified Amazon Resource Name (ARN).</p>
+<p>Returns a list of tags for the resource identified by a specified Amazon
+Resource Name (ARN).</p>
 <p>Tags are used to organize and categorize your CodeDeploy resources.</p>
 
   </section>
@@ -1582,7 +1609,7 @@ status parameter.</p>
     </a>
     <h1 class="signature">put_lifecycle_event_hook_execution_status(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L394" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L412" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1593,12 +1620,13 @@ status parameter.</p>
 
   <section class="docstring">
 <p>Sets the result of a Lambda validation function.</p>
-<p>The function validates lifecycle hooks during a deployment that uses the AWS Lambda or Amazon ECS
-compute platform. For AWS Lambda deployments, the available lifecycle hooks are
-<code class="inline">BeforeAllowTraffic</code> and <code class="inline">AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
-hooks are <code class="inline">BeforeInstall</code>, <code class="inline">AfterInstall</code>, <code class="inline">AfterAllowTestTraffic</code>, <code class="inline">BeforeAllowTraffic</code>, and
-<code class="inline">AfterAllowTraffic</code>. Lambda validation functions return <code class="inline">Succeeded</code> or <code class="inline">Failed</code>. For more
-information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec &#39;hooks&#39; Section for an AWS Lambda Deployment
+<p>The function validates lifecycle hooks during a deployment that uses the AWS
+Lambda or Amazon ECS compute platform. For AWS Lambda deployments, the available
+lifecycle hooks are <code class="inline">BeforeAllowTraffic</code> and <code class="inline">AfterAllowTraffic</code>. For Amazon ECS
+deployments, the available lifecycle hooks are <code class="inline">BeforeInstall</code>, <code class="inline">AfterInstall</code>,
+<code class="inline">AfterAllowTestTraffic</code>, <code class="inline">BeforeAllowTraffic</code>, and <code class="inline">AfterAllowTraffic</code>. Lambda
+validation functions return <code class="inline">Succeeded</code> or <code class="inline">Failed</code>. For more information, see
+<a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec &#39;hooks&#39; Section for an AWS Lambda Deployment
 </a>
 and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec &#39;hooks&#39; Section for an Amazon ECS Deployment</a>.</p>
 
@@ -1615,7 +1643,7 @@ and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-a
     </a>
     <h1 class="signature">register_application_revision(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L401" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L419" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1640,7 +1668,7 @@ and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-a
     </a>
     <h1 class="signature">register_on_premises_instance(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L411" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L429" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1651,8 +1679,8 @@ and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-a
 
   <section class="docstring">
 <p>Registers an on-premises instance.</p>
-<p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the request. You cannot use
-both.</p>
+<p>Only one IAM ARN (an IAM session ARN or IAM user ARN) is supported in the
+request. You cannot use both.</p>
 
   </section>
 </section>
@@ -1667,7 +1695,7 @@ both.</p>
     </a>
     <h1 class="signature">remove_tags_from_on_premises_instances(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L418" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L436" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1692,7 +1720,7 @@ both.</p>
     </a>
     <h1 class="signature">skip_wait_time_for_instance_termination(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L426" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L444" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1702,8 +1730,8 @@ both.</p>
   </div>
 
   <section class="docstring">
-<p>In a blue/green deployment, overrides any specified wait time and starts terminating instances
-immediately after the traffic routing is complete.</p>
+<p>In a blue/green deployment, overrides any specified wait time and starts
+terminating instances immediately after the traffic routing is complete.</p>
 
   </section>
 </section>
@@ -1718,7 +1746,7 @@ immediately after the traffic routing is complete.</p>
     </a>
     <h1 class="signature">stop_deployment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L433" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L451" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1743,7 +1771,7 @@ immediately after the traffic routing is complete.</p>
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L441" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L459" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1753,8 +1781,8 @@ immediately after the traffic routing is complete.</p>
   </div>
 
   <section class="docstring">
-<p>Associates the list of tags in the input <code class="inline">Tags</code> parameter with the resource identified by the
-<code class="inline">ResourceArn</code> input parameter.</p>
+<p>Associates the list of tags in the input <code class="inline">Tags</code> parameter with the resource
+identified by the <code class="inline">ResourceArn</code> input parameter.</p>
 
   </section>
 </section>
@@ -1769,7 +1797,7 @@ immediately after the traffic routing is complete.</p>
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L451" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L469" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1780,8 +1808,8 @@ immediately after the traffic routing is complete.</p>
 
   <section class="docstring">
 <p>Disassociates a resource from a list of tags.</p>
-<p>The resource is identified by the <code class="inline">ResourceArn</code> input parameter. The tags are identified by the
-list of keys in the <code class="inline">TagKeys</code> input parameter.</p>
+<p>The resource is identified by the <code class="inline">ResourceArn</code> input parameter. The tags are
+identified by the list of keys in the <code class="inline">TagKeys</code> input parameter.</p>
 
   </section>
 </section>
@@ -1796,7 +1824,7 @@ list of keys in the <code class="inline">TagKeys</code> input parameter.</p>
     </a>
     <h1 class="signature">update_application(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L458" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L476" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1821,7 +1849,7 @@ list of keys in the <code class="inline">TagKeys</code> input parameter.</p>
     </a>
     <h1 class="signature">update_deployment_group(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L465" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/code_deploy.ex#L483" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

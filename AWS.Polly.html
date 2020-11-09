@@ -10,7 +10,7 @@
     <title>AWS.Polly — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,9 +87,10 @@ AWS.Polly
 
         <section id="moduledoc">
 <p>Amazon Polly is a web service that makes it easy to synthesize speech from text.</p>
-<p>The Amazon Polly service provides API operations for synthesizing high-quality speech from plain
-text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that
-enable you to get the best results for your application domain.</p>
+<p>The Amazon Polly service provides API operations for synthesizing high-quality
+speech from plain text and Speech Synthesis Markup Language (SSML), along with
+managing pronunciations lexicons that enable you to get the best results for
+your application domain.</p>
 
         </section>
 
@@ -122,7 +123,8 @@ enable you to get the best results for your application domain.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns the list of voices that are available for use when requesting speech synthesis.</p></div>
+    <div class="summary-synopsis"><p>Returns the list of voices that are available for use when requesting speech
+synthesis.</p></div>
 
 </div>
 <div class="summary-row">
@@ -131,7 +133,8 @@ enable you to get the best results for your application domain.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns the content of the specified pronunciation lexicon stored in an AWS Region.</p></div>
+    <div class="summary-synopsis"><p>Returns the content of the specified pronunciation lexicon stored in an AWS
+Region.</p></div>
 
 </div>
 <div class="summary-row">
@@ -176,7 +179,8 @@ enable you to get the best results for your application domain.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Allows the creation of an asynchronous synthesis task, by starting a new <code class="inline">SpeechSynthesisTask</code>.</p></div>
+    <div class="summary-synopsis"><p>Allows the creation of an asynchronous synthesis task, by starting a new
+<code class="inline">SpeechSynthesisTask</code>.</p></div>
 
 </div>
 <div class="summary-row">
@@ -214,7 +218,7 @@ Functions
     </a>
     <h1 class="signature">delete_lexicon(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L21" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L22" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -225,8 +229,8 @@ Functions
 
   <section class="docstring">
 <p>Deletes the specified pronunciation lexicon stored in an AWS Region.</p>
-<p>A lexicon which has been deleted is not available for speech synthesis, nor is it possible to
-retrieve it using either the <code class="inline">GetLexicon</code> or <code class="inline">ListLexicon</code> APIs.</p>
+<p>A lexicon which has been deleted is not available for speech synthesis, nor is
+it possible to retrieve it using either the <code class="inline">GetLexicon</code> or <code class="inline">ListLexicon</code> APIs.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 
   </section>
@@ -250,7 +254,7 @@ retrieve it using either the <code class="inline">GetLexicon</code> or <code cla
     </a>
     <h1 class="signature">describe_voices(client, engine \\ nil, include_additional_language_codes \\ nil, language_code \\ nil, next_token \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L51" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -260,17 +264,21 @@ retrieve it using either the <code class="inline">GetLexicon</code> or <code cla
   </div>
 
   <section class="docstring">
-<p>Returns the list of voices that are available for use when requesting speech synthesis.</p>
-<p>Each voice speaks a specified language, is either male or female, and is identified by an ID,
-which is the ASCII version of the voice name.</p>
-<p>When synthesizing speech ( <code class="inline">SynthesizeSpeech</code> ), you provide the voice ID for the voice you want
-from the list of voices returned by <code class="inline">DescribeVoices</code>.</p>
-<p>For example, you want your news reader application to read news in a specific language, but giving
-a user the option to choose the voice. Using the <code class="inline">DescribeVoices</code> operation you can provide the
-user with a list of available voices to select from.</p>
-<p>You can optionally specify a language code to filter the available voices. For example, if you
-specify <code class="inline">en-US</code>, the operation returns a list of all available US English voices.</p>
-<p>This operation requires permissions to perform the <code class="inline">polly:DescribeVoices</code> action.</p>
+<p>Returns the list of voices that are available for use when requesting speech
+synthesis.</p>
+<p>Each voice speaks a specified language, is either male or female, and is
+identified by an ID, which is the ASCII version of the voice name.</p>
+<p>When synthesizing speech ( <code class="inline">SynthesizeSpeech</code> ), you provide the voice ID for
+the voice you want from the list of voices returned by <code class="inline">DescribeVoices</code>.</p>
+<p>For example, you want your news reader application to read news in a specific
+language, but giving a user the option to choose the voice. Using the
+<code class="inline">DescribeVoices</code> operation you can provide the user with a list of available
+voices to select from.</p>
+<p>You can optionally specify a language code to filter the available voices. For
+example, if you specify <code class="inline">en-US</code>, the operation returns a list of all available
+US English voices.</p>
+<p>This operation requires permissions to perform the <code class="inline">polly:DescribeVoices</code>
+action.</p>
 
   </section>
 </section>
@@ -285,7 +293,7 @@ specify <code class="inline">en-US</code>, the operation returns a list of all a
     </a>
     <h1 class="signature">get_lexicon(client, name, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L78" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L84" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -295,7 +303,8 @@ specify <code class="inline">en-US</code>, the operation returns a list of all a
   </div>
 
   <section class="docstring">
-<p>Returns the content of the specified pronunciation lexicon stored in an AWS Region.</p>
+<p>Returns the content of the specified pronunciation lexicon stored in an AWS
+Region.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 
   </section>
@@ -311,7 +320,7 @@ specify <code class="inline">en-US</code>, the operation returns a list of all a
     </a>
     <h1 class="signature">get_speech_synthesis_task(client, task_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L91" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L98" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -322,8 +331,9 @@ specify <code class="inline">en-US</code>, the operation returns a list of all a
 
   <section class="docstring">
 <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID.</p>
-<p>This object contains information about the given speech synthesis task, including the status of
-the task, and a link to the S3 bucket containing the output of the task.</p>
+<p>This object contains information about the given speech synthesis task,
+including the status of the task, and a link to the S3 bucket containing the
+output of the task.</p>
 
   </section>
 </section>
@@ -340,7 +350,7 @@ the task, and a link to the S3 bucket containing the output of the task.</p>
     </a>
     <h1 class="signature">list_lexicons(client, next_token \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L103" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L110" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -372,7 +382,7 @@ the task, and a link to the S3 bucket containing the output of the task.</p>
     </a>
     <h1 class="signature">list_speech_synthesis_tasks(client, max_results \\ nil, next_token \\ nil, status \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L121" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L128" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -383,8 +393,8 @@ the task, and a link to the S3 bucket containing the output of the task.</p>
 
   <section class="docstring">
 <p>Returns a list of SpeechSynthesisTask objects ordered by their creation date.</p>
-<p>This operation can filter the tasks by their status, for example, allowing users to list only
-tasks that are completed.</p>
+<p>This operation can filter the tasks by their status, for example, allowing users
+to list only tasks that are completed.</p>
 
   </section>
 </section>
@@ -399,7 +409,7 @@ tasks that are completed.</p>
     </a>
     <h1 class="signature">put_lexicon(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L152" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L160" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -410,9 +420,10 @@ tasks that are completed.</p>
 
   <section class="docstring">
 <p>Stores a pronunciation lexicon in an AWS Region.</p>
-<p>If a lexicon with the same name already exists in the region, it is overwritten by the new
-lexicon. Lexicon operations have eventual consistency, therefore, it might take some time before
-the lexicon is available to the SynthesizeSpeech operation.</p>
+<p>If a lexicon with the same name already exists in the region, it is overwritten
+by the new lexicon. Lexicon operations have eventual consistency, therefore, it
+might take some time before the lexicon is available to the SynthesizeSpeech
+operation.</p>
 <p>For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>
 
   </section>
@@ -428,7 +439,7 @@ the lexicon is available to the SynthesizeSpeech operation.</p>
     </a>
     <h1 class="signature">start_speech_synthesis_task(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L168" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L178" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -438,12 +449,14 @@ the lexicon is available to the SynthesizeSpeech operation.</p>
   </div>
 
   <section class="docstring">
-<p>Allows the creation of an asynchronous synthesis task, by starting a new <code class="inline">SpeechSynthesisTask</code>.</p>
-<p>This operation requires all the standard information needed for speech synthesis, plus the name of
-an Amazon S3 bucket for the service to store the output of the synthesis task and two optional
-parameters (OutputS3KeyPrefix and SnsTopicArn). Once the synthesis task is created, this operation
-will return a SpeechSynthesisTask object, which will include an identifier of this task as well as
-the current status.</p>
+<p>Allows the creation of an asynchronous synthesis task, by starting a new
+<code class="inline">SpeechSynthesisTask</code>.</p>
+<p>This operation requires all the standard information needed for speech
+synthesis, plus the name of an Amazon S3 bucket for the service to store the
+output of the synthesis task and two optional parameters (OutputS3KeyPrefix and
+SnsTopicArn). Once the synthesis task is created, this operation will return a
+SpeechSynthesisTask object, which will include an identifier of this task as
+well as the current status.</p>
 
   </section>
 </section>
@@ -458,7 +471,7 @@ the current status.</p>
     </a>
     <h1 class="signature">synthesize_speech(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L182" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/polly.ex#L193" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -469,9 +482,10 @@ the current status.</p>
 
   <section class="docstring">
 <p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes.</p>
-<p>SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the
-voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping
-is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.</p>
+<p>SSML input must be valid, well-formed SSML. Some alphabets might not be
+available with all the voices (for example, Cyrillic might not be read at all by
+English voices) unless phoneme mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it
+Works</a>.</p>
 
   </section>
 </section>

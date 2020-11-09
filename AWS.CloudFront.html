@@ -10,7 +10,7 @@
     <title>AWS.CloudFront — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -88,9 +88,9 @@ AWS.CloudFront
         <section id="moduledoc">
 <p>Amazon CloudFront</p>
 <p>This is the <em>Amazon CloudFront API Reference</em>.</p>
-<p>This guide is for developers who need detailed information about CloudFront API actions, data
-types, and errors. For detailed information about CloudFront features, see the <em>Amazon CloudFront
-Developer Guide</em>.</p>
+<p>This guide is for developers who need detailed information about CloudFront API
+actions, data types, and errors. For detailed information about CloudFront
+features, see the <em>Amazon CloudFront Developer Guide</em>.</p>
 
         </section>
 
@@ -195,7 +195,8 @@ Developer Guide</em>.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Add a new public key to CloudFront to use, for example, for field-level encryption.</p></div>
+    <div class="summary-synopsis"><p>Add a new public key to CloudFront to use, for example, for field-level
+encryption.</p></div>
 
 </div>
 <div class="summary-row">
@@ -276,7 +277,8 @@ Developer Guide</em>.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Disables additional CloudWatch metrics for the specified CloudFront distribution.</p></div>
+    <div class="summary-synopsis"><p>Disables additional CloudWatch metrics for the specified CloudFront
+distribution.</p></div>
 
 </div>
 <div class="summary-row">
@@ -420,8 +422,8 @@ Developer Guide</em>.</p>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about whether additional CloudWatch metrics are enabled for the specified
-CloudFront distribution.</p></div>
+    <div class="summary-synopsis"><p>Gets information about whether additional CloudWatch metrics are enabled for the
+specified CloudFront distribution.</p></div>
 
 </div>
 <div class="summary-row">
@@ -475,7 +477,8 @@ CloudFront distribution.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets information about a specified RTMP distribution, including the distribution configuration.</p></div>
+    <div class="summary-synopsis"><p>Gets information about a specified RTMP distribution, including the distribution
+configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -520,8 +523,8 @@ CloudFront distribution.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated
-with the specified cache policy.</p></div>
+    <div class="summary-synopsis"><p>Gets a list of distribution IDs for distributions that have a cache behavior
+that’s associated with the specified cache policy.</p></div>
 
 </div>
 <div class="summary-row">
@@ -530,8 +533,8 @@ with the specified cache policy.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated
-with the specified origin request policy.</p></div>
+    <div class="summary-synopsis"><p>Gets a list of distribution IDs for distributions that have a cache behavior
+that’s associated with the specified origin request policy.</p></div>
 
 </div>
 <div class="summary-row">
@@ -540,8 +543,8 @@ with the specified origin request policy.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Gets a list of distributions that have a cache behavior that’s associated with the specified
-real-time log configuration.</p></div>
+    <div class="summary-synopsis"><p>Gets a list of distributions that have a cache behavior that’s associated with
+the specified real-time log configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -559,8 +562,8 @@ real-time log configuration.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>List all field-level encryption configurations that have been created in CloudFront for this
-account.</p></div>
+    <div class="summary-synopsis"><p>List all field-level encryption configurations that have been created in
+CloudFront for this account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -569,8 +572,8 @@ account.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Request a list of field-level encryption profiles that have been created in CloudFront for this
-account.</p></div>
+    <div class="summary-synopsis"><p>Request a list of field-level encryption profiles that have been created in
+CloudFront for this account.</p></div>
 
 </div>
 <div class="summary-row">
@@ -752,7 +755,7 @@ Functions
     </a>
     <h1 class="signature">create_cache_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L36" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L38" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -763,21 +766,23 @@ Functions
 
   <section class="docstring">
 <p>Creates a cache policy.</p>
-<p>After you create a cache policy, you can attach it to one or more cache behaviors. When it’s
-attached to a cache behavior, the cache policy determines the following:</p>
+<p>After you create a cache policy, you can attach it to one or more cache
+behaviors. When it’s attached to a cache behavior, the cache policy determines
+the following:</p>
 <ul>
-<li><p>The values that CloudFront includes in the <em>cache key</em>. These values can include
-HTTP headers, cookies, and URL query strings. CloudFront uses the cache key to find an object in
-its cache that it can return to the viewer.</p>
+<li><p>The values that CloudFront includes in the <em>cache key</em>. These
+values can include HTTP headers, cookies, and URL query strings. CloudFront uses
+the cache key to find an object in its cache that it can return to the viewer.</p>
 </li>
-<li><p>The default, minimum, and maximum time to live (TTL) values that you want objects to
-stay in the CloudFront cache.</p>
+<li><p>The default, minimum, and maximum time to live (TTL) values that
+you want objects to stay in the CloudFront cache.</p>
 </li>
 </ul>
-<p>The headers, cookies, and query strings that are included in the cache key are automatically
-included in requests that CloudFront sends to the origin. CloudFront sends a request when it can’t
-find an object in its cache that matches the request’s cache key. If you want to send values to
-the origin but <em>not</em> include them in the cache key, use <code class="inline">OriginRequestPolicy</code>.</p>
+<p>The headers, cookies, and query strings that are included in the cache key are
+automatically included in requests that CloudFront sends to the origin.
+CloudFront sends a request when it can’t find an object in its cache that
+matches the request’s cache key. If you want to send values to the origin but
+<em>not</em> include them in the cache key, use <code class="inline">OriginRequestPolicy</code>.</p>
 <p>For more information about cache policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-the-cache-key.html">Controlling the cache key</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
@@ -794,7 +799,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_cloud_front_origin_access_identity(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L69" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L72" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -805,9 +810,10 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Creates a new origin access identity.</p>
-<p>If you&#39;re using Amazon S3 for your origin, you can use an origin access identity to require users
-to access your content using a CloudFront URL instead of the Amazon S3 URL. For more information
-about how to use origin access identities, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a>
+<p>If you&#39;re using Amazon S3 for your origin, you can use an origin access identity
+to require users to access your content using a CloudFront URL instead of the
+Amazon S3 URL. For more information about how to use origin access identities,
+see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through CloudFront</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   </section>
@@ -823,7 +829,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_distribution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L109" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L114" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -834,14 +840,15 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Creates a new web distribution.</p>
-<p>You create a CloudFront distribution to tell CloudFront where you want content to be delivered
-from, and the details about how to track and manage content delivery. Send a <code class="inline">POST</code> request to the
-<code class="inline">/*CloudFront API version*/distribution</code>/<code class="inline">distribution ID</code> resource.</p>
-<p>When you update a distribution, there are more required fields than when you create a
-distribution. When you update your distribution by using
-<a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>, follow the steps included in the documentation to get the current configuration and then make your
-updates. This helps to make sure that you include all of the required fields. To view a summary,
-see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update
+<p>You create a CloudFront distribution to tell CloudFront where you want content
+to be delivered from, and the details about how to track and manage content
+delivery. Send a <code class="inline">POST</code> request to the <code class="inline">/*CloudFront API version*/distribution</code>/<code class="inline">distribution ID</code> resource.</p>
+<p>When you update a distribution, there are more required fields than when you
+create a distribution. When you update your distribution by using
+<a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>, follow the steps included in the documentation to get the current configuration
+and then make your updates. This helps to make sure that you include all of the
+required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution
+and Update
 Distribution</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
@@ -858,7 +865,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_distribution_with_tags(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L137" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L142" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -883,7 +890,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_field_level_encryption_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L165" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L170" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -908,7 +915,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_field_level_encryption_profile(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L193" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L198" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -933,7 +940,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_invalidation(client, distribution_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L221" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L226" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -958,7 +965,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_monitoring_subscription(client, distribution_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L253" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L258" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -986,7 +993,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_origin_request_policy(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L284" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L292" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -997,24 +1004,27 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Creates an origin request policy.</p>
-<p>After you create an origin request policy, you can attach it to one or more cache behaviors. When
-it’s attached to a cache behavior, the origin request policy determines the values that CloudFront
-includes in requests that it sends to the origin. Each request that CloudFront sends to the origin
-includes the following:</p>
+<p>After you create an origin request policy, you can attach it to one or more
+cache behaviors. When it’s attached to a cache behavior, the origin request
+policy determines the values that CloudFront includes in requests that it sends
+to the origin. Each request that CloudFront sends to the origin includes the
+following:</p>
 <ul>
-<li><p>The request body and the URL path (without the domain name) from the viewer request.</p>
+<li><p>The request body and the URL path (without the domain name) from
+the viewer request.</p>
 </li>
-<li><p>The headers that CloudFront automatically includes in every origin request,
-including <code class="inline">Host</code>, <code class="inline">User-Agent</code>, and <code class="inline">X-Amz-Cf-Id</code>.</p>
+<li><p>The headers that CloudFront automatically includes in every origin
+request, including <code class="inline">Host</code>, <code class="inline">User-Agent</code>, and <code class="inline">X-Amz-Cf-Id</code>.</p>
 </li>
-<li><p>All HTTP headers, cookies, and URL query strings that are specified in the cache
-policy or the origin request policy. These can include items from the viewer request and, in the
-case of headers, additional ones that are added by CloudFront.</p>
+<li><p>All HTTP headers, cookies, and URL query strings that are
+specified in the cache policy or the origin request policy. These can include
+items from the viewer request and, in the case of headers, additional ones that
+are added by CloudFront.</p>
 </li>
 </ul>
-<p>CloudFront sends a request when it can’t find a valid object in its cache that matches the
-request. If you want to send values to the origin and also include them in the cache key, use
-<code class="inline">CachePolicy</code>.</p>
+<p>CloudFront sends a request when it can’t find a valid object in its cache that
+matches the request. If you want to send values to the origin and also include
+them in the cache key, use <code class="inline">CachePolicy</code>.</p>
 <p>For more information about origin request policies, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/controlling-origin-requests.html">Controlling origin requests</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
@@ -1031,7 +1041,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_public_key(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L314" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L323" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1041,7 +1051,8 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
   </div>
 
   <section class="docstring">
-<p>Add a new public key to CloudFront to use, for example, for field-level encryption.</p>
+<p>Add a new public key to CloudFront to use, for example, for field-level
+encryption.</p>
 <p>You can add a maximum of 10 public keys with one AWS account.</p>
 
   </section>
@@ -1057,7 +1068,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_realtime_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L348" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L358" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1068,10 +1079,11 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Creates a real-time log configuration.</p>
-<p>After you create a real-time log configuration, you can attach it to one or more cache behaviors
-to send real-time log data to the specified Amazon Kinesis data stream.</p>
-<p>For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a> in
-the <em>Amazon CloudFront Developer Guide</em>.</p>
+<p>After you create a real-time log configuration, you can attach it to one or more
+cache behaviors to send real-time log data to the specified Amazon Kinesis data
+stream.</p>
+<p>For more information about real-time log configurations, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html">Real-time logs</a>
+in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   </section>
 </section>
@@ -1086,7 +1098,7 @@ the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">create_streaming_distribution(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L382" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L396" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1097,25 +1109,29 @@ the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Creates a new RTMP distribution.</p>
-<p>An RTMP distribution is similar to a web distribution, but an RTMP distribution streams media
-files using the Adobe Real-Time Messaging Protocol (RTMP) instead of serving files using HTTP.</p>
-<p>To create a new distribution, submit a <code class="inline">POST</code> request to the <em>CloudFront API version</em>/distribution
-resource. The request body must include a document with a <em>StreamingDistributionConfig</em> element.
-The response echoes the <code class="inline">StreamingDistributionConfig</code> element and returns other information about
-the RTMP distribution.</p>
-<p>To get the status of your request, use the <em>GET StreamingDistribution</em> API action. When the value
-of <code class="inline">Enabled</code> is <code class="inline">true</code> and the value of <code class="inline">Status</code> is <code class="inline">Deployed</code>, your distribution is ready. A
-distribution usually deploys in less than 15 minutes.</p>
+<p>An RTMP distribution is similar to a web distribution, but an RTMP distribution
+streams media files using the Adobe Real-Time Messaging Protocol (RTMP) instead
+of serving files using HTTP.</p>
+<p>To create a new distribution, submit a <code class="inline">POST</code> request to the <em>CloudFront API
+version</em>/distribution resource. The request body must include a document with a
+<em>StreamingDistributionConfig</em> element. The response echoes the
+<code class="inline">StreamingDistributionConfig</code> element and returns other information about the
+RTMP distribution.</p>
+<p>To get the status of your request, use the <em>GET StreamingDistribution</em> API
+action. When the value of <code class="inline">Enabled</code> is <code class="inline">true</code> and the value of <code class="inline">Status</code> is
+<code class="inline">Deployed</code>, your distribution is ready. A distribution usually deploys in less
+than 15 minutes.</p>
 <p>For more information about web distributions, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-rtmp.html">Working with RTMP Distributions</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
-<p>Beginning with the 2012-05-05 version of the CloudFront API, we made substantial changes to the
-format of the XML document that you include in the request body when you create or update a web
-distribution or an RTMP distribution, and when you invalidate objects. With previous versions of
-the API, we discovered that it was too easy to accidentally delete one or more values for an
-element that accepts multiple values, for example, CNAMEs and trusted signers. Our changes for the
-2012-05-05 release are intended to prevent these accidental deletions and to notify you when
-there&#39;s a mismatch between the number of values you say you&#39;re specifying in the <code class="inline">Quantity</code>
-element and the number of values specified.</p>
+<p>Beginning with the 2012-05-05 version of the CloudFront API, we made substantial
+changes to the format of the XML document that you include in the request body
+when you create or update a web distribution or an RTMP distribution, and when
+you invalidate objects. With previous versions of the API, we discovered that it
+was too easy to accidentally delete one or more values for an element that
+accepts multiple values, for example, CNAMEs and trusted signers. Our changes
+for the 2012-05-05 release are intended to prevent these accidental deletions
+and to notify you when there&#39;s a mismatch between the number of values you say
+you&#39;re specifying in the <code class="inline">Quantity</code> element and the number of values specified.</p>
 
   </section>
 </section>
@@ -1130,7 +1146,7 @@ element and the number of values specified.</p>
     </a>
     <h1 class="signature">create_streaming_distribution_with_tags(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L410" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L424" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1155,7 +1171,7 @@ element and the number of values specified.</p>
     </a>
     <h1 class="signature">delete_cache_policy(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L444" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L459" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1166,10 +1182,11 @@ element and the number of values specified.</p>
 
   <section class="docstring">
 <p>Deletes a cache policy.</p>
-<p>You cannot delete a cache policy if it’s attached to a cache behavior. First update your
-distributions to remove the cache policy from all cache behaviors, then delete the cache policy.</p>
-<p>To delete a cache policy, you must provide the policy’s identifier and version. To get these
-values, you can use <code class="inline">ListCachePolicies</code> or <code class="inline">GetCachePolicy</code>.</p>
+<p>You cannot delete a cache policy if it’s attached to a cache behavior. First
+update your distributions to remove the cache policy from all cache behaviors,
+then delete the cache policy.</p>
+<p>To delete a cache policy, you must provide the policy’s identifier and version.
+To get these values, you can use <code class="inline">ListCachePolicies</code> or <code class="inline">GetCachePolicy</code>.</p>
 
   </section>
 </section>
@@ -1184,7 +1201,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_cloud_front_origin_access_identity(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L458" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L473" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1209,7 +1226,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_distribution(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L472" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L487" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1234,7 +1251,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_field_level_encryption_config(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L486" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L501" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1259,7 +1276,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_field_level_encryption_profile(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L500" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L515" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1284,7 +1301,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_monitoring_subscription(client, distribution_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L514" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L530" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1294,7 +1311,8 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
   </div>
 
   <section class="docstring">
-<p>Disables additional CloudWatch metrics for the specified CloudFront distribution.</p>
+<p>Disables additional CloudWatch metrics for the specified CloudFront
+distribution.</p>
 
   </section>
 </section>
@@ -1309,7 +1327,7 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
     </a>
     <h1 class="signature">delete_origin_request_policy(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L531" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L548" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1320,11 +1338,12 @@ values, you can use <code class="inline">ListCachePolicies</code> or <code class
 
   <section class="docstring">
 <p>Deletes an origin request policy.</p>
-<p>You cannot delete an origin request policy if it’s attached to any cache behaviors. First update
-your distributions to remove the origin request policy from all cache behaviors, then delete the
-origin request policy.</p>
-<p>To delete an origin request policy, you must provide the policy’s identifier and version. To get
-the identifier, you can use <code class="inline">ListOriginRequestPolicies</code> or <code class="inline">GetOriginRequestPolicy</code>.</p>
+<p>You cannot delete an origin request policy if it’s attached to any cache
+behaviors. First update your distributions to remove the origin request policy
+from all cache behaviors, then delete the origin request policy.</p>
+<p>To delete an origin request policy, you must provide the policy’s identifier and
+version. To get the identifier, you can use <code class="inline">ListOriginRequestPolicies</code> or
+<code class="inline">GetOriginRequestPolicy</code>.</p>
 
   </section>
 </section>
@@ -1339,7 +1358,7 @@ the identifier, you can use <code class="inline">ListOriginRequestPolicies</code
     </a>
     <h1 class="signature">delete_public_key(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L545" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L562" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1364,7 +1383,7 @@ the identifier, you can use <code class="inline">ListOriginRequestPolicies</code
     </a>
     <h1 class="signature">delete_realtime_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L567" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L586" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1375,12 +1394,14 @@ the identifier, you can use <code class="inline">ListOriginRequestPolicies</code
 
   <section class="docstring">
 <p>Deletes a real-time log configuration.</p>
-<p>You cannot delete a real-time log configuration if it’s attached to a cache behavior. First update
-your distributions to remove the real-time log configuration from all cache behaviors, then delete
-the real-time log configuration.</p>
-<p>To delete a real-time log configuration, you can provide the configuration’s name or its Amazon
-Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name
-to identify the real-time log configuration to delete.</p>
+<p>You cannot delete a real-time log configuration if it’s attached to a cache
+behavior. First update your distributions to remove the real-time log
+configuration from all cache behaviors, then delete the real-time log
+configuration.</p>
+<p>To delete a real-time log configuration, you can provide the configuration’s
+name or its Amazon Resource Name (ARN). You must provide at least one. If you
+provide both, CloudFront uses the name to identify the real-time log
+configuration to delete.</p>
 
   </section>
 </section>
@@ -1395,7 +1416,7 @@ to identify the real-time log configuration to delete.</p>
     </a>
     <h1 class="signature">delete_streaming_distribution(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L610" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L635" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1406,36 +1427,43 @@ to identify the real-time log configuration to delete.</p>
 
   <section class="docstring">
 <p>Delete a streaming distribution.</p>
-<p>To delete an RTMP distribution using the CloudFront API, perform the following steps.</p>
+<p>To delete an RTMP distribution using the CloudFront API, perform the following
+steps.</p>
 <p><strong>To delete an RTMP distribution using the CloudFront API</strong>:</p>
 <ol>
 <li><p>Disable the RTMP distribution.</p>
 </li>
-<li><p>Submit a <code class="inline">GET Streaming Distribution Config</code> request to get the current
-configuration and the <code class="inline">Etag</code> header for the distribution.</p>
+<li><p>Submit a <code class="inline">GET Streaming Distribution Config</code> request to get the
+current configuration and the <code class="inline">Etag</code> header for the distribution.</p>
 </li>
-<li><p>Update the XML document that was returned in the response to your <code class="inline">GET Streaming Distribution Config</code> request to change the value of <code class="inline">Enabled</code> to <code class="inline">false</code>.</p>
+<li><p>Update the XML document that was returned in the response to your
+<code class="inline">GET Streaming Distribution Config</code> request to change the value of <code class="inline">Enabled</code> to
+<code class="inline">false</code>.</p>
 </li>
-<li><p>Submit a <code class="inline">PUT Streaming Distribution Config</code> request to update the configuration
-for your distribution. In the request body, include the XML document that you updated in Step 3.
-Then set the value of the HTTP <code class="inline">If-Match</code> header to the value of the <code class="inline">ETag</code> header that CloudFront
-returned when you submitted the <code class="inline">GET Streaming Distribution Config</code> request in Step 2.</p>
+<li><p>Submit a <code class="inline">PUT Streaming Distribution Config</code> request to update
+the configuration for your distribution. In the request body, include the XML
+document that you updated in Step 3. Then set the value of the HTTP <code class="inline">If-Match</code>
+header to the value of the <code class="inline">ETag</code> header that CloudFront returned when you
+submitted the <code class="inline">GET Streaming Distribution Config</code> request in Step 2.</p>
 </li>
-<li><p>Review the response to the <code class="inline">PUT Streaming Distribution Config</code> request to confirm
-that the distribution was successfully disabled.</p>
+<li><p>Review the response to the <code class="inline">PUT Streaming Distribution Config</code>
+request to confirm that the distribution was successfully disabled.</p>
 </li>
-<li><p>Submit a <code class="inline">GET Streaming Distribution Config</code> request to confirm that your changes
-have propagated. When propagation is complete, the value of <code class="inline">Status</code> is <code class="inline">Deployed</code>.</p>
+<li><p>Submit a <code class="inline">GET Streaming Distribution Config</code> request to confirm
+that your changes have propagated. When propagation is complete, the value of
+<code class="inline">Status</code> is <code class="inline">Deployed</code>.</p>
 </li>
-<li><p>Submit a <code class="inline">DELETE Streaming Distribution</code> request. Set the value of the HTTP
-<code class="inline">If-Match</code> header to the value of the <code class="inline">ETag</code> header that CloudFront returned when you submitted
-the <code class="inline">GET Streaming Distribution Config</code> request in Step 2.</p>
+<li><p>Submit a <code class="inline">DELETE Streaming Distribution</code> request. Set the value
+of the HTTP <code class="inline">If-Match</code> header to the value of the <code class="inline">ETag</code> header that CloudFront
+returned when you submitted the <code class="inline">GET Streaming Distribution Config</code> request in
+Step 2.</p>
 </li>
-<li><p>Review the response to your <code class="inline">DELETE Streaming Distribution</code> request to confirm that
-the distribution was successfully deleted.</p>
+<li><p>Review the response to your <code class="inline">DELETE Streaming Distribution</code>
+request to confirm that the distribution was successfully deleted.</p>
 </li>
 </ol>
-<p>For information about deleting a distribution using the CloudFront console, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a>
+<p>For information about deleting a distribution using the CloudFront console, see
+<a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/HowToDeleteDistribution.html">Deleting a Distribution</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
 
   </section>
@@ -1451,7 +1479,7 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
     </a>
     <h1 class="signature">get_cache_policy(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L633" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L659" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1468,10 +1496,11 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 <li><p>The date and time when the policy was last modified.</p>
 </li>
 </ul>
-<p>To get a cache policy, you must provide the policy’s identifier. If the cache policy is attached
-to a distribution’s cache behavior, you can get the policy’s identifier using <code class="inline">ListDistributions</code>
-or <code class="inline">GetDistribution</code>. If the cache policy is not attached to a cache behavior, you can get the
-identifier using <code class="inline">ListCachePolicies</code>.</p>
+<p>To get a cache policy, you must provide the policy’s identifier. If the cache
+policy is attached to a distribution’s cache behavior, you can get the policy’s
+identifier using <code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>. If the cache policy
+is not attached to a cache behavior, you can get the identifier using
+<code class="inline">ListCachePolicies</code>.</p>
 
   </section>
 </section>
@@ -1486,7 +1515,7 @@ identifier using <code class="inline">ListCachePolicies</code>.</p>
     </a>
     <h1 class="signature">get_cache_policy_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L665" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L692" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1497,10 +1526,11 @@ identifier using <code class="inline">ListCachePolicies</code>.</p>
 
   <section class="docstring">
 <p>Gets a cache policy configuration.</p>
-<p>To get a cache policy configuration, you must provide the policy’s identifier. If the cache policy
-is attached to a distribution’s cache behavior, you can get the policy’s identifier using
-<code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>. If the cache policy is not attached to a cache behavior,
-you can get the identifier using <code class="inline">ListCachePolicies</code>.</p>
+<p>To get a cache policy configuration, you must provide the policy’s identifier.
+If the cache policy is attached to a distribution’s cache behavior, you can get
+the policy’s identifier using <code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>. If the
+cache policy is not attached to a cache behavior, you can get the identifier
+using <code class="inline">ListCachePolicies</code>.</p>
 
   </section>
 </section>
@@ -1515,7 +1545,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_cloud_front_origin_access_identity(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L692" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L719" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1540,7 +1570,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_cloud_front_origin_access_identity_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L719" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L746" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1565,7 +1595,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_distribution(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L746" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L773" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1590,7 +1620,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_distribution_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L773" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L800" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1615,7 +1645,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_field_level_encryption(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L800" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L827" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1640,7 +1670,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_field_level_encryption_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L827" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L854" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1665,7 +1695,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_field_level_encryption_profile(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L854" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L881" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1690,7 +1720,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_field_level_encryption_profile_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L881" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L908" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1715,7 +1745,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_invalidation(client, distribution_id, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L908" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L935" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1740,7 +1770,7 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
     </a>
     <h1 class="signature">get_monitoring_subscription(client, distribution_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L919" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L946" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1750,8 +1780,8 @@ you can get the identifier using <code class="inline">ListCachePolicies</code>.<
   </div>
 
   <section class="docstring">
-<p>Gets information about whether additional CloudWatch metrics are enabled for the specified
-CloudFront distribution.</p>
+<p>Gets information about whether additional CloudWatch metrics are enabled for the
+specified CloudFront distribution.</p>
 
   </section>
 </section>
@@ -1766,7 +1796,7 @@ CloudFront distribution.</p>
     </a>
     <h1 class="signature">get_origin_request_policy(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L938" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L966" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1783,10 +1813,11 @@ CloudFront distribution.</p>
 <li><p>The date and time when the policy was last modified.</p>
 </li>
 </ul>
-<p>To get an origin request policy, you must provide the policy’s identifier. If the origin request
-policy is attached to a distribution’s cache behavior, you can get the policy’s identifier using
-<code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>. If the origin request policy is not attached to a cache
-behavior, you can get the identifier using <code class="inline">ListOriginRequestPolicies</code>.</p>
+<p>To get an origin request policy, you must provide the policy’s identifier. If
+the origin request policy is attached to a distribution’s cache behavior, you
+can get the policy’s identifier using <code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>.
+If the origin request policy is not attached to a cache behavior, you can get
+the identifier using <code class="inline">ListOriginRequestPolicies</code>.</p>
 
   </section>
 </section>
@@ -1801,7 +1832,7 @@ behavior, you can get the identifier using <code class="inline">ListOriginReques
     </a>
     <h1 class="signature">get_origin_request_policy_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L970" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L999" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1812,10 +1843,11 @@ behavior, you can get the identifier using <code class="inline">ListOriginReques
 
   <section class="docstring">
 <p>Gets an origin request policy configuration.</p>
-<p>To get an origin request policy configuration, you must provide the policy’s identifier. If the
-origin request policy is attached to a distribution’s cache behavior, you can get the policy’s
-identifier using <code class="inline">ListDistributions</code> or <code class="inline">GetDistribution</code>. If the origin request policy is not
-attached to a cache behavior, you can get the identifier using <code class="inline">ListOriginRequestPolicies</code>.</p>
+<p>To get an origin request policy configuration, you must provide the policy’s
+identifier. If the origin request policy is attached to a distribution’s cache
+behavior, you can get the policy’s identifier using <code class="inline">ListDistributions</code> or
+<code class="inline">GetDistribution</code>. If the origin request policy is not attached to a cache
+behavior, you can get the identifier using <code class="inline">ListOriginRequestPolicies</code>.</p>
 
   </section>
 </section>
@@ -1830,7 +1862,7 @@ attached to a cache behavior, you can get the identifier using <code class="inli
     </a>
     <h1 class="signature">get_public_key(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L997" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1026" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1855,7 +1887,7 @@ attached to a cache behavior, you can get the identifier using <code class="inli
     </a>
     <h1 class="signature">get_public_key_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1024" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1053" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1880,7 +1912,7 @@ attached to a cache behavior, you can get the identifier using <code class="inli
     </a>
     <h1 class="signature">get_realtime_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1055" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1085" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1891,9 +1923,10 @@ attached to a cache behavior, you can get the identifier using <code class="inli
 
   <section class="docstring">
 <p>Gets a real-time log configuration.</p>
-<p>To get a real-time log configuration, you can provide the configuration’s name or its Amazon
-Resource Name (ARN). You must provide at least one. If you provide both, CloudFront uses the name
-to identify the real-time log configuration to get.</p>
+<p>To get a real-time log configuration, you can provide the configuration’s name
+or its Amazon Resource Name (ARN). You must provide at least one. If you provide
+both, CloudFront uses the name to identify the real-time log configuration to
+get.</p>
 
   </section>
 </section>
@@ -1908,7 +1941,7 @@ to identify the real-time log configuration to get.</p>
     </a>
     <h1 class="signature">get_streaming_distribution(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1065" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1096" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1918,7 +1951,8 @@ to identify the real-time log configuration to get.</p>
   </div>
 
   <section class="docstring">
-<p>Gets information about a specified RTMP distribution, including the distribution configuration.</p>
+<p>Gets information about a specified RTMP distribution, including the distribution
+configuration.</p>
 
   </section>
 </section>
@@ -1933,7 +1967,7 @@ to identify the real-time log configuration to get.</p>
     </a>
     <h1 class="signature">get_streaming_distribution_config(client, id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1092" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1123" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1964,7 +1998,7 @@ to identify the real-time log configuration to get.</p>
     </a>
     <h1 class="signature">list_cache_policies(client, marker \\ nil, max_items \\ nil, type \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1127" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1159" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1975,12 +2009,13 @@ to identify the real-time log configuration to get.</p>
 
   <section class="docstring">
 <p>Gets a list of cache policies.</p>
-<p>You can optionally apply a filter to return only the managed policies created by AWS, or only the
-custom policies created in your AWS account.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>You can optionally apply a filter to return only the managed policies created by
+AWS, or only the custom policies created in your AWS account.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -1999,7 +2034,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_cloud_front_origin_access_identities(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1152" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1184" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2028,7 +2063,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_distributions(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1172" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1204" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2057,7 +2092,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_distributions_by_cache_policy_id(client, cache_policy_id, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1198" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1231" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2067,12 +2102,13 @@ response is paginated. To get the next page of items, send a subsequent request 
   </div>
 
   <section class="docstring">
-<p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated
-with the specified cache policy.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>Gets a list of distribution IDs for distributions that have a cache behavior
+that’s associated with the specified cache policy.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -2091,7 +2127,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_distributions_by_origin_request_policy_id(client, origin_request_policy_id, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1224" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1258" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2101,12 +2137,13 @@ response is paginated. To get the next page of items, send a subsequent request 
   </div>
 
   <section class="docstring">
-<p>Gets a list of distribution IDs for distributions that have a cache behavior that’s associated
-with the specified origin request policy.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>Gets a list of distribution IDs for distributions that have a cache behavior
+that’s associated with the specified origin request policy.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -2121,7 +2158,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_distributions_by_realtime_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1254" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1290" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2131,15 +2168,17 @@ response is paginated. To get the next page of items, send a subsequent request 
   </div>
 
   <section class="docstring">
-<p>Gets a list of distributions that have a cache behavior that’s associated with the specified
-real-time log configuration.</p>
-<p>You can specify the real-time log configuration by its name or its Amazon Resource Name (ARN). You
-must provide at least one. If you provide both, CloudFront uses the name to identify the real-time
-log configuration to list distributions for.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>Gets a list of distributions that have a cache behavior that’s associated with
+the specified real-time log configuration.</p>
+<p>You can specify the real-time log configuration by its name or its Amazon
+Resource Name (ARN). You must provide at least one. If you provide both,
+CloudFront uses the name to identify the real-time log configuration to list
+distributions for.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -2158,7 +2197,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_distributions_by_web_a_c_l_id(client, web_a_c_l_id, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1264" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1300" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2187,7 +2226,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_field_level_encryption_configs(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1285" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1321" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2197,8 +2236,8 @@ response is paginated. To get the next page of items, send a subsequent request 
   </div>
 
   <section class="docstring">
-<p>List all field-level encryption configurations that have been created in CloudFront for this
-account.</p>
+<p>List all field-level encryption configurations that have been created in
+CloudFront for this account.</p>
 
   </section>
 </section>
@@ -2217,7 +2256,7 @@ account.</p>
     </a>
     <h1 class="signature">list_field_level_encryption_profiles(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1306" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1342" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2227,8 +2266,8 @@ account.</p>
   </div>
 
   <section class="docstring">
-<p>Request a list of field-level encryption profiles that have been created in CloudFront for this
-account.</p>
+<p>Request a list of field-level encryption profiles that have been created in
+CloudFront for this account.</p>
 
   </section>
 </section>
@@ -2247,7 +2286,7 @@ account.</p>
     </a>
     <h1 class="signature">list_invalidations(client, distribution_id, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1326" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1362" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2278,7 +2317,7 @@ account.</p>
     </a>
     <h1 class="signature">list_origin_request_policies(client, marker \\ nil, max_items \\ nil, type \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1354" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1391" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2289,12 +2328,13 @@ account.</p>
 
   <section class="docstring">
 <p>Gets a list of origin request policies.</p>
-<p>You can optionally apply a filter to return only the managed policies created by AWS, or only the
-custom policies created in your AWS account.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>You can optionally apply a filter to return only the managed policies created by
+AWS, or only the custom policies created in your AWS account.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -2313,7 +2353,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_public_keys(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1379" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1416" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2342,7 +2382,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_realtime_log_configs(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1404" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1442" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2353,10 +2393,11 @@ response is paginated. To get the next page of items, send a subsequent request 
 
   <section class="docstring">
 <p>Gets a list of real-time log configurations.</p>
-<p>You can optionally specify the maximum number of items to receive in the response. If the total
-number of items in the list exceeds the maximum that you specify, or the default maximum, the
-response is paginated. To get the next page of items, send a subsequent request that specifies the
-<code class="inline">NextMarker</code> value from the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
+<p>You can optionally specify the maximum number of items to receive in the
+response. If the total number of items in the list exceeds the maximum that you
+specify, or the default maximum, the response is paginated. To get the next page
+of items, send a subsequent request that specifies the <code class="inline">NextMarker</code> value from
+the current response as the <code class="inline">Marker</code> value in the subsequent request.</p>
 
   </section>
 </section>
@@ -2375,7 +2416,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_streaming_distributions(client, marker \\ nil, max_items \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1424" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1462" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2400,7 +2441,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">list_tags_for_resource(client, resource, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1444" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1482" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2425,7 +2466,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">tag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1459" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1497" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2450,7 +2491,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">untag_resource(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1473" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1511" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2475,7 +2516,7 @@ response is paginated. To get the next page of items, send a subsequent request 
     </a>
     <h1 class="signature">update_cache_policy(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1499" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1537" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2486,17 +2527,17 @@ response is paginated. To get the next page of items, send a subsequent request 
 
   <section class="docstring">
 <p>Updates a cache policy configuration.</p>
-<p>When you update a cache policy configuration, all the fields are updated with the values provided
-in the request. You cannot update some fields independent of others. To update a cache policy
-configuration:</p>
+<p>When you update a cache policy configuration, all the fields are updated with
+the values provided in the request. You cannot update some fields independent of
+others. To update a cache policy configuration:</p>
 <ol>
 <li><p>Use <code class="inline">GetCachePolicyConfig</code> to get the current configuration.</p>
 </li>
-<li><p>Locally modify the fields in the cache policy configuration that you want to
-update.</p>
+<li><p>Locally modify the fields in the cache policy configuration that
+you want to update.</p>
 </li>
-<li><p>Call <code class="inline">UpdateCachePolicy</code> by providing the entire cache policy configuration,
-including the fields that you modified and those that you didn’t.</p>
+<li><p>Call <code class="inline">UpdateCachePolicy</code> by providing the entire cache policy
+configuration, including the fields that you modified and those that you didn’t.</p>
 </li>
 </ol>
 
@@ -2513,7 +2554,7 @@ including the fields that you modified and those that you didn’t.</p>
     </a>
     <h1 class="signature">update_cloud_front_origin_access_identity(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1530" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1568" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2538,7 +2579,7 @@ including the fields that you modified and those that you didn’t.</p>
     </a>
     <h1 class="signature">update_distribution(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1619" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1663" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2549,21 +2590,27 @@ including the fields that you modified and those that you didn’t.</p>
 
   <section class="docstring">
 <p>Updates the configuration for a web distribution.</p>
-<p>When you update a distribution, there are more required fields than when you create a
-distribution. When you update your distribution by using this API action, follow the steps here to
-get the current configuration and then make your updates, to make sure that you include all of the
-required fields. To view a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a>
+<p>When you update a distribution, there are more required fields than when you
+create a distribution. When you update your distribution by using this API
+action, follow the steps here to get the current configuration and then make
+your updates, to make sure that you include all of the required fields. To view
+a summary, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-overview-required-fields.html">Required Fields for Create Distribution and Update Distribution</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
-<p>The update process includes getting the current distribution configuration, updating the XML
-document that is returned to make your changes, and then submitting an <code class="inline">UpdateDistribution</code>
-request to make the updates.</p>
-<p>For information about updating a distribution using the CloudFront console instead, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating a
-Distribution</a>
+<p>The update process includes getting the current distribution configuration,
+updating the XML document that is returned to make your changes, and then
+submitting an <code class="inline">UpdateDistribution</code> request to make the updates.</p>
+<p>For information about updating a distribution using the CloudFront console
+instead, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-creating-console.html">Creating a Distribution</a>
 in the <em>Amazon CloudFront Developer Guide</em>.</p>
-<p><strong>To update a web distribution using the CloudFront API</strong></p>
+<h2 id="update_distribution/4-to-update-a-web-distribution-using-the-cloudfront-api" class="section-heading">
+  <a href="#update_distribution/4-to-update-a-web-distribution-using-the-cloudfront-api" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  To update a web distribution using the CloudFront API
+</h2>
+
 <ol>
 <li>Submit a
-<a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a> request to get the current configuration and an <code class="inline">Etag</code> header for the distribution.
+<a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistributionConfig.html">GetDistributionConfig</a> request to get the current configuration and an <code class="inline">Etag</code> header for the
+distribution.
 </li>
 </ol>
 <p>If you update the distribution again, you must get a new <code class="inline">Etag</code> header.</p>
@@ -2574,42 +2621,39 @@ in the <em>Amazon CloudFront Developer Guide</em>.</p>
 </ol>
 <p>When you edit the XML file, be aware of the following:</p>
 <p>   You must strip out the ETag parameter that is returned.</p>
-<p>   Additional fields are required when you update a distribution. There may be fields
-included in the XML file for features that you haven&#39;t configured for your distribution. This is
-expected and required to successfully update the distribution.</p>
-<p>   You can&#39;t change the value of <code class="inline">CallerReference</code>. If you try to change this value,
-CloudFront returns an <code class="inline">IllegalUpdate</code> error.</p>
-<p>   The new configuration replaces the existing configuration; the values that you
-specify in an <code class="inline">UpdateDistribution</code> request are not merged into your existing configuration. When
-you add, delete, or replace values in an element that allows multiple values (for example,
-<code class="inline">CNAME</code>), you must specify all of the values that you want to appear in the updated distribution.
-In addition, you must update the corresponding <code class="inline">Quantity</code> element.</p>
+<p>   Additional fields are required when you update a distribution.
+There may be fields included in the XML file for features that you haven&#39;t
+configured for your distribution. This is expected and required to successfully
+update the distribution.</p>
+<p>   You can&#39;t change the value of <code class="inline">CallerReference</code>. If you try to
+change this value, CloudFront returns an <code class="inline">IllegalUpdate</code> error.</p>
+<p>   The new configuration replaces the existing configuration; the
+values that you specify in an <code class="inline">UpdateDistribution</code> request are not merged into
+your existing configuration. When you add, delete, or replace values in an
+element that allows multiple values (for example, <code class="inline">CNAME</code>), you must specify all
+of the values that you want to appear in the updated distribution. In addition,
+you must update the corresponding <code class="inline">Quantity</code> element.</p>
 <ol start="3">
-<li><p>Submit an <code class="inline">UpdateDistribution</code> request to update the configuration for your
-distribution:</p>
+<li><p>Submit an <code class="inline">UpdateDistribution</code> request to update the
+configuration for your distribution:</p>
 <ul>
-<li>In the request body, include the XML document that you updated in Step
+<li><p>In the request body, include the XML document that you
+updated in Step 2. The request body must include an XML document with a
+<code class="inline">DistributionConfig</code> element.</p>
+</li>
+<li><p>Set the value of the HTTP <code class="inline">If-Match</code> header to the
+value of the <code class="inline">ETag</code> header that CloudFront returned when you submitted the
+<code class="inline">GetDistributionConfig</code> request in Step 1.</p>
 </li>
 </ul>
 </li>
-<li><p>The request body must include an XML document with a <code class="inline">DistributionConfig</code> element.</p>
-<ul>
-<li>Set the value of the HTTP <code class="inline">If-Match</code> header to the value of the <code class="inline">ETag</code>
-header that CloudFront returned when you submitted the <code class="inline">GetDistributionConfig</code> request in Step 1.
+<li><p>Review the response to the <code class="inline">UpdateDistribution</code> request to
+confirm that the configuration was successfully updated.</p>
 </li>
-</ul>
-<ol start="4">
-<li>Review the response to the <code class="inline">UpdateDistribution</code> request to confirm that the
-</li>
-</ol>
-</li>
-</ol>
-<p>configuration was successfully updated.</p>
-<ol start="5">
-<li>Optional: Submit a
+<li><p>Optional: Submit a
 <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_GetDistribution.html">GetDistribution</a>
-request to confirm that your changes have propagated. When propagation is complete, the value of
-<code class="inline">Status</code> is <code class="inline">Deployed</code>.
+request to confirm that your changes have propagated. When propagation is
+complete, the value of <code class="inline">Status</code> is <code class="inline">Deployed</code>.</p>
 </li>
 </ol>
 
@@ -2626,7 +2670,7 @@ request to confirm that your changes have propagated. When propagation is comple
     </a>
     <h1 class="signature">update_field_level_encryption_config(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1650" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1694" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2651,7 +2695,7 @@ request to confirm that your changes have propagated. When propagation is comple
     </a>
     <h1 class="signature">update_field_level_encryption_profile(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1681" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1725" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2676,7 +2720,7 @@ request to confirm that your changes have propagated. When propagation is comple
     </a>
     <h1 class="signature">update_origin_request_policy(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1724" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1770" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2687,17 +2731,19 @@ request to confirm that your changes have propagated. When propagation is comple
 
   <section class="docstring">
 <p>Updates an origin request policy configuration.</p>
-<p>When you update an origin request policy configuration, all the fields are updated with the values
-provided in the request. You cannot update some fields independent of others. To update an origin
-request policy configuration:</p>
+<p>When you update an origin request policy configuration, all the fields are
+updated with the values provided in the request. You cannot update some fields
+independent of others. To update an origin request policy configuration:</p>
 <ol>
-<li><p>Use <code class="inline">GetOriginRequestPolicyConfig</code> to get the current configuration.</p>
+<li><p>Use <code class="inline">GetOriginRequestPolicyConfig</code> to get the current
+configuration.</p>
 </li>
-<li><p>Locally modify the fields in the origin request policy configuration that you want
-to update.</p>
+<li><p>Locally modify the fields in the origin request policy
+configuration that you want to update.</p>
 </li>
-<li><p>Call <code class="inline">UpdateOriginRequestPolicy</code> by providing the entire origin request policy
-configuration, including the fields that you modified and those that you didn’t.</p>
+<li><p>Call <code class="inline">UpdateOriginRequestPolicy</code> by providing the entire origin
+request policy configuration, including the fields that you modified and those
+that you didn’t.</p>
 </li>
 </ol>
 
@@ -2714,7 +2760,7 @@ configuration, including the fields that you modified and those that you didn’
     </a>
     <h1 class="signature">update_public_key(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1757" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1803" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2740,7 +2786,7 @@ configuration, including the fields that you modified and those that you didn’
     </a>
     <h1 class="signature">update_realtime_log_config(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1802" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1850" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -2751,17 +2797,19 @@ configuration, including the fields that you modified and those that you didn’
 
   <section class="docstring">
 <p>Updates a real-time log configuration.</p>
-<p>When you update a real-time log configuration, all the parameters are updated with the values
-provided in the request. You cannot update some parameters independent of others. To update a
-real-time log configuration:</p>
+<p>When you update a real-time log configuration, all the parameters are updated
+with the values provided in the request. You cannot update some parameters
+independent of others. To update a real-time log configuration:</p>
 <ol>
-<li><p>Call <code class="inline">GetRealtimeLogConfig</code> to get the current real-time log configuration.</p>
+<li><p>Call <code class="inline">GetRealtimeLogConfig</code> to get the current real-time log
+configuration.</p>
 </li>
-<li><p>Locally modify the parameters in the real-time log configuration that you want to
-update.</p>
+<li><p>Locally modify the parameters in the real-time log configuration
+that you want to update.</p>
 </li>
-<li><p>Call this API (<code class="inline">UpdateRealtimeLogConfig</code>) by providing the entire real-time log
-configuration, including the parameters that you modified and those that you didn’t.</p>
+<li><p>Call this API (<code class="inline">UpdateRealtimeLogConfig</code>) by providing the entire
+real-time log configuration, including the parameters that you modified and
+those that you didn’t.</p>
 </li>
 </ol>
 <p>You cannot update a real-time log configuration’s <code class="inline">Name</code> or <code class="inline">ARN</code>.</p>
@@ -2779,7 +2827,7 @@ configuration, including the parameters that you modified and those that you did
     </a>
     <h1 class="signature">update_streaming_distribution(client, id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1812" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/cloud_front.ex#L1860" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

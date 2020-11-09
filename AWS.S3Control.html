@@ -10,7 +10,7 @@
     <title>AWS.S3Control — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -164,7 +164,8 @@ AWS.S3Control
 
   </div>
 
-    <div class="summary-synopsis"><p>This API action deletes an Amazon S3 on Outposts bucket&#39;s lifecycle configuration.</p></div>
+    <div class="summary-synopsis"><p>This API action deletes an Amazon S3 on Outposts bucket&#39;s lifecycle
+configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -236,7 +237,8 @@ AWS.S3Control
 
   </div>
 
-    <div class="summary-synopsis"><p>Indicates whether the specified access point currently has a policy that allows public access.</p></div>
+    <div class="summary-synopsis"><p>Indicates whether the specified access point currently has a policy that allows
+public access.</p></div>
 
 </div>
 <div class="summary-row">
@@ -254,7 +256,8 @@ AWS.S3Control
 
   </div>
 
-    <div class="summary-synopsis"><p>This API operation gets an Amazon S3 on Outposts bucket&#39;s lifecycle configuration.</p></div>
+    <div class="summary-synopsis"><p>This API operation gets an Amazon S3 on Outposts bucket&#39;s lifecycle
+configuration.</p></div>
 
 </div>
 <div class="summary-row">
@@ -299,7 +302,8 @@ AWS.S3Control
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a list of the access points currently associated with the specified bucket.</p></div>
+    <div class="summary-synopsis"><p>Returns a list of the access points currently associated with the specified
+bucket.</p></div>
 
 </div>
 <div class="summary-row">
@@ -308,8 +312,8 @@ AWS.S3Control
 
   </div>
 
-    <div class="summary-synopsis"><p>Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the
-AWS account making the request.</p></div>
+    <div class="summary-synopsis"><p>Lists current S3 Batch Operations jobs and jobs that have ended within the last
+30 days for the AWS account making the request.</p></div>
 
 </div>
 <div class="summary-row">
@@ -318,8 +322,8 @@ AWS account making the request.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns a list of all Outposts buckets in an Outposts that are owned by the authenticated sender
-of the request.</p></div>
+    <div class="summary-synopsis"><p>Returns a list of all Outposts buckets in an Outposts that are owned by the
+authenticated sender of the request.</p></div>
 
 </div>
 <div class="summary-row">
@@ -337,7 +341,8 @@ of the request.</p></div>
 
   </div>
 
-    <div class="summary-synopsis"><p>This API action puts a lifecycle configuration to an Amazon S3 on Outposts bucket.</p></div>
+    <div class="summary-synopsis"><p>This API action puts a lifecycle configuration to an Amazon S3 on Outposts
+bucket.</p></div>
 
 </div>
 <div class="summary-row">
@@ -420,7 +425,7 @@ Functions
     </a>
     <h1 class="signature">create_access_point(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L46" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L48" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -431,13 +436,17 @@ Functions
 
   <section class="docstring">
 <p>Creates an access point and associates it with the specified bucket.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3 Access Points</a> in the <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p><strong>Using this action with Amazon S3 on Outposts</strong></p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3 Access Points</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<h2 id="create_access_point/4-using-this-action-with-amazon-s3-on-outposts" class="section-heading">
+  <a href="#create_access_point/4-using-this-action-with-amazon-s3-on-outposts" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Using this action with Amazon S3 on Outposts
+</h2>
+
 <p>This action:</p>
 <ul>
-<li><p>Requires a virtual private cloud (VPC) configuration as S3 on Outposts only supports
-VPC style access points.</p>
+<li><p>Requires a virtual private cloud (VPC) configuration as S3 on
+Outposts only supports VPC style access points.</p>
 </li>
 <li><p>Does not support ACL on S3 on Outposts buckets.</p>
 </li>
@@ -446,11 +455,13 @@ VPC style access points.</p>
 <li><p>Does not support object lock for S3 on Outposts buckets.</p>
 </li>
 </ul>
-<p>For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <em>Amazon Simple Storage Service Developer Guide </em>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">
+<p>For more information, see <a href="AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <em>Amazon Simple Storage
+Service Developer Guide </em>.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html#API_control_CreateAccessPoint_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">CreateAccessPoint</code>:</p>
@@ -473,7 +484,7 @@ section below.</p>
     </a>
     <h1 class="signature">create_bucket(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L97" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L103" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -484,16 +495,18 @@ section below.</p>
 
   <section class="docstring">
 <p>This API operation creates an Amazon S3 on Outposts bucket.</p>
-<p>To create an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a> in the <em>Amazon
-Simple Storage Service API</em>.</p>
-<p>Creates a new Outposts bucket. By creating the bucket, you become the bucket owner. To create an
-Outposts bucket, you must have S3 on Outposts. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>Not every string is an acceptable bucket name. For information on bucket naming restrictions, see
-<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with Amazon S3 Buckets</a>.</p>
+<p>To create an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">Create Bucket</a>
+in the <em>Amazon Simple Storage Service API</em>.</p>
+<p>Creates a new Outposts bucket. By creating the bucket, you become the bucket
+owner. To create an Outposts bucket, you must have S3 on Outposts. For more
+information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+<em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>Not every string is an acceptable bucket name. For information on bucket naming
+restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Working with Amazon S3 Buckets</a>.</p>
 <p>S3 on Outposts buckets do not support</p>
 <ul>
-<li><p>ACLs. Instead, configure access point policies to manage access to buckets.</p>
+<li><p>ACLs. Instead, configure access point policies to manage access to
+buckets.</p>
 </li>
 <li><p>Public access.</p>
 </li>
@@ -502,21 +515,20 @@ Storage Service Developer Guide</em>.</p>
 <li><p>Bucket Location constraint</p>
 </li>
 </ul>
-<p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts
-endpoint hostname prefix and outpost-id in your API request, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html#API_control_CreateBucket_Examples">
+<p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3
+on Outposts endpoint hostname prefix and outpost-id in your API request, see the
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html#API_control_CreateBucket_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">CreateBucket</code> for Amazon S3 on Outposts:</p>
-<ul>
-<li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>     *
+<p>  <em>
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>     </em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a></p>
-<p><em>
+<p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a>     </em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateAccessPoint.html">CreateAccessPoint</a></p>
-<p>*
+<p>  *
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html">PutAccessPointPolicy</a></p>
-</li>
-</ul>
 
   </section>
 </section>
@@ -531,7 +543,7 @@ section below.</p>
     </a>
     <h1 class="signature">create_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L151" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L157" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -542,9 +554,9 @@ section below.</p>
 
   <section class="docstring">
 <p>S3 Batch Operations performs large-scale Batch Operations on Amazon S3 objects.</p>
-<p>Batch Operations can run a single operation or action on lists of Amazon S3 objects that you
-specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>Batch Operations can run a single operation or action on lists of Amazon S3
+objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>This operation creates a S3 Batch Operations job.</p>
 <p>Related actions include:</p>
 <p>  <em>
@@ -567,7 +579,7 @@ Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">delete_access_point(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L182" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L189" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -578,10 +590,11 @@ Simple Storage Service Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Deletes the specified access point.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the
 ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPoint.html#API_control_DeleteAccessPoint_Examples">
 Example</a>
 section below.</p>
@@ -605,7 +618,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_access_point_policy(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L209" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L217" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -616,10 +629,11 @@ section below.</p>
 
   <section class="docstring">
 <p>Deletes the access point policy for the specified access point.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteAccessPointPolicy.html#API_control_DeleteAccessPointPolicy_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">DeleteAccessPointPolicy</code>:</p>
@@ -640,7 +654,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_bucket(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L248" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L257" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -653,18 +667,23 @@ section below.</p>
 <p>This API operation deletes an Amazon S3 on Outposts bucket.</p>
 <p>To delete an S3 bucket, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Deletes the Amazon S3 on Outposts bucket. All objects (including all object versions and delete
-markers) in the bucket must be deleted before the bucket itself can be deleted. For more
-information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html#API_control_DeleteBucket_Examples">
+<p>Deletes the Amazon S3 on Outposts bucket. All objects (including all object
+versions and delete markers) in the bucket must be deleted before the bucket
+itself can be deleted. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+<em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html#API_control_DeleteBucket_Examples">
 Example</a>
 section below.</p>
-<p><strong>Related Resources</strong></p>
+<h2 id="delete_bucket/4-related-resources" class="section-heading">
+  <a href="#delete_bucket/4-related-resources" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Related Resources
+</h2>
+
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">CreateBucket</a>     </em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucket.html">GetBucket</a></p>
@@ -684,7 +703,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_bucket_lifecycle_configuration(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L292" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L306" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -694,26 +713,31 @@ section below.</p>
   </div>
 
   <section class="docstring">
-<p>This API action deletes an Amazon S3 on Outposts bucket&#39;s lifecycle configuration.</p>
+<p>This API action deletes an Amazon S3 on Outposts bucket&#39;s lifecycle
+configuration.</p>
 <p>To delete an S3 bucket&#39;s lifecycle configuration, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketLifecycle.html">DeleteBucketLifecycle</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Deletes the lifecycle configuration from the specified Outposts bucket. Amazon S3 on Outposts
-removes all the lifecycle configuration rules in the lifecycle subresource associated with the
-bucket. Your objects never expire, and Amazon S3 on Outposts no longer automatically deletes any
-objects on the basis of rules contained in the deleted lifecycle configuration. For more
-information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
+<p>Deletes the lifecycle configuration from the specified Outposts bucket. Amazon
+S3 on Outposts removes all the lifecycle configuration rules in the lifecycle
+subresource associated with the bucket. Your objects never expire, and Amazon S3
+on Outposts no longer automatically deletes any objects on the basis of rules
+contained in the deleted lifecycle configuration. For more information, see
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+<em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>To use this operation, you must have permission to perform the
-<code class="inline">s3outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner has this permission
-and the Outposts bucket owner can grant this permission to others.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">
+<code class="inline">s3outposts:DeleteLifecycleConfiguration</code> action. By default, the bucket owner
+has this permission and the Outposts bucket owner can grant this permission to
+others.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketLifecycleConfiguration.html#API_control_DeleteBucketLifecycleConfiguration_Examples">
 Example</a>
 section below.</p>
-<p>For more information about object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions"> Elements to Describe Lifecycle Actions</a>.</p>
+<p>For more information about object expiration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html#intro-lifecycle-rules-actions"> Elements to Describe Lifecycle
+Actions</a>.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>     </em>
@@ -732,7 +756,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_bucket_policy(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L339" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L358" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -745,23 +769,26 @@ section below.</p>
 <p>This API operation deletes an Amazon S3 on Outposts bucket policy.</p>
 <p>To delete an S3 bucket policy, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketPolicy.html">DeleteBucketPolicy</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>This implementation of the DELETE operation uses the policy subresource to delete the policy of a
-specified Amazon S3 on Outposts bucket. If you are using an identity other than the root user of
-the AWS account that owns the bucket, the calling identity must have the
-<code class="inline">s3outposts:DeleteBucketPolicy</code> permissions on the specified Outposts bucket and belong to the
-bucket owner&#39;s account to use this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>If you don&#39;t have <code class="inline">DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code class="inline">403 Access Denied</code> error.
-If you have the correct permissions, but you&#39;re not using an identity that belongs to the bucket
-owner&#39;s account, Amazon S3 returns a <code class="inline">405 Method Not Allowed</code> error.</p>
-<p>As a security precaution, the root user of the AWS account that owns a bucket can always use this
-operation, even if the policy explicitly denies the root user the ability to perform this action.</p>
-<p>For more information about bucket policies, see <a href=" https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples">
+<p>This implementation of the DELETE operation uses the policy subresource to
+delete the policy of a specified Amazon S3 on Outposts bucket. If you are using
+an identity other than the root user of the AWS account that owns the bucket,
+the calling identity must have the <code class="inline">s3outposts:DeleteBucketPolicy</code> permissions
+on the specified Outposts bucket and belong to the bucket owner&#39;s account to use
+this operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+<em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>If you don&#39;t have <code class="inline">DeleteBucketPolicy</code> permissions, Amazon S3 returns a <code class="inline">403 Access Denied</code> error. If you have the correct permissions, but you&#39;re not using
+an identity that belongs to the bucket owner&#39;s account, Amazon S3 returns a <code class="inline">405 Method Not Allowed</code> error.</p>
+<p>As a security precaution, the root user of the AWS account that owns a bucket
+can always use this operation, even if the policy explicitly denies the root
+user the ability to perform this action.</p>
+<p>For more information about bucket policies, see <a href="
+https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketPolicy.html#API_control_DeleteBucketPolicy_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">DeleteBucketPolicy</code>:</p>
@@ -782,7 +809,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_bucket_tagging(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L376" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L398" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -795,15 +822,18 @@ section below.</p>
 <p>This API operation deletes an Amazon S3 on Outposts bucket&#39;s tags.</p>
 <p>To delete an S3 bucket tags, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketTagging.html">DeleteBucketTagging</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>To use this operation, you must have permission to perform the <code class="inline">PutBucketTagging</code> action. By
-default, the bucket owner has this permission and can grant this permission to others.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples">
+<p>Deletes the tags from the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using
+Amazon S3 on
+Outposts</a> in
+<em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>To use this operation, you must have permission to perform the
+<code class="inline">PutBucketTagging</code> action. By default, the bucket owner has this permission and
+can grant this permission to others.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucketTagging.html#API_control_DeleteBucketTagging_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">DeleteBucketTagging</code>:</p>
@@ -824,7 +854,7 @@ section below.</p>
     </a>
     <h1 class="signature">delete_job_tagging(client, job_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L403" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L426" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -835,8 +865,9 @@ section below.</p>
 
   <section class="docstring">
 <p>Removes the entire tag set from the specified S3 Batch Operations job.</p>
-<p>To use this operation, you must have permission to perform the <code class="inline">s3:DeleteJobTagging</code> action. For
-more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using tags</a>
+<p>To use this operation, you must have permission to perform the
+<code class="inline">s3:DeleteJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using
+tags</a>
 in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
@@ -858,7 +889,7 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">delete_public_access_block(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L425" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L448" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -888,7 +919,7 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">describe_job(client, job_id, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L452" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L475" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -899,8 +930,8 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Retrieves the configuration parameters and status for a Batch Operations job.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>     </em>
@@ -922,7 +953,7 @@ Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">get_access_point(client, name, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L483" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L507" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -933,10 +964,11 @@ Simple Storage Service Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Returns configuration information about the specified access point.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">GetAccessPoint</code>:</p>
@@ -959,7 +991,7 @@ section below.</p>
     </a>
     <h1 class="signature">get_access_point_policy(client, name, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L504" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L528" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -988,7 +1020,7 @@ section below.</p>
     </a>
     <h1 class="signature">get_access_point_policy_status(client, name, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L522" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L548" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -998,8 +1030,10 @@ section below.</p>
   </div>
 
   <section class="docstring">
-<p>Indicates whether the specified access point currently has a policy that allows public access.</p>
-<p>For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3 Access Points</a> in
+<p>Indicates whether the specified access point currently has a policy that allows
+public access.</p>
+<p>For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points.html">Managing Data Access with Amazon S3 Access
+Points</a> in
 the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 
   </section>
@@ -1015,7 +1049,7 @@ the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">get_bucket(client, bucket, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L548" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L575" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1026,16 +1060,14 @@ the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Gets an Amazon S3 on Outposts bucket.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>The following actions are related to <code class="inline">GetBucket</code> for Amazon S3 on Outposts:</p>
-<ul>
-<li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>     *
+<p>  <em>
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>     </em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_CreateBucket.html">CreateBucket</a></p>
-<p>*
+<p>  *
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_DeleteBucket.html">DeleteBucket</a></p>
-</li>
-</ul>
 
   </section>
 </section>
@@ -1050,7 +1082,7 @@ Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">get_bucket_lifecycle_configuration(client, bucket, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L601" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L632" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1060,30 +1092,34 @@ Storage Service Developer Guide</em>.</p>
   </div>
 
   <section class="docstring">
-<p>This API operation gets an Amazon S3 on Outposts bucket&#39;s lifecycle configuration.</p>
+<p>This API operation gets an Amazon S3 on Outposts bucket&#39;s lifecycle
+configuration.</p>
 <p>To get an S3 bucket&#39;s lifecycle configuration, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Returns the lifecycle configuration information set on the Outposts bucket. For more information,
-see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> and for information
-about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle Management</a> in <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>Returns the lifecycle configuration information set on the Outposts bucket. For
+more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> and
+for information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html"> Object Lifecycle Management</a>
+in <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>To use this operation, you must have permission to perform the
-<code class="inline">s3outposts:GetLifecycleConfiguration</code> action. The Outposts bucket owner has this permission, by
-default. The bucket owner can grant this permission to others. For more information about
-permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a>
+<code class="inline">s3outposts:GetLifecycleConfiguration</code> action. The Outposts bucket owner has
+this permission, by default. The bucket owner can grant this permission to
+others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource
+Operations</a>
 and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">
 Example</a>
 section below.</p>
 <p><code class="inline">GetBucketLifecycleConfiguration</code> has the following special error:</p>
 <ul>
 <li><p>Error code: <code class="inline">NoSuchLifecycleConfiguration</code></p>
 <ul>
-<li><p>Description: The lifecycle configuration does not exist.</p>
+<li><p>Description: The lifecycle configuration does not
+exist.</p>
 </li>
 <li><p>HTTP Status Code: 404 Not Found</p>
 </li>
@@ -1110,7 +1146,7 @@ section below.</p>
     </a>
     <h1 class="signature">get_bucket_policy(client, bucket, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L651" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L688" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1123,31 +1159,35 @@ section below.</p>
 <p>This API action gets a bucket policy for an Amazon S3 on Outposts bucket.</p>
 <p>To get a policy for an S3 bucket, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketPolicy.html">GetBucketPolicy</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Returns the policy of a specified Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in the <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>If you are using an identity other than the root user of the AWS account that owns the bucket, the
-calling identity must have the <code class="inline">GetBucketPolicy</code> permissions on the specified bucket and belong to
-the bucket owner&#39;s account in order to use this operation.</p>
-<p>If you don&#39;t have <code class="inline">s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns a <code class="inline">403 Access Denied</code> error. If you have the correct permissions, but you&#39;re not using an identity that belongs
-to the bucket owner&#39;s account, Amazon S3 returns a <code class="inline">405 Method Not Allowed</code> error.</p>
-<p>As a security precaution, the root user of the AWS account that owns a bucket can always use this
-operation, even if the policy explicitly denies the root user the ability to perform this action.</p>
+<p>Returns the policy of a specified Outposts bucket. For more information, see
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>If you are using an identity other than the root user of the AWS account that
+owns the bucket, the calling identity must have the <code class="inline">GetBucketPolicy</code>
+permissions on the specified bucket and belong to the bucket owner&#39;s account in
+order to use this operation.</p>
+<p>If you don&#39;t have <code class="inline">s3outposts:GetBucketPolicy</code> permissions, Amazon S3 returns a
+<code class="inline">403 Access Denied</code> error. If you have the correct permissions, but you&#39;re not
+using an identity that belongs to the bucket owner&#39;s account, Amazon S3 returns
+a <code class="inline">405 Method Not Allowed</code> error.</p>
+<p>As a security precaution, the root user of the AWS account that owns a bucket
+can always use this operation, even if the policy explicitly denies the root
+user the ability to perform this action.</p>
 <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">GetBucketPolicy</code>:</p>
-<ul>
-<li><p><a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>     *
+<p>  <em>
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>     </em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketPolicy.html">PutBucketPolicy</a></p>
-<p>*
+<p>  *
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteBucketPolicy.html">DeleteBucketPolicy</a></p>
-</li>
-</ul>
 
   </section>
 </section>
@@ -1162,7 +1202,7 @@ section below.</p>
     </a>
     <h1 class="signature">get_bucket_tagging(client, bucket, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L695" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L736" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1175,24 +1215,28 @@ section below.</p>
 <p>This API operation gets an Amazon S3 on Outposts bucket&#39;s tags.</p>
 <p>To get an S3 bucket tags, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketTagging.html">GetBucketTagging</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Returns the tag set associated with the Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon
-S3 on Outposts</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
-<p>To use this operation, you must have permission to perform the <code class="inline">GetBucketTagging</code> action. By
-default, the bucket owner has this permission and can grant this permission to others.</p>
+<p>Returns the tag set associated with the Outposts bucket. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>To use this operation, you must have permission to perform the
+<code class="inline">GetBucketTagging</code> action. By default, the bucket owner has this permission and
+can grant this permission to others.</p>
 <p><code class="inline">GetBucketTagging</code> has the following special error:</p>
 <ul>
 <li><p>Error code: <code class="inline">NoSuchTagSetError</code></p>
 <ul>
-<li>Description: There is no tag set associated with the bucket.
+<li>Description: There is no tag set associated with the
+bucket.
 </li>
 </ul>
 </li>
 </ul>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetBucketTagging.html#API_control_GetBucketTagging_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">GetBucketTagging</code>:</p>
@@ -1213,7 +1257,7 @@ section below.</p>
     </a>
     <h1 class="signature">get_job_tagging(client, job_id, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L723" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L765" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1224,8 +1268,9 @@ section below.</p>
 
   <section class="docstring">
 <p>Returns the tags on an S3 Batch Operations job.</p>
-<p>To use this operation, you must have permission to perform the <code class="inline">s3:GetJobTagging</code> action. For more
-information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using tags</a>
+<p>To use this operation, you must have permission to perform the
+<code class="inline">s3:GetJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using
+tags</a>
 in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
@@ -1247,7 +1292,7 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">get_public_access_block(client, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L746" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L788" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1283,7 +1328,7 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">list_access_points(client, bucket \\ nil, max_results \\ nil, next_token \\ nil, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L781" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L826" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1293,14 +1338,17 @@ in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a list of the access points currently associated with the specified bucket.</p>
-<p>You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000
-access points (or the number specified in <code class="inline">maxResults</code>, whichever is less), the response will
-include a continuation token that you can use to list the additional access points.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">
+<p>Returns a list of the access points currently associated with the specified
+bucket.</p>
+<p>You can retrieve up to 1000 access points per call. If the specified bucket has
+more than 1,000 access points (or the number specified in <code class="inline">maxResults</code>,
+whichever is less), the response will include a continuation token that you can
+use to list the additional access points.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_GetAccessPoint.html#API_control_GetAccessPoint_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">ListAccessPoints</code>:</p>
@@ -1329,7 +1377,7 @@ section below.</p>
     </a>
     <h1 class="signature">list_jobs(client, job_statuses \\ nil, max_results \\ nil, next_token \\ nil, account_id, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L825" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L870" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1339,10 +1387,10 @@ section below.</p>
   </div>
 
   <section class="docstring">
-<p>Lists current S3 Batch Operations jobs and jobs that have ended within the last 30 days for the
-AWS account making the request.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>Lists current S3 Batch Operations jobs and jobs that have ended within the last
+30 days for the AWS account making the request.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>     </em>
@@ -1370,7 +1418,7 @@ Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">list_regional_buckets(client, max_results \\ nil, next_token \\ nil, account_id, outpost_id \\ nil, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L864" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L910" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1380,12 +1428,13 @@ Simple Storage Service Developer Guide</em>.</p>
   </div>
 
   <section class="docstring">
-<p>Returns a list of all Outposts buckets in an Outposts that are owned by the authenticated sender
-of the request.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on Outposts
-endpoint hostname prefix and outpost-id in your API request, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples">
+<p>Returns a list of all Outposts buckets in an Outposts that are owned by the
+authenticated sender of the request.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on Outposts</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>For an example of the request syntax for Amazon S3 on Outposts that uses the S3
+on Outposts endpoint hostname prefix and outpost-id in your API request, see the
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_ListRegionalBuckets.html#API_control_ListRegionalBuckets_Examples">
 Example</a>
 section below.</p>
 
@@ -1402,7 +1451,7 @@ section below.</p>
     </a>
     <h1 class="signature">put_access_point_policy(client, name, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L910" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L957" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1413,12 +1462,13 @@ section below.</p>
 
   <section class="docstring">
 <p>Associates an access policy with the specified access point.</p>
-<p>Each access point can have only one policy, so a request made to this API replaces any existing
-policy associated with the specified access point.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples">
+<p>Each access point can have only one policy, so a request made to this API
+replaces any existing policy associated with the specified access point.</p>
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutAccessPointPolicy.html#API_control_PutAccessPointPolicy_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">PutAccessPointPolicy</code>:</p>
@@ -1439,7 +1489,7 @@ section below.</p>
     </a>
     <h1 class="signature">put_bucket_lifecycle_configuration(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L945" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L995" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1449,17 +1499,20 @@ section below.</p>
   </div>
 
   <section class="docstring">
-<p>This API action puts a lifecycle configuration to an Amazon S3 on Outposts bucket.</p>
+<p>This API action puts a lifecycle configuration to an Amazon S3 on Outposts
+bucket.</p>
 <p>To put a lifecycle configuration to an S3 bucket, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Creates a new lifecycle configuration for the Outposts bucket or replaces an existing lifecycle
-configuration. Outposts buckets can only support a lifecycle that deletes objects after a certain
-period of time. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for Amazon S3 on
+<p>Creates a new lifecycle configuration for the Outposts bucket or replaces an
+existing lifecycle configuration. Outposts buckets can only support a lifecycle
+that deletes objects after a certain period of time. For more information, see
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Managing Lifecycle Permissions for Amazon S3 on
 Outposts</a>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketLifecycleConfiguration.html#API_control_PutBucketLifecycleConfiguration_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">PutBucketLifecycleConfiguration</code>:</p>
@@ -1480,7 +1533,7 @@ section below.</p>
     </a>
     <h1 class="signature">put_bucket_policy(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L992" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1047" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1493,22 +1546,25 @@ section below.</p>
 <p>This API action puts a bucket policy to an Amazon S3 on Outposts bucket.</p>
 <p>To put a policy on an S3 bucket, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketPolicy.html">PutBucketPolicy</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Applies an Amazon S3 bucket policy to an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon
-S3 on Outposts</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
-<p>If you are using an identity other than the root user of the AWS account that owns the Outposts
-bucket, the calling identity must have the <code class="inline">PutBucketPolicy</code> permissions on the specified Outposts
-bucket and belong to the bucket owner&#39;s account in order to use this operation.</p>
-<p>If you don&#39;t have <code class="inline">PutBucketPolicy</code> permissions, Amazon S3 returns a <code class="inline">403 Access Denied</code> error. If
-you have the correct permissions, but you&#39;re not using an identity that belongs to the bucket
-owner&#39;s account, Amazon S3 returns a <code class="inline">405 Method Not Allowed</code> error.</p>
-<p>As a security precaution, the root user of the AWS account that owns a bucket can always use this
-operation, even if the policy explicitly denies the root user the ability to perform this action.</p>
+<p>Applies an Amazon S3 bucket policy to an Outposts bucket. For more information,
+see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
+Outposts</a> in
+the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>If you are using an identity other than the root user of the AWS account that
+owns the Outposts bucket, the calling identity must have the <code class="inline">PutBucketPolicy</code>
+permissions on the specified Outposts bucket and belong to the bucket owner&#39;s
+account in order to use this operation.</p>
+<p>If you don&#39;t have <code class="inline">PutBucketPolicy</code> permissions, Amazon S3 returns a <code class="inline">403 Access Denied</code> error. If you have the correct permissions, but you&#39;re not using an
+identity that belongs to the bucket owner&#39;s account, Amazon S3 returns a <code class="inline">405 Method Not Allowed</code> error.</p>
+<p>As a security precaution, the root user of the AWS account that owns a bucket
+can always use this operation, even if the policy explicitly denies the root
+user the ability to perform this action.</p>
 <p>For more information about bucket policies, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using Bucket Policies and User Policies</a>.</p>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketPolicy.html#API_control_PutBucketPolicy_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">PutBucketPolicy</code>:</p>
@@ -1529,7 +1585,7 @@ section below.</p>
     </a>
     <h1 class="signature">put_bucket_tagging(client, bucket, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1066" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1125" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1542,58 +1598,62 @@ section below.</p>
 <p>This API action puts tags on an Amazon S3 on Outposts bucket.</p>
 <p>To put tags on an S3 bucket, see
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketTagging.html">PutBucketTagging</a> in the <em>Amazon Simple Storage Service API</em>.</p>
-<p>Sets the tags for an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3 on
-Outposts</a> in the <em>Amazon Simple
-Storage Service Developer Guide</em>.</p>
-<p>Use tags to organize your AWS bill to reflect your own cost structure. To do this, sign up to get
-your AWS account bill with tag key values included. Then, to see the cost of combined resources,
-organize your billing information according to resources with the same tag key values. For
-example, you can tag several resources with a specific application name, and then organize your
-billing information to see the total cost of that application across several services. For more
-information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and Tagging</a>.</p>
-<p>Within a bucket, if you add a tag that has the same key as an existing tag, the new value
-overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using Cost Allocation in Amazon S3 Bucket Tags</a>.</p>
-<p>To use this operation, you must have permissions to perform the <code class="inline">s3outposts:PutBucketTagging</code>
-action. The Outposts bucket owner has this permission by default and can grant this permission to
-others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"> Permissions Related to Bucket Subresource Operations</a>
+<p>Sets the tags for an Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3onOutposts.html">Using Amazon S3
+on Outposts</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
+<p>Use tags to organize your AWS bill to reflect your own cost structure. To do
+this, sign up to get your AWS account bill with tag key values included. Then,
+to see the cost of combined resources, organize your billing information
+according to resources with the same tag key values. For example, you can tag
+several resources with a specific application name, and then organize your
+billing information to see the total cost of that application across several
+services. For more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Cost Allocation and Tagging</a>.</p>
+<p>Within a bucket, if you add a tag that has the same key as an existing tag, the
+new value overwrites the old value. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CostAllocTagging.html">Using Cost Allocation in Amazon S3 Bucket
+Tags</a>.</p>
+<p>To use this operation, you must have permissions to perform the
+<code class="inline">s3outposts:PutBucketTagging</code> action. The Outposts bucket owner has this
+permission by default and can grant this permission to others. For more
+information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"> Permissions Related to Bucket Subresource Operations</a>
 and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>
 <p><code class="inline">PutBucketTagging</code> has the following special errors:</p>
 <ul>
 <li><p>Error code: <code class="inline">InvalidTagError</code></p>
 <ul>
-<li>Description: The tag provided was not a valid tag. This error can occur
-if the tag did not pass input validation. For information about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">
-User-Defined Tag
-Restrictions</a>
+<li>Description: The tag provided was not a valid tag.
+This error can occur if the tag did not pass input validation. For information
+about tag restrictions, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html"> User-Defined Tag Restrictions</a>
 and <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/aws-tag-restrictions.html"> AWS-Generated Cost Allocation Tag Restrictions</a>.
 </li>
 </ul>
 </li>
 <li><p>Error code: <code class="inline">MalformedXMLError</code></p>
 <ul>
-<li>Description: The XML provided does not match the schema.
+<li>Description: The XML provided does not match the
+schema.
 </li>
 </ul>
 </li>
 <li><p>Error code: <code class="inline">OperationAbortedError</code></p>
 <ul>
-<li>Description: A conflicting conditional operation is currently in
-progress against this resource. Try again.
+<li>Description: A conflicting conditional operation is
+currently in progress against this resource. Try again.
 </li>
 </ul>
 </li>
 <li><p>Error code: <code class="inline">InternalError</code></p>
 <ul>
-<li>Description: The service was unable to apply the provided tag to the
-bucket.
+<li>Description: The service was unable to apply the
+provided tag to the bucket.
 </li>
 </ul>
 </li>
 </ul>
-<p>All Amazon S3 on Outposts REST API requests for this action require an additional parameter of
-outpost-id to be passed with the request and an S3 on Outposts endpoint hostname prefix instead of
-s3-control. For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-Outposts endpoint hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">
+<p>All Amazon S3 on Outposts REST API requests for this action require an
+additional parameter of outpost-id to be passed with the request and an S3 on
+Outposts endpoint hostname prefix instead of s3-control. For an example of the
+request syntax for Amazon S3 on Outposts that uses the S3 on Outposts endpoint
+hostname prefix and the outpost-id derived using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API__control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">
 Example</a>
 section below.</p>
 <p>The following actions are related to <code class="inline">PutBucketTagging</code>:</p>
@@ -1614,7 +1674,7 @@ section below.</p>
     </a>
     <h1 class="signature">put_job_tagging(client, job_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1122" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1188" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1625,41 +1685,48 @@ section below.</p>
 
   <section class="docstring">
 <p>Sets the supplied tag-set on an S3 Batch Operations job.</p>
-<p>A tag is a key-value pair. You can associate S3 Batch Operations tags with any job by sending a
-PUT request against the tagging subresource that is associated with the job. To modify the
-existing tag set, you can either replace the existing tag set entirely, or make changes within the
-existing tag set by retrieving the existing tag set using
-<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify that tag set, and use this API action to replace the tag set with the one you modified. For
-more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using
+<p>A tag is a key-value pair. You can associate S3 Batch Operations tags with any
+job by sending a PUT request against the tagging subresource that is associated
+with the job. To modify the existing tag set, you can either replace the
+existing tag set entirely, or make changes within the existing tag set by
+retrieving the existing tag set using
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetJobTagging.html">GetJobTagging</a>, modify that tag set, and use this API action to replace the tag set with the one
+you modified. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs
+using
 tags</a>
 in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <ul>
-<li><p>If you send this request with an empty tag set, Amazon S3 deletes the existing tag
-set on the Batch Operations job. If you use this method, you are charged for a Tier 1 Request
-(PUT). For more information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.     * For deleting existing tags for your Batch Operations job, a
-<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a>
-request is preferred because it achieves the same result without incurring charges.</p>
+<li><p>If you send this request with an empty tag set, Amazon S3 deletes
+the existing tag set on the Batch Operations job. If you use this method, you
+are charged for a Tier 1 Request (PUT). For more information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p>
+</li>
+<li><p>For deleting existing tags for your Batch Operations job, a
+<a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteJobTagging.html">DeleteJobTagging</a> request is preferred because it achieves the same result without incurring
+charges.</p>
 </li>
 <li><p>A few things to consider about using tags:</p>
 <ul>
-<li><p>Amazon S3 limits the maximum number of tags to 50 tags per job.</p>
+<li><p>Amazon S3 limits the maximum number of tags to 50 tags
+per job.</p>
 </li>
-<li><p>You can associate up to 50 tags with a job as long as they have unique
-tag keys.</p>
+<li><p>You can associate up to 50 tags with a job as long as
+they have unique tag keys.</p>
 </li>
-<li><p>A tag key can be up to 128 Unicode characters in length, and tag values
-can be up to 256 Unicode characters in length.</p>
+<li><p>A tag key can be up to 128 Unicode characters in
+length, and tag values can be up to 256 Unicode characters in length.</p>
 </li>
 <li><p>The key and values are case sensitive.</p>
 </li>
-<li><p>For tagging-related restrictions related to characters and encodings,
-see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a>
+<li><p>For tagging-related restrictions related to characters
+and encodings, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag
+Restrictions</a>
 in the <em>AWS Billing and Cost Management User Guide</em>.</p>
 </li>
 </ul>
 </li>
 </ul>
-<p>To use this operation, you must have permission to perform the <code class="inline">s3:PutJobTagging</code> action.</p>
+<p>To use this operation, you must have permission to perform the
+<code class="inline">s3:PutJobTagging</code> action.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreatJob</a>     </em>
@@ -1680,7 +1747,7 @@ in the <em>AWS Billing and Cost Management User Guide</em>.</p>
     </a>
     <h1 class="signature">put_public_access_block(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1144" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1210" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1710,7 +1777,7 @@ in the <em>AWS Billing and Cost Management User Guide</em>.</p>
     </a>
     <h1 class="signature">update_job_priority(client, job_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1171" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1237" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1721,8 +1788,8 @@ in the <em>AWS Billing and Cost Management User Guide</em>.</p>
 
   <section class="docstring">
 <p>Updates an existing S3 Batch Operations job&#39;s priority.</p>
-<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>     </em>
@@ -1744,7 +1811,7 @@ Simple Storage Service Developer Guide</em>.</p>
     </a>
     <h1 class="signature">update_job_status(client, job_id, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1203" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/s3_control.ex#L1269" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -1755,9 +1822,9 @@ Simple Storage Service Developer Guide</em>.</p>
 
   <section class="docstring">
 <p>Updates the status for the specified job.</p>
-<p>Use this operation to confirm that you want to run a job or to cancel an existing job. For more
-information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a> in the <em>Amazon
-Simple Storage Service Developer Guide</em>.</p>
+<p>Use this operation to confirm that you want to run a job or to cancel an
+existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-basics.html">S3 Batch Operations</a>
+in the <em>Amazon Simple Storage Service Developer Guide</em>.</p>
 <p>Related actions include:</p>
 <p>  <em>
 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateJob.html">CreateJob</a>     </em>

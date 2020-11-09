@@ -10,7 +10,7 @@
     <title>AWS.Batch — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -87,18 +87,21 @@ AWS.Batch
 
         <section id="moduledoc">
 <p>AWS Batch enables you to run batch computing workloads on the AWS Cloud.</p>
-<p>Batch computing is a common way for developers, scientists, and engineers to access large amounts
-of compute resources, and AWS Batch removes the undifferentiated heavy lifting of configuring and
-managing the required infrastructure. AWS Batch will be familiar to users of traditional batch
-computing software. This service can efficiently provision resources in response to jobs submitted
-in order to eliminate capacity constraints, reduce compute costs, and deliver results quickly.</p>
-<p>As a fully managed service, AWS Batch enables developers, scientists, and engineers to run batch
-computing workloads of any scale. AWS Batch automatically provisions compute resources and
-optimizes the workload distribution based on the quantity and scale of the workloads. With AWS
-Batch, there is no need to install or manage batch computing software, which allows you to focus
-on analyzing results and solving problems. AWS Batch reduces operational complexities, saves time,
-and reduces costs, which makes it easy for developers, scientists, and engineers to run their
-batch jobs in the AWS Cloud.</p>
+<p>Batch computing is a common way for developers, scientists, and engineers to
+access large amounts of compute resources, and AWS Batch removes the
+undifferentiated heavy lifting of configuring and managing the required
+infrastructure. AWS Batch will be familiar to users of traditional batch
+computing software. This service can efficiently provision resources in response
+to jobs submitted in order to eliminate capacity constraints, reduce compute
+costs, and deliver results quickly.</p>
+<p>As a fully managed service, AWS Batch enables developers, scientists, and
+engineers to run batch computing workloads of any scale. AWS Batch automatically
+provisions compute resources and optimizes the workload distribution based on
+the quantity and scale of the workloads. With AWS Batch, there is no need to
+install or manage batch computing software, which allows you to focus on
+analyzing results and solving problems. AWS Batch reduces operational
+complexities, saves time, and reduces costs, which makes it easy for developers,
+scientists, and engineers to run their batch jobs in the AWS Cloud.</p>
 
         </section>
 
@@ -313,7 +316,7 @@ Functions
     </a>
     <h1 class="signature">cancel_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L30" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L34" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -324,9 +327,10 @@ Functions
 
   <section class="docstring">
 <p>Cancels a job in an AWS Batch job queue.</p>
-<p>Jobs that are in the <code class="inline">SUBMITTED</code>, <code class="inline">PENDING</code>, or <code class="inline">RUNNABLE</code> state are cancelled. Jobs that have
-progressed to <code class="inline">STARTING</code> or <code class="inline">RUNNING</code> are not cancelled (but the API operation still succeeds,
-even if no job is cancelled); these jobs must be terminated with the <code class="inline">TerminateJob</code> operation.</p>
+<p>Jobs that are in the <code class="inline">SUBMITTED</code>, <code class="inline">PENDING</code>, or <code class="inline">RUNNABLE</code> state are cancelled.
+Jobs that have progressed to <code class="inline">STARTING</code> or <code class="inline">RUNNING</code> are not cancelled (but the
+API operation still succeeds, even if no job is cancelled); these jobs must be
+terminated with the <code class="inline">TerminateJob</code> operation.</p>
 
   </section>
 </section>
@@ -341,7 +345,7 @@ even if no job is cancelled); these jobs must be terminated with the <code class
     </a>
     <h1 class="signature">create_compute_environment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L76" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L83" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -353,28 +357,31 @@ even if no job is cancelled); these jobs must be terminated with the <code class
   <section class="docstring">
 <p>Creates an AWS Batch compute environment.</p>
 <p>You can create <code class="inline">MANAGED</code> or <code class="inline">UNMANAGED</code> compute environments.</p>
-<p>In a managed compute environment, AWS Batch manages the capacity and instance types of the compute
-resources within the environment. This is based on the compute resource specification that you
-define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a> that you
-specify when you create the compute environment. You can choose to use Amazon EC2 On-Demand
-Instances or Spot Instances in your managed compute environment. You can optionally set a maximum
-price so that Spot Instances only launch when the Spot Instance price is below a specified
-percentage of the On-Demand price.</p>
+<p>In a managed compute environment, AWS Batch manages the capacity and instance
+types of the compute resources within the environment. This is based on the
+compute resource specification that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch template</a>
+that you specify when you create the compute environment. You can choose to use
+Amazon EC2 On-Demand Instances or Spot Instances in your managed compute
+environment. You can optionally set a maximum price so that Spot Instances only
+launch when the Spot Instance price is below a specified percentage of the
+On-Demand price.</p>
 <p>Multi-node parallel jobs are not supported on Spot Instances.</p>
-<p>In an unmanaged compute environment, you can manage your own compute resources. This provides more
-compute resource configuration options, such as using a custom AMI, but you must ensure that your
-AMI meets the Amazon ECS container instance AMI specification. For more information, see
-<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance AMIs</a> in
-the <em>Amazon Elastic Container Service Developer Guide</em>. After you have created your unmanaged
-compute environment, you can use the <code class="inline">DescribeComputeEnvironments</code> operation to find the Amazon
-ECS cluster that is associated with it. Then, manually launch your container instances into that
+<p>In an unmanaged compute environment, you can manage your own compute resources.
+This provides more compute resource configuration options, such as using a
+custom AMI, but you must ensure that your AMI meets the Amazon ECS container
+instance AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance AMIs</a>
+in the <em>Amazon Elastic Container Service Developer Guide</em>. After you have
+created your unmanaged compute environment, you can use the
+<code class="inline">DescribeComputeEnvironments</code> operation to find the Amazon ECS cluster that is
+associated with it. Then, manually launch your container instances into that
 Amazon ECS cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an Amazon ECS Container Instance</a>
 in the <em>Amazon Elastic Container Service Developer Guide</em>.</p>
-<p>AWS Batch does not upgrade the AMIs in a compute environment after it is created (for example,
-when a newer version of the Amazon ECS-optimized AMI is available). You are responsible for the
-management of the guest operating system (including updates and security patches) and any
-additional application software or utilities that you install on the compute resources. To use a
-new AMI for your AWS Batch jobs:</p>
+<p>AWS Batch does not upgrade the AMIs in a compute environment after it is created
+(for example, when a newer version of the Amazon ECS-optimized AMI is
+available). You are responsible for the management of the guest operating system
+(including updates and security patches) and any additional application software
+or utilities that you install on the compute resources. To use a new AMI for
+your AWS Batch jobs:</p>
 <p>   Create a new compute environment with the new AMI.</p>
 <p>   Add the compute environment to an existing job queue.</p>
 <p>   Remove the old compute environment from your job queue.</p>
@@ -393,7 +400,7 @@ new AMI for your AWS Batch jobs:</p>
     </a>
     <h1 class="signature">create_job_queue(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L94" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L102" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -404,12 +411,13 @@ new AMI for your AWS Batch jobs:</p>
 
   <section class="docstring">
 <p>Creates an AWS Batch job queue.</p>
-<p>When you create a job queue, you associate one or more compute environments to the queue and
-assign an order of preference for the compute environments.</p>
-<p>You also set a priority to the job queue that determines the order in which the AWS Batch
-scheduler places jobs onto its associated compute environments. For example, if a compute
-environment is associated with more than one job queue, the job queue with a higher priority is
-given preference for scheduling jobs to that compute environment.</p>
+<p>When you create a job queue, you associate one or more compute environments to
+the queue and assign an order of preference for the compute environments.</p>
+<p>You also set a priority to the job queue that determines the order in which the
+AWS Batch scheduler places jobs onto its associated compute environments. For
+example, if a compute environment is associated with more than one job queue,
+the job queue with a higher priority is given preference for scheduling jobs to
+that compute environment.</p>
 
   </section>
 </section>
@@ -424,7 +432,7 @@ given preference for scheduling jobs to that compute environment.</p>
     </a>
     <h1 class="signature">delete_compute_environment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L108" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L116" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -435,9 +443,9 @@ given preference for scheduling jobs to that compute environment.</p>
 
   <section class="docstring">
 <p>Deletes an AWS Batch compute environment.</p>
-<p>Before you can delete a compute environment, you must set its state to <code class="inline">DISABLED</code> with the
-<code class="inline">UpdateComputeEnvironment</code> API operation and disassociate it from any job queues with the
-<code class="inline">UpdateJobQueue</code> API operation.</p>
+<p>Before you can delete a compute environment, you must set its state to
+<code class="inline">DISABLED</code> with the <code class="inline">UpdateComputeEnvironment</code> API operation and disassociate it
+from any job queues with the <code class="inline">UpdateJobQueue</code> API operation.</p>
 
   </section>
 </section>
@@ -452,7 +460,7 @@ given preference for scheduling jobs to that compute environment.</p>
     </a>
     <h1 class="signature">delete_job_queue(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L124" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L132" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -463,10 +471,10 @@ given preference for scheduling jobs to that compute environment.</p>
 
   <section class="docstring">
 <p>Deletes the specified job queue.</p>
-<p>You must first disable submissions for a queue with the <code class="inline">UpdateJobQueue</code> operation. All jobs in
-the queue are terminated when you delete a job queue.</p>
-<p>It is not necessary to disassociate compute environments from a queue before submitting a
-<code class="inline">DeleteJobQueue</code> request.</p>
+<p>You must first disable submissions for a queue with the <code class="inline">UpdateJobQueue</code>
+operation. All jobs in the queue are terminated when you delete a job queue.</p>
+<p>It is not necessary to disassociate compute environments from a queue before
+submitting a <code class="inline">DeleteJobQueue</code> request.</p>
 
   </section>
 </section>
@@ -481,7 +489,7 @@ the queue are terminated when you delete a job queue.</p>
     </a>
     <h1 class="signature">deregister_job_definition(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L136" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L144" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -507,7 +515,7 @@ the queue are terminated when you delete a job queue.</p>
     </a>
     <h1 class="signature">describe_compute_environments(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L150" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L158" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -518,9 +526,9 @@ the queue are terminated when you delete a job queue.</p>
 
   <section class="docstring">
 <p>Describes one or more of your compute environments.</p>
-<p>If you are using an unmanaged compute environment, you can use the <code class="inline">DescribeComputeEnvironment</code>
-operation to determine the <code class="inline">ecsClusterArn</code> that you should launch your Amazon ECS container
-instances into.</p>
+<p>If you are using an unmanaged compute environment, you can use the
+<code class="inline">DescribeComputeEnvironment</code> operation to determine the <code class="inline">ecsClusterArn</code> that you
+should launch your Amazon ECS container instances into.</p>
 
   </section>
 </section>
@@ -535,7 +543,7 @@ instances into.</p>
     </a>
     <h1 class="signature">describe_job_definitions(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L163" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L171" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -546,8 +554,8 @@ instances into.</p>
 
   <section class="docstring">
 <p>Describes a list of job definitions.</p>
-<p>You can specify a <code class="inline">status</code> (such as <code class="inline">ACTIVE</code>) to only return job definitions that match that
-status.</p>
+<p>You can specify a <code class="inline">status</code> (such as <code class="inline">ACTIVE</code>) to only return job definitions
+that match that status.</p>
 
   </section>
 </section>
@@ -562,7 +570,7 @@ status.</p>
     </a>
     <h1 class="signature">describe_job_queues(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L173" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L181" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -587,7 +595,7 @@ status.</p>
     </a>
     <h1 class="signature">describe_jobs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L183" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L191" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -612,7 +620,7 @@ status.</p>
     </a>
     <h1 class="signature">list_jobs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L204" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L212" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -632,8 +640,8 @@ status.</p>
 <li><p>an array job ID to return a list of that job&#39;s children</p>
 </li>
 </ul>
-<p>You can filter the results by job status with the <code class="inline">jobStatus</code> parameter. If you do not specify a
-status, only <code class="inline">RUNNING</code> jobs are returned.</p>
+<p>You can filter the results by job status with the <code class="inline">jobStatus</code> parameter. If you
+do not specify a status, only <code class="inline">RUNNING</code> jobs are returned.</p>
 
   </section>
 </section>
@@ -648,7 +656,7 @@ status, only <code class="inline">RUNNING</code> jobs are returned.</p>
     </a>
     <h1 class="signature">list_tags_for_resource(client, resource_arn, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L217" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L226" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -659,8 +667,9 @@ status, only <code class="inline">RUNNING</code> jobs are returned.</p>
 
   <section class="docstring">
 <p>List the tags for an AWS Batch resource.</p>
-<p>AWS Batch resources that support tags are compute environments, jobs, job definitions, and job
-queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+<p>AWS Batch resources that support tags are compute environments, jobs, job
+definitions, and job queues. ARNs for child jobs of array and multi-node
+parallel (MNP) jobs are not supported.</p>
 
   </section>
 </section>
@@ -675,7 +684,7 @@ queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not 
     </a>
     <h1 class="signature">register_job_definition(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L227" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L236" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -700,7 +709,7 @@ queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not 
     </a>
     <h1 class="signature">submit_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L239" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L249" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -711,7 +720,8 @@ queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not 
 
   <section class="docstring">
 <p>Submits an AWS Batch job from a job definition.</p>
-<p>Parameters specified during <code class="inline">SubmitJob</code> override parameters defined in the job definition.</p>
+<p>Parameters specified during <code class="inline">SubmitJob</code> override parameters defined in the job
+definition.</p>
 
   </section>
 </section>
@@ -726,7 +736,7 @@ queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not 
     </a>
     <h1 class="signature">tag_resource(client, resource_arn, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L254" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L265" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -737,10 +747,11 @@ queues. ARNs for child jobs of array and multi-node parallel (MNP) jobs are not 
 
   <section class="docstring">
 <p>Associates the specified tags to a resource with the specified <code class="inline">resourceArn</code>.</p>
-<p>If existing tags on a resource are not specified in the request parameters, they are not changed.
-When a resource is deleted, the tags associated with that resource are deleted as well. AWS Batch
-resources that support tags are compute environments, jobs, job definitions, and job queues. ARNs
-for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p>
+<p>If existing tags on a resource are not specified in the request parameters, they
+are not changed. When a resource is deleted, the tags associated with that
+resource are deleted as well. AWS Batch resources that support tags are compute
+environments, jobs, job definitions, and job queues. ARNs for child jobs of
+array and multi-node parallel (MNP) jobs are not supported.</p>
 
   </section>
 </section>
@@ -755,7 +766,7 @@ for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p
     </a>
     <h1 class="signature">terminate_job(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L267" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L279" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -766,8 +777,9 @@ for child jobs of array and multi-node parallel (MNP) jobs are not supported.</p
 
   <section class="docstring">
 <p>Terminates a job in a job queue.</p>
-<p>Jobs that are in the <code class="inline">STARTING</code> or <code class="inline">RUNNING</code> state are terminated, which causes them to transition
-to <code class="inline">FAILED</code>. Jobs that have not progressed to the <code class="inline">STARTING</code> state are cancelled.</p>
+<p>Jobs that are in the <code class="inline">STARTING</code> or <code class="inline">RUNNING</code> state are terminated, which causes
+them to transition to <code class="inline">FAILED</code>. Jobs that have not progressed to the <code class="inline">STARTING</code>
+state are cancelled.</p>
 
   </section>
 </section>
@@ -782,7 +794,7 @@ to <code class="inline">FAILED</code>. Jobs that have not progressed to the <cod
     </a>
     <h1 class="signature">untag_resource(client, resource_arn, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L277" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L289" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -807,7 +819,7 @@ to <code class="inline">FAILED</code>. Jobs that have not progressed to the <cod
     </a>
     <h1 class="signature">update_compute_environment(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L291" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L303" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -832,7 +844,7 @@ to <code class="inline">FAILED</code>. Jobs that have not progressed to the <cod
     </a>
     <h1 class="signature">update_job_queue(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L301" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/batch.ex#L313" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>

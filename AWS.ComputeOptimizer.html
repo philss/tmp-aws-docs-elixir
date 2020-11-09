@@ -10,7 +10,7 @@
     <title>AWS.ComputeOptimizer — aws-elixir v0.6.0</title>
     <link rel="stylesheet" href="dist/html-de2388dc2f8074b0a4db.css" />
 
-    <script src="dist/sidebar_items-eca8f70a3d.js"></script>
+    <script src="dist/sidebar_items-5c95ee67ab.js"></script>
 
       <script src="docs_config.js"></script>
 
@@ -86,16 +86,18 @@ AWS.ComputeOptimizer
 
 
         <section id="moduledoc">
-<p>AWS Compute Optimizer is a service that analyzes the configuration and utilization metrics of your
-AWS resources, such as EC2 instances and Auto Scaling groups.</p>
-<p>It reports whether your resources are optimal, and generates optimization recommendations to
-reduce the cost and improve the performance of your workloads. Compute Optimizer also provides
-recent utilization metric data, as well as projected utilization metric data for the
-recommendations, which you can use to evaluate which recommendation provides the best
-price-performance trade-off. The analysis of your usage patterns can help you decide when to move
-or resize your running resources, and still meet your performance and capacity requirements. For
-more information about Compute Optimizer, including the required permissions to use the service,
-see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.</p>
+<p>AWS Compute Optimizer is a service that analyzes the configuration and
+utilization metrics of your AWS resources, such as EC2 instances and Auto
+Scaling groups.</p>
+<p>It reports whether your resources are optimal, and generates optimization
+recommendations to reduce the cost and improve the performance of your
+workloads. Compute Optimizer also provides recent utilization metric data, as
+well as projected utilization metric data for the recommendations, which you can
+use to evaluate which recommendation provides the best price-performance
+trade-off. The analysis of your usage patterns can help you decide when to move
+or resize your running resources, and still meet your performance and capacity
+requirements. For more information about Compute Optimizer, including the
+required permissions to use the service, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS Compute Optimizer User Guide</a>.</p>
 
         </section>
 
@@ -164,7 +166,8 @@ see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS C
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p></div>
+    <div class="summary-synopsis"><p>Returns the projected utilization metrics of Amazon EC2 instance
+recommendations.</p></div>
 
 </div>
 <div class="summary-row">
@@ -173,7 +176,8 @@ see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS C
 
   </div>
 
-    <div class="summary-synopsis"><p>Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p></div>
+    <div class="summary-synopsis"><p>Returns the enrollment (opt in) status of an account to the AWS Compute
+Optimizer service.</p></div>
 
 </div>
 <div class="summary-row">
@@ -191,7 +195,8 @@ see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/">AWS C
 
   </div>
 
-    <div class="summary-synopsis"><p>Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p></div>
+    <div class="summary-synopsis"><p>Updates the enrollment (opt in) status of an account to the AWS Compute
+Optimizer service.</p></div>
 
 </div>
 
@@ -220,7 +225,7 @@ Functions
     </a>
     <h1 class="signature">describe_recommendation_export_jobs(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L26" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L29" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -231,9 +236,10 @@ Functions
 
   <section class="docstring">
 <p>Describes recommendation export jobs created in the last seven days.</p>
-<p>Use the <code class="inline">ExportAutoScalingGroupRecommendations</code> or <code class="inline">ExportEC2InstanceRecommendations</code> actions to
-request an export of your recommendations. Then use the <code class="inline">DescribeRecommendationExportJobs</code> action
-to view your export jobs.</p>
+<p>Use the <code class="inline">ExportAutoScalingGroupRecommendations</code> or
+<code class="inline">ExportEC2InstanceRecommendations</code> actions to request an export of your
+recommendations. Then use the <code class="inline">DescribeRecommendationExportJobs</code> action to view
+your export jobs.</p>
 
   </section>
 </section>
@@ -248,7 +254,7 @@ to view your export jobs.</p>
     </a>
     <h1 class="signature">export_auto_scaling_group_recommendations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L40" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L44" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -259,9 +265,10 @@ to view your export jobs.</p>
 
   <section class="docstring">
 <p>Exports optimization recommendations for Auto Scaling groups.</p>
-<p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a
-JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3)
-bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
+<p>Recommendations are exported in a comma-separated values (.csv) file, and its
+metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+Simple Storage Service (Amazon S3) bucket that you specify. For more
+information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
 in the <em>Compute Optimizer User Guide</em>.</p>
 <p>You can have only one Auto Scaling group export job in progress per AWS Region.</p>
 
@@ -278,7 +285,7 @@ in the <em>Compute Optimizer User Guide</em>.</p>
     </a>
     <h1 class="signature">export_e_c2_instance_recommendations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L54" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L59" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -289,9 +296,10 @@ in the <em>Compute Optimizer User Guide</em>.</p>
 
   <section class="docstring">
 <p>Exports optimization recommendations for Amazon EC2 instances.</p>
-<p>Recommendations are exported in a comma-separated values (.csv) file, and its metadata in a
-JavaScript Object Notation (.json) file, to an existing Amazon Simple Storage Service (Amazon S3)
-bucket that you specify. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
+<p>Recommendations are exported in a comma-separated values (.csv) file, and its
+metadata in a JavaScript Object Notation (.json) file, to an existing Amazon
+Simple Storage Service (Amazon S3) bucket that you specify. For more
+information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html">Exporting Recommendations</a>
 in the <em>Compute Optimizer User Guide</em>.</p>
 <p>You can have only one Amazon EC2 instance export job in progress per AWS Region.</p>
 
@@ -308,7 +316,7 @@ in the <em>Compute Optimizer User Guide</em>.</p>
     </a>
     <h1 class="signature">get_auto_scaling_group_recommendations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L65" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L71" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -319,9 +327,10 @@ in the <em>Compute Optimizer User Guide</em>.</p>
 
   <section class="docstring">
 <p>Returns Auto Scaling group recommendations.</p>
-<p>AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling groups that meet a
-specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a> in the
-<em>AWS Compute Optimizer User Guide</em>.</p>
+<p>AWS Compute Optimizer generates recommendations for Amazon EC2 Auto Scaling
+groups that meet a specific set of requirements. For more information, see the
+<a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a>
+in the <em>AWS Compute Optimizer User Guide</em>.</p>
 
   </section>
 </section>
@@ -336,7 +345,7 @@ specific set of requirements. For more information, see the <a href="https://doc
     </a>
     <h1 class="signature">get_e_c2_instance_recommendations(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L77" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L83" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -347,10 +356,10 @@ specific set of requirements. For more information, see the <a href="https://doc
 
   <section class="docstring">
 <p>Returns Amazon EC2 instance recommendations.</p>
-<p>AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud (Amazon EC2)
-instances that meet a specific set of requirements. For more information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and
-requirements</a> in the
-<em>AWS Compute Optimizer User Guide</em>.</p>
+<p>AWS Compute Optimizer generates recommendations for Amazon Elastic Compute Cloud
+(Amazon EC2) instances that meet a specific set of requirements. For more
+information, see the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported resources and requirements</a>
+in the <em>AWS Compute Optimizer User Guide</em>.</p>
 
   </section>
 </section>
@@ -365,7 +374,7 @@ requirements</a> in the
     </a>
     <h1 class="signature">get_e_c2_recommendation_projected_metrics(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L89" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L96" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -375,11 +384,12 @@ requirements</a> in the
   </div>
 
   <section class="docstring">
-<p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p>
-<p>The <code class="inline">Cpu</code> and <code class="inline">Memory</code> metrics are the only projected utilization metrics returned when you run
-this action. Additionally, the <code class="inline">Memory</code> metric is returned only for resources that have the
-unified CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch
-Agent</a>.</p>
+<p>Returns the projected utilization metrics of Amazon EC2 instance
+recommendations.</p>
+<p>The <code class="inline">Cpu</code> and <code class="inline">Memory</code> metrics are the only projected utilization metrics
+returned when you run this action. Additionally, the <code class="inline">Memory</code> metric is returned
+only for resources that have the unified CloudWatch agent installed on them. For
+more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling Memory Utilization with the CloudWatch Agent</a>.</p>
 
   </section>
 </section>
@@ -394,7 +404,7 @@ Agent</a>.</p>
     </a>
     <h1 class="signature">get_enrollment_status(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L99" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L107" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -404,9 +414,10 @@ Agent</a>.</p>
   </div>
 
   <section class="docstring">
-<p>Returns the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p>
-<p>If the account is the master account of an organization, this action also confirms the enrollment
-status of member accounts within the organization.</p>
+<p>Returns the enrollment (opt in) status of an account to the AWS Compute
+Optimizer service.</p>
+<p>If the account is the master account of an organization, this action also
+confirms the enrollment status of member accounts within the organization.</p>
 
   </section>
 </section>
@@ -421,7 +432,7 @@ status of member accounts within the organization.</p>
     </a>
     <h1 class="signature">get_recommendation_summaries(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L110" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L119" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -432,9 +443,10 @@ status of member accounts within the organization.</p>
 
   <section class="docstring">
 <p>Returns the optimization findings for an account.</p>
-<p>For example, it returns the number of Amazon EC2 instances in an account that are
-under-provisioned, over-provisioned, or optimized. It also returns the number of Auto Scaling
-groups in an account that are not optimized, or optimized.</p>
+<p>For example, it returns the number of Amazon EC2 instances in an account that
+are under-provisioned, over-provisioned, or optimized. It also returns the
+number of Auto Scaling groups in an account that are not optimized, or
+optimized.</p>
 
   </section>
 </section>
@@ -449,7 +461,7 @@ groups in an account that are not optimized, or optimized.</p>
     </a>
     <h1 class="signature">update_enrollment_status(client, input, options \\ [])</h1>
 
-      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L120" class="view-source" rel="help" title="View Source">
+      <a href="https://github.com/aws-beam/aws-elixir/blob/master/lib/aws/generated/compute_optimizer.ex#L130" class="view-source" rel="help" title="View Source">
        <span class="icon-code" aria-hidden="true"></span>
        <span class="sr-only">View Source</span>
      </a>
@@ -459,9 +471,10 @@ groups in an account that are not optimized, or optimized.</p>
   </div>
 
   <section class="docstring">
-<p>Updates the enrollment (opt in) status of an account to the AWS Compute Optimizer service.</p>
-<p>If the account is a master account of an organization, this action can also be used to enroll
-member accounts within the organization.</p>
+<p>Updates the enrollment (opt in) status of an account to the AWS Compute
+Optimizer service.</p>
+<p>If the account is a master account of an organization, this action can also be
+used to enroll member accounts within the organization.</p>
 
   </section>
 </section>
